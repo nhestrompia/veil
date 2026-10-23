@@ -1,0 +1,13 @@
+{
+  "route": "Safari Develop target discovery",
+  "controlListed": true,
+  "protectedListed": false,
+  "controlFixtureTrial": "f44eca8cd65f5944",
+  "attachment": "inconclusive",
+  "errors": [
+    "Accessibility error: AXError.invalidUIElement"
+  ],
+  "source": "native computer-use transcript",
+  "safariPreferenceRestored": true,
+  "interpretation": "Only target discovery was observed. No end-to-end inspector attachment or universal refusal claim."
+}

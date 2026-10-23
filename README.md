@@ -17,4 +17,9 @@ The initial AppKit and WKWebView shell is implemented. See [implementation miles
 
 The local Antiagent review checks saved evidence. The online report reviews primary sources. Neither constitutes a live test of this proposed browser.
 
+Live prototype results:
+
+- [Native input](docs/native-input-findings.md): five working CGEvent adapters completed all 15 protected-browser trials.
+- [Capture and automation](docs/capture-findings.md): screenshot/OCR/native input completed 3/3 protected-browser trials. Playwright transport failures remain separate from protection evidence.
+
 Created in [T3 Code](https://t3.codes).

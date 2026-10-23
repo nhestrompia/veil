@@ -106,6 +106,7 @@ func click(_ point: CGPoint, pid: pid_t? = nil, source: CGEventSource?) throws {
 @main
 enum NativeProbe {
     @MainActor static func main() async {
+        _ = NSApplication.shared
         var arguments = Array(CommandLine.arguments.dropFirst())
         if let index = arguments.firstIndex(of: "--out"), arguments.indices.contains(index + 1) {
             arguments.removeSubrange(index...index + 1)

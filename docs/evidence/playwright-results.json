@@ -1,0 +1,58 @@
+{
+  "playwright": "1.64.0",
+  "results": [
+    {
+      "route": "playwright-cdp",
+      "target": "isolated-chrome-control",
+      "repetition": 0,
+      "version": "156.0.8078.47",
+      "disclosure": true,
+      "verdict": "bypass"
+    },
+    {
+      "route": "playwright-cdp",
+      "target": "isolated-chrome-control",
+      "repetition": 1,
+      "version": "156.0.8078.47",
+      "disclosure": true,
+      "verdict": "bypass"
+    },
+    {
+      "route": "playwright-cdp",
+      "target": "isolated-chrome-control",
+      "repetition": 2,
+      "version": "156.0.8078.47",
+      "disclosure": true,
+      "verdict": "bypass"
+    },
+    {
+      "route": "playwright-cdp-attachment",
+      "target": "AgentFreeBrowser",
+      "verdict": "unsupported-transport",
+      "error": "browserType.connectOverCDP: connect ECONNREFUSED 127.0.0.1:57576\nCall log:\n\u001b[2m  - <ws preparing> retrieving websocket url from http://127.0.0.1:57576\u001b[22m\n",
+      "interpretation": "No CDP endpoint observed. Both WKWebView builds lack this transport. This is not an inspection-prevention result."
+    },
+    {
+      "route": "playwright-webkit-custom-launch",
+      "target": "AgentFreeBrowser",
+      "verdict": "unsupported-transport",
+      "error": "browserType.launch: Timeout 3000ms exceeded.\nCall log:\n\u001b[2m  - <launching> /Users/nhestrompia/.t3/projects/agentfreebrowser/dist/AgentFreeBrowser.app/Contents/MacOS/AgentFreeBrowser --inspector-pipe --no-startup-window\u001b[22m\n\u001b[2m  - <launched> pid=65602\u001b[22m\n\u001b[2m  - [pid=65602][out] Browser ready: pid=65602 inspectable=false\u001b[22m\n",
+      "interpretation": "A native WKWebView host is not the Playwright-patched WebKit browser executable."
+    },
+    {
+      "route": "playwright-cdp-attachment",
+      "target": "InspectableControl",
+      "verdict": "unsupported-transport",
+      "error": "browserType.connectOverCDP: connect ECONNREFUSED 127.0.0.1:57581\nCall log:\n\u001b[2m  - <ws preparing> retrieving websocket url from http://127.0.0.1:57581\u001b[22m\n",
+      "interpretation": "No CDP endpoint observed. Both WKWebView builds lack this transport. This is not an inspection-prevention result."
+    },
+    {
+      "route": "playwright-webkit-custom-launch",
+      "target": "InspectableControl",
+      "verdict": "unsupported-transport",
+      "error": "browserType.launch: Timeout 3000ms exceeded.\nCall log:\n\u001b[2m  - <launching> /Users/nhestrompia/.t3/projects/agentfreebrowser/dist/InspectableControl.app/Contents/MacOS/InspectableControl --inspector-pipe --no-startup-window\u001b[22m\n\u001b[2m  - <launched> pid=65625\u001b[22m\n\u001b[2m  - [pid=65625][out] Browser ready: pid=65625 inspectable=true\u001b[22m\n",
+      "interpretation": "A native WKWebView host is not the Playwright-patched WebKit browser executable."
+    }
+  ],
+  "inspectionComparison": "Safari Web Inspector still requires its own paired test."
+}

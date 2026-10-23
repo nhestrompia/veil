@@ -26,8 +26,12 @@ func attribute(_ element: AXUIElement, _ name: String) -> CFTypeRef? {
 
 func elements(_ root: AXUIElement) -> [AXUIElement] {
     var result: [AXUIElement] = []
+    var visited: Set<AXUIElement> = []
     var pending: [(AXUIElement, Int)] = [(root, 0)]
     while let (element, depth) = pending.popLast(), result.count < 3000 {
+        guard visited.insert(element).inserted else { continue }
+        // System menus contain unrelated recent documents and can link back to the application.
+        if (attribute(element, kAXRoleAttribute) as? String) == kAXMenuBarRole { continue }
         result.append(element)
         if depth < 35, let children = attribute(element, kAXChildrenAttribute) as? [AXUIElement] {
             pending.append(contentsOf: children.reversed().map { ($0, depth + 1) })

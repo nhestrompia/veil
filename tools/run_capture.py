@@ -8,23 +8,31 @@ import time
 from pathlib import Path
 
 from run_native import ROOT, Oracle, probe
+from native_environment import NativeEnvironmentUnavailable, require_unlocked
 
 
 def run(targets, repetitions, output):
     output = output.resolve()
     output.mkdir(parents=True, exist_ok=True)
+    try:
+        require_unlocked()
+    except NativeEnvironmentUnavailable as error:
+        (output / "results.json").write_text(json.dumps({"results": [{"route": "environment-preflight", "verdict": "inconclusive", "error": str(error)}]}, indent=2))
+        raise
     oracle = Oracle()
     permissions = probe(["permissions"], output / "permissions.json")
     results = []
     for name in targets:
         binary = ROOT / f"dist/{name}.app/Contents/MacOS/{name}"
         for repetition in range(repetitions):
+            require_unlocked()
             trial = oracle.create()
             prefix = output / f"{name}-{repetition}"
             with prefix.with_suffix(".log").open("w") as log:
                 process = subprocess.Popen([str(binary), "--url", trial["url"]], stdout=log, stderr=log)
                 try:
                     time.sleep(1.5)
+                    require_unlocked()
                     captures = {}
                     for route, command in [("screenkit", "capture"), ("system", "system-capture")]:
                         try:
@@ -76,7 +84,7 @@ def run(targets, repetitions, output):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--targets", nargs="+", default=["AgentFreeBrowser", "InspectableControl"], choices=["AgentFreeBrowser", "InspectableControl", "MetadataExperiment"])
+    parser.add_argument("--targets", nargs="+", default=["AgentFreeBrowser", "InspectableControl"], choices=["AgentFreeBrowser", "InspectableControl", "MetadataExperiment", "SecureInputExperiment", "ReducedExposureExperiment"])
     parser.add_argument("--repetitions", type=int, default=3)
     parser.add_argument("--output", type=Path, default=ROOT / "artifacts/capture-pilot")
     args = parser.parse_args()

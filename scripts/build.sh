@@ -2,7 +2,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 mkdir -p .build/module-cache dist
-for variant in protected control metadata; do
+for variant in protected control metadata secure reduced; do
     if [ "$variant" = protected ]; then
         name=AgentFreeBrowser
         bundle=research.agentfreebrowser.protected
@@ -11,10 +11,18 @@ for variant in protected control metadata; do
         name=InspectableControl
         bundle=research.agentfreebrowser.control
         defines=(-D INSPECTION_CONTROL)
-    else
+    elif [ "$variant" = metadata ]; then
         name=MetadataExperiment
         bundle=research.agentfreebrowser.metadata
         defines=(-D METADATA_EXPERIMENT)
+    elif [ "$variant" = secure ]; then
+        name=SecureInputExperiment
+        bundle=research.agentfreebrowser.secure
+        defines=(-D SECURE_INPUT_EXPERIMENT)
+    else
+        name=ReducedExposureExperiment
+        bundle=research.agentfreebrowser.reduced
+        defines=(-D REDUCED_EXPOSURE_EXPERIMENT)
     fi
     app="dist/$name.app"
     mkdir -p "$app/Contents/MacOS"

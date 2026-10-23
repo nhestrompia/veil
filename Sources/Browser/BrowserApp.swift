@@ -1,5 +1,6 @@
 import AppKit
 import WebKit
+import Carbon
 
 @MainActor
 final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDelegate, WKUIDelegate {
@@ -7,6 +8,7 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
     private var webView: WKWebView!
     private let address = NSTextField()
     private let status = NSTextField(labelWithString: "Research build. Desktop agents are not blocked.")
+    private var ownsSecureInput = false
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         let configuration = WKWebViewConfiguration()
@@ -20,6 +22,10 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
         webView.isInspectable = false
         #if METADATA_EXPERIMENT
         let name = "Input Source Experiment"
+        #elseif SECURE_INPUT_EXPERIMENT
+        let name = "Secure Input Experiment"
+        #elseif REDUCED_EXPOSURE_EXPERIMENT
+        let name = "Reduced Exposure Experiment"
         #else
         let name = "AgentFreeBrowser Research"
         #endif
@@ -63,6 +69,10 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
         window = NSWindow(contentRect: frame, styleMask: style, backing: .buffered, defer: false)
         #endif
         window.title = name
+        #if REDUCED_EXPOSURE_EXPERIMENT
+        webView.setAccessibilityHidden(true)
+        window.sharingType = .none
+        #endif
         window.contentView = content
         window.makeKeyAndOrderFront(nil)
         NSApp.activate(ignoringOtherApps: true)
@@ -120,6 +130,9 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
         #if METADATA_EXPERIMENT
         status.stringValue = "Experimental HID-state filter. Physical human origin is not established."
         #endif
+        #if SECURE_INPUT_EXPERIMENT || REDUCED_EXPOSURE_EXPERIMENT
+        status.stringValue = "Secure Event Input experiment. Synthetic input prevention is unproven."
+        #endif
     }
 
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: any Error) {
@@ -151,6 +164,29 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
     }
 
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool { true }
+
+    func applicationDidBecomeActive(_ notification: Notification) {
+        #if SECURE_INPUT_EXPERIMENT || REDUCED_EXPOSURE_EXPERIMENT
+        if !ownsSecureInput {
+            let result = EnableSecureEventInput()
+            ownsSecureInput = result == noErr
+            print("SECURE_INPUT enabled=\(ownsSecureInput) status=\(result) effective=\(IsSecureEventInputEnabled())")
+            fflush(stdout)
+        }
+        #endif
+    }
+
+    func applicationWillResignActive(_ notification: Notification) { releaseSecureInput() }
+    func applicationWillTerminate(_ notification: Notification) { releaseSecureInput() }
+
+    private func releaseSecureInput() {
+        if ownsSecureInput {
+            let result = DisableSecureEventInput()
+            ownsSecureInput = false
+            print("SECURE_INPUT released status=\(result)")
+            fflush(stdout)
+        }
+    }
 }
 
 @main

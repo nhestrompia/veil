@@ -18,7 +18,7 @@ def run(routes, repetitions, output):
     output.mkdir(parents=True, exist_ok=True)
     summary = {"results": [], "humanBaselineVerified": False, "isInputDefense": False,
                "physicalInputAbsenceVerified": False,
-               "routeContract": "Own native form. External AX locates the field; CGEvent types the fake value and Return. Device values and app events are separate observations."}
+               "routeContract": "Own native form. External AX locates the field; CGEvent or the selected IOHIDPostEvent adapter types the fake value and Return. IOHID routes use CGEvent only to focus the field. Device values and app events are separate observations."}
 
     def save():
         (output / "results.json").write_text(json.dumps(summary, indent=2))
@@ -56,8 +56,11 @@ def run(routes, repetitions, output):
                     raise RuntimeError("Observer field not found; no source comparison")
                 x, y = field["position"]
                 width, height = field["size"]
-                args = ["input", pid, x + width / 2, y + height / 2,
-                        route.removeprefix("curve-").removeprefix("keycodes-")]
+                if route.startswith("iohid-"):
+                    args = ["hid-post-input", pid, x + width / 2, y + height / 2, route.removeprefix("iohid-")]
+                else:
+                    args = ["input", pid, x + width / 2, y + height / 2,
+                            route.removeprefix("curve-").removeprefix("keycodes-")]
                 if route.startswith("curve-"):
                     args.append("curve")
                 if route.startswith("keycodes-"):
@@ -98,7 +101,7 @@ def run(routes, repetitions, output):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--routes", nargs="+", choices=["session", "hid", "private", "curve-hid", "keycodes-hid"],
+    parser.add_argument("--routes", nargs="+", choices=["session", "hid", "private", "curve-hid", "keycodes-hid", "iohid-legacy", "iohid-reports"],
                         default=["session", "hid", "private", "curve-hid", "keycodes-hid"])
     parser.add_argument("--repetitions", type=int, default=3)
     parser.add_argument("--output", type=Path, default=ROOT / "artifacts/hid-synthetic")

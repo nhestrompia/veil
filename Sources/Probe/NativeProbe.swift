@@ -4,6 +4,7 @@ import ScreenCaptureKit
 import ImageIO
 import UniformTypeIdentifiers
 import Vision
+import IOKit.hidsystem
 
 struct ProbeFailure: Error, CustomStringConvertible {
     let description: String
@@ -254,6 +255,41 @@ enum NativeProbe {
             try sendKey(36, pid: directed, source: source, targetPID: pid)
             try emit(["status": "attempted", "pid": pid, "source": args[4],
                       "directToPID": directed != nil, "curvedTrajectory": args.contains("curve")])
+            return
+        }
+        if command == "hid-post-input" {
+            guard args.count == 5, let x = Double(args[2]), let y = Double(args[3]),
+                  ["legacy", "reports"].contains(args[4]) else {
+                throw ProbeFailure("hid-post-input PID X Y legacy|reports")
+            }
+            guard IOHIDCheckAccess(kIOHIDRequestTypePostEvent) == kIOHIDAccessTypeGranted else {
+                throw ProbeFailure("The probe requires its approved event-posting grant")
+            }
+            var connection: UInt32 = 0
+            let openResult = AFBOpenHIDPosting(&connection)
+            guard openResult == 0 else {
+                try emit(["status": "inconclusive", "openResult": openResult, "route": args[4]])
+                return
+            }
+            defer { AFBCloseHIDPosting(connection) }
+            app.activate(options: [])
+            try await Task.sleep(for: .milliseconds(300))
+            let source = CGEventSource(stateID: .hidSystemState)
+            try click(CGPoint(x: x, y: y), source: source, targetPID: pid)
+            let codes: [UInt16] = [45, 0, 17, 34, 9, 14, 27, 34, 45, 35, 32, 17, 36]
+            let characters = Array("native-input\r".utf16)
+            var statuses: [Int32] = []
+            for (code, character) in zip(codes, characters) {
+                for down: Int32 in [1, 0] {
+                    guard NSWorkspace.shared.frontmostApplication?.processIdentifier == pid else {
+                        throw ProbeFailure("Target lost foreground focus; refusing HID posting")
+                    }
+                    statuses.append(AFBPostHIDKey(connection, code, character, down, args[4] == "reports" ? 1 : 0))
+                    try await Task.sleep(for: .milliseconds(35))
+                }
+            }
+            try emit(["status": "attempted", "route": args[4], "openResult": openResult,
+                      "postResults": statuses, "fieldFocusSource": "CGEvent click; typing uses IOHIDPostEvent"])
             return
         }
         if command == "system-capture" {

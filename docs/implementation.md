@@ -70,3 +70,20 @@ Refreshed the approved native grants and replaced the blanket console veto with 
 Added explicit AX window and focus traversal, foreground checks for each generated event, and compositor crops inside research windows. The probe now focuses the fake field before AX value and button actions.
 
 Secure Event Input allowed six native trials, with its mode enabled during all 84 logged input events. The reduced-exposure build allowed all three semantic AX trials and two of three known-layout trials. Its tested captures omitted the marker. These capture observations do not establish input prevention. See [foreground findings](foreground-findings.md) and the saved independent fixture outcomes.
+
+
+## Milestone 10: isolated graphics-buffer lookup
+
+Added a two-process calibration for direct IOSurface and Core Video allocations. Default and explicit-false allocations returned nil for exact-ID lookup in twelve trials. Six explicit-global controls recovered the exact fake bytes. No browser identifiers, desktop enumeration, or protected-media claim follow from this test. See [surface findings](surface-findings.md).
+
+## Milestone 11: generated-input observations
+
+The observer accepted all fifteen generated-input tasks. Seven trials produced no raw device records. None produced raw keyboard records. Pointer records in other trials remain potentially mixed with physical input. See [generated controls](hid-generated-findings.md).
+
+## Milestone 12: explicit accessibility boundary
+
+Added application, window, and web-view overrides in a separate AXBoundaryExperiment. The tested AX traversal exposed no page marker. The known-layout native agent still completed all three tasks. A computer-use attachment timed out, so that route remains inconclusive. See [accessibility findings](ax-boundary-findings.md).
+
+## Milestone 13: declared physical input
+
+The user supplied a physical session with 97 raw keyboard records. No raw pointer values or accepted fake action appeared. This is a positive keyboard observation, with no complete human-usability result. See [physical-input findings](hid-physical-findings.md).

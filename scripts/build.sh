@@ -29,10 +29,11 @@ for variant in "${variants[@]}"; do
         name=AXBoundaryExperiment
         bundle=research.agentfreebrowser.axboundary
         defines=(-D AX_BOUNDARY_EXPERIMENT)
-    elif [ "$variant" = devicekeyboard ]; then
+    elif [ "$variant" = devicekeyboard ] || [ "$variant" = devicekeyboard-visible ]; then
         name=DeviceKeyboardExperiment
         bundle=research.agentfreebrowser.devicekeyboard
         defines=(-D DEVICE_KEYBOARD_EXPERIMENT)
+        if [ "$variant" = devicekeyboard-visible ]; then defines+=(-D DEVICE_VISIBLE_CONTROL); fi
     else
         echo "Unknown browser variant: $variant" >&2
         exit 2
@@ -56,7 +57,7 @@ for variant in "${variants[@]}"; do
 <key>NSAppTransportSecurity</key><dict><key>NSAllowsLocalNetworking</key><true/></dict>
 </dict></plist>
 EOF
-    if [ "$variant" = devicekeyboard ]; then
+    if [ "$variant" = devicekeyboard ] || [ "$variant" = devicekeyboard-visible ]; then
         codesign --force --sign - --options runtime "$app"
     else
         codesign --force --sign - --options runtime --entitlements config/browser.entitlements "$app"

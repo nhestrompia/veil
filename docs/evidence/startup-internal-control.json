@@ -1,0 +1,30 @@
+{
+  "results": [
+    {
+      "target": "InspectableControl",
+      "repetition": 0,
+      "binarySHA256": "cd54cc2a2ba654d4e0c323cd661c2dea959d1bec001ce2f18f8030f273c94ec0",
+      "route": "launch-url",
+      "verdict": "bypass",
+      "documentRequests": 1,
+      "deviceBoundDuringTest": false,
+      "deviceReaderReady": false,
+      "pendingAddressLogged": false,
+      "controlWorked": false
+    },
+    {
+      "target": "AddressStartupControl",
+      "repetition": 0,
+      "binarySHA256": "0a0e1805ef0904e31d2e6778e5f4381c1560b7a2183b015bda4149b242b799ae",
+      "route": "launch-url",
+      "verdict": "internal-control-navigation-worked",
+      "documentRequests": 1,
+      "deviceBoundDuringTest": false,
+      "deviceReaderReady": false,
+      "pendingAddressLogged": true,
+      "controlWorked": true
+    }
+  ],
+  "scope": "Only unattended --url navigation to a fresh disposable loopback endpoint. Not a human usability or general agent-prevention result.",
+  "physicalInputAbsenceVerified": false
+}

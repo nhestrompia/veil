@@ -1,0 +1,25 @@
+{
+  "operatorReport": "i coudlnt do it, it was black screen",
+  "binarySHA256": "fc22b178abd13c404169946e23b4a308094132cb5d7d2f86f1b72f28f6214f2d",
+  "trial": "56a769636b46e858",
+  "lifecycle": [
+    "STARTUP_ADDRESS pendingPhysicalSubmit=true",
+    "Browser ready: pid=41417 inspectable=false",
+    "DEVICE_KEYBOARD permission=true openStatus=0 bindWithPhysicalSpace=true",
+    "DEVICE_KEYBOARD bound=true bootstrapAttested=false"
+  ],
+  "gateCounts": {
+    "INPUT_GATE_REFUSED type=8": 3,
+    "INPUT_GATE_REFUSED type=5": 173,
+    "INPUT_GATE_REFUSED type=9": 3,
+    "INPUT_GATE_REFUSED type=10": 6,
+    "INPUT_GATE_ACCEPTED type=11": 6,
+    "INPUT_GATE_REFUSED type=11": 6,
+    "INPUT_GATE_ACCEPTED type=10": 5,
+    "INPUT_GATE_REFUSED type=1": 4,
+    "INPUT_GATE_REFUSED type=2": 4
+  },
+  "acceptedActions": 0,
+  "humanUsability": "failed",
+  "displayClarification": "The whole window was black"
+}

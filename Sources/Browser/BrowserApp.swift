@@ -89,7 +89,9 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
         window.title = name
         #if REDUCED_EXPOSURE_EXPERIMENT || AX_BOUNDARY_EXPERIMENT || DEVICE_KEYBOARD_EXPERIMENT
         webView.setAccessibilityHidden(true)
+        #if !DEVICE_VISIBLE_CONTROL
         window.sharingType = .none
+        #endif
         #endif
         window.contentView = content
         window.makeKeyAndOrderFront(nil)
@@ -100,6 +102,15 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
         appMenu.addItem(withTitle: "Quit " + name, action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
         appItem.submenu = appMenu
         menu.addItem(appItem)
+        #if DEVICE_KEYBOARD_EXPERIMENT
+        let fileItem = NSMenuItem()
+        let fileMenu = NSMenu(title: "File")
+        let openLocation = NSMenuItem(title: "Open Location...", action: #selector(focusAddress), keyEquivalent: "l")
+        openLocation.target = self
+        fileMenu.addItem(openLocation)
+        fileItem.submenu = fileMenu
+        menu.addItem(fileItem)
+        #endif
         let editItem = NSMenuItem()
         let editMenu = NSMenu(title: "Edit")
         for (title, selector, key) in [("Cut", "cut:", "x"), ("Copy", "copy:", "c"), ("Paste", "paste:", "v"), ("Select All", "selectAll:", "a")] {
@@ -112,13 +123,23 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
         let arguments = CommandLine.arguments
         if let index = arguments.firstIndex(of: "--url"), arguments.indices.contains(index + 1) {
             address.stringValue = arguments[index + 1]
+            #if DEVICE_KEYBOARD_EXPERIMENT
+            status.stringValue = "Press physical Space to bind the keyboard, then Return to open this address. Mouse input is disabled."
+            window.makeFirstResponder(address)
+            print("STARTUP_ADDRESS pendingPhysicalSubmit=true")
+            #else
             navigate()
+            #endif
         } else {
             window.makeFirstResponder(address)
         }
         print("Browser ready: pid=\(ProcessInfo.processInfo.processIdentifier) inspectable=\(webView.isInspectable)")
         #if DEVICE_KEYBOARD_EXPERIMENT
-        deviceKeyboard = DeviceKeyboardRouter(window: window)
+        deviceKeyboard = DeviceKeyboardRouter(window: window) { [weak self] in
+            guard let self else { return }
+            self.status.stringValue = "Keyboard ready. Press Return to open the address. Mouse input is disabled."
+            self.focusAddress()
+        }
         deviceKeyboard?.start()
         #endif
         fflush(stdout)
@@ -129,12 +150,19 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
             status.stringValue = "Use HTTPS, or loopback HTTP for a research fixture."
             return
         }
+        #if DEVICE_KEYBOARD_EXPERIMENT
+        (NSApp as? DeviceKeyboardApplication)?.didBeginNavigation()
+        #endif
         webView.load(URLRequest(url: url))
         window.makeFirstResponder(webView)
     }
 
     @objc private func goBack() { webView.goBack() }
     @objc private func reloadPage() { webView.reload() }
+    @objc private func focusAddress() {
+        window.makeFirstResponder(address)
+        address.selectText(nil)
+    }
 
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction,
                  decisionHandler: @escaping @MainActor @Sendable (WKNavigationActionPolicy) -> Void) {
@@ -159,7 +187,7 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
         status.stringValue = "Accessibility boundary experiment. Native input prevention is unproven."
         #endif
         #if DEVICE_KEYBOARD_EXPERIMENT
-        status.stringValue = "Keyboard only. Press physical Space to bind, then Tab to navigate. US ASCII only. Research build."
+        status.stringValue = "Keyboard only. Command-L selects the address. Mouse input is disabled. US ASCII only. Research build."
         #endif
     }
 

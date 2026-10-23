@@ -1,5 +1,7 @@
 # Keyboard-only device routing
 
+These results describe the first keyboard-routing binary. The revised [startup workflow](launch-navigation-findings.md) needs a new physical control and attacks against that same process.
+
 DeviceKeyboardExperiment compiles, passes signature checks, and opens its device reader with the approved Input Monitoring grant. Its event-dispatch checks pass. The user completed one website action through physical typing. Twenty matched generated-input trials then stopped, with four further trials inconclusive. This is a keyboard experiment, with mouse input disabled.
 
 ## Input path

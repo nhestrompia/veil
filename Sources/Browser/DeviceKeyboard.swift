@@ -19,8 +19,13 @@ final class DeviceKeyboardApplication: AXBoundaryApplication {
     let deviceGate = DeviceEventGate()
     private(set) var acceptedEventCount = 0
     private(set) var refusedEventCount = 0
+    private var awaitingInitialNavigation = true
+
+    func didBeginNavigation() { awaitingInitialNavigation = false }
 
     func dispatchDeviceEvent(_ event: NSEvent) {
+        // Repeated binding gestures must not replace the selected startup URL.
+        if awaitingInitialNavigation, event.keyCode == 49 { return }
         deviceGate.authorize(event)
         sendEvent(event)
     }
@@ -51,8 +56,12 @@ final class DeviceKeyboardRouter {
     private var boundDevice: IOHIDDevice?
     private var pressed: Set<UInt32> = []
     private var opened = false
+    private let onBind: () -> Void
 
-    init(window: NSWindow) { self.window = window }
+    init(window: NSWindow, onBind: @escaping () -> Void) {
+        self.window = window
+        self.onBind = onBind
+    }
 
     func start() {
         guard !opened else { return }
@@ -119,6 +128,7 @@ final class DeviceKeyboardRouter {
                 pressed = [44]
                 print("DEVICE_KEYBOARD bound=true bootstrapAttested=false")
                 fflush(stdout)
+                onBind()
             }
             return
         }

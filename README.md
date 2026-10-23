@@ -23,13 +23,15 @@ Live prototype results:
 - [Capture and automation](docs/capture-findings.md): screenshot/OCR/native input completed 3/3 protected-browser trials. Playwright transport failures remain separate from protection evidence.
 - [Source-state filter](docs/input-filter-findings.md): a basic client stopped, but generated HID-state input and the vision client still completed tasks.
 
-The current build is an experimental browser and attack testbed. The default browser does not meet either MVP resistance gate. A separate keyboard-only experiment now has a positive physical task and twenty stopped input trials, with four inconclusive trials. It still has an automatic launch-URL route and does not meet the agent-free goal. No validated physical trajectory dataset or classifier result exists yet.
+The current build is an experimental browser and attack testbed. The default browser does not meet either MVP resistance gate. An earlier keyboard-only experiment recorded one positive physical task and twenty stopped input trials, with four inconclusive trials. A revised build closes the measured automatic launch-URL route. Its startup workflow still needs a new physical task and attacks against that same process. The project does not meet the agent-free goal. No validated physical trajectory dataset or classifier result exists yet.
 
 Further candidates now compile. Capture pilots ran, but the protected BGRA and NV12 builds failed physical visibility. See [route calibration](docs/route-calibration.md).
 
 - [Foreground controls](docs/foreground-findings.md) show native and semantic bypasses of Secure Event Input and reduced accessibility exposure.
 - [Protected HTML pixels](docs/pixel-rendering-findings.md) test the public capture-protection property on a sample-buffer layer.
 - [Raw device input](docs/hid-observation-findings.md) separates device observations from application events.
+- [Startup navigation](docs/launch-navigation-findings.md) records the launch bypass, bounded fix, and pending physical control.
+- [Startup visibility](docs/startup-visibility-diagnosis.md) records the hidden app and repeated-Space regression.
 - [Keyboard-only routing](docs/device-keyboard-findings.md) records the first positive physical task and matched input refusals.
 - [Accessibility boundary](docs/ax-boundary-findings.md) reduces page exposure but still allows known-layout native input.
 - [Physical input](docs/hid-physical-findings.md) records a positive keyboard sample and the missing pointer comparison.

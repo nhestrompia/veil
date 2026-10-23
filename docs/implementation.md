@@ -103,3 +103,12 @@ The user completed one independent website action with the physical keyboard. In
 ## Milestone 16: directed keyboard calibration
 
 Added mixed global-click and PID-keyboard routes, with Unicode and physical-key-code variants. Both completed all three controls. The original all-directed route and a window-annotated variant still failed three controls each. The expanded matrix contains 27 completions and six inconclusive results. See [directed-input findings](directed-input-findings.md).
+
+
+## Milestone 17: physical startup submission
+
+Launch arguments now fill the keyboard browser address without loading it. Three earlier launch trials reached the disposable endpoint. Three revised trials made no requests, with matched controls and effective device access. The latest visible control repeated this zero-of-three result. These are bounded launch results.
+
+Physical startup checks exposed a hidden app and a repeated-Space editing bug. The user confirmed address visibility after explicit app selection. The native field control reproduced address replacement before the dispatcher fix and passed afterward. Repeated binding Spaces now preserve the address until navigation begins. A ready message confirms binding, and normal Space input resumes after navigation.
+
+The shared app path has two mutually exclusive build flavors. The visible flavor enables window sharing for diagnosis. It cannot establish capture prevention. The updated build still requires physical website completion and attacks against that same process. See [startup navigation](launch-navigation-findings.md) and [visibility diagnosis](startup-visibility-diagnosis.md).

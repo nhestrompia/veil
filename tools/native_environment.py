@@ -1,11 +1,7 @@
-"""Reject native attack runs when the console session cannot supply valid controls."""
+"""Record console metadata without treating it as proof that an attack route works."""
 
 import plistlib
 import subprocess
-
-
-class NativeEnvironmentUnavailable(RuntimeError):
-    pass
 
 
 def console_state(registry):
@@ -20,12 +16,19 @@ def console_state(registry):
     return {"locked": locked}
 
 
-def require_unlocked():
+def observe_console():
     try:
         raw = subprocess.check_output(["/usr/sbin/ioreg", "-n", "Root", "-d", "1", "-a"], timeout=5)
         state = console_state(plistlib.loads(raw))
-    except (OSError, ValueError, subprocess.SubprocessError) as error:
-        raise NativeEnvironmentUnavailable("Cannot establish an unlocked native session") from error
-    if state["locked"] is not False:
-        raise NativeEnvironmentUnavailable("Unlock the Mac manually before native trials. No prevention result is valid while locked.")
+    except (OSError, ValueError, subprocess.SubprocessError):
+        return {"locked": None, "reason": "Console observation unavailable", "advisory": True}
+    state["advisory"] = True
     return state
+
+
+def action_verdict(completed, refused, control_worked):
+    if completed:
+        return "bypass"
+    if refused and control_worked:
+        return "blocked"
+    return "inconclusive"

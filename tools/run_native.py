@@ -8,7 +8,7 @@ import time
 from pathlib import Path
 from urllib.request import Request, urlopen
 
-from native_environment import NativeEnvironmentUnavailable, require_unlocked
+from native_environment import observe_console, action_verdict
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -43,11 +43,7 @@ class Oracle:
 
 def run(targets, routes, repetitions, output):
     output.mkdir(parents=True, exist_ok=True)
-    try:
-        require_unlocked()
-    except NativeEnvironmentUnavailable as error:
-        (output / "results.json").write_text(json.dumps({"results": [{"route": "environment-preflight", "verdict": "inconclusive", "error": str(error)}]}, indent=2))
-        raise
+    environment = observe_console()
     oracle = Oracle()
     permissions = probe(["permissions"], output / "permissions.json")
     if not permissions.get("accessibility") or not permissions.get("postEvents"):
@@ -57,12 +53,13 @@ def run(targets, routes, repetitions, output):
         print("Permission preflight failed. No attacks ran.", flush=True)
         return []
     results = []
+    control_target = "InspectableControl" if "InspectableControl" in targets else "AgentFreeBrowser"
+    targets = sorted(targets, key=lambda target: target != control_target)
     for name in targets:
         binary = ROOT / f"dist/{name}.app/Contents/MacOS/{name}"
         binary_hash = hashlib.sha256(binary.read_bytes()).hexdigest()
         for route in routes:
             for repetition in range(repetitions):
-                require_unlocked()
                 prefix = output / f"{name}-{route}-{repetition}"
                 trial = oracle.create()
                 result = {"target": name, "route": route, "repetition": repetition, "trial": trial["id"],
@@ -77,7 +74,6 @@ def run(targets, routes, repetitions, output):
                             if any((e.get("AXDescription") == "Enter native-input" or e.get("AXTitle") == "Enter native-input") and e.get("AXRole") == "AXTextField" for e in tree.get("elements", [])):
                                 break
                         state = oracle.state(trial)
-                        require_unlocked()
                         result["disclosure"] = state["secret"] in json.dumps(tree)
                         if route == "ax":
                             attempt = probe(["ax-action", process.pid], prefix.with_suffix(".attempt.json"))
@@ -106,14 +102,15 @@ def run(targets, routes, repetitions, output):
                         event_log = prefix.with_suffix(".log").read_text()
                         result["inputGate"] = {"acceptedEvents": event_log.count("INPUT_GATE_ACCEPTED"),
                                                "refusedEvents": event_log.count("INPUT_GATE_REFUSED")}
-                        if any(s["accepted"] for s in state["submissions"]):
-                            result["verdict"] = "bypass"
-                        elif result["inputGate"]["refusedEvents"]:
-                            result["verdict"] = "blocked"
-                            result["reason"] = "Input source experiment explicitly refused the posted events"
-                        elif attempt.get("error"):
+                        completed = any(s["accepted"] for s in state["submissions"])
+                        result["controlWorked"] = any(r["target"] == control_target and r["route"] == route and
+                            r["repetition"] == repetition and r["verdict"] == "bypass" for r in results)
+                        result["verdict"] = action_verdict(completed, result["inputGate"]["refusedEvents"] > 0, result["controlWorked"])
+                        if result["inputGate"]["refusedEvents"]:
+                            result["reason"] = "Defensive refusal recorded. A matched working control is required for a block verdict."
+                        elif not completed and attempt.get("error"):
                             result["reason"] = attempt["error"]
-                        else:
+                        elif not completed:
                             result["reason"] = "No task completion; no explicit defensive refusal established"
                     except (RuntimeError, KeyError, OSError, subprocess.SubprocessError) as error:
                         result["error"] = str(error)
@@ -126,7 +123,8 @@ def run(targets, routes, repetitions, output):
                             process.wait()
                 results.append(result)
                 print(json.dumps({k: result[k] for k in ["target", "route", "repetition", "verdict", "disclosure"] if k in result}), flush=True)
-                summary = {"permissions": permissions, "system": subprocess.check_output(["sw_vers"], text=True),
+                summary = {"permissions": permissions, "environment": environment, "positiveControlTarget": control_target,
+                           "system": subprocess.check_output(["sw_vers"], text=True),
                            "results": results, "humanBaseline": False,
                            "routeContract": "Probe uses native APIs only. Controller alone queries the oracle. Input coordinates come from AX."}
                 (output / "results.json").write_text(json.dumps(summary, indent=2))

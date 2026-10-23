@@ -2,13 +2,19 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 mkdir -p .build/module-cache dist
-for variant in protected control; do
+for variant in protected control nv12protected nv12control; do
     if [ "$variant" = protected ]; then
         name=PixelProtectedExperiment
         defines=(-D PIXEL_PROTECTION)
-    else
+    elif [ "$variant" = control ]; then
         name=PixelControl
         defines=(-D PIXEL_CONTROL)
+    elif [ "$variant" = nv12protected ]; then
+        name=PixelNV12ProtectedExperiment
+        defines=(-D PIXEL_PROTECTION -D PIXEL_NV12)
+    else
+        name=PixelNV12Control
+        defines=(-D PIXEL_CONTROL -D PIXEL_NV12)
     fi
     app="dist/$name.app"
     mkdir -p "$app/Contents/MacOS"

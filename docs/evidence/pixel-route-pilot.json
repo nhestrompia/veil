@@ -1,0 +1,135 @@
+{
+  "results": [
+    {
+      "target": "PixelControl",
+      "repetition": 0,
+      "trial": "786f2bd1d9270ff9",
+      "binarySHA256": "cf616d0cbf53b418cbc32e11f9c222d0e98c4433009dd7dacd54da19379af453",
+      "route": "html-pixel-capture",
+      "verdict": "bypass",
+      "captures": {
+        "screenkit": {
+          "frame": [
+            100,
+            110,
+            1000,
+            772
+          ],
+          "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/pixel-route-pilot/PixelControl-0.screenkit.png",
+          "pid": 97341,
+          "pixels": [
+            2000,
+            1544
+          ],
+          "status": "captured",
+          "windowID": 81379,
+          "secretRecovered": true
+        },
+        "display": {
+          "frame": [
+            100,
+            110,
+            1000,
+            772
+          ],
+          "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/pixel-route-pilot/PixelControl-0.display.png",
+          "pid": 97341,
+          "pixels": [
+            2000,
+            1544
+          ],
+          "status": "captured",
+          "windowID": 81379,
+          "secretRecovered": true
+        },
+        "system": {
+          "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/pixel-route-pilot/PixelControl-0.system.png",
+          "pid": 97341,
+          "status": "captured",
+          "windowID": 81379,
+          "secretRecovered": true
+        }
+      },
+      "frameSubmitted": true,
+      "rendererLog": [
+        "PIXEL_RENDER ready pid=97341 preventsCapture=false",
+        "PIXEL_RENDER first_frame rendererStatus=1"
+      ],
+      "axDisclosure": false,
+      "disclosure": true
+    },
+    {
+      "target": "PixelProtectedExperiment",
+      "repetition": 0,
+      "trial": "231f16482f548e0f",
+      "binarySHA256": "dc1eafc689265bb0678ce67dcc049080929c4212db0c62ae26551bdf5555c9ed",
+      "route": "html-pixel-capture",
+      "verdict": "inconclusive",
+      "captures": {
+        "screenkit": {
+          "frame": [
+            100,
+            110,
+            1000,
+            772
+          ],
+          "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/pixel-route-pilot/PixelProtectedExperiment-0.screenkit.png",
+          "pid": 97377,
+          "pixels": [
+            2000,
+            1544
+          ],
+          "status": "captured",
+          "windowID": 81386,
+          "secretRecovered": false
+        },
+        "display": {
+          "frame": [
+            100,
+            110,
+            1000,
+            772
+          ],
+          "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/pixel-route-pilot/PixelProtectedExperiment-0.display.png",
+          "pid": 97377,
+          "pixels": [
+            2000,
+            1544
+          ],
+          "status": "captured",
+          "windowID": 81386,
+          "secretRecovered": false
+        },
+        "system": {
+          "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/pixel-route-pilot/PixelProtectedExperiment-0.system.png",
+          "pid": 97377,
+          "status": "captured",
+          "windowID": 81386,
+          "secretRecovered": false
+        }
+      },
+      "frameSubmitted": true,
+      "rendererLog": [
+        "PIXEL_RENDER ready pid=97377 preventsCapture=true",
+        "PIXEL_RENDER first_frame rendererStatus=1"
+      ],
+      "axDisclosure": false,
+      "disclosure": false,
+      "reason": "No exact marker recovery. Human visibility, matched controls, and wider capture routes still required."
+    }
+  ],
+  "humanBaseline": false,
+  "routeContract": "HTML snapshots stay inside the renderer. External probe uses only native capture, OCR, and AX. No input bridge exists.",
+  "environment": {
+    "locked": null,
+    "reason": "Console lock flag unavailable",
+    "advisory": true
+  },
+  "permissions": {
+    "accessibility": true,
+    "pid": 97337,
+    "postEvents": true,
+    "screenCapture": true
+  },
+  "system": "ProductName:\t\tmacOS\nProductVersion:\t\t26.6\nBuildVersion:\t\t25G72\n"
+}

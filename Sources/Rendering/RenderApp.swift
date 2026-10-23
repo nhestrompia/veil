@@ -3,10 +3,12 @@ import AVFoundation
 import CoreMedia
 import CoreVideo
 import WebKit
+import VideoToolbox
 
 @MainActor
 final class PixelDisplay: NSView {
     let display = AVSampleBufferDisplayLayer()
+    private var transfer: VTPixelTransferSession?
 
     init(protected: Bool) {
         super.init(frame: .zero)
@@ -40,12 +42,31 @@ final class PixelDisplay: NSView {
             else { throw RenderFailure("Pixel context failed") }
             context.draw(image, in: CGRect(x: 0, y: 0, width: image.width, height: image.height))
         }
+        let renderBuffer: CVPixelBuffer
+        #if PIXEL_NV12
+        var converted: CVPixelBuffer?
+        let nv12Attributes: [CFString: Any] = [kCVPixelBufferIOSurfacePropertiesKey: [:]]
+        guard CVPixelBufferCreate(kCFAllocatorDefault, image.width, image.height,
+            kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange, nv12Attributes as CFDictionary, &converted) == kCVReturnSuccess,
+              let converted else { throw RenderFailure("NV12 allocation failed") }
+        if transfer == nil {
+            guard VTPixelTransferSessionCreate(allocator: kCFAllocatorDefault, pixelTransferSessionOut: &transfer) == noErr else {
+                throw RenderFailure("Pixel transfer session failed")
+            }
+        }
+        guard let transfer else { throw RenderFailure("Pixel transfer session missing") }
+        let conversion = VTPixelTransferSessionTransferImage(transfer, from: pixelBuffer, to: converted)
+        guard conversion == noErr else { throw RenderFailure("NV12 conversion failed: \(conversion)") }
+        renderBuffer = converted
+        #else
+        renderBuffer = pixelBuffer
+        #endif
         var format: CMVideoFormatDescription?
-        guard CMVideoFormatDescriptionCreateForImageBuffer(allocator: kCFAllocatorDefault, imageBuffer: pixelBuffer,
+        guard CMVideoFormatDescriptionCreateForImageBuffer(allocator: kCFAllocatorDefault, imageBuffer: renderBuffer,
             formatDescriptionOut: &format) == noErr, let format else { throw RenderFailure("Video format failed") }
         var timing = CMSampleTimingInfo(duration: .invalid, presentationTimeStamp: .zero, decodeTimeStamp: .invalid)
         var sample: CMSampleBuffer?
-        guard CMSampleBufferCreateReadyWithImageBuffer(allocator: kCFAllocatorDefault, imageBuffer: pixelBuffer,
+        guard CMSampleBufferCreateReadyWithImageBuffer(allocator: kCFAllocatorDefault, imageBuffer: renderBuffer,
             formatDescription: format, sampleTiming: &timing, sampleBufferOut: &sample) == noErr, let sample
         else { throw RenderFailure("Sample creation failed") }
         guard let attachments = CMSampleBufferGetSampleAttachmentsArray(sample, createIfNecessary: true) as? [NSMutableDictionary],
@@ -76,10 +97,18 @@ final class RenderController: NSObject, NSApplicationDelegate, WKNavigationDeleg
     func applicationDidFinishLaunching(_ notification: Notification) {
         #if PIXEL_PROTECTION
         let protected = true
+        #if PIXEL_NV12
+        let name = "NV12 Protection Experiment"
+        #else
         let name = "Pixel Protection Experiment"
+        #endif
         #else
         let protected = false
+        #if PIXEL_NV12
+        let name = "NV12 Control"
+        #else
         let name = "Pixel Control"
+        #endif
         #endif
         pixels = PixelDisplay(protected: protected)
         let content = NSView()
@@ -148,6 +177,10 @@ final class RenderController: NSObject, NSApplicationDelegate, WKNavigationDeleg
                     status.stringValue = "HTML frames \(frames). Capture prevention \(pixels.display.preventsCapture). Input bridge absent."
                     if frames == 1 {
                         print("PIXEL_RENDER first_frame rendererStatus=\(pixels.display.sampleBufferRenderer.status.rawValue)")
+                        fflush(stdout)
+                    }
+                    if frames == 5, #available(macOS 14.4, *) {
+                        print("PIXEL_RENDER readiness ready=\(pixels.display.isReadyForDisplay) obscured=\(pixels.display.isOutputObscuredDueToInsufficientExternalProtection)")
                         fflush(stdout)
                     }
                     try await Task.sleep(for: .milliseconds(200))

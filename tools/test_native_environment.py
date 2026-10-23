@@ -1,6 +1,8 @@
 import unittest
 
-from native_environment import console_state
+from native_environment import console_state, observe_console, action_verdict
+from unittest.mock import patch
+import plistlib
 
 
 class ConsoleStateTests(unittest.TestCase):
@@ -17,6 +19,17 @@ class ConsoleStateTests(unittest.TestCase):
                          [{"kCGSessionLoginDoneKey": True}, {"kCGSessionLoginDoneKey": True}]]:
             with self.subTest(sessions=sessions):
                 self.assertIsNone(console_state({"IOConsoleUsers": sessions})["locked"])
+
+    def test_lock_flag_does_not_veto_a_working_attack_route(self):
+        registry = {"IOConsoleUsers": [{"kCGSessionLoginDoneKey": True, "CGSSessionScreenIsLocked": True}]}
+        with patch("native_environment.subprocess.check_output", return_value=plistlib.dumps(registry)):
+            self.assertEqual(observe_console(), {"locked": True, "advisory": True})
+        self.assertEqual(action_verdict(True, False, False), "bypass")
+
+    def test_refusal_without_a_working_control_is_inconclusive(self):
+        self.assertEqual(action_verdict(False, True, False), "inconclusive")
+        self.assertEqual(action_verdict(False, True, True), "blocked")
+        self.assertEqual(action_verdict(False, False, True), "inconclusive")
 
 
 if __name__ == "__main__":

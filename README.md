@@ -25,7 +25,7 @@ Live prototype results:
 
 The current build is an experimental browser and attack testbed. It does not meet either MVP resistance gate. No physical-human trajectory dataset or classifier result exists yet.
 
-Further candidates now compile. Their live prevention results remain pending.
+Further candidates now compile. Initial capture pilots ran, but the protected BGRA build failed physical visibility. See [route calibration](docs/route-calibration.md).
 
 - [Foreground controls](docs/foreground-findings.md) test Secure Event Input and reduced accessibility exposure.
 - [Protected HTML pixels](docs/pixel-rendering-findings.md) test the public capture-protection property on a sample-buffer layer.

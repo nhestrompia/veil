@@ -9,7 +9,7 @@ import signal
 import subprocess
 import time
 
-from native_environment import NativeEnvironmentUnavailable, require_unlocked
+from native_environment import observe_console
 from run_native import ROOT, probe
 
 
@@ -23,16 +23,10 @@ def run(routes, repetitions, output):
     def save():
         (output / "results.json").write_text(json.dumps(summary, indent=2))
 
-    try:
-        require_unlocked()
-    except NativeEnvironmentUnavailable as error:
-        summary["results"].append({"verdict": "inconclusive", "error": str(error)})
-        save()
-        raise
+    summary["environment"] = observe_console()
     app = ROOT / "dist/HIDObservation.app"
     for route in routes:
         for repetition in range(repetitions):
-            require_unlocked()
             prefix = output / f"{route}-{repetition}"
             dataset = prefix.with_suffix(".observations.json")
             dataset.unlink(missing_ok=True)
@@ -70,7 +64,6 @@ def run(routes, repetitions, output):
                     if not data["collecting"]:
                         break
                     time.sleep(0.2)
-                require_unlocked()
                 record["acceptedFakeActions"] = data["acceptedFakeActions"]
                 record["recordLimitReached"] = data["recordLimitReached"]
                 record["deviceCategories"] = dict(Counter(e["category"] for e in data["records"] if e["origin"] == "device-value"))

@@ -1,6 +1,6 @@
 # Foreground input and exposure experiments
 
-Status: both variants compile and pass signature checks. Live prevention results remain pending.
+Status: both variants compile and pass signature checks. Live prevention results remain pending. The [route calibration](route-calibration.md) supersedes the initial hard console preflight.
 
 `SecureInputExperiment.app` enables Secure Event Input while active and releases its own request before deactivation or termination. The log records the API result. This tests injection while the mode is active. It does not establish a suitable policy for general browsing. Apple documents this API for sensitive entry and warns against general text use. See the [remaining-boundary research](research/remaining-boundaries.md).
 
@@ -12,13 +12,13 @@ The first rerun failed its baseline controls. ScreenCaptureKit returned error `-
 
 Both the registry and `CGSessionCopyCurrentDictionary` then reported that the current console session was locked. The user reported that the Mac should be unlocked. This disagreement remains an environment issue, not a browser defense.
 
-The native runners now refuse locked or unknown console states before a trial. They save an inconclusive preflight record. Three tests cover locked, unlocked, missing, and ambiguous console data. All eight Python tests pass. The AX probe now deduplicates elements and skips system menus to avoid cycles and unrelated recent-document entries.
+The initial runners refused reported locks or unknown console states. That rule was too broad because later native controls worked despite the recorded flag. The runners now save console metadata as advisory context. Explicit defensive refusals need matched working action controls. All ten Python tests pass. The AX probe now deduplicates elements and skips system menus to avoid cycles and unrelated recent-document entries.
 
-The probe source passes Swift type checking. Its installed binary still uses the earlier source until the next probe build. A rebuild needs an effective-permission check and may need the same approved grants refreshed.
+The updated probe is built and signed. Its approved grants are effective after registration refresh. A future rebuild still needs an effective-permission check.
 
 ## Repeat the experiments
 
-Use an unlocked, awake console session. Start the fixture before the runners.
+Use a native session with working control routes. Start the fixture before the runners.
 
 ```sh
 bash scripts/build.sh

@@ -1,0 +1,137 @@
+{
+  "results": [
+    {
+      "target": "PixelNV12Control",
+      "repetition": 0,
+      "trial": "b021bdb5e8a750a6",
+      "binarySHA256": "1370dda7d3853d5846c3f68d04c3837b463a0f79da115cb656e39ac295150e65",
+      "route": "html-pixel-capture",
+      "verdict": "bypass",
+      "captures": {
+        "screenkit": {
+          "frame": [
+            100,
+            110,
+            1000,
+            772
+          ],
+          "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/nv12-route-pilot/PixelNV12Control-0.screenkit.png",
+          "pid": 2810,
+          "pixels": [
+            2000,
+            1544
+          ],
+          "status": "captured",
+          "windowID": 81438,
+          "secretRecovered": true
+        },
+        "display": {
+          "frame": [
+            100,
+            110,
+            1000,
+            772
+          ],
+          "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/nv12-route-pilot/PixelNV12Control-0.display.png",
+          "pid": 2810,
+          "pixels": [
+            2000,
+            1544
+          ],
+          "status": "captured",
+          "windowID": 81438,
+          "secretRecovered": true
+        },
+        "system": {
+          "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/nv12-route-pilot/PixelNV12Control-0.system.png",
+          "pid": 2810,
+          "status": "captured",
+          "windowID": 81438,
+          "secretRecovered": true
+        }
+      },
+      "frameSubmitted": true,
+      "rendererLog": [
+        "PIXEL_RENDER ready pid=2810 preventsCapture=false",
+        "PIXEL_RENDER first_frame rendererStatus=1",
+        "PIXEL_RENDER readiness ready=true obscured=false"
+      ],
+      "axDisclosure": false,
+      "disclosure": true
+    },
+    {
+      "target": "PixelNV12ProtectedExperiment",
+      "repetition": 0,
+      "trial": "d4a473fec49f4414",
+      "binarySHA256": "26b758d0aba87133673e3cb18be174f6aeec2ab3e470661098dad8029b26f19b",
+      "route": "html-pixel-capture",
+      "verdict": "inconclusive",
+      "captures": {
+        "screenkit": {
+          "frame": [
+            100,
+            110,
+            1000,
+            772
+          ],
+          "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/nv12-route-pilot/PixelNV12ProtectedExperiment-0.screenkit.png",
+          "pid": 2837,
+          "pixels": [
+            2000,
+            1544
+          ],
+          "status": "captured",
+          "windowID": 81445,
+          "secretRecovered": false
+        },
+        "display": {
+          "frame": [
+            100,
+            110,
+            1000,
+            772
+          ],
+          "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/nv12-route-pilot/PixelNV12ProtectedExperiment-0.display.png",
+          "pid": 2837,
+          "pixels": [
+            2000,
+            1544
+          ],
+          "status": "captured",
+          "windowID": 81445,
+          "secretRecovered": false
+        },
+        "system": {
+          "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/nv12-route-pilot/PixelNV12ProtectedExperiment-0.system.png",
+          "pid": 2837,
+          "status": "captured",
+          "windowID": 81445,
+          "secretRecovered": false
+        }
+      },
+      "frameSubmitted": true,
+      "rendererLog": [
+        "PIXEL_RENDER ready pid=2837 preventsCapture=true",
+        "PIXEL_RENDER first_frame rendererStatus=1",
+        "PIXEL_RENDER readiness ready=true obscured=false"
+      ],
+      "axDisclosure": false,
+      "disclosure": false,
+      "reason": "No exact marker recovery. Human visibility, matched controls, and wider capture routes still required."
+    }
+  ],
+  "humanBaseline": false,
+  "routeContract": "HTML snapshots stay inside the renderer. External probe uses only native capture, OCR, and AX. No input bridge exists.",
+  "environment": {
+    "locked": null,
+    "reason": "Console lock flag unavailable",
+    "advisory": true
+  },
+  "permissions": {
+    "accessibility": true,
+    "pid": 2808,
+    "postEvents": true,
+    "screenCapture": true
+  },
+  "system": "ProductName:\t\tmacOS\nProductVersion:\t\t26.6\nBuildVersion:\t\t25G72\n"
+}

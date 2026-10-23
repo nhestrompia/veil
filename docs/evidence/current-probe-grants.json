@@ -1,0 +1,16 @@
+{
+  "observer": {
+    "inputMonitoringAccess": 0,
+    "inputMonitoringGranted": true
+  },
+  "nativeProbe": {
+    "accessibility": true,
+    "pid": 97113,
+    "postEvents": true,
+    "screenCapture": true
+  },
+  "binaries": {
+    "NativeProbe": "23d0d641835723eadfd697337c6aadeaa0d8ecc012e7530262beb5b61dba6ac4",
+    "HIDObservation": "c7dfe1d30a55d95a14fe528f90ea40154525ebd0dcd53d27b05ef6dcc7ad15f6"
+  }
+}

@@ -7,11 +7,11 @@ import subprocess
 import time
 from pathlib import Path
 
-from native_environment import NativeEnvironmentUnavailable, require_unlocked
+from native_environment import observe_console
 from run_native import ROOT, Oracle, probe
 
 
-def run(repetitions, output):
+def run(targets, repetitions, output):
     output = output.resolve()
     output.mkdir(parents=True, exist_ok=True)
     summary = {"results": [], "humanBaseline": False,
@@ -20,19 +20,13 @@ def run(repetitions, output):
     def save():
         (output / "results.json").write_text(json.dumps(summary, indent=2))
 
-    try:
-        summary["environment"] = require_unlocked()
-    except NativeEnvironmentUnavailable as error:
-        summary["results"].append({"route": "environment-preflight", "verdict": "inconclusive", "error": str(error)})
-        save()
-        raise
+    summary["environment"] = observe_console()
     oracle = Oracle()
     summary["permissions"] = probe(["permissions"], output / "permissions.json")
     summary["system"] = subprocess.check_output(["sw_vers"], text=True)
-    for target in ["PixelControl", "PixelProtectedExperiment"]:
+    for target in targets:
         binary = ROOT / f"dist/{target}.app/Contents/MacOS/{target}"
         for repetition in range(repetitions):
-            require_unlocked()
             trial = oracle.create()
             prefix = output / f"{target}-{repetition}"
             record = {"target": target, "repetition": repetition, "trial": trial["id"],
@@ -44,7 +38,7 @@ def run(repetitions, output):
                     deadline = time.monotonic() + 10
                     while time.monotonic() < deadline:
                         text = prefix.with_suffix(".log").read_text()
-                        if "PIXEL_RENDER first_frame" in text or "PIXEL_RENDER failed" in text:
+                        if "PIXEL_RENDER readiness" in text or "PIXEL_RENDER failed" in text:
                             break
                         time.sleep(0.2)
                     record["frameSubmitted"] = "PIXEL_RENDER first_frame" in text
@@ -52,9 +46,8 @@ def run(repetitions, output):
                     if not record["frameSubmitted"]:
                         raise RuntimeError("No successful HTML frame submission; no capture-prevention inference")
                     time.sleep(0.5)
-                    require_unlocked()
                     state = oracle.state(trial)
-                    for route, command in [("screenkit", "capture"), ("system", "system-capture")]:
+                    for route, command in [("screenkit", "capture"), ("display", "display-capture"), ("system", "system-capture")]:
                         png = prefix.with_suffix(f".{route}.png")
                         capture = probe([command, process.pid, png], prefix.with_suffix(f".{route}.json"))
                         if capture.get("status") == "captured":
@@ -84,7 +77,9 @@ def run(repetitions, output):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
+    parser.add_argument("--targets", nargs="+", default=["PixelControl", "PixelProtectedExperiment"],
+                        choices=["PixelControl", "PixelProtectedExperiment", "PixelNV12Control", "PixelNV12ProtectedExperiment"])
     parser.add_argument("--repetitions", type=int, default=3)
     parser.add_argument("--output", type=Path, default=ROOT / "artifacts/pixel-rendering")
     args = parser.parse_args()
-    run(args.repetitions, args.output)
+    run(args.targets, args.repetitions, args.output)

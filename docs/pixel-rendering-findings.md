@@ -1,6 +1,6 @@
 # Protected HTML pixels
 
-Status: the protected and control apps compile and pass signature checks. Capture resistance remains untested.
+Status: matched capture pilots ran. The protected BGRA build failed physical visibility while its control remained visible. The protected NV12 build also failed its direct-display check. See the [route calibration](route-calibration.md).
 
 The candidate uses the public `AVSampleBufferDisplayLayer.preventsCapture` property. Apple describes this property as protection for image data against capture. This is a different mechanism from the encrypted overlay in Antiagent. See the [API research](research/remaining-boundaries.md).
 
@@ -20,7 +20,7 @@ Both apps compile with Swift 6 and warnings treated as errors. Both pass strict 
 
 A rendering-only smoke check loaded a fresh loopback trial into `PixelControl.app`. The app submitted its first sample, and the renderer reported status `1`, or rendering. This checks the snapshot-to-sample pipeline. It does not prove physical visibility or capture exclusion.
 
-The native session reported a lock during the capture preflight. The runner refused before it launched a capture trial. No black image or failed capture counts as a protected result.
+The initial console preflight refused reported locks. Later working native controls contradicted that blanket veto. The runner now records the flag as advisory context. Failed controls and invisible physical output never count as useful protection.
 
 ## Capture runner
 
@@ -31,6 +31,12 @@ bash scripts/build-rendering.sh
 python3 tools/run_rendering.py --repetitions 3 --output artifacts/pixel-rendering
 ```
 
-The runner requires an unlocked console, the fixture server, and the approved probe grants. Its first matrix covers window capture only. Display capture, continuous capture, resize, fullscreen, transitions, and alternate buffer reads remain required follow-ups if the initial candidate survives.
+The runner requires the fixture server, effective probe grants, and working controls. It tests window capture, filtered display capture, system screenshots, and AX. Continuous capture, resize, fullscreen, transitions, and alternate buffer reads remain required if a physically visible candidate survives.
+
+`PixelNV12Control.app` and `PixelNV12ProtectedExperiment.app` convert the same HTML snapshots through VTPixelTransferSession before display. Their first capture pilot recovered the control marker on all three routes and no protected marker. Both layers reported ready=true and obscured=false. The user reported black NV12 output on the direct display. Those flags do not prove physical visibility. Both uncompressed protected configurations fail the usability requirement on this machine.
+
+```sh
+python3 tools/run_rendering.py --targets PixelNV12Control PixelNV12ProtectedExperiment --repetitions 3 --output artifacts/nv12-rendering
+```
 
 Input resistance remains independent. Even successful capture exclusion would leave known-layout input attacks to solve. The default browser's previous native and vision bypasses still stand.

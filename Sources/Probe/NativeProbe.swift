@@ -243,15 +243,25 @@ enum NativeProbe {
             try emit(["status": "captured", "pid": pid, "windowID": number, "path": args[2]])
             return
         }
-        if command == "capture" {
+        if command == "capture" || command == "display-capture" {
             guard args.count == 3 else { throw ProbeFailure("capture PID OUTPUT.png") }
             guard CGPreflightScreenCaptureAccess() else { throw ProbeFailure("Screen Recording permission is absent for this probe process") }
             let content = try await SCShareableContent.excludingDesktopWindows(true, onScreenWindowsOnly: true)
             guard let window = content.windows.first(where: { $0.owningApplication?.processID == pid && $0.windowLayer == 0 }) else {
                 throw ProbeFailure("No visible browser window")
             }
-            let filter = SCContentFilter(desktopIndependentWindow: window)
             let configuration = SCStreamConfiguration()
+            let filter: SCContentFilter
+            if command == "display-capture" {
+                guard let display = content.displays.first(where: { $0.frame.intersects(window.frame) }) else {
+                    throw ProbeFailure("No display contains the target window")
+                }
+                // Include only the research window, with no other apps, desktop, or dock.
+                filter = SCContentFilter(display: display, including: [window])
+                configuration.sourceRect = window.frame.offsetBy(dx: -display.frame.minX, dy: -display.frame.minY)
+            } else {
+                filter = SCContentFilter(desktopIndependentWindow: window)
+            }
             configuration.width = Int(window.frame.width * 2)
             configuration.height = Int(window.frame.height * 2)
             configuration.showsCursor = false

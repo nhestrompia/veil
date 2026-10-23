@@ -1,8 +1,8 @@
 # Raw device input experiment
 
-Status: the observer compiles and passes signature checks. Its Input Monitoring grant is absent. No physical baseline or input defense exists yet.
+Status: the observer compiles and passes signature checks. Its approved Input Monitoring grant is now effective. No physical baseline or input defense exists yet.
 
-The user approved the Input Monitoring request. The request API ran, but the effective grant remained off. The native tool could not find a System Settings window in the reported locked session. The setting still needs completion in an accessible desktop session.
+The user approved Input Monitoring. The native tool later reached Settings and refreshed the current app registration. The effective permission check then returned granted. See the [route calibration](route-calibration.md) and [grant evidence](evidence/current-probe-grants.json).
 
 The experiment tests whether device values offer evidence that ordinary CGEvent source fields cannot supply. It keeps this measurement separate from a mouse-behavior classifier. See the [remaining-boundary research](research/remaining-boundaries.md) for the API contracts and adaptive attacks.
 

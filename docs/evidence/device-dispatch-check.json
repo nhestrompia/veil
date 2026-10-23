@@ -1,0 +1,14 @@
+{
+  "binarySHA256": "89f0287993f4ea8e3412e6d4f8137a51c25784d7513515bb3808153cb4dcc0fa",
+  "applicationQueuePreservesIdentity": false,
+  "queueObservation": "The first live postEvent/nextEvent check returned another NSEvent object. The experiment now uses direct NSApplication.sendEvent dispatch.",
+  "directDispatchAcceptedOnce": true,
+  "replayRefused": true,
+  "copiedEventRefused": true,
+  "resetInvalidatesPending": true,
+  "inputMonitoringGranted": true,
+  "humanCompletion": "one independently accepted website action after the user reported physical completion",
+  "agentPrevention": "20 tested input trials blocked with matched controls; 4 inconclusive; broader goal unverified",
+  "pointerRouting": false,
+  "sandboxedHost": false
+}

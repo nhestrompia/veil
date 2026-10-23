@@ -102,7 +102,10 @@ def run(targets, routes, repetitions, output):
                                 point = [x + width / 2, y + height / 2]
                                 result["fieldCenter"] = point
                             source = "hid" if route == "blind-fixture" else route.removeprefix("pid-").removeprefix("curve-").removeprefix("keycodes-")
-                            args = ["input", process.pid, *point, source]
+                            if route.startswith("iohid-"):
+                                args = ["hid-post-input", process.pid, *point, route.removeprefix("iohid-")]
+                            else:
+                                args = ["input", process.pid, *point, source]
                             if route.startswith("pid-"):
                                 args.append("pid")
                             if route.startswith("curve-"):
@@ -131,6 +134,9 @@ def run(targets, routes, repetitions, output):
                             result["reason"] = attempt["error"]
                         elif not completed:
                             result["reason"] = "No task completion; no explicit defensive refusal established"
+                        if name == "DeviceKeyboardExperiment" and not completed and "DEVICE_KEYBOARD bound=true" not in event_log:
+                            result["verdict"] = "inconclusive"
+                            result["reason"] = "No physical device binding. Rejected input alone cannot establish usable protection."
                     except (RuntimeError, KeyError, OSError, subprocess.SubprocessError) as error:
                         result["error"] = str(error)
                     finally:
@@ -152,8 +158,8 @@ def run(targets, routes, repetitions, output):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--targets", nargs="+", default=["AgentFreeBrowser", "InspectableControl"], choices=["AgentFreeBrowser", "InspectableControl", "MetadataExperiment", "SecureInputExperiment", "ReducedExposureExperiment", "AXBoundaryExperiment"])
-    parser.add_argument("--routes", nargs="+", default=["ax", "session", "hid", "private", "pid-hid", "curve-hid", "keycodes-hid", "blind-fixture"], choices=["ax", "session", "hid", "private", "pid-hid", "curve-hid", "keycodes-hid", "blind-fixture"])
+    parser.add_argument("--targets", nargs="+", default=["AgentFreeBrowser", "InspectableControl"], choices=["AgentFreeBrowser", "InspectableControl", "MetadataExperiment", "SecureInputExperiment", "ReducedExposureExperiment", "AXBoundaryExperiment", "DeviceKeyboardExperiment"])
+    parser.add_argument("--routes", nargs="+", default=["ax", "session", "hid", "private", "pid-hid", "curve-hid", "keycodes-hid", "blind-fixture"], choices=["ax", "session", "hid", "private", "pid-hid", "curve-hid", "keycodes-hid", "blind-fixture", "iohid-legacy", "iohid-reports"])
     parser.add_argument("--repetitions", type=int, default=3)
     parser.add_argument("--output", type=Path, default=ROOT / "artifacts/native-pilot")
     args = parser.parse_args()

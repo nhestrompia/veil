@@ -23,13 +23,14 @@ Live prototype results:
 - [Capture and automation](docs/capture-findings.md): screenshot/OCR/native input completed 3/3 protected-browser trials. Playwright transport failures remain separate from protection evidence.
 - [Source-state filter](docs/input-filter-findings.md): a basic client stopped, but generated HID-state input and the vision client still completed tasks.
 
-The current build is an experimental browser and attack testbed. It does not meet either MVP resistance gate. No validated physical trajectory dataset or classifier result exists yet.
+The current build is an experimental browser and attack testbed. The default browser does not meet either MVP resistance gate. A separate keyboard-only experiment now has a positive physical task and twenty stopped input trials, with four inconclusive trials. It still has an automatic launch-URL route and does not meet the agent-free goal. No validated physical trajectory dataset or classifier result exists yet.
 
 Further candidates now compile. Capture pilots ran, but the protected BGRA and NV12 builds failed physical visibility. See [route calibration](docs/route-calibration.md).
 
 - [Foreground controls](docs/foreground-findings.md) show native and semantic bypasses of Secure Event Input and reduced accessibility exposure.
 - [Protected HTML pixels](docs/pixel-rendering-findings.md) test the public capture-protection property on a sample-buffer layer.
 - [Raw device input](docs/hid-observation-findings.md) separates device observations from application events.
+- [Keyboard-only routing](docs/device-keyboard-findings.md) records the first positive physical task and matched input refusals.
 - [Accessibility boundary](docs/ax-boundary-findings.md) reduces page exposure but still allows known-layout native input.
 - [Physical input](docs/hid-physical-findings.md) records a positive keyboard sample and the missing pointer comparison.
 - [Graphics-buffer lookup](docs/surface-findings.md) calibrates isolated fake buffers across processes.

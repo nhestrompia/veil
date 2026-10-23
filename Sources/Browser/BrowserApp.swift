@@ -1,6 +1,9 @@
 import AppKit
 import WebKit
 import Carbon
+#if DEVICE_KEYBOARD_EXPERIMENT
+import IOKit.hidsystem
+#endif
 
 @MainActor
 final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDelegate, WKUIDelegate {
@@ -9,12 +12,15 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
     private let address = NSTextField()
     private let status = NSTextField(labelWithString: "Research build. Desktop agents are not blocked.")
     private var ownsSecureInput = false
+    #if DEVICE_KEYBOARD_EXPERIMENT
+    private var deviceKeyboard: DeviceKeyboardRouter?
+    #endif
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         let configuration = WKWebViewConfiguration()
         configuration.websiteDataStore = .nonPersistent()
         configuration.preferences.javaScriptCanOpenWindowsAutomatically = false
-        #if AX_BOUNDARY_EXPERIMENT
+        #if AX_BOUNDARY_EXPERIMENT || DEVICE_KEYBOARD_EXPERIMENT
         webView = AXBoundaryWebView(frame: .zero, configuration: configuration)
         #else
         webView = WKWebView(frame: .zero, configuration: configuration)
@@ -32,6 +38,8 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
         let name = "Reduced Exposure Experiment"
         #elseif AX_BOUNDARY_EXPERIMENT
         let name = "AX Boundary Experiment"
+        #elseif DEVICE_KEYBOARD_EXPERIMENT
+        let name = "Device Keyboard Experiment"
         #else
         let name = "AgentFreeBrowser Research"
         #endif
@@ -73,13 +81,13 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
         window = InputSourceWindow(contentRect: frame, styleMask: style, backing: .buffered, defer: false)
         #elseif SECURE_INPUT_EXPERIMENT || REDUCED_EXPOSURE_EXPERIMENT
         window = SecureInputWindow(contentRect: frame, styleMask: style, backing: .buffered, defer: false)
-        #elseif AX_BOUNDARY_EXPERIMENT
+        #elseif AX_BOUNDARY_EXPERIMENT || DEVICE_KEYBOARD_EXPERIMENT
         window = AXBoundaryWindow(contentRect: frame, styleMask: style, backing: .buffered, defer: false)
         #else
         window = NSWindow(contentRect: frame, styleMask: style, backing: .buffered, defer: false)
         #endif
         window.title = name
-        #if REDUCED_EXPOSURE_EXPERIMENT || AX_BOUNDARY_EXPERIMENT
+        #if REDUCED_EXPOSURE_EXPERIMENT || AX_BOUNDARY_EXPERIMENT || DEVICE_KEYBOARD_EXPERIMENT
         webView.setAccessibilityHidden(true)
         window.sharingType = .none
         #endif
@@ -109,6 +117,10 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
             window.makeFirstResponder(address)
         }
         print("Browser ready: pid=\(ProcessInfo.processInfo.processIdentifier) inspectable=\(webView.isInspectable)")
+        #if DEVICE_KEYBOARD_EXPERIMENT
+        deviceKeyboard = DeviceKeyboardRouter(window: window)
+        deviceKeyboard?.start()
+        #endif
         fflush(stdout)
     }
 
@@ -145,6 +157,9 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
         #endif
         #if AX_BOUNDARY_EXPERIMENT
         status.stringValue = "Accessibility boundary experiment. Native input prevention is unproven."
+        #endif
+        #if DEVICE_KEYBOARD_EXPERIMENT
+        status.stringValue = "Keyboard only. Press physical Space to bind, then Tab to navigate. US ASCII only. Research build."
         #endif
     }
 
@@ -189,8 +204,18 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
         #endif
     }
 
-    func applicationWillResignActive(_ notification: Notification) { releaseSecureInput() }
-    func applicationWillTerminate(_ notification: Notification) { releaseSecureInput() }
+    func applicationWillResignActive(_ notification: Notification) {
+        releaseSecureInput()
+        #if DEVICE_KEYBOARD_EXPERIMENT
+        deviceKeyboard?.resetPending()
+        #endif
+    }
+    func applicationWillTerminate(_ notification: Notification) {
+        releaseSecureInput()
+        #if DEVICE_KEYBOARD_EXPERIMENT
+        deviceKeyboard?.stop()
+        #endif
+    }
 
     private func releaseSecureInput() {
         if ownsSecureInput {
@@ -205,7 +230,17 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
 @main
 enum BrowserApp {
     @MainActor static func main() {
-        #if AX_BOUNDARY_EXPERIMENT
+        #if DEVICE_KEYBOARD_EXPERIMENT
+        let app = DeviceKeyboardApplication.shared
+        precondition(app is DeviceKeyboardApplication, "The device experiment requires its application subclass")
+        if CommandLine.arguments.contains("--permissions") || CommandLine.arguments.contains("--request-permissions") {
+            if CommandLine.arguments.contains("--request-permissions") {
+                _ = IOHIDRequestAccess(kIOHIDRequestTypeListenEvent)
+            }
+            print("DEVICE_KEYBOARD permission=\(IOHIDCheckAccess(kIOHIDRequestTypeListenEvent) == kIOHIDAccessTypeGranted)")
+            return
+        }
+        #elseif AX_BOUNDARY_EXPERIMENT
         let app = AXBoundaryApplication.shared
         precondition(app is AXBoundaryApplication, "The AX experiment requires its application subclass")
         print("AX_BOUNDARY applicationSubclass=true")

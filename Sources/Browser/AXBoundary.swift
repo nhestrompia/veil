@@ -1,9 +1,9 @@
 import AppKit
 import WebKit
 
-#if AX_BOUNDARY_EXPERIMENT
+#if AX_BOUNDARY_EXPERIMENT || DEVICE_KEYBOARD_EXPERIMENT
 @MainActor
-final class AXBoundaryApplication: NSApplication {
+class AXBoundaryApplication: NSApplication {
     override func accessibilityChildren() -> [Any]? { [] }
     override func accessibilityWindows() -> [Any]? { [] }
     override func accessibilityFocusedWindow() -> Any? { nil }

@@ -87,3 +87,14 @@ Added application, window, and web-view overrides in a separate AXBoundaryExperi
 ## Milestone 13: declared physical input
 
 The user supplied a physical session with 97 raw keyboard records. No raw pointer values or accepted fake action appeared. This is a positive keyboard observation, with no complete human-usability result. See [physical-input findings](hid-physical-findings.md).
+
+
+## Milestone 14: lower-level posting attacks
+
+Added both default and HID-manager options of IOHIDPostEvent to the native probe. All six fake form actions completed. No raw callback appeared in this observer configuration. Apple source still contains a report-producing path. See [posting findings](hid-posting-findings.md).
+
+## Milestone 15: keyboard-only device routing
+
+Added a separate unsandboxed research browser with an approved Input Monitoring grant. The event gate uses exact internal objects through application dispatch. Queue insertion copied the event in the first test, so that design failed.
+
+The user completed one independent website action with the physical keyboard. In the same process, twenty generated-input trials recorded refusal with matched working controls. Four further trials remain inconclusive. No attack added a submission. The build still has an automatic launch-URL route and no pointer support. See [device-keyboard findings](device-keyboard-findings.md).

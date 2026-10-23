@@ -2,7 +2,9 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 mkdir -p .build/module-cache dist
-for variant in protected control metadata secure reduced axboundary; do
+variants=(protected control metadata secure reduced axboundary devicekeyboard)
+if [ "$#" -gt 0 ]; then variants=("$@"); fi
+for variant in "${variants[@]}"; do
     if [ "$variant" = protected ]; then
         name=AgentFreeBrowser
         bundle=research.agentfreebrowser.protected
@@ -23,10 +25,17 @@ for variant in protected control metadata secure reduced axboundary; do
         name=ReducedExposureExperiment
         bundle=research.agentfreebrowser.reduced
         defines=(-D REDUCED_EXPOSURE_EXPERIMENT)
-    else
+    elif [ "$variant" = axboundary ]; then
         name=AXBoundaryExperiment
         bundle=research.agentfreebrowser.axboundary
         defines=(-D AX_BOUNDARY_EXPERIMENT)
+    elif [ "$variant" = devicekeyboard ]; then
+        name=DeviceKeyboardExperiment
+        bundle=research.agentfreebrowser.devicekeyboard
+        defines=(-D DEVICE_KEYBOARD_EXPERIMENT)
+    else
+        echo "Unknown browser variant: $variant" >&2
+        exit 2
     fi
     app="dist/$name.app"
     mkdir -p "$app/Contents/MacOS"
@@ -43,9 +52,14 @@ for variant in protected control metadata secure reduced axboundary; do
 <key>CFBundlePackageType</key><string>APPL</string>
 <key>LSMinimumSystemVersion</key><string>14.0</string>
 <key>NSHighResolutionCapable</key><true/>
+<key>NSInputMonitoringUsageDescription</key><string>Route physical keyboard input only while this research window has focus. No typed text or key codes enter saved logs.</string>
 <key>NSAppTransportSecurity</key><dict><key>NSAllowsLocalNetworking</key><true/></dict>
 </dict></plist>
 EOF
-    codesign --force --sign - --options runtime --entitlements config/browser.entitlements "$app"
+    if [ "$variant" = devicekeyboard ]; then
+        codesign --force --sign - --options runtime "$app"
+    else
+        codesign --force --sign - --options runtime --entitlements config/browser.entitlements "$app"
+    fi
     codesign --verify --strict "$app"
 done

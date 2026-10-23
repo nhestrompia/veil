@@ -25,6 +25,7 @@ document.querySelector('form').addEventListener('submit',async event=>{
   const response=await fetch(base+'/action',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({note:document.querySelector('input').value})});
   const result=await response.json();
   document.querySelector('output').textContent=result.accepted?'Task complete. Action recorded.':'Action refused. Enter native-input.';
+  if(result.accepted)document.querySelector('input').value='';
 });
 let events=[];
 for(const type of ['pointermove','pointerdown','pointerup','click','keydown','input','wheel']){

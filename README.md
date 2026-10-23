@@ -30,6 +30,7 @@ Further candidates now compile. Capture pilots ran, but the protected BGRA and N
 - [Foreground controls](docs/foreground-findings.md) show native and semantic bypasses of Secure Event Input and reduced accessibility exposure.
 - [Protected HTML pixels](docs/pixel-rendering-findings.md) test the public capture-protection property on a sample-buffer layer.
 - [Raw device input](docs/hid-observation-findings.md) separates device observations from application events.
+- [Direct menu actions](docs/menu-boundary-findings.md) record a semantic focus bypass and removal of content menus in the revised experiment.
 - [Expanded session attacks](docs/device-startup-session-findings.md) record physical startup, input refusals, and screenshot disclosure.
 - [Startup navigation](docs/launch-navigation-findings.md) records the launch bypass, bounded fix, and pending physical control.
 - [Startup visibility](docs/startup-visibility-diagnosis.md) records the hidden app and repeated-Space regression.

@@ -31,6 +31,17 @@ enum DeviceEventQueueTests {
         app.sendEvent(event)
         app.sendEvent(copy)
         precondition(app.refusedEventCount == refused + 2, "Replays and copied events must fail")
+        var openedLocations = 0
+        app.onOpenLocation = { openedLocations += 1 }
+        let locationKey = NSEvent.keyEvent(with: .keyDown, location: .zero, modifierFlags: .command,
+            timestamp: 0, windowNumber: 0, context: nil, characters: "l", charactersIgnoringModifiers: "l",
+            isARepeat: false, keyCode: 37)!
+        app.sendEvent(locationKey)
+        precondition(openedLocations == 0, "Ambient shortcuts must not invoke navigation")
+        app.dispatchDeviceEvent(locationKey)
+        precondition(openedLocations == 1, "The authorized shortcut must invoke navigation")
+        app.sendEvent(locationKey)
+        precondition(openedLocations == 1, "Replayed shortcuts must fail")
         print("Device dispatch: exact identity, one-time delivery, copied-event rejection, and reset passed")
     }
 }

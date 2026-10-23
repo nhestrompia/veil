@@ -66,6 +66,13 @@ def attack(path, controls, repetitions, confirmed):
     if not confirmed or not any(s["accepted"] for s in before["submissions"]) or "DEVICE_KEYBOARD bound=true" not in log_path.read_text():
         raise RuntimeError("Need declared physical completion, a bound device, and an accepted website action in this same session")
     control_rows = json.loads(controls.read_text())["results"]
+    probe_hash = hashlib.sha256((ROOT / "dist/NativeProbe.app/Contents/MacOS/NativeProbe").read_bytes()).hexdigest()
+    for route in ROUTES:
+        for repetition in range(repetitions):
+            control = next((row for row in control_rows if row["target"] == "InspectableControl" and
+                            row["route"] == route and row["repetition"] == repetition), None)
+            if not control or control.get("attempt", {}).get("probeBinarySHA256") != probe_hash:
+                raise RuntimeError(f"Recalibrate {route} repetition {repetition} with the current probe before any attacks")
     output = path.parent / "device-session-attacks"
     output.mkdir(parents=True, exist_ok=True)
     summary = {"results": [], "binarySHA256": session["binarySHA256"], "trial": session["trial"]["id"],

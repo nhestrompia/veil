@@ -119,3 +119,13 @@ The shared app path has two mutually exclusive build flavors. The visible flavor
 The user completed physical startup on the revised visible control. The fixture confirmed one accepted action. The unchanged process then refused 27 calibrated native trials and three screenshot/OCR-driven input trials. Six native trials remain inconclusive because their controls failed. No generated trial admitted input or added an accepted action.
 
 Added a runner that captures only the target window and counts new independent actions. The visible control disclosed its page marker in all three captures. This is useful input evidence, with no agent-free claim. See [expanded same-session findings](device-startup-session-findings.md).
+
+
+## Milestone 19: direct menu actions
+
+A direct File/Edit query exposed commands omitted by the earlier page traversal. The probe selected the browser address through Open Location without an admitted keyboard event. A nil menu getter failed to remove the exported commands.
+
+The keyboard experiment now omits content menus. Physical Command-L uses the exact authorized event path. Live paired reads find no content commands, while the control still exposes Edit commands. Dispatch checks reject ambient and replayed location shortcuts. The clipboard test did not run, and the replacement probe never accesses the clipboard. See [menu findings](menu-boundary-findings.md).
+
+
+The capture-restricted flavor repeated the menu-absence result and three launch refusals with working controls. Physical usability on this exact binary remains unverified. The user requested autonomous continuation. The native session runner also requires the current probe hash in each matched control before it sends any input.

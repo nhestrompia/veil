@@ -102,15 +102,7 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
         appMenu.addItem(withTitle: "Quit " + name, action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
         appItem.submenu = appMenu
         menu.addItem(appItem)
-        #if DEVICE_KEYBOARD_EXPERIMENT
-        let fileItem = NSMenuItem()
-        let fileMenu = NSMenu(title: "File")
-        let openLocation = NSMenuItem(title: "Open Location...", action: #selector(focusAddress), keyEquivalent: "l")
-        openLocation.target = self
-        fileMenu.addItem(openLocation)
-        fileItem.submenu = fileMenu
-        menu.addItem(fileItem)
-        #endif
+        #if !DEVICE_KEYBOARD_EXPERIMENT
         let editItem = NSMenuItem()
         let editMenu = NSMenu(title: "Edit")
         for (title, selector, key) in [("Cut", "cut:", "x"), ("Copy", "copy:", "c"), ("Paste", "paste:", "v"), ("Select All", "selectAll:", "a")] {
@@ -118,6 +110,9 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
         }
         editItem.submenu = editMenu
         menu.addItem(editItem)
+        #else
+        (NSApp as? DeviceKeyboardApplication)?.onOpenLocation = { [weak self] in self?.focusAddress() }
+        #endif
         NSApp.mainMenu = menu
 
         let arguments = CommandLine.arguments

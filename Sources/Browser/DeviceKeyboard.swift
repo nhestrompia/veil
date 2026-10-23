@@ -20,6 +20,7 @@ final class DeviceKeyboardApplication: AXBoundaryApplication {
     private(set) var acceptedEventCount = 0
     private(set) var refusedEventCount = 0
     private var awaitingInitialNavigation = true
+    var onOpenLocation: (() -> Void)?
 
     func didBeginNavigation() { awaitingInitialNavigation = false }
 
@@ -44,6 +45,11 @@ final class DeviceKeyboardApplication: AXBoundaryApplication {
             acceptedEventCount += 1
             print("INPUT_GATE_ACCEPTED type=\(event.type.rawValue)")
             fflush(stdout)
+            if event.type == .keyDown, event.keyCode == 37, event.modifierFlags.contains(.command),
+               let onOpenLocation {
+                onOpenLocation()
+                return
+            }
             super.sendEvent(event)
         }
     }

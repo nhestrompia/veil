@@ -186,6 +186,50 @@ enum NativeProbe {
         guard args.count >= 2 else { throw ProbeFailure("Missing target PID") }
         let app = try target(args[1])
         let pid = app.processIdentifier
+        if command == "ax-menu" {
+            guard args.count == 3, ["inspect", "open-location"].contains(args[2]) else {
+                throw ProbeFailure("ax-menu PID inspect|open-location")
+            }
+            guard AXIsProcessTrusted() else { throw ProbeFailure("Accessibility permission is absent for this probe process") }
+            app.activate(options: [])
+            try await Task.sleep(for: .milliseconds(300))
+            let root = AXUIElementCreateApplication(pid)
+            AXUIElementSetMessagingTimeout(root, 1)
+            var rawMenu: CFTypeRef?
+            let menuError = AXUIElementCopyAttributeValue(root, kAXMenuBarAttribute as CFString, &rawMenu)
+            guard let rawMenu, CFGetTypeID(rawMenu) == AXUIElementGetTypeID() else {
+                try emit(["status": "observed", "menuFound": false, "menuError": menuError.rawValue])
+                return
+            }
+            let menu = rawMenu as! AXUIElement
+            // Read only the research app's File and Edit menus, never system or recent-document menus.
+            let topItems = attribute(menu, kAXChildrenAttribute) as? [AXUIElement] ?? []
+            let safeMenus = topItems.filter { ["File", "Edit"].contains(attribute($0, kAXTitleAttribute) as? String ?? "") }
+            var items: [AXUIElement] = []
+            for top in safeMenus {
+                let children = attribute(top, kAXChildrenAttribute) as? [AXUIElement] ?? []
+                for child in children where attribute(child, kAXRoleAttribute) as? String == kAXMenuRole {
+                    items += attribute(child, kAXChildrenAttribute) as? [AXUIElement] ?? []
+                }
+            }
+            var result: [String: Any] = ["status": "observed", "menuFound": true, "menuError": menuError.rawValue,
+                "items": items.map { ["title": attribute($0, kAXTitleAttribute) as? String ?? "",
+                                      "enabled": attribute($0, kAXEnabledAttribute) as? Bool ?? false] }]
+            if args[2] == "open-location" {
+                guard let item = items.first(where: { attribute($0, kAXTitleAttribute) as? String == "Open Location..." }) else {
+                    result["reason"] = "The research navigation action is absent"
+                    try emit(result)
+                    return
+                }
+                guard NSWorkspace.shared.frontmostApplication?.processIdentifier == pid else {
+                    throw ProbeFailure("Target lost foreground focus; refusing menu action")
+                }
+                result["status"] = "attempted"
+                result["actionError"] = AXUIElementPerformAction(item, kAXPressAction as CFString).rawValue
+            }
+            try emit(result)
+            return
+        }
         if command == "windows" {
             let list = CGWindowListCopyWindowInfo([.optionOnScreenOnly, .excludeDesktopElements], kCGNullWindowID) as? [[String: Any]] ?? []
             try emit(["windows": list.filter { ($0[kCGWindowOwnerPID as String] as? Int32) == pid }])

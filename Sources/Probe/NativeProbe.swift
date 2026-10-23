@@ -186,6 +186,11 @@ func click(_ point: CGPoint, pid: pid_t? = nil, source: CGEventSource?, targetPI
 @main
 enum NativeProbe {
     @MainActor static func main() async {
+        if let index = CommandLine.arguments.firstIndex(of: "--out"), CommandLine.arguments.indices.contains(index + 1) {
+            let path = URL(fileURLWithPath: CommandLine.arguments[index + 1]).appendingPathExtension("pid")
+            do { try String(getpid()).write(to: path, atomically: true, encoding: .utf8) }
+            catch { exit(2) }
+        }
         _ = NSApplication.shared
         var arguments = Array(CommandLine.arguments.dropFirst())
         if let index = arguments.firstIndex(of: "--out"), arguments.indices.contains(index + 1) {
@@ -231,7 +236,7 @@ enum NativeProbe {
         if command == "compositor-capture" {
             throw ProbeFailure("Use isolated-compositor-capture with a verified research backdrop")
         }
-        if command == "isolated-compositor-capture" {
+        if command == "isolated-compositor-capture" || command == "isolated-stream-capture" {
             guard args.count == 5, app.bundleIdentifier == "research.agentfreebrowser.internalkeyboardcontrol",
                   let targetID = CGWindowID(args[2]), let backdropID = CGWindowID(args[3]), targetID != backdropID else {
                 throw ProbeFailure("Use the internal diagnostic with two distinct owned window IDs")
@@ -253,12 +258,18 @@ enum NativeProbe {
             configuration.height = Int(region.height * 2)
             configuration.showsCursor = false
             let filter = SCContentFilter(display: display, excludingWindows: [])
-            let image = try await SCScreenshotManager.captureImage(contentFilter: filter, configuration: configuration)
+            let image: CGImage
+            if command == "isolated-stream-capture" {
+                image = try await firstCompleteStreamFrame(filter: filter, configuration: configuration)
+            } else {
+                image = try await SCScreenshotManager.captureImage(contentFilter: filter, configuration: configuration)
+            }
             try verifyResearchBackdrop(pid: pid, targetID: targetID, backdropID: backdropID, region: region)
             try savePNG(image, path: args[4])
             try emit(["status": "captured", "pid": pid, "targetWindowID": targetID, "backdropWindowID": backdropID,
                       "frame": [region.minX, region.minY, region.width, region.height], "path": args[4],
-                      "backdropVerifiedBeforeAndAfter": true, "filter": "unfiltered display cropped inside owned research coverage"])
+                      "backdropVerifiedBeforeAndAfter": true, "method": command,
+                      "filter": "unfiltered display cropped inside owned research coverage"])
             return
         }
         if command == "ax-direct" {

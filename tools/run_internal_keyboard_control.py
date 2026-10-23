@@ -13,7 +13,7 @@ import time
 from run_native import ROOT, Oracle, probe
 
 
-def run(output, external_reads):
+def run(output, external_reads, stream):
     output = output.resolve()
     output.mkdir(parents=True, exist_ok=True)
     app = ROOT / "dist/InternalKeyboardControl.app"
@@ -48,12 +48,16 @@ def run(output, external_reads):
                   "scope": "Diagnostic-only private authorized events through the normal application and WebKit path. Not an external bypass, physical control, or HID attestation."}
         if external_reads and result["acceptedSubmissions"]:
             backdrop = re.search(r"INTERNAL_CAPTURE targetWindow=(\d+) backdropWindow=(\d+)", text)
+            if stream and not backdrop:
+                raise RuntimeError("The stream diagnostic requires an owned research backdrop")
             if backdrop:
-                composite = probe(["isolated-compositor-capture", pid, *backdrop.groups(), output / "compositor.png"], output / "compositor.json")
-                result["isolatedCompositor"] = composite
+                mode = "stream" if stream else "compositor"
+                command = "isolated-stream-capture" if stream else "isolated-compositor-capture"
+                composite = probe([command, pid, *backdrop.groups(), output / f"{mode}.png"], output / f"{mode}.json")
+                result["isolatedStream" if stream else "isolatedCompositor"] = composite
                 if composite.get("status") == "captured":
-                    ocr = probe(["ocr", output / "compositor.png"], output / "compositor.ocr.json")
-                    result["compositorMarkerDisclosed"] = state["secret"] in json.dumps(ocr)
+                    ocr = probe(["ocr", output / f"{mode}.png"], output / f"{mode}.ocr.json")
+                    result[f"{mode}MarkerDisclosed"] = state["secret"] in json.dumps(ocr)
                     result["backdropLabelRecovered"] = "controlled research backdrop" in json.dumps(ocr).lower()
             else:
                 read = probe(["ax-direct", pid], output / "direct-ax.json")
@@ -85,5 +89,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path, default=ROOT / "artifacts/internal-keyboard-control")
     parser.add_argument("--external-reads", action="store_true")
+    parser.add_argument("--stream", action="store_true")
     args = parser.parse_args()
-    run(args.output, args.external_reads)
+    if args.stream and not args.external_reads:
+        parser.error("--stream requires --external-reads")
+    run(args.output, args.external_reads, args.stream)

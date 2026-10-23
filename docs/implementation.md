@@ -143,3 +143,10 @@ Added a separate internal diagnostic that verifies startup, Command-L, and a rea
 Replaced the unrestricted compositor adapter with an explicit owned-backdrop route. Ownership, opacity, coverage, ordering, foreground state, and overlay checks run before capture and image persistence. The default vision runner no longer invokes unrestricted display capture.
 
 The readable diagnostic exposed its marker. The restricted diagnostic exposed only the controlled backdrop. Both internal forms completed. An undersized backdrop caused refusal before image creation. No physical visibility claim follows from these diagnostic runs. See [isolated compositor findings](isolated-compositor-findings.md).
+
+
+## Milestone 22: continuous capture and helper cleanup
+
+Added a completed-frame SCStream adapter with screen output only. Three readable controls disclosed their markers. Three restricted diagnostics exposed only the owned backdrop. All six internal forms completed. The coverage guard applies to every saved image.
+
+The controller now stops a verified timed-out helper before it removes the diagnostic host. Five lifecycle checks cover stale records, process ownership, replacement processes, and shutdown paths. All fifteen Python checks pass. See [stream findings](stream-capture-findings.md).

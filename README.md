@@ -30,6 +30,7 @@ Further candidates now compile. Capture pilots ran, but the protected BGRA and N
 - [Foreground controls](docs/foreground-findings.md) show native and semantic bypasses of Secure Event Input and reduced accessibility exposure.
 - [Protected HTML pixels](docs/pixel-rendering-findings.md) test the public capture-protection property on a sample-buffer layer.
 - [Raw device input](docs/hid-observation-findings.md) separates device observations from application events.
+- [Continuous capture](docs/stream-capture-findings.md) records completed-stream frames and matched backdrop controls.
 - [Isolated compositor](docs/isolated-compositor-findings.md) compares display crops over a verified owned backdrop.
 - [Autonomous research](docs/autonomous-findings.md) records software bootstrap attacks, internal keyboard controls, and scoped read comparisons.
 - [Direct menu actions](docs/menu-boundary-findings.md) record a semantic focus bypass and removal of content menus in the revised experiment.

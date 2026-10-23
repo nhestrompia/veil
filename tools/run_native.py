@@ -3,6 +3,8 @@
 import argparse
 import hashlib
 import json
+import os
+import signal
 import subprocess
 import time
 from pathlib import Path
@@ -13,11 +15,41 @@ from native_environment import observe_console, action_verdict
 ROOT = Path(__file__).resolve().parent.parent
 
 
+def stop_timed_out_probe(pid_file):
+    try:
+        pid = int(pid_file.read_text())
+    except (OSError, ValueError):
+        return
+    if pid <= 1:
+        return
+    binary = ROOT / "dist/NativeProbe.app/Contents/MacOS/NativeProbe"
+    process = subprocess.run(["ps", "-p", str(pid), "-o", "comm="], capture_output=True, text=True)
+    if process.stdout.strip() != str(binary):
+        return
+    try:
+        os.kill(pid, signal.SIGTERM)
+        deadline = time.monotonic() + 1
+        while time.monotonic() < deadline:
+            os.kill(pid, 0)
+            time.sleep(0.02)
+        process = subprocess.run(["ps", "-p", str(pid), "-o", "comm="], capture_output=True, text=True)
+        if process.stdout.strip() == str(binary):
+            os.kill(pid, signal.SIGKILL)
+    except ProcessLookupError:
+        pass
+
+
 def probe(arguments, output):
     output = output.resolve()
     output.unlink(missing_ok=True)
-    completed = subprocess.run(["open", "-n", "-W", str(ROOT / "dist/NativeProbe.app"), "--args", *map(str, arguments), "--out", str(output)],
-                               timeout=40, capture_output=True)
+    pid_file = output.with_suffix(output.suffix + ".pid")
+    pid_file.unlink(missing_ok=True)
+    try:
+        completed = subprocess.run(["open", "-n", "-W", str(ROOT / "dist/NativeProbe.app"), "--args", *map(str, arguments), "--out", str(output)],
+                                   timeout=40, capture_output=True)
+    except subprocess.TimeoutExpired:
+        stop_timed_out_probe(pid_file)
+        raise
     if not output.exists():
         raise RuntimeError(f"Probe launch failed: {completed.stderr.decode().strip()}")
     result = json.loads(output.read_text())

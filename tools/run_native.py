@@ -101,16 +101,20 @@ def run(targets, routes, repetitions, output):
                                 width, height = field["size"]
                                 point = [x + width / 2, y + height / 2]
                                 result["fieldCenter"] = point
-                            source = "hid" if route == "blind-fixture" else route.removeprefix("pid-").removeprefix("curve-").removeprefix("keycodes-")
+                            source = "hid" if route == "blind-fixture" else route.rsplit("-", 1)[-1]
                             if route.startswith("iohid-"):
                                 args = ["hid-post-input", process.pid, *point, route.removeprefix("iohid-")]
                             else:
                                 args = ["input", process.pid, *point, source]
-                            if route.startswith("pid-"):
+                            if route.startswith("pid-window-"):
+                                args.append("pid-window")
+                            elif route.startswith("pid-keys-"):
+                                args.append("pid-keys")
+                            elif route.startswith("pid-"):
                                 args.append("pid")
                             if route.startswith("curve-"):
                                 args.append("curve")
-                            if route.startswith("keycodes-"):
+                            if "keycodes" in route.split("-"):
                                 args.append("keycodes")
                             attempt = probe(args, prefix.with_suffix(".attempt.json"))
                         time.sleep(0.5)
@@ -159,7 +163,7 @@ def run(targets, routes, repetitions, output):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--targets", nargs="+", default=["AgentFreeBrowser", "InspectableControl"], choices=["AgentFreeBrowser", "InspectableControl", "MetadataExperiment", "SecureInputExperiment", "ReducedExposureExperiment", "AXBoundaryExperiment", "DeviceKeyboardExperiment"])
-    parser.add_argument("--routes", nargs="+", default=["ax", "session", "hid", "private", "pid-hid", "curve-hid", "keycodes-hid", "blind-fixture"], choices=["ax", "session", "hid", "private", "pid-hid", "curve-hid", "keycodes-hid", "blind-fixture", "iohid-legacy", "iohid-reports"])
+    parser.add_argument("--routes", nargs="+", default=["ax", "session", "hid", "private", "pid-hid", "curve-hid", "keycodes-hid", "blind-fixture"], choices=["ax", "session", "hid", "private", "pid-hid", "curve-hid", "keycodes-hid", "blind-fixture", "iohid-legacy", "iohid-reports", "pid-keys-hid", "pid-keys-keycodes-hid", "pid-window-keycodes-hid"])
     parser.add_argument("--repetitions", type=int, default=3)
     parser.add_argument("--output", type=Path, default=ROOT / "artifacts/native-pilot")
     args = parser.parse_args()

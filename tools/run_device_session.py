@@ -14,7 +14,7 @@ from run_native import ROOT, Oracle, probe
 
 NAME = "DeviceKeyboardExperiment"
 BINARY = ROOT / f"dist/{NAME}.app/Contents/MacOS/{NAME}"
-ROUTES = ["session", "hid", "private", "pid-hid", "curve-hid", "keycodes-hid", "iohid-legacy", "iohid-reports"]
+ROUTES = ["session", "hid", "private", "pid-hid", "curve-hid", "keycodes-hid", "iohid-legacy", "iohid-reports", "pid-keys-hid", "pid-keys-keycodes-hid", "pid-window-keycodes-hid"]
 
 
 def active(session):
@@ -85,11 +85,13 @@ def attack(path, controls, repetitions, confirmed):
             if route.startswith("iohid-"):
                 args = ["hid-post-input", session["pid"], *control["fieldCenter"], route.removeprefix("iohid-")]
             else:
-                source = route.removeprefix("pid-").removeprefix("curve-").removeprefix("keycodes-")
+                source = route.rsplit("-", 1)[-1]
                 args = ["input", session["pid"], *control["fieldCenter"], source]
-                if route.startswith("pid-"): args.append("pid")
+                if route.startswith("pid-window-"): args.append("pid-window")
+                elif route.startswith("pid-keys-"): args.append("pid-keys")
+                elif route.startswith("pid-"): args.append("pid")
                 if route.startswith("curve-"): args.append("curve")
-                if route.startswith("keycodes-"): args.append("keycodes")
+                if "keycodes" in route.split("-"): args.append("keycodes")
             attempt = probe(args, prefix.with_suffix(".attempt.json"))
             time.sleep(0.5)
             state = oracle.state(session["trial"])
@@ -113,7 +115,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("action", choices=["start", "attack", "stop"])
     parser.add_argument("--session", type=Path, default=ROOT / "artifacts/device-session.json")
-    parser.add_argument("--controls", type=Path, default=ROOT / "artifacts/device-controls/results.json")
+    parser.add_argument("--controls", type=Path, default=ROOT / "artifacts/device-controls-expanded/results.json")
     parser.add_argument("--repetitions", type=int, default=3)
     parser.add_argument("--operator-physical-completion-confirmed", action="store_true")
     args = parser.parse_args()

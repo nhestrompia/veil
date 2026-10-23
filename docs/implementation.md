@@ -98,3 +98,8 @@ Added both default and HID-manager options of IOHIDPostEvent to the native probe
 Added a separate unsandboxed research browser with an approved Input Monitoring grant. The event gate uses exact internal objects through application dispatch. Queue insertion copied the event in the first test, so that design failed.
 
 The user completed one independent website action with the physical keyboard. In the same process, twenty generated-input trials recorded refusal with matched working controls. Four further trials remain inconclusive. No attack added a submission. The build still has an automatic launch-URL route and no pointer support. See [device-keyboard findings](device-keyboard-findings.md).
+
+
+## Milestone 16: directed keyboard calibration
+
+Added mixed global-click and PID-keyboard routes, with Unicode and physical-key-code variants. Both completed all three controls. The original all-directed route and a window-annotated variant still failed three controls each. The expanded matrix contains 27 completions and six inconclusive results. See [directed-input findings](directed-input-findings.md).

@@ -122,10 +122,19 @@ func typeText(_ text: String, pid: pid_t? = nil, source: CGEventSource?, targetP
 }
 
 @MainActor
-func click(_ point: CGPoint, pid: pid_t? = nil, source: CGEventSource?, targetPID: pid_t) throws {
+func click(_ point: CGPoint, pid: pid_t? = nil, source: CGEventSource?, targetPID: pid_t,
+           routedWindow: CGWindowID? = nil) throws {
     for type in [CGEventType.mouseMoved, .leftMouseDown, .leftMouseUp] {
         guard let event = CGEvent(mouseEventSource: source, mouseType: type, mouseCursorPosition: point, mouseButton: .left) else {
             throw ProbeFailure("Cannot construct mouse event")
+        }
+        if let routedWindow {
+            event.setIntegerValueField(.mouseEventWindowUnderMousePointer, value: Int64(routedWindow))
+            event.setIntegerValueField(.mouseEventWindowUnderMousePointerThatCanHandleThisEvent, value: Int64(routedWindow))
+            if type != .mouseMoved {
+                event.setIntegerValueField(.mouseEventClickState, value: 1)
+                event.setIntegerValueField(.mouseEventNumber, value: 1)
+            }
         }
         try post(event, pid: pid, targetPID: targetPID)
         Thread.sleep(forTimeInterval: 0.08)
@@ -222,7 +231,17 @@ enum NativeProbe {
             default: throw ProbeFailure("Unknown event source")
             }
             let source = CGEventSource(stateID: sourceID)
-            let directed = args.contains("pid") ? pid : nil
+            let directed = args.contains("pid") || args.contains("pid-window") ? pid : nil
+            let keyDirected = args.contains("pid-keys") ? pid : directed
+            var routedWindow: CGWindowID?
+            if args.contains("pid-window") {
+                let windows = CGWindowListCopyWindowInfo([.optionOnScreenOnly, .excludeDesktopElements], kCGNullWindowID) as? [[String: Any]] ?? []
+                guard let window = windows.first(where: { ($0[kCGWindowOwnerPID as String] as? Int32) == pid &&
+                    ($0[kCGWindowLayer as String] as? Int) == 0 }), let id = window[kCGWindowNumber as String] as? UInt32 else {
+                    throw ProbeFailure("No verified research window for directed mouse routing")
+                }
+                routedWindow = id
+            }
             app.activate(options: [])
             try await Task.sleep(for: .milliseconds(300))
             guard directed != nil || NSWorkspace.shared.frontmostApplication?.processIdentifier == pid else {
@@ -244,17 +263,19 @@ enum NativeProbe {
                     try await Task.sleep(for: .milliseconds(Int.random(in: 8...20)))
                 }
             }
-            try click(CGPoint(x: x, y: y), pid: directed, source: source, targetPID: pid)
+            try click(CGPoint(x: x, y: y), pid: directed, source: source, targetPID: pid, routedWindow: routedWindow)
             if args.contains("keycodes") {
                 for code: CGKeyCode in [45, 0, 17, 34, 9, 14, 27, 34, 45, 35, 32, 17] {
-                    try sendKey(code, pid: directed, source: source, targetPID: pid)
+                    try sendKey(code, pid: keyDirected, source: source, targetPID: pid)
                 }
             } else {
-                try typeText("native-input", pid: directed, source: source, targetPID: pid)
+                try typeText("native-input", pid: keyDirected, source: source, targetPID: pid)
             }
-            try sendKey(36, pid: directed, source: source, targetPID: pid)
+            try sendKey(36, pid: keyDirected, source: source, targetPID: pid)
             try emit(["status": "attempted", "pid": pid, "source": args[4],
-                      "directToPID": directed != nil, "curvedTrajectory": args.contains("curve")])
+                      "directToPID": directed != nil, "keyboardDirectToPID": keyDirected != nil,
+                      "explicitWindowRouting": routedWindow != nil,
+                      "curvedTrajectory": args.contains("curve")])
             return
         }
         if command == "hid-post-input" {

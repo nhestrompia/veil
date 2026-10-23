@@ -14,7 +14,11 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
         let configuration = WKWebViewConfiguration()
         configuration.websiteDataStore = .nonPersistent()
         configuration.preferences.javaScriptCanOpenWindowsAutomatically = false
+        #if AX_BOUNDARY_EXPERIMENT
+        webView = AXBoundaryWebView(frame: .zero, configuration: configuration)
+        #else
         webView = WKWebView(frame: .zero, configuration: configuration)
+        #endif
         #if INSPECTION_CONTROL
         webView.isInspectable = true
         let name = "Inspectable Control"
@@ -26,6 +30,8 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
         let name = "Secure Input Experiment"
         #elseif REDUCED_EXPOSURE_EXPERIMENT
         let name = "Reduced Exposure Experiment"
+        #elseif AX_BOUNDARY_EXPERIMENT
+        let name = "AX Boundary Experiment"
         #else
         let name = "AgentFreeBrowser Research"
         #endif
@@ -67,11 +73,13 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
         window = InputSourceWindow(contentRect: frame, styleMask: style, backing: .buffered, defer: false)
         #elseif SECURE_INPUT_EXPERIMENT || REDUCED_EXPOSURE_EXPERIMENT
         window = SecureInputWindow(contentRect: frame, styleMask: style, backing: .buffered, defer: false)
+        #elseif AX_BOUNDARY_EXPERIMENT
+        window = AXBoundaryWindow(contentRect: frame, styleMask: style, backing: .buffered, defer: false)
         #else
         window = NSWindow(contentRect: frame, styleMask: style, backing: .buffered, defer: false)
         #endif
         window.title = name
-        #if REDUCED_EXPOSURE_EXPERIMENT
+        #if REDUCED_EXPOSURE_EXPERIMENT || AX_BOUNDARY_EXPERIMENT
         webView.setAccessibilityHidden(true)
         window.sharingType = .none
         #endif
@@ -135,6 +143,9 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
         #if SECURE_INPUT_EXPERIMENT || REDUCED_EXPOSURE_EXPERIMENT
         status.stringValue = "Secure Event Input experiment. Synthetic input prevention is unproven."
         #endif
+        #if AX_BOUNDARY_EXPERIMENT
+        status.stringValue = "Accessibility boundary experiment. Native input prevention is unproven."
+        #endif
     }
 
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: any Error) {
@@ -194,7 +205,13 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
 @main
 enum BrowserApp {
     @MainActor static func main() {
+        #if AX_BOUNDARY_EXPERIMENT
+        let app = AXBoundaryApplication.shared
+        precondition(app is AXBoundaryApplication, "The AX experiment requires its application subclass")
+        print("AX_BOUNDARY applicationSubclass=true")
+        #else
         let app = NSApplication.shared
+        #endif
         let delegate = BrowserController()
         app.setActivationPolicy(.regular)
         app.delegate = delegate

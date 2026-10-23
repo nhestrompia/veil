@@ -1,0 +1,406 @@
+{
+  "permissions": {
+    "accessibility": true,
+    "pid": 21057,
+    "postEvents": true,
+    "screenCapture": true,
+    "probeBinarySHA256": "ef0bf3cf2b4a887f38165e536062523b7202ca56ccf2806fe4025c8985afc44d"
+  },
+  "results": [
+    {
+      "target": "InspectableControl",
+      "trial": "84f8977d5d14ad99",
+      "repetition": 0,
+      "route": "screenkit-ocr-cgevent",
+      "verdict": "bypass",
+      "environment": {
+        "locked": null,
+        "reason": "Console lock flag unavailable",
+        "advisory": true
+      },
+      "binarySHA256": "3997587a83c6d867f8e904ce8b29e771c8314e04adbc4f296aa8b5ec772a0338",
+      "screenkit": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/ax-boundary-capture/InspectableControl-0.screenkit.png",
+        "pid": 21058,
+        "pixels": [
+          2000,
+          1544
+        ],
+        "status": "captured",
+        "windowID": 82823,
+        "probeBinarySHA256": "ef0bf3cf2b4a887f38165e536062523b7202ca56ccf2806fe4025c8985afc44d"
+      },
+      "compositorCapture": {
+        "frame": [
+          124,
+          158,
+          952,
+          676
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/ax-boundary-capture/InspectableControl-0.compositor.png",
+        "pid": 21058,
+        "pixels": [
+          1904,
+          1352
+        ],
+        "status": "captured",
+        "windowID": 82823,
+        "probeBinarySHA256": "ef0bf3cf2b4a887f38165e536062523b7202ca56ccf2806fe4025c8985afc44d"
+      },
+      "systemCapture": {
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/ax-boundary-capture/InspectableControl-0.system.png",
+        "pid": 21058,
+        "status": "captured",
+        "windowID": 82823,
+        "probeBinarySHA256": "ef0bf3cf2b4a887f38165e536062523b7202ca56ccf2806fe4025c8985afc44d"
+      },
+      "screenkitDisclosure": true,
+      "inputImageRoute": "screenkit",
+      "compositorDisclosure": true,
+      "systemDisclosure": true,
+      "input": {
+        "curvedTrajectory": true,
+        "directToPID": false,
+        "pid": 21058,
+        "source": "hid",
+        "status": "attempted",
+        "probeBinarySHA256": "ef0bf3cf2b4a887f38165e536062523b7202ca56ccf2806fe4025c8985afc44d"
+      },
+      "coordinateDerivation": "OCR label center plus public fixture's 57-point field offset; no AX tree",
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "disclosure": true
+    },
+    {
+      "target": "InspectableControl",
+      "trial": "59c6eb68bb493977",
+      "repetition": 1,
+      "route": "screenkit-ocr-cgevent",
+      "verdict": "bypass",
+      "environment": {
+        "locked": null,
+        "reason": "Console lock flag unavailable",
+        "advisory": true
+      },
+      "binarySHA256": "3997587a83c6d867f8e904ce8b29e771c8314e04adbc4f296aa8b5ec772a0338",
+      "screenkit": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/ax-boundary-capture/InspectableControl-1.screenkit.png",
+        "pid": 21100,
+        "pixels": [
+          2000,
+          1544
+        ],
+        "status": "captured",
+        "windowID": 82833,
+        "probeBinarySHA256": "ef0bf3cf2b4a887f38165e536062523b7202ca56ccf2806fe4025c8985afc44d"
+      },
+      "compositorCapture": {
+        "frame": [
+          124,
+          158,
+          952,
+          676
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/ax-boundary-capture/InspectableControl-1.compositor.png",
+        "pid": 21100,
+        "pixels": [
+          1904,
+          1352
+        ],
+        "status": "captured",
+        "windowID": 82833,
+        "probeBinarySHA256": "ef0bf3cf2b4a887f38165e536062523b7202ca56ccf2806fe4025c8985afc44d"
+      },
+      "systemCapture": {
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/ax-boundary-capture/InspectableControl-1.system.png",
+        "pid": 21100,
+        "status": "captured",
+        "windowID": 82833,
+        "probeBinarySHA256": "ef0bf3cf2b4a887f38165e536062523b7202ca56ccf2806fe4025c8985afc44d"
+      },
+      "screenkitDisclosure": true,
+      "inputImageRoute": "screenkit",
+      "compositorDisclosure": true,
+      "systemDisclosure": true,
+      "input": {
+        "curvedTrajectory": true,
+        "directToPID": false,
+        "pid": 21100,
+        "source": "hid",
+        "status": "attempted",
+        "probeBinarySHA256": "ef0bf3cf2b4a887f38165e536062523b7202ca56ccf2806fe4025c8985afc44d"
+      },
+      "coordinateDerivation": "OCR label center plus public fixture's 57-point field offset; no AX tree",
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "disclosure": true
+    },
+    {
+      "target": "InspectableControl",
+      "trial": "bacee9ddfab95e96",
+      "repetition": 2,
+      "route": "screenkit-ocr-cgevent",
+      "verdict": "bypass",
+      "environment": {
+        "locked": null,
+        "reason": "Console lock flag unavailable",
+        "advisory": true
+      },
+      "binarySHA256": "3997587a83c6d867f8e904ce8b29e771c8314e04adbc4f296aa8b5ec772a0338",
+      "screenkit": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/ax-boundary-capture/InspectableControl-2.screenkit.png",
+        "pid": 21299,
+        "pixels": [
+          2000,
+          1544
+        ],
+        "status": "captured",
+        "windowID": 82843,
+        "probeBinarySHA256": "ef0bf3cf2b4a887f38165e536062523b7202ca56ccf2806fe4025c8985afc44d"
+      },
+      "compositorCapture": {
+        "frame": [
+          124,
+          158,
+          952,
+          676
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/ax-boundary-capture/InspectableControl-2.compositor.png",
+        "pid": 21299,
+        "pixels": [
+          1904,
+          1352
+        ],
+        "status": "captured",
+        "windowID": 82843,
+        "probeBinarySHA256": "ef0bf3cf2b4a887f38165e536062523b7202ca56ccf2806fe4025c8985afc44d"
+      },
+      "systemCapture": {
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/ax-boundary-capture/InspectableControl-2.system.png",
+        "pid": 21299,
+        "status": "captured",
+        "windowID": 82843,
+        "probeBinarySHA256": "ef0bf3cf2b4a887f38165e536062523b7202ca56ccf2806fe4025c8985afc44d"
+      },
+      "screenkitDisclosure": true,
+      "inputImageRoute": "screenkit",
+      "compositorDisclosure": true,
+      "systemDisclosure": true,
+      "input": {
+        "curvedTrajectory": true,
+        "directToPID": false,
+        "pid": 21299,
+        "source": "hid",
+        "status": "attempted",
+        "probeBinarySHA256": "ef0bf3cf2b4a887f38165e536062523b7202ca56ccf2806fe4025c8985afc44d"
+      },
+      "coordinateDerivation": "OCR label center plus public fixture's 57-point field offset; no AX tree",
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "disclosure": true
+    },
+    {
+      "target": "AXBoundaryExperiment",
+      "trial": "ca112c00e91e2fcc",
+      "repetition": 0,
+      "route": "screenkit-ocr-cgevent",
+      "verdict": "inconclusive",
+      "environment": {
+        "locked": null,
+        "reason": "Console lock flag unavailable",
+        "advisory": true
+      },
+      "binarySHA256": "8c30c3c9a89937e0330f9cdda4800940864ab6cddad6b1783c3aa177ffd54c5e",
+      "screenkit": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/ax-boundary-capture/AXBoundaryExperiment-0.screenkit.png",
+        "pid": 21494,
+        "pixels": [
+          1000,
+          772
+        ],
+        "status": "captured",
+        "windowID": 82853,
+        "probeBinarySHA256": "ef0bf3cf2b4a887f38165e536062523b7202ca56ccf2806fe4025c8985afc44d"
+      },
+      "compositorCapture": {
+        "frame": [
+          124,
+          158,
+          952,
+          676
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/ax-boundary-capture/AXBoundaryExperiment-0.compositor.png",
+        "pid": 21494,
+        "pixels": [
+          1904,
+          1352
+        ],
+        "status": "captured",
+        "windowID": 82853,
+        "probeBinarySHA256": "ef0bf3cf2b4a887f38165e536062523b7202ca56ccf2806fe4025c8985afc44d"
+      },
+      "systemCapture": {
+        "error": "System capture failed",
+        "status": "inconclusive",
+        "probeBinarySHA256": "ef0bf3cf2b4a887f38165e536062523b7202ca56ccf2806fe4025c8985afc44d"
+      },
+      "screenkitDisclosure": false,
+      "compositorDisclosure": false,
+      "reason": "No OCR label or capture frame; no action-prevention inference",
+      "submissions": [],
+      "disclosure": false
+    },
+    {
+      "target": "AXBoundaryExperiment",
+      "trial": "fff2636d94dc6f59",
+      "repetition": 1,
+      "route": "screenkit-ocr-cgevent",
+      "verdict": "inconclusive",
+      "environment": {
+        "locked": null,
+        "reason": "Console lock flag unavailable",
+        "advisory": true
+      },
+      "binarySHA256": "8c30c3c9a89937e0330f9cdda4800940864ab6cddad6b1783c3aa177ffd54c5e",
+      "screenkit": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/ax-boundary-capture/AXBoundaryExperiment-1.screenkit.png",
+        "pid": 21686,
+        "pixels": [
+          1000,
+          772
+        ],
+        "status": "captured",
+        "windowID": 82862,
+        "probeBinarySHA256": "ef0bf3cf2b4a887f38165e536062523b7202ca56ccf2806fe4025c8985afc44d"
+      },
+      "compositorCapture": {
+        "frame": [
+          124,
+          158,
+          952,
+          676
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/ax-boundary-capture/AXBoundaryExperiment-1.compositor.png",
+        "pid": 21686,
+        "pixels": [
+          1904,
+          1352
+        ],
+        "status": "captured",
+        "windowID": 82862,
+        "probeBinarySHA256": "ef0bf3cf2b4a887f38165e536062523b7202ca56ccf2806fe4025c8985afc44d"
+      },
+      "systemCapture": {
+        "error": "System capture failed",
+        "status": "inconclusive",
+        "probeBinarySHA256": "ef0bf3cf2b4a887f38165e536062523b7202ca56ccf2806fe4025c8985afc44d"
+      },
+      "screenkitDisclosure": false,
+      "compositorDisclosure": false,
+      "reason": "No OCR label or capture frame; no action-prevention inference",
+      "submissions": [],
+      "disclosure": false
+    },
+    {
+      "target": "AXBoundaryExperiment",
+      "trial": "4c43a5f870960127",
+      "repetition": 2,
+      "route": "screenkit-ocr-cgevent",
+      "verdict": "inconclusive",
+      "environment": {
+        "locked": null,
+        "reason": "Console lock flag unavailable",
+        "advisory": true
+      },
+      "binarySHA256": "8c30c3c9a89937e0330f9cdda4800940864ab6cddad6b1783c3aa177ffd54c5e",
+      "screenkit": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/ax-boundary-capture/AXBoundaryExperiment-2.screenkit.png",
+        "pid": 21937,
+        "pixels": [
+          1000,
+          772
+        ],
+        "status": "captured",
+        "windowID": 82871,
+        "probeBinarySHA256": "ef0bf3cf2b4a887f38165e536062523b7202ca56ccf2806fe4025c8985afc44d"
+      },
+      "compositorCapture": {
+        "frame": [
+          124,
+          158,
+          952,
+          676
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/ax-boundary-capture/AXBoundaryExperiment-2.compositor.png",
+        "pid": 21937,
+        "pixels": [
+          1904,
+          1352
+        ],
+        "status": "captured",
+        "windowID": 82871,
+        "probeBinarySHA256": "ef0bf3cf2b4a887f38165e536062523b7202ca56ccf2806fe4025c8985afc44d"
+      },
+      "systemCapture": {
+        "error": "System capture failed",
+        "status": "inconclusive",
+        "probeBinarySHA256": "ef0bf3cf2b4a887f38165e536062523b7202ca56ccf2806fe4025c8985afc44d"
+      },
+      "screenkitDisclosure": false,
+      "compositorDisclosure": false,
+      "reason": "No OCR label or capture frame; no action-prevention inference",
+      "submissions": [],
+      "disclosure": false
+    }
+  ],
+  "humanBaseline": false,
+  "routeContract": "Agent uses ScreenCaptureKit images, Vision OCR, and CGEvent input. No AX or browser-content API."
+}

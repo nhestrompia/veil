@@ -145,14 +145,14 @@ def run(targets, routes, repetitions, output):
                 summary = {"permissions": permissions, "environment": environment, "positiveControlTarget": control_target,
                            "system": subprocess.check_output(["sw_vers"], text=True),
                            "results": results, "humanBaseline": False,
-                           "routeContract": "Probe uses native APIs only. Controller alone queries the oracle. Input coordinates come from AX."}
+                           "routeContract": "Probe uses native APIs only. Controller alone queries the oracle. Input coordinates come from AX, except blind-fixture uses the matched control coordinates."}
                 (output / "results.json").write_text(json.dumps(summary, indent=2))
     return results
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--targets", nargs="+", default=["AgentFreeBrowser", "InspectableControl"], choices=["AgentFreeBrowser", "InspectableControl", "MetadataExperiment", "SecureInputExperiment", "ReducedExposureExperiment"])
+    parser.add_argument("--targets", nargs="+", default=["AgentFreeBrowser", "InspectableControl"], choices=["AgentFreeBrowser", "InspectableControl", "MetadataExperiment", "SecureInputExperiment", "ReducedExposureExperiment", "AXBoundaryExperiment"])
     parser.add_argument("--routes", nargs="+", default=["ax", "session", "hid", "private", "pid-hid", "curve-hid", "keycodes-hid", "blind-fixture"], choices=["ax", "session", "hid", "private", "pid-hid", "curve-hid", "keycodes-hid", "blind-fixture"])
     parser.add_argument("--repetitions", type=int, default=3)
     parser.add_argument("--output", type=Path, default=ROOT / "artifacts/native-pilot")

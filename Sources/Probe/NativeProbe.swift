@@ -19,6 +19,48 @@ func emit(_ value: [String: Any]) throws {
     print(String(decoding: data, as: UTF8.self))
 }
 
+func savePNG(_ image: CGImage, path: String) throws {
+    let url = URL(fileURLWithPath: path)
+    guard let destination = CGImageDestinationCreateWithURL(url as CFURL, UTType.png.identifier as CFString, 1, nil) else {
+        throw ProbeFailure("Cannot create PNG output")
+    }
+    CGImageDestinationAddImage(destination, image, nil)
+    guard CGImageDestinationFinalize(destination) else { throw ProbeFailure("Cannot write capture") }
+}
+
+func frameOfWindow(_ window: [String: Any]) -> CGRect? {
+    guard let bounds = window[kCGWindowBounds as String] as? [String: Any] else { return nil }
+    return CGRect(dictionaryRepresentation: bounds as CFDictionary)
+}
+
+@MainActor
+func verifyResearchBackdrop(pid: pid_t, targetID: CGWindowID, backdropID: CGWindowID, region: CGRect) throws {
+    guard NSWorkspace.shared.frontmostApplication?.processIdentifier == pid else {
+        throw ProbeFailure("Research target is not frontmost")
+    }
+    let windows = CGWindowListCopyWindowInfo([.optionOnScreenOnly, .excludeDesktopElements], kCGNullWindowID) as? [[String: Any]] ?? []
+    guard let targetIndex = windows.firstIndex(where: { ($0[kCGWindowNumber as String] as? UInt32) == targetID }),
+          let backdropIndex = windows.firstIndex(where: { ($0[kCGWindowNumber as String] as? UInt32) == backdropID }),
+          targetIndex < backdropIndex else { throw ProbeFailure("Research window ordering is invalid") }
+    let target = windows[targetIndex], backdrop = windows[backdropIndex]
+    guard (target[kCGWindowOwnerPID as String] as? Int32) == pid,
+          (backdrop[kCGWindowOwnerPID as String] as? Int32) == pid,
+          (target[kCGWindowAlpha as String] as? Double) == 1,
+          (backdrop[kCGWindowAlpha as String] as? Double) == 1,
+          let targetFrame = frameOfWindow(target), let backdropFrame = frameOfWindow(backdrop),
+          targetFrame.contains(region), backdropFrame.contains(region),
+          (backdrop[kCGWindowLayer as String] as? Int ?? 0) >= Int(CGWindowLevelForKey(.screenSaverWindow)) else {
+        throw ProbeFailure("The opaque owned research backdrop does not cover the capture region")
+    }
+    for window in windows.prefix(backdropIndex) {
+        if (window[kCGWindowOwnerPID as String] as? Int32) == pid { continue }
+        if (window[kCGWindowLayer as String] as? Int) == Int(CGWindowLevelForKey(.cursorWindow)) { continue }
+        if (window[kCGWindowAlpha as String] as? Double ?? 1) > 0, let frame = frameOfWindow(window), frame.intersects(region) {
+            throw ProbeFailure("A non-research overlay intersects the capture region")
+        }
+    }
+}
+
 func attribute(_ element: AXUIElement, _ name: String) -> CFTypeRef? {
     var value: CFTypeRef?
     guard AXUIElementCopyAttributeValue(element, name as CFString, &value) == .success else { return nil }
@@ -186,6 +228,39 @@ enum NativeProbe {
         guard args.count >= 2 else { throw ProbeFailure("Missing target PID") }
         let app = try target(args[1])
         let pid = app.processIdentifier
+        if command == "compositor-capture" {
+            throw ProbeFailure("Use isolated-compositor-capture with a verified research backdrop")
+        }
+        if command == "isolated-compositor-capture" {
+            guard args.count == 5, app.bundleIdentifier == "research.agentfreebrowser.internalkeyboardcontrol",
+                  let targetID = CGWindowID(args[2]), let backdropID = CGWindowID(args[3]), targetID != backdropID else {
+                throw ProbeFailure("Use the internal diagnostic with two distinct owned window IDs")
+            }
+            guard CGPreflightScreenCaptureAccess() else { throw ProbeFailure("Screen Recording permission is absent for this probe process") }
+            app.activate(options: [])
+            try await Task.sleep(for: .milliseconds(300))
+            let content = try await SCShareableContent.excludingDesktopWindows(true, onScreenWindowsOnly: true)
+            guard let window = content.windows.first(where: { $0.windowID == targetID && $0.owningApplication?.processID == pid }),
+                  content.windows.contains(where: { $0.windowID == backdropID && $0.owningApplication?.processID == pid }),
+                  let display = content.displays.first(where: { $0.frame.contains(window.frame) }) else {
+                throw ProbeFailure("The two research windows are not available on one display")
+            }
+            let region = window.frame.insetBy(dx: 24, dy: 48)
+            try verifyResearchBackdrop(pid: pid, targetID: targetID, backdropID: backdropID, region: region)
+            let configuration = SCStreamConfiguration()
+            configuration.sourceRect = region.offsetBy(dx: -display.frame.minX, dy: -display.frame.minY)
+            configuration.width = Int(region.width * 2)
+            configuration.height = Int(region.height * 2)
+            configuration.showsCursor = false
+            let filter = SCContentFilter(display: display, excludingWindows: [])
+            let image = try await SCScreenshotManager.captureImage(contentFilter: filter, configuration: configuration)
+            try verifyResearchBackdrop(pid: pid, targetID: targetID, backdropID: backdropID, region: region)
+            try savePNG(image, path: args[4])
+            try emit(["status": "captured", "pid": pid, "targetWindowID": targetID, "backdropWindowID": backdropID,
+                      "frame": [region.minX, region.minY, region.width, region.height], "path": args[4],
+                      "backdropVerifiedBeforeAndAfter": true, "filter": "unfiltered display cropped inside owned research coverage"])
+            return
+        }
         if command == "ax-direct" {
             guard AXIsProcessTrusted() else { throw ProbeFailure("Accessibility permission is absent for this probe process") }
             app.activate(options: [])
@@ -471,7 +546,7 @@ enum NativeProbe {
             try emit(["status": "captured", "pid": pid, "windowID": number, "path": args[2]])
             return
         }
-        if command == "capture" || command == "display-capture" || command == "compositor-capture" {
+        if command == "capture" || command == "display-capture" {
             guard args.count == 3 else { throw ProbeFailure("capture PID OUTPUT.png") }
             guard CGPreflightScreenCaptureAccess() else { throw ProbeFailure("Screen Recording permission is absent for this probe process") }
             let content = try await SCShareableContent.excludingDesktopWindows(true, onScreenWindowsOnly: true)
@@ -480,23 +555,12 @@ enum NativeProbe {
             }
             let configuration = SCStreamConfiguration()
             let filter: SCContentFilter
-            var frame = window.frame
-            if command == "display-capture" || command == "compositor-capture" {
+            let frame = window.frame
+            if command == "display-capture" {
                 guard let display = content.displays.first(where: { $0.frame.intersects(window.frame) }) else {
                     throw ProbeFailure("No display contains the target window")
                 }
-                if command == "compositor-capture" {
-                    app.activate(options: [])
-                    try await Task.sleep(for: .milliseconds(300))
-                    guard NSWorkspace.shared.frontmostApplication?.processIdentifier == pid else {
-                        throw ProbeFailure("Research target is not frontmost; refusing compositor crop")
-                    }
-                    // Crop inside the opaque research window to exclude other apps and rounded corners.
-                    frame = window.frame.insetBy(dx: 24, dy: 48)
-                    filter = SCContentFilter(display: display, excludingWindows: [])
-                } else {
-                    filter = SCContentFilter(display: display, including: [window])
-                }
+                filter = SCContentFilter(display: display, including: [window])
                 configuration.sourceRect = frame.offsetBy(dx: -display.frame.minX, dy: -display.frame.minY)
             } else {
                 filter = SCContentFilter(desktopIndependentWindow: window)
@@ -505,18 +569,10 @@ enum NativeProbe {
             configuration.height = Int(frame.height * 2)
             configuration.showsCursor = false
             let image = try await SCScreenshotManager.captureImage(contentFilter: filter, configuration: configuration)
-            if command == "compositor-capture", NSWorkspace.shared.frontmostApplication?.processIdentifier != pid {
-                throw ProbeFailure("Research target lost foreground focus; discarding compositor crop")
-            }
-            let url = URL(fileURLWithPath: args[2])
-            guard let destination = CGImageDestinationCreateWithURL(url as CFURL, UTType.png.identifier as CFString, 1, nil) else {
-                throw ProbeFailure("Cannot create PNG output")
-            }
-            CGImageDestinationAddImage(destination, image, nil)
-            guard CGImageDestinationFinalize(destination) else { throw ProbeFailure("Cannot write capture") }
+            try savePNG(image, path: args[2])
             try emit(["status": "captured", "pid": pid, "windowID": window.windowID,
                       "frame": [frame.minX, frame.minY, frame.width, frame.height],
-                      "pixels": [image.width, image.height], "path": url.path])
+                      "pixels": [image.width, image.height], "path": URL(fileURLWithPath: args[2]).path])
             return
         }
         throw ProbeFailure("Unknown command")

@@ -47,14 +47,23 @@ def run(output, external_reads):
                   "humanBaseline": False, "windowSharingEnabled": "INTERNAL_KEYBOARD windowSharingEnabled=true" in text,
                   "scope": "Diagnostic-only private authorized events through the normal application and WebKit path. Not an external bypass, physical control, or HID attestation."}
         if external_reads and result["acceptedSubmissions"]:
-            read = probe(["ax-direct", pid], output / "direct-ax.json")
-            result["directAX"] = {"status": read.get("status"), "elements": len(read.get("elements", [])),
-                                  "markerDisclosed": state["secret"] in json.dumps(read)}
-            capture = probe(["capture", pid, output / "window.png"], output / "capture.json")
-            result["capture"] = capture
-            if capture.get("status") == "captured":
-                ocr = probe(["ocr", output / "window.png"], output / "ocr.json")
-                result["captureMarkerDisclosed"] = state["secret"] in json.dumps(ocr)
+            backdrop = re.search(r"INTERNAL_CAPTURE targetWindow=(\d+) backdropWindow=(\d+)", text)
+            if backdrop:
+                composite = probe(["isolated-compositor-capture", pid, *backdrop.groups(), output / "compositor.png"], output / "compositor.json")
+                result["isolatedCompositor"] = composite
+                if composite.get("status") == "captured":
+                    ocr = probe(["ocr", output / "compositor.png"], output / "compositor.ocr.json")
+                    result["compositorMarkerDisclosed"] = state["secret"] in json.dumps(ocr)
+                    result["backdropLabelRecovered"] = "controlled research backdrop" in json.dumps(ocr).lower()
+            else:
+                read = probe(["ax-direct", pid], output / "direct-ax.json")
+                result["directAX"] = {"status": read.get("status"), "elements": len(read.get("elements", [])),
+                                      "markerDisclosed": state["secret"] in json.dumps(read)}
+                capture = probe(["capture", pid, output / "window.png"], output / "capture.json")
+                result["capture"] = capture
+                if capture.get("status") == "captured":
+                    ocr = probe(["ocr", output / "window.png"], output / "ocr.json")
+                    result["captureMarkerDisclosed"] = state["secret"] in json.dumps(ocr)
         (output / "results.json").write_text(json.dumps(result, indent=2))
         print(json.dumps(result), flush=True)
     finally:

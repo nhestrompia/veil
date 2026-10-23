@@ -136,3 +136,10 @@ The capture-restricted flavor repeated the menu-absence result and three launch 
 Added fresh-process Space/Return bootstrap attacks through five posting routes. All fifteen controls completed their task. No candidate bound a keyboard or admitted input. The results remain observations, with no new physical control.
 
 Added a separate internal diagnostic that verifies startup, Command-L, and a real WebKit form action without a device grant. Direct Accessibility queries recover the readable reference marker, while both diagnostic flavors omit it. Window capture reads the visible flavor and returns black for the restricted flavor. The fixture now retains outcomes without submitted text. See [autonomous findings](autonomous-findings.md).
+
+
+## Milestone 21: isolated compositor comparison
+
+Replaced the unrestricted compositor adapter with an explicit owned-backdrop route. Ownership, opacity, coverage, ordering, foreground state, and overlay checks run before capture and image persistence. The default vision runner no longer invokes unrestricted display capture.
+
+The readable diagnostic exposed its marker. The restricted diagnostic exposed only the controlled backdrop. Both internal forms completed. An undersized backdrop caused refusal before image creation. No physical visibility claim follows from these diagnostic runs. See [isolated compositor findings](isolated-compositor-findings.md).

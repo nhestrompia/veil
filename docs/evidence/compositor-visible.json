@@ -1,0 +1,29 @@
+{
+  "binarySHA256": "f2435abf5284434dc8c657ea2b90db6f5579f08e76dbe55b042d9acabc168e41",
+  "pid": 70818,
+  "startupAddressPreserved": true,
+  "locationHasEditor": true,
+  "acceptedSubmissions": 1,
+  "noDeviceReader": true,
+  "humanBaseline": false,
+  "windowSharingEnabled": true,
+  "scope": "Diagnostic-only private authorized events through the normal application and WebKit path. Not an external bypass, physical control, or HID attestation.",
+  "isolatedCompositor": {
+    "backdropVerifiedBeforeAndAfter": true,
+    "backdropWindowID": 85461,
+    "filter": "unfiltered display cropped inside owned research coverage",
+    "frame": [
+      124,
+      158,
+      952,
+      676
+    ],
+    "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/compositor-visible/compositor.png",
+    "pid": 70818,
+    "status": "captured",
+    "targetWindowID": 85459,
+    "probeBinarySHA256": "d2be8d9cbfb4d3475c4774a6adbd49cc350163c99f6933cb2d9616f1c624a4f1"
+  },
+  "compositorMarkerDisclosed": true,
+  "backdropLabelRecovered": false
+}

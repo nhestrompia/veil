@@ -28,7 +28,7 @@ def run(targets, repetitions, output):
                 try:
                     time.sleep(1.5)
                     captures = {}
-                    for route, command in [("screenkit", "capture"), ("compositor", "compositor-capture"), ("system", "system-capture")]:
+                    for route, command in [("screenkit", "capture"), ("system", "system-capture")]:
                         try:
                             captures[route] = probe([command, process.pid, prefix.with_suffix(f".{route}.png")], prefix.with_suffix(f".{route}.json"))
                         except (RuntimeError, subprocess.SubprocessError) as error:
@@ -38,7 +38,8 @@ def run(targets, repetitions, output):
                     record = {"target": name, "trial": trial["id"], "repetition": repetition,
                               "route": "screenkit-ocr-cgevent", "verdict": "inconclusive", "environment": environment,
                               "binarySHA256": hashlib.sha256(binary.read_bytes()).hexdigest(),
-                              "screenkit": screenshot, "compositorCapture": captures["compositor"], "systemCapture": system}
+                              "screenkit": screenshot, "systemCapture": system,
+                              "compositorPolicy": "Use the separate isolated-backdrop diagnostic"}
                     ocr = {}
                     selected_capture = None
                     for route, capture in captures.items():

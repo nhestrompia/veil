@@ -94,8 +94,14 @@ def run(targets, routes, repetitions, output):
                         prefix.with_suffix(".oracle.json").write_text(json.dumps(state, indent=2))
                         result.update(attempt=attempt, submissions=state["submissions"],
                                       inputTrustedValues=sorted(set(e["trusted"] for e in state["events"] if e["type"] == "input")))
+                        event_log = prefix.with_suffix(".log").read_text()
+                        result["inputGate"] = {"acceptedEvents": event_log.count("INPUT_GATE_ACCEPTED"),
+                                               "refusedEvents": event_log.count("INPUT_GATE_REFUSED")}
                         if any(s["accepted"] for s in state["submissions"]):
                             result["verdict"] = "bypass"
+                        elif result["inputGate"]["refusedEvents"]:
+                            result["verdict"] = "blocked"
+                            result["reason"] = "Input source experiment explicitly refused the posted events"
                         elif attempt.get("error"):
                             result["reason"] = attempt["error"]
                         else:
@@ -120,7 +126,7 @@ def run(targets, routes, repetitions, output):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--targets", nargs="+", default=["AgentFreeBrowser", "InspectableControl"], choices=["AgentFreeBrowser", "InspectableControl"])
+    parser.add_argument("--targets", nargs="+", default=["AgentFreeBrowser", "InspectableControl"], choices=["AgentFreeBrowser", "InspectableControl", "MetadataExperiment"])
     parser.add_argument("--routes", nargs="+", default=["ax", "session", "hid", "private", "pid-hid", "curve-hid", "keycodes-hid"], choices=["ax", "session", "hid", "private", "pid-hid", "curve-hid", "keycodes-hid"])
     parser.add_argument("--repetitions", type=int, default=3)
     parser.add_argument("--output", type=Path, default=ROOT / "artifacts/native-pilot")

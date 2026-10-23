@@ -2,15 +2,19 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 mkdir -p .build/module-cache dist
-for variant in protected control; do
+for variant in protected control metadata; do
     if [ "$variant" = protected ]; then
         name=AgentFreeBrowser
         bundle=research.agentfreebrowser.protected
         defines=(-D PROTECTED_BUILD)
-    else
+    elif [ "$variant" = control ]; then
         name=InspectableControl
         bundle=research.agentfreebrowser.control
         defines=(-D INSPECTION_CONTROL)
+    else
+        name=MetadataExperiment
+        bundle=research.agentfreebrowser.metadata
+        defines=(-D METADATA_EXPERIMENT)
     fi
     app="dist/$name.app"
     mkdir -p "$app/Contents/MacOS"

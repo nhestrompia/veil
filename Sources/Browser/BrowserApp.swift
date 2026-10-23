@@ -18,7 +18,11 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
         let name = "Inspectable Control"
         #else
         webView.isInspectable = false
+        #if METADATA_EXPERIMENT
+        let name = "Input Source Experiment"
+        #else
         let name = "AgentFreeBrowser Research"
+        #endif
         #endif
         webView.navigationDelegate = self
         webView.uiDelegate = self
@@ -51,9 +55,13 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
             status.trailingAnchor.constraint(equalTo: content.trailingAnchor, constant: -12),
             status.bottomAnchor.constraint(equalTo: content.bottomAnchor, constant: -8),
         ])
-        window = NSWindow(contentRect: NSRect(x: 100, y: 100, width: 1000, height: 740),
-                          styleMask: [.titled, .closable, .miniaturizable, .resizable],
-                          backing: .buffered, defer: false)
+        let frame = NSRect(x: 100, y: 100, width: 1000, height: 740)
+        let style: NSWindow.StyleMask = [.titled, .closable, .miniaturizable, .resizable]
+        #if METADATA_EXPERIMENT
+        window = InputSourceWindow(contentRect: frame, styleMask: style, backing: .buffered, defer: false)
+        #else
+        window = NSWindow(contentRect: frame, styleMask: style, backing: .buffered, defer: false)
+        #endif
         window.title = name
         window.contentView = content
         window.makeKeyAndOrderFront(nil)
@@ -109,6 +117,9 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         address.stringValue = webView.url?.absoluteString ?? ""
         status.stringValue = "Inspection: \(webView.isInspectable ? "control enabled" : "disabled"). Desktop capture and input: unprotected."
+        #if METADATA_EXPERIMENT
+        status.stringValue = "Experimental HID-state filter. Physical human origin is not established."
+        #endif
     }
 
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: any Error) {

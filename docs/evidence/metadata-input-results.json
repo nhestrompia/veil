@@ -1,0 +1,775 @@
+{
+  "permissions": {
+    "accessibility": true,
+    "pid": 71718,
+    "postEvents": true,
+    "screenCapture": true
+  },
+  "system": "ProductName:\t\tmacOS\nProductVersion:\t\t26.6\nBuildVersion:\t\t25G72\n",
+  "results": [
+    {
+      "target": "AgentFreeBrowser",
+      "route": "session",
+      "repetition": 0,
+      "trial": "082d5124583bf1e2",
+      "binarySHA256": "13fbb9347d7095013ebe1fdddef682bc4724e41b100add3d5c5417b112b4007e",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 71719,
+        "source": "session",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ],
+      "inputGate": {
+        "acceptedEvents": 0,
+        "refusedEvents": 0
+      },
+      "eventSourceSamples": []
+    },
+    {
+      "target": "AgentFreeBrowser",
+      "route": "session",
+      "repetition": 1,
+      "trial": "7f11408ade71b773",
+      "binarySHA256": "13fbb9347d7095013ebe1fdddef682bc4724e41b100add3d5c5417b112b4007e",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 71739,
+        "source": "session",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ],
+      "inputGate": {
+        "acceptedEvents": 0,
+        "refusedEvents": 0
+      },
+      "eventSourceSamples": []
+    },
+    {
+      "target": "AgentFreeBrowser",
+      "route": "session",
+      "repetition": 2,
+      "trial": "fe1d2e113357e06d",
+      "binarySHA256": "13fbb9347d7095013ebe1fdddef682bc4724e41b100add3d5c5417b112b4007e",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 71757,
+        "source": "session",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ],
+      "inputGate": {
+        "acceptedEvents": 0,
+        "refusedEvents": 0
+      },
+      "eventSourceSamples": []
+    },
+    {
+      "target": "AgentFreeBrowser",
+      "route": "hid",
+      "repetition": 0,
+      "trial": "b8ddb36b30829e86",
+      "binarySHA256": "13fbb9347d7095013ebe1fdddef682bc4724e41b100add3d5c5417b112b4007e",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 71774,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ],
+      "inputGate": {
+        "acceptedEvents": 0,
+        "refusedEvents": 0
+      },
+      "eventSourceSamples": []
+    },
+    {
+      "target": "AgentFreeBrowser",
+      "route": "hid",
+      "repetition": 1,
+      "trial": "f43bd9108c97465e",
+      "binarySHA256": "13fbb9347d7095013ebe1fdddef682bc4724e41b100add3d5c5417b112b4007e",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 71790,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ],
+      "inputGate": {
+        "acceptedEvents": 0,
+        "refusedEvents": 0
+      },
+      "eventSourceSamples": []
+    },
+    {
+      "target": "AgentFreeBrowser",
+      "route": "hid",
+      "repetition": 2,
+      "trial": "6daacc364d1da8fc",
+      "binarySHA256": "13fbb9347d7095013ebe1fdddef682bc4724e41b100add3d5c5417b112b4007e",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 71809,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ],
+      "inputGate": {
+        "acceptedEvents": 0,
+        "refusedEvents": 0
+      },
+      "eventSourceSamples": []
+    },
+    {
+      "target": "AgentFreeBrowser",
+      "route": "curve-hid",
+      "repetition": 0,
+      "trial": "84e8e4e6257e8610",
+      "binarySHA256": "13fbb9347d7095013ebe1fdddef682bc4724e41b100add3d5c5417b112b4007e",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": true,
+        "directToPID": false,
+        "pid": 71824,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ],
+      "inputGate": {
+        "acceptedEvents": 0,
+        "refusedEvents": 0
+      },
+      "eventSourceSamples": []
+    },
+    {
+      "target": "AgentFreeBrowser",
+      "route": "curve-hid",
+      "repetition": 1,
+      "trial": "98b14f128e70d8ac",
+      "binarySHA256": "13fbb9347d7095013ebe1fdddef682bc4724e41b100add3d5c5417b112b4007e",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": true,
+        "directToPID": false,
+        "pid": 71842,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ],
+      "inputGate": {
+        "acceptedEvents": 0,
+        "refusedEvents": 0
+      },
+      "eventSourceSamples": []
+    },
+    {
+      "target": "AgentFreeBrowser",
+      "route": "curve-hid",
+      "repetition": 2,
+      "trial": "cbf39d59efd5fa9a",
+      "binarySHA256": "13fbb9347d7095013ebe1fdddef682bc4724e41b100add3d5c5417b112b4007e",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": true,
+        "directToPID": false,
+        "pid": 71876,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ],
+      "inputGate": {
+        "acceptedEvents": 0,
+        "refusedEvents": 0
+      },
+      "eventSourceSamples": []
+    },
+    {
+      "target": "AgentFreeBrowser",
+      "route": "keycodes-hid",
+      "repetition": 0,
+      "trial": "5ff55c4b99667ad4",
+      "binarySHA256": "13fbb9347d7095013ebe1fdddef682bc4724e41b100add3d5c5417b112b4007e",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 71892,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ],
+      "inputGate": {
+        "acceptedEvents": 0,
+        "refusedEvents": 0
+      },
+      "eventSourceSamples": []
+    },
+    {
+      "target": "AgentFreeBrowser",
+      "route": "keycodes-hid",
+      "repetition": 1,
+      "trial": "b2a1cf4dbf58f205",
+      "binarySHA256": "13fbb9347d7095013ebe1fdddef682bc4724e41b100add3d5c5417b112b4007e",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 71911,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ],
+      "inputGate": {
+        "acceptedEvents": 0,
+        "refusedEvents": 0
+      },
+      "eventSourceSamples": []
+    },
+    {
+      "target": "AgentFreeBrowser",
+      "route": "keycodes-hid",
+      "repetition": 2,
+      "trial": "761ca4dac618640c",
+      "binarySHA256": "13fbb9347d7095013ebe1fdddef682bc4724e41b100add3d5c5417b112b4007e",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 71926,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ],
+      "inputGate": {
+        "acceptedEvents": 0,
+        "refusedEvents": 0
+      },
+      "eventSourceSamples": []
+    },
+    {
+      "target": "MetadataExperiment",
+      "route": "session",
+      "repetition": 0,
+      "trial": "d98ef14508e7f3bb",
+      "binarySHA256": "da3f03dcccd12b01ac7dba60994bcf27315f4f6f2fe0b98562b1f28444f897e7",
+      "verdict": "blocked",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 71955,
+        "source": "session",
+        "status": "attempted"
+      },
+      "submissions": [],
+      "inputTrustedValues": [],
+      "reason": "Input source experiment explicitly refused the posted events",
+      "inputGate": {
+        "acceptedEvents": 0,
+        "refusedEvents": 14
+      },
+      "eventSourceSamples": [
+        "INPUT_GATE_REFUSED source=0 type=1",
+        "INPUT_GATE_REFUSED source=0 type=10",
+        "INPUT_GATE_REFUSED source=0 type=10"
+      ],
+      "controlWorked": true
+    },
+    {
+      "target": "MetadataExperiment",
+      "route": "session",
+      "repetition": 1,
+      "trial": "47a22ec9ed85ccf6",
+      "binarySHA256": "da3f03dcccd12b01ac7dba60994bcf27315f4f6f2fe0b98562b1f28444f897e7",
+      "verdict": "blocked",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 71972,
+        "source": "session",
+        "status": "attempted"
+      },
+      "submissions": [],
+      "inputTrustedValues": [],
+      "reason": "Input source experiment explicitly refused the posted events",
+      "inputGate": {
+        "acceptedEvents": 0,
+        "refusedEvents": 14
+      },
+      "eventSourceSamples": [
+        "INPUT_GATE_REFUSED source=0 type=1",
+        "INPUT_GATE_REFUSED source=0 type=10",
+        "INPUT_GATE_REFUSED source=0 type=10"
+      ],
+      "controlWorked": true
+    },
+    {
+      "target": "MetadataExperiment",
+      "route": "session",
+      "repetition": 2,
+      "trial": "d9942739fef1806f",
+      "binarySHA256": "da3f03dcccd12b01ac7dba60994bcf27315f4f6f2fe0b98562b1f28444f897e7",
+      "verdict": "blocked",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 71990,
+        "source": "session",
+        "status": "attempted"
+      },
+      "submissions": [],
+      "inputTrustedValues": [],
+      "reason": "Input source experiment explicitly refused the posted events",
+      "inputGate": {
+        "acceptedEvents": 0,
+        "refusedEvents": 14
+      },
+      "eventSourceSamples": [
+        "INPUT_GATE_REFUSED source=0 type=1",
+        "INPUT_GATE_REFUSED source=0 type=10",
+        "INPUT_GATE_REFUSED source=0 type=10"
+      ],
+      "controlWorked": true
+    },
+    {
+      "target": "MetadataExperiment",
+      "route": "hid",
+      "repetition": 0,
+      "trial": "c1bacbdd131baec0",
+      "binarySHA256": "da3f03dcccd12b01ac7dba60994bcf27315f4f6f2fe0b98562b1f28444f897e7",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 72009,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ],
+      "inputGate": {
+        "acceptedEvents": 14,
+        "refusedEvents": 0
+      },
+      "eventSourceSamples": [
+        "INPUT_GATE_ACCEPTED source=1 type=1",
+        "INPUT_GATE_ACCEPTED source=1 type=10",
+        "INPUT_GATE_ACCEPTED source=1 type=10"
+      ],
+      "controlWorked": true
+    },
+    {
+      "target": "MetadataExperiment",
+      "route": "hid",
+      "repetition": 1,
+      "trial": "2192ea13f2d128b4",
+      "binarySHA256": "da3f03dcccd12b01ac7dba60994bcf27315f4f6f2fe0b98562b1f28444f897e7",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 72027,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ],
+      "inputGate": {
+        "acceptedEvents": 14,
+        "refusedEvents": 0
+      },
+      "eventSourceSamples": [
+        "INPUT_GATE_ACCEPTED source=1 type=1",
+        "INPUT_GATE_ACCEPTED source=1 type=10",
+        "INPUT_GATE_ACCEPTED source=1 type=10"
+      ],
+      "controlWorked": true
+    },
+    {
+      "target": "MetadataExperiment",
+      "route": "hid",
+      "repetition": 2,
+      "trial": "7559d8efd42e3d45",
+      "binarySHA256": "da3f03dcccd12b01ac7dba60994bcf27315f4f6f2fe0b98562b1f28444f897e7",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 72042,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ],
+      "inputGate": {
+        "acceptedEvents": 14,
+        "refusedEvents": 0
+      },
+      "eventSourceSamples": [
+        "INPUT_GATE_ACCEPTED source=1 type=1",
+        "INPUT_GATE_ACCEPTED source=1 type=10",
+        "INPUT_GATE_ACCEPTED source=1 type=10"
+      ],
+      "controlWorked": true
+    },
+    {
+      "target": "MetadataExperiment",
+      "route": "curve-hid",
+      "repetition": 0,
+      "trial": "56455f64e33207bf",
+      "binarySHA256": "da3f03dcccd12b01ac7dba60994bcf27315f4f6f2fe0b98562b1f28444f897e7",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": true,
+        "directToPID": false,
+        "pid": 72060,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ],
+      "inputGate": {
+        "acceptedEvents": 14,
+        "refusedEvents": 0
+      },
+      "eventSourceSamples": [
+        "INPUT_GATE_ACCEPTED source=1 type=1",
+        "INPUT_GATE_ACCEPTED source=1 type=10",
+        "INPUT_GATE_ACCEPTED source=1 type=10"
+      ],
+      "controlWorked": true
+    },
+    {
+      "target": "MetadataExperiment",
+      "route": "curve-hid",
+      "repetition": 1,
+      "trial": "dd4ba32120a9a659",
+      "binarySHA256": "da3f03dcccd12b01ac7dba60994bcf27315f4f6f2fe0b98562b1f28444f897e7",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": true,
+        "directToPID": false,
+        "pid": 72076,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ],
+      "inputGate": {
+        "acceptedEvents": 14,
+        "refusedEvents": 0
+      },
+      "eventSourceSamples": [
+        "INPUT_GATE_ACCEPTED source=1 type=1",
+        "INPUT_GATE_ACCEPTED source=1 type=10",
+        "INPUT_GATE_ACCEPTED source=1 type=10"
+      ],
+      "controlWorked": true
+    },
+    {
+      "target": "MetadataExperiment",
+      "route": "curve-hid",
+      "repetition": 2,
+      "trial": "d891e73740d1e5bd",
+      "binarySHA256": "da3f03dcccd12b01ac7dba60994bcf27315f4f6f2fe0b98562b1f28444f897e7",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": true,
+        "directToPID": false,
+        "pid": 72094,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ],
+      "inputGate": {
+        "acceptedEvents": 14,
+        "refusedEvents": 0
+      },
+      "eventSourceSamples": [
+        "INPUT_GATE_ACCEPTED source=1 type=1",
+        "INPUT_GATE_ACCEPTED source=1 type=10",
+        "INPUT_GATE_ACCEPTED source=1 type=10"
+      ],
+      "controlWorked": true
+    },
+    {
+      "target": "MetadataExperiment",
+      "route": "keycodes-hid",
+      "repetition": 0,
+      "trial": "3ca8c7ebf35c5eb9",
+      "binarySHA256": "da3f03dcccd12b01ac7dba60994bcf27315f4f6f2fe0b98562b1f28444f897e7",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 72114,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ],
+      "inputGate": {
+        "acceptedEvents": 14,
+        "refusedEvents": 0
+      },
+      "eventSourceSamples": [
+        "INPUT_GATE_ACCEPTED source=1 type=1",
+        "INPUT_GATE_ACCEPTED source=1 type=10",
+        "INPUT_GATE_ACCEPTED source=1 type=10"
+      ],
+      "controlWorked": true
+    },
+    {
+      "target": "MetadataExperiment",
+      "route": "keycodes-hid",
+      "repetition": 1,
+      "trial": "c2602a2da2755137",
+      "binarySHA256": "da3f03dcccd12b01ac7dba60994bcf27315f4f6f2fe0b98562b1f28444f897e7",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 72129,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ],
+      "inputGate": {
+        "acceptedEvents": 14,
+        "refusedEvents": 0
+      },
+      "eventSourceSamples": [
+        "INPUT_GATE_ACCEPTED source=1 type=1",
+        "INPUT_GATE_ACCEPTED source=1 type=10",
+        "INPUT_GATE_ACCEPTED source=1 type=10"
+      ],
+      "controlWorked": true
+    },
+    {
+      "target": "MetadataExperiment",
+      "route": "keycodes-hid",
+      "repetition": 2,
+      "trial": "b3ad92e2b034c652",
+      "binarySHA256": "da3f03dcccd12b01ac7dba60994bcf27315f4f6f2fe0b98562b1f28444f897e7",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 72148,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ],
+      "inputGate": {
+        "acceptedEvents": 14,
+        "refusedEvents": 0
+      },
+      "eventSourceSamples": [
+        "INPUT_GATE_ACCEPTED source=1 type=1",
+        "INPUT_GATE_ACCEPTED source=1 type=10",
+        "INPUT_GATE_ACCEPTED source=1 type=10"
+      ],
+      "controlWorked": true
+    }
+  ],
+  "humanBaseline": false,
+  "routeContract": "Probe uses native APIs only. Controller alone queries the oracle. Input coordinates come from AX."
+}

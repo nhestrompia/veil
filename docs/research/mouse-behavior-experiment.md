@@ -1,6 +1,6 @@
 # Mouse-behavior experiment
 
-Status: proposed experiment. No trajectories, trained classifier, or measured detection results exist in this project yet.
+Status: synthetic baseline trajectories and a source-state filter experiment exist. No physical-human dataset or trained behavioral classifier exists yet. See the [filter findings](../input-filter-findings.md).
 
 ## Question and decision
 

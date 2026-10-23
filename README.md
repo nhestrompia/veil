@@ -21,5 +21,8 @@ Live prototype results:
 
 - [Native input](docs/native-input-findings.md): five working CGEvent adapters completed all 15 protected-browser trials.
 - [Capture and automation](docs/capture-findings.md): screenshot/OCR/native input completed 3/3 protected-browser trials. Playwright transport failures remain separate from protection evidence.
+- [Source-state filter](docs/input-filter-findings.md): a basic client stopped, but generated HID-state input and the vision client still completed tasks.
+
+The current build is an experimental browser and attack testbed. It does not meet either MVP resistance gate. No physical-human trajectory dataset or classifier result exists yet.
 
 Created in [T3 Code](https://t3.codes).

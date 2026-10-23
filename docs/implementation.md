@@ -31,4 +31,19 @@ python3 tools/fixture.py
 open -n dist/AgentFreeBrowser.app --args --url https://example.org
 ```
 
-Use `dist/InspectableControl.app` only as the separate inspection-positive control. The browser accepts HTTPS and loopback HTTP. Clipboard operations remain available for baseline attacks. Export restrictions and input defenses are not implemented yet.
+Use `dist/InspectableControl.app` only as the separate inspection-positive control. The browser accepts HTTPS and loopback HTTP. Clipboard operations remain available for baseline attacks. Full export restrictions are not implemented. The default build has no input defense. The separate filter variant is an experiment with demonstrated bypasses.
+
+
+## Milestone 2: native attacks
+
+Committed as `548af04`. Added the independent NativeProbe app, permission preflight, CGEvent and AX adapters, paired runner, and strict prevention verifier. See [native-input findings](native-input-findings.md).
+
+## Milestone 3: capture and browser transports
+
+Committed as `6a6eb2b`. Added ScreenCaptureKit and system capture, OCR-driven input, pinned Playwright probes, and separate inspector-discovery evidence. See [capture findings](capture-findings.md).
+
+## Milestone 4: source-state filter
+
+Added `dist/MetadataExperiment.app` and tested the rule against adapted native and vision agents. The generated HID-state events bypassed the filter. See [filter findings](input-filter-findings.md).
+
+The default browser remains an unprotected research baseline. There is no validated behavioral detector or agent-resistant MVP. NativeProbe's user-approved Accessibility and Screen Recording grants remain enabled for repeat experiments. Rebuilt ad hoc binaries need effective-grant checks and may need a fresh registration. Do not grant these permissions to the browser app itself.

@@ -1,0 +1,153 @@
+{
+  "permissions": {
+    "accessibility": true,
+    "pid": 72284,
+    "postEvents": true,
+    "screenCapture": true
+  },
+  "results": [
+    {
+      "target": "MetadataExperiment",
+      "trial": "74a882c88fcbf5b5",
+      "repetition": 0,
+      "route": "screenkit-ocr-cgevent",
+      "verdict": "bypass",
+      "binarySHA256": "da3f03dcccd12b01ac7dba60994bcf27315f4f6f2fe0b98562b1f28444f897e7",
+      "screenkit": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/metadata-vision/MetadataExperiment-0.screenkit.png",
+        "pid": 72285,
+        "pixels": [
+          2000,
+          1544
+        ],
+        "status": "captured",
+        "windowID": 81175
+      },
+      "systemCapture": {
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/metadata-vision/MetadataExperiment-0.system.png",
+        "pid": 72285,
+        "status": "captured",
+        "windowID": 81175
+      },
+      "screenkitDisclosure": true,
+      "systemDisclosure": true,
+      "input": {
+        "curvedTrajectory": true,
+        "directToPID": false,
+        "pid": 72285,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "coordinateDerivation": "OCR label center plus public fixture's 57-point field offset; no AX tree",
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "disclosure": true
+    },
+    {
+      "target": "MetadataExperiment",
+      "trial": "49a8df2c5605a77f",
+      "repetition": 1,
+      "route": "screenkit-ocr-cgevent",
+      "verdict": "bypass",
+      "binarySHA256": "da3f03dcccd12b01ac7dba60994bcf27315f4f6f2fe0b98562b1f28444f897e7",
+      "screenkit": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/metadata-vision/MetadataExperiment-1.screenkit.png",
+        "pid": 72308,
+        "pixels": [
+          2000,
+          1544
+        ],
+        "status": "captured",
+        "windowID": 81184
+      },
+      "systemCapture": {
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/metadata-vision/MetadataExperiment-1.system.png",
+        "pid": 72308,
+        "status": "captured",
+        "windowID": 81184
+      },
+      "screenkitDisclosure": true,
+      "systemDisclosure": true,
+      "input": {
+        "curvedTrajectory": true,
+        "directToPID": false,
+        "pid": 72308,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "coordinateDerivation": "OCR label center plus public fixture's 57-point field offset; no AX tree",
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "disclosure": true
+    },
+    {
+      "target": "MetadataExperiment",
+      "trial": "a45cb700b963b7cb",
+      "repetition": 2,
+      "route": "screenkit-ocr-cgevent",
+      "verdict": "bypass",
+      "binarySHA256": "da3f03dcccd12b01ac7dba60994bcf27315f4f6f2fe0b98562b1f28444f897e7",
+      "screenkit": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/metadata-vision/MetadataExperiment-2.screenkit.png",
+        "pid": 72330,
+        "pixels": [
+          2000,
+          1544
+        ],
+        "status": "captured",
+        "windowID": 81193
+      },
+      "systemCapture": {
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/metadata-vision/MetadataExperiment-2.system.png",
+        "pid": 72330,
+        "status": "captured",
+        "windowID": 81193
+      },
+      "screenkitDisclosure": true,
+      "systemDisclosure": true,
+      "input": {
+        "curvedTrajectory": true,
+        "directToPID": false,
+        "pid": 72330,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "coordinateDerivation": "OCR label center plus public fixture's 57-point field offset; no AX tree",
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "disclosure": true
+    }
+  ],
+  "humanBaseline": false,
+  "routeContract": "Agent uses ScreenCaptureKit images, Vision OCR, and CGEvent input. No AX or browser-content API."
+}

@@ -32,6 +32,7 @@ Further candidates now compile. Capture pilots ran, but the protected BGRA and N
 - [Raw device input](docs/hid-observation-findings.md) separates device observations from application events.
 - [Continuous capture](docs/stream-capture-findings.md) records completed-stream frames and matched backdrop controls.
 - [Local developer tools](docs/inspector-launch-findings.md) records a confirmed launch override and its process-local startup rule.
+- [Drag delivery](docs/drag-delivery-findings.md) records public refusal callbacks, internal keyboard controls, and the inconclusive external preflight.
 - [Isolated compositor](docs/isolated-compositor-findings.md) compares display crops over a verified owned backdrop.
 - [Autonomous research](docs/autonomous-findings.md) records software bootstrap attacks, internal keyboard controls, and scoped read comparisons.
 - [Direct menu actions](docs/menu-boundary-findings.md) record a semantic focus bypass and removal of content menus in the revised experiment.

@@ -9,7 +9,11 @@ import IOKit.hidsystem
 final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDelegate, WKUIDelegate {
     private var window: NSWindow!
     private var webView: WKWebView!
+    #if DEVICE_KEYBOARD_EXPERIMENT
+    private let address = DeviceAddressField()
+    #else
     private let address = NSTextField()
+    #endif
     private let status = NSTextField(labelWithString: "Research build. Desktop agents are not blocked.")
     private var ownsSecureInput = false
     #if DEVICE_KEYBOARD_EXPERIMENT

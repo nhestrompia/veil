@@ -4,6 +4,37 @@ import IOKit.hidsystem
 
 #if DEVICE_KEYBOARD_EXPERIMENT
 @MainActor
+enum DeviceDragGate {
+    static func refuseOperation(_ phase: String) -> NSDragOperation {
+        print("DRAG_GATE_REFUSED phase=\(phase)")
+        fflush(stdout)
+        return []
+    }
+
+    static func refuseImport(_ phase: String) -> Bool {
+        print("DRAG_GATE_REFUSED phase=\(phase)")
+        fflush(stdout)
+        return false
+    }
+}
+
+@MainActor
+final class DeviceAddressField: NSTextField {
+    override func draggingEntered(_ sender: any NSDraggingInfo) -> NSDragOperation { DeviceDragGate.refuseOperation("address.entered") }
+    override func draggingUpdated(_ sender: any NSDraggingInfo) -> NSDragOperation { DeviceDragGate.refuseOperation("address.updated") }
+    override func prepareForDragOperation(_ sender: any NSDraggingInfo) -> Bool { DeviceDragGate.refuseImport("address.prepare") }
+    override func performDragOperation(_ sender: any NSDraggingInfo) -> Bool { DeviceDragGate.refuseImport("address.perform") }
+}
+
+@MainActor
+final class DeviceFieldEditor: NSTextView {
+    override func draggingEntered(_ sender: any NSDraggingInfo) -> NSDragOperation { DeviceDragGate.refuseOperation("editor.entered") }
+    override func draggingUpdated(_ sender: any NSDraggingInfo) -> NSDragOperation { DeviceDragGate.refuseOperation("editor.updated") }
+    override func prepareForDragOperation(_ sender: any NSDraggingInfo) -> Bool { DeviceDragGate.refuseImport("editor.prepare") }
+    override func performDragOperation(_ sender: any NSDraggingInfo) -> Bool { DeviceDragGate.refuseImport("editor.perform") }
+}
+
+@MainActor
 final class DeviceEventGate {
     private var pending: [ObjectIdentifier: NSEvent] = [:]
 

@@ -156,3 +156,9 @@ The controller now stops a verified timed-out helper before it removes the diagn
 The installed framework enables local developer tools through a launch argument while remote inspectability remains false. Three controls and three attack launches confirm the setting. Three launches with the new startup rule force it off. Every run preserves an unrelated argument.
 
 The rule changes only the process-local argument domain before framework creation. A revised internal browser control still completes its fixture action. No external inspector attachment or new physical control follows from these results. See [local developer tools](inspector-launch-findings.md).
+
+## Milestone 24: separate drag delivery policy
+
+Added a fixed-text drag source and an external controller with research-window ownership checks. The keyboard experiment now refuses public destination callbacks on its web view, window, address field, and dedicated editor. These changes address a separate AppKit delivery path identified in WebKit source.
+
+Two internal controls confirm address editing, navigation, normal submission, and input-triggered submission. The external preflight found ineffective probe grants and sent no input. The native session also reports locked, with unavailable UI windows. No external drag prevention result exists. See [drag delivery](drag-delivery-findings.md).

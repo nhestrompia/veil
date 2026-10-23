@@ -80,6 +80,7 @@ Task { @MainActor in
     }
     key(37, "l", .command)
     print("INTERNAL_KEYBOARD locationHasEditor=\\(address.currentEditor() != nil)")
+    print("INTERNAL_KEYBOARD locationUsesRestrictedEditor=\\(address.currentEditor() is DeviceFieldEditor)")
     key(36, "\\r")
     try? await Task.sleep(for: .milliseconds(500))
     for _ in 0..<30 {
@@ -88,10 +89,15 @@ Task { @MainActor in
     }
     key(48, "\\t")
     let codes: [UInt16] = [45, 0, 17, 34, 9, 14, 27, 34, 45, 35, 32, 17, 36]
-    for (code, character) in zip(codes, "native-input\\r") {
+    let automaticSubmit = URLComponents(string: CommandLine.arguments.last ?? "")?.queryItems?.contains {
+        $0.name == "submit-on-input" && $0.value == "1"
+    } == true
+    let text = automaticSubmit ? "native-input" : "native-input\\r"
+    for (code, character) in zip(codes, text) {
         key(code, String(character))
         try? await Task.sleep(for: .milliseconds(50))
     }
+    print("INTERNAL_KEYBOARD inputTriggeredSubmit=\\(automaticSubmit)")
     print("INTERNAL_KEYBOARD sequenceFinished=true noDeviceReader=true")
     fflush(stdout)
 }

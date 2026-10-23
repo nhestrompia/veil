@@ -20,6 +20,11 @@ button{background:#116456;color:white;border:0;border-radius:5px}output{display:
 <p><a href="https://example.org">Visit an ordinary HTTPS website</a></p>
 <script>
 const base=location.pathname;
+if(new URLSearchParams(location.search).get('submit-on-input')==='1'){
+  document.querySelector('input').addEventListener('input',event=>{
+    if(event.target.value==='native-input')document.querySelector('form').requestSubmit();
+  });
+}
 document.querySelector('form').addEventListener('submit',async event=>{
   event.preventDefault();
   const response=await fetch(base+'/action',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({note:document.querySelector('input').value})});
@@ -28,7 +33,7 @@ document.querySelector('form').addEventListener('submit',async event=>{
   if(result.accepted)document.querySelector('input').value='';
 });
 let events=[];
-for(const type of ['pointermove','pointerdown','pointerup','click','keydown','input','wheel']){
+for(const type of ['pointermove','pointerdown','pointerup','click','keydown','input','wheel','dragenter','dragover','drop']){
   document.addEventListener(type,event=>{
     if(events.length<200)events.push({type,trusted:event.isTrusted,t:performance.now(),x:event.clientX??null,y:event.clientY??null});
   },{passive:true});

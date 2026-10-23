@@ -13,17 +13,18 @@ import time
 from run_native import ROOT, Oracle, probe
 
 
-def run(output, external_reads, stream):
+def run(output, external_reads, stream, submit_on_input=False):
     output = output.resolve()
     output.mkdir(parents=True, exist_ok=True)
     app = ROOT / "dist/InternalKeyboardControl.app"
     binary = app / "Contents/MacOS/InternalKeyboardControl"
     oracle = Oracle()
     trial = oracle.create()
+    url = trial["url"] + ("?submit-on-input=1" if submit_on_input else "")
     log = output / "control.log"
     log.write_text("")
     launcher = subprocess.Popen(["open", "-n", "-W", str(app), "--stdout", str(log), "--stderr", str(log),
-                                 "--args", "--url", trial["url"]], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                                 "--args", "--url", url], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     pid = None
     result = None
     try:
@@ -42,6 +43,8 @@ def run(output, external_reads, stream):
         result = {"binarySHA256": hashlib.sha256(binary.read_bytes()).hexdigest(), "pid": pid,
                   "startupAddressPreserved": "INTERNAL_KEYBOARD startupAddressPreserved=true" in text,
                   "locationHasEditor": "INTERNAL_KEYBOARD locationHasEditor=true" in text,
+                  "locationUsesRestrictedEditor": "INTERNAL_KEYBOARD locationUsesRestrictedEditor=true" in text,
+                  "inputTriggeredSubmit": "INTERNAL_KEYBOARD inputTriggeredSubmit=true" in text,
                   "acceptedSubmissions": sum(bool(item["accepted"]) for item in state["submissions"]),
                   "noDeviceReader": "INTERNAL_KEYBOARD sequenceFinished=true noDeviceReader=true" in text,
                   "humanBaseline": False, "windowSharingEnabled": "INTERNAL_KEYBOARD windowSharingEnabled=true" in text,
@@ -81,7 +84,8 @@ def run(output, external_reads, stream):
         except subprocess.TimeoutExpired:
             launcher.kill()
             launcher.wait()
-    if not result or not all(result[key] for key in ["startupAddressPreserved", "locationHasEditor", "acceptedSubmissions", "noDeviceReader"]):
+    if (not result or result["inputTriggeredSubmit"] != submit_on_input
+            or not all(result[key] for key in ["startupAddressPreserved", "locationHasEditor", "locationUsesRestrictedEditor", "acceptedSubmissions", "noDeviceReader"])):
         raise RuntimeError("Internal keyboard functionality failed; inspect the diagnostic-only log")
 
 
@@ -90,7 +94,8 @@ if __name__ == "__main__":
     parser.add_argument("--output", type=Path, default=ROOT / "artifacts/internal-keyboard-control")
     parser.add_argument("--external-reads", action="store_true")
     parser.add_argument("--stream", action="store_true")
+    parser.add_argument("--submit-on-input", action="store_true")
     args = parser.parse_args()
     if args.stream and not args.external_reads:
         parser.error("--stream requires --external-reads")
-    run(args.output, args.external_reads, args.stream)
+    run(args.output, args.external_reads, args.stream, args.submit_on_input)

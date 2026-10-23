@@ -233,6 +233,13 @@ enum NativeProbe {
         guard args.count >= 2 else { throw ProbeFailure("Missing target PID") }
         let app = try target(args[1])
         let pid = app.processIdentifier
+        if command == "research-drag" {
+            guard args.count == 5, let x = Double(args[3]), let y = Double(args[4]) else {
+                throw ProbeFailure("research-drag TARGET_PID SOURCE_PID X Y")
+            }
+            try await dragResearchPayload(target: app, source: target(args[2]), point: CGPoint(x: x, y: y))
+            return
+        }
         if command == "compositor-capture" {
             throw ProbeFailure("Use isolated-compositor-capture with a verified research backdrop")
         }

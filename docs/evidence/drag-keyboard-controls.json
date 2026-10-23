@@ -1,0 +1,29 @@
+{
+  "normal": {
+    "binarySHA256": "7fa792932f5a872090573f492e8861873c33f9f3d8145573bd17ca7af5b3e82e",
+    "pid": 77918,
+    "startupAddressPreserved": true,
+    "locationHasEditor": true,
+    "locationUsesRestrictedEditor": true,
+    "inputTriggeredSubmit": false,
+    "acceptedSubmissions": 1,
+    "noDeviceReader": true,
+    "humanBaseline": false,
+    "windowSharingEnabled": false,
+    "scope": "Diagnostic-only private authorized events through the normal application and WebKit path. Not an external bypass, physical control, or HID attestation."
+  },
+  "inputTriggered": {
+    "binarySHA256": "7fa792932f5a872090573f492e8861873c33f9f3d8145573bd17ca7af5b3e82e",
+    "pid": 77987,
+    "startupAddressPreserved": true,
+    "locationHasEditor": true,
+    "locationUsesRestrictedEditor": true,
+    "inputTriggeredSubmit": true,
+    "acceptedSubmissions": 1,
+    "noDeviceReader": true,
+    "humanBaseline": false,
+    "windowSharingEnabled": false,
+    "scope": "Diagnostic-only private authorized events through the normal application and WebKit path. Not an external bypass, physical control, or HID attestation."
+  },
+  "scope": "Internal keyboard functionality only. No external drag control or physical usability claim."
+}

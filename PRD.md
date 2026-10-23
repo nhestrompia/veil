@@ -1,6 +1,6 @@
 # Agent-resistant browser: proof-of-concept PRD
 
-Status: proposed research specification. Implementation has not started.
+Status: research specification. The initial shell and independent fixture are implemented. Protection experiments determine the outcome.
 
 Date: October 23, 2026. Platform: macOS only.
 

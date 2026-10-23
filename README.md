@@ -13,7 +13,7 @@ Supporting evidence:
 - [Mouse-behavior experiment](docs/research/mouse-behavior-experiment.md): physical trajectories, human-trace replay, adaptive attacks, and false blocks.
 - [Protected-rendering experiment](docs/research/protected-rendering-experiment.md): a separate track for interactive HTML and capture-protected graphics paths.
 
-The proposed starting point is AppKit and WKWebView. No browser implementation exists yet. Start with 2 to 3 days of experiments, with native input first. A resistant MVP needs measured benefits and explicit limits. The stronger agent-free claim requires separate prevention results for accessibility, capture, and native input.
+The initial AppKit and WKWebView shell is implemented. See [implementation milestones](docs/implementation.md) for build commands and verification. The first experiments test native input. A resistant MVP needs measured benefits and explicit limits. The stronger agent-free claim requires separate prevention results for accessibility, capture, and native input.
 
 The local Antiagent review checks saved evidence. The online report reviews primary sources. Neither constitutes a live test of this proposed browser.
 

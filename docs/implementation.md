@@ -129,3 +129,10 @@ The keyboard experiment now omits content menus. Physical Command-L uses the exa
 
 
 The capture-restricted flavor repeated the menu-absence result and three launch refusals with working controls. Physical usability on this exact binary remains unverified. The user requested autonomous continuation. The native session runner also requires the current probe hash in each matched control before it sends any input.
+
+
+## Milestone 20: autonomous bootstrap and internal browser controls
+
+Added fresh-process Space/Return bootstrap attacks through five posting routes. All fifteen controls completed their task. No candidate bound a keyboard or admitted input. The results remain observations, with no new physical control.
+
+Added a separate internal diagnostic that verifies startup, Command-L, and a real WebKit form action without a device grant. Direct Accessibility queries recover the readable reference marker, while both diagnostic flavors omit it. Window capture reads the visible flavor and returns black for the restricted flavor. The fixture now retains outcomes without submitted text. See [autonomous findings](autonomous-findings.md).

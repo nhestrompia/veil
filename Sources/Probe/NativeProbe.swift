@@ -186,6 +186,103 @@ enum NativeProbe {
         guard args.count >= 2 else { throw ProbeFailure("Missing target PID") }
         let app = try target(args[1])
         let pid = app.processIdentifier
+        if command == "ax-direct" {
+            guard AXIsProcessTrusted() else { throw ProbeFailure("Accessibility permission is absent for this probe process") }
+            app.activate(options: [])
+            try await Task.sleep(for: .milliseconds(300))
+            guard NSWorkspace.shared.frontmostApplication?.processIdentifier == pid else {
+                throw ProbeFailure("Research target is not frontmost; refusing system-wide AX query")
+            }
+            let root = AXUIElementCreateApplication(pid)
+            let system = AXUIElementCreateSystemWide()
+            AXUIElementSetMessagingTimeout(root, 1)
+            AXUIElementSetMessagingTimeout(system, 1)
+            var roots: [AXUIElement] = [root]
+            var queries: [[String: Any]] = []
+            func appendOwned(_ value: CFTypeRef?, query: String, error: AXError) {
+                var ownsElement = false
+                if let value, CFGetTypeID(value) == AXUIElementGetTypeID() {
+                    let element = value as! AXUIElement
+                    var owner: pid_t = 0
+                    if AXUIElementGetPid(element, &owner) == .success, owner == pid {
+                        roots.append(element)
+                        ownsElement = true
+                    }
+                }
+                queries.append(["query": query, "error": error.rawValue, "ownedElement": ownsElement])
+            }
+            for (element, key) in [(root, kAXMainWindowAttribute), (root, kAXFocusedWindowAttribute),
+                                   (root, kAXFocusedUIElementAttribute), (system, kAXFocusedUIElementAttribute)] {
+                var value: CFTypeRef?
+                let error = AXUIElementCopyAttributeValue(element, key as CFString, &value)
+                appendOwned(value, query: (element == system ? "system:" : "application:") + key, error: error)
+            }
+            let windows = CGWindowListCopyWindowInfo([.optionOnScreenOnly, .excludeDesktopElements], kCGNullWindowID) as? [[String: Any]] ?? []
+            if let window = windows.first(where: { ($0[kCGWindowOwnerPID as String] as? Int32) == pid && ($0[kCGWindowLayer as String] as? Int) == 0 }),
+               let bounds = window[kCGWindowBounds as String] as? [String: Any],
+               let frame = CGRect(dictionaryRepresentation: bounds as CFDictionary) {
+                for point in [CGPoint(x: frame.midX, y: frame.midY), CGPoint(x: frame.minX + 320, y: frame.minY + 360)] where frame.insetBy(dx: 24, dy: 24).contains(point) {
+                    guard NSWorkspace.shared.frontmostApplication?.processIdentifier == pid else {
+                        throw ProbeFailure("Target lost foreground focus; refusing further AX hit tests")
+                    }
+                    var value: AXUIElement?
+                    let error = AXUIElementCopyElementAtPosition(system, Float(point.x), Float(point.y), &value)
+                    appendOwned(value, query: "system:hit-test", error: error)
+                }
+            }
+            var seen: Set<AXUIElement> = []
+            let observed = roots.flatMap(elements).filter { element in
+                var owner: pid_t = 0
+                return AXUIElementGetPid(element, &owner) == .success && owner == pid && seen.insert(element).inserted
+            }
+            try emit(["status": "observed", "queries": queries, "elements": observed.map(description),
+                      "scope": "Only exact target-PID elements; File/Edit use the separate menu adapter"])
+            return
+        }
+        if command == "bootstrap-input" {
+            guard args.count == 3, ["session", "hid", "private", "iohid-legacy", "iohid-reports"].contains(args[2]) else {
+                throw ProbeFailure("bootstrap-input PID session|hid|private|iohid-legacy|iohid-reports")
+            }
+            guard CGPreflightPostEventAccess() else { throw ProbeFailure("Event-posting permission is absent for this probe process") }
+            app.activate(options: [])
+            try await Task.sleep(for: .milliseconds(300))
+            var connection: UInt32 = 0
+            var statuses: [Int32] = []
+            let usesHIDPosting = args[2].hasPrefix("iohid-")
+            if usesHIDPosting {
+                let result = AFBOpenHIDPosting(&connection)
+                guard result == 0 else {
+                    try emit(["status": "inconclusive", "openResult": result])
+                    return
+                }
+            }
+            defer { if usesHIDPosting { AFBCloseHIDPosting(connection) } }
+            let sourceID: CGEventSourceStateID = args[2] == "session" ? .combinedSessionState : args[2] == "private" ? .privateState : .hidSystemState
+            let source = CGEventSource(stateID: sourceID)
+            let codes: [UInt16] = [49, 36, 48, 45, 0, 17, 34, 9, 14, 27, 34, 45, 35, 32, 17, 36]
+            let characters = Array(" \r\tnative-input\r".utf16)
+            for (index, pair) in zip(codes, characters).enumerated() {
+                guard NSWorkspace.shared.frontmostApplication?.processIdentifier == pid else {
+                    throw ProbeFailure("Target lost foreground focus; refusing bootstrap input")
+                }
+                let (code, character) = pair
+                if usesHIDPosting {
+                    for down: Int32 in [1, 0] {
+                        guard NSWorkspace.shared.frontmostApplication?.processIdentifier == pid else {
+                            throw ProbeFailure("Target lost foreground focus; refusing HID bootstrap input")
+                        }
+                        statuses.append(AFBPostHIDKey(connection, code, character, down, args[2] == "iohid-reports" ? 1 : 0))
+                        try await Task.sleep(for: .milliseconds(35))
+                    }
+                } else {
+                    try sendKey(code, source: source, targetPID: pid)
+                }
+                if index == 1 { try await Task.sleep(for: .seconds(1)) }
+            }
+            try emit(["status": "attempted", "route": args[2], "postResults": statuses,
+                      "sequence": "Space, Return, Tab, fixed fake token, Return", "keyPairs": codes.count])
+            return
+        }
         if command == "ax-menu" {
             guard args.count == 3, ["inspect", "open-location"].contains(args[2]) else {
                 throw ProbeFailure("ax-menu PID inspect|open-location")

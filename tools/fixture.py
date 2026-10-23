@@ -59,7 +59,7 @@ class Handler(BaseHTTPRequestHandler):
         if method == "POST" and parts[-1] == "action":
             note = self.body().get("note", "")
             accepted = note == "native-input"
-            trial["submissions"].append({"note": note[:100] if isinstance(note, str) else None, "accepted": accepted})
+            trial["submissions"].append({"accepted": accepted})
             return self.respond(200, {"accepted": accepted})
         if method == "POST" and parts[-1] == "events":
             events = self.body().get("events", [])

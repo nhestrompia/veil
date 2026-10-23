@@ -1,0 +1,80 @@
+"""Score a diagnostic build's private input sequence with the local oracle."""
+
+import argparse
+import hashlib
+import json
+import os
+from pathlib import Path
+import re
+import signal
+import subprocess
+import time
+
+from run_native import ROOT, Oracle, probe
+
+
+def run(output, external_reads):
+    output = output.resolve()
+    output.mkdir(parents=True, exist_ok=True)
+    app = ROOT / "dist/InternalKeyboardControl.app"
+    binary = app / "Contents/MacOS/InternalKeyboardControl"
+    oracle = Oracle()
+    trial = oracle.create()
+    log = output / "control.log"
+    log.write_text("")
+    launcher = subprocess.Popen(["open", "-n", "-W", str(app), "--stdout", str(log), "--stderr", str(log),
+                                 "--args", "--url", trial["url"]], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    pid = None
+    result = None
+    try:
+        deadline = time.monotonic() + 12
+        while time.monotonic() < deadline:
+            text = log.read_text()
+            match = re.search(r"Browser ready: pid=(\d+)", text)
+            if match:
+                pid = int(match[1])
+            state = oracle.state(trial)
+            if "INTERNAL_KEYBOARD sequenceFinished=true" in text and any(item["accepted"] for item in state["submissions"]):
+                break
+            time.sleep(0.1)
+        text = log.read_text()
+        state = oracle.state(trial)
+        result = {"binarySHA256": hashlib.sha256(binary.read_bytes()).hexdigest(), "pid": pid,
+                  "startupAddressPreserved": "INTERNAL_KEYBOARD startupAddressPreserved=true" in text,
+                  "locationHasEditor": "INTERNAL_KEYBOARD locationHasEditor=true" in text,
+                  "acceptedSubmissions": sum(bool(item["accepted"]) for item in state["submissions"]),
+                  "noDeviceReader": "INTERNAL_KEYBOARD sequenceFinished=true noDeviceReader=true" in text,
+                  "humanBaseline": False, "windowSharingEnabled": "INTERNAL_KEYBOARD windowSharingEnabled=true" in text,
+                  "scope": "Diagnostic-only private authorized events through the normal application and WebKit path. Not an external bypass, physical control, or HID attestation."}
+        if external_reads and result["acceptedSubmissions"]:
+            read = probe(["ax-direct", pid], output / "direct-ax.json")
+            result["directAX"] = {"status": read.get("status"), "elements": len(read.get("elements", [])),
+                                  "markerDisclosed": state["secret"] in json.dumps(read)}
+            capture = probe(["capture", pid, output / "window.png"], output / "capture.json")
+            result["capture"] = capture
+            if capture.get("status") == "captured":
+                ocr = probe(["ocr", output / "window.png"], output / "ocr.json")
+                result["captureMarkerDisclosed"] = state["secret"] in json.dumps(ocr)
+        (output / "results.json").write_text(json.dumps(result, indent=2))
+        print(json.dumps(result), flush=True)
+    finally:
+        if pid is not None:
+            process = subprocess.run(["ps", "-p", str(pid), "-o", "comm="], capture_output=True, text=True)
+            if process.stdout.strip() == str(binary):
+                os.kill(pid, signal.SIGTERM)
+        launcher.terminate()
+        try:
+            launcher.wait(timeout=3)
+        except subprocess.TimeoutExpired:
+            launcher.kill()
+            launcher.wait()
+    if not result or not all(result[key] for key in ["startupAddressPreserved", "locationHasEditor", "acceptedSubmissions", "noDeviceReader"]):
+        raise RuntimeError("Internal keyboard functionality failed; inspect the diagnostic-only log")
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--output", type=Path, default=ROOT / "artifacts/internal-keyboard-control")
+    parser.add_argument("--external-reads", action="store_true")
+    args = parser.parse_args()
+    run(args.output, args.external_reads)

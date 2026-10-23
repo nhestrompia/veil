@@ -253,6 +253,12 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
 @main
 enum BrowserApp {
     @MainActor static func main() {
+        #if !INSPECTION_CONTROL
+        guard BrowserRuntimePolicy.disableDeveloperExtras() else {
+            print("Browser startup refused: local developer tools remain enabled.")
+            return
+        }
+        #endif
         #if DEVICE_KEYBOARD_EXPERIMENT
         let app = DeviceKeyboardApplication.shared
         precondition(app is DeviceKeyboardApplication, "The device experiment requires its application subclass")

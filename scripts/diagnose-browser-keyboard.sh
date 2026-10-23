@@ -102,6 +102,7 @@ xcrun swiftc -swift-version 6 -warnings-as-errors -parse-as-library -O \
     "${defines[@]}" -target arm64-apple-macosx14.0 \
     -module-cache-path .build/module-cache Sources/Browser/AXBoundary.swift \
     Sources/Browser/DeviceKeyboard.swift Sources/Browser/BrowserPolicy.swift \
+    Sources/Browser/BrowserRuntimePolicy.swift \
     Sources/Browser/InputSourceWindow.swift Sources/Browser/SecureInputWindow.swift \
     .build/InternalKeyboardControl.swift -o "$app/Contents/MacOS/InternalKeyboardControl"
 cat > "$app/Contents/Info.plist" <<EOF

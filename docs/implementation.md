@@ -150,3 +150,9 @@ The readable diagnostic exposed its marker. The restricted diagnostic exposed on
 Added a completed-frame SCStream adapter with screen output only. Three readable controls disclosed their markers. Three restricted diagnostics exposed only the owned backdrop. All six internal forms completed. The coverage guard applies to every saved image.
 
 The controller now stops a verified timed-out helper before it removes the diagnostic host. Five lifecycle checks cover stale records, process ownership, replacement processes, and shutdown paths. All fifteen Python checks pass. See [stream findings](stream-capture-findings.md).
+
+## Milestone 23: local developer tools at launch
+
+The installed framework enables local developer tools through a launch argument while remote inspectability remains false. Three controls and three attack launches confirm the setting. Three launches with the new startup rule force it off. Every run preserves an unrelated argument.
+
+The rule changes only the process-local argument domain before framework creation. A revised internal browser control still completes its fixture action. No external inspector attachment or new physical control follows from these results. See [local developer tools](inspector-launch-findings.md).

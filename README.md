@@ -25,4 +25,10 @@ Live prototype results:
 
 The current build is an experimental browser and attack testbed. It does not meet either MVP resistance gate. No physical-human trajectory dataset or classifier result exists yet.
 
+Further candidates now compile. Their live prevention results remain pending.
+
+- [Foreground controls](docs/foreground-findings.md) test Secure Event Input and reduced accessibility exposure.
+- [Protected HTML pixels](docs/pixel-rendering-findings.md) test the public capture-protection property on a sample-buffer layer.
+- [Raw device input](docs/hid-observation-findings.md) separates device observations from application events.
+
 Created in [T3 Code](https://t3.codes).

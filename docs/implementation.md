@@ -47,3 +47,15 @@ Committed as `6a6eb2b`. Added ScreenCaptureKit and system capture, OCR-driven in
 Added `dist/MetadataExperiment.app` and tested the rule against adapted native and vision agents. The generated HID-state events bypassed the filter. See [filter findings](input-filter-findings.md).
 
 The default browser remains an unprotected research baseline. There is no validated behavioral detector or agent-resistant MVP. NativeProbe's user-approved Accessibility and Screen Recording grants remain enabled for repeat experiments. Rebuilt ad hoc binaries need effective-grant checks and may need a fresh registration. Do not grant these permissions to the browser app itself.
+
+## Milestone 5: guarded foreground experiments
+
+Added SecureInputExperiment and ReducedExposureExperiment, with console preflight checks and a cycle-safe AX traversal. Live attacks remain pending because the current graphical session reports a lock. The preflight refuses these trials. See [foreground findings](foreground-findings.md).
+
+## Milestone 6: protected HTML pixels
+
+Added PixelControl and PixelProtectedExperiment with a source WKWebView outside the onscreen window list. The control submitted an HTML snapshot through a sample-buffer renderer. Capture exclusion and human visibility remain unverified. No input bridge exists. See [pixel findings](pixel-rendering-findings.md).
+
+## Milestone 7: independent device observations
+
+Added a separate HIDObservation app and an unentitled virtual-device probe. Both virtual-device APIs returned nil in three creation attempts. Input Monitoring was requested after user approval, but its effective grant remains off. No physical sample, synthetic observation matrix, classifier, or input defense exists yet. See [device findings](hid-observation-findings.md).

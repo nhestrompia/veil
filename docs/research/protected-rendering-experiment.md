@@ -1,6 +1,6 @@
 # Protected-rendering experiment
 
-Status: conditional research track. No protected HTML renderer or Chromium modification exists in this project.
+Status: a public-API HTML-to-pixel candidate now compiles. Capture resistance, human visibility, and interaction remain unverified. No Chromium modification exists. See the [candidate findings](../pixel-rendering-findings.md).
 
 ## Question and separation from the MVP
 

@@ -1,0 +1,28 @@
+{
+  "elements" : [
+    {
+      "actions" : [
+
+      ],
+      "AXRole" : "AXApplication",
+      "AXTitle" : "DeviceKeyboardExperiment"
+    },
+    {
+      "actions" : [
+
+      ],
+      "AXRole" : "AXWindow",
+      "AXTitle" : "Device Keyboard Experiment",
+      "position" : [
+        100,
+        110
+      ],
+      "size" : [
+        1000,
+        772
+      ]
+    }
+  ],
+  "pid" : 55105,
+  "status" : "observed"
+}

@@ -1,0 +1,285 @@
+{
+  "results": [
+    {
+      "pid": 55105,
+      "verdict": "blocked-action",
+      "route": "window-image-ocr-curved-hid",
+      "capture": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/device-vision/candidate-0.png",
+        "pid": 55105,
+        "pixels": [
+          2000,
+          1544
+        ],
+        "status": "captured",
+        "windowID": 84475,
+        "probeBinarySHA256": "3be534413c9d4996acde710271b58d38dd764602012086e625f9570b72e90ff5"
+      },
+      "disclosure": true,
+      "fieldCenter": [
+        299.12790777616283,
+        465.0414310073446
+      ],
+      "coordinateSource": "OCR label and public fixture's 57-point offset; no AX tree",
+      "input": {
+        "curvedTrajectory": true,
+        "directToPID": false,
+        "explicitWindowRouting": false,
+        "keyboardDirectToPID": false,
+        "pid": 55105,
+        "source": "hid",
+        "status": "attempted",
+        "probeBinarySHA256": "3be534413c9d4996acde710271b58d38dd764602012086e625f9570b72e90ff5"
+      },
+      "newSubmissions": [],
+      "acceptedEvents": 0,
+      "refusedEvents": 91,
+      "controlWorked": true,
+      "repetition": 0
+    },
+    {
+      "pid": 55105,
+      "verdict": "blocked-action",
+      "route": "window-image-ocr-curved-hid",
+      "capture": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/device-vision/candidate-1.png",
+        "pid": 55105,
+        "pixels": [
+          2000,
+          1544
+        ],
+        "status": "captured",
+        "windowID": 84475,
+        "probeBinarySHA256": "3be534413c9d4996acde710271b58d38dd764602012086e625f9570b72e90ff5"
+      },
+      "disclosure": true,
+      "fieldCenter": [
+        299.12790777616283,
+        465.0414310073446
+      ],
+      "coordinateSource": "OCR label and public fixture's 57-point offset; no AX tree",
+      "input": {
+        "curvedTrajectory": true,
+        "directToPID": false,
+        "explicitWindowRouting": false,
+        "keyboardDirectToPID": false,
+        "pid": 55105,
+        "source": "hid",
+        "status": "attempted",
+        "probeBinarySHA256": "3be534413c9d4996acde710271b58d38dd764602012086e625f9570b72e90ff5"
+      },
+      "newSubmissions": [],
+      "acceptedEvents": 0,
+      "refusedEvents": 90,
+      "controlWorked": true,
+      "repetition": 1
+    },
+    {
+      "pid": 55105,
+      "verdict": "blocked-action",
+      "route": "window-image-ocr-curved-hid",
+      "capture": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/device-vision/candidate-2.png",
+        "pid": 55105,
+        "pixels": [
+          2000,
+          1544
+        ],
+        "status": "captured",
+        "windowID": 84475,
+        "probeBinarySHA256": "3be534413c9d4996acde710271b58d38dd764602012086e625f9570b72e90ff5"
+      },
+      "disclosure": true,
+      "fieldCenter": [
+        299.12790777616283,
+        465.0414310073446
+      ],
+      "coordinateSource": "OCR label and public fixture's 57-point offset; no AX tree",
+      "input": {
+        "curvedTrajectory": true,
+        "directToPID": false,
+        "explicitWindowRouting": false,
+        "keyboardDirectToPID": false,
+        "pid": 55105,
+        "source": "hid",
+        "status": "attempted",
+        "probeBinarySHA256": "3be534413c9d4996acde710271b58d38dd764602012086e625f9570b72e90ff5"
+      },
+      "newSubmissions": [],
+      "acceptedEvents": 0,
+      "refusedEvents": 91,
+      "controlWorked": true,
+      "repetition": 2
+    }
+  ],
+  "controls": [
+    {
+      "pid": 56894,
+      "verdict": "bypass",
+      "route": "window-image-ocr-curved-hid",
+      "capture": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/device-vision/control-0.png",
+        "pid": 56894,
+        "pixels": [
+          2000,
+          1544
+        ],
+        "status": "captured",
+        "windowID": 84509,
+        "probeBinarySHA256": "3be534413c9d4996acde710271b58d38dd764602012086e625f9570b72e90ff5"
+      },
+      "disclosure": true,
+      "fieldCenter": [
+        299.12790777616283,
+        465.0414310073446
+      ],
+      "coordinateSource": "OCR label and public fixture's 57-point offset; no AX tree",
+      "input": {
+        "curvedTrajectory": true,
+        "directToPID": false,
+        "explicitWindowRouting": false,
+        "keyboardDirectToPID": false,
+        "pid": 56894,
+        "source": "hid",
+        "status": "attempted",
+        "probeBinarySHA256": "3be534413c9d4996acde710271b58d38dd764602012086e625f9570b72e90ff5"
+      },
+      "newSubmissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "acceptedEvents": 0,
+      "refusedEvents": 0,
+      "binarySHA256": "cd54cc2a2ba654d4e0c323cd661c2dea959d1bec001ce2f18f8030f273c94ec0",
+      "repetition": 0
+    },
+    {
+      "pid": 56950,
+      "verdict": "bypass",
+      "route": "window-image-ocr-curved-hid",
+      "capture": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/device-vision/control-1.png",
+        "pid": 56950,
+        "pixels": [
+          2000,
+          1544
+        ],
+        "status": "captured",
+        "windowID": 84521,
+        "probeBinarySHA256": "3be534413c9d4996acde710271b58d38dd764602012086e625f9570b72e90ff5"
+      },
+      "disclosure": true,
+      "fieldCenter": [
+        299.12790777616283,
+        465.0414310073446
+      ],
+      "coordinateSource": "OCR label and public fixture's 57-point offset; no AX tree",
+      "input": {
+        "curvedTrajectory": true,
+        "directToPID": false,
+        "explicitWindowRouting": false,
+        "keyboardDirectToPID": false,
+        "pid": 56950,
+        "source": "hid",
+        "status": "attempted",
+        "probeBinarySHA256": "3be534413c9d4996acde710271b58d38dd764602012086e625f9570b72e90ff5"
+      },
+      "newSubmissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "acceptedEvents": 0,
+      "refusedEvents": 0,
+      "binarySHA256": "cd54cc2a2ba654d4e0c323cd661c2dea959d1bec001ce2f18f8030f273c94ec0",
+      "repetition": 1
+    },
+    {
+      "pid": 57003,
+      "verdict": "bypass",
+      "route": "window-image-ocr-curved-hid",
+      "capture": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/device-vision/control-2.png",
+        "pid": 57003,
+        "pixels": [
+          2000,
+          1544
+        ],
+        "status": "captured",
+        "windowID": 84533,
+        "probeBinarySHA256": "3be534413c9d4996acde710271b58d38dd764602012086e625f9570b72e90ff5"
+      },
+      "disclosure": true,
+      "fieldCenter": [
+        299.12790777616283,
+        465.0414310073446
+      ],
+      "coordinateSource": "OCR label and public fixture's 57-point offset; no AX tree",
+      "input": {
+        "curvedTrajectory": true,
+        "directToPID": false,
+        "explicitWindowRouting": false,
+        "keyboardDirectToPID": false,
+        "pid": 57003,
+        "source": "hid",
+        "status": "attempted",
+        "probeBinarySHA256": "3be534413c9d4996acde710271b58d38dd764602012086e625f9570b72e90ff5"
+      },
+      "newSubmissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "acceptedEvents": 0,
+      "refusedEvents": 0,
+      "binarySHA256": "cd54cc2a2ba654d4e0c323cd661c2dea959d1bec001ce2f18f8030f273c94ec0",
+      "repetition": 2
+    }
+  ],
+  "sessionPID": 55105,
+  "binarySHA256": "6e21d4cda4cf17e1cd87a733d964696ef19b98a3d65534f7bcd21fddd63d08a6",
+  "operatorDeclaresPhysicalCompletion": true,
+  "bootstrapAttested": false,
+  "physicalInputAbsenceVerified": false,
+  "routeContract": "Window-scoped ScreenCaptureKit image, Vision OCR, curved CGEvent typing. Count only new submissions in the physically calibrated process."
+}

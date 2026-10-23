@@ -112,3 +112,10 @@ Launch arguments now fill the keyboard browser address without loading it. Three
 Physical startup checks exposed a hidden app and a repeated-Space editing bug. The user confirmed address visibility after explicit app selection. The native field control reproduced address replacement before the dispatcher fix and passed afterward. Repeated binding Spaces now preserve the address until navigation begins. A ready message confirms binding, and normal Space input resumes after navigation.
 
 The shared app path has two mutually exclusive build flavors. The visible flavor enables window sharing for diagnosis. It cannot establish capture prevention. The updated build still requires physical website completion and attacks against that same process. See [startup navigation](launch-navigation-findings.md) and [visibility diagnosis](startup-visibility-diagnosis.md).
+
+
+## Milestone 18: usable startup and expanded same-session attacks
+
+The user completed physical startup on the revised visible control. The fixture confirmed one accepted action. The unchanged process then refused 27 calibrated native trials and three screenshot/OCR-driven input trials. Six native trials remain inconclusive because their controls failed. No generated trial admitted input or added an accepted action.
+
+Added a runner that captures only the target window and counts new independent actions. The visible control disclosed its page marker in all three captures. This is useful input evidence, with no agent-free claim. See [expanded same-session findings](device-startup-session-findings.md).

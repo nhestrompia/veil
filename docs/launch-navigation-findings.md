@@ -26,3 +26,6 @@ The first subsequent physical trial failed. The user reported a black whole wind
 
 
 The user later confirmed address-bar visibility after selecting the app. A separate repeated-Space bug then replaced the selected address. The revised startup dispatcher consumes repeated binding Spaces until navigation begins. Its native regression and the remaining physical check are recorded in the visibility diagnosis.
+
+
+The revised visible control subsequently passed physical website completion. Expanded attacks against that same process refused 27 calibrated native trials and three vision-input trials. Six native trials remained inconclusive. Screenshots disclosed the page. See the [same-session results](device-startup-session-findings.md).

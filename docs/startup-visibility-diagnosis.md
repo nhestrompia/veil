@@ -31,3 +31,6 @@ A fresh physical session exposed another startup problem. The user reported that
 The revised dispatcher consumes repeated Spaces until the first valid navigation starts. A binding callback selects the address and shows a ready message. After navigation begins, Space works normally. The native control failed before the change and passed afterward. It also verified Return submission and normal Space input after navigation. These internal events establish the regression result, not physical provenance.
 
 The [startup regression](evidence/startup-space-regression.json) records both results. The latest [launch comparison](evidence/launch-space-fixed.json) recorded zero unattended requests in three candidate trials, with three working controls. A new physical task and attacks against that same process remain required.
+
+
+The revised visible control subsequently passed physical website completion. Expanded attacks against that same process refused 27 calibrated native trials and three vision-input trials. Six native trials remained inconclusive. Screenshots disclosed the page. See the [same-session results](device-startup-session-findings.md).

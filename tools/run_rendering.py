@@ -47,7 +47,8 @@ def run(targets, repetitions, output):
                         raise RuntimeError("No successful HTML frame submission; no capture-prevention inference")
                     time.sleep(0.5)
                     state = oracle.state(trial)
-                    for route, command in [("screenkit", "capture"), ("display", "display-capture"), ("system", "system-capture")]:
+                    for route, command in [("screenkit", "capture"), ("display", "display-capture"),
+                                           ("compositor", "compositor-capture"), ("system", "system-capture")]:
                         png = prefix.with_suffix(f".{route}.png")
                         capture = probe([command, process.pid, png], prefix.with_suffix(f".{route}.json"))
                         if capture.get("status") == "captured":

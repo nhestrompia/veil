@@ -1,0 +1,427 @@
+{
+  "permissions": {
+    "accessibility": true,
+    "pid": 6978,
+    "postEvents": true,
+    "screenCapture": true
+  },
+  "environment": {
+    "locked": null,
+    "reason": "Console lock flag unavailable",
+    "advisory": true
+  },
+  "positiveControlTarget": "InspectableControl",
+  "system": "ProductName:\t\tmacOS\nProductVersion:\t\t26.6\nBuildVersion:\t\t25G72\n",
+  "results": [
+    {
+      "target": "InspectableControl",
+      "route": "hid",
+      "repetition": 0,
+      "trial": "2d435d2c5b9d9afd",
+      "binarySHA256": "fdc78d4a76268b5cd78c1727f3931636c1714b8a4ef0442d26ecc66ec1046f96",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 6980,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ],
+      "secureInputEvents": {
+        "enabled": 0,
+        "disabled": 0
+      },
+      "inputGate": {
+        "acceptedEvents": 0,
+        "refusedEvents": 0
+      },
+      "controlWorked": false
+    },
+    {
+      "target": "InspectableControl",
+      "route": "hid",
+      "repetition": 1,
+      "trial": "756b4d7656791e3e",
+      "binarySHA256": "fdc78d4a76268b5cd78c1727f3931636c1714b8a4ef0442d26ecc66ec1046f96",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 7002,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ],
+      "secureInputEvents": {
+        "enabled": 0,
+        "disabled": 0
+      },
+      "inputGate": {
+        "acceptedEvents": 0,
+        "refusedEvents": 0
+      },
+      "controlWorked": false
+    },
+    {
+      "target": "InspectableControl",
+      "route": "hid",
+      "repetition": 2,
+      "trial": "9b678cdbc789232e",
+      "binarySHA256": "fdc78d4a76268b5cd78c1727f3931636c1714b8a4ef0442d26ecc66ec1046f96",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 7027,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ],
+      "secureInputEvents": {
+        "enabled": 0,
+        "disabled": 0
+      },
+      "inputGate": {
+        "acceptedEvents": 0,
+        "refusedEvents": 0
+      },
+      "controlWorked": false
+    },
+    {
+      "target": "InspectableControl",
+      "route": "keycodes-hid",
+      "repetition": 0,
+      "trial": "852c0b6b6b0e8c59",
+      "binarySHA256": "fdc78d4a76268b5cd78c1727f3931636c1714b8a4ef0442d26ecc66ec1046f96",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 7050,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ],
+      "secureInputEvents": {
+        "enabled": 0,
+        "disabled": 0
+      },
+      "inputGate": {
+        "acceptedEvents": 0,
+        "refusedEvents": 0
+      },
+      "controlWorked": false
+    },
+    {
+      "target": "InspectableControl",
+      "route": "keycodes-hid",
+      "repetition": 1,
+      "trial": "cbd7ae235e41c687",
+      "binarySHA256": "fdc78d4a76268b5cd78c1727f3931636c1714b8a4ef0442d26ecc66ec1046f96",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 7076,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ],
+      "secureInputEvents": {
+        "enabled": 0,
+        "disabled": 0
+      },
+      "inputGate": {
+        "acceptedEvents": 0,
+        "refusedEvents": 0
+      },
+      "controlWorked": false
+    },
+    {
+      "target": "InspectableControl",
+      "route": "keycodes-hid",
+      "repetition": 2,
+      "trial": "24f9642abbe51aeb",
+      "binarySHA256": "fdc78d4a76268b5cd78c1727f3931636c1714b8a4ef0442d26ecc66ec1046f96",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 7165,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ],
+      "secureInputEvents": {
+        "enabled": 0,
+        "disabled": 0
+      },
+      "inputGate": {
+        "acceptedEvents": 0,
+        "refusedEvents": 0
+      },
+      "controlWorked": false
+    },
+    {
+      "target": "SecureInputExperiment",
+      "route": "hid",
+      "repetition": 0,
+      "trial": "e2d08eb4a9b178dc",
+      "binarySHA256": "f6b1805a69e6fdd623e32b70c91333f446133ff9327c101eaa949f8ff7ec8c1f",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 7191,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ],
+      "secureInputEvents": {
+        "enabled": 14,
+        "disabled": 0
+      },
+      "inputGate": {
+        "acceptedEvents": 0,
+        "refusedEvents": 0
+      },
+      "controlWorked": true
+    },
+    {
+      "target": "SecureInputExperiment",
+      "route": "hid",
+      "repetition": 1,
+      "trial": "29c9202756b2028c",
+      "binarySHA256": "f6b1805a69e6fdd623e32b70c91333f446133ff9327c101eaa949f8ff7ec8c1f",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 7213,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ],
+      "secureInputEvents": {
+        "enabled": 14,
+        "disabled": 0
+      },
+      "inputGate": {
+        "acceptedEvents": 0,
+        "refusedEvents": 0
+      },
+      "controlWorked": true
+    },
+    {
+      "target": "SecureInputExperiment",
+      "route": "hid",
+      "repetition": 2,
+      "trial": "933b5367db5267b5",
+      "binarySHA256": "f6b1805a69e6fdd623e32b70c91333f446133ff9327c101eaa949f8ff7ec8c1f",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 7237,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ],
+      "secureInputEvents": {
+        "enabled": 14,
+        "disabled": 0
+      },
+      "inputGate": {
+        "acceptedEvents": 0,
+        "refusedEvents": 0
+      },
+      "controlWorked": true
+    },
+    {
+      "target": "SecureInputExperiment",
+      "route": "keycodes-hid",
+      "repetition": 0,
+      "trial": "bd0754a4909a570f",
+      "binarySHA256": "f6b1805a69e6fdd623e32b70c91333f446133ff9327c101eaa949f8ff7ec8c1f",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 7259,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ],
+      "secureInputEvents": {
+        "enabled": 14,
+        "disabled": 0
+      },
+      "inputGate": {
+        "acceptedEvents": 0,
+        "refusedEvents": 0
+      },
+      "controlWorked": true
+    },
+    {
+      "target": "SecureInputExperiment",
+      "route": "keycodes-hid",
+      "repetition": 1,
+      "trial": "03209d537afaa98b",
+      "binarySHA256": "f6b1805a69e6fdd623e32b70c91333f446133ff9327c101eaa949f8ff7ec8c1f",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 7285,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ],
+      "secureInputEvents": {
+        "enabled": 14,
+        "disabled": 0
+      },
+      "inputGate": {
+        "acceptedEvents": 0,
+        "refusedEvents": 0
+      },
+      "controlWorked": true
+    },
+    {
+      "target": "SecureInputExperiment",
+      "route": "keycodes-hid",
+      "repetition": 2,
+      "trial": "621eafd63fafbcc5",
+      "binarySHA256": "f6b1805a69e6fdd623e32b70c91333f446133ff9327c101eaa949f8ff7ec8c1f",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 7308,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ],
+      "secureInputEvents": {
+        "enabled": 14,
+        "disabled": 0
+      },
+      "inputGate": {
+        "acceptedEvents": 0,
+        "refusedEvents": 0
+      },
+      "controlWorked": true
+    }
+  ],
+  "humanBaseline": false,
+  "routeContract": "Probe uses native APIs only. Controller alone queries the oracle. Input coordinates come from AX."
+}

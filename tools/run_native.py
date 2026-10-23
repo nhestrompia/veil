@@ -20,7 +20,9 @@ def probe(arguments, output):
                                timeout=40, capture_output=True)
     if not output.exists():
         raise RuntimeError(f"Probe launch failed: {completed.stderr.decode().strip()}")
-    return json.loads(output.read_text())
+    result = json.loads(output.read_text())
+    result["probeBinarySHA256"] = hashlib.sha256((ROOT / "dist/NativeProbe.app/Contents/MacOS/NativeProbe").read_bytes()).hexdigest()
+    return result
 
 
 class Oracle:
@@ -71,6 +73,9 @@ def run(targets, routes, repetitions, output):
                         for _ in range(12):
                             time.sleep(0.3)
                             tree = probe(["ax", process.pid], prefix.with_suffix(".ax.json"))
+                            if route == "blind-fixture" and name != control_target:
+                                time.sleep(1)
+                                break
                             if any((e.get("AXDescription") == "Enter native-input" or e.get("AXTitle") == "Enter native-input") and e.get("AXRole") == "AXTextField" for e in tree.get("elements", [])):
                                 break
                         state = oracle.state(trial)
@@ -81,12 +86,23 @@ def run(targets, routes, repetitions, output):
                             second = probe(["ax-action", process.pid], prefix.with_suffix(".retry.json"))
                             attempt = {"first": attempt, "retry": second}
                         else:
-                            field = next((e for e in tree.get("elements", []) if (e.get("AXDescription") == "Enter native-input" or e.get("AXTitle") == "Enter native-input") and e.get("AXRole") == "AXTextField"), None)
-                            if not field:
-                                raise RuntimeError("Cannot locate fixture field; no action-prevention result")
-                            x, y = field["position"]
-                            width, height = field["size"]
-                            args = ["input", process.pid, x + width / 2, y + height / 2, route.removeprefix("pid-").removeprefix("curve-").removeprefix("keycodes-")]
+                            if route == "blind-fixture" and name != control_target:
+                                control = next((r for r in results if r["target"] == control_target and r["route"] == route and
+                                    r["repetition"] == repetition and r["verdict"] == "bypass"), None)
+                                if not control or "fieldCenter" not in control:
+                                    raise RuntimeError("Known-layout route needs a matched working control")
+                                point = control["fieldCenter"]
+                                result["coordinateSource"] = "Prior control of the public fixture; no target AX coordinates or screenshot"
+                            else:
+                                field = next((e for e in tree.get("elements", []) if (e.get("AXDescription") == "Enter native-input" or e.get("AXTitle") == "Enter native-input") and e.get("AXRole") == "AXTextField"), None)
+                                if not field:
+                                    raise RuntimeError("Cannot locate fixture field; no action-prevention result")
+                                x, y = field["position"]
+                                width, height = field["size"]
+                                point = [x + width / 2, y + height / 2]
+                                result["fieldCenter"] = point
+                            source = "hid" if route == "blind-fixture" else route.removeprefix("pid-").removeprefix("curve-").removeprefix("keycodes-")
+                            args = ["input", process.pid, *point, source]
                             if route.startswith("pid-"):
                                 args.append("pid")
                             if route.startswith("curve-"):
@@ -100,6 +116,9 @@ def run(targets, routes, repetitions, output):
                         result.update(attempt=attempt, submissions=state["submissions"],
                                       inputTrustedValues=sorted(set(e["trusted"] for e in state["events"] if e["type"] == "input")))
                         event_log = prefix.with_suffix(".log").read_text()
+                        secure_events = [line for line in event_log.splitlines() if line.startswith("SECURE_INPUT_EVENT")]
+                        result["secureInputEvents"] = {"enabled": sum("effective=true" in line for line in secure_events),
+                                                       "disabled": sum("effective=false" in line for line in secure_events)}
                         result["inputGate"] = {"acceptedEvents": event_log.count("INPUT_GATE_ACCEPTED"),
                                                "refusedEvents": event_log.count("INPUT_GATE_REFUSED")}
                         completed = any(s["accepted"] for s in state["submissions"])
@@ -134,7 +153,7 @@ def run(targets, routes, repetitions, output):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--targets", nargs="+", default=["AgentFreeBrowser", "InspectableControl"], choices=["AgentFreeBrowser", "InspectableControl", "MetadataExperiment", "SecureInputExperiment", "ReducedExposureExperiment"])
-    parser.add_argument("--routes", nargs="+", default=["ax", "session", "hid", "private", "pid-hid", "curve-hid", "keycodes-hid"], choices=["ax", "session", "hid", "private", "pid-hid", "curve-hid", "keycodes-hid"])
+    parser.add_argument("--routes", nargs="+", default=["ax", "session", "hid", "private", "pid-hid", "curve-hid", "keycodes-hid", "blind-fixture"], choices=["ax", "session", "hid", "private", "pid-hid", "curve-hid", "keycodes-hid", "blind-fixture"])
     parser.add_argument("--repetitions", type=int, default=3)
     parser.add_argument("--output", type=Path, default=ROOT / "artifacts/native-pilot")
     args = parser.parse_args()

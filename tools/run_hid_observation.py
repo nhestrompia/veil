@@ -44,9 +44,14 @@ def run(routes, repetitions, output):
                 pid = ready["pid"]
                 if not ready["collecting"]:
                     raise RuntimeError("Input Monitoring grant is absent or observation did not start")
-                tree = probe(["ax", pid], prefix.with_suffix(".ax.json"))
-                field = next((e for e in tree.get("elements", []) if e.get("AXRole") == "AXTextField" and
-                    (e.get("AXTitle") == "Enter native-input" or e.get("AXDescription") == "Enter native-input")), None)
+                field = None
+                for _ in range(12):
+                    tree = probe(["ax", pid], prefix.with_suffix(".ax.json"))
+                    field = next((e for e in tree.get("elements", []) if e.get("AXRole") == "AXTextField" and
+                        (e.get("AXTitle") == "Enter native-input" or e.get("AXDescription") == "Enter native-input")), None)
+                    if field:
+                        break
+                    time.sleep(0.2)
                 if not field:
                     raise RuntimeError("Observer field not found; no source comparison")
                 x, y = field["position"]

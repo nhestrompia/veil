@@ -33,8 +33,17 @@ func elements(_ root: AXUIElement) -> [AXUIElement] {
         // System menus contain unrelated recent documents and can link back to the application.
         if (attribute(element, kAXRoleAttribute) as? String) == kAXMenuBarRole { continue }
         result.append(element)
-        if depth < 35, let children = attribute(element, kAXChildrenAttribute) as? [AXUIElement] {
-            pending.append(contentsOf: children.reversed().map { ($0, depth + 1) })
+        if depth < 35 {
+            for key in [kAXChildrenAttribute, kAXWindowsAttribute] {
+                if let children = attribute(element, key) as? [AXUIElement] {
+                    pending.append(contentsOf: children.reversed().map { ($0, depth + 1) })
+                }
+            }
+            for key in [kAXFocusedWindowAttribute, kAXFocusedUIElementAttribute] {
+                if let raw = attribute(element, key), CFGetTypeID(raw) == AXUIElementGetTypeID() {
+                    pending.append((raw as! AXUIElement, depth + 1))
+                }
+            }
         }
     }
     return result
@@ -71,18 +80,32 @@ func target(_ value: String) throws -> NSRunningApplication {
     return app
 }
 
-func sendKey(_ code: CGKeyCode, flags: CGEventFlags = [], pid: pid_t? = nil, source: CGEventSource?) throws {
+@MainActor
+func post(_ event: CGEvent, pid: pid_t?, targetPID: pid_t) throws {
+    if let pid {
+        event.postToPid(pid)
+    } else {
+        guard NSWorkspace.shared.frontmostApplication?.processIdentifier == targetPID else {
+            throw ProbeFailure("Target lost foreground focus; refusing further global input")
+        }
+        event.post(tap: .cghidEventTap)
+    }
+}
+
+@MainActor
+func sendKey(_ code: CGKeyCode, flags: CGEventFlags = [], pid: pid_t? = nil, source: CGEventSource?, targetPID: pid_t) throws {
     for down in [true, false] {
         guard let event = CGEvent(keyboardEventSource: source, virtualKey: code, keyDown: down) else {
             throw ProbeFailure("Cannot construct keyboard event")
         }
         event.flags = down ? flags : []
-        if let pid { event.postToPid(pid) } else { event.post(tap: .cghidEventTap) }
+        try post(event, pid: pid, targetPID: targetPID)
         Thread.sleep(forTimeInterval: 0.03)
     }
 }
 
-func typeText(_ text: String, pid: pid_t? = nil, source: CGEventSource?) throws {
+@MainActor
+func typeText(_ text: String, pid: pid_t? = nil, source: CGEventSource?, targetPID: pid_t) throws {
     for character in text.utf16 {
         var unit = character
         for down in [true, false] {
@@ -91,18 +114,19 @@ func typeText(_ text: String, pid: pid_t? = nil, source: CGEventSource?) throws 
             }
             event.keyboardSetUnicodeString(stringLength: 1, unicodeString: &unit)
             event.flags = []
-            if let pid { event.postToPid(pid) } else { event.post(tap: .cghidEventTap) }
+            try post(event, pid: pid, targetPID: targetPID)
         }
         Thread.sleep(forTimeInterval: 0.04)
     }
 }
 
-func click(_ point: CGPoint, pid: pid_t? = nil, source: CGEventSource?) throws {
+@MainActor
+func click(_ point: CGPoint, pid: pid_t? = nil, source: CGEventSource?, targetPID: pid_t) throws {
     for type in [CGEventType.mouseMoved, .leftMouseDown, .leftMouseUp] {
         guard let event = CGEvent(mouseEventSource: source, mouseType: type, mouseCursorPosition: point, mouseButton: .left) else {
             throw ProbeFailure("Cannot construct mouse event")
         }
-        if let pid { event.postToPid(pid) } else { event.post(tap: .cghidEventTap) }
+        try post(event, pid: pid, targetPID: targetPID)
         Thread.sleep(forTimeInterval: 0.08)
     }
 }
@@ -173,9 +197,15 @@ enum NativeProbe {
                 ((attribute($0, kAXTitleAttribute) as? String) == "Record action" ||
                  (attribute($0, kAXDescriptionAttribute) as? String) == "Record action")
             }) else { throw ProbeFailure("Fixture field or action not found in AX tree") }
+            app.activate(options: [])
+            try await Task.sleep(for: .milliseconds(300))
+            let focusResult = AXUIElementSetAttributeValue(field, kAXFocusedAttribute as CFString, kCFBooleanTrue)
+            try await Task.sleep(for: .milliseconds(150))
             let valueResult = AXUIElementSetAttributeValue(field, kAXValueAttribute as CFString, "native-input" as CFString)
+            try await Task.sleep(for: .milliseconds(150))
             let pressResult = AXUIElementPerformAction(button, kAXPressAction as CFString)
-            try emit(["status": "attempted", "pid": pid, "setValueError": valueResult.rawValue, "pressError": pressResult.rawValue])
+            try emit(["status": "attempted", "pid": pid, "focusError": focusResult.rawValue,
+                      "setValueError": valueResult.rawValue, "pressError": pressResult.rawValue])
             return
         }
         if command == "input" {
@@ -209,19 +239,19 @@ enum NativeProbe {
                                               mouseCursorPosition: point, mouseButton: .left) else {
                         throw ProbeFailure("Cannot construct trajectory event")
                     }
-                    if let directed { event.postToPid(directed) } else { event.post(tap: .cghidEventTap) }
+                    try post(event, pid: directed, targetPID: pid)
                     try await Task.sleep(for: .milliseconds(Int.random(in: 8...20)))
                 }
             }
-            try click(CGPoint(x: x, y: y), pid: directed, source: source)
+            try click(CGPoint(x: x, y: y), pid: directed, source: source, targetPID: pid)
             if args.contains("keycodes") {
                 for code: CGKeyCode in [45, 0, 17, 34, 9, 14, 27, 34, 45, 35, 32, 17] {
-                    try sendKey(code, pid: directed, source: source)
+                    try sendKey(code, pid: directed, source: source, targetPID: pid)
                 }
             } else {
-                try typeText("native-input", pid: directed, source: source)
+                try typeText("native-input", pid: directed, source: source, targetPID: pid)
             }
-            try sendKey(36, pid: directed, source: source)
+            try sendKey(36, pid: directed, source: source, targetPID: pid)
             try emit(["status": "attempted", "pid": pid, "source": args[4],
                       "directToPID": directed != nil, "curvedTrajectory": args.contains("curve")])
             return
@@ -243,7 +273,7 @@ enum NativeProbe {
             try emit(["status": "captured", "pid": pid, "windowID": number, "path": args[2]])
             return
         }
-        if command == "capture" || command == "display-capture" {
+        if command == "capture" || command == "display-capture" || command == "compositor-capture" {
             guard args.count == 3 else { throw ProbeFailure("capture PID OUTPUT.png") }
             guard CGPreflightScreenCaptureAccess() else { throw ProbeFailure("Screen Recording permission is absent for this probe process") }
             let content = try await SCShareableContent.excludingDesktopWindows(true, onScreenWindowsOnly: true)
@@ -252,20 +282,34 @@ enum NativeProbe {
             }
             let configuration = SCStreamConfiguration()
             let filter: SCContentFilter
-            if command == "display-capture" {
+            var frame = window.frame
+            if command == "display-capture" || command == "compositor-capture" {
                 guard let display = content.displays.first(where: { $0.frame.intersects(window.frame) }) else {
                     throw ProbeFailure("No display contains the target window")
                 }
-                // Include only the research window, with no other apps, desktop, or dock.
-                filter = SCContentFilter(display: display, including: [window])
-                configuration.sourceRect = window.frame.offsetBy(dx: -display.frame.minX, dy: -display.frame.minY)
+                if command == "compositor-capture" {
+                    app.activate(options: [])
+                    try await Task.sleep(for: .milliseconds(300))
+                    guard NSWorkspace.shared.frontmostApplication?.processIdentifier == pid else {
+                        throw ProbeFailure("Research target is not frontmost; refusing compositor crop")
+                    }
+                    // Crop inside the opaque research window to exclude other apps and rounded corners.
+                    frame = window.frame.insetBy(dx: 24, dy: 48)
+                    filter = SCContentFilter(display: display, excludingWindows: [])
+                } else {
+                    filter = SCContentFilter(display: display, including: [window])
+                }
+                configuration.sourceRect = frame.offsetBy(dx: -display.frame.minX, dy: -display.frame.minY)
             } else {
                 filter = SCContentFilter(desktopIndependentWindow: window)
             }
-            configuration.width = Int(window.frame.width * 2)
-            configuration.height = Int(window.frame.height * 2)
+            configuration.width = Int(frame.width * 2)
+            configuration.height = Int(frame.height * 2)
             configuration.showsCursor = false
             let image = try await SCScreenshotManager.captureImage(contentFilter: filter, configuration: configuration)
+            if command == "compositor-capture", NSWorkspace.shared.frontmostApplication?.processIdentifier != pid {
+                throw ProbeFailure("Research target lost foreground focus; discarding compositor crop")
+            }
             let url = URL(fileURLWithPath: args[2])
             guard let destination = CGImageDestinationCreateWithURL(url as CFURL, UTType.png.identifier as CFString, 1, nil) else {
                 throw ProbeFailure("Cannot create PNG output")
@@ -273,7 +317,7 @@ enum NativeProbe {
             CGImageDestinationAddImage(destination, image, nil)
             guard CGImageDestinationFinalize(destination) else { throw ProbeFailure("Cannot write capture") }
             try emit(["status": "captured", "pid": pid, "windowID": window.windowID,
-                      "frame": [window.frame.minX, window.frame.minY, window.frame.width, window.frame.height],
+                      "frame": [frame.minX, frame.minY, frame.width, frame.height],
                       "pixels": [image.width, image.height], "path": url.path])
             return
         }

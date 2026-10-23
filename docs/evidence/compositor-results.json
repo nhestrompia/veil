@@ -1,0 +1,384 @@
+{
+  "permissions": {
+    "accessibility": true,
+    "pid": 12777,
+    "postEvents": true,
+    "screenCapture": true
+  },
+  "results": [
+    {
+      "target": "InspectableControl",
+      "trial": "1e429ea7c3baa569",
+      "repetition": 0,
+      "route": "screenkit-ocr-cgevent",
+      "verdict": "bypass",
+      "environment": {
+        "locked": null,
+        "reason": "Console lock flag unavailable",
+        "advisory": true
+      },
+      "binarySHA256": "fdc78d4a76268b5cd78c1727f3931636c1714b8a4ef0442d26ecc66ec1046f96",
+      "screenkit": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/compositor-final/InspectableControl-0.screenkit.png",
+        "pid": 12778,
+        "pixels": [
+          2000,
+          1544
+        ],
+        "status": "captured",
+        "windowID": 82345
+      },
+      "compositorCapture": {
+        "frame": [
+          124,
+          158,
+          952,
+          676
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/compositor-final/InspectableControl-0.compositor.png",
+        "pid": 12778,
+        "pixels": [
+          1904,
+          1352
+        ],
+        "status": "captured",
+        "windowID": 82345
+      },
+      "systemCapture": {
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/compositor-final/InspectableControl-0.system.png",
+        "pid": 12778,
+        "status": "captured",
+        "windowID": 82345
+      },
+      "screenkitDisclosure": true,
+      "inputImageRoute": "screenkit",
+      "compositorDisclosure": true,
+      "systemDisclosure": true,
+      "input": {
+        "curvedTrajectory": true,
+        "directToPID": false,
+        "pid": 12778,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "coordinateDerivation": "OCR label center plus public fixture's 57-point field offset; no AX tree",
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "disclosure": true
+    },
+    {
+      "target": "InspectableControl",
+      "trial": "31629dc70fe03a9c",
+      "repetition": 1,
+      "route": "screenkit-ocr-cgevent",
+      "verdict": "bypass",
+      "environment": {
+        "locked": null,
+        "reason": "Console lock flag unavailable",
+        "advisory": true
+      },
+      "binarySHA256": "fdc78d4a76268b5cd78c1727f3931636c1714b8a4ef0442d26ecc66ec1046f96",
+      "screenkit": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/compositor-final/InspectableControl-1.screenkit.png",
+        "pid": 12808,
+        "pixels": [
+          2000,
+          1544
+        ],
+        "status": "captured",
+        "windowID": 82354
+      },
+      "compositorCapture": {
+        "frame": [
+          124,
+          158,
+          952,
+          676
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/compositor-final/InspectableControl-1.compositor.png",
+        "pid": 12808,
+        "pixels": [
+          1904,
+          1352
+        ],
+        "status": "captured",
+        "windowID": 82354
+      },
+      "systemCapture": {
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/compositor-final/InspectableControl-1.system.png",
+        "pid": 12808,
+        "status": "captured",
+        "windowID": 82354
+      },
+      "screenkitDisclosure": true,
+      "inputImageRoute": "screenkit",
+      "compositorDisclosure": true,
+      "systemDisclosure": true,
+      "input": {
+        "curvedTrajectory": true,
+        "directToPID": false,
+        "pid": 12808,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "coordinateDerivation": "OCR label center plus public fixture's 57-point field offset; no AX tree",
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "disclosure": true
+    },
+    {
+      "target": "InspectableControl",
+      "trial": "985cc7b6cdba6bae",
+      "repetition": 2,
+      "route": "screenkit-ocr-cgevent",
+      "verdict": "bypass",
+      "environment": {
+        "locked": null,
+        "reason": "Console lock flag unavailable",
+        "advisory": true
+      },
+      "binarySHA256": "fdc78d4a76268b5cd78c1727f3931636c1714b8a4ef0442d26ecc66ec1046f96",
+      "screenkit": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/compositor-final/InspectableControl-2.screenkit.png",
+        "pid": 12846,
+        "pixels": [
+          2000,
+          1544
+        ],
+        "status": "captured",
+        "windowID": 82363
+      },
+      "compositorCapture": {
+        "frame": [
+          124,
+          158,
+          952,
+          676
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/compositor-final/InspectableControl-2.compositor.png",
+        "pid": 12846,
+        "pixels": [
+          1904,
+          1352
+        ],
+        "status": "captured",
+        "windowID": 82363
+      },
+      "systemCapture": {
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/compositor-final/InspectableControl-2.system.png",
+        "pid": 12846,
+        "status": "captured",
+        "windowID": 82363
+      },
+      "screenkitDisclosure": true,
+      "inputImageRoute": "screenkit",
+      "compositorDisclosure": true,
+      "systemDisclosure": true,
+      "input": {
+        "curvedTrajectory": true,
+        "directToPID": false,
+        "pid": 12846,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "coordinateDerivation": "OCR label center plus public fixture's 57-point field offset; no AX tree",
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "disclosure": true
+    },
+    {
+      "target": "ReducedExposureExperiment",
+      "trial": "0cd24446410061ed",
+      "repetition": 0,
+      "route": "screenkit-ocr-cgevent",
+      "verdict": "inconclusive",
+      "environment": {
+        "locked": null,
+        "reason": "Console lock flag unavailable",
+        "advisory": true
+      },
+      "binarySHA256": "5299bd6301d1eeea20014892dff98a8bfc6352edb34de31fd1927863f06b432a",
+      "screenkit": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/compositor-final/ReducedExposureExperiment-0.screenkit.png",
+        "pid": 12872,
+        "pixels": [
+          1000,
+          772
+        ],
+        "status": "captured",
+        "windowID": 82372
+      },
+      "compositorCapture": {
+        "frame": [
+          124,
+          158,
+          952,
+          676
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/compositor-final/ReducedExposureExperiment-0.compositor.png",
+        "pid": 12872,
+        "pixels": [
+          1904,
+          1352
+        ],
+        "status": "captured",
+        "windowID": 82372
+      },
+      "systemCapture": {
+        "error": "System capture failed",
+        "status": "inconclusive"
+      },
+      "screenkitDisclosure": false,
+      "compositorDisclosure": false,
+      "reason": "No OCR label or capture frame; no action-prevention inference",
+      "submissions": [],
+      "disclosure": false
+    },
+    {
+      "target": "ReducedExposureExperiment",
+      "trial": "d2c6eed60b875c69",
+      "repetition": 1,
+      "route": "screenkit-ocr-cgevent",
+      "verdict": "inconclusive",
+      "environment": {
+        "locked": null,
+        "reason": "Console lock flag unavailable",
+        "advisory": true
+      },
+      "binarySHA256": "5299bd6301d1eeea20014892dff98a8bfc6352edb34de31fd1927863f06b432a",
+      "screenkit": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/compositor-final/ReducedExposureExperiment-1.screenkit.png",
+        "pid": 12890,
+        "pixels": [
+          1000,
+          772
+        ],
+        "status": "captured",
+        "windowID": 82380
+      },
+      "compositorCapture": {
+        "frame": [
+          124,
+          158,
+          952,
+          676
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/compositor-final/ReducedExposureExperiment-1.compositor.png",
+        "pid": 12890,
+        "pixels": [
+          1904,
+          1352
+        ],
+        "status": "captured",
+        "windowID": 82380
+      },
+      "systemCapture": {
+        "error": "System capture failed",
+        "status": "inconclusive"
+      },
+      "screenkitDisclosure": false,
+      "compositorDisclosure": false,
+      "reason": "No OCR label or capture frame; no action-prevention inference",
+      "submissions": [],
+      "disclosure": false
+    },
+    {
+      "target": "ReducedExposureExperiment",
+      "trial": "1aef00d79ae9ae91",
+      "repetition": 2,
+      "route": "screenkit-ocr-cgevent",
+      "verdict": "inconclusive",
+      "environment": {
+        "locked": null,
+        "reason": "Console lock flag unavailable",
+        "advisory": true
+      },
+      "binarySHA256": "5299bd6301d1eeea20014892dff98a8bfc6352edb34de31fd1927863f06b432a",
+      "screenkit": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/compositor-final/ReducedExposureExperiment-2.screenkit.png",
+        "pid": 12911,
+        "pixels": [
+          1000,
+          772
+        ],
+        "status": "captured",
+        "windowID": 82388
+      },
+      "compositorCapture": {
+        "frame": [
+          124,
+          158,
+          952,
+          676
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/compositor-final/ReducedExposureExperiment-2.compositor.png",
+        "pid": 12911,
+        "pixels": [
+          1904,
+          1352
+        ],
+        "status": "captured",
+        "windowID": 82388
+      },
+      "systemCapture": {
+        "error": "System capture failed",
+        "status": "inconclusive"
+      },
+      "screenkitDisclosure": false,
+      "compositorDisclosure": false,
+      "reason": "No OCR label or capture frame; no action-prevention inference",
+      "submissions": [],
+      "disclosure": false
+    }
+  ],
+  "humanBaseline": false,
+  "routeContract": "Agent uses ScreenCaptureKit images, Vision OCR, and CGEvent input. No AX or browser-content API."
+}

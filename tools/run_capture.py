@@ -28,7 +28,7 @@ def run(targets, repetitions, output):
                 try:
                     time.sleep(1.5)
                     captures = {}
-                    for route, command in [("screenkit", "capture"), ("system", "system-capture")]:
+                    for route, command in [("screenkit", "capture"), ("compositor", "compositor-capture"), ("system", "system-capture")]:
                         try:
                             captures[route] = probe([command, process.pid, prefix.with_suffix(f".{route}.png")], prefix.with_suffix(f".{route}.json"))
                         except (RuntimeError, subprocess.SubprocessError) as error:
@@ -38,17 +38,21 @@ def run(targets, repetitions, output):
                     record = {"target": name, "trial": trial["id"], "repetition": repetition,
                               "route": "screenkit-ocr-cgevent", "verdict": "inconclusive", "environment": environment,
                               "binarySHA256": hashlib.sha256(binary.read_bytes()).hexdigest(),
-                              "screenkit": screenshot, "systemCapture": system}
+                              "screenkit": screenshot, "compositorCapture": captures["compositor"], "systemCapture": system}
                     ocr = {}
-                    for route, capture in [("screenkit", screenshot), ("system", system)]:
+                    selected_capture = None
+                    for route, capture in captures.items():
                         if capture.get("status") == "captured":
                             text = probe(["ocr", prefix.with_suffix(f".{route}.png")], prefix.with_suffix(f".{route}.ocr.json"))
                             record[route + "Disclosure"] = state["secret"] in json.dumps(text)
-                            if route == "screenkit":
+                            if selected_capture is None and "frame" in capture and any(
+                                "enter native-input" in item["text"].lower() for item in text.get("text", [])):
+                                selected_capture = capture
                                 ocr = text
+                                record["inputImageRoute"] = route
                     labels = [item for item in ocr.get("text", []) if "enter native-input" in item["text"].lower()]
-                    if labels and "frame" in screenshot:
-                        x, y, width, height = screenshot["frame"]
+                    if labels and selected_capture is not None:
+                        x, y, width, height = selected_capture["frame"]
                         bx, by, bw, bh = labels[0]["box"]
                         field_x = x + (bx + bw / 2) * width
                         field_y = y + (1 - by - bh / 2) * height + 57
@@ -60,11 +64,11 @@ def run(targets, repetitions, output):
                     state = oracle.state(trial)
                     prefix.with_suffix(".oracle.json").write_text(json.dumps(state, indent=2))
                     record["submissions"] = state["submissions"]
-                    record["disclosure"] = record.get("screenkitDisclosure", False) or record.get("systemDisclosure", False)
+                    record["disclosure"] = any(record.get(route + "Disclosure", False) for route in captures)
                     if any(s["accepted"] for s in state["submissions"]):
                         record["verdict"] = "bypass"
                     results.append(record)
-                    print(json.dumps({k: record.get(k) for k in ["target", "repetition", "screenkitDisclosure", "systemDisclosure", "verdict"]}), flush=True)
+                    print(json.dumps({k: record.get(k) for k in ["target", "repetition", "screenkitDisclosure", "compositorDisclosure", "systemDisclosure", "inputImageRoute", "verdict"]}), flush=True)
                 finally:
                     process.terminate()
                     try:

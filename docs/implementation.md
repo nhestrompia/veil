@@ -50,16 +50,23 @@ The default browser remains an unprotected research baseline. There is no valida
 
 ## Milestone 5: guarded foreground experiments
 
-Added SecureInputExperiment and ReducedExposureExperiment, with console preflight checks and a cycle-safe AX traversal. Live attacks remain pending because the current graphical session reports a lock. The preflight refuses these trials. See [foreground findings](foreground-findings.md).
+Added SecureInputExperiment and ReducedExposureExperiment, with console preflight checks and a cycle-safe AX traversal. Milestone 9 replaces the console veto and completes live attacks. Both policies allow agent actions. See [foreground findings](foreground-findings.md).
 
 ## Milestone 6: protected HTML pixels
 
-Added PixelControl and PixelProtectedExperiment with a source WKWebView outside the onscreen window list. The control submitted an HTML snapshot through a sample-buffer renderer. Capture exclusion and human visibility remain unverified. No input bridge exists. See [pixel findings](pixel-rendering-findings.md).
+Added PixelControl and PixelProtectedExperiment with a source WKWebView outside the onscreen window list. The control submitted an HTML snapshot through a sample-buffer renderer. Milestone 8 tests capture routes and physical visibility. Both protected pixel formats fail physical visibility. No input bridge exists. See [pixel findings](pixel-rendering-findings.md).
 
 ## Milestone 7: independent device observations
 
-Added a separate HIDObservation app and an unentitled virtual-device probe. Both virtual-device APIs returned nil in three creation attempts. Input Monitoring was requested after user approval, but its effective grant remains off. No physical sample, synthetic observation matrix, classifier, or input defense exists yet. See [device findings](hid-observation-findings.md).
+Added a separate HIDObservation app and an unentitled virtual-device probe. Both virtual-device APIs returned nil in three creation attempts. The approved Input Monitoring grant is now effective. Generated-input observations exist. A physical baseline, classifier, and input defense remain absent. See [device findings](hid-observation-findings.md).
 
 ## Milestone 8: calibrated routes and pixel formats
 
 Refreshed the approved native grants and replaced the blanket console veto with advisory metadata and matched controls. Added filtered display capture, readiness diagnostics, and NV12 conversion. Matched capture pilots recovered clear control content. The user reported black physical BGRA output while its unprotected control was visible. This rejects that configuration as useful protection. The protected NV12 view also appeared black on the direct display. See [route calibration](route-calibration.md).
+
+
+## Milestone 9: foreground and semantic bypasses
+
+Added explicit AX window and focus traversal, foreground checks for each generated event, and compositor crops inside research windows. The probe now focuses the fake field before AX value and button actions.
+
+Secure Event Input allowed six native trials, with its mode enabled during all 84 logged input events. The reduced-exposure build allowed all three semantic AX trials and two of three known-layout trials. Its tested captures omitted the marker. These capture observations do not establish input prevention. See [foreground findings](foreground-findings.md) and the saved independent fixture outcomes.

@@ -65,6 +65,8 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
         let style: NSWindow.StyleMask = [.titled, .closable, .miniaturizable, .resizable]
         #if METADATA_EXPERIMENT
         window = InputSourceWindow(contentRect: frame, styleMask: style, backing: .buffered, defer: false)
+        #elseif SECURE_INPUT_EXPERIMENT || REDUCED_EXPOSURE_EXPERIMENT
+        window = SecureInputWindow(contentRect: frame, styleMask: style, backing: .buffered, defer: false)
         #else
         window = NSWindow(contentRect: frame, styleMask: style, backing: .buffered, defer: false)
         #endif

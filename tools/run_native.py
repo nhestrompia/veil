@@ -75,7 +75,7 @@ class Oracle:
         return self.request("/admin/trials/" + trial["id"])
 
 
-def run(targets, routes, repetitions, output):
+def run(targets, routes, repetitions, output, post_tap="hid"):
     output.mkdir(parents=True, exist_ok=True)
     environment = observe_console()
     oracle = Oracle()
@@ -148,6 +148,8 @@ def run(targets, routes, repetitions, output):
                                 args.append("curve")
                             if "keycodes" in route.split("-"):
                                 args.append("keycodes")
+                            if post_tap != "hid":
+                                args.append(f"--{post_tap}-tap")
                             attempt = probe(args, prefix.with_suffix(".attempt.json"))
                         time.sleep(0.5)
                         state = oracle.state(trial)
@@ -184,7 +186,7 @@ def run(targets, routes, repetitions, output):
                             process.wait()
                 results.append(result)
                 print(json.dumps({k: result[k] for k in ["target", "route", "repetition", "verdict", "disclosure"] if k in result}), flush=True)
-                summary = {"permissions": permissions, "environment": environment, "positiveControlTarget": control_target,
+                summary = {"permissions": permissions, "environment": environment, "positiveControlTarget": control_target, "postTap": post_tap,
                            "system": subprocess.check_output(["sw_vers"], text=True),
                            "results": results, "humanBaseline": False,
                            "routeContract": "Probe uses native APIs only. Controller alone queries the oracle. Input coordinates come from AX, except blind-fixture uses the matched control coordinates."}
@@ -198,5 +200,6 @@ if __name__ == "__main__":
     parser.add_argument("--routes", nargs="+", default=["ax", "session", "hid", "private", "pid-hid", "curve-hid", "keycodes-hid", "blind-fixture"], choices=["ax", "session", "hid", "private", "pid-hid", "curve-hid", "keycodes-hid", "blind-fixture", "iohid-legacy", "iohid-reports", "pid-keys-hid", "pid-keys-keycodes-hid", "pid-window-keycodes-hid"])
     parser.add_argument("--repetitions", type=int, default=3)
     parser.add_argument("--output", type=Path, default=ROOT / "artifacts/native-pilot")
+    parser.add_argument("--post-tap", choices=["hid", "session", "annotated"], default="hid")
     args = parser.parse_args()
-    run(args.targets, args.routes, args.repetitions, args.output)
+    run(args.targets, args.routes, args.repetitions, args.output, args.post_tap)

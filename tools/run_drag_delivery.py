@@ -43,14 +43,17 @@ def launch(name, log, arguments):
     return process, app / "Contents/MacOS" / name
 
 
-def attempt(name, prefix, oracle):
+def attempt(name, prefix, oracle, post_tap, entry_action, source_session_only):
     trial = oracle.create()
     target_log = prefix.with_suffix(".target.log")
-    launcher, binary = launch(name, target_log, ["--url", trial["url"] + "?submit-on-input=1"])
+    query = "?submit-on-dragenter=1" if entry_action else "?submit-on-input=1"
+    launcher, binary = launch(name, target_log, ["--url", trial["url"] + query])
     source_launcher = None
     source_pid = pid = None
     source_binary = ROOT / "dist/DragSource.app/Contents/MacOS/DragSource"
     result = {"target": name, "binarySHA256": hashlib.sha256(binary.read_bytes()).hexdigest(), "verdict": "inconclusive",
+              "taskMode": "drag-entry-action" if entry_action else "text-input-action",
+              "inputRoute": "source-session" if source_session_only else "posted-mouse",
               "physicalControl": False, "scope": "Cross-app dragging into a disposable form. Candidate uses a separate internal bootstrap diagnostic."}
     try:
         pid = ready(target_log, r"Browser ready: pid=(\d+)")
@@ -75,17 +78,31 @@ def attempt(name, prefix, oracle):
         point = [x + (bx + bw / 2) * width, y + (1 - by - bh / 2) * height + 57]
         result["fieldCenter"] = point
         source_log = prefix.with_suffix(".source.log")
-        source_launcher, source_binary = launch("DragSource", source_log, ["--target-pid", str(pid)])
+        source_launcher, source_binary = launch("DragSource", source_log, ["--target-pid", str(pid), "--programmatic-start"])
         source_pid = ready(source_log, r"DRAG_SOURCE ready=true pid=(\d+)")
         before = oracle.state(trial)
+        if name == "InternalKeyboardControl" and sum(bool(item["accepted"]) for item in before["submissions"]) != 1:
+            raise RuntimeError("The internal bootstrap needs exactly one completed baseline action")
         offset = len(target_log.read_text())
         result["initialAcceptedSubmissions"] = sum(bool(item["accepted"]) for item in before["submissions"])
-        result["input"] = probe(["research-drag", pid, source_pid, *point], prefix.with_suffix(".drag.json"))
+        if source_session_only:
+            deadline = time.monotonic() + 3
+            while "DRAG_SOURCE beginCallback=true" not in source_log.read_text() and time.monotonic() < deadline:
+                time.sleep(0.1)
+            result["input"] = {"status": "source-session-started" if "DRAG_SOURCE beginCallback=true" in source_log.read_text() else "inconclusive",
+                               "scope": "Attacker-owned AppKit source only. No posted mouse or keyboard events."}
+        else:
+            arguments = ["research-drag", pid, source_pid, *point]
+            if post_tap != "hid":
+                arguments.append(f"--{post_tap}-tap")
+            result["input"] = probe(arguments, prefix.with_suffix(".drag.json"))
         time.sleep(0.8)
         after = oracle.state(trial)
         result["newSubmissions"] = after["submissions"][len(before["submissions"]):]
         result["pageEventTypes"] = sorted({item["type"] for item in after["events"][len(before["events"]):]})
-        result["sourceStarted"] = "DRAG_SOURCE began=true" in source_log.read_text()
+        result["sourceStarted"] = "DRAG_SOURCE beginCallback=true" in source_log.read_text()
+        result["sourceAPIReturned"] = "DRAG_SOURCE began=true" in source_log.read_text()
+        result["programmaticSourceStart"] = "origin=programmatic-event" in source_log.read_text()
         result["sourceOperations"] = re.findall(r"ended=true operation=(\d+)", source_log.read_text())
         result["acceptedEvents"] = target_log.read_text()[offset:].count("INPUT_GATE_ACCEPTED")
         result["refusedEvents"] = target_log.read_text()[offset:].count("INPUT_GATE_REFUSED")
@@ -109,14 +126,15 @@ def attempt(name, prefix, oracle):
     return result
 
 
-def run(output, repetitions):
+def run(output, repetitions, post_tap, entry_action, source_session_only):
     output = output.resolve()
     output.mkdir(parents=True, exist_ok=True)
     permissions = probe(["permissions"], output / "permissions.json")
-    report = {"results": [], "permissions": permissions, "environment": observe_console(),
+    report = {"results": [], "permissions": permissions, "environment": observe_console(), "postTap": None if source_session_only else post_tap,
               "probeBinarySHA256": permissions["probeBinarySHA256"],
               "dragSourceBinarySHA256": hashlib.sha256((ROOT / "dist/DragSource.app/Contents/MacOS/DragSource").read_bytes()).hexdigest()}
-    if not all(permissions.get(key) for key in ["postEvents", "screenCapture"]):
+    required = ["screenCapture"] if source_session_only else ["postEvents", "screenCapture"]
+    if not all(permissions.get(key) for key in required):
         report["results"].append({"verdict": "inconclusive", "route": "permission-preflight",
                                   "error": "The existing probe grants are not effective. No drag or target launch occurred."})
         (output / "results.json").write_text(json.dumps(report, indent=2) + "\n")
@@ -124,23 +142,30 @@ def run(output, repetitions):
     oracle = Oracle()
     rows = report["results"]
     for repetition in range(repetitions):
-        control = attempt("InspectableControl", output / f"control-{repetition}", oracle)
+        control = attempt("InspectableControl", output / f"control-{repetition}", oracle, post_tap, entry_action, source_session_only)
         rows.append(control)
-        candidate = attempt("InternalKeyboardControl", output / f"candidate-{repetition}", oracle)
+        candidate = attempt("InternalKeyboardControl", output / f"candidate-{repetition}", oracle, post_tap, entry_action, source_session_only)
         candidate["controlWorked"] = control["verdict"] == "action-delivered"
         if (candidate["verdict"] == "inconclusive" and candidate["controlWorked"]
-                and candidate.get("input", {}).get("status") == "attempted" and candidate.get("sourceStarted")
+                and candidate.get("input", {}).get("status") in ["attempted", "source-session-started"] and candidate.get("sourceStarted")
                 and candidate.get("refusedDragPhases") and not candidate.get("pageDragDelivered")
                 and candidate.get("initialAcceptedSubmissions") == 1):
             candidate["verdict"] = "drag-refused"
         rows.append(candidate)
         (output / "results.json").write_text(json.dumps(report, indent=2) + "\n")
-        print(json.dumps({"repetition": repetition, "control": control, "candidate": candidate}), flush=True)
+        print(json.dumps({"repetition": repetition, "control": control["verdict"], "candidate": candidate["verdict"],
+                          "candidatePageEvents": candidate.get("pageEventTypes", []),
+                          "refusedDragPhases": candidate.get("refusedDragPhases", [])}), flush=True)
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path, default=ROOT / "artifacts/drag-delivery")
-    parser.add_argument("--repetitions", type=int, choices=range(1, 4), default=1)
+    parser.add_argument("--repetitions", type=int, choices=range(1, 11), default=1)
+    parser.add_argument("--post-tap", choices=["hid", "session", "annotated"], default="hid")
+    parser.add_argument("--entry-action", action="store_true")
+    parser.add_argument("--source-session-only", action="store_true")
     args = parser.parse_args()
-    run(args.output, args.repetitions)
+    if args.source_session_only and not args.entry_action:
+        parser.error("--source-session-only requires --entry-action")
+    run(args.output, args.repetitions, args.post_tap, args.entry_action, args.source_session_only)

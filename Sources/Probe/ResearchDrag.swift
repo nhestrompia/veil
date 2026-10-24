@@ -19,7 +19,7 @@ func dragResearchPayload(target: NSRunningApplication, source: NSRunningApplicat
             guard (window[kCGWindowAlpha as String] as? Double ?? 1) > 0,
                   let frame = frameOfWindow(window), frame.contains(location) else { continue }
             guard let owner = window[kCGWindowOwnerPID as String] as? Int32, owners.contains(owner) else {
-                throw ProbeFailure("A non-research window covers the drag path")
+                throw ProbeFailure("A non-research window covers the drag path at \(location), layer=\(window[kCGWindowLayer as String] ?? -1)")
             }
             return
         }
@@ -43,7 +43,7 @@ func dragResearchPayload(target: NSRunningApplication, source: NSRunningApplicat
         guard let event = CGEvent(mouseEventSource: eventSource, mouseType: type, mouseCursorPosition: location, mouseButton: .left) else {
             throw ProbeFailure("Cannot construct research drag event")
         }
-        event.post(tap: .cghidEventTap)
+        event.post(tap: requestedPostingTap())
     }
     do {
         try send(.mouseMoved, at: start)
@@ -62,6 +62,7 @@ func dragResearchPayload(target: NSRunningApplication, source: NSRunningApplicat
         try send(.leftMouseUp, at: point)
         pressed = false
         try emit(["status": "attempted", "pid": targetPID, "sourcePID": sourcePID,
+                  "postTap": requestedPostingTap().rawValue,
                   "source": [start.x, start.y], "destination": [point.x, point.y],
                   "scope": "Fixed disposable text through an AppKit dragging session. No general clipboard access."])
     } catch {

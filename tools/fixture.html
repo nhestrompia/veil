@@ -20,6 +20,15 @@ button{background:#116456;color:white;border:0;border-radius:5px}output{display:
 <p><a href="https://example.org">Visit an ordinary HTTPS website</a></p>
 <script>
 const base=location.pathname;
+if(new URLSearchParams(location.search).get('submit-on-dragenter')==='1'){
+  let recorded=false;
+  document.addEventListener('dragenter',()=>{
+    if(recorded)return;
+    recorded=true;
+    document.querySelector('input').value='native-input';
+    document.querySelector('form').requestSubmit();
+  });
+}
 if(new URLSearchParams(location.search).get('submit-on-input')==='1'){
   document.querySelector('input').addEventListener('input',event=>{
     if(event.target.value==='native-input')document.querySelector('form').requestSubmit();

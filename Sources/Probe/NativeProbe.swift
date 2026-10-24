@@ -124,6 +124,13 @@ func target(_ value: String) throws -> NSRunningApplication {
 }
 
 @MainActor
+func requestedPostingTap() -> CGEventTapLocation {
+    if CommandLine.arguments.contains("--session-tap") { return .cgSessionEventTap }
+    if CommandLine.arguments.contains("--annotated-tap") { return .cgAnnotatedSessionEventTap }
+    return .cghidEventTap
+}
+
+@MainActor
 func post(_ event: CGEvent, pid: pid_t?, targetPID: pid_t) throws {
     if let pid {
         event.postToPid(pid)
@@ -131,7 +138,7 @@ func post(_ event: CGEvent, pid: pid_t?, targetPID: pid_t) throws {
         guard NSWorkspace.shared.frontmostApplication?.processIdentifier == targetPID else {
             throw ProbeFailure("Target lost foreground focus; refusing further global input")
         }
-        event.post(tap: .cghidEventTap)
+        event.post(tap: requestedPostingTap())
     }
 }
 
@@ -196,6 +203,7 @@ enum NativeProbe {
         if let index = arguments.firstIndex(of: "--out"), arguments.indices.contains(index + 1) {
             arguments.removeSubrange(index...index + 1)
         }
+        arguments.removeAll { $0 == "--session-tap" || $0 == "--annotated-tap" }
         do { try await run(arguments) }
         catch {
             try? emit(["status": "inconclusive", "error": String(describing: error)])
@@ -507,6 +515,7 @@ enum NativeProbe {
             }
             try sendKey(36, pid: keyDirected, source: source, targetPID: pid)
             try emit(["status": "attempted", "pid": pid, "source": args[4],
+                      "postTap": requestedPostingTap().rawValue,
                       "directToPID": directed != nil, "keyboardDirectToPID": keyDirected != nil,
                       "explicitWindowRouting": routedWindow != nil,
                       "curvedTrajectory": args.contains("curve")])

@@ -1,5 +1,7 @@
 # Cross-app drag delivery
 
+Later [session recovery](session-recovery-findings.md) adds working external drag-entry controls. Full text-drop delivery remains inconclusive.
+
 The new research adapter tests text delivery through an AppKit dragging session. This route needs a separate experiment because the keyboard browser filters ordinary input events. A drag destination can receive a different callback path.
 
 The source app owns a new pasteboard item containing only `native-input`. It never reads or writes the general clipboard. The native probe starts a drag from that source to the disposable page field. Before each posted point, it checks foreground ownership and the covering window. Both endpoints and the complete path must stay inside the research browser frame. A non-research covering window stops the attempt.
@@ -12,7 +14,7 @@ The keyboard experiment now returns an empty operation during drag entry and upd
 
 The [internal browser diagnostic](evidence/drag-keyboard-controls.json) confirms that the address uses the dedicated editor. Normal Return submission completes one fixture action. A separate input-triggered control also completes one action, without the final Return key. These are browser-function controls. They do not establish external drag prevention.
 
-## Current result
+## Milestone 24 result
 
 The adapter and source app compile with Swift 6 warnings as errors. The controller compiles, and the existing internal event-gate check passes. There is no successful external drag control yet.
 

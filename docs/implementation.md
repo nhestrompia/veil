@@ -162,3 +162,9 @@ The rule changes only the process-local argument domain before framework creatio
 Added a fixed-text drag source and an external controller with research-window ownership checks. The keyboard experiment now refuses public destination callbacks on its web view, window, address field, and dedicated editor. These changes address a separate AppKit delivery path identified in WebKit source.
 
 Two internal controls confirm address editing, navigation, normal submission, and input-triggered submission. The external preflight found ineffective probe grants and sent no input. The native session also reports locked, with unavailable UI windows. No external drag prevention result exists. See [drag delivery](drag-delivery-findings.md).
+
+## Milestone 25: recovered session and external drag entry
+
+Native UI and the approved probe grants work again. Accessibility and computer-use controls complete website actions. Nine CGEvent controls remain inconclusive, including separate source states and insertion points.
+
+An external AppKit source triggers ten reference actions without posted mouse or keyboard events. Ten fresh diagnostic candidates refuse entry and update callbacks, with no new action or page drag event. A separate computer-use pair records the same outcome. The candidate uses a private startup baseline, with no new physical usability claim. See [session recovery](session-recovery-findings.md).

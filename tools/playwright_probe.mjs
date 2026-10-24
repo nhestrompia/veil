@@ -1,14 +1,34 @@
 import { chromium, webkit } from 'playwright-core';
 import { createServer } from 'node:net';
-import { spawn } from 'node:child_process';
+import { spawn, execFile } from 'node:child_process';
 import { readFile, writeFile, mkdir, mkdtemp } from 'node:fs/promises';
 import { resolve } from 'node:path';
+import { createHash } from 'node:crypto';
+import { promisify } from 'node:util';
 
 const root = resolve(import.meta.dirname, '..');
 const out = resolve(process.argv[2] ?? `${root}/artifacts/playwright`);
 await mkdir(out, { recursive: true });
 const controller = JSON.parse(await readFile(`${root}/artifacts/fixture-controller.json`, 'utf8'));
 const results = [];
+const cleanup = [];
+const exec = promisify(execFile);
+async function researchProcessCheck(binary, existing = null) {
+  const code = `import sys,json
+from pathlib import Path
+sys.path.insert(0,sys.argv[1]+'/tools')
+from process_cleanup import matching_pids,stop_owned
+binary=Path(sys.argv[2])
+existing=json.loads(sys.argv[3])
+pids=matching_pids(binary)
+if existing is None:
+    print(json.dumps(sorted(pids)))
+else:
+    outcomes=[stop_owned(pid,binary) for pid in pids-set(existing)]
+    print(json.dumps({'stopped':len(outcomes),'verified':all(outcomes)}))`;
+  const { stdout } = await exec('python3', ['-c', code, root, binary, JSON.stringify(existing)]);
+  return JSON.parse(stdout);
+}
 async function oracle(path, method = 'GET') {
   const response = await fetch(`http://127.0.0.1:${controller.port}${path}`, {
     method, headers: { 'X-Research-Key': controller.key }, ...(method === 'POST' ? { body: '{}' } : {}),
@@ -24,6 +44,18 @@ async function freePort() {
   return port;
 }
 const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
+async function stopChild(child) {
+  if (child.exitCode !== null || child.signalCode !== null) return;
+  const exited = new Promise(resolve => child.once('exit', resolve));
+  child.kill('SIGTERM');
+  await Promise.race([exited, pause(1000)]);
+  if (child.exitCode === null && child.signalCode === null) {
+    child.kill('SIGKILL');
+    await Promise.race([exited, pause(1000)]);
+  }
+  if (child.exitCode === null && child.signalCode === null) throw new Error('Research child cleanup failed');
+}
+const binaryHashes = {};
 
 // A Chromium control validates CDP tooling. It does not validate WKWebView inspection.
 const chromePort = await freePort();
@@ -56,37 +88,46 @@ try {
         verdict: state.submissions.some(s => s.accepted) ? 'bypass' : 'inconclusive' });
     }
   } finally { await browser.close(); }
-} finally { chrome.kill('SIGTERM'); }
+} finally { await stopChild(chrome); }
 
-for (const name of ['AgentFreeBrowser', 'InspectableControl']) {
+for (const name of ['AgentFreeBrowser', 'InspectableControl', 'DeviceKeyboardExperiment']) {
   const binary = `${root}/dist/${name}.app/Contents/MacOS/${name}`;
-  const port = await freePort();
-  const trial = await oracle('/admin/trials', 'POST');
-  const app = spawn(binary, ['--url', trial.url, `--remote-debugging-port=${port}`], { stdio: 'ignore' });
+  const existing = await researchProcessCheck(binary);
   try {
-    await pause(1000);
+    binaryHashes[name] = createHash('sha256').update(await readFile(binary)).digest('hex');
+    const port = await freePort();
+    const trial = await oracle('/admin/trials', 'POST');
+    const app = spawn(binary, ['--url', trial.url, `--remote-debugging-port=${port}`], { stdio: 'ignore' });
     try {
-      const connection = await chromium.connectOverCDP(`http://127.0.0.1:${port}`, { timeout: 2000 });
-      await connection.close();
-      results.push({ route: 'playwright-cdp-attachment', target: name, verdict: 'unexpected-attachment' });
+      await pause(1000);
+      try {
+        const connection = await chromium.connectOverCDP(`http://127.0.0.1:${port}`, { timeout: 2000 });
+        await connection.close();
+        results.push({ route: 'playwright-cdp-attachment', target: name, verdict: 'unexpected-attachment' });
+      } catch (error) {
+        results.push({ route: 'playwright-cdp-attachment', target: name, verdict: 'unsupported-transport',
+          error: error.message.slice(0, 1500),
+          interpretation: 'No CDP endpoint observed. The native WKWebView hosts lack this transport. This is not an inspection-prevention result.' });
+      }
+    } finally { await stopChild(app); }
+    try {
+      const browser = await webkit.launch({ executablePath: binary, headless: false, timeout: 3000 });
+      await browser.close();
+      results.push({ route: 'playwright-webkit-custom-launch', target: name, verdict: 'unexpected-attachment' });
     } catch (error) {
-      results.push({ route: 'playwright-cdp-attachment', target: name, verdict: 'unsupported-transport',
+      results.push({ route: 'playwright-webkit-custom-launch', target: name, verdict: 'unsupported-transport',
         error: error.message.slice(0, 1500),
-        interpretation: 'No CDP endpoint observed. Both WKWebView builds lack this transport. This is not an inspection-prevention result.' });
+        interpretation: 'A native WKWebView host is not the Playwright-patched WebKit browser executable.' });
     }
-  } finally { app.kill('SIGTERM'); }
-  try {
-    const browser = await webkit.launch({ executablePath: binary, headless: false, timeout: 3000 });
-    await browser.close();
-    results.push({ route: 'playwright-webkit-custom-launch', target: name, verdict: 'unexpected-attachment' });
-  } catch (error) {
-    results.push({ route: 'playwright-webkit-custom-launch', target: name, verdict: 'unsupported-transport',
-      error: error.message.slice(0, 1500),
-      interpretation: 'A native WKWebView host is not the Playwright-patched WebKit browser executable.' });
+  } finally {
+    const outcome = await researchProcessCheck(binary, existing);
+    cleanup.push({ target: name, ...outcome });
+    if (!outcome.verified) throw new Error('Research browser cleanup failed');
   }
 }
 await writeFile(`${out}/results.json`, JSON.stringify({
   playwright: JSON.parse(await readFile(`${root}/node_modules/playwright-core/package.json`, 'utf8')).version,
-  results, inspectionComparison: 'Safari Web Inspector still requires its own paired test.',
+  binaryHashes, results, cleanup, nativeInputTested: false, captureProtectionTested: false,
+  inspectionComparison: 'Safari Web Inspector still requires its own paired test.',
 }, null, 2));
 console.log(JSON.stringify(results.map(({ route, target, verdict }) => ({ route, target, verdict })), null, 2));

@@ -180,3 +180,9 @@ The repeated build retained the exact executable hash and modification time. Thi
 Modifying mouse hooks now prevent input trials before browser launch. Failed input releases no longer depend on foreground ownership. Drag and internal-control controllers wait for exact executable cleanup, including failed readiness. Diagnostic timers limit unattended windows.
 
 All 23 Python checks pass, with a real disposable-process exit check. Swift input-safety, browser-policy, and device-dispatch checks pass. No new desktop attack ran. The user confirmed recovery after DockDoor stopped. The exact interaction remains unexplained. See [desktop input safeguards](desktop-input-safety-findings.md).
+
+## Milestone 28: repeated automation transports and failed-launch cleanup
+
+The isolated Chromium control completes three website actions. Six attachment attempts across three native hosts remain unsupported transports. The failed-launch cleanup stops each new research instance, with no research process left afterward. Executable hashes and cleanup outcomes are saved.
+
+No native input or capture result follows. Native UI is unavailable, the console reports locked, and the rebuilt probe needs its existing grants refreshed. See [automation transport findings](automation-transport-findings.md).

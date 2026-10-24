@@ -168,3 +168,9 @@ Two internal controls confirm address editing, navigation, normal submission, an
 Native UI and the approved probe grants work again. Accessibility and computer-use controls complete website actions. Nine CGEvent controls remain inconclusive, including separate source states and insertion points.
 
 An external AppKit source triggers ten reference actions without posted mouse or keyboard events. Ten fresh diagnostic candidates refuse entry and update callbacks, with no new action or page drag event. A separate computer-use pair records the same outcome. The candidate uses a private startup baseline, with no new physical usability claim. See [session recovery](session-recovery-findings.md).
+
+## Milestone 26: retain unchanged probe builds
+
+The probe build now compares source files, build scripts, toolchain versions, and the signed executable. A matching build retains the existing executable. Changed inputs or an invalid signature force a rebuild.
+
+The repeated build retained the exact executable hash and modification time. This avoids unnecessary signing changes during permission diagnosis. It does not replace effective permission checks after a real rebuild. The check is in `artifacts/probe-cache-verification.json`.

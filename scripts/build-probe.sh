@@ -3,6 +3,11 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 app=dist/NativeProbe.app
 mkdir -p .build/module-cache "$app/Contents/MacOS"
+probe_build_key="$(python3 tools/probe_build_cache.py key)"
+if python3 tools/probe_build_cache.py check "$probe_build_key"; then
+    echo "NativeProbe inputs and signed artifact match. Existing binary retained."
+    exit 0
+fi
 xcrun clang -Wall -Wextra -target arm64-apple-macosx14.0 -c Sources/Probe/HIDPosting.c -o .build/hid-posting.o
 xcrun swiftc -swift-version 6 -warnings-as-errors -parse-as-library -O \
     -target arm64-apple-macosx14.0 -module-cache-path .build/module-cache \
@@ -20,3 +25,4 @@ cat > "$app/Contents/Info.plist" <<EOF
 </dict></plist>
 EOF
 codesign --force --sign - --options runtime "$app"
+python3 tools/probe_build_cache.py record "$probe_build_key"

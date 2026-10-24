@@ -405,11 +405,17 @@ enum NativeProbe {
                 }
                 let (code, character) = pair
                 if usesHIDPosting {
+                    var held = false
+                    defer {
+                        if held { _ = AFBPostHIDKey(connection, code, character, 0, args[2] == "iohid-reports" ? 1 : 0) }
+                    }
                     for down: Int32 in [1, 0] {
-                        guard NSWorkspace.shared.frontmostApplication?.processIdentifier == pid else {
+                        guard down == 0 || NSWorkspace.shared.frontmostApplication?.processIdentifier == pid else {
                             throw ProbeFailure("Target lost foreground focus; refusing HID bootstrap input")
                         }
-                        statuses.append(AFBPostHIDKey(connection, code, character, down, args[2] == "iohid-reports" ? 1 : 0))
+                        let status = AFBPostHIDKey(connection, code, character, down, args[2] == "iohid-reports" ? 1 : 0)
+                        statuses.append(status)
+                        if status == 0 { held = down == 1 }
                         try await Task.sleep(for: .milliseconds(35))
                     }
                 } else {
@@ -581,11 +587,17 @@ enum NativeProbe {
             let characters = Array("native-input\r".utf16)
             var statuses: [Int32] = []
             for (code, character) in zip(codes, characters) {
+                var held = false
+                defer {
+                    if held { _ = AFBPostHIDKey(connection, code, character, 0, args[4] == "reports" ? 1 : 0) }
+                }
                 for down: Int32 in [1, 0] {
-                    guard NSWorkspace.shared.frontmostApplication?.processIdentifier == pid else {
+                    guard down == 0 || NSWorkspace.shared.frontmostApplication?.processIdentifier == pid else {
                         throw ProbeFailure("Target lost foreground focus; refusing HID posting")
                     }
-                    statuses.append(AFBPostHIDKey(connection, code, character, down, args[4] == "reports" ? 1 : 0))
+                    let status = AFBPostHIDKey(connection, code, character, down, args[4] == "reports" ? 1 : 0)
+                    statuses.append(status)
+                    if status == 0 { held = down == 1 }
                     try await Task.sleep(for: .milliseconds(35))
                 }
             }

@@ -192,3 +192,9 @@ No native input or capture result follows. Native UI is unavailable, the console
 The existing probe grants are effective again. Nine of eleven reference routes complete their website task with no modifying mouse hooks. Two mouse routes remain inconclusive. The native controller now skips every candidate whose matched reference fails. All 24 Python checks pass.
 
 The rebuilt browser still needs its separate device grant refreshed. No new candidate result follows yet. See [native calibration findings](native-calibration-findings.md).
+
+## Milestone 30: matched startup trials with effective device access
+
+All fifteen references complete their task. Fifteen matched candidate trials observe no binding, admitted input, or website action. The device reader is ready in every candidate. Cleanup passes for every process. Legacy HID input now releases pending keys after cancellation or lost focus, and all 25 Python checks pass.
+
+This concerns software startup attempts, with no new physical usability or hardware-attestation claim. See [startup confirmation](bootstrap-confirmation-findings.md).

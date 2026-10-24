@@ -11,6 +11,8 @@ final class DragSourceView: NSView, NSDraggingSource {
 
     func startDrag(with event: NSEvent, origin: String) {
         guard !sessionStarted else { return }
+        do { try DesktopInputSafety.observe().requireIsolatedMouse() }
+        catch { print("DRAG_SOURCE refused=true error=\(error)"); fflush(stdout); return }
         sessionStarted = true
         let payload = NSPasteboardItem()
         payload.setString("native-input", forType: .string)
@@ -45,6 +47,14 @@ final class DragSourceController: NSObject, NSApplicationDelegate {
     private var window: NSWindow?
 
     func applicationDidFinishLaunching(_ notification: Notification) {
+        do { try DesktopInputSafety.observe().requireIsolatedMouse() }
+        catch { print("DRAG_SOURCE refused=true error=\(error)"); fflush(stdout); NSApp.terminate(nil); return }
+        Task { @MainActor in
+            try? await Task.sleep(for: .seconds(75))
+            print("DRAG_SOURCE watchdog=true")
+            fflush(stdout)
+            NSApp.terminate(nil)
+        }
         let arguments = CommandLine.arguments
         guard let index = arguments.firstIndex(of: "--target-pid"), arguments.indices.contains(index + 1),
               let pid = pid_t(arguments[index + 1]),
@@ -62,7 +72,7 @@ final class DragSourceController: NSObject, NSApplicationDelegate {
         window.isRestorable = false
         window.isOpaque = true
         window.backgroundColor = .systemPink
-        window.level = NSWindow.Level(rawValue: NSWindow.Level.screenSaver.rawValue + 2)
+        window.level = .floating
         window.contentView = DragSourceView(frame: NSRect(origin: .zero, size: position.size))
         self.window = window
         window.makeKeyAndOrderFront(nil)

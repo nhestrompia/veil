@@ -3,26 +3,14 @@
 import argparse
 import hashlib
 import json
-import os
 from pathlib import Path
 import re
-import signal
 import subprocess
 import time
 
 from run_native import ROOT, Oracle, probe
-from native_environment import observe_console
-
-
-def stop_owned(pid, binary):
-    if pid is None:
-        return
-    process = subprocess.run(["ps", "-p", str(pid), "-o", "comm="], capture_output=True, text=True)
-    if process.stdout.strip() == str(binary):
-        try:
-            os.kill(pid, signal.SIGTERM)
-        except ProcessLookupError:
-            pass
+from native_environment import observe_console, require_input_safety
+from process_cleanup import matching_pids, stop_launched
 
 
 def ready(log, pattern):
@@ -37,10 +25,13 @@ def ready(log, pattern):
 
 def launch(name, log, arguments):
     app = ROOT / f"dist/{name}.app"
+    binary = app / "Contents/MacOS" / name
+    existing = matching_pids(binary)
     log.write_text("")
     process = subprocess.Popen(["open", "-n", "-W", str(app), "--stdout", str(log), "--stderr", str(log), "--args", *arguments],
                                stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    return process, app / "Contents/MacOS" / name
+    process.research_existing_pids = existing
+    return process, binary
 
 
 def attempt(name, prefix, oracle, post_tap, entry_action, source_session_only):
@@ -113,8 +104,12 @@ def attempt(name, prefix, oracle, post_tap, entry_action, source_session_only):
     except (RuntimeError, OSError, subprocess.SubprocessError) as error:
         result["error"] = str(error)
     finally:
-        stop_owned(source_pid, source_binary)
-        stop_owned(pid, binary)
+        source_closed = stop_launched(source_launcher, source_binary, source_pid)
+        target_closed = stop_launched(launcher, binary, pid)
+        result["cleanupVerified"] = source_closed and target_closed
+        if not result["cleanupVerified"]:
+            result["verdict"] = "inconclusive"
+            result["error"] = "Research app cleanup failed. Stop desktop tests."
         for process in [source_launcher, launcher]:
             if process is not None:
                 process.terminate()
@@ -130,6 +125,7 @@ def run(output, repetitions, post_tap, entry_action, source_session_only):
     output = output.resolve()
     output.mkdir(parents=True, exist_ok=True)
     permissions = probe(["permissions"], output / "permissions.json")
+    require_input_safety(permissions)
     report = {"results": [], "permissions": permissions, "environment": observe_console(), "postTap": None if source_session_only else post_tap,
               "probeBinarySHA256": permissions["probeBinarySHA256"],
               "dragSourceBinarySHA256": hashlib.sha256((ROOT / "dist/DragSource.app/Contents/MacOS/DragSource").read_bytes()).hexdigest()}
@@ -144,6 +140,8 @@ def run(output, repetitions, post_tap, entry_action, source_session_only):
     for repetition in range(repetitions):
         control = attempt("InspectableControl", output / f"control-{repetition}", oracle, post_tap, entry_action, source_session_only)
         rows.append(control)
+        if not control["cleanupVerified"]:
+            raise RuntimeError(control["error"])
         candidate = attempt("InternalKeyboardControl", output / f"candidate-{repetition}", oracle, post_tap, entry_action, source_session_only)
         candidate["controlWorked"] = control["verdict"] == "action-delivered"
         if (candidate["verdict"] == "inconclusive" and candidate["controlWorked"]
@@ -153,6 +151,8 @@ def run(output, repetitions, post_tap, entry_action, source_session_only):
             candidate["verdict"] = "drag-refused"
         rows.append(candidate)
         (output / "results.json").write_text(json.dumps(report, indent=2) + "\n")
+        if not candidate["cleanupVerified"]:
+            raise RuntimeError(candidate["error"])
         print(json.dumps({"repetition": repetition, "control": control["verdict"], "candidate": candidate["verdict"],
                           "candidatePageEvents": candidate.get("pageEventTypes", []),
                           "refusedDragPhases": candidate.get("refusedDragPhases", [])}), flush=True)

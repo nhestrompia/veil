@@ -3,14 +3,13 @@
 import argparse
 import hashlib
 import json
-import os
 from pathlib import Path
 import re
-import signal
 import subprocess
 import time
 
 from run_native import ROOT, Oracle, probe
+from process_cleanup import matching_pids, stop_launched
 
 
 def run(output, external_reads, stream, submit_on_input=False):
@@ -23,8 +22,10 @@ def run(output, external_reads, stream, submit_on_input=False):
     url = trial["url"] + ("?submit-on-input=1" if submit_on_input else "")
     log = output / "control.log"
     log.write_text("")
+    existing = matching_pids(binary)
     launcher = subprocess.Popen(["open", "-n", "-W", str(app), "--stdout", str(log), "--stderr", str(log),
                                  "--args", "--url", url], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    launcher.research_existing_pids = existing
     pid = None
     result = None
     try:
@@ -74,16 +75,15 @@ def run(output, external_reads, stream, submit_on_input=False):
         (output / "results.json").write_text(json.dumps(result, indent=2))
         print(json.dumps(result), flush=True)
     finally:
-        if pid is not None:
-            process = subprocess.run(["ps", "-p", str(pid), "-o", "comm="], capture_output=True, text=True)
-            if process.stdout.strip() == str(binary):
-                os.kill(pid, signal.SIGTERM)
+        cleaned = stop_launched(launcher, binary, pid)
         launcher.terminate()
         try:
             launcher.wait(timeout=3)
         except subprocess.TimeoutExpired:
             launcher.kill()
             launcher.wait()
+        if not cleaned:
+            raise RuntimeError("Research app cleanup failed. Stop desktop tests.")
     if (not result or result["inputTriggeredSubmit"] != submit_on_input
             or not all(result[key] for key in ["startupAddressPreserved", "locationHasEditor", "locationUsesRestrictedEditor", "acceptedSubmissions", "noDeviceReader"])):
         raise RuntimeError("Internal keyboard functionality failed; inspect the diagnostic-only log")

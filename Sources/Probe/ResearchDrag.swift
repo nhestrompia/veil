@@ -2,6 +2,7 @@ import AppKit
 
 @MainActor
 func dragResearchPayload(target: NSRunningApplication, source: NSRunningApplication, point: CGPoint) async throws {
+    try DesktopInputSafety.observe().requireIsolatedMouse()
     guard source.bundleIdentifier == "research.agentfreebrowser.dragsource",
           target.processIdentifier != source.processIdentifier,
           CGPreflightPostEventAccess() else { throw ProbeFailure("Research drag source or event permission is invalid") }
@@ -38,7 +39,18 @@ func dragResearchPayload(target: NSRunningApplication, source: NSRunningApplicat
     let start = CGPoint(x: sourceFrame.midX, y: sourceFrame.midY)
     let eventSource = CGEventSource(stateID: .hidSystemState)
     var pressed = false
+    defer {
+        if pressed {
+            // Release only the button this attempt pressed, even after ownership changes.
+            let location = CGEvent(source: nil)?.location ?? start
+            let release = CGEvent(mouseEventSource: eventSource, mouseType: .leftMouseUp,
+                                  mouseCursorPosition: location, mouseButton: .left)
+            release?.flags = []
+            release?.post(tap: requestedPostingTap())
+        }
+    }
     func send(_ type: CGEventType, at location: CGPoint) throws {
+        if type != .leftMouseUp { try DesktopInputSafety.observe().requireIsolatedMouse() }
         try checkPoint(location, windows: checkedWindows())
         guard let event = CGEvent(mouseEventSource: eventSource, mouseType: type, mouseCursorPosition: location, mouseButton: .left) else {
             throw ProbeFailure("Cannot construct research drag event")
@@ -65,8 +77,5 @@ func dragResearchPayload(target: NSRunningApplication, source: NSRunningApplicat
                   "postTap": requestedPostingTap().rawValue,
                   "source": [start.x, start.y], "destination": [point.x, point.y],
                   "scope": "Fixed disposable text through an AppKit dragging session. No general clipboard access."])
-    } catch {
-        if pressed { try? send(.leftMouseUp, at: start) }
-        throw error
     }
 }

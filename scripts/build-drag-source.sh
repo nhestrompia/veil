@@ -5,7 +5,7 @@ app=dist/DragSource.app
 mkdir -p .build/module-cache "$app/Contents/MacOS"
 xcrun swiftc -swift-version 6 -warnings-as-errors -parse-as-library -O \
     -target arm64-apple-macosx14.0 -module-cache-path .build/module-cache \
-    Sources/Diagnostics/DragSource.swift -o "$app/Contents/MacOS/DragSource"
+    Sources/Probe/DesktopInputSafety.swift Sources/Diagnostics/DragSource.swift -o "$app/Contents/MacOS/DragSource"
 cat > "$app/Contents/Info.plist" <<EOF
 <?xml version="1.0" encoding="UTF-8"?>
 <plist version="1.0"><dict>

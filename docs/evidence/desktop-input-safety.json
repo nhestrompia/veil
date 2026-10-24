@@ -1,0 +1,21 @@
+{
+  "accessibility": false,
+  "desktopInputSafety": {
+    "available": true,
+    "blockingMouseHookPIDs": [
+      53316,
+      53411
+    ]
+  },
+  "pid": 36429,
+  "postEvents": false,
+  "screenCapture": false,
+  "probeBinarySHA256": "0b4022ed694f7bc93cd85f56beb748759d2ea6416ebcd54e62b037c12148849d",
+  "inputPreflight": "refused-before-window-launch",
+  "physicalClicksRecoveredAfter": "DockDoor terminated; user confirmed",
+  "causeEstablished": false,
+  "pythonChecks": 23,
+  "policyCases": 12,
+  "realDisposableProcessCleanup": true,
+  "newDesktopAttacks": 0
+}

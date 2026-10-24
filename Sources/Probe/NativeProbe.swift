@@ -135,6 +135,9 @@ func post(_ event: CGEvent, pid: pid_t?, targetPID: pid_t) throws {
     if let pid {
         event.postToPid(pid)
     } else {
+        if ![CGEventType.leftMouseUp, .rightMouseUp, .otherMouseUp, .keyUp, .flagsChanged].contains(event.type) {
+            try DesktopInputSafety.observe().requireIsolatedMouse()
+        }
         guard NSWorkspace.shared.frontmostApplication?.processIdentifier == targetPID else {
             throw ProbeFailure("Target lost foreground focus; refusing further global input")
         }
@@ -144,12 +147,21 @@ func post(_ event: CGEvent, pid: pid_t?, targetPID: pid_t) throws {
 
 @MainActor
 func sendKey(_ code: CGKeyCode, flags: CGEventFlags = [], pid: pid_t? = nil, source: CGEventSource?, targetPID: pid_t) throws {
+    var pressed = false
+    defer {
+        if pressed {
+            let release = CGEvent(keyboardEventSource: source, virtualKey: code, keyDown: false)
+            release?.flags = []
+            if let pid { release?.postToPid(pid) } else { release?.post(tap: requestedPostingTap()) }
+        }
+    }
     for down in [true, false] {
         guard let event = CGEvent(keyboardEventSource: source, virtualKey: code, keyDown: down) else {
             throw ProbeFailure("Cannot construct keyboard event")
         }
         event.flags = down ? flags : []
         try post(event, pid: pid, targetPID: targetPID)
+        pressed = down
         Thread.sleep(forTimeInterval: 0.03)
     }
 }
@@ -158,6 +170,14 @@ func sendKey(_ code: CGKeyCode, flags: CGEventFlags = [], pid: pid_t? = nil, sou
 func typeText(_ text: String, pid: pid_t? = nil, source: CGEventSource?, targetPID: pid_t) throws {
     for character in text.utf16 {
         var unit = character
+        var pressed = false
+        defer {
+            if pressed {
+                let release = CGEvent(keyboardEventSource: source, virtualKey: 0, keyDown: false)
+                release?.flags = []
+                if let pid { release?.postToPid(pid) } else { release?.post(tap: requestedPostingTap()) }
+            }
+        }
         for down in [true, false] {
             guard let event = CGEvent(keyboardEventSource: source, virtualKey: 0, keyDown: down) else {
                 throw ProbeFailure("Cannot construct text event")
@@ -165,6 +185,7 @@ func typeText(_ text: String, pid: pid_t? = nil, source: CGEventSource?, targetP
             event.keyboardSetUnicodeString(stringLength: 1, unicodeString: &unit)
             event.flags = []
             try post(event, pid: pid, targetPID: targetPID)
+            pressed = down
         }
         Thread.sleep(forTimeInterval: 0.04)
     }
@@ -173,6 +194,16 @@ func typeText(_ text: String, pid: pid_t? = nil, source: CGEventSource?, targetP
 @MainActor
 func click(_ point: CGPoint, pid: pid_t? = nil, source: CGEventSource?, targetPID: pid_t,
            routedWindow: CGWindowID? = nil) throws {
+    var pressed = false
+    defer {
+        if pressed {
+            let location = CGEvent(source: nil)?.location ?? point
+            let release = CGEvent(mouseEventSource: source, mouseType: .leftMouseUp,
+                                  mouseCursorPosition: location, mouseButton: .left)
+            release?.flags = []
+            if let pid { release?.postToPid(pid) } else { release?.post(tap: requestedPostingTap()) }
+        }
+    }
     for type in [CGEventType.mouseMoved, .leftMouseDown, .leftMouseUp] {
         guard let event = CGEvent(mouseEventSource: source, mouseType: type, mouseCursorPosition: point, mouseButton: .left) else {
             throw ProbeFailure("Cannot construct mouse event")
@@ -186,6 +217,8 @@ func click(_ point: CGPoint, pid: pid_t? = nil, source: CGEventSource?, targetPI
             }
         }
         try post(event, pid: pid, targetPID: targetPID)
+        if type == .leftMouseDown { pressed = true }
+        if type == .leftMouseUp { pressed = false }
         Thread.sleep(forTimeInterval: 0.08)
     }
 }
@@ -215,7 +248,8 @@ enum NativeProbe {
         guard let command = args.first else { throw ProbeFailure("Use permissions, windows, ax, ax-action, input, capture, or ocr") }
         if command == "permissions" {
             try emit(["pid": getpid(), "accessibility": AXIsProcessTrusted(),
-                      "postEvents": CGPreflightPostEventAccess(), "screenCapture": CGPreflightScreenCaptureAccess()])
+                      "postEvents": CGPreflightPostEventAccess(), "screenCapture": CGPreflightScreenCaptureAccess(),
+                      "desktopInputSafety": DesktopInputSafety.observe().report])
             return
         }
         if command == "request-permissions" {
@@ -224,6 +258,9 @@ enum NativeProbe {
             let screenCapture = CGRequestScreenCaptureAccess()
             try emit(["accessibility": accessibility, "postEvents": postEvents, "screenCapture": screenCapture])
             return
+        }
+        if ["bootstrap-input", "input", "hid-post-input", "research-drag"].contains(command) {
+            try DesktopInputSafety.observe().requireIsolatedMouse()
         }
         if command == "ocr" {
             guard args.count == 2 else { throw ProbeFailure("ocr PNG") }

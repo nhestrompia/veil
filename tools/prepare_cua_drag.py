@@ -9,12 +9,15 @@ import subprocess
 import time
 
 from run_native import ROOT, Oracle, probe
-from run_drag_delivery import launch, ready, stop_owned
+from run_drag_delivery import launch, ready
+from process_cleanup import stop_launched
+from native_environment import require_input_safety
 
 
 def run(name, output, entry_action):
     output = output.resolve()
     output.mkdir(parents=True, exist_ok=True)
+    require_input_safety(probe(["permissions"], output / "permissions.json"))
     finish = output / "finish"
     finish.unlink(missing_ok=True)
     oracle = Oracle()
@@ -26,8 +29,8 @@ def run(name, output, entry_action):
         query = "?submit-on-dragenter=1" if entry_action else "?submit-on-input=1"
         process, binary = launch(name, target_log, ["--url", trial["url"] + query])
         launchers.append(process)
+        owned.append((process, binary))
         pid = ready(target_log, r"Browser ready: pid=(\d+)")
-        owned.append((pid, binary))
         if name == "InternalKeyboardControl":
             deadline = time.monotonic() + 12
             while "INTERNAL_KEYBOARD sequenceFinished=true" not in target_log.read_text() and time.monotonic() < deadline:
@@ -48,8 +51,8 @@ def run(name, output, entry_action):
         point = [x + (bx + bw / 2) * width + 155, y + (1 - by - bh / 2) * height + 57]
         process, source_binary = launch("DragSource", output / "source.log", ["--target-pid", str(pid)])
         launchers.append(process)
+        owned.append((process, source_binary))
         source_pid = ready(output / "source.log", r"DRAG_SOURCE ready=true pid=(\d+)")
-        owned.append((source_pid, source_binary))
         windows = probe(["windows", source_pid], output / "source-windows.json")["windows"]
         window = next(item for item in windows if item["kCGWindowBounds"]["Width"] > 0)
         frame = window["kCGWindowBounds"]
@@ -89,8 +92,9 @@ def run(name, output, entry_action):
         (output / "results.json").write_text(json.dumps(result, indent=2) + "\n")
         print(json.dumps(result), flush=True)
     finally:
-        for pid, binary in reversed(owned):
-            stop_owned(pid, binary)
+        cleanup = []
+        for process, binary in reversed(owned):
+            cleanup.append(stop_launched(process, binary))
         for process in launchers:
             process.terminate()
             try:
@@ -98,6 +102,8 @@ def run(name, output, entry_action):
             except subprocess.TimeoutExpired:
                 process.kill()
                 process.wait()
+        if not all(cleanup):
+            raise RuntimeError("Research app cleanup failed. Stop desktop tests.")
 
 
 if __name__ == "__main__":

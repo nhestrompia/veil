@@ -4,6 +4,12 @@ import plistlib
 import subprocess
 
 
+def require_input_safety(permissions):
+    safety = permissions.get("desktopInputSafety", {})
+    if safety.get("available") is not True or safety.get("blockingMouseHookPIDs") != []:
+        raise RuntimeError("Desktop input refused: mouse-hook observation is unavailable or modifying hooks are active")
+
+
 def console_state(registry):
     nodes = registry if isinstance(registry, list) else [registry]
     sessions = [session for node in nodes for session in node.get("IOConsoleUsers", [])

@@ -10,7 +10,7 @@ import time
 from pathlib import Path
 from urllib.request import Request, urlopen
 
-from native_environment import observe_console, action_verdict
+from native_environment import observe_console, action_verdict, require_input_safety
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -80,6 +80,8 @@ def run(targets, routes, repetitions, output, post_tap="hid"):
     environment = observe_console()
     oracle = Oracle()
     permissions = probe(["permissions"], output / "permissions.json")
+    if any(route != "ax" for route in routes):
+        require_input_safety(permissions)
     if not permissions.get("accessibility") or not permissions.get("postEvents"):
         (output / "results.json").write_text(json.dumps({"permissions": permissions, "results": [
             {"route": "permission-preflight", "verdict": "inconclusive", "error": "Probe requires effective Accessibility and event-posting grants"}

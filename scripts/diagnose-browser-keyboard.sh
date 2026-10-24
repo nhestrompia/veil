@@ -28,6 +28,12 @@ assert source.count(marker) == 1
 source = source.replace('private var window: NSWindow!', 'private var window: NSWindow!\n    private var diagnosticBackdrop: NSWindow?')
 source = source.replace(marker, '''
 window.title = "Internal keyboard functionality control"
+Task { @MainActor in
+    try? await Task.sleep(for: .seconds(90))
+    print("INTERNAL_KEYBOARD watchdog=true")
+    fflush(stdout)
+    NSApp.terminate(nil)
+}
 print("INTERNAL_KEYBOARD windowSharingEnabled=\\(window.sharingType != .none)")
 #if INTERNAL_CAPTURE_BACKDROP
 if let screen = window.screen {

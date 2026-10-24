@@ -174,3 +174,9 @@ An external AppKit source triggers ten reference actions without posted mouse or
 The probe build now compares source files, build scripts, toolchain versions, and the signed executable. A matching build retains the existing executable. Changed inputs or an invalid signature force a rebuild.
 
 The repeated build retained the exact executable hash and modification time. This avoids unnecessary signing changes during permission diagnosis. It does not replace effective permission checks after a real rebuild. The check is in `artifacts/probe-cache-verification.json`.
+
+## Milestone 27: desktop input recovery and test safeguards
+
+Modifying mouse hooks now prevent input trials before browser launch. Failed input releases no longer depend on foreground ownership. Drag and internal-control controllers wait for exact executable cleanup, including failed readiness. Diagnostic timers limit unattended windows.
+
+All 23 Python checks pass, with a real disposable-process exit check. Swift input-safety, browser-policy, and device-dispatch checks pass. No new desktop attack ran. The user confirmed recovery after DockDoor stopped. The exact interaction remains unexplained. See [desktop input safeguards](desktop-input-safety-findings.md).

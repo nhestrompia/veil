@@ -198,3 +198,9 @@ The rebuilt browser still needs its separate device grant refreshed. No new cand
 All fifteen references complete their task. Fifteen matched candidate trials observe no binding, admitted input, or website action. The device reader is ready in every candidate. Cleanup passes for every process. Legacy HID input now releases pending keys after cancellation or lost focus, and all 25 Python checks pass.
 
 This concerns software startup attempts, with no new physical usability or hardware-attestation claim. See [startup confirmation](bootstrap-confirmation-findings.md).
+
+## Milestone 31: scoped capture comparisons and research pause
+
+All three stream references disclose their markers. All three restricted stream captures recover only the owned research backdrop. Three window-image references disclose their markers, while three restricted window images do not. System window screenshots work on all three references and fail on all three restricted diagnostics. Those failures remain inconclusive.
+
+All twelve private bootstrap controls complete one internal form action. Physical visibility on the latest restricted binary remains unverified. The user requested a pause. The fixture stopped, and no research application remained. Resume details are in [the handoff note](HANDOFF.md).

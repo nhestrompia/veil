@@ -72,6 +72,11 @@ def run(output, external_reads, stream, submit_on_input=False):
                 if capture.get("status") == "captured":
                     ocr = probe(["ocr", output / "window.png"], output / "ocr.json")
                     result["captureMarkerDisclosed"] = state["secret"] in json.dumps(ocr)
+                system = probe(["system-capture", pid, output / "system.png"], output / "system.json")
+                result["systemCapture"] = system
+                if system.get("status") == "captured":
+                    ocr = probe(["ocr", output / "system.png"], output / "system.ocr.json")
+                    result["systemMarkerDisclosed"] = state["secret"] in json.dumps(ocr)
         (output / "results.json").write_text(json.dumps(result, indent=2))
         print(json.dumps(result), flush=True)
     finally:

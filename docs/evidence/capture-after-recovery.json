@@ -1,0 +1,480 @@
+{
+  "humanBaseline": false,
+  "physicalVisibilityVerified": false,
+  "systemScreenshotFailuresAreInconclusive": true,
+  "results": [
+    {
+      "flavor": "visible",
+      "repetition": 0,
+      "binarySHA256": "9e870846a5fb104768c7d4c102ba2d0e03bf78aeb1e0fff7910fa05b62e954f1",
+      "pid": 53801,
+      "startupAddressPreserved": true,
+      "locationHasEditor": true,
+      "locationUsesRestrictedEditor": true,
+      "inputTriggeredSubmit": false,
+      "acceptedSubmissions": 1,
+      "noDeviceReader": true,
+      "humanBaseline": false,
+      "windowSharingEnabled": true,
+      "scope": "Diagnostic-only private authorized events through the normal application and WebKit path. Not an external bypass, physical control, or HID attestation.",
+      "isolatedStream": {
+        "backdropVerifiedBeforeAndAfter": true,
+        "backdropWindowID": 89966,
+        "filter": "unfiltered display cropped inside owned research coverage",
+        "frame": [
+          124,
+          158,
+          952,
+          676
+        ],
+        "method": "isolated-stream-capture",
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/capture-after-recovery/visible/0/stream.png",
+        "pid": 53801,
+        "status": "captured",
+        "targetWindowID": 89964,
+        "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+      },
+      "streamMarkerDisclosed": true,
+      "backdropLabelRecovered": false
+    },
+    {
+      "flavor": "visible",
+      "repetition": 1,
+      "binarySHA256": "9e870846a5fb104768c7d4c102ba2d0e03bf78aeb1e0fff7910fa05b62e954f1",
+      "pid": 54001,
+      "startupAddressPreserved": true,
+      "locationHasEditor": true,
+      "locationUsesRestrictedEditor": true,
+      "inputTriggeredSubmit": false,
+      "acceptedSubmissions": 1,
+      "noDeviceReader": true,
+      "humanBaseline": false,
+      "windowSharingEnabled": true,
+      "scope": "Diagnostic-only private authorized events through the normal application and WebKit path. Not an external bypass, physical control, or HID attestation.",
+      "isolatedStream": {
+        "backdropVerifiedBeforeAndAfter": true,
+        "backdropWindowID": 89983,
+        "filter": "unfiltered display cropped inside owned research coverage",
+        "frame": [
+          124,
+          158,
+          952,
+          676
+        ],
+        "method": "isolated-stream-capture",
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/capture-after-recovery/visible/1/stream.png",
+        "pid": 54001,
+        "status": "captured",
+        "targetWindowID": 89981,
+        "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+      },
+      "streamMarkerDisclosed": true,
+      "backdropLabelRecovered": false
+    },
+    {
+      "flavor": "visible",
+      "repetition": 2,
+      "binarySHA256": "9e870846a5fb104768c7d4c102ba2d0e03bf78aeb1e0fff7910fa05b62e954f1",
+      "pid": 54255,
+      "startupAddressPreserved": true,
+      "locationHasEditor": true,
+      "locationUsesRestrictedEditor": true,
+      "inputTriggeredSubmit": false,
+      "acceptedSubmissions": 1,
+      "noDeviceReader": true,
+      "humanBaseline": false,
+      "windowSharingEnabled": true,
+      "scope": "Diagnostic-only private authorized events through the normal application and WebKit path. Not an external bypass, physical control, or HID attestation.",
+      "isolatedStream": {
+        "backdropVerifiedBeforeAndAfter": true,
+        "backdropWindowID": 90000,
+        "filter": "unfiltered display cropped inside owned research coverage",
+        "frame": [
+          124,
+          158,
+          952,
+          676
+        ],
+        "method": "isolated-stream-capture",
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/capture-after-recovery/visible/2/stream.png",
+        "pid": 54255,
+        "status": "captured",
+        "targetWindowID": 89998,
+        "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+      },
+      "streamMarkerDisclosed": true,
+      "backdropLabelRecovered": false
+    },
+    {
+      "flavor": "restricted",
+      "repetition": 0,
+      "binarySHA256": "bd2c24f856bdf40dc1bcd5439c18c77d71779157c2356e60b57e8dc008dc02e3",
+      "pid": 54907,
+      "startupAddressPreserved": true,
+      "locationHasEditor": true,
+      "locationUsesRestrictedEditor": true,
+      "inputTriggeredSubmit": false,
+      "acceptedSubmissions": 1,
+      "noDeviceReader": true,
+      "humanBaseline": false,
+      "windowSharingEnabled": false,
+      "scope": "Diagnostic-only private authorized events through the normal application and WebKit path. Not an external bypass, physical control, or HID attestation.",
+      "isolatedStream": {
+        "backdropVerifiedBeforeAndAfter": true,
+        "backdropWindowID": 90018,
+        "filter": "unfiltered display cropped inside owned research coverage",
+        "frame": [
+          124,
+          158,
+          952,
+          676
+        ],
+        "method": "isolated-stream-capture",
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/capture-after-recovery/restricted/0/stream.png",
+        "pid": 54907,
+        "status": "captured",
+        "targetWindowID": 90016,
+        "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+      },
+      "streamMarkerDisclosed": false,
+      "backdropLabelRecovered": true
+    },
+    {
+      "flavor": "restricted",
+      "repetition": 1,
+      "binarySHA256": "bd2c24f856bdf40dc1bcd5439c18c77d71779157c2356e60b57e8dc008dc02e3",
+      "pid": 55004,
+      "startupAddressPreserved": true,
+      "locationHasEditor": true,
+      "locationUsesRestrictedEditor": true,
+      "inputTriggeredSubmit": false,
+      "acceptedSubmissions": 1,
+      "noDeviceReader": true,
+      "humanBaseline": false,
+      "windowSharingEnabled": false,
+      "scope": "Diagnostic-only private authorized events through the normal application and WebKit path. Not an external bypass, physical control, or HID attestation.",
+      "isolatedStream": {
+        "backdropVerifiedBeforeAndAfter": true,
+        "backdropWindowID": 90035,
+        "filter": "unfiltered display cropped inside owned research coverage",
+        "frame": [
+          124,
+          158,
+          952,
+          676
+        ],
+        "method": "isolated-stream-capture",
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/capture-after-recovery/restricted/1/stream.png",
+        "pid": 55004,
+        "status": "captured",
+        "targetWindowID": 90033,
+        "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+      },
+      "streamMarkerDisclosed": false,
+      "backdropLabelRecovered": true
+    },
+    {
+      "flavor": "restricted",
+      "repetition": 2,
+      "binarySHA256": "bd2c24f856bdf40dc1bcd5439c18c77d71779157c2356e60b57e8dc008dc02e3",
+      "pid": 55169,
+      "startupAddressPreserved": true,
+      "locationHasEditor": true,
+      "locationUsesRestrictedEditor": true,
+      "inputTriggeredSubmit": false,
+      "acceptedSubmissions": 1,
+      "noDeviceReader": true,
+      "humanBaseline": false,
+      "windowSharingEnabled": false,
+      "scope": "Diagnostic-only private authorized events through the normal application and WebKit path. Not an external bypass, physical control, or HID attestation.",
+      "isolatedStream": {
+        "backdropVerifiedBeforeAndAfter": true,
+        "backdropWindowID": 90052,
+        "filter": "unfiltered display cropped inside owned research coverage",
+        "frame": [
+          124,
+          158,
+          952,
+          676
+        ],
+        "method": "isolated-stream-capture",
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/capture-after-recovery/restricted/2/stream.png",
+        "pid": 55169,
+        "status": "captured",
+        "targetWindowID": 90050,
+        "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+      },
+      "streamMarkerDisclosed": false,
+      "backdropLabelRecovered": true
+    },
+    {
+      "flavor": "window-visible",
+      "repetition": 0,
+      "binarySHA256": "38efb4afdeb37ee64d5d96f947e15d8658654da8933b2b2678ad2605b1c32d89",
+      "pid": 56113,
+      "startupAddressPreserved": true,
+      "locationHasEditor": true,
+      "locationUsesRestrictedEditor": true,
+      "inputTriggeredSubmit": false,
+      "acceptedSubmissions": 1,
+      "noDeviceReader": true,
+      "humanBaseline": false,
+      "windowSharingEnabled": true,
+      "scope": "Diagnostic-only private authorized events through the normal application and WebKit path. Not an external bypass, physical control, or HID attestation.",
+      "directAX": {
+        "status": "observed",
+        "elements": 2,
+        "markerDisclosed": false
+      },
+      "capture": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/capture-after-recovery/window-visible/0/window.png",
+        "pid": 56113,
+        "pixels": [
+          2000,
+          1544
+        ],
+        "status": "captured",
+        "windowID": 90067,
+        "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+      },
+      "captureMarkerDisclosed": true,
+      "systemCapture": {
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/capture-after-recovery/window-visible/0/system.png",
+        "pid": 56113,
+        "status": "captured",
+        "windowID": 90067,
+        "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+      },
+      "systemMarkerDisclosed": true
+    },
+    {
+      "flavor": "window-visible",
+      "repetition": 1,
+      "binarySHA256": "38efb4afdeb37ee64d5d96f947e15d8658654da8933b2b2678ad2605b1c32d89",
+      "pid": 56166,
+      "startupAddressPreserved": true,
+      "locationHasEditor": true,
+      "locationUsesRestrictedEditor": true,
+      "inputTriggeredSubmit": false,
+      "acceptedSubmissions": 1,
+      "noDeviceReader": true,
+      "humanBaseline": false,
+      "windowSharingEnabled": true,
+      "scope": "Diagnostic-only private authorized events through the normal application and WebKit path. Not an external bypass, physical control, or HID attestation.",
+      "directAX": {
+        "status": "observed",
+        "elements": 2,
+        "markerDisclosed": false
+      },
+      "capture": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/capture-after-recovery/window-visible/1/window.png",
+        "pid": 56166,
+        "pixels": [
+          2000,
+          1544
+        ],
+        "status": "captured",
+        "windowID": 90083,
+        "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+      },
+      "captureMarkerDisclosed": true,
+      "systemCapture": {
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/capture-after-recovery/window-visible/1/system.png",
+        "pid": 56166,
+        "status": "captured",
+        "windowID": 90083,
+        "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+      },
+      "systemMarkerDisclosed": true
+    },
+    {
+      "flavor": "window-visible",
+      "repetition": 2,
+      "binarySHA256": "38efb4afdeb37ee64d5d96f947e15d8658654da8933b2b2678ad2605b1c32d89",
+      "pid": 56204,
+      "startupAddressPreserved": true,
+      "locationHasEditor": true,
+      "locationUsesRestrictedEditor": true,
+      "inputTriggeredSubmit": false,
+      "acceptedSubmissions": 1,
+      "noDeviceReader": true,
+      "humanBaseline": false,
+      "windowSharingEnabled": true,
+      "scope": "Diagnostic-only private authorized events through the normal application and WebKit path. Not an external bypass, physical control, or HID attestation.",
+      "directAX": {
+        "status": "observed",
+        "elements": 2,
+        "markerDisclosed": false
+      },
+      "capture": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/capture-after-recovery/window-visible/2/window.png",
+        "pid": 56204,
+        "pixels": [
+          2000,
+          1544
+        ],
+        "status": "captured",
+        "windowID": 90099,
+        "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+      },
+      "captureMarkerDisclosed": true,
+      "systemCapture": {
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/capture-after-recovery/window-visible/2/system.png",
+        "pid": 56204,
+        "status": "captured",
+        "windowID": 90099,
+        "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+      },
+      "systemMarkerDisclosed": true
+    },
+    {
+      "flavor": "window-restricted",
+      "repetition": 0,
+      "binarySHA256": "00c1ee6733f6ee68bd467c3a1d9b73f04eacce7da401eab19054e531fa08f2a5",
+      "pid": 56659,
+      "startupAddressPreserved": true,
+      "locationHasEditor": true,
+      "locationUsesRestrictedEditor": true,
+      "inputTriggeredSubmit": false,
+      "acceptedSubmissions": 1,
+      "noDeviceReader": true,
+      "humanBaseline": false,
+      "windowSharingEnabled": false,
+      "scope": "Diagnostic-only private authorized events through the normal application and WebKit path. Not an external bypass, physical control, or HID attestation.",
+      "directAX": {
+        "status": "observed",
+        "elements": 2,
+        "markerDisclosed": false
+      },
+      "capture": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/capture-after-recovery/window-restricted/0/window.png",
+        "pid": 56659,
+        "pixels": [
+          1000,
+          772
+        ],
+        "status": "captured",
+        "windowID": 90177,
+        "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+      },
+      "captureMarkerDisclosed": false,
+      "systemCapture": {
+        "error": "System capture failed",
+        "status": "inconclusive",
+        "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+      }
+    },
+    {
+      "flavor": "window-restricted",
+      "repetition": 1,
+      "binarySHA256": "00c1ee6733f6ee68bd467c3a1d9b73f04eacce7da401eab19054e531fa08f2a5",
+      "pid": 56694,
+      "startupAddressPreserved": true,
+      "locationHasEditor": true,
+      "locationUsesRestrictedEditor": true,
+      "inputTriggeredSubmit": false,
+      "acceptedSubmissions": 1,
+      "noDeviceReader": true,
+      "humanBaseline": false,
+      "windowSharingEnabled": false,
+      "scope": "Diagnostic-only private authorized events through the normal application and WebKit path. Not an external bypass, physical control, or HID attestation.",
+      "directAX": {
+        "status": "observed",
+        "elements": 2,
+        "markerDisclosed": false
+      },
+      "capture": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/capture-after-recovery/window-restricted/1/window.png",
+        "pid": 56694,
+        "pixels": [
+          1000,
+          772
+        ],
+        "status": "captured",
+        "windowID": 90193,
+        "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+      },
+      "captureMarkerDisclosed": false,
+      "systemCapture": {
+        "error": "System capture failed",
+        "status": "inconclusive",
+        "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+      }
+    },
+    {
+      "flavor": "window-restricted",
+      "repetition": 2,
+      "binarySHA256": "00c1ee6733f6ee68bd467c3a1d9b73f04eacce7da401eab19054e531fa08f2a5",
+      "pid": 56725,
+      "startupAddressPreserved": true,
+      "locationHasEditor": true,
+      "locationUsesRestrictedEditor": true,
+      "inputTriggeredSubmit": false,
+      "acceptedSubmissions": 1,
+      "noDeviceReader": true,
+      "humanBaseline": false,
+      "windowSharingEnabled": false,
+      "scope": "Diagnostic-only private authorized events through the normal application and WebKit path. Not an external bypass, physical control, or HID attestation.",
+      "directAX": {
+        "status": "observed",
+        "elements": 2,
+        "markerDisclosed": false
+      },
+      "capture": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/capture-after-recovery/window-restricted/2/window.png",
+        "pid": 56725,
+        "pixels": [
+          1000,
+          772
+        ],
+        "status": "captured",
+        "windowID": 90209,
+        "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+      },
+      "captureMarkerDisclosed": false,
+      "systemCapture": {
+        "error": "System capture failed",
+        "status": "inconclusive",
+        "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+      }
+    }
+  ],
+  "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1",
+  "researchProcessesRemainingAtPause": []
+}

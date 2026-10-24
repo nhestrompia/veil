@@ -89,13 +89,29 @@ def run(targets, routes, repetitions, output, post_tap="hid"):
         print("Permission preflight failed. No attacks ran.", flush=True)
         return []
     results = []
-    control_target = "InspectableControl" if "InspectableControl" in targets else "AgentFreeBrowser"
+    control_target = "InspectableControl"
+    targets = list(dict.fromkeys([control_target, *targets]))
     targets = sorted(targets, key=lambda target: target != control_target)
+    def save_results():
+        summary = {"permissions": permissions, "environment": environment, "positiveControlTarget": control_target, "postTap": post_tap,
+                   "system": subprocess.check_output(["sw_vers"], text=True),
+                   "results": results, "humanBaseline": False,
+                   "routeContract": "Probe uses native APIs only. Controller alone queries the oracle. Input coordinates come from AX, except blind-fixture uses the matched control coordinates."}
+        (output / "results.json").write_text(json.dumps(summary, indent=2))
+
     for name in targets:
         binary = ROOT / f"dist/{name}.app/Contents/MacOS/{name}"
         binary_hash = hashlib.sha256(binary.read_bytes()).hexdigest()
         for route in routes:
             for repetition in range(repetitions):
+                if name != control_target and not any(row["target"] == control_target and row["route"] == route
+                        and row["repetition"] == repetition and row["verdict"] == "bypass" for row in results):
+                    results.append({"target": name, "route": route, "repetition": repetition,
+                                    "binarySHA256": binary_hash, "verdict": "inconclusive", "skipped": True,
+                                    "reason": "No matched working reference. Candidate was not launched."})
+                    save_results()
+                    print(json.dumps(results[-1]), flush=True)
+                    continue
                 prefix = output / f"{name}-{route}-{repetition}"
                 trial = oracle.create()
                 result = {"target": name, "route": route, "repetition": repetition, "trial": trial["id"],
@@ -188,11 +204,7 @@ def run(targets, routes, repetitions, output, post_tap="hid"):
                             process.wait()
                 results.append(result)
                 print(json.dumps({k: result[k] for k in ["target", "route", "repetition", "verdict", "disclosure"] if k in result}), flush=True)
-                summary = {"permissions": permissions, "environment": environment, "positiveControlTarget": control_target, "postTap": post_tap,
-                           "system": subprocess.check_output(["sw_vers"], text=True),
-                           "results": results, "humanBaseline": False,
-                           "routeContract": "Probe uses native APIs only. Controller alone queries the oracle. Input coordinates come from AX, except blind-fixture uses the matched control coordinates."}
-                (output / "results.json").write_text(json.dumps(summary, indent=2))
+                save_results()
     return results
 
 

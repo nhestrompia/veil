@@ -186,3 +186,9 @@ All 23 Python checks pass, with a real disposable-process exit check. Swift inpu
 The isolated Chromium control completes three website actions. Six attachment attempts across three native hosts remain unsupported transports. The failed-launch cleanup stops each new research instance, with no research process left afterward. Executable hashes and cleanup outcomes are saved.
 
 No native input or capture result follows. Native UI is unavailable, the console reports locked, and the rebuilt probe needs its existing grants refreshed. See [automation transport findings](automation-transport-findings.md).
+
+## Milestone 29: restored native calibration and reference gating
+
+The existing probe grants are effective again. Nine of eleven reference routes complete their website task with no modifying mouse hooks. Two mouse routes remain inconclusive. The native controller now skips every candidate whose matched reference fails. All 24 Python checks pass.
+
+The rebuilt browser still needs its separate device grant refreshed. No new candidate result follows yet. See [native calibration findings](native-calibration-findings.md).

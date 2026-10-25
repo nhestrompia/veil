@@ -368,3 +368,10 @@ No failed hypothesis is enabled in production. All temporary processes passed cl
 Navigation and response policies now accept exact about:blank and about:srcdoc documents only inside frames. Top-level addresses and other schemes remain restricted. The srcdoc task passed and refused its matched HID attempt.
 
 All nine private editor/frame baselines passed. Their 45 external cases produced 27 native blocks and 18 inconclusive results, with no new task through those routes. Every temporary process passed cleanup. All 87 Python checks, Swift policy checks, device-dispatch checks, and both production type checks pass. The focus and visibility bypasses remain open. See [embedded-document findings](embedded-document-findings.md).
+
+
+## Milestone 61: stable activity and native ownership failure
+
+A diagnostic holds logical key, visibility, and occlusion state steady while preserving actual key-window and foreground-PID routing checks. One comparison per mode stopped visibility, blur, and password focus actions. All three resumed private tasks completed.
+
+The password candidate retained Secure Event Input while hidden. Its readable control released ownership. Every temporary process passed cleanup and left Secure Event Input off. This failed condition blocks production use of the host getter approach. Pinned source research defines the next boundary between DOM activity and actual native ownership. See [stable-activity findings](stable-activity-findings.md).

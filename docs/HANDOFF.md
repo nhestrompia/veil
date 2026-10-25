@@ -10,6 +10,10 @@ The broader page matrix blocked 21 native attempts across seven working private 
 
 The feature fixture runs on port 8766 with its own controller file. The original fixture and physical browser PID 61893 remain unchanged. No temporary research process remains. Keep the frozen physical browser and permissioned probes unchanged. New policy and focus results belong to separate diagnostics.
 
+Milestone 61 adds only a stable-activity diagnostic. It stopped matched visibility, blur, and password focus actions in one fresh process per mode. Private typing resumed in all three. Its password candidate retained Secure Event Input while hidden, unlike the readable control. Every cleanup succeeded and left Secure Event Input off. Do not enable this host getter policy in production. See [stable-activity findings](stable-activity-findings.md).
+
+The next task is an architect comparison of boundaries that separate DOM activity from actual native input ownership. Source review found an owner-aware reset selector, but reset alone cannot prevent background editor callbacks from reacquiring ownership. No independent ObjC rearm method emerged. The architect workflow proceeds without a human checkpoint. Keep the frozen physical browser and probes unchanged.
+
 ## Current priority and remote control
 
 The user clarified that recognizing physical typing is separate from agent-generated input. Do not count that observation as an autonomous input bypass. Prioritize navigation and website actions by external agents. Keep confidentiality results separate.

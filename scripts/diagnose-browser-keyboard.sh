@@ -18,6 +18,7 @@ for argument in "$@"; do
         --feature-suite) feature_suite=true ;;
         --filter-activation) focus_mode=filter ;;
         --logical-key) focus_mode=logical ;;
+        --stable-activity) focus_mode=stable ;;
         --focus-resume) focus_resume=true ;;
         *) echo "Unknown diagnostic option: $argument" >&2; exit 2 ;;
     esac
@@ -31,16 +32,24 @@ if [ "$focus_resume" = true ]; then defines+=(-D INTERNAL_FOCUS_RESUME); fi
 case "$focus_mode" in
     filter) defines+=(-D INTERNAL_ACTIVATION_FILTER) ;;
     logical) defines+=(-D INTERNAL_LOGICAL_KEY) ;;
+    stable) defines+=(-D INTERNAL_STABLE_ACTIVITY) ;;
 esac
 mkdir -p .build/module-cache "$app/Contents/MacOS"
 python3 - <<'PY'
 from pathlib import Path
 boundary = Path('Sources/Browser/AXBoundary.swift').read_text()
+assert boundary.count('final class AXBoundaryWindow: NSWindow {') == 1
 boundary = boundary.replace('import AppKit', 'import AppKit\nimport Carbon', 1)
 boundary = boundary.replace('final class AXBoundaryWindow: NSWindow {', '''final class AXBoundaryWindow: NSWindow {
-    #if INTERNAL_LOGICAL_KEY
+    #if INTERNAL_LOGICAL_KEY || INTERNAL_STABLE_ACTIVITY
     override var isKeyWindow: Bool { true }
     #endif
+    #if INTERNAL_STABLE_ACTIVITY
+    override var isVisible: Bool { true }
+    override var occlusionState: NSWindow.OcclusionState { .visible }
+    #endif
+
+    var diagnosticActualKeyWindow: Bool { super.isKeyWindow }
 
     override func becomeKey() {
         super.becomeKey()
@@ -53,12 +62,15 @@ boundary = boundary.replace('final class AXBoundaryWindow: NSWindow {', '''final
     }
 
     private func reportDiagnosticFocus(_ phase: String) {
-        print("FOCUS_DIAGNOSTIC phase=\\(phase) actualKey=\\(super.isKeyWindow) logicalKey=\\(isKeyWindow) foreground=\\(NSWorkspace.shared.frontmostApplication?.processIdentifier ?? -1) secureInput=\\(IsSecureEventInputEnabled())")
+        print("FOCUS_DIAGNOSTIC phase=\\(phase) actualKey=\\(super.isKeyWindow) logicalKey=\\(isKeyWindow) actualVisible=\\(super.isVisible) logicalVisible=\\(isVisible) foreground=\\(NSWorkspace.shared.frontmostApplication?.processIdentifier ?? -1) secureInput=\\(IsSecureEventInputEnabled())")
         fflush(stdout)
     }
 ''', 1)
 Path('.build/InternalFocusBoundary.swift').write_text(boundary)
 device = Path('Sources/Browser/DeviceKeyboard.swift').read_text()
+assert device.count('guard let window, window.isKeyWindow,') == 1
+device = device.replace('guard let window, window.isKeyWindow,',
+                        'guard let window, (window as? AXBoundaryWindow)?.diagnosticActualKeyWindow == true,', 1)
 device = device.replace('''        switch event.type {''', '''        #if INTERNAL_ACTIVATION_FILTER
         if event.type == .appKitDefined,
            event.subtype == .applicationActivated || event.subtype == .applicationDeactivated {

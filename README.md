@@ -23,7 +23,28 @@ Live prototype results:
 - [Capture and automation](docs/capture-findings.md): screenshot/OCR/native input completed 3/3 protected-browser trials. Playwright transport failures remain separate from protection evidence.
 - [Source-state filter](docs/input-filter-findings.md): a basic client stopped, but generated HID-state input and the vision client still completed tasks.
 
-The current build is an experimental browser and attack testbed. The default browser does not meet either MVP resistance gate. An earlier keyboard-only experiment recorded one positive physical task and twenty stopped input trials, with four inconclusive trials. A revised build closes the measured automatic launch-URL route. The revised visible control passed a new physical startup task, then refused 27 calibrated native trials and three vision-input trials. Six other native trials remain inconclusive. Its screenshots disclose the page. The project does not meet the agent-free goal. No validated physical trajectory dataset or classifier result exists yet.
+The default browser remains an automation control and does not meet either MVP resistance gate. The latest candidate is `DeviceKeyboardExperiment.app`. It supports this Mac's measured built-in keyboard and US ASCII. Pointer input is disabled. It checks kernel device ancestry before binding and refuses known software sources or unknown paths. Its Input Monitoring grant is effective after the approved per-app reset.
+
+The user completed one physical task on the capture-restricted source-policy build. That same unchanged process then refused 27 calibrated native attempts and three adaptive vision attempts using known page geometry. Six native cases were skipped because their controls failed. Window and filtered-display captures returned black images. System screenshot failures and unavailable AX action targets remain inconclusive. Ordinary and direct AX reads recovered no marker, with working matched references.
+
+Fifteen fresh startup controls completed, while fifteen matched candidates showed no software binding or task action. A separate session-insertion matrix recorded eighteen explicit refusals against loaded diagnostics. These are distinct from the physical-session results.
+
+The project remains unproven as agent-free. One physical task does not meet the PRD's human compatibility targets. External inspection, unfiltered capture on the current build, physical keyboard observation, and broader session privacy remain open. The standalone passive observer has no grant. The separately packaged app now has effective access after the approved Accessibility Add. Its preflight collected no keys. A physical observation comparison remains pending. The offline behavior pilot provides neither a trained classifier nor live adaptive replay evidence.
+
+Recent evidence:
+
+- [Physical-session attacks](docs/source-policy-session-findings.md) preserve the human control and native input results.
+- [Adaptive vision](docs/source-policy-vision-findings.md) continues from black images using matched page geometry.
+- [Capture routes](docs/source-policy-capture-findings.md) separate filtered-display observations from failed system screenshots.
+- [Native semantics](docs/source-policy-semantics-findings.md) record matched tree, focused-element, menu, and action queries.
+- [Keyboard observation](docs/keyboard-observation-findings.md) records the passive probe and its absent grants.
+
+- [Keyboard source policy](docs/hid-source-findings.md) records ancestry checks and the narrow hardware profile.
+- [Source-policy startup](docs/source-policy-startup-findings.md) records current permissioned startup comparisons.
+- [Distinct insertion points](docs/native-insertion-point-findings.md) separates working session controls from inconclusive annotated controls.
+- [Local inspector client](docs/local-inspector-policy-findings.md) records a working JavaScript control and the protected-shell comparison.
+- [Offline mouse replay](docs/behavior-replay-findings.md) records feature limits without a classifier or live evasion claim.
+- [Grant recovery](docs/grant-recovery-findings.md) records the signing checks and approved one-app reset.
 
 Further candidates now compile. Capture pilots ran, but the protected BGRA and NV12 builds failed physical visibility. See [route calibration](docs/route-calibration.md).
 

@@ -1,53 +1,66 @@
-# Live continuation
-
-## Active physical session
-
-The source-policy browser remains alive as PID 43980. Its session file is `artifacts/source-policy-live/physical-session.json`. The user reported Task complete, and the oracle recorded one accepted physical baseline. The binary hash is `43b1a9833d6c55b1e254b848f9bd09c202da46ba0f8d8833084df559e6a8a9d1`.
-
-Twenty-seven native attempts then received explicit refusals. Six failed-control cases were skipped. Milestone 42 repaired relative capture paths and reference gating. Three adaptive vision controls completed, then three known-layout curved attacks received explicit refusals in this same process. Their window images were black. All 46 Python checks pass. See `docs/source-policy-vision-findings.md`. Test the display-filter and system capture routes next without rebuilding either binary.
-
-The app's Input Monitoring grant is now effective after the explicitly approved one-app ListenEvent reset and Add. Earlier off/on and Add attempts were insufficient. No approval remains pending.
-
-Do not rebuild the browser or probe during this session. The fixture and caffeinate remain active as unified exec session 53557. Native computer-use bindings are `grantSettings` and `grantFinder`. Do not bind the AX-hidden DeviceKeyboard app through computer use. NativeProbe supplies scoped attacks.
-
 # Current research state
 
-Research resumed on 2026-10-25. Milestones 32 through 36 are complete. The browser is still not proven agent-free.
+Updated 2026-10-25. The browser remains unproven as agent-free. Milestones 35 through 45 are complete and committed on `native-feasibility`. Milestone 46 packages the observer and records the approved effective grant.
 
-Milestone 32 calibrated 33 successful reference actions, then tested eleven external routes against each of three already-loaded diagnostics. Twenty-seven native attempts received explicit refusals. Six Accessibility or vision attempts remain inconclusive. No candidate recorded a new action, and all 36 processes passed cleanup. These use private startup, not physical input.
+## Live physical session
 
-Milestone 33 established a working local inspector client. The native UI tool read the correct marker and completed a fixture action through the reference console. Cleanup passed.
+One capture-restricted `DeviceKeyboardExperiment` remains alive as PID 43980. Its session file is `artifacts/source-policy-live/physical-session.json`. The user reported Task complete. The independent oracle recorded one accepted physical task, a ready device reader, and binding to the measured built-in keyboard.
 
-Milestone 34 tested the startup inspection policy. A new disposable control keeps remote inspectability false but omits the startup rule. Its local inspector still reads the correct marker and completes one action under the developer-extras launch argument. Two protected-shell trials offer no Inspect Element entry. A separate ordinary-input control completes on the readable shell. One stalled UI attempt remains inconclusive. All four controller cleanups and the extra-process cleanup passed.
+The browser hash is `43b1a9833d6c55b1e254b848f9bd09c202da46ba0f8d8833084df559e6a8a9d1`. NativeProbe hash is `7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1`. Neither changed during the physical-session attacks. Do not rebuild either binary before any remaining same-process test.
 
-No persistent preference, Safari setting, permission scope, or user browser profile changed. The probe executable remains unchanged, so no grant refresh followed. The current probe hash is `7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1`.
+The fixture and caffeinate remain active as unified exec session 53557. No attack controller or observer remains active. Keep the current browser available for the remaining keyboard observation comparison.
 
-All 31 Python checks pass. The diagnostic and protected shell compile with warnings as errors. Final cleanup found no research application. The loopback fixture and its keep-awake process stopped. The blank agent-owned preview tab closed.
+To stop this exact browser, run:
 
-## Latest continuation
+```sh
+python3 tools/run_device_session.py stop --session artifacts/source-policy-live/physical-session.json
+```
 
-Milestone 35 found unavailable readable references for the session insertion-point matrix. All eighteen results remain inconclusive. No input adapter ran, no candidate launched, and every reference process passed cleanup. The console reported locked. The runner now stops at the first missing reference field. The annotated insertion-point matrix remains pending.
+The controller verifies executable identity and waits for exit. Stop the fixture separately when live testing ends.
 
-Milestone 36 adds a keyboard source policy before binding. It rejects known software kernel ancestry and unknown hardware paths. The first allowed profile is this Mac's observed built-in FIFO keyboard. A read-only audit classifies one keyboard as eligible and two software paths as refused. Twelve policy cases, event-dispatch checks, and all 32 Python checks pass. The candidate compiles with warnings as errors.
+## Verified results
 
-The candidate executable is `.build/device-keyboard-source-policy`. The installed browser and probe remain unchanged. No revised physical task or live attack ran. Installing this change requires a new effective-grant check and physical navigation before any acceptance claim. Do not treat registry classification as human authentication.
+- Milestone 41: twenty-seven native attempts received explicit refusals, with zero admitted events and no new accepted action. Six failed-control cases were skipped.
+- Milestone 42: three adaptive vision controls completed. Three matched known-layout curved attempts received explicit refusals. The target window images were black. The repaired controller preserves earlier adapter failures as inconclusive.
+- Milestone 43: three filtered-display references disclosed their markers. Three restricted images were identical and black. System window screenshots worked on three references but failed on the candidate. Those failures remain inconclusive.
+- Milestone 44: all three AX references disclosed markers through both read routes and completed a task. Candidate reads recovered no marker and exposed no content menu actions. The action adapter found no field and remains inconclusive.
+- Milestone 45: the passive keyboard observer compiles. It has no effective Accessibility or listening grant. Its preflight and no-grant observe path install no monitor. An unrelated PID is refused.
 
-The live test references remain unavailable. Resume native attacks only after a readable reference works. The source review and new findings are in `docs/research/hid-origin-guarantees.md` and `docs/hid-source-findings.md`. The source audit opens no device and collects no input. No global hook, device seizure, new permission, or persistent system setting changed.
+All 52 Python checks pass. The passive observer compiles with warnings as errors. Earlier source-policy and dispatch checks pass. Recent findings and saved evidence are linked from README and `docs/implementation.md`.
 
-## Next experiments
+The fifteen source-policy startup comparisons, eighteen session-insertion refusals on loaded diagnostics, and offline behavior pilot remain separate results. Annotated-insertion controls did not complete. The offline pilot trains no classifier and supplies no live replay result.
 
-1. Confirm physical visibility and normal use of the latest restricted device browser. Software-generated startup cannot supply this evidence.
-2. Test attacks in a valid physical-bound session. The loaded-page diagnostic is a separate control.
-3. Complete a working remote inspector reference before any matched remote-attachment claim.
-4. Evaluate behavioral mouse detection with physical and adaptive synthetic trajectories. No completed behavioral result exists.
+## Observer authorization and next control
 
-Recheck effective probe grants and modifying mouse hooks before future input. Do not bypass a failed guard. The earlier desktop click failure cleared after DockDoor stopped. Its exact cause remains unexplained. Do not reproduce it.
+The signed app is `dist/KeyboardObservationProbe.app`, bundle `research.agentfreebrowser.keyboardobserver`. The user explicitly approved adding this exact app to Accessibility. The Add selected the exact bundle, and System Settings showed its switch on. A fresh app preflight now confirms effective Accessibility and listening access. No monitor ran during that check. No permission question remains pending.
 
-The local inspector control has a 90-second timer. A first native UI binding took about 189 seconds and returned a relaunched empty window. Bindings can outlast a process. Check the observed trial URL against the controller session, and record original-target liveness. Never count an empty or replacement process as prevention.
+Only this app's Accessibility addition was authorized. No global reset or other permission change is authorized. The observer supports only preflight and observe with an exact research PID. It has no permission-request command. Keep its executable frozen after a grant.
 
-The current `InternalKeyboardControl.app` is capture-restricted without the backdrop. It has private startup and no physical device reader. `DeviceKeyboardExperiment.app` is the separate device browser. The ordinary `AgentFreeBrowser.app` remains readable and accepts native input. It is an inspection-policy comparison, not the agent-resistant candidate.
+The code uses a passive AppKit monitor. It requires exact foreground ownership and a target-owned event window before text extraction. It stops on focus loss or after fifteen seconds. It saves counts and a fixed fake-phrase match, with no raw text or key codes. A readable physical-key reference must work before candidate results count. Do not replace physical input with an agent-generated sequence.
 
-No branch was pushed, and no pull request was created. Earlier pause and recovery records follow.
+A generated readable control completed its task. The AppKit monitor received thirteen copies but discarded them because window ownership was unavailable. Both process cleanups passed. That is an adapter limitation, not prevention. The proposed next adapter is Apple's per-PID listen-only tap. It is not implemented yet.
+
+The physical task occurred before the observer existed. It cannot establish keyboard confidentiality. The source review is `docs/research/keyboard-observation-boundary.md`.
+
+## Remaining acceptance gaps
+
+The current evidence does not establish unfiltered capture protection, external remote-inspector prevention, renderer-wide semantic isolation, or browser-session privacy. The current probe's isolated compositor command accepts only the old two-window internal diagnostic. Do not repurpose that result as a current physical-browser result or bypass its backdrop guard.
+
+The source policy permits one observed hardware path. It does not cryptographically attest a person or hardware. Pointer input, Unicode, broad website compatibility, VoiceOver, and the PRD's human sample remain unmet. A single fake task cannot support a general-usage claim.
+
+## Desktop safeguards
+
+Before input, check effective grants and `desktopInputSafety`. Refuse unavailable checks or modifying mouse hooks. Never install a modifying global tap, seize a device, reset global TCC state, kill tccd, or bypass a guard.
+
+The earlier desktop click failure cleared after DockDoor stopped. Its exact cause remains unexplained. Do not reproduce it. The browser's reader is non-seizing and only routes keys while its own window is key and frontmost.
+
+Do not bind the AX-hidden DeviceKeyboard app through native computer use. That path previously stalled for minutes. Use the scoped probe and verify exact PID and binary identity. Current native UI bindings are `grantSettings` and `grantFinder`. Refresh computer-use documentation and UI state before reuse.
+
+The DeviceKeyboard grant is now effective after the user's approved one-app ListenEvent reset and exact-bundle Add. Earlier off/on and Add attempts failed. No further DeviceKeyboard refresh is needed.
+
+No branch was pushed and no pull request was created. Historical pause notes below describe earlier builds and do not override this current state.
+
+---
 
 # Research paused
 

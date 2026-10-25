@@ -34,5 +34,82 @@
   "observerSHA256": "2c1486df175787c1200fb326faec8375f07aa94627384a43a3a0dc9a563c8ade",
   "browserAndNativeProbeRebuilt": false,
   "permissionRequested": false,
-  "liveDisclosureTested": false
+  "liveDisclosureTested": false,
+  "packagedApp": {
+    "path": "dist/KeyboardObservationProbe.app",
+    "bundleIdentifier": "research.agentfreebrowser.keyboardobserver",
+    "executableSHA256": "98027b9802b56c42a4ad0709f7572753bbea60d75b9c5df20efbd0258b6c3924",
+    "preflight": {
+      "accessibility": false,
+      "eventCount": 0,
+      "expectedFakePhraseMatched": false,
+      "keyCodesSaved": false,
+      "listenEvents": false,
+      "method": "Passive NSEvent global monitor; exact foreground research PID; 15-second maximum",
+      "monitorRemoved": true,
+      "rawTextSaved": false,
+      "reason": "No monitor installed or permission requested",
+      "status": "preflight-only",
+      "targetPID": 43980,
+      "unownedEventCount": 0
+    },
+    "signatureVerified": true,
+    "permissionRequested": false,
+    "afterApprovedAdd": {
+      "accessibility": true,
+      "eventCount": 0,
+      "expectedFakePhraseMatched": false,
+      "keyCodesSaved": false,
+      "listenEvents": true,
+      "method": "Passive NSEvent global monitor; exact foreground research PID; 15-second maximum",
+      "monitorRemoved": true,
+      "rawTextSaved": false,
+      "reason": "No monitor installed or permission requested",
+      "status": "preflight-only",
+      "targetPID": 43980,
+      "unownedEventCount": 0
+    },
+    "userApprovedAccessibilityAdd": true,
+    "settingsSwitchOnObserved": true
+  },
+  "generatedControl": {
+    "referencePID": 50963,
+    "physicalControl": false,
+    "observerSHA256": "98027b9802b56c42a4ad0709f7572753bbea60d75b9c5df20efbd0258b6c3924",
+    "input": {
+      "curvedTrajectory": true,
+      "directToPID": false,
+      "explicitWindowRouting": false,
+      "keyboardDirectToPID": false,
+      "pid": 50963,
+      "postTap": 0,
+      "source": "hid",
+      "status": "attempted",
+      "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+    },
+    "observation": {
+      "accessibility": true,
+      "eventCount": 0,
+      "expectedFakePhraseMatched": false,
+      "keyCodesSaved": false,
+      "listenEvents": true,
+      "method": "Passive NSEvent global monitor; exact foreground research PID; 15-second maximum",
+      "monitorRemoved": true,
+      "rawTextSaved": false,
+      "reason": "Focus loss or timeout",
+      "status": "observation-finished",
+      "targetPID": 50963,
+      "unownedEventCount": 13
+    },
+    "acceptedSubmissions": 1,
+    "observerCleanupVerified": true,
+    "referenceCleanupVerified": true
+  },
+  "initialAdapterFailureTranscriptSummary": {
+    "referencePID": 50899,
+    "referenceCleanupVerified": true,
+    "observerLaunched": false,
+    "inputSent": false,
+    "reason": "Controller required AXDescription but the readable field label was in AXTitle. The original output folder was reused. This is a transcript summary, not the original raw file."
+  }
 }

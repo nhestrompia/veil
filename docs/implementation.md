@@ -264,3 +264,26 @@ The physical-session runner now skips failed controls, matches insertion points,
 The user completed one physical task on the capture-restricted source-policy build. The independent oracle recorded the accepted action, and the process and executable remained unchanged.
 
 Twenty-seven calibrated native attempts then received explicit refusals. No new action or admitted input occurred. Six failed-control cases were skipped. The initial vision adapter failed to create PNG output and remains inconclusive. See [physical-session findings](source-policy-session-findings.md).
+
+
+## Milestone 42: adaptive vision after physical use
+
+Three window-image references completed. Three matched known-layout attacks continued after black target images and received explicit input refusals. The controller now resolves capture paths, gates candidates on working references, checks the frozen probe, and verifies cleanup. Earlier adapter failures remain inconclusive. See [vision findings](source-policy-vision-findings.md).
+
+## Milestone 43: capture routes in the physical session
+
+Three filtered-display references disclosed markers. Three restricted images were black. Three system screenshots worked on references but failed on the candidate and remain inconclusive. All six references passed cleanup. See [capture findings](source-policy-capture-findings.md).
+
+## Milestone 44: native semantics in the physical session
+
+Three references disclosed markers through ordinary and direct AX queries and completed a task. Candidate reads disclosed no marker or content menu actions. The field/action adapter found no target and remains inconclusive. All reference cleanups passed. See [semantic findings](source-policy-semantics-findings.md).
+
+## Milestone 45: bounded passive keyboard observer
+
+The observer compiles with warnings as errors, rejects unrelated PIDs, and installs no monitor without its own effective grant. Its output saves no raw text or key codes. No physical observation control ran. All 52 Python checks pass. See [observer findings](keyboard-observation-findings.md).
+
+## Milestone 46: stable observer package and evidence index
+
+The separately signed observer app passes signature verification. An actual app launch confirms absent grants and zero collected keys. The app contains no permission-request command. README and the handoff distinguish current physical-session evidence from earlier diagnostics. The browser and NativeProbe remain frozen. The user approved its exact Accessibility addition. A fresh app preflight then confirmed effective Accessibility and listening access. No monitor ran in that check.
+
+The generated readable control then completed its task. The observer received thirteen copies but discarded every copy before reading text because window ownership was unavailable. No phrase matched. Both processes passed cleanup. This is an adapter limitation and supplies no physical disclosure result.

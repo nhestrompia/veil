@@ -1,0 +1,38 @@
+{
+  "preflight": {
+    "accessibility": false,
+    "eventCount": 0,
+    "expectedFakePhraseMatched": false,
+    "keyCodesSaved": false,
+    "listenEvents": false,
+    "method": "Passive NSEvent global monitor; exact foreground research PID; 15-second maximum",
+    "monitorRemoved": true,
+    "rawTextSaved": false,
+    "reason": "No monitor installed or permission requested",
+    "status": "preflight-only",
+    "targetPID": 43980,
+    "unownedEventCount": 0
+  },
+  "withoutGrant": {
+    "accessibility": false,
+    "eventCount": 0,
+    "expectedFakePhraseMatched": false,
+    "keyCodesSaved": false,
+    "listenEvents": false,
+    "method": "Passive NSEvent global monitor; exact foreground research PID; 15-second maximum",
+    "monitorRemoved": true,
+    "rawTextSaved": false,
+    "reason": "No effective Accessibility grant. No monitor installed or permission requested.",
+    "status": "inconclusive",
+    "targetPID": 43980,
+    "unownedEventCount": 0
+  },
+  "unrelatedPIDRejected": {
+    "pid": 1,
+    "exitCode": 2
+  },
+  "observerSHA256": "2c1486df175787c1200fb326faec8375f07aa94627384a43a3a0dc9a563c8ade",
+  "browserAndNativeProbeRebuilt": false,
+  "permissionRequested": false,
+  "liveDisclosureTested": false
+}

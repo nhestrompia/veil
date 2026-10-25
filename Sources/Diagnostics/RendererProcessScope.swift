@@ -101,6 +101,7 @@ final class RendererProcessScope {
     func validate(_ renderer: ResearchProcessIdentity) throws {
         try validateHost()
         guard try ResearchProcessIdentity(pid: renderer.pid) == renderer else { throw RendererScopeError.changedIdentity }
+        if renderer == host { return }
         guard RendererOwnership.permits(hostPID: host.pid, rendererPID: renderer.pid,
                                        rendererPath: renderer.path, responsiblePID: responsible(renderer.pid)) else {
             throw RendererScopeError.unrelatedRenderer

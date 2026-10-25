@@ -329,3 +329,9 @@ Both direct-renderer reference attempts failed. Host initialization exposed an a
 The helper constructs process-scoped remote tokens with explicit scan and traversal budgets. Three readable references recovered their fresh markers. Three matched candidate reads recovered no marker or fixture control within IDs 0 through 1,023.
 
 Candidate writes were skipped because reference actions failed the fixture URL guard. Read and action controls are now independent. The approved app-only permission refresh restored access. All 70 Python checks and Swift boundary checks pass. See [token findings](renderer-token-findings.md).
+
+## Milestone 55: native host Reload comparison
+
+Three fresh references completed external AX Reload actions, each with one new fixture page-ready event and no form action. Three matched candidate scans resolved neither the address field nor Reload button. No candidate action ran. This is a bounded discovery result, not proof that all direct actions fail.
+
+The approved exact-bundle re-add restored effective Accessibility after user authentication. All 74 Python checks and Swift ownership checks pass. All temporary processes passed cleanup. See [host navigation findings](host-navigation-findings.md).

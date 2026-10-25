@@ -15,13 +15,22 @@ enum RendererAXProbe {
         var field: AXUIElement?
         var button: AXUIElement?
         var fixtureArea: AXUIElement?
+        var addressField: AXUIElement?
+        var reloadButton: AXUIElement?
+        var foreignOwners: [String: Int] = [:]
         var discarded = 0
         let deadline = ProcessInfo.processInfo.systemUptime + 8
 
         func owned(_ element: AXUIElement) throws -> Bool {
             try scope.validate(renderer)
             var owner: pid_t = 0
-            return AXUIElementGetPid(element, &owner) == .success && owner == renderer.pid
+            let error = AXUIElementGetPid(element, &owner)
+            if error != .success || owner != renderer.pid {
+                let key = error == .success ? String(owner) : "error:\(error.rawValue)"
+                foreignOwners[key, default: 0] += 1
+                return false
+            }
+            return true
         }
 
         func attribute(_ element: AXUIElement, _ name: String) throws -> CFTypeRef? {
@@ -78,6 +87,8 @@ enum RendererAXProbe {
             }
             if role == kAXTextFieldRole && labels.contains("Enter native-input") { field = element }
             if role == kAXButtonRole && labels.contains("Record action") { button = element }
+            if role == kAXTextFieldRole && labels.contains("Website address") { addressField = element }
+            if role == kAXButtonRole && labels.contains("Reload") { reloadButton = element }
             if depth < 25 {
                 for key in [kAXChildrenAttribute, kAXWindowsAttribute] {
                     if let children = try attribute(element, key) as? [AXUIElement] {
@@ -94,7 +105,20 @@ enum RendererAXProbe {
                                     "rawTextSaved": false, "tokenScanRequested": tokenScan,
                                     "tokenFactoryAvailable": tokenFactoryAvailable,
                                     "scannedElementIDs": scanned, "resolvableTokenRoots": tokenRoots,
-                                    "traversalIncomplete": !pending.isEmpty]
+                                    "traversalIncomplete": !pending.isEmpty,
+                                    "processKind": renderer == scope.host ? "host" : "renderer",
+                                    "discardedOwnershipChecks": foreignOwners,
+                                    "addressFieldAvailable": addressField != nil,
+                                    "reloadButtonAvailable": reloadButton != nil,
+                                    "reloadActionAttempted": false]
+        if renderer == scope.host, let expectedURL, let addressField, let reloadButton,
+           try attribute(addressField, kAXValueAttribute) as? String == expectedURL.absoluteString,
+           NSWorkspace.shared.frontmostApplication?.processIdentifier == scope.host.pid,
+           try owned(reloadButton) {
+            result["navigationContextVerified"] = true
+            result["reloadPressError"] = AXUIElementPerformAction(reloadButton, kAXPressAction as CFString).rawValue
+            result["reloadActionAttempted"] = true
+        }
         if let expectedURL, let fixtureArea,
            let currentURL = try attribute(fixtureArea, kAXURLAttribute) as? URL, currentURL == expectedURL,
            let field, let button, try owned(field), try owned(button),
@@ -115,15 +139,15 @@ enum RendererAXProbe {
         var result: [String: Any] = ["accessibility": AXIsProcessTrusted(), "permissionRequested": false,
                                     "inputTapInstalled": false]
         do {
-            guard args == ["permissions"] || args.count == 2 && ["discover", "read", "read-token"].contains(args[0])
-                    || args.count == 3 && ["action", "action-token"].contains(args[0]) else {
+            guard args == ["permissions"] || args.count == 2 && ["discover", "read", "read-token", "host-read-token"].contains(args[0])
+                    || args.count == 3 && ["action", "action-token", "host-reload-token"].contains(args[0]) else {
                 throw RendererScopeError.unrelatedHost
             }
             if args[0] != "permissions" {
                 guard let pid = pid_t(args[1]) else { throw RendererScopeError.unrelatedHost }
                 let scope = try RendererProcessScope(hostPID: pid)
                 var expectedURL: URL?
-                if args[0].hasPrefix("action") {
+                if args.count == 3 {
                     guard let url = RendererFixtureURL.parse(args[2]) else {
                         throw RendererScopeError.unrelatedHost
                     }
@@ -140,14 +164,15 @@ enum RendererAXProbe {
                         result["reason"] = "This helper has no effective Accessibility grant. No AX query or action ran."
                         return write(result)
                     }
-                    if args[0].hasPrefix("action") {
+                    if args.count == 3 {
                         NSRunningApplication(processIdentifier: pid)?.activate(options: [])
                         Thread.sleep(forTimeInterval: 0.3)
                     }
-                    result["queries"] = try renderers.map {
+                    let targets = args[0].hasPrefix("host-") ? [scope.host] : renderers
+                    result["queries"] = try targets.map {
                         try query(scope, renderer: $0, expectedURL: expectedURL, tokenScan: args[0].hasSuffix("-token"))
                     }
-                    result["accessibilityQueried"] = !renderers.isEmpty
+                    result["accessibilityQueried"] = !targets.isEmpty
                 }
             }
             result["status"] = "observed"

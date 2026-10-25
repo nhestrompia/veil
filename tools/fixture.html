@@ -20,6 +20,7 @@ button{background:#116456;color:white;border:0;border-radius:5px}output{display:
 <p><a href="https://example.org">Visit an ordinary HTTPS website</a></p>
 <script>
 const base=location.pathname;
+fetch(base+'/events',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({events:[{type:'page-ready',trusted:false,t:performance.now()}]})}).catch(()=>{});
 if(new URLSearchParams(location.search).get('field-kind')==='password'){
   document.querySelector('input').type='password';
 }

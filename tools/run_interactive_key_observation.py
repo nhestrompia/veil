@@ -11,16 +11,16 @@ import threading
 import time
 
 from native_environment import require_input_safety
-from process_cleanup import matching_pids, stop_launched
+from process_cleanup import matching_pids, process_matches, stop_launched
 from run_device_session import active
 from run_drag_delivery import launch, ready
-from run_keyboard_observation import BINARY, OBSERVER
+from run_keyboard_observation import BINARY, OBSERVER, wait_for_observer_ready, worked
 from run_native import ROOT, Oracle, probe
 
 
 def physical_reference_worked(row):
     observation = row.get("observation", {})
-    return (row.get("newAcceptedSubmissions") == 1
+    return (row.get("inputGeneratedByController") is False and row.get("newAcceptedSubmissions") == 1
             and (observation.get("expectedFakePhraseMatched") is True or observation.get("expectedFakeKeycodeSequenceMatched") is True)
             and observation.get("eventCount", 0) > 0 and observation.get("monitorRemoved") is True
             and row.get("observerCleanupVerified") is True)
@@ -30,6 +30,14 @@ def reference_input_recorded(row):
     observation = row.get("observation", {})
     return (row.get("newAcceptedSubmissions") == 1 and observation.get("eventCount", 0) > 0
             and observation.get("monitorRemoved") is True and row.get("observerCleanupVerified") is True)
+
+
+def generated_reference(report, observer_hash):
+    if report.get("observerSHA256") != observer_hash or report.get("physicalControl") is not False or not worked(report):
+        raise RuntimeError("Generated reference does not match the current observer or failed calibration")
+    return {"sample": "generated-reference", "pid": report["referencePID"], "inputGeneratedByController": True,
+            "newAcceptedSubmissions": report["acceptedSubmissions"], "observation": report["observation"],
+            "observerCleanupVerified": report["observerCleanupVerified"], "calibrationOrigin": "generated"}
 
 
 class Controller:
@@ -92,25 +100,24 @@ class Controller:
             if hashlib.sha256(BINARY.read_bytes()).hexdigest() != self.observer_hash:
                 raise RuntimeError("Observer changed after control preparation")
             before = self.oracle.state(self.session["trial"]) if candidate else None
-            foreground = subprocess.check_output([str(ROOT / ".build/research-focus"), str(pid)], text=True).strip()
-            if foreground != str(pid):
-                raise RuntimeError("The exact research target could not become frontmost")
-            row["frontmostBeforeLaunch"] = int(foreground)
             existing = matching_pids(BINARY)
             log = prefix.with_suffix(".observer.json")
             observer = subprocess.Popen(["open", "-g", "-n", "-W", str(OBSERVER), "--stdout", str(log),
                                          "--stderr", str(prefix.with_suffix(".stderr")), "--args", "observe-pid", str(pid)],
                                         stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
             observer.research_existing_pids = existing
-            time.sleep(0.5)
-            if log.exists() and log.read_text().strip() or not matching_pids(BINARY).difference(existing):
-                raise RuntimeError("Observer stopped before the ready state")
+            wait_for_observer_ready(prefix.with_suffix(".stderr"), log)
+            row["tapReadinessConfirmed"] = True
+            foreground = subprocess.check_output([str(ROOT / ".build/research-focus"), str(pid)], text=True).strip()
+            if foreground != str(pid):
+                raise RuntimeError("The exact research target could not become frontmost")
+            row["frontmostAfterTapReady"] = int(foreground)
             self.set_state("listening-candidate" if candidate else "listening-reference",
                            "Use physical Space, Return, then Tab to the page field. Type native-input and Return." if candidate and self.report.get("candidateNeedsPhysicalStartup") else
                            "Type native-input in the restricted browser, then Return. Stay in its window." if candidate else
                            "Ready: type native-input in the field below, then Return. Stay in this window.")
             try:
-                observer.wait(timeout=20)
+                observer.wait(timeout=85)
             except subprocess.TimeoutExpired:
                 raise RuntimeError("Observer did not finish within its bounded interval")
             row["observation"] = json.loads(log.read_text())
@@ -200,11 +207,13 @@ class Handler(BaseHTTPRequestHandler):
         self.respond(409, {})
 
 
-def run(session_path, output, reference_report=None, needs_startup=False):
+def run(session_path, output, reference_report=None, needs_startup=False, generated_report=None):
     output = output.resolve()
     output.mkdir(parents=True, exist_ok=False)
     session = json.loads(session_path.read_text())
     active(session)
+    if matching_pids(ROOT / "dist/InspectableControl.app/Contents/MacOS/InspectableControl"):
+        raise RuntimeError("A readable control already exists. Refusing duplicate research windows.")
     permissions = probe(["permissions"], output / "permissions.json")
     require_input_safety(permissions)
     controller = Controller(session, output)
@@ -217,6 +226,10 @@ def run(session_path, output, reference_report=None, needs_startup=False):
             raise RuntimeError("Saved physical reference is incompatible or incomplete")
         controller.report["samples"].append(prior["samples"][0])
         controller.report["resumedReferenceFrom"] = str(reference_report.resolve())
+    if generated_report is not None:
+        prior = json.loads(generated_report.read_text())
+        controller.report["samples"].append(generated_reference(prior, controller.observer_hash))
+        controller.report["generatedReferenceFrom"] = str(generated_report.resolve())
     server = ThreadingHTTPServer(("127.0.0.1", 0), Handler)
     server.base = "/" + secrets.token_urlsafe(24)
     server.origin = f"http://127.0.0.1:{server.server_port}"
@@ -230,17 +243,22 @@ def run(session_path, output, reference_report=None, needs_startup=False):
         controller.reference_pid = pid
         controller.report["referencePID"] = pid
         controller.report["referenceBinarySHA256"] = hashlib.sha256(binary.read_bytes()).hexdigest()
-        if reference_report is None:
+        if reference_report is None and generated_report is None:
             controller.set_state("ready-reference", "Choose Start sample 1 when you are ready. No listener is active yet.")
+        elif generated_report is not None:
+            controller.set_state("ready-candidate", "Calibration is saved. Choose Start sample 2 when ready.")
         else:
             controller.set_state("ready-candidate", "Your first sample is saved. Choose Start sample 2 when ready.")
         subprocess.run([str(ROOT / ".build/research-focus"), str(pid)], check=True, capture_output=True)
         controller.save()
         print(json.dumps({"ready": True, "referencePID": pid, "output": str(output)}), flush=True)
-        controller.finished.wait(timeout=600)
+        deadline = time.monotonic() + 600
+        while time.monotonic() < deadline and not controller.finished.wait(timeout=0.2):
+            if not process_matches(pid, binary):
+                break
     finally:
         if controller.worker is not None:
-            controller.worker.join(timeout=25)
+            controller.worker.join(timeout=90)
         server.shutdown()
         server.server_close()
         controller.report["referenceCleanupVerified"] = stop_launched(launcher, binary, pid)
@@ -259,7 +277,9 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--session", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
-    parser.add_argument("--reference-report", type=Path)
+    reference = parser.add_mutually_exclusive_group()
+    reference.add_argument("--reference-report", type=Path)
+    reference.add_argument("--generated-reference-report", type=Path)
     parser.add_argument("--candidate-needs-startup", action="store_true")
     args = parser.parse_args()
-    run(args.session.resolve(), args.output, args.reference_report, args.candidate_needs_startup)
+    run(args.session.resolve(), args.output, args.reference_report, args.candidate_needs_startup, args.generated_reference_report)

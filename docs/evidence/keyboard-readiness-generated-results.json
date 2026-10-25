@@ -1,0 +1,38 @@
+{
+  "physicalControl": false,
+  "mode": "pid",
+  "referencePID": 61492,
+  "observerSHA256": "cdd1829e60dd838f5a2b1ef91f9d5635e7f61760360f9c18c494f8eb90086aac",
+  "input": {
+    "curvedTrajectory": true,
+    "directToPID": false,
+    "explicitWindowRouting": false,
+    "keyboardDirectToPID": false,
+    "pid": 61492,
+    "postTap": 0,
+    "source": "hid",
+    "status": "attempted",
+    "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+  },
+  "observation": {
+    "accessibility": true,
+    "collectionStarted": true,
+    "eventCount": 13,
+    "eventsWithUnicode": 13,
+    "expectedFakeKeycodeSequenceMatched": true,
+    "expectedFakePhraseMatched": true,
+    "keyCodesSaved": false,
+    "listenEvents": true,
+    "method": "CGEvent tapCreateForPid; listenOnly; keyDown only; exact foreground research PID; 15-second sample from first key; no text during idle",
+    "monitorRemoved": true,
+    "rawTextSaved": false,
+    "reason": "Fifteen-second sample finished",
+    "status": "observation-finished",
+    "targetPID": 61492,
+    "unownedEventCount": 0
+  },
+  "acceptedSubmissions": 1,
+  "observerCleanupVerified": true,
+  "referenceCleanupVerified": true,
+  "generatedControlWorked": true
+}

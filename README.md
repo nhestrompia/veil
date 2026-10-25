@@ -29,7 +29,9 @@ The user completed one physical task on the capture-restricted source-policy bui
 
 Fifteen fresh startup controls completed, while fifteen matched candidates showed no software binding or task action. A separate session-insertion matrix recorded eighteen explicit refusals against loaded diagnostics. These are distinct from the physical-session results.
 
-The project remains unproven as agent-free. One physical task does not meet the PRD's human compatibility targets. External inspection, unfiltered capture on the current build, physical keyboard observation, and broader session privacy remain open. The standalone passive observer has no grant. The separately packaged app now has effective access after the approved Accessibility Add. Its preflight collected no keys. A physical observation comparison remains pending. The offline behavior pilot provides neither a trained classifier nor live adaptive replay evidence.
+The project is not agent-free. A permissioned external observer recognized the fake phrase during a new physical task on the unchanged browser binary. Both Unicode and virtual-keycode matchers succeeded. The independent oracle accepted the task, and observer cleanup passed. This establishes a keyboard-observation gap. It does not establish an autonomous website action or arbitrary page disclosure.
+
+One physical task does not meet the PRD's human compatibility targets. External inspection, unfiltered capture on the current build, and broader session privacy remain open. The offline behavior pilot provides neither a trained classifier nor live adaptive replay evidence.
 
 Recent evidence:
 
@@ -37,7 +39,8 @@ Recent evidence:
 - [Adaptive vision](docs/source-policy-vision-findings.md) continues from black images using matched page geometry.
 - [Capture routes](docs/source-policy-capture-findings.md) separate filtered-display observations from failed system screenshots.
 - [Native semantics](docs/source-policy-semantics-findings.md) record matched tree, focused-element, menu, and action queries.
-- [Keyboard observation](docs/keyboard-observation-findings.md) records the passive probe and its absent grants.
+- [Physical keyboard observation](docs/keyboard-readiness-findings.md) records successful phrase recognition after actual tap readiness.
+- [Earlier observer controls](docs/keycode-observation-findings.md) preserve inconclusive samples and the timing defect.
 
 - [Keyboard source policy](docs/hid-source-findings.md) records ancestry checks and the narrow hardware profile.
 - [Source-policy startup](docs/source-policy-startup-findings.md) records current permissioned startup comparisons.

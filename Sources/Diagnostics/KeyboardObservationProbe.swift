@@ -14,6 +14,7 @@ final class KeyboardObservationProbe {
     private var monitor: Any?
     private var tap: CFMachPort?
     private var tapSource: CFRunLoopSource?
+    private var pidWindow: KeyObservationWindow?
     private var method = "Passive NSEvent global monitor; exact foreground research PID; 15-second maximum"
     private var timer: Timer?
     private let deadline = Date().addingTimeInterval(15)
@@ -26,6 +27,7 @@ final class KeyboardObservationProbe {
             "accessibility": AXIsProcessTrusted(), "listenEvents": CGPreflightListenEventAccess(),
             "eventCount": eventCount, "expectedFakePhraseMatched": phraseMatched,
             "expectedFakeKeycodeSequenceMatched": keyMatcher.matched, "eventsWithUnicode": eventsWithUnicode,
+            "collectionStarted": pidWindow?.collectionStarted ?? false,
             "unownedEventCount": unownedEventCount,
             "monitorRemoved": monitor == nil && tap == nil, "rawTextSaved": false, "keyCodesSaved": false,
             "method": method
@@ -73,13 +75,17 @@ final class KeyboardObservationProbe {
     }
 
     private func receivePIDEvent(type: CGEventType, event: CGEvent) {
-        guard ownsFocus(), Date() < deadline else {
-            finish(reason: "Target lost focus or deadline reached")
-            return
-        }
         guard type == .keyDown else {
             finish(reason: "PID tap delivered an unexpected event type")
             return
+        }
+        guard var window = pidWindow else { return }
+        let decision = window.observe(now: ProcessInfo.processInfo.systemUptime, ownsFocus: ownsFocus(), keyArrived: true)
+        pidWindow = window
+        switch decision {
+        case .wait: return
+        case .finish(let reason): finish(reason: reason); return
+        case .accept: break
         }
         eventCount += 1
         keyMatcher.consume(event.getIntegerValueField(.keyboardEventKeycode))
@@ -94,16 +100,31 @@ final class KeyboardObservationProbe {
         timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [weak self] _ in
             MainActor.assumeIsolated {
                 guard let self else { return }
-                if !self.ownsFocus() || Date() >= self.deadline { self.finish(reason: "Focus loss or timeout") }
+                if var window = self.pidWindow {
+                    let decision = window.observe(now: ProcessInfo.processInfo.systemUptime, ownsFocus: self.ownsFocus(), keyArrived: false)
+                    self.pidWindow = window
+                    if case .finish(let reason) = decision { self.finish(reason: reason) }
+                } else if !self.ownsFocus() || Date() >= self.deadline {
+                    self.finish(reason: "Focus loss or timeout")
+                }
+            }
+        }
+        if pidWindow != nil {
+            CFRunLoopPerformBlock(CFRunLoopGetMain(), CFRunLoopMode.commonModes.rawValue) { [weak self] in
+                MainActor.assumeIsolated {
+                    guard let self, let tap = self.tap, CGEvent.tapIsEnabled(tap: tap) else { return }
+                    FileHandle.standardError.write(Data("OBSERVER_ARMED\n".utf8))
+                }
             }
         }
         NSApplication.shared.run()
     }
 
     func startPIDTap() {
-        method = "CGEvent tapCreateForPid; listenOnly; keyDown only; exact foreground research PID; 15-second maximum"
-        guard CGPreflightListenEventAccess(), ownsFocus() else {
-            report(status: "inconclusive", reason: "Listening access or foreground target unavailable. No tap installed.")
+        method = "CGEvent tapCreateForPid; listenOnly; keyDown only; exact foreground research PID; 15-second sample from first key; no text during idle"
+        NSApplication.shared.setActivationPolicy(.prohibited)
+        guard CGPreflightListenEventAccess() else {
+            report(status: "inconclusive", reason: "Listening access unavailable. No tap installed.")
             return
         }
         let callback: CGEventTapCallBack = { _, type, event, context in
@@ -125,6 +146,7 @@ final class KeyboardObservationProbe {
         }
         tapSource = source
         CFRunLoopAddSource(CFRunLoopGetMain(), source, .commonModes)
+        pidWindow = KeyObservationWindow(now: ProcessInfo.processInfo.systemUptime)
         runUntilDeadline()
     }
 
@@ -165,6 +187,14 @@ final class KeyboardObservationProbe {
 struct KeyboardObservationMain {
     @MainActor static func main() {
         let args = CommandLine.arguments
+        if args.count == 2, args[1] == "permissions" {
+            let result: [String: Any] = ["accessibility": AXIsProcessTrusted(), "listenEvents": CGPreflightListenEventAccess(),
+                                       "monitorInstalled": false, "permissionRequested": false]
+            if let data = try? JSONSerialization.data(withJSONObject: result, options: [.prettyPrinted, .sortedKeys]) {
+                print(String(decoding: data, as: UTF8.self))
+            }
+            return
+        }
         guard args.count == 3, ["preflight", "observe", "observe-pid"].contains(args[1]), let pid = Int32(args[2]),
               let target = NSRunningApplication(processIdentifier: pid),
               ["research.agentfreebrowser.devicekeyboard", "research.agentfreebrowser.control"].contains(target.bundleIdentifier ?? "") else {

@@ -1,7 +1,7 @@
 import threading
 import unittest
 
-from run_interactive_key_observation import Controller, physical_reference_worked, reference_input_recorded
+from run_interactive_key_observation import Controller, generated_reference, physical_reference_worked, reference_input_recorded
 
 
 class InteractiveObservationTests(unittest.TestCase):
@@ -33,21 +33,31 @@ class InteractiveObservationTests(unittest.TestCase):
         self.assertFalse(controller.start(True))
 
     def test_received_keys_without_matching_phrase_do_not_calibrate(self):
-        row = {"newAcceptedSubmissions": 1, "observerCleanupVerified": True,
+        row = {"inputGeneratedByController": False, "newAcceptedSubmissions": 1, "observerCleanupVerified": True,
                "observation": {"eventCount": 13, "monitorRemoved": True, "expectedFakePhraseMatched": False}}
         self.assertFalse(physical_reference_worked(row))
 
     def test_fixed_keycode_match_can_supply_the_reference(self):
-        row = {"newAcceptedSubmissions": 1, "observerCleanupVerified": True,
+        row = {"inputGeneratedByController": False, "newAcceptedSubmissions": 1, "observerCleanupVerified": True,
                "observation": {"eventCount": 13, "monitorRemoved": True,
                                "expectedFakePhraseMatched": False, "expectedFakeKeycodeSequenceMatched": True}}
         self.assertTrue(physical_reference_worked(row))
 
     def test_recorded_input_allows_exploration_without_becoming_decoder_calibration(self):
-        row = {"newAcceptedSubmissions": 1, "observerCleanupVerified": True,
+        row = {"inputGeneratedByController": False, "newAcceptedSubmissions": 1, "observerCleanupVerified": True,
                "observation": {"eventCount": 14, "monitorRemoved": True, "expectedFakePhraseMatched": False}}
         self.assertTrue(reference_input_recorded(row))
         self.assertFalse(physical_reference_worked(row))
+
+    def test_generated_calibration_never_becomes_a_physical_reference(self):
+        report = {"observerSHA256": "current", "physicalControl": False, "referencePID": 12345,
+                  "acceptedSubmissions": 1, "observerCleanupVerified": True, "referenceCleanupVerified": True,
+                  "observation": {"expectedFakePhraseMatched": True, "eventCount": 13, "monitorRemoved": True}}
+        row = generated_reference(report, "current")
+        self.assertTrue(reference_input_recorded(row))
+        self.assertFalse(physical_reference_worked(row))
+        with self.assertRaises(RuntimeError):
+            generated_reference(report, "different")
 
 
 if __name__ == "__main__":

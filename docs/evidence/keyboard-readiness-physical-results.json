@@ -1,0 +1,74 @@
+{
+  "candidatePID": 61893,
+  "binarySHA256": "43b1a9833d6c55b1e254b848f9bd09c202da46ba0f8d8833084df559e6a8a9d1",
+  "observerSHA256": "cdd1829e60dd838f5a2b1ef91f9d5635e7f61760360f9c18c494f8eb90086aac",
+  "physicalSampleRequested": true,
+  "inputGeneratedByController": false,
+  "samples": [
+    {
+      "sample": "generated-reference",
+      "pid": 61492,
+      "inputGeneratedByController": true,
+      "newAcceptedSubmissions": 1,
+      "observation": {
+        "accessibility": true,
+        "collectionStarted": true,
+        "eventCount": 13,
+        "eventsWithUnicode": 13,
+        "expectedFakeKeycodeSequenceMatched": true,
+        "expectedFakePhraseMatched": true,
+        "keyCodesSaved": false,
+        "listenEvents": true,
+        "method": "CGEvent tapCreateForPid; listenOnly; keyDown only; exact foreground research PID; 15-second sample from first key; no text during idle",
+        "monitorRemoved": true,
+        "rawTextSaved": false,
+        "reason": "Fifteen-second sample finished",
+        "status": "observation-finished",
+        "targetPID": 61492,
+        "unownedEventCount": 0
+      },
+      "observerCleanupVerified": true,
+      "calibrationOrigin": "generated"
+    },
+    {
+      "sample": "candidate",
+      "pid": 61893,
+      "inputGeneratedByController": false,
+      "tapReadinessConfirmed": true,
+      "frontmostAfterTapReady": 61893,
+      "observation": {
+        "accessibility": true,
+        "collectionStarted": true,
+        "eventCount": 16,
+        "eventsWithUnicode": 16,
+        "expectedFakeKeycodeSequenceMatched": true,
+        "expectedFakePhraseMatched": true,
+        "keyCodesSaved": false,
+        "listenEvents": true,
+        "method": "CGEvent tapCreateForPid; listenOnly; keyDown only; exact foreground research PID; 15-second sample from first key; no text during idle",
+        "monitorRemoved": true,
+        "rawTextSaved": false,
+        "reason": "Target lost focus during the sample",
+        "status": "observation-finished",
+        "targetPID": 61893,
+        "unownedEventCount": 0
+      },
+      "newSubmissions": [
+        {
+          "accepted": true
+        }
+      ],
+      "newAcceptedSubmissions": 1,
+      "candidateStillRunningUnchanged": true,
+      "deviceBindingObserved": true,
+      "observerCleanupVerified": true,
+      "observationOutcome": "fake-sequence-observed",
+      "referenceDecoderCalibrated": false
+    }
+  ],
+  "candidateNeedsPhysicalStartup": true,
+  "generatedReferenceFrom": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/keyboard-observation/readiness-generated-control/results.json",
+  "referencePID": 62276,
+  "referenceBinarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+  "referenceCleanupVerified": true
+}

@@ -287,3 +287,21 @@ The observer compiles with warnings as errors, rejects unrelated PIDs, and insta
 The separately signed observer app passes signature verification. An actual app launch confirms absent grants and zero collected keys. The app contains no permission-request command. README and the handoff distinguish current physical-session evidence from earlier diagnostics. The browser and NativeProbe remain frozen. The user approved its exact Accessibility addition. A fresh app preflight then confirmed effective Accessibility and listening access. No monitor ran in that check.
 
 The generated readable control then completed its task. The observer received thirteen copies but discarded every copy before reading text because window ownership was unavailable. No phrase matched. Both processes passed cleanup. This is an adapter limitation and supplies no physical disclosure result.
+
+## Milestone 47: PID-scoped passive observation
+
+A listen-only PID tap matched generated fake input in a readable control. The AppKit window-ownership limitation remains separate. See [PID observation](keyboard-pid-observation-findings.md).
+
+## Milestone 48: user-started physical samples
+
+The interactive controller starts observation from a user action. A physical readable reference worked. The first candidate comparison missed the sequence and remains inconclusive. See [interactive observation](interactive-keyboard-observation-findings.md).
+
+## Milestone 49: fixed keycode matcher
+
+A bounded matcher recognizes only the fixed fake sequence. Generated controls matched both decoders. Later physical samples exposed a readiness and timing defect. See [keycode findings](keycode-observation-findings.md).
+
+## Milestone 50: actual readiness and positive physical observation
+
+The enabled PID tap now signals from its running event loop. The first key starts collection after a bounded idle interval. An independent permission check needs no running target. All 66 Python checks and the Swift timing checks pass.
+
+The restricted browser accepted one requested physical task while the external observer matched both decoders from sixteen events. Cleanup passed. This establishes a keyboard-observation gap. The generated reference remains explicitly distinct from a physical reference. See [readiness findings](keyboard-readiness-findings.md).

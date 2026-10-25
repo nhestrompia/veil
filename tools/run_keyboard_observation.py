@@ -16,6 +16,17 @@ OBSERVER = ROOT / "dist/KeyboardObservationProbe.app"
 BINARY = OBSERVER / "Contents/MacOS/KeyboardObservationProbe"
 
 
+def wait_for_observer_ready(stderr, stdout, timeout=4):
+    deadline = time.monotonic() + timeout
+    while time.monotonic() < deadline:
+        if stdout.exists() and stdout.read_text().strip():
+            raise RuntimeError("Observer stopped before signaling readiness")
+        if stderr.exists() and "OBSERVER_ARMED" in stderr.read_text():
+            return
+        time.sleep(0.05)
+    raise RuntimeError("Observer did not signal an enabled tap on its running event loop")
+
+
 def worked(report):
     observation = report.get("observation", {})
     return (report.get("acceptedSubmissions") == 1
@@ -50,7 +61,10 @@ def run(output, mode, keycodes=False):
                                      "observe-pid" if mode == "pid" else "observe", str(reference["pid"])],
                                     stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         observer.research_existing_pids = existing
-        time.sleep(1)
+        if mode == "pid":
+            wait_for_observer_ready(output / "observer.stderr", observation_path)
+        else:
+            time.sleep(1)
         if observation_path.exists() and observation_path.read_text().strip():
             report["skippedInput"] = True
         else:
@@ -59,7 +73,7 @@ def run(output, mode, keycodes=False):
                 arguments.append("keycodes")
             report["input"] = probe(arguments, output / "input.json")
         try:
-            observer.wait(timeout=20)
+            observer.wait(timeout=85)
         except subprocess.TimeoutExpired:
             report["observerTimeout"] = True
         if observation_path.exists() and observation_path.read_text().strip():

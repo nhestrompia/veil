@@ -1,64 +1,54 @@
 # Current research state
 
-Updated 2026-10-25. The browser remains unproven as agent-free. Milestones 35 through 45 are complete and committed on `native-feasibility`. Milestone 46 packages the observer and records the approved effective grant.
+Updated 2026-10-25. Milestones 47 through 49 are committed. Milestone 50 repairs observer readiness and records a positive physical keyboard observation. The browser is not agent-free.
 
-## Live physical session
+## Latest result
 
-One capture-restricted `DeviceKeyboardExperiment` remains alive as PID 43980. Its session file is `artifacts/source-policy-live/physical-session.json`. The user reported Task complete. The independent oracle recorded one accepted physical task, a ready device reader, and binding to the measured built-in keyboard.
+The external observer matched the fixed fake phrase through both Unicode and virtual-keycode matchers. It received sixteen events while the restricted browser accepted one requested physical task. The controller generated no input. Device binding and unchanged identity were confirmed. The listener stopped on focus loss, removed its tap, and passed cleanup.
 
-The browser hash is `43b1a9833d6c55b1e254b848f9bd09c202da46ba0f8d8833084df559e6a8a9d1`. NativeProbe hash is `7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1`. Neither changed during the physical-session attacks. Do not rebuild either binary before any remaining same-process test.
+The current generated reference matched both decoders and completed one task. It is not a physical reference. This would limit negative conclusions, but the candidate observation was positive. See [the readiness findings](keyboard-readiness-findings.md) and their saved evidence.
 
-The fixture and caffeinate remain active as unified exec session 53557. No attack controller or observer remains active. Keep the current browser available for the remaining keyboard observation comparison.
+Earlier physical attempts remain inconclusive. Their observer deadlines started too early. Earlier PIDs 43980 and 58504 stopped without a matching crash report. Their exit causes remain unknown. Do not attribute their completed attack matrices to the new PID.
 
-To stop this exact browser, run:
+## Live session and frozen identities
+
+The capture-restricted browser is PID 61893. Its session file is `artifacts/source-policy-live/keyboard-observation-ready-session.json`. The fixture and caffeinate remain in unified exec session 53557. No observer or controller remains active. The empty replacement readable control was closed with exact executable verification.
+
+- Browser SHA256: `43b1a9833d6c55b1e254b848f9bd09c202da46ba0f8d8833084df559e6a8a9d1`.
+- NativeProbe SHA256: `7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1`.
+- KeyboardObservationProbe SHA256: `cdd1829e60dd838f5a2b1ef91f9d5635e7f61760360f9c18c494f8eb90086aac`.
+
+Keep these executables frozen during matched tests. The observer has effective Accessibility and listening access. The user approved its exact Accessibility Add and its app-only reset followed by re-add. No other permission reset follows from that approval. No permission question is pending.
+
+To stop the exact browser:
 
 ```sh
-python3 tools/run_device_session.py stop --session artifacts/source-policy-live/physical-session.json
+python3 tools/run_device_session.py stop --session artifacts/source-policy-live/keyboard-observation-ready-session.json
 ```
 
-The controller verifies executable identity and waits for exit. Stop the fixture separately when live testing ends.
+Stop the fixture separately when live work ends.
 
-## Verified results
+## Completed boundaries and remaining work
 
-- Milestone 41: twenty-seven native attempts received explicit refusals, with zero admitted events and no new accepted action. Six failed-control cases were skipped.
-- Milestone 42: three adaptive vision controls completed. Three matched known-layout curved attempts received explicit refusals. The target window images were black. The repaired controller preserves earlier adapter failures as inconclusive.
-- Milestone 43: three filtered-display references disclosed their markers. Three restricted images were identical and black. System window screenshots worked on three references but failed on the candidate. Those failures remain inconclusive.
-- Milestone 44: all three AX references disclosed markers through both read routes and completed a task. Candidate reads recovered no marker and exposed no content menu actions. The action adapter found no field and remains inconclusive.
-- Milestone 45: the passive keyboard observer compiles. It has no effective Accessibility or listening grant. Its preflight and no-grant observe path install no monitor. An unrelated PID is refused.
+The original physical process refused 27 calibrated native attempts and three adaptive vision attempts. Window and filtered-display images were black. System screenshots and unavailable AX actions remain inconclusive. Fifteen startup comparisons and eighteen session-insertion refusals are separate diagnostic results.
 
-All 52 Python checks pass. The passive observer compiles with warnings as errors. Earlier source-policy and dispatch checks pass. Recent findings and saved evidence are linked from README and `docs/implementation.md`.
+The current observation disproves keyboard confidentiality against this permissioned listener. Test ordinary text against secure password entry next. Apple TN2150 advises against enabling Secure Event Input for general text or an entire app lifetime. Do not turn that into a whole-browser fix without a separate design and compatibility experiment.
 
-The fifteen source-policy startup comparisons, eighteen session-insertion refusals on loaded diagnostics, and offline behavior pilot remain separate results. Annotated-insertion controls did not complete. The offline pilot trains no classifier and supplies no live replay result.
+Remote inspection, unfiltered capture on this physical build, renderer semantics, broader session privacy, and general website compatibility remain open. The browser supports only the measured built-in keyboard and US ASCII. Pointer input is disabled. The device policy does not attest a human or cryptographically attest hardware.
 
-## Observer authorization and next control
-
-The signed app is `dist/KeyboardObservationProbe.app`, bundle `research.agentfreebrowser.keyboardobserver`. The user explicitly approved adding this exact app to Accessibility. The Add selected the exact bundle, and System Settings showed its switch on. A fresh app preflight now confirms effective Accessibility and listening access. No monitor ran during that check. No permission question remains pending.
-
-Only this app's Accessibility addition was authorized. No global reset or other permission change is authorized. The observer supports only preflight and observe with an exact research PID. It has no permission-request command. Keep its executable frozen after a grant.
-
-The code uses a passive AppKit monitor. It requires exact foreground ownership and a target-owned event window before text extraction. It stops on focus loss or after fifteen seconds. It saves counts and a fixed fake-phrase match, with no raw text or key codes. A readable physical-key reference must work before candidate results count. Do not replace physical input with an agent-generated sequence.
-
-A generated readable control completed its task. The AppKit monitor received thirteen copies but discarded them because window ownership was unavailable. Both process cleanups passed. That is an adapter limitation, not prevention. The proposed next adapter is Apple's per-PID listen-only tap. It is not implemented yet.
-
-The physical task occurred before the observer existed. It cannot establish keyboard confidentiality. The source review is `docs/research/keyboard-observation-boundary.md`.
-
-## Remaining acceptance gaps
-
-The current evidence does not establish unfiltered capture protection, external remote-inspector prevention, renderer-wide semantic isolation, or browser-session privacy. The current probe's isolated compositor command accepts only the old two-window internal diagnostic. Do not repurpose that result as a current physical-browser result or bypass its backdrop guard.
-
-The source policy permits one observed hardware path. It does not cryptographically attest a person or hardware. Pointer input, Unicode, broad website compatibility, VoiceOver, and the PRD's human sample remain unmet. A single fake task cannot support a general-usage claim.
+All 66 Python checks pass. Swift matcher and timing checks pass. See [implementation milestones](implementation.md) for the full record.
 
 ## Desktop safeguards
 
-Before input, check effective grants and `desktopInputSafety`. Refuse unavailable checks or modifying mouse hooks. Never install a modifying global tap, seize a device, reset global TCC state, kill tccd, or bypass a guard.
+Check effective permissions and `desktopInputSafety` before input. Refuse unavailable checks or modifying mouse hooks. Never install modifying global taps, seize devices, reset global TCC state, kill tccd, or bypass guards.
 
-The earlier desktop click failure cleared after DockDoor stopped. Its exact cause remains unexplained. Do not reproduce it. The browser's reader is non-seizing and only routes keys while its own window is key and frontmost.
+The earlier click failure cleared after DockDoor stopped. Its exact cause remains unknown. Do not reproduce it. The browser reader is non-seizing and routes keys only while its window is key and frontmost.
 
-Do not bind the AX-hidden DeviceKeyboard app through native computer use. That path previously stalled for minutes. Use the scoped probe and verify exact PID and binary identity. Current native UI bindings are `grantSettings` and `grantFinder`. Refresh computer-use documentation and UI state before reuse.
+The observer uses a PID-scoped listen-only key-down tap. It decodes only while the exact research target owns focus. It saves no raw text or key codes. The first key starts a fifteen-second sample after at most sixty seconds of idle wait.
 
-The DeviceKeyboard grant is now effective after the user's approved one-app ListenEvent reset and exact-bundle Add. Earlier off/on and Add attempts failed. No further DeviceKeyboard refresh is needed.
+Do not select the AX-hidden browser through computer use. That path stalls. Refresh computer-use documentation before UI work. Selecting a closed readable control can create an empty replacement window. Verify exact process identity.
 
-No branch was pushed and no pull request was created. Historical pause notes below describe earlier builds and do not override this current state.
+No branch was pushed and no pull request was created. The historical pause note below concerns earlier builds.
 
 ---
 

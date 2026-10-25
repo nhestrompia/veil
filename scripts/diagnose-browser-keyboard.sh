@@ -7,6 +7,8 @@ build_only=false
 backdrop=false
 invalid_backdrop=false
 feature_suite=false
+focus_mode=ordinary
+focus_resume=false
 for argument in "$@"; do
     case "$argument" in
         --capture-restricted) restricted=true ;;
@@ -14,6 +16,9 @@ for argument in "$@"; do
         --backdrop) backdrop=true ;;
         --invalid-backdrop) backdrop=true; invalid_backdrop=true ;;
         --feature-suite) feature_suite=true ;;
+        --filter-activation) focus_mode=filter ;;
+        --logical-key) focus_mode=logical ;;
+        --focus-resume) focus_resume=true ;;
         *) echo "Unknown diagnostic option: $argument" >&2; exit 2 ;;
     esac
 done
@@ -22,9 +27,48 @@ if [ "$restricted" = false ]; then defines+=(-D DEVICE_VISIBLE_CONTROL); fi
 if [ "$backdrop" = true ]; then defines+=(-D INTERNAL_CAPTURE_BACKDROP); fi
 if [ "$invalid_backdrop" = true ]; then defines+=(-D INTERNAL_SMALL_CAPTURE_BACKDROP); fi
 if [ "$feature_suite" = true ]; then defines+=(-D INTERNAL_FEATURE_SUITE); fi
+if [ "$focus_resume" = true ]; then defines+=(-D INTERNAL_FOCUS_RESUME); fi
+case "$focus_mode" in
+    filter) defines+=(-D INTERNAL_ACTIVATION_FILTER) ;;
+    logical) defines+=(-D INTERNAL_LOGICAL_KEY) ;;
+esac
 mkdir -p .build/module-cache "$app/Contents/MacOS"
 python3 - <<'PY'
 from pathlib import Path
+boundary = Path('Sources/Browser/AXBoundary.swift').read_text()
+boundary = boundary.replace('import AppKit', 'import AppKit\nimport Carbon', 1)
+boundary = boundary.replace('final class AXBoundaryWindow: NSWindow {', '''final class AXBoundaryWindow: NSWindow {
+    #if INTERNAL_LOGICAL_KEY
+    override var isKeyWindow: Bool { true }
+    #endif
+
+    override func becomeKey() {
+        super.becomeKey()
+        reportDiagnosticFocus("became-key")
+    }
+
+    override func resignKey() {
+        super.resignKey()
+        reportDiagnosticFocus("resigned-key")
+    }
+
+    private func reportDiagnosticFocus(_ phase: String) {
+        print("FOCUS_DIAGNOSTIC phase=\\(phase) actualKey=\\(super.isKeyWindow) logicalKey=\\(isKeyWindow) foreground=\\(NSWorkspace.shared.frontmostApplication?.processIdentifier ?? -1) secureInput=\\(IsSecureEventInputEnabled())")
+        fflush(stdout)
+    }
+''', 1)
+Path('.build/InternalFocusBoundary.swift').write_text(boundary)
+device = Path('Sources/Browser/DeviceKeyboard.swift').read_text()
+device = device.replace('''        switch event.type {''', '''        #if INTERNAL_ACTIVATION_FILTER
+        if event.type == .appKitDefined,
+           event.subtype == .applicationActivated || event.subtype == .applicationDeactivated {
+            print("FOCUS_ACTIVATION_REFUSED subtype=\\(event.subtype.rawValue)")
+            fflush(stdout)
+            return
+        }
+        #endif
+        switch event.type {''', 1)
+Path('.build/InternalFocusDeviceKeyboard.swift').write_text(device)
 source = Path('Sources/Browser/BrowserApp.swift').read_text()
 marker = 'deviceKeyboard?.start()'
 assert source.count(marker) == 1
@@ -115,14 +159,23 @@ Task { @MainActor in
     print("INTERNAL_KEYBOARD inputTriggeredSubmit=\\(automaticSubmit)")
     print("INTERNAL_KEYBOARD sequenceFinished=true noDeviceReader=true")
     fflush(stdout)
+    #if INTERNAL_FOCUS_RESUME
+    try? await Task.sleep(for: .seconds(8))
+    for (code, character) in zip(codes, "native-input\\r") {
+        key(code, String(character))
+        try? await Task.sleep(for: .milliseconds(50))
+    }
+    print("INTERNAL_KEYBOARD resumeSequenceFinished=true")
+    fflush(stdout)
+    #endif
 }
 ''')
 Path('.build/InternalKeyboardControl.swift').write_text(source)
 PY
 xcrun swiftc -swift-version 6 -warnings-as-errors -parse-as-library -O \
     "${defines[@]}" -target arm64-apple-macosx14.0 \
-    -module-cache-path .build/module-cache Sources/Browser/AXBoundary.swift \
-    Sources/Browser/DeviceKeyboard.swift Sources/Browser/HIDSourcePolicy.swift Sources/Browser/BrowserPolicy.swift \
+    -module-cache-path .build/module-cache .build/InternalFocusBoundary.swift \
+    .build/InternalFocusDeviceKeyboard.swift Sources/Browser/HIDSourcePolicy.swift Sources/Browser/BrowserPolicy.swift \
     Sources/Browser/RestrictedWebView.swift \
     Sources/Browser/BrowserRuntimePolicy.swift \
     Sources/Browser/InputSourceWindow.swift Sources/Browser/SecureInputWindow.swift \

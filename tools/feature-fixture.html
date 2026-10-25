@@ -24,9 +24,11 @@ const record=async value=>{
   const response=await post('action',{note:value});
   const state=await response.json();
   result.textContent=state.accepted?'Task complete. Action recorded.':'Action refused.';
-  if(state.accepted&&surface==='focus-action')focusActionArmed=true;
+  if(state.accepted&&['focus-action','blur-action','visibility-action'].includes(surface))focusActionArmed=true;
 };
-addEventListener('focus',()=>{if(focusActionArmed)record('native-input');});
+addEventListener('focus',()=>{if(focusActionArmed&&surface==='focus-action')record('native-input');});
+addEventListener('blur',()=>{if(focusActionArmed&&surface==='blur-action')record('native-input');});
+document.addEventListener('visibilitychange',()=>{if(focusActionArmed&&surface==='visibility-action')record('native-input');});
 const formHTML='<form><label for="note">Enter native-input</label><input id="note" aria-label="Enter native-input" autocomplete="off"><button type="submit">Record action</button></form>';
 async function mount(){
   let root=content;
@@ -58,6 +60,7 @@ async function mount(){
     }
     const wrapper=document.createElement('div');wrapper.innerHTML=formHTML;root.append(wrapper);
     let field=root.querySelector('#note');
+    if(new URLSearchParams(location.search).get('field-kind')==='password')field.type='password';
     if(surface==='textarea'||surface==='editable'){
       const editor=document.createElement(surface==='textarea'?'textarea':'div');
       editor.id='note';editor.setAttribute('aria-label','Enter native-input');

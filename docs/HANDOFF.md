@@ -2,7 +2,9 @@
 
 Updated 2026-10-26. Milestone 58 confirms an external focus-only action bypass in three fresh diagnostic processes. Activating another research window and returning completed one new action in each candidate. The standalone helper posted no input and made no AX call during those cycles. The gate admitted zero keyboard events. Agent-free operation is unmet.
 
-The next experiment must hold page focus stable across external activation while preserving authorized use. WebKit reads key-window and first-responder state independently. A logical-key experiment must also check password deactivation and Secure Event Input cleanup. See [focus research](research/focus-boundary.md).
+Milestone 59 tested separate AppKit activation filtering and logical key-window state. Both stopped the original focus action and preserved private typing. Both failed a visibility-change action when an agent hid and restored the app. The final filter comparison reproduced two new actions in each of three candidates. No input was posted or admitted. The password control could not switch away and remains inconclusive. Temporary cleanup restored Secure Event Input to off. All 87 Python checks pass. See [lifecycle findings](lifecycle-findings.md).
+
+Neither diagnostic option is enabled in production. The next implementation task is srcdoc compatibility, followed by the broader page matrix. A general lifecycle solution remains open. WebKit reads focus and visibility independently. Any further state experiment must preserve password deactivation and input cleanup. See [focus research](research/focus-boundary.md).
 
 The broader page matrix blocked 21 native attempts across seven working private baselines. Fourteen cases remain inconclusive. A fresh textarea retry passed; the first failure remains unexplained. Srcdoc still fails its baseline because the policy rejects its about URL. All 85 Python checks pass. See [page findings](page-feature-findings.md).
 
@@ -34,7 +36,7 @@ The user authenticated the latest approved exact-bundle re-add. Effective Access
 
 The new controller checks foreground activation before window geometry. An earlier setup run sent no candidate input and stopped with cleanup. The follow-up repaired activation for both references and candidate. Keep failed and skipped cases visible. Final checks found no temporary reference or probe processes. The browser and fixture remain running.
 
-The next task is representative frame and editor coverage with the new policy. Separate diagnostics contain the new configuration. They require no new permission. The source policy disables passkeys, native sharing, asynchronous clipboard, Apple Pay, Writing Tools, and element fullscreen. Three valid interface controls passed. Native selection export remains inconclusive because its readable control returned empty data. One private authorized keyboard task passed. See [content policy findings](content-policy-findings.md). Do not attribute new-source results to the frozen physical browser.
+Frame and editor coverage now has the milestone 58 results above. Separate diagnostics contain the new configuration. They require no new permission. The source policy disables passkeys, native sharing, asynchronous clipboard, Apple Pay, Writing Tools, and element fullscreen. Three valid interface controls passed. Native selection export remains inconclusive because its readable control returned empty data. One private authorized keyboard task passed. See [content policy findings](content-policy-findings.md). Do not attribute new-source results to the frozen physical browser.
 
 Remaining action priorities include failed PID-directed mouse calibration, direct inspector attachment beyond discovery, exports, session reuse, and broader website compatibility. Unfiltered capture on this physical build remains separate. No permission question is pending.
 

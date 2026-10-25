@@ -354,3 +354,10 @@ A restricted web view refuses native export responders and Services. Response ch
 Seven private page baselines passed. Their 35 external cases produced 21 native blocks and 14 inconclusive results. A fresh textarea retry passed unchanged. Srcdoc remains unusable under the current navigation policy.
 
 Three activation-only comparisons each completed a new candidate action. The helper posted no input and made no Accessibility call during the activation cycle. This defeats the prototype's broader all-pages action claim. The controller now counts actions during foreground preparation, including failed reference setup. All 85 Python checks pass. Temporary processes passed cleanup. See [page findings](page-feature-findings.md) and [focus research](research/focus-boundary.md).
+
+
+## Milestone 59: focus hypotheses and visibility actions
+
+Separate activation-filter and logical-key diagnostics stopped their matched focus actions and preserved private typing after return. Both still completed visibility-triggered actions. Three final activation-filter candidates each recorded two new actions during hide and restore, with zero admitted input. The password control failed to switch away, so its candidate comparison was skipped.
+
+No failed hypothesis is enabled in production. All temporary processes passed cleanup, and Secure Event Input was off afterward. All 87 Python checks pass. See [lifecycle findings](lifecycle-findings.md).

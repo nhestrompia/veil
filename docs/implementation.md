@@ -216,3 +216,9 @@ This is a private diagnostic startup, with no physical binding or human usabilit
 The native UI tool opened the reference inspector and evaluated two console expressions. The first read the expected page path and disclosure marker. The second completed one fixture action, which the independent oracle recorded. Exact process cleanup passed. The reusable controller applies only a volatile launch argument and changes no persistent preference.
 
 This establishes a working local inspector reference. Protected-shell and remote inspector attachment remain separate tests. See [local inspector findings](local-inspector-findings.md).
+
+## Milestone 34: matched local inspector policy comparison
+
+A disposable control with remote inspectability disabled still opens a local inspector under the developer-extras launch argument. Its console reads the correct marker and completes one independent fixture action. Two protected-shell trials with the startup rule offer no Inspect Element entry. A separate ordinary-input control still completes on the readable shell.
+
+One stalled UI attempt remains inconclusive. All four controller cleanups and the extra-process cleanup pass. The probe remains unchanged. This tests one local inspector route, with no device-browser or agent-free claim. See [local inspector policy findings](local-inspector-policy-findings.md).

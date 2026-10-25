@@ -1,16 +1,31 @@
-# Research resumed
+# Current research state
 
-The user resumed research on 2026-10-25. Milestone 32 completed 33 reference actions against 33 external attacks on three already-loaded diagnostic processes. Twenty-seven native attempts received explicit refusals. Six Accessibility or vision attempts remain inconclusive. All 36 processes passed cleanup, and all 31 Python checks pass.
+Research resumed on 2026-10-25. Milestones 32 through 34 are complete. The browser is still not proven agent-free.
 
-Milestone 33 established a working local inspector client. The native UI tool opened Inspect Element on InspectableControl and used its Console. The console read the correct marker and completed one fixture action. The independent oracle matched the marker and recorded the action. Cleanup passed. No persistent preference changed.
+Milestone 32 calibrated 33 successful reference actions, then tested eleven external routes against each of three already-loaded diagnostics. Twenty-seven native attempts received explicit refusals. Six Accessibility or vision attempts remain inconclusive. No candidate recorded a new action, and all 36 processes passed cleanup. These use private startup, not physical input.
 
-The next test compares that working inspector route with the ordinary protected shell under the same developer-extras launch argument. This isolates the startup inspection policy from device input and capture restrictions. A refusal on this shell cannot establish every boundary of the device browser.
+Milestone 33 established a working local inspector client. The native UI tool read the correct marker and completed a fixture action through the reference console. Cleanup passed.
 
-The latest restricted browser still lacks physical visibility and usability evidence. Human-bound sessions, remote inspector attachment, and adaptive mouse research remain open. Agent-free status remains unproven.
+Milestone 34 tested the startup inspection policy. A new disposable control keeps remote inspectability false but omits the startup rule. Its local inspector still reads the correct marker and completes one action under the developer-extras launch argument. Two protected-shell trials offer no Inspect Element entry. A separate ordinary-input control completes on the readable shell. One stalled UI attempt remains inconclusive. All four controller cleanups and the extra-process cleanup passed.
 
-The loopback fixture is active during this research session. Recheck effective probe grants and modifying mouse hooks before each native input experiment. Do not bypass a failed guard. Use exact executable cleanup after every trial.
+No persistent preference, Safari setting, permission scope, or user browser profile changed. The probe executable remains unchanged, so no grant refresh followed. The current probe hash is `7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1`.
 
-## Previous pause record
+All 31 Python checks pass. The diagnostic and protected shell compile with warnings as errors. Final cleanup found no research application. The loopback fixture and its keep-awake process stopped. The blank agent-owned preview tab closed.
+
+## Next experiments
+
+1. Confirm physical visibility and normal use of the latest restricted device browser. Software-generated startup cannot supply this evidence.
+2. Test attacks in a valid physical-bound session. The loaded-page diagnostic is a separate control.
+3. Complete a working remote inspector reference before any matched remote-attachment claim.
+4. Evaluate behavioral mouse detection with physical and adaptive synthetic trajectories. No completed behavioral result exists.
+
+Recheck effective probe grants and modifying mouse hooks before future input. Do not bypass a failed guard. The earlier desktop click failure cleared after DockDoor stopped. Its exact cause remains unexplained. Do not reproduce it.
+
+The local inspector control has a 90-second timer. A first native UI binding took about 189 seconds and returned a relaunched empty window. Bindings can outlast a process. Check the observed trial URL against the controller session, and record original-target liveness. Never count an empty or replacement process as prevention.
+
+The current `InternalKeyboardControl.app` is capture-restricted without the backdrop. It has private startup and no physical device reader. `DeviceKeyboardExperiment.app` is the separate device browser. The ordinary `AgentFreeBrowser.app` remains readable and accepts native input. It is an inspection-policy comparison, not the agent-resistant candidate.
+
+No branch was pushed, and no pull request was created. Earlier pause and recovery records follow.
 
 # Research paused
 

@@ -1,0 +1,141 @@
+{
+  "macOS": "ProductName:\t\tmacOS\nProductVersion:\t\t26.6\nBuildVersion:\t\t25G72\n",
+  "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1",
+  "humanBaseline": false,
+  "persistentPreferencesChanged": false,
+  "scope": "Local context-menu inspection only. Readable shells retain ordinary AX and input access. No device-browser or remote inspector claim.",
+  "runs": [
+    {
+      "target": "AgentFreeBrowser",
+      "pid": 27826,
+      "trialID": "762d4af3491b3777",
+      "url": "http://127.0.0.1:8765/trial/762d4af3491b3777",
+      "binarySHA256": "a374398c5a302bb88d27895eb62a202213ea5a8feb32f1b005ead92b7c8f06ee",
+      "developerExtrasRequested": true,
+      "persistentPreferencesChanged": false,
+      "operatorFinished": true,
+      "humanBaseline": false,
+      "newSubmissions": [
+        {
+          "accepted": false
+        },
+        {
+          "accepted": true
+        }
+      ],
+      "scope": "Local inspector route on a readable shell. No device-browser or remote-transport claim.",
+      "artifactDirectory": "local-inspector-protected",
+      "cleanup": {
+        "pid": 27826,
+        "verified": true
+      },
+      "uiObservation": {
+        "contextMenuOpened": true,
+        "inspectElementPresent": false,
+        "inspectorFrontendPresent": false,
+        "inspectorPhaseSubmissions": [],
+        "method": "Native computer-use UI, page context menu",
+        "normalInputControlPending": false,
+        "scope": "Readable protected shell, not the device browser",
+        "normalInputControlCompleted": true,
+        "normalInputMethod": "AX value plus native Escape and Return",
+        "autocorrectionObserved": true
+      }
+    },
+    {
+      "target": "LocalInspectorControl",
+      "pid": 28151,
+      "trialID": "31342bf8896c5982",
+      "url": "http://127.0.0.1:8765/trial/31342bf8896c5982",
+      "binarySHA256": "bec0a84ad563d57e1275d09ae7d6df253dd0af50868ad180c6a8b8f0ab238b9d",
+      "developerExtrasRequested": true,
+      "persistentPreferencesChanged": false,
+      "operatorFinished": false,
+      "humanBaseline": false,
+      "newSubmissions": [],
+      "scope": "Local inspector route on a readable shell. No device-browser or remote-transport claim.",
+      "artifactDirectory": "local-inspector-policy-control",
+      "cleanup": {
+        "pid": 28151,
+        "verified": true
+      },
+      "uiAttemptVerdict": "inconclusive",
+      "uiCallSeconds": 189.1137,
+      "extraProcessCleanup": {
+        "pid": 29369,
+        "verified": true
+      },
+      "reason": "UI binding outlasted the 90-second diagnostic and returned a relaunched empty window. No inspector attack ran."
+    },
+    {
+      "target": "LocalInspectorControl",
+      "pid": 29600,
+      "trialID": "ddce46b4b3286a24",
+      "url": "http://127.0.0.1:8765/trial/ddce46b4b3286a24",
+      "binarySHA256": "bec0a84ad563d57e1275d09ae7d6df253dd0af50868ad180c6a8b8f0ab238b9d",
+      "developerExtrasRequested": true,
+      "persistentPreferencesChanged": false,
+      "operatorFinished": true,
+      "humanBaseline": false,
+      "newSubmissions": [
+        {
+          "accepted": true
+        }
+      ],
+      "scope": "Local inspector route on a readable shell. No device-browser or remote-transport claim.",
+      "artifactDirectory": "local-inspector-policy-retry",
+      "cleanup": {
+        "pid": 29600,
+        "verified": true
+      },
+      "uiObservation": {
+        "contextMenuOpened": true,
+        "inspectElementPresent": true,
+        "inspectorAttached": true,
+        "frontendURL": "inspector-resource:///Main.html",
+        "isInspectable": false,
+        "startupPolicyOmitted": true,
+        "consolePage": "/trial/ddce46b4b3286a24",
+        "consoleMarker": "AFB-B3E456BA",
+        "consoleReadProbe": "policy-omission-read",
+        "consoleActionResult": "policy-omission-action",
+        "fixtureUIShowsCompletion": true,
+        "method": "Native computer-use UI, Inspect Element, Console expressions",
+        "persistentPreferencesChanged": false,
+        "markerMatchesOracle": true
+      }
+    },
+    {
+      "target": "AgentFreeBrowser",
+      "pid": 29700,
+      "trialID": "fbf0288520a2d9de",
+      "url": "http://127.0.0.1:8765/trial/fbf0288520a2d9de",
+      "binarySHA256": "a374398c5a302bb88d27895eb62a202213ea5a8feb32f1b005ead92b7c8f06ee",
+      "developerExtrasRequested": true,
+      "persistentPreferencesChanged": false,
+      "operatorFinished": true,
+      "humanBaseline": false,
+      "newSubmissions": [],
+      "scope": "Local inspector route on a readable shell. No device-browser or remote-transport claim.",
+      "artifactDirectory": "local-inspector-protected-confirmation",
+      "cleanup": {
+        "pid": 29700,
+        "verified": true
+      },
+      "uiObservation": {
+        "contextMenuOpened": true,
+        "inspectElementPresent": false,
+        "inspectorFrontendPresent": false,
+        "method": "Native computer-use UI, page context menu",
+        "normalInputControlPending": false,
+        "scope": "Readable protected shell, not the device browser"
+      }
+    }
+  ],
+  "finalCleanup": {
+    "cleanup": {},
+    "remaining": {}
+  },
+  "fixtureStopped": true,
+  "pythonChecksPassed": 31
+}

@@ -1,6 +1,12 @@
 # Current research state
 
-Updated 2026-10-25. Milestone 57 adds engine feature restrictions and native export policy in source. The live physical browser remains unchanged. Milestones 50 and 51 are committed. Milestone 52 completed a Safari remote-inspector control. Milestone 53 recorded failed root calibration. Milestone 54 adds bounded token discovery and matched renderer reads. Milestone 55 completes native host Reload comparisons. Milestone 56 repeats native actions and semantics on the current physical process. Agent-free operation remains unproven.
+Updated 2026-10-26. Milestone 58 confirms an external focus-only action bypass in three fresh diagnostic processes. Activating another research window and returning completed one new action in each candidate. The standalone helper posted no input and made no AX call during those cycles. The gate admitted zero keyboard events. Agent-free operation is unmet.
+
+The next experiment must hold page focus stable across external activation while preserving authorized use. WebKit reads key-window and first-responder state independently. A logical-key experiment must also check password deactivation and Secure Event Input cleanup. See [focus research](research/focus-boundary.md).
+
+The broader page matrix blocked 21 native attempts across seven working private baselines. Fourteen cases remain inconclusive. A fresh textarea retry passed; the first failure remains unexplained. Srcdoc still fails its baseline because the policy rejects its about URL. All 85 Python checks pass. See [page findings](page-feature-findings.md).
+
+The feature fixture runs on port 8766 with its own controller file. The original fixture and physical browser PID 61893 remain unchanged. No temporary research process remains. Keep the frozen physical browser and permissioned probes unchanged. New policy and focus results belong to separate diagnostics.
 
 ## Current priority and remote control
 

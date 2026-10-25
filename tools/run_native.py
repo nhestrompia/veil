@@ -58,8 +58,8 @@ def probe(arguments, output, background=False):
 
 
 class Oracle:
-    def __init__(self):
-        self.config = json.loads((ROOT / "artifacts/fixture-controller.json").read_text())
+    def __init__(self, config_path=None):
+        self.config = json.loads((config_path or ROOT / "artifacts/fixture-controller.json").read_text())
 
     def request(self, path, body=None):
         request = Request(f"http://127.0.0.1:{self.config['port']}" + path,

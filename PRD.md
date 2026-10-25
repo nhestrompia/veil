@@ -184,6 +184,8 @@ Human targets: three testers complete at least 90% of 15 total core-task session
 
 Performance targets on the recorded reference Mac: a usable window within three seconds in four of five cold launches. Added navigation overhead stays below 20% against an unmodified WKWebView shell. Idle overhead stays below five CPU percentage points. These targets require measurement and do not replace protection gates.
 
+Include window activation, deactivation, first-responder changes, visibility, and frame lifecycle as action routes. Measure authoritative outcomes throughout reference preparation, candidate activation, attack calls, and cleanup. An action before the planned input call still counts as a bypass. Milestone 58 confirms a focus-only bypass in three diagnostic processes without posted input. This remains a failed gate until a usable mitigation passes matched controls. See [page findings](docs/page-feature-findings.md).
+
 Published results must name the OS build, app build, tested routes, known bypasses, human-access limits, and sample sizes. Never label an incomplete test matrix "agent-proof."
 
 ## Delivery sequence and stop rules

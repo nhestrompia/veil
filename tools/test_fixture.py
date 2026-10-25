@@ -1,5 +1,7 @@
 import json
 import threading
+from pathlib import Path
+import tempfile
 import unittest
 from urllib.error import HTTPError
 from urllib.request import Request, urlopen
@@ -8,6 +10,26 @@ from fixture import FixtureServer
 
 
 class FixtureTests(unittest.TestCase):
+    def test_custom_page_template_keeps_query_in_the_same_trial(self):
+        with tempfile.TemporaryDirectory() as directory:
+            template = Path(directory) / "feature.html"
+            template.write_text("custom feature {{SECRET}}")
+            server = FixtureServer(("127.0.0.1", 0), template)
+            thread = threading.Thread(target=server.serve_forever, daemon=True)
+            thread.start()
+            try:
+                base = f"http://127.0.0.1:{server.server_port}"
+                req = Request(base + "/admin/trials", data=b"{}", headers={"X-Research-Key": server.controller_key})
+                with urlopen(req) as response:
+                    trial = json.load(response)
+                with urlopen(trial["url"] + "?surface=shadow-open") as response:
+                    page = response.read().decode()
+                self.assertEqual(page, "custom feature " + server.trials[trial["id"]]["secret"])
+                self.assertEqual(server.trials[trial["id"]]["submissions"], [])
+            finally:
+                server.shutdown()
+                server.server_close()
+
     def test_authorization_and_independent_trial_outcomes(self):
         server = FixtureServer(("127.0.0.1", 0))
         thread = threading.Thread(target=server.serve_forever, daemon=True)

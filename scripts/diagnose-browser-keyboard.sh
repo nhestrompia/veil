@@ -6,12 +6,14 @@ restricted=false
 build_only=false
 backdrop=false
 invalid_backdrop=false
+feature_suite=false
 for argument in "$@"; do
     case "$argument" in
         --capture-restricted) restricted=true ;;
         --build-only) build_only=true ;;
         --backdrop) backdrop=true ;;
         --invalid-backdrop) backdrop=true; invalid_backdrop=true ;;
+        --feature-suite) feature_suite=true ;;
         *) echo "Unknown diagnostic option: $argument" >&2; exit 2 ;;
     esac
 done
@@ -19,6 +21,7 @@ defines=(-D DEVICE_KEYBOARD_EXPERIMENT)
 if [ "$restricted" = false ]; then defines+=(-D DEVICE_VISIBLE_CONTROL); fi
 if [ "$backdrop" = true ]; then defines+=(-D INTERNAL_CAPTURE_BACKDROP); fi
 if [ "$invalid_backdrop" = true ]; then defines+=(-D INTERNAL_SMALL_CAPTURE_BACKDROP); fi
+if [ "$feature_suite" = true ]; then defines+=(-D INTERNAL_FEATURE_SUITE); fi
 mkdir -p .build/module-cache "$app/Contents/MacOS"
 python3 - <<'PY'
 from pathlib import Path
@@ -93,7 +96,13 @@ Task { @MainActor in
         if !webView.isLoading { break }
         try? await Task.sleep(for: .milliseconds(100))
     }
+    #if INTERNAL_FEATURE_SUITE
+    _ = try? await webView.evaluateJavaScript("window.focusResearchField()")
+    try? await Task.sleep(for: .milliseconds(300))
+    print("INTERNAL_KEYBOARD focusAssistedByDiagnostic=true")
+    #else
     key(48, "\\t")
+    #endif
     let codes: [UInt16] = [45, 0, 17, 34, 9, 14, 27, 34, 45, 35, 32, 17, 36]
     let automaticSubmit = URLComponents(string: CommandLine.arguments.last ?? "")?.queryItems?.contains {
         $0.name == "submit-on-input" && $0.value == "1"

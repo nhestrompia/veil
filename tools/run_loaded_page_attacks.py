@@ -72,6 +72,7 @@ def score_after_attempt(before, after, log_tail, attempted, control_worked):
 
 def prepare(name, output, oracle, url_suffix=""):
     trial = oracle.create()
+    output.with_suffix(".trial.json").write_text(json.dumps(trial, indent=2) + "\n")
     log = output.with_suffix(".log")
     launcher, binary = launch(name, log, ["--url", trial["url"] + url_suffix])
     session = {"launcher": launcher, "binary": binary, "pid": None, "trial": trial, "log": log}
@@ -96,6 +97,10 @@ def prepare(name, output, oracle, url_suffix=""):
         session["binarySHA256"] = hashlib.sha256(binary.read_bytes()).hexdigest()
         return session
     except BaseException:
+        try:
+            output.with_suffix(".failed-oracle.json").write_text(json.dumps(oracle.state(trial), indent=2) + "\n")
+        except Exception:
+            pass
         close(session)
         raise
 
@@ -149,7 +154,7 @@ def attack(session, route, output, oracle, control=None, post_tap="hid"):
                 row["coordinateSource"] = "Matched reference point translated by public window geometry"
             else:
                 tree = probe(["ax", pid], output.with_suffix(".ax.json"))
-                field = next((item for item in tree.get("elements", []) if item.get("AXRole") == "AXTextField"
+                field = next((item for item in tree.get("elements", []) if item.get("AXRole") in ["AXTextField", "AXTextArea"]
                               and "Enter native-input" in [item.get("AXDescription"), item.get("AXTitle")]), None)
                 if field is None:
                     row["referenceFieldUnavailable"] = True

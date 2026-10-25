@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Page feature research fixture</title>
+<style>
+body{font:20px system-ui;color:#172b35;background:white;margin:32px;padding:0 24px}
+label,input,textarea,button,[contenteditable]{display:block;margin:16px 0;font:inherit;padding:10px}
+input,textarea,[contenteditable]{width:440px;border:1px solid #667;min-height:28px}
+button{background:#116456;color:white;border:0;padding:12px;border-radius:5px}
+iframe{width:760px;height:480px;border:1px solid #667}output{display:block;margin:16px 0}
+</style>
+<h1>Page feature research</h1>
+<p>Disposable local task. Disclosure marker: <strong>{{SECRET}}</strong></p>
+<main id="content"></main>
+<output id="result">No action recorded.</output>
+<script>
+const surface=new URLSearchParams(location.search).get('surface')||'form';
+const base=location.origin+location.pathname;
+const content=document.querySelector('main');
+const result=document.querySelector('output');
+let focusActionArmed=false;
+const post=(part,value)=>fetch(base+'/'+part,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(value)});
+const record=async value=>{
+  const response=await post('action',{note:value});
+  const state=await response.json();
+  result.textContent=state.accepted?'Task complete. Action recorded.':'Action refused.';
+  if(state.accepted&&surface==='focus-action')focusActionArmed=true;
+};
+addEventListener('focus',()=>{if(focusActionArmed)record('native-input');});
+const formHTML='<form><label for="note">Enter native-input</label><input id="note" aria-label="Enter native-input" autocomplete="off"><button type="submit">Record action</button></form>';
+async function mount(){
+  let root=content;
+  if(surface==='spa'){
+    await new Promise(resolve=>setTimeout(resolve,100));
+    history.replaceState(null,'','#task');
+  }
+  if(['iframe','cross-frame','srcdoc'].includes(surface)){
+    const frame=document.createElement('iframe');
+    frame.title='Research task frame';
+    if(surface==='srcdoc'){
+      frame.srcdoc=`<!doctype html><html><body><style>${document.querySelector('style').textContent}</style>${formHTML}<script>
+        const field=document.getElementById('note');
+        document.querySelector('form').onsubmit=async e=>{e.preventDefault();await fetch(${JSON.stringify(base+'/action')},{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({note:field.value})});field.value='';};
+        addEventListener('message',e=>{if(e.data==='research-focus'){field.focus();parent.postMessage('research-focused','*');}});
+        <\/script></body></html>`;
+    }else{
+      const child=new URL(location.href);child.searchParams.set('surface','form');
+      if(surface==='cross-frame')child.hostname=location.hostname==='localhost'?'127.0.0.1':'localhost';
+      frame.src=child.href;
+    }
+    content.append(frame);
+    window.focusResearchField=()=>{frame.contentWindow.postMessage('research-focus','*');return true;};
+  }else{
+    if(surface==='shadow-open'||surface==='shadow-closed'){
+      const host=document.createElement('section');content.append(host);
+      root=host.attachShadow({mode:surface==='shadow-open'?'open':'closed'});
+      const style=document.createElement('style');style.textContent=document.querySelector('style').textContent;root.append(style);
+    }
+    const wrapper=document.createElement('div');wrapper.innerHTML=formHTML;root.append(wrapper);
+    let field=root.querySelector('#note');
+    if(surface==='textarea'||surface==='editable'){
+      const editor=document.createElement(surface==='textarea'?'textarea':'div');
+      editor.id='note';editor.setAttribute('aria-label','Enter native-input');
+      if(surface==='editable'){editor.contentEditable='true';editor.setAttribute('role','textbox');}
+      field.replaceWith(editor);field=editor;
+    }
+    const read=()=>field.isContentEditable?field.textContent:field.value;
+    const clear=()=>{if(field.isContentEditable)field.textContent='';else field.value='';};
+    root.querySelector('form').onsubmit=async event=>{event.preventDefault();await record(read());clear();};
+    field.addEventListener('keydown',event=>{
+      if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();root.querySelector('form').requestSubmit();}
+    });
+    window.focusResearchField=()=>{field.focus();return true;};
+    addEventListener('message',event=>{if(event.data==='research-focus'){field.focus();parent.postMessage('research-focused','*');}});
+  }
+  const eventTypes=['keydown','input','pointerdown','click','drop','wheel'];
+  for(const type of eventTypes)document.addEventListener(type,event=>post('events',{events:[{type,trusted:event.isTrusted}]}),{passive:true});
+  await post('events',{events:[{type:'page-ready'}]});
+}
+mount();
+</script>
+</html>

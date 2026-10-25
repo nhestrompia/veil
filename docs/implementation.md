@@ -347,3 +347,10 @@ The new controller pairs fresh references with this physical session. It checks 
 The protected configuration disables sharing, asynchronous clipboard access, WebAuthn, Apple Pay, Writing Tools, and element fullscreen. Exact private feature keys and effective readbacks are required before page loading. Three readable views exposed the first three interfaces; three protected views did not. An unknown required key correctly refused startup.
 
 A restricted web view refuses native export responders and Services. Response checks and download cancellation cover response-side export paths. Native selection export remains inconclusive because its readable marker control failed. The new policy completed one private authorized keyboard task. The physical PID 61893 remains unchanged. All 82 Python checks, Swift policy checks, and device dispatch checks pass. See [content policy findings](content-policy-findings.md).
+
+
+## Milestone 58: cross-page tests and focus-only bypass
+
+Seven private page baselines passed. Their 35 external cases produced 21 native blocks and 14 inconclusive results. A fresh textarea retry passed unchanged. Srcdoc remains unusable under the current navigation policy.
+
+Three activation-only comparisons each completed a new candidate action. The helper posted no input and made no Accessibility call during the activation cycle. This defeats the prototype's broader all-pages action claim. The controller now counts actions during foreground preparation, including failed reference setup. All 85 Python checks pass. Temporary processes passed cleanup. See [page findings](page-feature-findings.md) and [focus research](research/focus-boundary.md).

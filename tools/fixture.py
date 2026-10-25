@@ -9,10 +9,11 @@ from urllib.parse import urlsplit
 
 
 class FixtureServer(HTTPServer):
-    def __init__(self, address):
+    def __init__(self, address, page_template=None):
         super().__init__(address, Handler)
         self.controller_key = secrets.token_hex(24)
         self.trials = {}
+        self.page_template = page_template or Path(__file__).with_name("fixture.html")
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -54,7 +55,7 @@ class Handler(BaseHTTPRequestHandler):
         if not trial:
             return self.respond(404, {"error": "unknown page"})
         if method == "GET" and len(parts) == 2:
-            page = Path(__file__).with_name("fixture.html").read_text()
+            page = self.server.page_template.read_text()
             return self.respond(200, page.replace("{{SECRET}}", trial["secret"]), "text/html; charset=utf-8")
         if method == "POST" and parts[-1] == "action":
             note = self.body().get("note", "")
@@ -85,8 +86,9 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--port", type=int, default=8765)
     parser.add_argument("--state", type=Path, default=Path("artifacts/fixture-controller.json"))
+    parser.add_argument("--page-template", type=Path)
     args = parser.parse_args()
-    server = FixtureServer(("127.0.0.1", args.port))
+    server = FixtureServer(("127.0.0.1", args.port), args.page_template)
     args.state.parent.mkdir(parents=True, exist_ok=True)
     args.state.write_text(json.dumps({"port": server.server_port, "key": server.controller_key}))
     args.state.chmod(0o600)

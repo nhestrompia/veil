@@ -2,6 +2,8 @@
 
 Research date: 2026-10-25. This review uses Apple documentation, the installed SDK, and WebKit source. It installs no monitor and runs no attack.
 
+Runtime follow-up: [physical observation](../keyboard-readiness-findings.md) confirmed phrase recognition. The [generated password comparison](../secure-entry-observation-findings.md) remains a separate result. The review below preserves the original research questions.
+
 ## Physical use leaves an observation question
 
 The root agent reports one accepted physical task on the current restricted browser. Its matched external input trials admit no additional action. Those results test action delivery. They do not test whether a second process can observe the person's physical keys.

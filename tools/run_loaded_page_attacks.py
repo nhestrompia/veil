@@ -65,10 +65,10 @@ def score_after_attempt(before, after, log_tail, attempted, control_worked):
             "verdict": verdict}
 
 
-def prepare(name, output, oracle):
+def prepare(name, output, oracle, url_suffix=""):
     trial = oracle.create()
     log = output.with_suffix(".log")
-    launcher, binary = launch(name, log, ["--url", trial["url"]])
+    launcher, binary = launch(name, log, ["--url", trial["url"] + url_suffix])
     session = {"launcher": launcher, "binary": binary, "pid": None, "trial": trial, "log": log}
     try:
         session["pid"] = ready(log, r"Browser ready: pid=(\d+)")

@@ -20,6 +20,9 @@ button{background:#116456;color:white;border:0;border-radius:5px}output{display:
 <p><a href="https://example.org">Visit an ordinary HTTPS website</a></p>
 <script>
 const base=location.pathname;
+if(new URLSearchParams(location.search).get('field-kind')==='password'){
+  document.querySelector('input').type='password';
+}
 if(new URLSearchParams(location.search).get('submit-on-dragenter')==='1'){
   let recorded=false;
   document.addEventListener('dragenter',()=>{

@@ -1,6 +1,6 @@
 # Current research state
 
-Updated 2026-10-25. Milestones 47 through 49 are committed. Milestone 50 repairs observer readiness and records a positive physical keyboard observation. The browser is not agent-free.
+Updated 2026-10-25. Milestone 50 is committed. Milestone 51 adds a bounded password-field comparison. The browser is not agent-free.
 
 ## Latest result
 
@@ -32,7 +32,7 @@ Stop the fixture separately when live work ends.
 
 The original physical process refused 27 calibrated native attempts and three adaptive vision attempts. Window and filtered-display images were black. System screenshots and unavailable AX actions remain inconclusive. Fifteen startup comparisons and eighteen session-insertion refusals are separate diagnostic results.
 
-The current observation disproves keyboard confidentiality against this permissioned listener. Test ordinary text against secure password entry next. Apple TN2150 advises against enabling Secure Event Input for general text or an entire app lifetime. Do not turn that into a whole-browser fix without a separate design and compatibility experiment.
+The current observation disproves keyboard confidentiality against this permissioned listener. The generated password comparison received no keys during two accepted tasks. Secure input was active, and cleanup restored its inactive state. Physical password entry remains untested. See [the secure-entry result](secure-entry-observation-findings.md). Apple TN2150 advises against enabling Secure Event Input for general text or an entire app lifetime. Do not turn that into a whole-browser fix without a separate design and compatibility experiment.
 
 Remote inspection, unfiltered capture on this physical build, renderer semantics, broader session privacy, and general website compatibility remain open. The browser supports only the measured built-in keyboard and US ASCII. Pointer input is disabled. The device policy does not attest a human or cryptographically attest hardware.
 

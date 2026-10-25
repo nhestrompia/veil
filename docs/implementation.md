@@ -305,3 +305,9 @@ A bounded matcher recognizes only the fixed fake sequence. Generated controls ma
 The enabled PID tap now signals from its running event loop. The first key starts collection after a bounded idle interval. An independent permission check needs no running target. All 66 Python checks and the Swift timing checks pass.
 
 The restricted browser accepted one requested physical task while the external observer matched both decoders from sixteen events. Cleanup passed. This establishes a keyboard-observation gap. The generated reference remains explicitly distinct from a physical reference. See [readiness findings](keyboard-readiness-findings.md).
+
+## Milestone 51: bounded password-entry comparison
+
+The readable ordinary-field control completed one generated task and exposed the phrase through thirteen events. Two password-field trials completed with Secure Event Input active and no observed keys. The listener remained alive after input. The final trial verified acceptance before the liveness check.
+
+Both password listeners ended on later focus loss. No physical password claim follows. Every process passed cleanup, and Secure Event Input was off afterward. The restricted browser stayed unchanged. All 66 Python checks pass. See [secure-entry findings](secure-entry-observation-findings.md).

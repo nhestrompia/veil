@@ -1,6 +1,7 @@
 """Calibrate a passive observer with generated fake keys in a readable research app."""
 
 import argparse
+import ctypes
 import hashlib
 import json
 from pathlib import Path
@@ -35,7 +36,15 @@ def worked(report):
             and report.get("observerCleanupVerified") is True and report.get("referenceCleanupVerified") is True)
 
 
-def run(output, mode, keycodes=False):
+def secure_input_enabled():
+    carbon = ctypes.CDLL("/System/Library/Frameworks/Carbon.framework/Carbon")
+    check = carbon.IsSecureEventInputEnabled
+    check.argtypes = []
+    check.restype = ctypes.c_ubyte
+    return bool(check())
+
+
+def run(output, mode, keycodes=False, field_kind="ordinary"):
     output = output.resolve()
     output.mkdir(parents=True, exist_ok=False)
     oracle = Oracle()
@@ -43,13 +52,15 @@ def run(output, mode, keycodes=False):
     require_input_safety(permissions)
     if not permissions.get("postEvents") or not permissions.get("accessibility"):
         raise RuntimeError("NativeProbe needs its existing input and Accessibility grants")
-    reference = prepare("InspectableControl", output / "reference", oracle)
+    reference = prepare("InspectableControl", output / "reference", oracle,
+                        "?field-kind=password" if field_kind == "password" else "")
     observer = None
-    report = {"physicalControl": False, "mode": mode, "referencePID": reference["pid"],
+    report = {"physicalControl": False, "mode": mode, "fieldKind": field_kind, "referencePID": reference["pid"],
+              "referenceBinarySHA256": reference["binarySHA256"],
               "observerSHA256": hashlib.sha256(BINARY.read_bytes()).hexdigest()}
     try:
         tree = probe(["ax-direct", reference["pid"]], output / "reference.ax.json")
-        field = next((item for item in tree.get("elements", []) if item.get("AXRole") == "AXTextField"
+        field = next((item for item in tree.get("elements", []) if item.get("AXRole") in ["AXTextField", "AXSecureTextField"]
                       and "Enter native-input" in [item.get("AXDescription"), item.get("AXTitle")]), None)
         if field is None:
             raise RuntimeError("Readable reference field unavailable. No observer or input launched.")
@@ -71,7 +82,11 @@ def run(output, mode, keycodes=False):
             arguments = ["input", reference["pid"], *point, "hid", "curve"]
             if keycodes:
                 arguments.append("keycodes")
-            report["input"] = probe(arguments, output / "input.json")
+            report["input"] = probe(arguments, output / "input.json", background=True)
+            report["secureInputAfterAttempt"] = secure_input_enabled()
+            report["acceptedSubmissionsAfterAttempt"] = sum(bool(item["accepted"]) for item in oracle.state(reference["trial"])["submissions"])
+            report["observerRunningAfterAttempt"] = bool(matching_pids(BINARY) - existing)
+            report["observerEndedBeforeInputReturned"] = observation_path.exists() and bool(observation_path.read_text().strip())
         try:
             observer.wait(timeout=85)
         except subprocess.TimeoutExpired:
@@ -93,6 +108,7 @@ def run(output, mode, keycodes=False):
                     observer.wait()
             close(reference)
             report["referenceCleanupVerified"] = True
+            report["secureInputAfterCleanup"] = secure_input_enabled()
         finally:
             report["generatedControlWorked"] = worked(report)
             (output / "results.json").write_text(json.dumps(report, indent=2) + "\n")
@@ -107,5 +123,6 @@ if __name__ == "__main__":
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--mode", choices=["appkit", "pid"], default="pid")
     parser.add_argument("--keycodes", action="store_true")
+    parser.add_argument("--field-kind", choices=["ordinary", "password"], default="ordinary")
     args = parser.parse_args()
-    run(args.output, args.mode, args.keycodes)
+    run(args.output, args.mode, args.keycodes, args.field_kind)

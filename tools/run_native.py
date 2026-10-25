@@ -39,13 +39,13 @@ def stop_timed_out_probe(pid_file):
         pass
 
 
-def probe(arguments, output):
+def probe(arguments, output, background=False):
     output = output.resolve()
     output.unlink(missing_ok=True)
     pid_file = output.with_suffix(output.suffix + ".pid")
     pid_file.unlink(missing_ok=True)
     try:
-        completed = subprocess.run(["open", "-n", "-W", str(ROOT / "dist/NativeProbe.app"), "--args", *map(str, arguments), "--out", str(output)],
+        completed = subprocess.run(["open", *(["-g"] if background else []), "-n", "-W", str(ROOT / "dist/NativeProbe.app"), "--args", *map(str, arguments), "--out", str(output)],
                                    timeout=40, capture_output=True)
     except subprocess.TimeoutExpired:
         stop_timed_out_probe(pid_file)

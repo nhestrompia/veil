@@ -40,6 +40,7 @@ Recent evidence:
 - [Capture routes](docs/source-policy-capture-findings.md) separate filtered-display observations from failed system screenshots.
 - [Native semantics](docs/source-policy-semantics-findings.md) record matched tree, focused-element, menu, and action queries.
 - [Physical keyboard observation](docs/keyboard-readiness-findings.md) records successful phrase recognition after actual tap readiness.
+- [Secure password-entry control](docs/secure-entry-observation-findings.md) separates generated password-field results from the physical ordinary-text leak.
 - [Earlier observer controls](docs/keycode-observation-findings.md) preserve inconclusive samples and the timing defect.
 
 - [Keyboard source policy](docs/hid-source-findings.md) records ancestry checks and the narrow hardware profile.

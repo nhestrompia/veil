@@ -240,3 +240,9 @@ Twelve policy cases, the event-dispatch checks, and all 32 Python checks pass. T
 Eighteen session-insertion controls completed the task. Eighteen matched attempts on three loaded diagnostics received explicit refusals, with no new action. Eighteen annotated-insertion references failed to complete and remain inconclusive. No annotated candidate ran.
 
 All 39 processes passed cleanup. The probe remained unchanged. The loaded diagnostics use private startup and do not test the new device-source rule. See [insertion-point results](native-insertion-point-findings.md).
+
+## Milestone 38: offline behavior replay pilot
+
+The offline tool processes one declared physical session and fifteen saved synthetic sessions. It removes source labels and absolute locations from motion features. A copied trajectory preserves every selected feature. Samples without enough motion remain explicitly unavailable.
+
+No classifier trains, no input event posts, and no live replay result follows. The physical task remains unverified. Four new checks pass, and all 36 Python checks pass. See [offline replay findings](behavior-replay-findings.md).

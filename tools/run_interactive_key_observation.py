@@ -20,9 +20,16 @@ from run_native import ROOT, Oracle, probe
 
 def physical_reference_worked(row):
     observation = row.get("observation", {})
-    return (row.get("newAcceptedSubmissions") == 1 and observation.get("expectedFakePhraseMatched") is True
+    return (row.get("newAcceptedSubmissions") == 1
+            and (observation.get("expectedFakePhraseMatched") is True or observation.get("expectedFakeKeycodeSequenceMatched") is True)
             and observation.get("eventCount", 0) > 0 and observation.get("monitorRemoved") is True
             and row.get("observerCleanupVerified") is True)
+
+
+def reference_input_recorded(row):
+    observation = row.get("observation", {})
+    return (row.get("newAcceptedSubmissions") == 1 and observation.get("eventCount", 0) > 0
+            and observation.get("monitorRemoved") is True and row.get("observerCleanupVerified") is True)
 
 
 class Controller:
@@ -59,7 +66,7 @@ class Controller:
             required = "ready-candidate" if candidate else "ready-reference"
             if self.phase != required or self.worker is not None and self.worker.is_alive():
                 return False
-            if candidate and not physical_reference_worked(self.report["samples"][0]):
+            if candidate and not reference_input_recorded(self.report["samples"][0]):
                 return False
             self.phase, self.hint = "starting", "Starting the passive listener. Wait for its ready state."
             self.worker = threading.Thread(target=self.observe, args=(candidate,), daemon=True)
@@ -99,6 +106,7 @@ class Controller:
             if log.exists() and log.read_text().strip() or not matching_pids(BINARY).difference(existing):
                 raise RuntimeError("Observer stopped before the ready state")
             self.set_state("listening-candidate" if candidate else "listening-reference",
+                           "Use physical Space, Return, then Tab to the page field. Type native-input and Return." if candidate and self.report.get("candidateNeedsPhysicalStartup") else
                            "Type native-input in the restricted browser, then Return. Stay in its window." if candidate else
                            "Ready: type native-input in the field below, then Return. Stay in this window.")
             try:
@@ -112,6 +120,7 @@ class Controller:
                 row["newAcceptedSubmissions"] = sum(bool(item["accepted"]) for item in row["newSubmissions"])
                 active(self.session)
                 row["candidateStillRunningUnchanged"] = True
+                row["deviceBindingObserved"] = "DEVICE_KEYBOARD bound=true" in Path(self.session["log"]).read_text()
             else:
                 with self.lock:
                     row["newAcceptedSubmissions"] = self.reference_accepted
@@ -131,16 +140,18 @@ class Controller:
                 if not row.get("observerCleanupVerified"):
                     self.phase, self.hint = "inconclusive", "Observer cleanup failed. Stop desktop tests."
                 elif candidate:
-                    matched = row.get("observation", {}).get("expectedFakePhraseMatched")
+                    observation = row.get("observation", {})
+                    matched = observation.get("expectedFakePhraseMatched") or observation.get("expectedFakeKeycodeSequenceMatched")
+                    row["observationOutcome"] = "fake-sequence-observed" if matched else "inconclusive"
+                    row["referenceDecoderCalibrated"] = physical_reference_worked(self.report["samples"][0])
                     self.phase = "complete"
-                    self.hint = f"Sample 2 finished. Fake phrase observed: {bool(matched)}. Return here and choose Finish."
-                elif physical_reference_worked(row):
+                    self.hint = ("Sample 2 finished. Fake phrase observed. Choose Finish." if matched else
+                                 "Sample 2 finished. No phrase matched; the result is inconclusive. Choose Finish.")
+                elif reference_input_recorded(row):
                     self.phase, self.hint = "ready-candidate", "Sample 1 observed. Read the sample 2 instructions, then choose Start sample 2."
                 else:
                     self.phase, self.hint = "inconclusive", "Sample 1 did not calibrate. No candidate sample will run. Choose Finish."
                 self.save()
-            if candidate:
-                subprocess.run([str(ROOT / ".build/research-focus"), str(self.reference_pid)], capture_output=True)
             print(json.dumps(row), flush=True)
 
 
@@ -159,7 +170,10 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_GET(self):
         if self.path == self.server.base:
-            return self.respond(200, Path(__file__).with_name("keyboard-observation.html").read_text(), "text/html; charset=utf-8")
+            page = Path(__file__).with_name("keyboard-observation.html").read_text()
+            if self.server.controller.report.get("candidateNeedsPhysicalStartup"):
+                page = page.replace("Its mouse input is disabled. Tab to its page field if needed,", "Its mouse input is disabled. Press physical Space, then Return to load the page. Tab to its page field,")
+            return self.respond(200, page, "text/html; charset=utf-8")
         if self.path == self.server.base + "/state":
             return self.respond(200, self.server.controller.state())
         self.respond(404, {})
@@ -186,7 +200,7 @@ class Handler(BaseHTTPRequestHandler):
         self.respond(409, {})
 
 
-def run(session_path, output):
+def run(session_path, output, reference_report=None, needs_startup=False):
     output = output.resolve()
     output.mkdir(parents=True, exist_ok=False)
     session = json.loads(session_path.read_text())
@@ -194,6 +208,15 @@ def run(session_path, output):
     permissions = probe(["permissions"], output / "permissions.json")
     require_input_safety(permissions)
     controller = Controller(session, output)
+    controller.report["candidateNeedsPhysicalStartup"] = needs_startup
+    if reference_report is not None:
+        prior = json.loads(reference_report.read_text())
+        if (prior.get("observerSHA256") != controller.observer_hash or prior.get("binarySHA256") != session["binarySHA256"]
+                or not prior.get("referenceCleanupVerified") or not prior.get("physicalSampleRequested")
+                or not prior.get("samples") or not reference_input_recorded(prior["samples"][0])):
+            raise RuntimeError("Saved physical reference is incompatible or incomplete")
+        controller.report["samples"].append(prior["samples"][0])
+        controller.report["resumedReferenceFrom"] = str(reference_report.resolve())
     server = ThreadingHTTPServer(("127.0.0.1", 0), Handler)
     server.base = "/" + secrets.token_urlsafe(24)
     server.origin = f"http://127.0.0.1:{server.server_port}"
@@ -207,7 +230,10 @@ def run(session_path, output):
         controller.reference_pid = pid
         controller.report["referencePID"] = pid
         controller.report["referenceBinarySHA256"] = hashlib.sha256(binary.read_bytes()).hexdigest()
-        controller.set_state("ready-reference", "Choose Start sample 1 when you are ready. No listener is active yet.")
+        if reference_report is None:
+            controller.set_state("ready-reference", "Choose Start sample 1 when you are ready. No listener is active yet.")
+        else:
+            controller.set_state("ready-candidate", "Your first sample is saved. Choose Start sample 2 when ready.")
         subprocess.run([str(ROOT / ".build/research-focus"), str(pid)], check=True, capture_output=True)
         controller.save()
         print(json.dumps({"ready": True, "referencePID": pid, "output": str(output)}), flush=True)
@@ -233,5 +259,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--session", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--reference-report", type=Path)
+    parser.add_argument("--candidate-needs-startup", action="store_true")
     args = parser.parse_args()
-    run(args.session.resolve(), args.output)
+    run(args.session.resolve(), args.output, args.reference_report, args.candidate_needs_startup)

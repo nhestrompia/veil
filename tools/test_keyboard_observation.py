@@ -25,6 +25,12 @@ class ObserverControlTests(unittest.TestCase):
         row["observerCleanupVerified"] = False
         self.assertFalse(worked(row))
 
+    def test_fixed_keycode_match_can_calibrate_without_unicode(self):
+        row = self.control()
+        row["observation"]["expectedFakePhraseMatched"] = False
+        row["observation"]["expectedFakeKeycodeSequenceMatched"] = True
+        self.assertTrue(worked(row))
+
 
 if __name__ == "__main__":
     unittest.main()

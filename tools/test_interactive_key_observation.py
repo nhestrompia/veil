@@ -1,7 +1,7 @@
 import threading
 import unittest
 
-from run_interactive_key_observation import Controller, physical_reference_worked
+from run_interactive_key_observation import Controller, physical_reference_worked, reference_input_recorded
 
 
 class InteractiveObservationTests(unittest.TestCase):
@@ -26,7 +26,7 @@ class InteractiveObservationTests(unittest.TestCase):
         self.assertFalse(controller.accept_reference("native-input"))
         self.assertEqual(controller.reference_accepted, 1)
 
-    def test_uncalibrated_reference_cannot_start_candidate(self):
+    def test_incomplete_reference_cannot_start_candidate(self):
         controller = self.controller()
         controller.phase = "ready-candidate"
         controller.report = {"samples": [{"newAcceptedSubmissions": 1}]}
@@ -35,6 +35,18 @@ class InteractiveObservationTests(unittest.TestCase):
     def test_received_keys_without_matching_phrase_do_not_calibrate(self):
         row = {"newAcceptedSubmissions": 1, "observerCleanupVerified": True,
                "observation": {"eventCount": 13, "monitorRemoved": True, "expectedFakePhraseMatched": False}}
+        self.assertFalse(physical_reference_worked(row))
+
+    def test_fixed_keycode_match_can_supply_the_reference(self):
+        row = {"newAcceptedSubmissions": 1, "observerCleanupVerified": True,
+               "observation": {"eventCount": 13, "monitorRemoved": True,
+                               "expectedFakePhraseMatched": False, "expectedFakeKeycodeSequenceMatched": True}}
+        self.assertTrue(physical_reference_worked(row))
+
+    def test_recorded_input_allows_exploration_without_becoming_decoder_calibration(self):
+        row = {"newAcceptedSubmissions": 1, "observerCleanupVerified": True,
+               "observation": {"eventCount": 14, "monitorRemoved": True, "expectedFakePhraseMatched": False}}
+        self.assertTrue(reference_input_recorded(row))
         self.assertFalse(physical_reference_worked(row))
 
 

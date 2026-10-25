@@ -13,7 +13,7 @@ button,input{font:inherit;padding:12px;display:block;margin:20px 0}button{backgr
 <button id="first" disabled>Start sample 1</button>
 <form id="sample">
 <label for="phrase">Type only native-input when the field becomes ready.</label>
-<input id="phrase" autocomplete="off" disabled>
+<input id="phrase" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" disabled>
 <button id="record" disabled>Record sample</button>
 </form>
 <p>Sample 2 opens Device Keyboard Experiment. Its mouse input is disabled. Tab to its page field if needed, type native-input, then Return. Stay in that window until the listener ends.</p>
@@ -36,6 +36,7 @@ document.querySelector('#sample').onsubmit=async event=>{
   const result=await request('reference-action',{note:document.querySelector('#phrase').value});
   submitted=result.accepted;
   document.querySelector('#phrase').value='';
+  if(!submitted)document.querySelector('#status').textContent='Use lowercase native-input, then Return.';
 };
 setInterval(async()=>{
   try{

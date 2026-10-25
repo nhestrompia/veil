@@ -18,12 +18,13 @@ BINARY = OBSERVER / "Contents/MacOS/KeyboardObservationProbe"
 
 def worked(report):
     observation = report.get("observation", {})
-    return (report.get("acceptedSubmissions") == 1 and observation.get("expectedFakePhraseMatched") is True
+    return (report.get("acceptedSubmissions") == 1
+            and (observation.get("expectedFakePhraseMatched") is True or observation.get("expectedFakeKeycodeSequenceMatched") is True)
             and observation.get("eventCount", 0) > 0 and observation.get("monitorRemoved") is True
             and report.get("observerCleanupVerified") is True and report.get("referenceCleanupVerified") is True)
 
 
-def run(output, mode):
+def run(output, mode, keycodes=False):
     output = output.resolve()
     output.mkdir(parents=True, exist_ok=False)
     oracle = Oracle()
@@ -53,7 +54,10 @@ def run(output, mode):
         if observation_path.exists() and observation_path.read_text().strip():
             report["skippedInput"] = True
         else:
-            report["input"] = probe(["input", reference["pid"], *point, "hid", "curve"], output / "input.json")
+            arguments = ["input", reference["pid"], *point, "hid", "curve"]
+            if keycodes:
+                arguments.append("keycodes")
+            report["input"] = probe(arguments, output / "input.json")
         try:
             observer.wait(timeout=20)
         except subprocess.TimeoutExpired:
@@ -88,5 +92,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--mode", choices=["appkit", "pid"], default="pid")
+    parser.add_argument("--keycodes", action="store_true")
     args = parser.parse_args()
-    run(args.output, args.mode)
+    run(args.output, args.mode, args.keycodes)

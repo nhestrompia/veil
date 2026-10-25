@@ -9,6 +9,8 @@ final class KeyboardObservationProbe {
     private var eventCount = 0
     private var unownedEventCount = 0
     private var phraseMatched = false
+    private var keyMatcher = FakeKeyMatcher()
+    private var eventsWithUnicode = 0
     private var monitor: Any?
     private var tap: CFMachPort?
     private var tapSource: CFRunLoopSource?
@@ -23,6 +25,7 @@ final class KeyboardObservationProbe {
             "status": status, "reason": reason, "targetPID": target.processIdentifier,
             "accessibility": AXIsProcessTrusted(), "listenEvents": CGPreflightListenEventAccess(),
             "eventCount": eventCount, "expectedFakePhraseMatched": phraseMatched,
+            "expectedFakeKeycodeSequenceMatched": keyMatcher.matched, "eventsWithUnicode": eventsWithUnicode,
             "unownedEventCount": unownedEventCount,
             "monitorRemoved": monitor == nil && tap == nil, "rawTextSaved": false, "keyCodesSaved": false,
             "method": method
@@ -79,9 +82,11 @@ final class KeyboardObservationProbe {
             return
         }
         eventCount += 1
+        keyMatcher.consume(event.getIntegerValueField(.keyboardEventKeycode))
         var units = [UniChar](repeating: 0, count: 16)
         var length = 0
         event.keyboardGetUnicodeString(maxStringLength: units.count, actualStringLength: &length, unicodeString: &units)
+        if length > 0 { eventsWithUnicode += 1 }
         match(String(decoding: units.prefix(min(length, units.count)), as: UTF16.self))
     }
 

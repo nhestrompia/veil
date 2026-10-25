@@ -1,0 +1,42 @@
+{
+  "pid": 26449,
+  "trialID": "c8aac9d075c02fac",
+  "url": "http://127.0.0.1:8765/trial/c8aac9d075c02fac",
+  "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+  "developerExtrasRequested": true,
+  "persistentPreferencesChanged": false,
+  "operatorFinished": true,
+  "humanBaseline": false,
+  "newSubmissions": [
+    {
+      "accepted": true
+    }
+  ],
+  "scope": "Readable local-inspector reference only. No protected-browser attachment claim.",
+  "uiObservation": {
+    "inspectorAttached": true,
+    "frontendURL": "inspector-resource:///Main.html",
+    "consolePage": "/trial/c8aac9d075c02fac",
+    "consoleMarker": "AFB-0EAA2312",
+    "consoleReadProbe": "inspector-read",
+    "consoleActionResult": "inspector-action",
+    "fixtureUIShowsCompletion": true,
+    "method": "Native computer-use UI, Inspect Element, Console expressions",
+    "persistentPreferencesChanged": false,
+    "markerMatchesOracle": true
+  },
+  "cleanup": {
+    "pid": 26449,
+    "verified": true
+  },
+  "permissions": {
+    "accessibility": true,
+    "desktopInputSafety": {
+      "available": true,
+      "blockingMouseHookPIDs": []
+    },
+    "pid": 26446,
+    "postEvents": true,
+    "screenCapture": true
+  }
+}

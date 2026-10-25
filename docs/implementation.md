@@ -210,3 +210,9 @@ All twelve private bootstrap controls complete one internal form action. Physica
 All 33 reference actions succeed. Three unchanged diagnostic processes receive eleven attacks each after private startup. Twenty-seven native attempts are explicitly refused, with no new candidate action. Six Accessibility or vision attempts remain inconclusive. Cleanup passes for all 36 processes, and all 31 Python checks pass.
 
 This is a private diagnostic startup, with no physical binding or human usability claim. See [loaded-page findings](loaded-page-findings.md).
+
+## Milestone 33: working local inspector client
+
+The native UI tool opened the reference inspector and evaluated two console expressions. The first read the expected page path and disclosure marker. The second completed one fixture action, which the independent oracle recorded. Exact process cleanup passed. The reusable controller applies only a volatile launch argument and changes no persistent preference.
+
+This establishes a working local inspector reference. Protected-shell and remote inspector attachment remain separate tests. See [local inspector findings](local-inspector-findings.md).

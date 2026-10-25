@@ -1,3 +1,17 @@
+# Research resumed
+
+The user resumed research on 2026-10-25. Milestone 32 completed 33 reference actions against 33 external attacks on three already-loaded diagnostic processes. Twenty-seven native attempts received explicit refusals. Six Accessibility or vision attempts remain inconclusive. All 36 processes passed cleanup, and all 31 Python checks pass.
+
+Milestone 33 established a working local inspector client. The native UI tool opened Inspect Element on InspectableControl and used its Console. The console read the correct marker and completed one fixture action. The independent oracle matched the marker and recorded the action. Cleanup passed. No persistent preference changed.
+
+The next test compares that working inspector route with the ordinary protected shell under the same developer-extras launch argument. This isolates the startup inspection policy from device input and capture restrictions. A refusal on this shell cannot establish every boundary of the device browser.
+
+The latest restricted browser still lacks physical visibility and usability evidence. Human-bound sessions, remote inspector attachment, and adaptive mouse research remain open. Agent-free status remains unproven.
+
+The loopback fixture is active during this research session. Recheck effective probe grants and modifying mouse hooks before each native input experiment. Do not bypass a failed guard. Use exact executable cleanup after every trial.
+
+## Previous pause record
+
 # Research paused
 
 Paused at the user's request on 2026-10-24. Do not resume tests without a new instruction. The local fixture and its keep-awake process stopped. No project research application remained during the final cleanup check.

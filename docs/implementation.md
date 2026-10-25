@@ -403,3 +403,10 @@ The full-source audit covers the discovered activity sender and shared creation 
 ## Milestone 65: direct native ownership evidence
 
 A read-only diagnostic checks WebKit ownership through its private testing getter. One matched ordinary password comparison released ownership while hidden. One stable-host comparison retained ownership while another research app became foreground. Both resumed one private task. The ordinary focus-only bypass reproduced. Cleanup passed and Secure Input returned to off. The default diagnostic was restored. See [ownership findings](secure-owner-findings.md).
+
+
+## Milestone 66: exact source staging and bounded build
+
+The build helper checks all old or new source states before writing. It refuses unknown changes and can resume partial application. All 95 Python checks pass. The exact six-file patch is applied to the pinned dependency.
+
+The first build stopped before compilation because root configurations were absent. The corrected source list includes them. The corrected scheme includes engine dependencies. A second attempt started compilation with four jobs, reduced priority, workspace outputs, a two-hour limit, and a 60 GiB disk reserve. The engine remains incomplete and runtime results remain pending. See [build instructions](../engine/README.md).

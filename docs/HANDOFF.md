@@ -157,3 +157,9 @@ The audit covers live updates, creation, remote pages, process swaps, and recove
 ## Milestone 65 direct owner readback
 
 One ordinary and one stable-host password comparison passed. The stable host retained its own WebKit ownership flag while hidden, with another research app foreground. The ordinary host released it. Both resumed one private task. The ordinary focus-only bypass reproduced. Cleanup passed and aggregate Secure Input returned to off. See [ownership findings](secure-owner-findings.md). The default diagnostic was restored. The engine source is still unpatched and unbuilt.
+
+## Milestone 66 isolated engine build
+
+The six-file patch is now applied to the separate pinned checkout. Exact hashes and retry checks pass. All 95 Python checks pass. The first build stopped before compilation because Configurations was missing. The source list and dependency scheme are corrected. The second attempt started real compilation with four jobs at reduced priority. A 60 GiB disk reserve and two-hour limit apply.
+
+Build receipts and logs are in .build/webkit-engine/. No completed engine or runtime result exists yet. Preserve the running build monitor. Verify actual UI and content-process framework identities before any live claim. See [build instructions](../engine/README.md).

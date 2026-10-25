@@ -18,7 +18,7 @@ MAX_METADATA = 2 * GIB
 MAX_SOURCE = 6 * GIB
 MIN_FREE = 60 * GIB
 REMOTE = "https://github.com/WebKit/WebKit.git"
-SOURCE_DIRECTORIES = ["Source", "Tools", "WebKitLibraries", "WebKit.xcworkspace"]
+SOURCE_DIRECTORIES = ["Configurations", "Source", "Tools", "WebKitLibraries", "WebKit.xcworkspace"]
 
 
 def require_disk(directory, minimum=MIN_FREE):

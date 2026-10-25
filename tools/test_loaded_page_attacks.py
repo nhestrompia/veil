@@ -58,6 +58,20 @@ class LoadedPageTests(unittest.TestCase):
             report = json.loads((root / "results.json").read_text())
             self.assertEqual(report["cleanup"], [{"pid": 12345, "verified": False}])
 
+    def test_unavailable_field_stops_other_routes_and_repetitions(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            permission = {"accessibility": True, "postEvents": True, "screenCapture": True,
+                          "desktopInputSafety": {"available": True, "blockingMouseHookPIDs": []}}
+            row = {"verdict": "inconclusive", "referenceFieldUnavailable": True}
+            with patch.object(loaded, "probe", return_value=permission), patch.object(loaded, "observe_console", return_value={}), patch.object(loaded, "Oracle"), patch.object(loaded, "prepare", return_value={"pid": 12345}) as prepare, patch.object(loaded, "attack", return_value=row) as attack, patch.object(loaded, "close"), contextlib.redirect_stdout(io.StringIO()):
+                report = loaded.run(root, 3, ["hid", "session"], "session")
+            prepare.assert_called_once()
+            attack.assert_called_once()
+            self.assertTrue(report["stoppedEarly"])
+            self.assertEqual(report["cleanup"], [{"pid": 12345, "verified": True}])
+            self.assertTrue(json.loads((root / "results.json").read_text())["stoppedEarly"])
+
 
 if __name__ == "__main__":
     unittest.main()

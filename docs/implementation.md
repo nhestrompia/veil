@@ -222,3 +222,9 @@ This establishes a working local inspector reference. Protected-shell and remote
 A disposable control with remote inspectability disabled still opens a local inspector under the developer-extras launch argument. Its console reads the correct marker and completes one independent fixture action. Two protected-shell trials with the startup rule offer no Inspect Element entry. A separate ordinary-input control still completes on the readable shell.
 
 One stalled UI attempt remains inconclusive. All four controller cleanups and the extra-process cleanup pass. The probe remains unchanged. This tests one local inspector route, with no device-browser or agent-free claim. See [local inspector policy findings](local-inspector-policy-findings.md).
+
+## Milestone 35: unavailable references stop the input matrix
+
+Eighteen session-insertion references lacked the fixture field. No input adapter ran, no candidate launched, and all reference processes passed cleanup. The console reported locked despite effective probe grants. The results remain inconclusive.
+
+The runner now stops at the first unavailable reference field. A regression check proves that later routes and repetitions do not run. All 32 Python checks pass. The annotated-insertion test remains pending. See [insertion-point findings](insertion-points-findings.md).

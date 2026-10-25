@@ -1,0 +1,476 @@
+{
+  "permissions": {
+    "accessibility": true,
+    "desktopInputSafety": {
+      "available": true,
+      "blockingMouseHookPIDs": []
+    },
+    "pid": 32265,
+    "postEvents": true,
+    "screenCapture": true,
+    "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+  },
+  "environment": {
+    "locked": true,
+    "advisory": true
+  },
+  "postTap": "session",
+  "humanBaseline": false,
+  "sessionOrigin": "private-diagnostic",
+  "scope": "Repeated external actions after a private diagnostic startup. No physical binding or human usability claim.",
+  "results": [
+    {
+      "pid": 32269,
+      "route": "hid",
+      "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+      "initialAcceptedSubmissions": 0,
+      "controlWorked": false,
+      "verdict": "inconclusive",
+      "windowFrame": [
+        100,
+        110,
+        1000,
+        772
+      ],
+      "error": "Reference field is unavailable",
+      "newSubmissions": [],
+      "acceptedEvents": 0,
+      "refusedEvents": 0,
+      "newEventTypes": [],
+      "target": "InspectableControl",
+      "repetition": 0
+    },
+    {
+      "pid": 32289,
+      "route": "session",
+      "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+      "initialAcceptedSubmissions": 0,
+      "controlWorked": false,
+      "verdict": "inconclusive",
+      "windowFrame": [
+        100,
+        110,
+        1000,
+        772
+      ],
+      "error": "Reference field is unavailable",
+      "newSubmissions": [],
+      "acceptedEvents": 0,
+      "refusedEvents": 0,
+      "newEventTypes": [],
+      "target": "InspectableControl",
+      "repetition": 0
+    },
+    {
+      "pid": 32308,
+      "route": "private",
+      "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+      "initialAcceptedSubmissions": 0,
+      "controlWorked": false,
+      "verdict": "inconclusive",
+      "windowFrame": [
+        100,
+        110,
+        1000,
+        772
+      ],
+      "error": "Reference field is unavailable",
+      "newSubmissions": [],
+      "acceptedEvents": 0,
+      "refusedEvents": 0,
+      "newEventTypes": [],
+      "target": "InspectableControl",
+      "repetition": 0
+    },
+    {
+      "pid": 32325,
+      "route": "curve-hid",
+      "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+      "initialAcceptedSubmissions": 0,
+      "controlWorked": false,
+      "verdict": "inconclusive",
+      "windowFrame": [
+        100,
+        110,
+        1000,
+        772
+      ],
+      "error": "Reference field is unavailable",
+      "newSubmissions": [],
+      "acceptedEvents": 0,
+      "refusedEvents": 0,
+      "newEventTypes": [],
+      "target": "InspectableControl",
+      "repetition": 0
+    },
+    {
+      "pid": 32344,
+      "route": "keycodes-hid",
+      "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+      "initialAcceptedSubmissions": 0,
+      "controlWorked": false,
+      "verdict": "inconclusive",
+      "windowFrame": [
+        100,
+        110,
+        1000,
+        772
+      ],
+      "error": "Reference field is unavailable",
+      "newSubmissions": [],
+      "acceptedEvents": 0,
+      "refusedEvents": 0,
+      "newEventTypes": [],
+      "target": "InspectableControl",
+      "repetition": 0
+    },
+    {
+      "pid": 32360,
+      "route": "pid-keys-keycodes-hid",
+      "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+      "initialAcceptedSubmissions": 0,
+      "controlWorked": false,
+      "verdict": "inconclusive",
+      "windowFrame": [
+        100,
+        110,
+        1000,
+        772
+      ],
+      "error": "Reference field is unavailable",
+      "newSubmissions": [],
+      "acceptedEvents": 0,
+      "refusedEvents": 0,
+      "newEventTypes": [],
+      "target": "InspectableControl",
+      "repetition": 0
+    },
+    {
+      "pid": 32376,
+      "route": "hid",
+      "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+      "initialAcceptedSubmissions": 0,
+      "controlWorked": false,
+      "verdict": "inconclusive",
+      "windowFrame": [
+        100,
+        110,
+        1000,
+        772
+      ],
+      "error": "Reference field is unavailable",
+      "newSubmissions": [],
+      "acceptedEvents": 0,
+      "refusedEvents": 0,
+      "newEventTypes": [],
+      "target": "InspectableControl",
+      "repetition": 1
+    },
+    {
+      "pid": 32392,
+      "route": "session",
+      "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+      "initialAcceptedSubmissions": 0,
+      "controlWorked": false,
+      "verdict": "inconclusive",
+      "windowFrame": [
+        100,
+        110,
+        1000,
+        772
+      ],
+      "error": "Reference field is unavailable",
+      "newSubmissions": [],
+      "acceptedEvents": 0,
+      "refusedEvents": 0,
+      "newEventTypes": [],
+      "target": "InspectableControl",
+      "repetition": 1
+    },
+    {
+      "pid": 32411,
+      "route": "private",
+      "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+      "initialAcceptedSubmissions": 0,
+      "controlWorked": false,
+      "verdict": "inconclusive",
+      "windowFrame": [
+        100,
+        110,
+        1000,
+        772
+      ],
+      "error": "Reference field is unavailable",
+      "newSubmissions": [],
+      "acceptedEvents": 0,
+      "refusedEvents": 0,
+      "newEventTypes": [],
+      "target": "InspectableControl",
+      "repetition": 1
+    },
+    {
+      "pid": 32427,
+      "route": "curve-hid",
+      "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+      "initialAcceptedSubmissions": 0,
+      "controlWorked": false,
+      "verdict": "inconclusive",
+      "windowFrame": [
+        100,
+        110,
+        1000,
+        772
+      ],
+      "error": "Reference field is unavailable",
+      "newSubmissions": [],
+      "acceptedEvents": 0,
+      "refusedEvents": 0,
+      "newEventTypes": [],
+      "target": "InspectableControl",
+      "repetition": 1
+    },
+    {
+      "pid": 32443,
+      "route": "keycodes-hid",
+      "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+      "initialAcceptedSubmissions": 0,
+      "controlWorked": false,
+      "verdict": "inconclusive",
+      "windowFrame": [
+        100,
+        110,
+        1000,
+        772
+      ],
+      "error": "Reference field is unavailable",
+      "newSubmissions": [],
+      "acceptedEvents": 0,
+      "refusedEvents": 0,
+      "newEventTypes": [],
+      "target": "InspectableControl",
+      "repetition": 1
+    },
+    {
+      "pid": 32459,
+      "route": "pid-keys-keycodes-hid",
+      "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+      "initialAcceptedSubmissions": 0,
+      "controlWorked": false,
+      "verdict": "inconclusive",
+      "windowFrame": [
+        100,
+        110,
+        1000,
+        772
+      ],
+      "error": "Reference field is unavailable",
+      "newSubmissions": [],
+      "acceptedEvents": 0,
+      "refusedEvents": 0,
+      "newEventTypes": [],
+      "target": "InspectableControl",
+      "repetition": 1
+    },
+    {
+      "pid": 32478,
+      "route": "hid",
+      "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+      "initialAcceptedSubmissions": 0,
+      "controlWorked": false,
+      "verdict": "inconclusive",
+      "windowFrame": [
+        100,
+        110,
+        1000,
+        772
+      ],
+      "error": "Reference field is unavailable",
+      "newSubmissions": [],
+      "acceptedEvents": 0,
+      "refusedEvents": 0,
+      "newEventTypes": [],
+      "target": "InspectableControl",
+      "repetition": 2
+    },
+    {
+      "pid": 32494,
+      "route": "session",
+      "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+      "initialAcceptedSubmissions": 0,
+      "controlWorked": false,
+      "verdict": "inconclusive",
+      "windowFrame": [
+        100,
+        110,
+        1000,
+        772
+      ],
+      "error": "Reference field is unavailable",
+      "newSubmissions": [],
+      "acceptedEvents": 0,
+      "refusedEvents": 0,
+      "newEventTypes": [],
+      "target": "InspectableControl",
+      "repetition": 2
+    },
+    {
+      "pid": 32512,
+      "route": "private",
+      "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+      "initialAcceptedSubmissions": 0,
+      "controlWorked": false,
+      "verdict": "inconclusive",
+      "windowFrame": [
+        100,
+        110,
+        1000,
+        772
+      ],
+      "error": "Reference field is unavailable",
+      "newSubmissions": [],
+      "acceptedEvents": 0,
+      "refusedEvents": 0,
+      "newEventTypes": [],
+      "target": "InspectableControl",
+      "repetition": 2
+    },
+    {
+      "pid": 32528,
+      "route": "curve-hid",
+      "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+      "initialAcceptedSubmissions": 0,
+      "controlWorked": false,
+      "verdict": "inconclusive",
+      "windowFrame": [
+        100,
+        110,
+        1000,
+        772
+      ],
+      "error": "Reference field is unavailable",
+      "newSubmissions": [],
+      "acceptedEvents": 0,
+      "refusedEvents": 0,
+      "newEventTypes": [],
+      "target": "InspectableControl",
+      "repetition": 2
+    },
+    {
+      "pid": 32548,
+      "route": "keycodes-hid",
+      "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+      "initialAcceptedSubmissions": 0,
+      "controlWorked": false,
+      "verdict": "inconclusive",
+      "windowFrame": [
+        100,
+        110,
+        1000,
+        772
+      ],
+      "error": "Reference field is unavailable",
+      "newSubmissions": [],
+      "acceptedEvents": 0,
+      "refusedEvents": 0,
+      "newEventTypes": [],
+      "target": "InspectableControl",
+      "repetition": 2
+    },
+    {
+      "pid": 32564,
+      "route": "pid-keys-keycodes-hid",
+      "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+      "initialAcceptedSubmissions": 0,
+      "controlWorked": false,
+      "verdict": "inconclusive",
+      "windowFrame": [
+        100,
+        110,
+        1000,
+        772
+      ],
+      "error": "Reference field is unavailable",
+      "newSubmissions": [],
+      "acceptedEvents": 0,
+      "refusedEvents": 0,
+      "newEventTypes": [],
+      "target": "InspectableControl",
+      "repetition": 2
+    }
+  ],
+  "cleanup": [
+    {
+      "pid": 32269,
+      "verified": true
+    },
+    {
+      "pid": 32289,
+      "verified": true
+    },
+    {
+      "pid": 32308,
+      "verified": true
+    },
+    {
+      "pid": 32325,
+      "verified": true
+    },
+    {
+      "pid": 32344,
+      "verified": true
+    },
+    {
+      "pid": 32360,
+      "verified": true
+    },
+    {
+      "pid": 32376,
+      "verified": true
+    },
+    {
+      "pid": 32392,
+      "verified": true
+    },
+    {
+      "pid": 32411,
+      "verified": true
+    },
+    {
+      "pid": 32427,
+      "verified": true
+    },
+    {
+      "pid": 32443,
+      "verified": true
+    },
+    {
+      "pid": 32459,
+      "verified": true
+    },
+    {
+      "pid": 32478,
+      "verified": true
+    },
+    {
+      "pid": 32494,
+      "verified": true
+    },
+    {
+      "pid": 32512,
+      "verified": true
+    },
+    {
+      "pid": 32528,
+      "verified": true
+    },
+    {
+      "pid": 32548,
+      "verified": true
+    },
+    {
+      "pid": 32564,
+      "verified": true
+    }
+  ],
+  "annotatedInsertionTestRan": false
+}

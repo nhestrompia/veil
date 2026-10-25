@@ -147,6 +147,7 @@ def attack(session, route, output, oracle, control=None, post_tap="hid"):
                 field = next((item for item in tree.get("elements", []) if item.get("AXRole") == "AXTextField"
                               and "Enter native-input" in [item.get("AXDescription"), item.get("AXTitle")]), None)
                 if field is None:
+                    row["referenceFieldUnavailable"] = True
                     raise RuntimeError("Reference field is unavailable")
                 point = [field["position"][0] + field["size"][0] / 2, field["position"][1] + field["size"][1] / 2]
                 row["coordinateSource"] = "Readable reference Accessibility field"
@@ -202,6 +203,10 @@ def run(output, repetitions, routes, post_tap):
             finally:
                 close_checked(session)
             print(json.dumps({key: row.get(key) for key in ["target", "route", "repetition", "verdict"]}), flush=True)
+            if row.get("referenceFieldUnavailable"):
+                report.update(stoppedEarly=True, stopReason="Readable reference field unavailable. No further trials ran.")
+                save()
+                return report
         usable = [route for route in routes if controls[route]["verdict"] == "bypass"]
         if not usable:
             continue

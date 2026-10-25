@@ -1,6 +1,6 @@
 # Current research state
 
-Updated 2026-10-25. Milestones 50 and 51 are committed. Milestone 52 completed a Safari remote-inspector control. Milestone 53 recorded failed root calibration. Milestone 54 adds bounded token discovery and matched renderer reads. Milestone 55 completes native host Reload comparisons. Milestone 56 repeats native actions and semantics on the current physical process. Agent-free operation remains unproven.
+Updated 2026-10-25. Milestone 57 adds engine feature restrictions and native export policy in source. The live physical browser remains unchanged. Milestones 50 and 51 are committed. Milestone 52 completed a Safari remote-inspector control. Milestone 53 recorded failed root calibration. Milestone 54 adds bounded token discovery and matched renderer reads. Milestone 55 completes native host Reload comparisons. Milestone 56 repeats native actions and semantics on the current physical process. Agent-free operation remains unproven.
 
 ## Current priority and remote control
 
@@ -27,6 +27,8 @@ Three native host references completed external Reload actions with matching pag
 The user authenticated the latest approved exact-bundle re-add. Effective Accessibility is true. No permission question remains pending. Keep the current helper frozen. Milestone 56 repeated native input and semantic tests on PID 61893. Twenty-nine native attempts were blocked; twenty-two cases remain inconclusive. No accepted input or new website action appeared. Three semantic comparisons passed their reference controls; candidate targets were unavailable. See [current session findings](current-session-attack-findings.md).
 
 The new controller checks foreground activation before window geometry. An earlier setup run sent no candidate input and stopped with cleanup. The follow-up repaired activation for both references and candidate. Keep failed and skipped cases visible. Final checks found no temporary reference or probe processes. The browser and fixture remain running.
+
+The next task is representative frame and editor coverage with the new policy. Separate diagnostics contain the new configuration. They require no new permission. The source policy disables passkeys, native sharing, asynchronous clipboard, Apple Pay, Writing Tools, and element fullscreen. Three valid interface controls passed. Native selection export remains inconclusive because its readable control returned empty data. One private authorized keyboard task passed. See [content policy findings](content-policy-findings.md). Do not attribute new-source results to the frozen physical browser.
 
 Remaining action priorities include failed PID-directed mouse calibration, direct inspector attachment beyond discovery, exports, session reuse, and broader website compatibility. Unfiltered capture on this physical build remains separate. No permission question is pending.
 
@@ -64,7 +66,7 @@ The current observation disproves keyboard confidentiality against this permissi
 
 Direct remote attachment beyond discovery, unfiltered capture on this physical build, renderer semantics, broader session privacy, and general website compatibility remain open. The browser supports only the measured built-in keyboard and US ASCII. Pointer input is disabled. The device policy does not attest a human or cryptographically attest hardware.
 
-All 80 Python checks pass. Swift matcher, timing, and renderer-boundary checks pass. See [implementation milestones](implementation.md) for the full record.
+All 82 Python checks pass. Swift matcher, timing, and renderer-boundary checks pass. See [implementation milestones](implementation.md) for the full record.
 
 ## Desktop safeguards
 

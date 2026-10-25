@@ -23,6 +23,7 @@ final class AXBoundaryWindow: NSWindow {
             let editor = DeviceFieldEditor(frame: .zero)
             editor.isFieldEditor = true
             editor.isRichText = false
+            if #available(macOS 15.0, *) { editor.writingToolsBehavior = .none }
             deviceFieldEditor = editor
         }
         return deviceFieldEditor
@@ -45,7 +46,7 @@ extension AXBoundaryWindow: NSDraggingDestination {
 #endif
 
 @MainActor
-final class AXBoundaryWebView: WKWebView {
+final class AXBoundaryWebView: RestrictedWebView {
     #if DEVICE_KEYBOARD_EXPERIMENT
     override func draggingEntered(_ sender: any NSDraggingInfo) -> NSDragOperation { DeviceDragGate.refuseOperation("web.entered") }
     override func draggingUpdated(_ sender: any NSDraggingInfo) -> NSDragOperation { DeviceDragGate.refuseOperation("web.updated") }

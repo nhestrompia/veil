@@ -8,6 +8,15 @@ import Foundation
         for value in rejected { precondition(!BrowserPolicy.allows(URL(string: value)!), value) }
         precondition(BrowserPolicy.address("example.com")?.absoluteString == "https://example.com")
         precondition(BrowserPolicy.address("") == nil)
-        print("Browser policy: 12 cases passed")
+        let page = URL(string: "https://example.com/page")!
+        precondition(BrowserPolicy.allowsResponse(url: page, canShowMIMEType: true, contentDisposition: nil))
+        precondition(BrowserPolicy.allowsResponse(url: page, canShowMIMEType: true, contentDisposition: "inline; filename=a.html"))
+        for disposition in ["attachment", " ATTACHMENT ; filename=a.html"] {
+            precondition(!BrowserPolicy.allowsResponse(url: page, canShowMIMEType: true, contentDisposition: disposition))
+        }
+        precondition(!BrowserPolicy.allowsResponse(url: page, canShowMIMEType: false, contentDisposition: nil))
+        precondition(!BrowserPolicy.allowsResponse(url: URL(string: "file:///tmp/page.html"), canShowMIMEType: true, contentDisposition: nil))
+        precondition(!BrowserPolicy.allowsResponse(url: nil, canShowMIMEType: true, contentDisposition: nil))
+        print("Browser address and response policy checks passed")
     }
 }

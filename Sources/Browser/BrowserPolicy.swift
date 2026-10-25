@@ -13,4 +13,11 @@ struct BrowserPolicy {
               allows(url) else { return nil }
         return url
     }
+
+    static func allowsResponse(url: URL?, canShowMIMEType: Bool, contentDisposition: String?) -> Bool {
+        guard let url, allows(url), canShowMIMEType else { return false }
+        let disposition = contentDisposition?.split(separator: ";", maxSplits: 1).first?
+            .trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        return disposition != "attachment"
+    }
 }

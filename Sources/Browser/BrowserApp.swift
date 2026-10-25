@@ -24,8 +24,17 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
         let configuration = WKWebViewConfiguration()
         configuration.websiteDataStore = .nonPersistent()
         configuration.preferences.javaScriptCanOpenWindowsAutomatically = false
+        #if !INSPECTION_CONTROL
+        guard BrowserRuntimePolicy.configureContent(configuration) else {
+            print("Browser startup refused: required content restrictions are unavailable.")
+            NSApp.terminate(nil)
+            return
+        }
+        #endif
         #if AX_BOUNDARY_EXPERIMENT || DEVICE_KEYBOARD_EXPERIMENT
         webView = AXBoundaryWebView(frame: .zero, configuration: configuration)
+        #elseif !INSPECTION_CONTROL
+        webView = RestrictedWebView(frame: .zero, configuration: configuration)
         #else
         webView = WKWebView(frame: .zero, configuration: configuration)
         #endif
@@ -47,6 +56,13 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
         #else
         let name = "AgentFreeBrowser Research"
         #endif
+        #endif
+        #if !INSPECTION_CONTROL
+        guard BrowserRuntimePolicy.contentIsRestricted(webView.configuration) else {
+            print("Browser startup refused: effective content restrictions failed readback.")
+            NSApp.terminate(nil)
+            return
+        }
         #endif
         webView.navigationDelegate = self
         webView.uiDelegate = self
@@ -188,6 +204,24 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
         #if DEVICE_KEYBOARD_EXPERIMENT
         status.stringValue = "Built-in keyboard only. Command-L selects the address. Mouse input is disabled. US ASCII only. Research build."
         #endif
+    }
+
+    func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse,
+                 decisionHandler: @escaping @MainActor @Sendable (WKNavigationResponsePolicy) -> Void) {
+        let response = navigationResponse.response
+        let disposition = (response as? HTTPURLResponse)?.value(forHTTPHeaderField: "Content-Disposition")
+        let allowed = BrowserPolicy.allowsResponse(url: response.url,
+            canShowMIMEType: navigationResponse.canShowMIMEType, contentDisposition: disposition)
+        if !allowed { status.stringValue = "Download or unsupported response refused by the research policy." }
+        decisionHandler(allowed ? .allow : .cancel)
+    }
+
+    func webView(_ webView: WKWebView, navigationAction: WKNavigationAction, didBecome download: WKDownload) {
+        download.cancel { _ in }
+    }
+
+    func webView(_ webView: WKWebView, navigationResponse: WKNavigationResponse, didBecome download: WKDownload) {
+        download.cancel { _ in }
     }
 
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: any Error) {

@@ -5,7 +5,7 @@ app=dist/DeviceDispatchControl.app
 mkdir -p .build/module-cache artifacts/address-dispatch "$app/Contents/MacOS"
 xcrun swiftc -swift-version 6 -warnings-as-errors -parse-as-library -O \
     -D DEVICE_KEYBOARD_EXPERIMENT -target arm64-apple-macosx14.0 \
-    -module-cache-path .build/module-cache Sources/Browser/AXBoundary.swift \
+    -module-cache-path .build/module-cache Sources/Browser/AXBoundary.swift Sources/Browser/RestrictedWebView.swift \
     Sources/Browser/DeviceKeyboard.swift Sources/Browser/HIDSourcePolicy.swift Sources/Diagnostics/AddressDispatchControl.swift -o "$app/Contents/MacOS/DeviceDispatchControl"
 cat > "$app/Contents/Info.plist" <<EOF
 <?xml version="1.0" encoding="UTF-8"?>

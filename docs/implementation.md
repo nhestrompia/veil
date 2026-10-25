@@ -341,3 +341,9 @@ The approved exact-bundle re-add restored effective Accessibility after user aut
 The unchanged PID 61893 received 29 calibrated native blocks and admitted no input. Twenty-two cases remain inconclusive across the complete matrix and its follow-up. The fixture recorded no new website action. Three semantic references completed their actions; candidate targets remained unavailable, so no candidate semantic action ran.
 
 The new controller pairs fresh references with this physical session. It checks foreground activation before geometry, preserves failed controls, and stops on accepted input or missing candidate geometry. An interrupted geometry setup remains separate evidence. All temporary processes passed cleanup. All 80 Python checks pass. See [current session findings](current-session-attack-findings.md).
+
+## Milestone 57: engine and content-export policy
+
+The protected configuration disables sharing, asynchronous clipboard access, WebAuthn, Apple Pay, Writing Tools, and element fullscreen. Exact private feature keys and effective readbacks are required before page loading. Three readable views exposed the first three interfaces; three protected views did not. An unknown required key correctly refused startup.
+
+A restricted web view refuses native export responders and Services. Response checks and download cancellation cover response-side export paths. Native selection export remains inconclusive because its readable marker control failed. The new policy completed one private authorized keyboard task. The physical PID 61893 remains unchanged. All 82 Python checks, Swift policy checks, and device dispatch checks pass. See [content policy findings](content-policy-findings.md).

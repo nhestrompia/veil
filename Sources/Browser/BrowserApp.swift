@@ -181,7 +181,9 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
 
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction,
                  decisionHandler: @escaping @MainActor @Sendable (WKNavigationActionPolicy) -> Void) {
-        guard let url = navigationAction.request.url, BrowserPolicy.allows(url), !navigationAction.shouldPerformDownload else {
+        guard let url = navigationAction.request.url,
+              BrowserPolicy.allowsNavigation(url, isMainFrame: navigationAction.targetFrame?.isMainFrame != false),
+              !navigationAction.shouldPerformDownload else {
             status.stringValue = "Navigation refused by the research policy."
             decisionHandler(.cancel)
             return
@@ -211,7 +213,8 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
         let response = navigationResponse.response
         let disposition = (response as? HTTPURLResponse)?.value(forHTTPHeaderField: "Content-Disposition")
         let allowed = BrowserPolicy.allowsResponse(url: response.url,
-            canShowMIMEType: navigationResponse.canShowMIMEType, contentDisposition: disposition)
+            canShowMIMEType: navigationResponse.canShowMIMEType, contentDisposition: disposition,
+            isMainFrame: navigationResponse.isForMainFrame)
         if !allowed { status.stringValue = "Download or unsupported response refused by the research policy." }
         decisionHandler(allowed ? .allow : .cancel)
     }

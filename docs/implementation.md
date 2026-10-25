@@ -361,3 +361,10 @@ Three activation-only comparisons each completed a new candidate action. The hel
 Separate activation-filter and logical-key diagnostics stopped their matched focus actions and preserved private typing after return. Both still completed visibility-triggered actions. Three final activation-filter candidates each recorded two new actions during hide and restore, with zero admitted input. The password control failed to switch away, so its candidate comparison was skipped.
 
 No failed hypothesis is enabled in production. All temporary processes passed cleanup, and Secure Event Input was off afterward. All 87 Python checks pass. See [lifecycle findings](lifecycle-findings.md).
+
+
+## Milestone 60: embedded documents and the complete editor matrix
+
+Navigation and response policies now accept exact about:blank and about:srcdoc documents only inside frames. Top-level addresses and other schemes remain restricted. The srcdoc task passed and refused its matched HID attempt.
+
+All nine private editor/frame baselines passed. Their 45 external cases produced 27 native blocks and 18 inconclusive results, with no new task through those routes. Every temporary process passed cleanup. All 87 Python checks, Swift policy checks, device-dispatch checks, and both production type checks pass. The focus and visibility bypasses remain open. See [embedded-document findings](embedded-document-findings.md).

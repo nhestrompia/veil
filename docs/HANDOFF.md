@@ -1,6 +1,6 @@
 # Current research state
 
-Updated 2026-10-25. Milestones 50 and 51 are committed. Milestone 52 completes a Safari remote-inspector control and records candidate discovery. Agent-free operation remains unproven.
+Updated 2026-10-25. Milestones 50 and 51 are committed. Milestone 52 completed a Safari remote-inspector control. Milestone 53 adds a scoped renderer helper and records failed root calibration. Agent-free operation remains unproven.
 
 ## Current priority and remote control
 
@@ -11,6 +11,14 @@ Safari Web Inspector read the reference marker and completed one accepted task. 
 The user approved a temporary developer-setting toggle and restoration. The UI confirmed its final state was off. Research Safari windows closed and the reference passed cleanup. A broader inspection-list read was rejected because of unrelated tab URLs. The safer Mac-only menu completed discovery.
 
 DockDoor and LinearMouse had restarted. Their verified processes stopped before input, and the safeguard then reported no blocking hooks. Recheck before every later attack.
+
+## Renderer helper
+
+The user approved RendererAXProbe Accessibility. Its effective grant is true. Its executable SHA256 is `59600752f1b5672b0080cda4c5975c8bbfdbf80d47ed5f9e0819d88d8d871aa8`. It installs no input hooks. It checks exact research paths, process start times, and OS responsibility before reads.
+
+Two direct-root references failed. Host initialization changed the renderer root from unavailable to AXApplication, with no controls or marker. Candidate AX queries were skipped. All cleanups passed. See [renderer root findings](renderer-root-findings.md).
+
+The next hypothesis is bounded remote-token discovery, with the same research ownership rules. No token scan ran yet. Preserve the current helper and its effective grant until a concrete replacement is ready. No app-only reset for this new helper was requested or approved.
 
 ## Latest result
 
@@ -46,7 +54,7 @@ The current observation disproves keyboard confidentiality against this permissi
 
 Direct remote attachment beyond discovery, unfiltered capture on this physical build, renderer semantics, broader session privacy, and general website compatibility remain open. The browser supports only the measured built-in keyboard and US ASCII. Pointer input is disabled. The device policy does not attest a human or cryptographically attest hardware.
 
-All 66 Python checks pass. Swift matcher and timing checks pass. See [implementation milestones](implementation.md) for the full record.
+All 70 Python checks pass. Swift matcher, timing, and renderer-boundary checks pass. See [implementation milestones](implementation.md) for the full record.
 
 ## Desktop safeguards
 

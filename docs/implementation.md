@@ -317,3 +317,9 @@ Both password listeners ended on later focus loss. No physical password claim fo
 Safari attached to the inspectable reference without local developer extras. Its Console read the fresh marker and completed one independent task. The Mac target menu omitted the unchanged candidate. This is discovery evidence, not a direct connection refusal.
 
 The approved temporary Safari setting returned to off. Reference cleanup passed. The PRD now separates recognition of physical typing from autonomous input. See [remote findings](safari-remote-findings.md).
+
+## Milestone 53: scoped renderer root calibration
+
+A separately approved AX helper discovers only research-owned WebContent processes. It verifies exact paths and process start times. Its fixed action adapter requires the disposable loopback fixture.
+
+Both direct-renderer reference attempts failed. Host initialization exposed an application role but no controls or page marker. Both candidate queries were skipped. All cleanup checks passed. All 70 Python checks and the Swift ownership and URL checks pass. See [renderer findings](renderer-root-findings.md).

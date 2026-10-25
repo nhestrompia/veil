@@ -252,3 +252,9 @@ No classifier trains, no input event posts, and no live replay result follows. T
 Off/on and exact-bundle Add did not restore effective Input Monitoring. Read-only signature checks passed, but TCC examined an older code requirement. A user-approved reset of this app's ListenEvent decision, followed by exact-bundle Add, restored access.
 
 The read-only identity helper compiles and refuses unrelated PIDs. Its diagnostic browser passed cleanup. No other permission reset. This restores a test prerequisite, not a prevention result. See [grant recovery findings](grant-recovery-findings.md).
+
+## Milestone 40: startup attacks with the new source policy
+
+Fifteen readable startup controls completed. Fifteen matched fresh candidates had a ready device reader but showed no binding or task action. All thirty processes passed cleanup. Fresh native calibration supplies 27 completed references and six inconclusive PID mouse references.
+
+The physical-session runner now skips failed controls, matches insertion points, checks hooks, and verifies cleanup. Four new checks pass, and all forty Python checks pass. Physical use remains pending. See [source-policy startup findings](source-policy-startup-findings.md).

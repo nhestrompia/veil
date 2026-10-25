@@ -3,14 +3,14 @@
 import argparse
 import hashlib
 import json
-import os
 from pathlib import Path
-import re
-import signal
 import subprocess
 import time
 
 from run_native import ROOT, Oracle, probe
+from native_environment import require_input_safety
+from process_cleanup import matching_pids, process_matches, stop_launched, stop_owned
+from run_drag_delivery import launch, ready
 
 NAME = "DeviceKeyboardExperiment"
 BINARY = ROOT / f"dist/{NAME}.app/Contents/MacOS/{NAME}"
@@ -18,8 +18,7 @@ ROUTES = ["session", "hid", "private", "pid-hid", "curve-hid", "keycodes-hid", "
 
 
 def active(session):
-    process = subprocess.run(["ps", "-p", str(session["pid"]), "-o", "comm="], capture_output=True, text=True)
-    if process.stdout.strip() != str(BINARY):
+    if not process_matches(session["pid"], BINARY):
         raise RuntimeError("The recorded research browser is no longer running")
     if hashlib.sha256(BINARY.read_bytes()).hexdigest() != session["binarySHA256"]:
         raise RuntimeError("The browser changed after session start")
@@ -33,31 +32,35 @@ def start(path):
             pass
         else:
             raise RuntimeError("A recorded research session is already running")
+    if matching_pids(BINARY):
+        raise RuntimeError("A research browser already exists. Refusing a duplicate physical-session window.")
     path.parent.mkdir(parents=True, exist_ok=True)
     log_path = path.with_suffix(".log")
     trial = Oracle().create()
-    log_path.write_text("")
-    launcher = subprocess.Popen(["open", "-n", "-W", str(ROOT / f"dist/{NAME}.app"),
-                                "--stdout", str(log_path), "--stderr", str(log_path), "--args", "--url", trial["url"]],
-                               stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    launcher, binary = launch(NAME, log_path, ["--url", trial["url"]])
     pid = None
-    for _ in range(60):
-        match = re.search(r"Browser ready: pid=(\d+)", log_path.read_text())
-        if match:
-            pid = int(match[1])
-            break
-        time.sleep(0.1)
-    if pid is None:
+    try:
+        pid = ready(log_path, r"Browser ready: pid=(\d+)")
+        session = {"pid": pid, "launcherPID": launcher.pid, "trial": trial, "log": str(log_path),
+                   "binarySHA256": hashlib.sha256(BINARY.read_bytes()).hexdigest()}
+        active(session)
+        path.write_text(json.dumps(session, indent=2))
+    except BaseException:
+        cleaned = stop_launched(launcher, binary, pid)
         launcher.terminate()
-        raise RuntimeError("Research browser readiness failed")
-    session = {"pid": pid, "launcherPID": launcher.pid, "trial": trial, "log": str(log_path),
-               "binarySHA256": hashlib.sha256(BINARY.read_bytes()).hexdigest()}
-    path.write_text(json.dumps(session, indent=2))
-    active(session)
+        try:
+            launcher.wait(timeout=3)
+        except subprocess.TimeoutExpired:
+            launcher.kill()
+            launcher.wait()
+        if not cleaned:
+            raise RuntimeError("Physical-session cleanup failed. Stop desktop tests.")
+        raise
     print(json.dumps({"pid": pid, "trial": trial["id"], "sessionFile": str(path)}), flush=True)
 
 
-def attack(path, controls, repetitions, confirmed):
+def attack(path, controls, repetitions, confirmed, routes=None, post_tap="hid"):
+    routes = ROUTES if routes is None else routes
     session = json.loads(path.read_text())
     active(session)
     oracle = Oracle()
@@ -65,9 +68,16 @@ def attack(path, controls, repetitions, confirmed):
     log_path = Path(session["log"])
     if not confirmed or not any(s["accepted"] for s in before["submissions"]) or "DEVICE_KEYBOARD bound=true" not in log_path.read_text():
         raise RuntimeError("Need declared physical completion, a bound device, and an accepted website action in this same session")
-    control_rows = json.loads(controls.read_text())["results"]
+    permissions = probe(["permissions"], path.parent / "session-attack-permissions.json")
+    require_input_safety(permissions)
+    if not permissions.get("postEvents"):
+        raise RuntimeError("The probe needs effective event-posting access")
+    control_report = json.loads(controls.read_text())
+    if control_report.get("postTap", "hid") != post_tap:
+        raise RuntimeError("Control insertion point differs from the requested session adapter")
+    control_rows = control_report["results"]
     probe_hash = hashlib.sha256((ROOT / "dist/NativeProbe.app/Contents/MacOS/NativeProbe").read_bytes()).hexdigest()
-    for route in ROUTES:
+    for route in routes:
         for repetition in range(repetitions):
             control = next((row for row in control_rows if row["target"] == "InspectableControl" and
                             row["route"] == route and row["repetition"] == repetition), None)
@@ -76,14 +86,24 @@ def attack(path, controls, repetitions, confirmed):
     output = path.parent / "device-session-attacks"
     output.mkdir(parents=True, exist_ok=True)
     summary = {"results": [], "binarySHA256": session["binarySHA256"], "trial": session["trial"]["id"],
+               "postTap": post_tap,
                "operatorDeclaresPhysicalCompletion": True, "bootstrapAttested": False,
                "physicalInputAbsenceVerified": False, "sessionPID": session["pid"],
                "routeContract": "Same physically calibrated browser process. Count only new independent submissions. Fixture clears its field after accepted actions."}
-    for route in ROUTES:
+    for route in routes:
         for repetition in range(repetitions):
             active(session)
+            if hashlib.sha256((ROOT / "dist/NativeProbe.app/Contents/MacOS/NativeProbe").read_bytes()).hexdigest() != probe_hash:
+                raise RuntimeError("The probe changed after reference calibration")
             control = next((r for r in control_rows if r["target"] == "InspectableControl" and
                             r["route"] == route and r["repetition"] == repetition), None)
+            if control and control.get("verdict") != "bypass":
+                row = {"route": route, "repetition": repetition, "verdict": "inconclusive",
+                       "skipped": True, "controlWorked": False, "reason": "Matched reference did not complete"}
+                summary["results"].append(row)
+                (output / "results.json").write_text(json.dumps(summary, indent=2))
+                print(json.dumps(row), flush=True)
+                continue
             if not control or "fieldCenter" not in control:
                 raise RuntimeError(f"Missing working control for {route} repetition {repetition}")
             old_state = oracle.state(session["trial"])
@@ -99,6 +119,7 @@ def attack(path, controls, repetitions, confirmed):
                 elif route.startswith("pid-"): args.append("pid")
                 if route.startswith("curve-"): args.append("curve")
                 if "keycodes" in route.split("-"): args.append("keycodes")
+            if post_tap != "hid": args.append(f"--{post_tap}-tap")
             attempt = probe(args, prefix.with_suffix(".attempt.json"))
             time.sleep(0.5)
             state = oracle.state(session["trial"])
@@ -125,10 +146,14 @@ if __name__ == "__main__":
     parser.add_argument("--controls", type=Path, default=ROOT / "artifacts/device-controls-expanded/results.json")
     parser.add_argument("--repetitions", type=int, default=3)
     parser.add_argument("--operator-physical-completion-confirmed", action="store_true")
+    parser.add_argument("--routes", nargs="+", choices=ROUTES, default=ROUTES)
+    parser.add_argument("--post-tap", choices=["hid", "session", "annotated"], default="hid")
     args = parser.parse_args()
     if args.action == "start": start(args.session.resolve())
-    elif args.action == "attack": attack(args.session.resolve(), args.controls, args.repetitions, args.operator_physical_completion_confirmed)
+    elif args.action == "attack": attack(args.session.resolve(), args.controls, args.repetitions,
+        args.operator_physical_completion_confirmed, args.routes, args.post_tap)
     else:
         session = json.loads(args.session.read_text())
         active(session)
-        os.kill(session["pid"], signal.SIGTERM)
+        if not stop_owned(session["pid"], BINARY):
+            raise RuntimeError("Physical-session cleanup failed. Stop desktop tests.")

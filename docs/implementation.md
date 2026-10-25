@@ -204,3 +204,9 @@ This concerns software startup attempts, with no new physical usability or hardw
 All three stream references disclose their markers. All three restricted stream captures recover only the owned research backdrop. Three window-image references disclose their markers, while three restricted window images do not. System window screenshots work on all three references and fail on all three restricted diagnostics. Those failures remain inconclusive.
 
 All twelve private bootstrap controls complete one internal form action. Physical visibility on the latest restricted binary remains unverified. The user requested a pause. The fixture stopped, and no research application remained. Resume details are in [the handoff note](HANDOFF.md).
+
+## Milestone 32: external attacks against an already-loaded page
+
+All 33 reference actions succeed. Three unchanged diagnostic processes receive eleven attacks each after private startup. Twenty-seven native attempts are explicitly refused, with no new candidate action. Six Accessibility or vision attempts remain inconclusive. Cleanup passes for all 36 processes, and all 31 Python checks pass.
+
+This is a private diagnostic startup, with no physical binding or human usability claim. See [loaded-page findings](loaded-page-findings.md).

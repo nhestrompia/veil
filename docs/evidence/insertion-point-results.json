@@ -1,0 +1,2406 @@
+{
+  "session": {
+    "permissions": {
+      "accessibility": true,
+      "desktopInputSafety": {
+        "available": true,
+        "blockingMouseHookPIDs": []
+      },
+      "pid": 34743,
+      "postEvents": true,
+      "screenCapture": true,
+      "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+    },
+    "environment": {
+      "locked": null,
+      "reason": "Console lock flag unavailable",
+      "advisory": true
+    },
+    "postTap": "session",
+    "humanBaseline": false,
+    "sessionOrigin": "private-diagnostic",
+    "scope": "Repeated external actions after a private diagnostic startup. No physical binding or human usability claim.",
+    "results": [
+      {
+        "pid": 34747,
+        "route": "hid",
+        "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "bypass",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 34747,
+          "postTap": 1,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "click",
+          "input",
+          "keydown",
+          "pointerdown",
+          "pointermove",
+          "pointerup"
+        ],
+        "target": "InspectableControl",
+        "repetition": 0
+      },
+      {
+        "pid": 34767,
+        "route": "session",
+        "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "bypass",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 34767,
+          "postTap": 1,
+          "source": "session",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "click",
+          "input",
+          "keydown",
+          "pointerdown",
+          "pointermove",
+          "pointerup"
+        ],
+        "target": "InspectableControl",
+        "repetition": 0
+      },
+      {
+        "pid": 34791,
+        "route": "private",
+        "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "bypass",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 34791,
+          "postTap": 1,
+          "source": "private",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "click",
+          "input",
+          "keydown",
+          "pointerdown",
+          "pointermove",
+          "pointerup"
+        ],
+        "target": "InspectableControl",
+        "repetition": 0
+      },
+      {
+        "pid": 34813,
+        "route": "curve-hid",
+        "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "bypass",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": true,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 34813,
+          "postTap": 1,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "click",
+          "input",
+          "keydown",
+          "pointerdown",
+          "pointermove",
+          "pointerup"
+        ],
+        "target": "InspectableControl",
+        "repetition": 0
+      },
+      {
+        "pid": 34833,
+        "route": "keycodes-hid",
+        "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "bypass",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 34833,
+          "postTap": 1,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "click",
+          "input",
+          "keydown",
+          "pointerdown",
+          "pointermove",
+          "pointerup"
+        ],
+        "target": "InspectableControl",
+        "repetition": 0
+      },
+      {
+        "pid": 34855,
+        "route": "pid-keys-keycodes-hid",
+        "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "bypass",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": true,
+          "pid": 34855,
+          "postTap": 1,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "click",
+          "input",
+          "keydown",
+          "pointerdown",
+          "pointermove",
+          "pointerup"
+        ],
+        "target": "InspectableControl",
+        "repetition": 0
+      },
+      {
+        "pid": 34876,
+        "route": "hid",
+        "binarySHA256": "00c1ee6733f6ee68bd467c3a1d9b73f04eacce7da401eab19054e531fa08f2a5",
+        "initialAcceptedSubmissions": 1,
+        "controlWorked": true,
+        "verdict": "blocked",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Matched reference point translated by public window geometry",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 34876,
+          "postTap": 1,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 29,
+        "newEventTypes": [],
+        "target": "InternalKeyboardControl",
+        "repetition": 0
+      },
+      {
+        "pid": 34876,
+        "route": "session",
+        "binarySHA256": "00c1ee6733f6ee68bd467c3a1d9b73f04eacce7da401eab19054e531fa08f2a5",
+        "initialAcceptedSubmissions": 1,
+        "controlWorked": true,
+        "verdict": "blocked",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Matched reference point translated by public window geometry",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 34876,
+          "postTap": 1,
+          "source": "session",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 29,
+        "newEventTypes": [],
+        "target": "InternalKeyboardControl",
+        "repetition": 0
+      },
+      {
+        "pid": 34876,
+        "route": "private",
+        "binarySHA256": "00c1ee6733f6ee68bd467c3a1d9b73f04eacce7da401eab19054e531fa08f2a5",
+        "initialAcceptedSubmissions": 1,
+        "controlWorked": true,
+        "verdict": "blocked",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Matched reference point translated by public window geometry",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 34876,
+          "postTap": 1,
+          "source": "private",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 29,
+        "newEventTypes": [],
+        "target": "InternalKeyboardControl",
+        "repetition": 0
+      },
+      {
+        "pid": 34876,
+        "route": "curve-hid",
+        "binarySHA256": "00c1ee6733f6ee68bd467c3a1d9b73f04eacce7da401eab19054e531fa08f2a5",
+        "initialAcceptedSubmissions": 1,
+        "controlWorked": true,
+        "verdict": "blocked",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Matched reference point translated by public window geometry",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": true,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 34876,
+          "postTap": 1,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 90,
+        "newEventTypes": [],
+        "target": "InternalKeyboardControl",
+        "repetition": 0
+      },
+      {
+        "pid": 34876,
+        "route": "keycodes-hid",
+        "binarySHA256": "00c1ee6733f6ee68bd467c3a1d9b73f04eacce7da401eab19054e531fa08f2a5",
+        "initialAcceptedSubmissions": 1,
+        "controlWorked": true,
+        "verdict": "blocked",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Matched reference point translated by public window geometry",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 34876,
+          "postTap": 1,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 29,
+        "newEventTypes": [],
+        "target": "InternalKeyboardControl",
+        "repetition": 0
+      },
+      {
+        "pid": 34876,
+        "route": "pid-keys-keycodes-hid",
+        "binarySHA256": "00c1ee6733f6ee68bd467c3a1d9b73f04eacce7da401eab19054e531fa08f2a5",
+        "initialAcceptedSubmissions": 1,
+        "controlWorked": true,
+        "verdict": "blocked",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Matched reference point translated by public window geometry",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": true,
+          "pid": 34876,
+          "postTap": 1,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 29,
+        "newEventTypes": [],
+        "target": "InternalKeyboardControl",
+        "repetition": 0
+      },
+      {
+        "pid": 34972,
+        "route": "hid",
+        "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "bypass",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 34972,
+          "postTap": 1,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "click",
+          "input",
+          "keydown",
+          "pointerdown",
+          "pointermove",
+          "pointerup"
+        ],
+        "target": "InspectableControl",
+        "repetition": 1
+      },
+      {
+        "pid": 34994,
+        "route": "session",
+        "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "bypass",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 34994,
+          "postTap": 1,
+          "source": "session",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "click",
+          "input",
+          "keydown",
+          "pointerdown",
+          "pointermove",
+          "pointerup"
+        ],
+        "target": "InspectableControl",
+        "repetition": 1
+      },
+      {
+        "pid": 35013,
+        "route": "private",
+        "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "bypass",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 35013,
+          "postTap": 1,
+          "source": "private",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "click",
+          "input",
+          "keydown",
+          "pointerdown",
+          "pointermove",
+          "pointerup"
+        ],
+        "target": "InspectableControl",
+        "repetition": 1
+      },
+      {
+        "pid": 35051,
+        "route": "curve-hid",
+        "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "bypass",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": true,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 35051,
+          "postTap": 1,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "click",
+          "input",
+          "keydown",
+          "pointerdown",
+          "pointermove",
+          "pointerup"
+        ],
+        "target": "InspectableControl",
+        "repetition": 1
+      },
+      {
+        "pid": 35070,
+        "route": "keycodes-hid",
+        "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "bypass",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 35070,
+          "postTap": 1,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "click",
+          "input",
+          "keydown",
+          "pointerdown",
+          "pointermove",
+          "pointerup"
+        ],
+        "target": "InspectableControl",
+        "repetition": 1
+      },
+      {
+        "pid": 35097,
+        "route": "pid-keys-keycodes-hid",
+        "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "bypass",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": true,
+          "pid": 35097,
+          "postTap": 1,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "click",
+          "input",
+          "keydown",
+          "pointerdown",
+          "pointermove",
+          "pointerup"
+        ],
+        "target": "InspectableControl",
+        "repetition": 1
+      },
+      {
+        "pid": 35119,
+        "route": "hid",
+        "binarySHA256": "00c1ee6733f6ee68bd467c3a1d9b73f04eacce7da401eab19054e531fa08f2a5",
+        "initialAcceptedSubmissions": 1,
+        "controlWorked": true,
+        "verdict": "blocked",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Matched reference point translated by public window geometry",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 35119,
+          "postTap": 1,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 29,
+        "newEventTypes": [],
+        "target": "InternalKeyboardControl",
+        "repetition": 1
+      },
+      {
+        "pid": 35119,
+        "route": "session",
+        "binarySHA256": "00c1ee6733f6ee68bd467c3a1d9b73f04eacce7da401eab19054e531fa08f2a5",
+        "initialAcceptedSubmissions": 1,
+        "controlWorked": true,
+        "verdict": "blocked",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Matched reference point translated by public window geometry",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 35119,
+          "postTap": 1,
+          "source": "session",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 29,
+        "newEventTypes": [],
+        "target": "InternalKeyboardControl",
+        "repetition": 1
+      },
+      {
+        "pid": 35119,
+        "route": "private",
+        "binarySHA256": "00c1ee6733f6ee68bd467c3a1d9b73f04eacce7da401eab19054e531fa08f2a5",
+        "initialAcceptedSubmissions": 1,
+        "controlWorked": true,
+        "verdict": "blocked",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Matched reference point translated by public window geometry",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 35119,
+          "postTap": 1,
+          "source": "private",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 29,
+        "newEventTypes": [],
+        "target": "InternalKeyboardControl",
+        "repetition": 1
+      },
+      {
+        "pid": 35119,
+        "route": "curve-hid",
+        "binarySHA256": "00c1ee6733f6ee68bd467c3a1d9b73f04eacce7da401eab19054e531fa08f2a5",
+        "initialAcceptedSubmissions": 1,
+        "controlWorked": true,
+        "verdict": "blocked",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Matched reference point translated by public window geometry",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": true,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 35119,
+          "postTap": 1,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 90,
+        "newEventTypes": [],
+        "target": "InternalKeyboardControl",
+        "repetition": 1
+      },
+      {
+        "pid": 35119,
+        "route": "keycodes-hid",
+        "binarySHA256": "00c1ee6733f6ee68bd467c3a1d9b73f04eacce7da401eab19054e531fa08f2a5",
+        "initialAcceptedSubmissions": 1,
+        "controlWorked": true,
+        "verdict": "blocked",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Matched reference point translated by public window geometry",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 35119,
+          "postTap": 1,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 29,
+        "newEventTypes": [],
+        "target": "InternalKeyboardControl",
+        "repetition": 1
+      },
+      {
+        "pid": 35119,
+        "route": "pid-keys-keycodes-hid",
+        "binarySHA256": "00c1ee6733f6ee68bd467c3a1d9b73f04eacce7da401eab19054e531fa08f2a5",
+        "initialAcceptedSubmissions": 1,
+        "controlWorked": true,
+        "verdict": "blocked",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Matched reference point translated by public window geometry",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": true,
+          "pid": 35119,
+          "postTap": 1,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 29,
+        "newEventTypes": [],
+        "target": "InternalKeyboardControl",
+        "repetition": 1
+      },
+      {
+        "pid": 35206,
+        "route": "hid",
+        "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "bypass",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 35206,
+          "postTap": 1,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "click",
+          "input",
+          "keydown",
+          "pointerdown",
+          "pointermove",
+          "pointerup"
+        ],
+        "target": "InspectableControl",
+        "repetition": 2
+      },
+      {
+        "pid": 35228,
+        "route": "session",
+        "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "bypass",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 35228,
+          "postTap": 1,
+          "source": "session",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "click",
+          "input",
+          "keydown",
+          "pointerdown",
+          "pointermove",
+          "pointerup"
+        ],
+        "target": "InspectableControl",
+        "repetition": 2
+      },
+      {
+        "pid": 35247,
+        "route": "private",
+        "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "bypass",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 35247,
+          "postTap": 1,
+          "source": "private",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "click",
+          "input",
+          "keydown",
+          "pointerdown",
+          "pointermove",
+          "pointerup"
+        ],
+        "target": "InspectableControl",
+        "repetition": 2
+      },
+      {
+        "pid": 35269,
+        "route": "curve-hid",
+        "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "bypass",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": true,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 35269,
+          "postTap": 1,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "click",
+          "input",
+          "keydown",
+          "pointerdown",
+          "pointermove",
+          "pointerup"
+        ],
+        "target": "InspectableControl",
+        "repetition": 2
+      },
+      {
+        "pid": 35288,
+        "route": "keycodes-hid",
+        "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "bypass",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 35288,
+          "postTap": 1,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "click",
+          "input",
+          "keydown",
+          "pointerdown",
+          "pointermove",
+          "pointerup"
+        ],
+        "target": "InspectableControl",
+        "repetition": 2
+      },
+      {
+        "pid": 35355,
+        "route": "pid-keys-keycodes-hid",
+        "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "bypass",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": true,
+          "pid": 35355,
+          "postTap": 1,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "click",
+          "input",
+          "keydown",
+          "pointerdown",
+          "pointermove",
+          "pointerup"
+        ],
+        "target": "InspectableControl",
+        "repetition": 2
+      },
+      {
+        "pid": 35378,
+        "route": "hid",
+        "binarySHA256": "00c1ee6733f6ee68bd467c3a1d9b73f04eacce7da401eab19054e531fa08f2a5",
+        "initialAcceptedSubmissions": 1,
+        "controlWorked": true,
+        "verdict": "blocked",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Matched reference point translated by public window geometry",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 35378,
+          "postTap": 1,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 29,
+        "newEventTypes": [],
+        "target": "InternalKeyboardControl",
+        "repetition": 2
+      },
+      {
+        "pid": 35378,
+        "route": "session",
+        "binarySHA256": "00c1ee6733f6ee68bd467c3a1d9b73f04eacce7da401eab19054e531fa08f2a5",
+        "initialAcceptedSubmissions": 1,
+        "controlWorked": true,
+        "verdict": "blocked",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Matched reference point translated by public window geometry",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 35378,
+          "postTap": 1,
+          "source": "session",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 29,
+        "newEventTypes": [],
+        "target": "InternalKeyboardControl",
+        "repetition": 2
+      },
+      {
+        "pid": 35378,
+        "route": "private",
+        "binarySHA256": "00c1ee6733f6ee68bd467c3a1d9b73f04eacce7da401eab19054e531fa08f2a5",
+        "initialAcceptedSubmissions": 1,
+        "controlWorked": true,
+        "verdict": "blocked",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Matched reference point translated by public window geometry",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 35378,
+          "postTap": 1,
+          "source": "private",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 29,
+        "newEventTypes": [],
+        "target": "InternalKeyboardControl",
+        "repetition": 2
+      },
+      {
+        "pid": 35378,
+        "route": "curve-hid",
+        "binarySHA256": "00c1ee6733f6ee68bd467c3a1d9b73f04eacce7da401eab19054e531fa08f2a5",
+        "initialAcceptedSubmissions": 1,
+        "controlWorked": true,
+        "verdict": "blocked",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Matched reference point translated by public window geometry",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": true,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 35378,
+          "postTap": 1,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 90,
+        "newEventTypes": [],
+        "target": "InternalKeyboardControl",
+        "repetition": 2
+      },
+      {
+        "pid": 35378,
+        "route": "keycodes-hid",
+        "binarySHA256": "00c1ee6733f6ee68bd467c3a1d9b73f04eacce7da401eab19054e531fa08f2a5",
+        "initialAcceptedSubmissions": 1,
+        "controlWorked": true,
+        "verdict": "blocked",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Matched reference point translated by public window geometry",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 35378,
+          "postTap": 1,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 29,
+        "newEventTypes": [],
+        "target": "InternalKeyboardControl",
+        "repetition": 2
+      },
+      {
+        "pid": 35378,
+        "route": "pid-keys-keycodes-hid",
+        "binarySHA256": "00c1ee6733f6ee68bd467c3a1d9b73f04eacce7da401eab19054e531fa08f2a5",
+        "initialAcceptedSubmissions": 1,
+        "controlWorked": true,
+        "verdict": "blocked",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Matched reference point translated by public window geometry",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": true,
+          "pid": 35378,
+          "postTap": 1,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 29,
+        "newEventTypes": [],
+        "target": "InternalKeyboardControl",
+        "repetition": 2
+      }
+    ],
+    "cleanup": [
+      {
+        "pid": 34747,
+        "verified": true
+      },
+      {
+        "pid": 34767,
+        "verified": true
+      },
+      {
+        "pid": 34791,
+        "verified": true
+      },
+      {
+        "pid": 34813,
+        "verified": true
+      },
+      {
+        "pid": 34833,
+        "verified": true
+      },
+      {
+        "pid": 34855,
+        "verified": true
+      },
+      {
+        "pid": 34876,
+        "verified": true
+      },
+      {
+        "pid": 34972,
+        "verified": true
+      },
+      {
+        "pid": 34994,
+        "verified": true
+      },
+      {
+        "pid": 35013,
+        "verified": true
+      },
+      {
+        "pid": 35051,
+        "verified": true
+      },
+      {
+        "pid": 35070,
+        "verified": true
+      },
+      {
+        "pid": 35097,
+        "verified": true
+      },
+      {
+        "pid": 35119,
+        "verified": true
+      },
+      {
+        "pid": 35206,
+        "verified": true
+      },
+      {
+        "pid": 35228,
+        "verified": true
+      },
+      {
+        "pid": 35247,
+        "verified": true
+      },
+      {
+        "pid": 35269,
+        "verified": true
+      },
+      {
+        "pid": 35288,
+        "verified": true
+      },
+      {
+        "pid": 35355,
+        "verified": true
+      },
+      {
+        "pid": 35378,
+        "verified": true
+      }
+    ]
+  },
+  "annotated": {
+    "permissions": {
+      "accessibility": true,
+      "desktopInputSafety": {
+        "available": true,
+        "blockingMouseHookPIDs": []
+      },
+      "pid": 35548,
+      "postEvents": true,
+      "screenCapture": true,
+      "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+    },
+    "environment": {
+      "locked": null,
+      "reason": "Console lock flag unavailable",
+      "advisory": true
+    },
+    "postTap": "annotated",
+    "humanBaseline": false,
+    "sessionOrigin": "private-diagnostic",
+    "scope": "Repeated external actions after a private diagnostic startup. No physical binding or human usability claim.",
+    "results": [
+      {
+        "pid": 35552,
+        "route": "hid",
+        "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "inconclusive",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 35552,
+          "postTap": 2,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "keydown",
+          "pointermove"
+        ],
+        "target": "InspectableControl",
+        "repetition": 0
+      },
+      {
+        "pid": 35637,
+        "route": "session",
+        "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "inconclusive",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 35637,
+          "postTap": 2,
+          "source": "session",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "keydown",
+          "pointermove"
+        ],
+        "target": "InspectableControl",
+        "repetition": 0
+      },
+      {
+        "pid": 35656,
+        "route": "private",
+        "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "inconclusive",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 35656,
+          "postTap": 2,
+          "source": "private",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "keydown",
+          "pointermove"
+        ],
+        "target": "InspectableControl",
+        "repetition": 0
+      },
+      {
+        "pid": 35679,
+        "route": "curve-hid",
+        "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "inconclusive",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": true,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 35679,
+          "postTap": 2,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "keydown",
+          "pointermove"
+        ],
+        "target": "InspectableControl",
+        "repetition": 0
+      },
+      {
+        "pid": 35701,
+        "route": "keycodes-hid",
+        "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "inconclusive",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 35701,
+          "postTap": 2,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "keydown",
+          "pointermove"
+        ],
+        "target": "InspectableControl",
+        "repetition": 0
+      },
+      {
+        "pid": 35720,
+        "route": "pid-keys-keycodes-hid",
+        "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "inconclusive",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": true,
+          "pid": 35720,
+          "postTap": 2,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "keydown",
+          "pointermove"
+        ],
+        "target": "InspectableControl",
+        "repetition": 0
+      },
+      {
+        "pid": 35742,
+        "route": "hid",
+        "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "inconclusive",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 35742,
+          "postTap": 2,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "keydown",
+          "pointermove"
+        ],
+        "target": "InspectableControl",
+        "repetition": 1
+      },
+      {
+        "pid": 35761,
+        "route": "session",
+        "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "inconclusive",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 35761,
+          "postTap": 2,
+          "source": "session",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "keydown",
+          "pointermove"
+        ],
+        "target": "InspectableControl",
+        "repetition": 1
+      },
+      {
+        "pid": 35783,
+        "route": "private",
+        "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "inconclusive",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 35783,
+          "postTap": 2,
+          "source": "private",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "keydown",
+          "pointermove"
+        ],
+        "target": "InspectableControl",
+        "repetition": 1
+      },
+      {
+        "pid": 35808,
+        "route": "curve-hid",
+        "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "inconclusive",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": true,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 35808,
+          "postTap": 2,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "keydown",
+          "pointermove"
+        ],
+        "target": "InspectableControl",
+        "repetition": 1
+      },
+      {
+        "pid": 35873,
+        "route": "keycodes-hid",
+        "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "inconclusive",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 35873,
+          "postTap": 2,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "keydown",
+          "pointermove"
+        ],
+        "target": "InspectableControl",
+        "repetition": 1
+      },
+      {
+        "pid": 35897,
+        "route": "pid-keys-keycodes-hid",
+        "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "inconclusive",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": true,
+          "pid": 35897,
+          "postTap": 2,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "keydown",
+          "pointermove"
+        ],
+        "target": "InspectableControl",
+        "repetition": 1
+      },
+      {
+        "pid": 35916,
+        "route": "hid",
+        "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "inconclusive",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 35916,
+          "postTap": 2,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "keydown",
+          "pointermove"
+        ],
+        "target": "InspectableControl",
+        "repetition": 2
+      },
+      {
+        "pid": 35938,
+        "route": "session",
+        "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "inconclusive",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 35938,
+          "postTap": 2,
+          "source": "session",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "keydown",
+          "pointermove"
+        ],
+        "target": "InspectableControl",
+        "repetition": 2
+      },
+      {
+        "pid": 35975,
+        "route": "private",
+        "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "inconclusive",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 35975,
+          "postTap": 2,
+          "source": "private",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "keydown",
+          "pointermove"
+        ],
+        "target": "InspectableControl",
+        "repetition": 2
+      },
+      {
+        "pid": 36004,
+        "route": "curve-hid",
+        "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "inconclusive",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": true,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 36004,
+          "postTap": 2,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "keydown",
+          "pointermove"
+        ],
+        "target": "InspectableControl",
+        "repetition": 2
+      },
+      {
+        "pid": 36026,
+        "route": "keycodes-hid",
+        "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "inconclusive",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 36026,
+          "postTap": 2,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "keydown",
+          "pointermove"
+        ],
+        "target": "InspectableControl",
+        "repetition": 2
+      },
+      {
+        "pid": 36046,
+        "route": "pid-keys-keycodes-hid",
+        "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "inconclusive",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          454.0,
+          462.0
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": true,
+          "pid": 36046,
+          "postTap": 2,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "keydown",
+          "pointermove"
+        ],
+        "target": "InspectableControl",
+        "repetition": 2
+      }
+    ],
+    "cleanup": [
+      {
+        "pid": 35552,
+        "verified": true
+      },
+      {
+        "pid": 35637,
+        "verified": true
+      },
+      {
+        "pid": 35656,
+        "verified": true
+      },
+      {
+        "pid": 35679,
+        "verified": true
+      },
+      {
+        "pid": 35701,
+        "verified": true
+      },
+      {
+        "pid": 35720,
+        "verified": true
+      },
+      {
+        "pid": 35742,
+        "verified": true
+      },
+      {
+        "pid": 35761,
+        "verified": true
+      },
+      {
+        "pid": 35783,
+        "verified": true
+      },
+      {
+        "pid": 35808,
+        "verified": true
+      },
+      {
+        "pid": 35873,
+        "verified": true
+      },
+      {
+        "pid": 35897,
+        "verified": true
+      },
+      {
+        "pid": 35916,
+        "verified": true
+      },
+      {
+        "pid": 35938,
+        "verified": true
+      },
+      {
+        "pid": 35975,
+        "verified": true
+      },
+      {
+        "pid": 36004,
+        "verified": true
+      },
+      {
+        "pid": 36026,
+        "verified": true
+      },
+      {
+        "pid": 36046,
+        "verified": true
+      }
+    ]
+  }
+}

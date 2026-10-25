@@ -234,3 +234,9 @@ The runner now stops at the first unavailable reference field. A regression chec
 The router now checks kernel device ancestry before binding. It rejects known software sources and unknown paths. Its first supported profile is the observed built-in FIFO keyboard. A read-only audit classifies one keyboard as eligible and two software paths as refused.
 
 Twelve policy cases, the event-dispatch checks, and all 32 Python checks pass. The full candidate compiles with warnings as errors. The installed app and probe remain unchanged. No new physical or live attack result follows. See [keyboard source findings](hid-source-findings.md).
+
+## Milestone 37: separate session and annotated insertion points
+
+Eighteen session-insertion controls completed the task. Eighteen matched attempts on three loaded diagnostics received explicit refusals, with no new action. Eighteen annotated-insertion references failed to complete and remain inconclusive. No annotated candidate ran.
+
+All 39 processes passed cleanup. The probe remained unchanged. The loaded diagnostics use private startup and do not test the new device-source rule. See [insertion-point results](native-insertion-point-findings.md).

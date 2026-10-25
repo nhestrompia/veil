@@ -258,3 +258,9 @@ The read-only identity helper compiles and refuses unrelated PIDs. Its diagnosti
 Fifteen readable startup controls completed. Fifteen matched fresh candidates had a ready device reader but showed no binding or task action. All thirty processes passed cleanup. Fresh native calibration supplies 27 completed references and six inconclusive PID mouse references.
 
 The physical-session runner now skips failed controls, matches insertion points, checks hooks, and verifies cleanup. Four new checks pass, and all forty Python checks pass. Physical use remains pending. See [source-policy startup findings](source-policy-startup-findings.md).
+
+## Milestone 41: physical use on the source-policy build
+
+The user completed one physical task on the capture-restricted source-policy build. The independent oracle recorded the accepted action, and the process and executable remained unchanged.
+
+Twenty-seven calibrated native attempts then received explicit refusals. No new action or admitted input occurred. Six failed-control cases were skipped. The initial vision adapter failed to create PNG output and remains inconclusive. See [physical-session findings](source-policy-session-findings.md).

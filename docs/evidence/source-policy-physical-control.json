@@ -1,0 +1,15 @@
+{
+  "sessionPID": 43980,
+  "binarySHA256": "43b1a9833d6c55b1e254b848f9bd09c202da46ba0f8d8833084df559e6a8a9d1",
+  "trial": "0ecb663b9b9f8411",
+  "operatorDeclaresPhysicalCompletion": true,
+  "operatorResponse": "Task complete",
+  "acceptedSubmissions": 1,
+  "bound": true,
+  "sourcePolicyReady": true,
+  "bootstrapAttested": false,
+  "acceptedEvents": 56,
+  "windowSharingConfiguredRestricted": true,
+  "physicalPageVisibleDeclared": true,
+  "scope": "User-declared built-in physical keyboard task in unchanged source-policy browser. No cryptographic origin claim."
+}

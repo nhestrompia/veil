@@ -1,6 +1,6 @@
 # Current research state
 
-Research resumed on 2026-10-25. Milestones 32 through 34 are complete. The browser is still not proven agent-free.
+Research resumed on 2026-10-25. Milestones 32 through 36 are complete. The browser is still not proven agent-free.
 
 Milestone 32 calibrated 33 successful reference actions, then tested eleven external routes against each of three already-loaded diagnostics. Twenty-seven native attempts received explicit refusals. Six Accessibility or vision attempts remain inconclusive. No candidate recorded a new action, and all 36 processes passed cleanup. These use private startup, not physical input.
 
@@ -11,6 +11,16 @@ Milestone 34 tested the startup inspection policy. A new disposable control keep
 No persistent preference, Safari setting, permission scope, or user browser profile changed. The probe executable remains unchanged, so no grant refresh followed. The current probe hash is `7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1`.
 
 All 31 Python checks pass. The diagnostic and protected shell compile with warnings as errors. Final cleanup found no research application. The loopback fixture and its keep-awake process stopped. The blank agent-owned preview tab closed.
+
+## Latest continuation
+
+Milestone 35 found unavailable readable references for the session insertion-point matrix. All eighteen results remain inconclusive. No input adapter ran, no candidate launched, and every reference process passed cleanup. The console reported locked. The runner now stops at the first missing reference field. The annotated insertion-point matrix remains pending.
+
+Milestone 36 adds a keyboard source policy before binding. It rejects known software kernel ancestry and unknown hardware paths. The first allowed profile is this Mac's observed built-in FIFO keyboard. A read-only audit classifies one keyboard as eligible and two software paths as refused. Twelve policy cases, event-dispatch checks, and all 32 Python checks pass. The candidate compiles with warnings as errors.
+
+The candidate executable is `.build/device-keyboard-source-policy`. The installed browser and probe remain unchanged. No revised physical task or live attack ran. Installing this change requires a new effective-grant check and physical navigation before any acceptance claim. Do not treat registry classification as human authentication.
+
+The live test references remain unavailable. Resume native attacks only after a readable reference works. The source review and new findings are in `docs/research/hid-origin-guarantees.md` and `docs/hid-source-findings.md`. The source audit opens no device and collects no input. No global hook, device seizure, new permission, or persistent system setting changed.
 
 ## Next experiments
 

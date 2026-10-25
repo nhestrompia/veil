@@ -93,6 +93,7 @@ final class DeviceKeyboardRouter {
     private var boundDevice: IOHIDDevice?
     private var pressed: Set<UInt32> = []
     private var opened = false
+    private var reportedSourceRefusals: Set<String> = []
     private let onBind: () -> Void
 
     init(window: NSWindow, onBind: @escaping () -> Void) {
@@ -131,7 +132,7 @@ final class DeviceKeyboardRouter {
         let result = IOHIDManagerOpen(manager, IOOptionBits(kIOHIDOptionsTypeNone))
         opened = result == kIOReturnSuccess
         if !opened { IOHIDManagerUnscheduleFromRunLoop(manager, CFRunLoopGetMain(), CFRunLoopMode.commonModes.rawValue) }
-        print("DEVICE_KEYBOARD permission=true openStatus=\(result) bindWithPhysicalSpace=true")
+        print("DEVICE_KEYBOARD permission=true openStatus=\(result) bindWithDeviceSpace=true sourcePolicy=measured-built-in-keyboard")
         fflush(stdout)
     }
 
@@ -161,6 +162,15 @@ final class DeviceKeyboardRouter {
         if boundDevice == nil {
             // Binding is a research bootstrap, not authenticated human consent.
             if usage == 44, down {
+                let source = HIDSourceSnapshot.observe(IOHIDDeviceGetService(device))
+                let decision = HIDSourcePolicy.evaluate(source)
+                guard decision == .measuredBuiltInKeyboard else {
+                    if reportedSourceRefusals.insert(decision.rawValue).inserted {
+                        print("DEVICE_KEYBOARD sourceRefused=\(decision.rawValue)")
+                        fflush(stdout)
+                    }
+                    return
+                }
                 boundDevice = device
                 pressed = [44]
                 print("DEVICE_KEYBOARD bound=true bootstrapAttested=false")

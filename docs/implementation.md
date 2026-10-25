@@ -228,3 +228,9 @@ One stalled UI attempt remains inconclusive. All four controller cleanups and th
 Eighteen session-insertion references lacked the fixture field. No input adapter ran, no candidate launched, and all reference processes passed cleanup. The console reported locked despite effective probe grants. The results remain inconclusive.
 
 The runner now stops at the first unavailable reference field. A regression check proves that later routes and repetitions do not run. All 32 Python checks pass. The annotated-insertion test remains pending. See [insertion-point findings](insertion-points-findings.md).
+
+## Milestone 36: refuse known software keyboard sources
+
+The router now checks kernel device ancestry before binding. It rejects known software sources and unknown paths. Its first supported profile is the observed built-in FIFO keyboard. A read-only audit classifies one keyboard as eligible and two software paths as refused.
+
+Twelve policy cases, the event-dispatch checks, and all 32 Python checks pass. The full candidate compiles with warnings as errors. The installed app and probe remain unchanged. No new physical or live attack result follows. See [keyboard source findings](hid-source-findings.md).

@@ -123,7 +123,7 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
         if let index = arguments.firstIndex(of: "--url"), arguments.indices.contains(index + 1) {
             address.stringValue = arguments[index + 1]
             #if DEVICE_KEYBOARD_EXPERIMENT
-            status.stringValue = "Press physical Space to bind the keyboard, then Return to open this address. Mouse input is disabled."
+            status.stringValue = "Built-in keyboard only. Press Space, then Return to open this address. Mouse input is disabled."
             window.makeFirstResponder(address)
             print("STARTUP_ADDRESS pendingPhysicalSubmit=true")
             #else
@@ -186,7 +186,7 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
         status.stringValue = "Accessibility boundary experiment. Native input prevention is unproven."
         #endif
         #if DEVICE_KEYBOARD_EXPERIMENT
-        status.stringValue = "Keyboard only. Command-L selects the address. Mouse input is disabled. US ASCII only. Research build."
+        status.stringValue = "Built-in keyboard only. Command-L selects the address. Mouse input is disabled. US ASCII only. Research build."
         #endif
     }
 

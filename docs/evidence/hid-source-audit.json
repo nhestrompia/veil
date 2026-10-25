@@ -1,0 +1,79 @@
+{
+  "devices": [
+    {
+      "decision": "measured-built-in-keyboard",
+      "observationValid": true,
+      "primaryUsage": 6,
+      "primaryUsagePage": 1,
+      "serviceClasses": [
+        "AppleHIDTransportHIDDevice",
+        "AppleHIDTransportInterface",
+        "AppleHIDTransportProtocolSCMFIFO",
+        "AppleHIDTransportDeviceFIFO",
+        "AppleDockChannelDevice",
+        "AppleDockChannel",
+        "AppleARMIODevice",
+        "AppleSoCIO",
+        "IOPlatformDevice",
+        "AppleARMPE",
+        "IOPlatformExpertDevice",
+        "IORegistryEntry"
+      ],
+      "softwareAncestor": false,
+      "transport": "FIFO",
+      "virtualDevice": null
+    },
+    {
+      "decision": "software-source",
+      "observationValid": true,
+      "primaryUsage": 15,
+      "primaryUsagePage": 65280,
+      "serviceClasses": [
+        "IOHIDUserDevice",
+        "IOHIDResourceDeviceUserClient",
+        "IOHIDResource",
+        "IOResources",
+        "IOPlatformExpertDevice",
+        "IORegistryEntry"
+      ],
+      "softwareAncestor": true,
+      "transport": "USB",
+      "virtualDevice": true
+    },
+    {
+      "decision": "software-source",
+      "observationValid": true,
+      "primaryUsage": 6,
+      "primaryUsagePage": 1,
+      "serviceClasses": [
+        "IOHIDKeyboardDevice",
+        "IOHIDSystem",
+        "IOResources",
+        "IOPlatformExpertDevice",
+        "IORegistryEntry"
+      ],
+      "softwareAncestor": true,
+      "transport": null,
+      "virtualDevice": null
+    }
+  ],
+  "scope": "Read-only IORegistry classification. No device open, input collection, identifiers, or reports.",
+  "status": 0,
+  "policyChecksPassed": 12,
+  "browserCompiled": true,
+  "browserInstalled": false,
+  "humanInputVerified": false,
+  "liveAttackVerified": false,
+  "defaultInputPolicyChanged": true,
+  "candidateBinarySHA256": "d0bd8d2f78ebc459d8fde6a07ff82ffeadfcd79be351cdd66a9bc8c87117e417",
+  "sourceFilesSHA256": {
+    "Sources/Browser/AXBoundary.swift": "32dcf5577e373476163c46342989e36ac85486e7f0253c4aed805886387d8fec",
+    "Sources/Browser/BrowserApp.swift": "77352f894f3315b56b4f07a798d3ad06cec7b572ec87890c2dd3834338bc3648",
+    "Sources/Browser/BrowserPolicy.swift": "09523c963a0f0710dbfc02e3f810eceb39e677168b14441cdb6d79b88c85d647",
+    "Sources/Browser/BrowserRuntimePolicy.swift": "3aebcb9fe7098f68f35102e85961048a73f77a73f86fa6e216518c7545dabe8c",
+    "Sources/Browser/DeviceKeyboard.swift": "14d9161014888592938979e86203c5e5701a9aa23f1c90ef03964aa8312a4de1",
+    "Sources/Browser/HIDSourcePolicy.swift": "ea1b9b29117b190f218f47db438a74f5f00988ee3448417a95c13bd1d5155116",
+    "Sources/Browser/InputSourceWindow.swift": "968a4ed8bd8f347da8d73caa74dbd77e21e734b7cc7a4c4f4fab50a1d3f38c32",
+    "Sources/Browser/SecureInputWindow.swift": "63d690a7797f984f28d6b6a89933dc1238168a72e2b76d0e2cd8f00c1ca4c1be"
+  }
+}

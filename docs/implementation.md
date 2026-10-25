@@ -391,3 +391,10 @@ A cross-provider review failed before execution because its configured key expir
 A generated six-file WebKit patch adds an immutable per-view policy and projects activity at the two bounded outgoing sites. It leaves native activity calculation and secure ownership code unchanged. Twelve source hashes and exact zero-fuzz patch application pass.
 
 The actual projection header compiles with the pinned enum declaration. Exhaustive checks pass for 65,536 flag sets in both modes. Native identity, five protected flags, other flags, and idempotence pass. This does not compile or validate WebKit integration. All 89 Python checks pass. The full engine remains unbuilt and runtime attacks remain pending. See [engine reproduction](../engine/README.md) and [evidence](evidence/engine-projection-results.json).
+
+
+## Milestone 64: full source preparation and audit
+
+The pinned source dependency passed all twelve hashes and pristine reuse. The isolated shallow sparse clone retained about 1.8 GB. Preparation enforces storage limits, a 60 GiB free-space reserve, and cleanup of its own process group. All 92 Python checks pass.
+
+The full-source audit covers the discovered activity sender and shared creation path, including recovery and remote pages. Initial empty documents and independent initial-focus operations limit broader claims. The source remains unpatched, unbuilt, and unexecuted. See [the audit](research/activity-full-source-audit.md) and [evidence](evidence/engine-source-results.json).

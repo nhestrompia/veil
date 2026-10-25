@@ -18,7 +18,7 @@ Milestone 63 implements the isolated engine patch under engine/. Twelve source f
 
 The actual projection header compiles against the exact enum declaration extracted from the pinned header. All 65,536 flag combinations pass both modes, including nonprotected flags and idempotence. This standalone check does not compile WTF OptionSet, WebPageProxy, Cocoa, or the full engine. All 89 Python checks pass. See [engine reproduction](../engine/README.md) and [saved evidence](evidence/engine-projection-results.json).
 
-Next, inventory full sender/receiver and ownership paths, prepare a bounded source/build plan, and build a separate research engine. The full engine is not downloaded or built. Xcode 27.1, Metal, 32 GiB RAM, 10 logical CPUs, and about 204 GiB free passed read-only checks. Keep build outputs inside the workspace and preserve an OS disk reserve. Verify app and content-process loaded identities before runtime claims.
+Next, inventory full sender/receiver and ownership paths, prepare a bounded source/build plan, and build a separate research engine. Milestone 64 downloaded and checked the full pinned source. It remains pristine, unpatched, unbuilt, and unexecuted. Xcode 27.1, Metal, 32 GiB RAM, 10 logical CPUs, and about 204 GiB free passed read-only checks. Keep build outputs inside the workspace and preserve an OS disk reserve. Verify app and content-process loaded identities before runtime claims.
 
 The OpenCode/DeepSeek judge failed before execution because its configured key expired. Do not retry credentials. A separate native judge completed the review. The original architectural workflow proceeds without a human checkpoint. An editor-state protection barrier and every native owner path remain implementation gates. Keep the frozen physical browser and probes unchanged. Default InternalKeyboardControl was restored without logical getters; no temporary research app remains, and Secure Event Input is off.
 
@@ -147,3 +147,9 @@ The diagnostics have termination timers, and controllers verify exact executable
 The final diagnostic build in `dist/InternalKeyboardControl.app` is capture-restricted, without the full-screen backdrop. It has a private startup sequence and no physical device reader. `DeviceKeyboardExperiment.app` remains the separate keyboard-only research browser.
 
 No branch was pushed and no pull request was created during this session.
+
+## Milestone 64 source preparation
+
+The isolated source dependency retains about 1.8 GB and preserves a 60 GiB disk reserve. All twelve pinned hashes and pristine reuse pass. All 92 Python checks pass. The archive returned HTTP 422, so preparation uses a shallow sparse dependency clone. See [the source audit](research/activity-full-source-audit.md) and [evidence](evidence/engine-source-results.json).
+
+The audit covers live updates, creation, remote pages, process swaps, and recovery. Independent initial-focus operations remain outside the patch. WebKit exposes a private per-view ownership readback. Next, measure that flag in matched password diagnostics, then apply and build the isolated patch. Always set WEBKIT_OUTPUTDIR inside the workspace before upstream build scripts.

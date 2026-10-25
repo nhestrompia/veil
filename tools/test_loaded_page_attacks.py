@@ -35,6 +35,12 @@ class LoadedPageTests(unittest.TestCase):
         with self.assertRaises(RuntimeError):
             loaded.translated_point(control, [200, 100, 900, 740])
 
+    def test_pid_delivery_modes_remain_distinct(self):
+        self.assertEqual(loaded.arguments_for("pid-hid", 12345, [10, 20]),
+                         ["input", 12345, 10, 20, "hid", "pid"])
+        self.assertEqual(loaded.arguments_for("pid-window-keycodes-hid", 12345, [10, 20]),
+                         ["input", 12345, 10, 20, "hid", "pid-window", "keycodes"])
+
     def test_failed_reference_does_not_prepare_candidate(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

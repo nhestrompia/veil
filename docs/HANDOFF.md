@@ -1,6 +1,6 @@
 # Current research state
 
-Updated 2026-10-25. Milestones 50 and 51 are committed. Milestone 52 completed a Safari remote-inspector control. Milestone 53 recorded failed root calibration. Milestone 54 adds bounded token discovery and matched renderer reads. Milestone 55 completes native host Reload comparisons. Agent-free operation remains unproven.
+Updated 2026-10-25. Milestones 50 and 51 are committed. Milestone 52 completed a Safari remote-inspector control. Milestone 53 recorded failed root calibration. Milestone 54 adds bounded token discovery and matched renderer reads. Milestone 55 completes native host Reload comparisons. Milestone 56 repeats native actions and semantics on the current physical process. Agent-free operation remains unproven.
 
 ## Current priority and remote control
 
@@ -24,9 +24,13 @@ The user approved renderer-only off/on, exact-bundle re-add, and an app-only Acc
 
 Three native host references completed external Reload actions with matching page-ready events. Three matched candidate scans found no address field or Reload button within IDs 0 through 1,023. No candidate action was sent. All cleanups passed. See [host navigation findings](host-navigation-findings.md). Other IDs and directly addressed actions remain open.
 
-The user authenticated the latest approved exact-bundle re-add. Effective Accessibility is true. No permission question remains pending. Keep the current helper frozen. Next, repeat calibrated native input and semantics against PID 61893; older matrices belong to earlier physical processes.
+The user authenticated the latest approved exact-bundle re-add. Effective Accessibility is true. No permission question remains pending. Keep the current helper frozen. Milestone 56 repeated native input and semantic tests on PID 61893. Twenty-nine native attempts were blocked; twenty-two cases remain inconclusive. No accepted input or new website action appeared. Three semantic comparisons passed their reference controls; candidate targets were unavailable. See [current session findings](current-session-attack-findings.md).
 
-## Latest result
+The new controller checks foreground activation before window geometry. An earlier setup run sent no candidate input and stopped with cleanup. The follow-up repaired activation for both references and candidate. Keep failed and skipped cases visible. Final checks found no temporary reference or probe processes. The browser and fixture remain running.
+
+Remaining action priorities include failed PID-directed mouse calibration, direct inspector attachment beyond discovery, exports, session reuse, and broader website compatibility. Unfiltered capture on this physical build remains separate. No permission question is pending.
+
+## Keyboard confidentiality result
 
 The external observer matched the fixed fake phrase through both Unicode and virtual-keycode matchers. It received sixteen events while the restricted browser accepted one requested physical task. The controller generated no input. Device binding and unchanged identity were confirmed. The listener stopped on focus loss, removed its tap, and passed cleanup.
 
@@ -54,13 +58,13 @@ Stop the fixture separately when live work ends.
 
 ## Completed boundaries and remaining work
 
-The original physical process refused 27 calibrated native attempts and three adaptive vision attempts. Window and filtered-display images were black. System screenshots and unavailable AX actions remain inconclusive. Fifteen startup comparisons and eighteen session-insertion refusals are separate diagnostic results.
+The older physical process refused 27 calibrated native attempts and three adaptive vision attempts. Its input matrix does not replace the current-process evidence above. Window and filtered-display images were black. System screenshots and unavailable AX actions remain inconclusive. Fifteen startup comparisons and eighteen session-insertion refusals are separate diagnostic results.
 
 The current observation disproves keyboard confidentiality against this permissioned listener. The generated password comparison received no keys during two accepted tasks. Secure input was active, and cleanup restored its inactive state. Physical password entry remains untested. See [the secure-entry result](secure-entry-observation-findings.md). Apple TN2150 advises against enabling Secure Event Input for general text or an entire app lifetime. Do not turn that into a whole-browser fix without a separate design and compatibility experiment.
 
 Direct remote attachment beyond discovery, unfiltered capture on this physical build, renderer semantics, broader session privacy, and general website compatibility remain open. The browser supports only the measured built-in keyboard and US ASCII. Pointer input is disabled. The device policy does not attest a human or cryptographically attest hardware.
 
-All 74 Python checks pass. Swift matcher, timing, and renderer-boundary checks pass. See [implementation milestones](implementation.md) for the full record.
+All 80 Python checks pass. Swift matcher, timing, and renderer-boundary checks pass. See [implementation milestones](implementation.md) for the full record.
 
 ## Desktop safeguards
 

@@ -335,3 +335,9 @@ Candidate writes were skipped because reference actions failed the fixture URL g
 Three fresh references completed external AX Reload actions, each with one new fixture page-ready event and no form action. Three matched candidate scans resolved neither the address field nor Reload button. No candidate action ran. This is a bounded discovery result, not proof that all direct actions fail.
 
 The approved exact-bundle re-add restored effective Accessibility after user authentication. All 74 Python checks and Swift ownership checks pass. All temporary processes passed cleanup. See [host navigation findings](host-navigation-findings.md).
+
+## Milestone 56: actions in the current physical session
+
+The unchanged PID 61893 received 29 calibrated native blocks and admitted no input. Twenty-two cases remain inconclusive across the complete matrix and its follow-up. The fixture recorded no new website action. Three semantic references completed their actions; candidate targets remained unavailable, so no candidate semantic action ran.
+
+The new controller pairs fresh references with this physical session. It checks foreground activation before geometry, preserves failed controls, and stops on accepted input or missing candidate geometry. An interrupted geometry setup remains separate evidence. All temporary processes passed cleanup. All 80 Python checks pass. See [current session findings](current-session-attack-findings.md).

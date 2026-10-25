@@ -13,7 +13,8 @@ from run_drag_delivery import launch, ready
 from run_native import ROOT, Oracle, probe
 
 ROUTES = ["ax", "hid", "session", "private", "curve-hid", "keycodes-hid",
-          "pid-keys-hid", "pid-keys-keycodes-hid", "iohid-legacy", "iohid-reports", "vision-curve"]
+          "pid-hid", "pid-keys-hid", "pid-keys-keycodes-hid", "pid-window-keycodes-hid",
+          "iohid-legacy", "iohid-reports", "vision-curve"]
 
 
 def frame(pid, output):
@@ -44,8 +45,12 @@ def arguments_for(route, pid, point):
     arguments = ["input", pid, *point, source]
     if route in ["curve-hid", "vision-curve"]:
         arguments.append("curve")
-    if route.startswith("pid-keys-"):
+    if route.startswith("pid-window-"):
+        arguments.append("pid-window")
+    elif route.startswith("pid-keys-"):
         arguments.append("pid-keys")
+    elif route.startswith("pid-"):
+        arguments.append("pid")
     if "keycodes" in route:
         arguments.append("keycodes")
     return arguments

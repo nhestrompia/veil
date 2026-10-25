@@ -410,3 +410,10 @@ A read-only diagnostic checks WebKit ownership through its private testing gette
 The build helper checks all old or new source states before writing. It refuses unknown changes and can resume partial application. All 95 Python checks pass. The exact six-file patch is applied to the pinned dependency.
 
 The first build stopped before compilation because root configurations were absent. The corrected source list includes them. The corrected scheme includes engine dependencies. A second attempt started compilation with four jobs, reduced priority, workspace outputs, a two-hour limit, and a 60 GiB disk reserve. The engine remains incomplete and runtime results remain pending. See [build instructions](../engine/README.md).
+
+
+## Milestone 67: engine identity refusal and Metal compiler
+
+The diagnostic requires the private activity API and expected UI images. Its controller requires the own content executable and all three mapped framework paths. A real system fallback refused before creating a window. All 99 Python checks and the diagnostic compile pass. Positive custom-engine identity remains unverified.
+
+The second build stopped because the actual Metal compiler was absent. Apple MetalToolchain 27A266a now executes. The third attempt runs with quiet logs and a macOS 26 deployment target. Full engine compilation and live engine attacks remain incomplete. See [runtime findings](engine-runtime-findings.md).

@@ -62,7 +62,10 @@ def activation_cycle(target, sink, oracle, hide=False):
             "syntheticInputPosted": False, "AXReadSent": False, "AXValueSet": False, "AXPressSent": False}
 
 
-def run(output, controller, repetitions, surface="focus-action", hide=False, password=False, resume=False):
+def run(output, controller, repetitions, surface="focus-action", hide=False, password=False, resume=False, engine_root=None):
+    if engine_root is not None:
+        from engine_runtime import engine_environment
+        engine_environment(engine_root)
     output = output.resolve()
     output.mkdir(parents=True, exist_ok=False)
     oracle = Oracle(controller)
@@ -102,7 +105,9 @@ def run(output, controller, repetitions, surface="focus-action", hide=False, pas
             close(reference)
             row["referenceCleanupVerified"] = True
             reference = None
-            candidate = prepare("InternalKeyboardControl", output / f"candidate-{repetition}", oracle, suffix)
+            candidate = prepare("InternalKeyboardControl", output / f"candidate-{repetition}", oracle, suffix, engine_root)
+            if engine_root is not None:
+                row["engineIdentity"] = candidate["engineIdentity"]
             row["candidate"] = activation_cycle(candidate, sink, oracle, hide)
             row["status"] = cycle_outcome(row["candidate"])
             if resume:
@@ -142,5 +147,6 @@ if __name__ == "__main__":
     parser.add_argument("--hide", action="store_true")
     parser.add_argument("--password", action="store_true")
     parser.add_argument("--resume", action="store_true")
+    parser.add_argument("--engine-frameworks", type=Path)
     args = parser.parse_args()
-    run(args.output, args.controller, args.repetitions, args.surface, args.hide, args.password, args.resume)
+    run(args.output, args.controller, args.repetitions, args.surface, args.hide, args.password, args.resume, args.engine_frameworks)

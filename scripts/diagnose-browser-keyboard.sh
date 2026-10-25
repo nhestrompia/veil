@@ -10,6 +10,7 @@ feature_suite=false
 focus_mode=ordinary
 focus_resume=false
 owner_readback=false
+engine_mode=none
 for argument in "$@"; do
     case "$argument" in
         --capture-restricted) restricted=true ;;
@@ -22,9 +23,15 @@ for argument in "$@"; do
         --stable-activity) focus_mode=stable ;;
         --focus-resume) focus_resume=true ;;
         --owner-readback) owner_readback=true ;;
+        --engine-native) engine_mode=native ;;
+        --engine-stable) engine_mode=stable ;;
         *) echo "Unknown diagnostic option: $argument" >&2; exit 2 ;;
     esac
 done
+if [ "$engine_mode" != none ] && { [ "$focus_mode" != ordinary ] || [ "$build_only" = false ]; }; then
+    echo "Engine diagnostics require --build-only and actual host window state." >&2
+    exit 2
+fi
 defines=(-D DEVICE_KEYBOARD_EXPERIMENT)
 if [ "$restricted" = false ]; then defines+=(-D DEVICE_VISIBLE_CONTROL); fi
 if [ "$backdrop" = true ]; then defines+=(-D INTERNAL_CAPTURE_BACKDROP); fi
@@ -32,6 +39,8 @@ if [ "$invalid_backdrop" = true ]; then defines+=(-D INTERNAL_SMALL_CAPTURE_BACK
 if [ "$feature_suite" = true ]; then defines+=(-D INTERNAL_FEATURE_SUITE); fi
 if [ "$focus_resume" = true ]; then defines+=(-D INTERNAL_FOCUS_RESUME); fi
 if [ "$owner_readback" = true ]; then defines+=(-D INTERNAL_OWNER_READBACK); fi
+if [ "$engine_mode" != none ]; then defines+=(-D INTERNAL_ENGINE_ACTIVITY); fi
+if [ "$engine_mode" = stable ]; then defines+=(-D INTERNAL_ENGINE_STABLE_ACTIVITY); fi
 case "$focus_mode" in
     filter) defines+=(-D INTERNAL_ACTIVATION_FILTER) ;;
     logical) defines+=(-D INTERNAL_LOGICAL_KEY) ;;
@@ -99,6 +108,22 @@ device = device.replace('''        switch event.type {''', '''        #if INTERN
         switch event.type {''', 1)
 Path('.build/InternalFocusDeviceKeyboard.swift').write_text(device)
 source = Path('Sources/Browser/BrowserApp.swift').read_text()
+configuration_marker = 'let configuration = WKWebViewConfiguration()'
+assert source.count(configuration_marker) == 1
+source = source.replace(configuration_marker, configuration_marker + '''
+        #if INTERNAL_ENGINE_ACTIVITY
+        #if INTERNAL_ENGINE_STABLE_ACTIVITY
+        let stableEngineActivity = true
+        #else
+        let stableEngineActivity = false
+        #endif
+        guard EngineRuntime.configure(configuration, stable: stableEngineActivity) else {
+            print("ENGINE_DIAGNOSTIC refused=configuration")
+            NSApp.terminate(nil)
+            return
+        }
+        #endif
+''', 1)
 marker = 'deviceKeyboard?.start()'
 assert source.count(marker) == 1
 source = source.replace('private var window: NSWindow!', 'private var window: NSWindow!\n    private var diagnosticBackdrop: NSWindow?')
@@ -190,6 +215,12 @@ Task { @MainActor in
     }
     print("INTERNAL_KEYBOARD inputTriggeredSubmit=\\(automaticSubmit)")
     print("INTERNAL_KEYBOARD sequenceFinished=true noDeviceReader=true")
+    #if INTERNAL_ENGINE_ACTIVITY
+    guard EngineRuntime.reportContent(webView) else {
+        NSApp.terminate(nil)
+        return
+    }
+    #endif
     fflush(stdout)
     #if INTERNAL_FOCUS_RESUME
     try? await Task.sleep(for: .seconds(8))
@@ -209,6 +240,7 @@ xcrun swiftc -swift-version 6 -warnings-as-errors -parse-as-library -O \
     -module-cache-path .build/module-cache .build/InternalFocusBoundary.swift \
     .build/InternalFocusDeviceKeyboard.swift Sources/Browser/HIDSourcePolicy.swift Sources/Browser/BrowserPolicy.swift \
     Sources/Diagnostics/DiagnosticSecureInput.swift \
+    Sources/Diagnostics/EngineRuntime.swift \
     Sources/Browser/RestrictedWebView.swift \
     Sources/Browser/BrowserRuntimePolicy.swift \
     Sources/Browser/InputSourceWindow.swift Sources/Browser/SecureInputWindow.swift \
@@ -223,5 +255,9 @@ cat > "$app/Contents/Info.plist" <<EOF
 <key>NSAppTransportSecurity</key><dict><key>NSAllowsLocalNetworking</key><true/></dict>
 </dict></plist>
 EOF
-codesign --force --sign - --options runtime "$app"
+if [ "$engine_mode" = none ]; then
+    codesign --force --sign - --options runtime "$app"
+else
+    codesign --force --sign - "$app"
+fi
 if [ "$build_only" = false ]; then python3 tools/run_internal_keyboard_control.py; fi

@@ -61,6 +61,9 @@ def build_environment(output):
 
 
 def build(source, timeout):
+    metal = subprocess.run(["xcrun", "metal", "--version"], capture_output=True, text=True, timeout=30)
+    if metal.returncode:
+        raise RuntimeError("The Metal compiler does not execute. Install Apple's MetalToolchain component first")
     if not (source / "Configurations/CommonBase.xcconfig").is_file():
         monitored(git_command("-C", str(source), "sparse-checkout", "add", "Configurations"),
                   source, source, BASE / "build-source-fetch.log")
@@ -72,11 +75,13 @@ def build(source, timeout):
     require_disk(BASE)
     log = BASE / "build.log"
     command = ["/usr/bin/nice", "-n", "10", str(source / "Tools/Scripts/build-webkit"),
-               "--release", "--only=Everything up to WebKit", "-jobs", "4", "ARCHS=arm64", "ONLY_ACTIVE_ARCH=YES",
+               "--release", "--only=Everything up to WebKit", "-quiet", "-jobs", "4",
+               "ARCHS=arm64", "ONLY_ACTIVE_ARCH=YES", "MACOSX_DEPLOYMENT_TARGET=26.0",
                "-derivedDataPath", str(output / "DerivedData"),
                f"SHARED_PRECOMPS_DIR={output / 'PrecompiledHeaders'}"]
     report = {"command": command, "output": str(output), "source": str(source),
               "minimumFreeBytes": MIN_FREE, "timeoutSeconds": timeout,
+              "metalCompiler": metal.stdout.strip(), "monitorPID": os.getpid(),
               "engineCompiled": False, "engineRuntimeTested": False}
     start = time.monotonic()
     result = BASE / "build-results.json"
@@ -84,6 +89,8 @@ def build(source, timeout):
     with log.open("wb") as stream:
         process = subprocess.Popen(command, cwd=source, env=build_environment(output),
                                    stdout=stream, stderr=subprocess.STDOUT, start_new_session=True)
+        report["processGroupPID"] = process.pid
+        result.write_text(json.dumps(report, indent=2) + "\n")
         try:
             while process.poll() is None:
                 require_disk(BASE)

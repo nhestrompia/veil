@@ -70,3 +70,9 @@ The build uses the upstream Everything up to WebKit scheme. It includes engine d
 The first attempt stopped before compilation because root configurations were absent. The source list now includes Configurations. The dependency scheme also replaces the incomplete WebKit-only scheme. The corrected attempt started compilation. No completed engine or runtime result exists yet.
 
 The build log and receipts are in .build/webkit-engine/. A successful command does not prove which frameworks a research browser loads. Check UI and content-process framework identities before live claims. The frozen physical browser and permissioned probes remain unchanged.
+
+## Runtime diagnostic preparation
+
+Compile the engine diagnostic with --engine-native or --engine-stable, plus --build-only. Logical host overrides are refused. The diagnostic uses an ad hoc signature without hardened runtime. Only that disposable app receives the custom loader environment.
+
+After a successful build, pass --engine-frameworks .build/webkit-engine/output/Release to the focus controller. Startup requires expected UI images and content mappings. This path remains unverified against a completed engine. See [runtime gates](../docs/engine-runtime-findings.md).

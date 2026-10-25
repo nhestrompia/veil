@@ -70,11 +70,17 @@ def score_after_attempt(before, after, log_tail, attempted, control_worked):
             "verdict": verdict}
 
 
-def prepare(name, output, oracle, url_suffix=""):
+def prepare(name, output, oracle, url_suffix="", engine_root=None):
     trial = oracle.create()
     output.with_suffix(".trial.json").write_text(json.dumps(trial, indent=2) + "\n")
     log = output.with_suffix(".log")
-    launcher, binary = launch(name, log, ["--url", trial["url"] + url_suffix])
+    if engine_root is not None:
+        if name != "InternalKeyboardControl":
+            raise RuntimeError("Engine loading is limited to the isolated diagnostic")
+        from engine_runtime import launch_engine
+        launcher, binary = launch_engine(log, ["--url", trial["url"] + url_suffix], engine_root)
+    else:
+        launcher, binary = launch(name, log, ["--url", trial["url"] + url_suffix])
     session = {"launcher": launcher, "binary": binary, "pid": None, "trial": trial, "log": log}
     try:
         session["pid"] = ready(log, r"Browser ready: pid=(\d+)")
@@ -95,6 +101,9 @@ def prepare(name, output, oracle, url_suffix=""):
             if oracle.state(trial)["submissions"]:
                 raise RuntimeError("Reference already has a submission before the attack")
         session["binarySHA256"] = hashlib.sha256(binary.read_bytes()).hexdigest()
+        if engine_root is not None:
+            from engine_runtime import verify_content
+            session["engineIdentity"] = verify_content(log, engine_root, output.with_suffix(".engine.json"))
         return session
     except BaseException:
         try:

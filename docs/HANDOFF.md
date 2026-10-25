@@ -163,3 +163,9 @@ One ordinary and one stable-host password comparison passed. The stable host ret
 The six-file patch is now applied to the separate pinned checkout. Exact hashes and retry checks pass. All 95 Python checks pass. The first build stopped before compilation because Configurations was missing. The source list and dependency scheme are corrected. The second attempt started real compilation with four jobs at reduced priority. A 60 GiB disk reserve and two-hour limit apply.
 
 Build receipts and logs are in .build/webkit-engine/. No completed engine or runtime result exists yet. Preserve the running build monitor. Verify actual UI and content-process framework identities before any live claim. See [build instructions](../engine/README.md).
+
+## Milestone 67 engine identity gates
+
+The engine diagnostic compiles. A system-framework fallback refused before window creation. All 99 Python checks pass. Positive UI and content mapping checks remain untested against a completed custom engine. The prepared InternalKeyboardControl now uses the engine-stable variant and an ad hoc signature without hardened runtime. Do not launch it as an ordinary control. Frozen browser and probe binaries remain unchanged.
+
+The second build stopped at Metal shaders. Apple MetalToolchain 27A266a is now installed and its compiler executes. The third incremental build runs with quiet logs and a macOS 26 deployment target. Its monitor PID is in .build/webkit-engine/build-results.json. The active unified exec session is 67320. Preserve that monitor and its disk reserve. See [runtime findings](engine-runtime-findings.md).

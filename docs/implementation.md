@@ -398,3 +398,8 @@ The actual projection header compiles with the pinned enum declaration. Exhausti
 The pinned source dependency passed all twelve hashes and pristine reuse. The isolated shallow sparse clone retained about 1.8 GB. Preparation enforces storage limits, a 60 GiB free-space reserve, and cleanup of its own process group. All 92 Python checks pass.
 
 The full-source audit covers the discovered activity sender and shared creation path, including recovery and remote pages. Initial empty documents and independent initial-focus operations limit broader claims. The source remains unpatched, unbuilt, and unexecuted. See [the audit](research/activity-full-source-audit.md) and [evidence](evidence/engine-source-results.json).
+
+
+## Milestone 65: direct native ownership evidence
+
+A read-only diagnostic checks WebKit ownership through its private testing getter. One matched ordinary password comparison released ownership while hidden. One stable-host comparison retained ownership while another research app became foreground. Both resumed one private task. The ordinary focus-only bypass reproduced. Cleanup passed and Secure Input returned to off. The default diagnostic was restored. See [ownership findings](secure-owner-findings.md).

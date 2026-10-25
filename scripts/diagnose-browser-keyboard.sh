@@ -9,6 +9,7 @@ invalid_backdrop=false
 feature_suite=false
 focus_mode=ordinary
 focus_resume=false
+owner_readback=false
 for argument in "$@"; do
     case "$argument" in
         --capture-restricted) restricted=true ;;
@@ -20,6 +21,7 @@ for argument in "$@"; do
         --logical-key) focus_mode=logical ;;
         --stable-activity) focus_mode=stable ;;
         --focus-resume) focus_resume=true ;;
+        --owner-readback) owner_readback=true ;;
         *) echo "Unknown diagnostic option: $argument" >&2; exit 2 ;;
     esac
 done
@@ -29,6 +31,7 @@ if [ "$backdrop" = true ]; then defines+=(-D INTERNAL_CAPTURE_BACKDROP); fi
 if [ "$invalid_backdrop" = true ]; then defines+=(-D INTERNAL_SMALL_CAPTURE_BACKDROP); fi
 if [ "$feature_suite" = true ]; then defines+=(-D INTERNAL_FEATURE_SUITE); fi
 if [ "$focus_resume" = true ]; then defines+=(-D INTERNAL_FOCUS_RESUME); fi
+if [ "$owner_readback" = true ]; then defines+=(-D INTERNAL_OWNER_READBACK); fi
 case "$focus_mode" in
     filter) defines+=(-D INTERNAL_ACTIVATION_FILTER) ;;
     logical) defines+=(-D INTERNAL_LOGICAL_KEY) ;;
@@ -54,14 +57,28 @@ boundary = boundary.replace('final class AXBoundaryWindow: NSWindow {', '''final
     override func becomeKey() {
         super.becomeKey()
         reportDiagnosticFocus("became-key")
+        reportSettledDiagnosticFocus("became-key-settled")
     }
 
     override func resignKey() {
         super.resignKey()
         reportDiagnosticFocus("resigned-key")
+        reportSettledDiagnosticFocus("resigned-key-settled")
+    }
+
+    private func reportSettledDiagnosticFocus(_ phase: String) {
+        #if INTERNAL_OWNER_READBACK
+        Task { @MainActor [weak self] in
+            try? await Task.sleep(for: .milliseconds(100))
+            self?.reportDiagnosticFocus(phase)
+        }
+        #endif
     }
 
     private func reportDiagnosticFocus(_ phase: String) {
+        #if INTERNAL_OWNER_READBACK
+        print("FOCUS_DIAGNOSTIC phase=\\(phase) viewSecureOwner=\\(DiagnosticSecureInput.owner(in: contentView))")
+        #endif
         print("FOCUS_DIAGNOSTIC phase=\\(phase) actualKey=\\(super.isKeyWindow) logicalKey=\\(isKeyWindow) actualVisible=\\(super.isVisible) logicalVisible=\\(isVisible) foreground=\\(NSWorkspace.shared.frontmostApplication?.processIdentifier ?? -1) secureInput=\\(IsSecureEventInputEnabled())")
         fflush(stdout)
     }
@@ -126,6 +143,9 @@ Task { @MainActor in
     try? await Task.sleep(for: .milliseconds(700))
     let app = NSApp as! DeviceKeyboardApplication
     @MainActor func key(_ code: UInt16, _ text: String, _ flags: NSEvent.ModifierFlags = []) {
+        #if INTERNAL_OWNER_READBACK
+        print("FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=\\(DiagnosticSecureInput.owner(in: window.contentView)) secureInput=\\(IsSecureEventInputEnabled())")
+        #endif
         for down in [true, false] {
             let event = NSEvent.keyEvent(with: down ? .keyDown : .keyUp, location: .zero,
                 modifierFlags: flags, timestamp: ProcessInfo.processInfo.systemUptime,
@@ -188,6 +208,7 @@ xcrun swiftc -swift-version 6 -warnings-as-errors -parse-as-library -O \
     "${defines[@]}" -target arm64-apple-macosx14.0 \
     -module-cache-path .build/module-cache .build/InternalFocusBoundary.swift \
     .build/InternalFocusDeviceKeyboard.swift Sources/Browser/HIDSourcePolicy.swift Sources/Browser/BrowserPolicy.swift \
+    Sources/Diagnostics/DiagnosticSecureInput.swift \
     Sources/Browser/RestrictedWebView.swift \
     Sources/Browser/BrowserRuntimePolicy.swift \
     Sources/Browser/InputSourceWindow.swift Sources/Browser/SecureInputWindow.swift \

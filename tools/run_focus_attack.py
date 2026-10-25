@@ -111,6 +111,9 @@ def run(output, controller, repetitions, surface="focus-action", hide=False, pas
                 while time.monotonic() < deadline and "resumeSequenceFinished=true" not in candidate["log"].read_text():
                     time.sleep(0.1)
                 row["privateResumeCompleted"] = "resumeSequenceFinished=true" in candidate["log"].read_text()
+                resume_log = candidate["log"].read_text().split("sequenceFinished=true noDeviceReader=true", 1)[-1]
+                row["privateResumeOwnershipEvents"] = [line for line in resume_log.splitlines()
+                    if line.startswith("FOCUS_DIAGNOSTIC phase=before-private-key")]
                 time.sleep(0.3)
                 row["privateResumeNewActions"] = accepted(oracle.state(candidate["trial"])) - before_resume
             print(json.dumps({"repetition": repetition, "status": row["status"], "candidate": row["candidate"]}), flush=True)

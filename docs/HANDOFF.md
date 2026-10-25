@@ -153,3 +153,7 @@ No branch was pushed and no pull request was created during this session.
 The isolated source dependency retains about 1.8 GB and preserves a 60 GiB disk reserve. All twelve pinned hashes and pristine reuse pass. All 92 Python checks pass. The archive returned HTTP 422, so preparation uses a shallow sparse dependency clone. See [the source audit](research/activity-full-source-audit.md) and [evidence](evidence/engine-source-results.json).
 
 The audit covers live updates, creation, remote pages, process swaps, and recovery. Independent initial-focus operations remain outside the patch. WebKit exposes a private per-view ownership readback. Next, measure that flag in matched password diagnostics, then apply and build the isolated patch. Always set WEBKIT_OUTPUTDIR inside the workspace before upstream build scripts.
+
+## Milestone 65 direct owner readback
+
+One ordinary and one stable-host password comparison passed. The stable host retained its own WebKit ownership flag while hidden, with another research app foreground. The ordinary host released it. Both resumed one private task. The ordinary focus-only bypass reproduced. Cleanup passed and aggregate Secure Input returned to off. See [ownership findings](secure-owner-findings.md). The default diagnostic was restored. The engine source is still unpatched and unbuilt.

@@ -4,7 +4,7 @@
 
 The source-policy browser remains alive as PID 43980. Its session file is `artifacts/source-policy-live/physical-session.json`. The user reported Task complete, and the oracle recorded one accepted physical baseline. The binary hash is `43b1a9833d6c55b1e254b848f9bd09c202da46ba0f8d8833084df559e6a8a9d1`.
 
-Twenty-seven native attempts then received explicit refusals. Six failed-control cases were skipped. The first vision run failed because relative PNG paths reached the probe app. Fix `tools/run_device_vision.py` to resolve output paths, refuse candidate trials without working references, and verify cleanup. Then rerun against this unchanged process.
+Twenty-seven native attempts then received explicit refusals. Six failed-control cases were skipped. Milestone 42 repaired relative capture paths and reference gating. Three adaptive vision controls completed, then three known-layout curved attacks received explicit refusals in this same process. Their window images were black. All 46 Python checks pass. See `docs/source-policy-vision-findings.md`. Test the display-filter and system capture routes next without rebuilding either binary.
 
 The app's Input Monitoring grant is now effective after the explicitly approved one-app ListenEvent reset and Add. Earlier off/on and Add attempts were insufficient. No approval remains pending.
 

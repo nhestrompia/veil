@@ -1,0 +1,34 @@
+{
+  "milestone": 63,
+  "patch": {
+    "revision": "94f9b7905e3ce9a3d7497f26b563adcad6b7525f",
+    "sourceFilesVerified": 12,
+    "patchSHA256": "8784560543f317c7278b14122a9f7b52d0cc8ca6a43accf033317f9022da0e76",
+    "changedFiles": [
+      "Source/WebKit/UIProcess/API/APIPageConfiguration.h",
+      "Source/WebKit/UIProcess/API/Cocoa/WKWebViewConfiguration.mm",
+      "Source/WebKit/UIProcess/API/Cocoa/WKWebViewConfigurationPrivate.h",
+      "Source/WebKit/UIProcess/ContentActivityProjection.h",
+      "Source/WebKit/UIProcess/WebPageProxy.cpp",
+      "Source/WebKit/UIProcess/WebPageProxy.h"
+    ],
+    "exactPatchApplicationVerified": true,
+    "nativeActivityUpdateUnmodified": true,
+    "nativeSecureInputSourceUnmodified": true,
+    "engineCompiled": false,
+    "engineRuntimeTested": false,
+    "patchToolOutput": "patching file 'Source/WebKit/UIProcess/API/APIPageConfiguration.h'\npatching file 'Source/WebKit/UIProcess/API/Cocoa/WKWebViewConfiguration.mm'\npatching file 'Source/WebKit/UIProcess/API/Cocoa/WKWebViewConfigurationPrivate.h'\npatching file 'Source/WebKit/UIProcess/ContentActivityProjection.h'\npatching file 'Source/WebKit/UIProcess/WebPageProxy.cpp'\npatching file 'Source/WebKit/UIProcess/WebPageProxy.h'\n"
+  },
+  "projection": {
+    "revision": "94f9b7905e3ce9a3d7497f26b563adcad6b7525f",
+    "enumSHA256": "82cc404269bf01aa3fac7819126440d54843c1d4ea26da9778fb96c1a9cea473",
+    "projectionSHA256": "f4ed43fa6a99d3a192106811877990758075b4c5af4e3d1b25b82b5a6c991eda",
+    "statesChecked": 65536,
+    "policiesChecked": 2,
+    "compiledProjection": true,
+    "compiledWebKitIntegration": false,
+    "runtimeBrowserTested": false,
+    "output": "Projection properties passed for 65,536 states in both modes; WebKit integration is not compiled."
+  },
+  "pythonChecksPassed": 89
+}

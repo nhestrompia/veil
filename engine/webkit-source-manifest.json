@@ -1,0 +1,77 @@
+{
+  "revision": "94f9b7905e3ce9a3d7497f26b563adcad6b7525f",
+  "files": [
+    {
+      "path": "Source/WebKit/UIProcess/WebPageProxy.h",
+      "bytes": 217491,
+      "sha256": "73cd81cff40dfdbbb8fb18fb180ba3d4b45a296fed4694a02ac8e97134f99cd3",
+      "url": "https://raw.githubusercontent.com/WebKit/WebKit/94f9b7905e3ce9a3d7497f26b563adcad6b7525f/Source/WebKit/UIProcess/WebPageProxy.h"
+    },
+    {
+      "path": "Source/WebKit/UIProcess/WebPageProxy.cpp",
+      "bytes": 897593,
+      "sha256": "c999ebe72a9b4dc5020a901f6eaf608ce62a9283e0039f969b4bff48891df77b",
+      "url": "https://raw.githubusercontent.com/WebKit/WebKit/94f9b7905e3ce9a3d7497f26b563adcad6b7525f/Source/WebKit/UIProcess/WebPageProxy.cpp"
+    },
+    {
+      "path": "Source/WebKit/Shared/WebPageCreationParameters.h",
+      "bytes": 14351,
+      "sha256": "0062011494f74ce1f7ca6c760043bbcf2ba51b95850b8b3c6640a3e8e4211243",
+      "url": "https://raw.githubusercontent.com/WebKit/WebKit/94f9b7905e3ce9a3d7497f26b563adcad6b7525f/Source/WebKit/Shared/WebPageCreationParameters.h"
+    },
+    {
+      "path": "Source/WebKit/UIProcess/mac/WebViewImpl.mm",
+      "bytes": 339192,
+      "sha256": "1f67ebabf51704d820f9132d82b1914c8d0f5afaa0127b24f834b7508bbc7024",
+      "url": "https://raw.githubusercontent.com/WebKit/WebKit/94f9b7905e3ce9a3d7497f26b563adcad6b7525f/Source/WebKit/UIProcess/mac/WebViewImpl.mm"
+    },
+    {
+      "path": "Source/WebKit/UIProcess/API/Cocoa/WKWebViewPrivate.h",
+      "bytes": 67191,
+      "sha256": "6876f58aa1b65fd3fa672bc5136f7063c16b4e42f4d48026e55a4d3f9876ae55",
+      "url": "https://raw.githubusercontent.com/WebKit/WebKit/94f9b7905e3ce9a3d7497f26b563adcad6b7525f/Source/WebKit/UIProcess/API/Cocoa/WKWebViewPrivate.h"
+    },
+    {
+      "path": "Source/WebCore/page/ActivityState.h",
+      "bytes": 2462,
+      "sha256": "82cc404269bf01aa3fac7819126440d54843c1d4ea26da9778fb96c1a9cea473",
+      "url": "https://raw.githubusercontent.com/WebKit/WebKit/94f9b7905e3ce9a3d7497f26b563adcad6b7525f/Source/WebCore/page/ActivityState.h"
+    },
+    {
+      "path": "Source/WebKit/UIProcess/API/APIPageConfiguration.cpp",
+      "bytes": 13257,
+      "sha256": "58cf1440a4a3df0f21a8ddbc565e253c44d5a6f39139d34578915c4dbf0ea58f",
+      "url": "https://raw.githubusercontent.com/WebKit/WebKit/94f9b7905e3ce9a3d7497f26b563adcad6b7525f/Source/WebKit/UIProcess/API/APIPageConfiguration.cpp"
+    },
+    {
+      "path": "Source/WebKit/UIProcess/API/APIPageConfiguration.h",
+      "bytes": 36366,
+      "sha256": "839cae659d624afb9b687af164e613e0c8f307a3dd7f7b3581794324cd85196c",
+      "url": "https://raw.githubusercontent.com/WebKit/WebKit/94f9b7905e3ce9a3d7497f26b563adcad6b7525f/Source/WebKit/UIProcess/API/APIPageConfiguration.h"
+    },
+    {
+      "path": "Source/WebKit/UIProcess/API/Cocoa/WKWebViewConfiguration.mm",
+      "bytes": 53906,
+      "sha256": "d024120212725bbade33e1d61bfc5dc22439e58aeea61ec9ad4f3c394c6b3a88",
+      "url": "https://raw.githubusercontent.com/WebKit/WebKit/94f9b7905e3ce9a3d7497f26b563adcad6b7525f/Source/WebKit/UIProcess/API/Cocoa/WKWebViewConfiguration.mm"
+    },
+    {
+      "path": "Source/WebKit/UIProcess/API/Cocoa/WKWebViewConfigurationPrivate.h",
+      "bytes": 16745,
+      "sha256": "20ebea85ec94fd24ded711933a61905d4d55d6391f0843a07e92b72c91bda0cd",
+      "url": "https://raw.githubusercontent.com/WebKit/WebKit/94f9b7905e3ce9a3d7497f26b563adcad6b7525f/Source/WebKit/UIProcess/API/Cocoa/WKWebViewConfigurationPrivate.h"
+    },
+    {
+      "path": "Tools/Scripts/build-webkit",
+      "bytes": 17833,
+      "sha256": "4802a9b261e77607edcce0cfc50965f161ab55c90b690f2d5909f775f629d93d",
+      "url": "https://raw.githubusercontent.com/WebKit/WebKit/94f9b7905e3ce9a3d7497f26b563adcad6b7525f/Tools/Scripts/build-webkit"
+    },
+    {
+      "path": "Tools/Scripts/webkitdirs.pm",
+      "bytes": 131951,
+      "sha256": "b2adefbc5ad2bd656458484fc9c5757c42c15124675dae1692788ec38b7857cf",
+      "url": "https://raw.githubusercontent.com/WebKit/WebKit/94f9b7905e3ce9a3d7497f26b563adcad6b7525f/Tools/Scripts/webkitdirs.pm"
+    }
+  ]
+}

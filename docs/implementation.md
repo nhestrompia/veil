@@ -384,3 +384,10 @@ Three independent sketches and a separate judge selected an outgoing-only WebKit
 The design retains actual key-window and foreground checks for input. Native ownership and current password state require a separate verified barrier. Aggregate Secure Event Input supports owner attribution only as a source-backed inference. The earlier hide receipt did not establish another foreground app.
 
 A cross-provider review failed before execution because its configured key expired. An available native reviewer completed the comparison, with reduced model-family diversity. The full engine is neither downloaded nor built. Read-only toolchain and resource checks passed. The next unit is the isolated projection patch. See [the design](research/activity-boundary-plan.md).
+
+
+## Milestone 63: pinned engine patch and compiled projection
+
+A generated six-file WebKit patch adds an immutable per-view policy and projects activity at the two bounded outgoing sites. It leaves native activity calculation and secure ownership code unchanged. Twelve source hashes and exact zero-fuzz patch application pass.
+
+The actual projection header compiles with the pinned enum declaration. Exhaustive checks pass for 65,536 flag sets in both modes. Native identity, five protected flags, other flags, and idempotence pass. This does not compile or validate WebKit integration. All 89 Python checks pass. The full engine remains unbuilt and runtime attacks remain pending. See [engine reproduction](../engine/README.md) and [evidence](evidence/engine-projection-results.json).

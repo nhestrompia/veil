@@ -1,0 +1,152 @@
+--- a/Source/WebKit/UIProcess/API/APIPageConfiguration.h
++++ b/Source/WebKit/UIProcess/API/APIPageConfiguration.h
+@@ -403,6 +403,9 @@
+ 
+     bool showsSystemScreenTimeBlockingView() const { return m_data.showsSystemScreenTimeBlockingView; }
+     void setShowsSystemScreenTimeBlockingView(bool shows) { m_data.showsSystemScreenTimeBlockingView = shows; }
++
++    bool usesStablePageActivityForResearch() const { return m_data.usesStablePageActivityForResearch; }
++    void setUsesStablePageActivityForResearch(bool enabled) { m_data.usesStablePageActivityForResearch = enabled; }
+ 
+     bool shouldSendConsoleLogsToUIProcessForTesting() const { return m_data.shouldSendConsoleLogsToUIProcessForTesting; }
+     void setShouldSendConsoleLogsToUIProcessForTesting(bool should) { m_data.shouldSendConsoleLogsToUIProcessForTesting = should; }
+@@ -659,6 +662,7 @@
+         bool scrollToTextFragmentIndicatorEnabled { true };
+         bool scrollToTextFragmentMarkingEnabled { true };
+         bool showsSystemScreenTimeBlockingView { true };
++        bool usesStablePageActivityForResearch { false };
+         bool shouldSendConsoleLogsToUIProcessForTesting { false };
+         bool allowPostingLegacySynchronousMessages { false };
+         bool backgroundTextExtractionEnabled { false };
+--- a/Source/WebKit/UIProcess/API/Cocoa/WKWebViewConfiguration.mm
++++ b/Source/WebKit/UIProcess/API/Cocoa/WKWebViewConfiguration.mm
+@@ -791,6 +791,16 @@
+     _pageConfiguration->setShouldSendConsoleLogsToUIProcessForTesting(should);
+ }
+ 
++- (BOOL)_usesStablePageActivityForResearch
++{
++    return _pageConfiguration->usesStablePageActivityForResearch();
++}
++
++- (void)_setUsesStablePageActivityForResearch:(BOOL)enabled
++{
++    _pageConfiguration->setUsesStablePageActivityForResearch(enabled);
++}
++
+ - (BOOL)_shouldSendConsoleLogsToUIProcessForTesting
+ {
+     return _pageConfiguration->shouldSendConsoleLogsToUIProcessForTesting();
+--- a/Source/WebKit/UIProcess/API/Cocoa/WKWebViewConfigurationPrivate.h
++++ b/Source/WebKit/UIProcess/API/Cocoa/WKWebViewConfigurationPrivate.h
+@@ -54,6 +54,8 @@
+ @class _WKWebExtensionController;
+ 
+ @interface WKWebViewConfiguration (WKPrivate)
++
++@property (nonatomic, setter=_setUsesStablePageActivityForResearch:) BOOL _usesStablePageActivityForResearch;
+ 
+ @property (nonatomic, weak, setter=_setRelatedWebView:) WKWebView *_relatedWebView WK_API_DEPRECATED("Please migrate away from using _relatedWebView and talk to the WebKit team if there are difficulties doing so", macos(10.10, 15.2), ios(8.0, 18.2));
+ @property (nonatomic, weak, setter=_setWebViewToCloneSessionStorageFrom:) WKWebView *_webViewToCloneSessionStorageFrom;
+--- /dev/null
++++ b/Source/WebKit/UIProcess/ContentActivityProjection.h
+@@ -0,0 +1,24 @@
++#pragma once
++
++#include <type_traits>
++
++namespace WebKit {
++
++enum class ContentActivityPolicy : bool { Native, StableBrowsing };
++
++template<typename Activity>
++constexpr std::underlying_type_t<Activity> projectContentActivity(
++    std::underlying_type_t<Activity> observed, ContentActivityPolicy policy)
++{
++    using Storage = std::underlying_type_t<Activity>;
++    static_assert(std::is_unsigned_v<Storage>);
++    constexpr Storage stableFlags = static_cast<Storage>(Activity::WindowIsActive)
++        | static_cast<Storage>(Activity::IsFocused)
++        | static_cast<Storage>(Activity::IsVisible)
++        | static_cast<Storage>(Activity::IsVisibleOrOccluded)
++        | static_cast<Storage>(Activity::IsInWindow);
++    return policy == ContentActivityPolicy::StableBrowsing
++        ? static_cast<Storage>(observed | stableFlags) : observed;
++}
++
++} // namespace WebKit
+--- a/Source/WebKit/UIProcess/WebPageProxy.cpp
++++ b/Source/WebKit/UIProcess/WebPageProxy.cpp
+@@ -26,6 +26,7 @@
+ 
+ #include "config.h"
+ #include "WebPageProxy.h"
++#include "ContentActivityProjection.h"
+ 
+ #include "APIArray.h"
+ #include "APIAttachment.h"
+@@ -944,6 +945,7 @@
+     , m_webPageID(PageIdentifier::generate())
+     , m_pageClient(pageClient)
+     , m_configuration(configuration)
++    , m_contentActivityPolicy(configuration->usesStablePageActivityForResearch() ? ContentActivityPolicy::StableBrowsing : ContentActivityPolicy::Native)
+     , m_navigationClient(makeUniqueRef<API::NavigationClient>())
+     , m_historyClient(makeUniqueRef<API::HistoryClient>())
+     , m_iconLoadingClient(makeUnique<API::IconLoadingClient>())
+@@ -3553,6 +3555,11 @@
+     return internals().activityState.contains(ActivityState::WindowIsActive);
+ }
+ 
++OptionSet<ActivityState> WebPageProxy::activityStateForContent() const
++{
++    return OptionSet<ActivityState>::fromRaw(projectContentActivity<ActivityState>(internals().activityState.toRaw(), m_contentActivityPolicy));
++}
++
+ void WebPageProxy::updateActivityState(OptionSet<ActivityState> flagsToUpdate)
+ {
+     bool wasVisible = isViewVisible();
+@@ -3750,7 +3757,7 @@
+                 callback();
+         });
+         forEachWebContentProcess([&](auto& webProcess, auto pageID) {
+-            webProcess.sendWithAsyncReply(Messages::WebPage::SetActivityState(internals().activityState, activityStateChangeID), [callbackAggregator] { }, pageID);
++            webProcess.sendWithAsyncReply(Messages::WebPage::SetActivityState(activityStateForContent(), activityStateChangeID), [callbackAggregator] { }, pageID);
+         });
+     }
+ 
+@@ -14628,7 +14635,7 @@
+     parameters.remotePageParameters = WTF::move(remotePageParameters);
+     parameters.windowFeatures = m_configuration->windowFeatures();
+     parameters.viewSize = pageClient ? pageClient->viewSize() : WebCore::IntSize { };
+-    parameters.activityState = internals().activityState;
++    parameters.activityState = activityStateForContent();
+ #if ENABLE(TILED_CA_DRAWING_AREA)
+     parameters.drawingAreaType = drawingArea.type();
+ #endif
+--- a/Source/WebKit/UIProcess/WebPageProxy.h
++++ b/Source/WebKit/UIProcess/WebPageProxy.h
+@@ -511,6 +511,8 @@
+ 
+ namespace WebKit {
+ 
++enum class ContentActivityPolicy : bool;
++
+ class AboutSchemeHandler;
+ class AudioSessionRoutingArbitratorProxy;
+ class AuthenticationChallengeProxy;
+@@ -3125,6 +3127,7 @@
+     bool sendGoToBackForwardItemForFrame(WebBackForwardListFrameItem& targetFrame, WebCore::NavigationIdentifier, WebCore::FrameLoadType, WebCore::ShouldRestoreFromBackForwardCache, const WebCore::PublicSuffix&);
+     Ref<WebBackForwardListFrameItem> frameItemForLegacyTraversalRouting(WebBackForwardListItem& targetItem, ASCIILiteral logTag);
+ 
++    OptionSet<WebCore::ActivityState> activityStateForContent() const;
+     void updateActivityState(OptionSet<WebCore::ActivityState> flagsToUpdate);
+     void updateThrottleState();
+     void updateHiddenPageThrottlingAutoIncreases();
+@@ -3821,6 +3824,7 @@
+ 
+     WeakPtr<PageClient> m_pageClient;
+     const Ref<API::PageConfiguration> m_configuration;
++    const ContentActivityPolicy m_contentActivityPolicy;
+ 
+     std::unique_ptr<API::LoaderClient> m_loaderClient;
+     std::unique_ptr<API::PolicyClient> m_policyClient;

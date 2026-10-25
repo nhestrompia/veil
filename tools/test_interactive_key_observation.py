@@ -1,0 +1,42 @@
+import threading
+import unittest
+
+from run_interactive_key_observation import Controller, physical_reference_worked
+
+
+class InteractiveObservationTests(unittest.TestCase):
+    def controller(self):
+        controller = Controller.__new__(Controller)
+        controller.lock = threading.RLock()
+        controller.reference_accepted = 0
+        controller.phase = "ready-reference"
+        controller.worker = None
+        return controller
+
+    def test_typing_before_listener_ready_does_not_count(self):
+        controller = self.controller()
+        self.assertFalse(controller.accept_reference("native-input"))
+        self.assertEqual(controller.reference_accepted, 0)
+
+    def test_only_one_correct_submission_in_the_listening_interval_counts(self):
+        controller = self.controller()
+        controller.phase = "listening-reference"
+        self.assertFalse(controller.accept_reference("wrong"))
+        self.assertTrue(controller.accept_reference("native-input"))
+        self.assertFalse(controller.accept_reference("native-input"))
+        self.assertEqual(controller.reference_accepted, 1)
+
+    def test_uncalibrated_reference_cannot_start_candidate(self):
+        controller = self.controller()
+        controller.phase = "ready-candidate"
+        controller.report = {"samples": [{"newAcceptedSubmissions": 1}]}
+        self.assertFalse(controller.start(True))
+
+    def test_received_keys_without_matching_phrase_do_not_calibrate(self):
+        row = {"newAcceptedSubmissions": 1, "observerCleanupVerified": True,
+               "observation": {"eventCount": 13, "monitorRemoved": True, "expectedFakePhraseMatched": False}}
+        self.assertFalse(physical_reference_worked(row))
+
+
+if __name__ == "__main__":
+    unittest.main()

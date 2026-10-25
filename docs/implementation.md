@@ -246,3 +246,9 @@ All 39 processes passed cleanup. The probe remained unchanged. The loaded diagno
 The offline tool processes one declared physical session and fifteen saved synthetic sessions. It removes source labels and absolute locations from motion features. A copied trajectory preserves every selected feature. Samples without enough motion remain explicitly unavailable.
 
 No classifier trains, no input event posts, and no live replay result follows. The physical task remains unverified. Four new checks pass, and all 36 Python checks pass. See [offline replay findings](behavior-replay-findings.md).
+
+## Milestone 39: recover the rebuilt browser's grant
+
+Off/on and exact-bundle Add did not restore effective Input Monitoring. Read-only signature checks passed, but TCC examined an older code requirement. A user-approved reset of this app's ListenEvent decision, followed by exact-bundle Add, restored access.
+
+The read-only identity helper compiles and refuses unrelated PIDs. Its diagnostic browser passed cleanup. No other permission reset. This restores a test prerequisite, not a prevention result. See [grant recovery findings](grant-recovery-findings.md).

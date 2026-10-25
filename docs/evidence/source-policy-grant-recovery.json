@@ -1,0 +1,63 @@
+{
+  "bundleID": "research.agentfreebrowser.devicekeyboard",
+  "service": "ListenEvent",
+  "executableSHA256": "43b1a9833d6c55b1e254b848f9bd09c202da46ba0f8d8833084df559e6a8a9d1",
+  "codeIdentity": {
+    "dynamicValidity": 0,
+    "guestStaticIdentity": {
+      "cdhash": "0c7b32bc9890ace3d52519098021d6fbad3ad8e7",
+      "identifier": "research.agentfreebrowser.devicekeyboard",
+      "status": 0
+    },
+    "guestStaticStatus": 0,
+    "guestStatus": 0,
+    "pid": 40118,
+    "static": {
+      "cdhash": "0c7b32bc9890ace3d52519098021d6fbad3ad8e7",
+      "status": 0
+    },
+    "staticStatus": 0,
+    "cleanupVerified": true,
+    "websiteLoaded": false
+  },
+  "explicitRequirements": {
+    "current": {
+      "cdhash": "0c7b32bc9890ace3d52519098021d6fbad3ad8e7",
+      "status": 0,
+      "stderr": ""
+    },
+    "prior": {
+      "cdhash": "89137ae7143d7facead823abc6a6f809629150d6",
+      "status": 3,
+      "stderr": "test-requirement: code failed to satisfy specified code requirement(s)"
+    }
+  },
+  "freshFileCopy": {
+    "sameBinarySHA256": true,
+    "binarySHA256": "43b1a9833d6c55b1e254b848f9bd09c202da46ba0f8d8833084df559e6a8a9d1",
+    "executableInodeChanged": true,
+    "signatureVerified": true,
+    "permissionsChanged": false
+  },
+  "checks": {
+    "permissions.log": false,
+    "refreshed-permissions.log": false,
+    "readded-permissions.log": false,
+    "fresh-bundle-permissions.log": false,
+    "final-permissions.log": false,
+    "reset-permissions.log": true
+  },
+  "offOnExplicitlyApproved": true,
+  "exactBundleAddExplicitlyApproved": true,
+  "oneAppResetExplicitlyApproved": true,
+  "oneAppResetSucceeded": true,
+  "otherServicesReset": false,
+  "rawPermissionEnumRecorded": false,
+  "tccObservation": {
+    "setInternalCDHash": "0c7b32bc9890ace3d52519098021d6fbad3ad8e7",
+    "laterRequirementCDHash": "89137ae7143d7facead823abc6a6f809629150d6",
+    "validationStatus": -67050,
+    "interpretation": "Observed mismatch, not a proven cache mechanism."
+  },
+  "scope": "Effective permission recovery only. No website or human usability claim."
+}

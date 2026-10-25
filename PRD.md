@@ -57,6 +57,8 @@ The MVP excludes extensions, account sync, imported browser profiles, a password
 
 There is no Windows or Linux build, website SDK, enterprise administration service, server-side browser attestation, or CAPTCHA. Private macOS APIs and changes to system security settings are outside the proposed MVP.
 
+Milestones 58 through 61 found OS lifecycle actions and a native ownership conflict in host-only mitigations. The continued research now includes one isolated WebKit activity-projection experiment. It keeps the original MVP exclusions for production scope. A custom engine, private API, or changed setting is not a passing result by itself. See [the activity boundary design](docs/research/activity-boundary-plan.md).
+
 ## Threat model and success contract
 
 An agent is an external program that observes or controls this browser to complete a web task. The browser does not need to identify whether an LLM produced the program's instructions. It must restrict the program's access.

@@ -1,6 +1,6 @@
 # Stable page activity and password input ownership
 
-A separate diagnostic stopped the tested visibility, blur, and password-page focus actions during hide and restore. It still fails a native input ownership requirement. Its password view retained Secure Event Input while its application was hidden. This diagnostic is not enabled in the live browser.
+A separate diagnostic stopped the tested visibility, blur, and password-page focus actions during hide and restore. It still fails a native input ownership requirement. Aggregate Secure Event Input remained enabled while its password view was hidden. This diagnostic is not enabled in the live browser.
 
 ## Exact comparisons
 
@@ -16,7 +16,7 @@ The diagnostic reports logical key-window, visible-window, and occlusion values 
 
 ## Password failure
 
-The readable password view released Secure Event Input while hidden. The stable-activity candidate kept it enabled before hiding, while hidden, and after return. That result confirms the source coupling between WebKit's logical key state and its input ownership.
+The readable password control recorded Secure Event Input off while hidden. The candidate recorded it on before hiding, while hidden, and after return. This is an aggregate system measurement. WebKit ownership is an inference supported by source, the matched contrast, and successful release on cleanup. The receipt confirms actual key-window and visibility loss, but its logged foreground PID remains the candidate. It does not demonstrate another app becoming foreground.
 
 Every temporary process passed cleanup. Secure Event Input was off after each cleanup. The problem is hidden ownership during the experiment, not failed cleanup. No global input hook or permission change occurred.
 

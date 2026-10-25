@@ -375,3 +375,12 @@ All nine private editor/frame baselines passed. Their 45 external cases produced
 A diagnostic holds logical key, visibility, and occlusion state steady while preserving actual key-window and foreground-PID routing checks. One comparison per mode stopped visibility, blur, and password focus actions. All three resumed private tasks completed.
 
 The password candidate retained Secure Event Input while hidden. Its readable control released ownership. Every temporary process passed cleanup and left Secure Event Input off. This failed condition blocks production use of the host getter approach. Pinned source research defines the next boundary between DOM activity and actual native ownership. See [stable-activity findings](stable-activity-findings.md).
+
+
+## Milestone 62: separate page activity from actual input eligibility
+
+Three independent sketches and a separate judge selected an outgoing-only WebKit activity projection. It preserves raw UI-process state, sets all five protected content flags, and seeds new content processes. The configuration is immutable for a view. There is no activity-commit API or delayed native replay.
+
+The design retains actual key-window and foreground checks for input. Native ownership and current password state require a separate verified barrier. Aggregate Secure Event Input supports owner attribution only as a source-backed inference. The earlier hide receipt did not establish another foreground app.
+
+A cross-provider review failed before execution because its configured key expired. An available native reviewer completed the comparison, with reduced model-family diversity. The full engine is neither downloaded nor built. Read-only toolchain and resource checks passed. The next unit is the isolated projection patch. See [the design](research/activity-boundary-plan.md).

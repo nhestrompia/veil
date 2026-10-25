@@ -311,3 +311,9 @@ The restricted browser accepted one requested physical task while the external o
 The readable ordinary-field control completed one generated task and exposed the phrase through thirteen events. Two password-field trials completed with Secure Event Input active and no observed keys. The listener remained alive after input. The final trial verified acceptance before the liveness check.
 
 Both password listeners ended on later focus loss. No physical password claim follows. Every process passed cleanup, and Secure Event Input was off afterward. The restricted browser stayed unchanged. All 66 Python checks pass. See [secure-entry findings](secure-entry-observation-findings.md).
+
+## Milestone 52: Safari remote-inspector control
+
+Safari attached to the inspectable reference without local developer extras. Its Console read the fresh marker and completed one independent task. The Mac target menu omitted the unchanged candidate. This is discovery evidence, not a direct connection refusal.
+
+The approved temporary Safari setting returned to off. Reference cleanup passed. The PRD now separates recognition of physical typing from autonomous input. See [remote findings](safari-remote-findings.md).

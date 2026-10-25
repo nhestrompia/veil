@@ -1,6 +1,16 @@
 # Current research state
 
-Updated 2026-10-25. Milestone 50 is committed. Milestone 51 adds a bounded password-field comparison. The browser is not agent-free.
+Updated 2026-10-25. Milestones 50 and 51 are committed. Milestone 52 completes a Safari remote-inspector control and records candidate discovery. Agent-free operation remains unproven.
+
+## Current priority and remote control
+
+The user clarified that recognizing physical typing is separate from agent-generated input. Do not count that observation as an autonomous input bypass. Prioritize navigation and website actions by external agents. Keep confidentiality results separate.
+
+Safari Web Inspector read the reference marker and completed one accepted task. The working reference appeared in the Mac target menu, while the unchanged candidate did not. This is a not-advertised result, not a direct attachment refusal. See [remote findings](safari-remote-findings.md).
+
+The user approved a temporary developer-setting toggle and restoration. The UI confirmed its final state was off. Research Safari windows closed and the reference passed cleanup. A broader inspection-list read was rejected because of unrelated tab URLs. The safer Mac-only menu completed discovery.
+
+DockDoor and LinearMouse had restarted. Their verified processes stopped before input, and the safeguard then reported no blocking hooks. Recheck before every later attack.
 
 ## Latest result
 
@@ -34,7 +44,7 @@ The original physical process refused 27 calibrated native attempts and three ad
 
 The current observation disproves keyboard confidentiality against this permissioned listener. The generated password comparison received no keys during two accepted tasks. Secure input was active, and cleanup restored its inactive state. Physical password entry remains untested. See [the secure-entry result](secure-entry-observation-findings.md). Apple TN2150 advises against enabling Secure Event Input for general text or an entire app lifetime. Do not turn that into a whole-browser fix without a separate design and compatibility experiment.
 
-Remote inspection, unfiltered capture on this physical build, renderer semantics, broader session privacy, and general website compatibility remain open. The browser supports only the measured built-in keyboard and US ASCII. Pointer input is disabled. The device policy does not attest a human or cryptographically attest hardware.
+Direct remote attachment beyond discovery, unfiltered capture on this physical build, renderer semantics, broader session privacy, and general website compatibility remain open. The browser supports only the measured built-in keyboard and US ASCII. Pointer input is disabled. The device policy does not attest a human or cryptographically attest hardware.
 
 All 66 Python checks pass. Swift matcher and timing checks pass. See [implementation milestones](implementation.md) for the full record.
 

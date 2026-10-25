@@ -76,6 +76,8 @@ Code injection into the browser process, a modified app binary, root access, ker
 | Session reuse | Inspect browser-created files or reuse credentials exposed by this browser. | No deliberate credential export or content logging. Test accessible residue and document remaining same-user limits. |
 | Another browser or direct API | Open a public URL elsewhere or use independently obtained credentials. | Outside the browser claim. This browser cannot revoke those capabilities. |
 
+The current prototype prioritizes independent agent operation. A person completing a task while a listener recognizes a known test phrase is not an agent-input bypass. That sample also does not demonstrate recovery of a fresh page-only secret. Keep keyboard privacy evidence separate from autonomous action and fresh-marker results.
+
 For acceptance, measure disclosure and action prevention separately. Disclosure means recovery of a fresh secret shown only in the current page. Action success means completion of a task, even if the agent cannot read the page. Either result defeats the broad claim that agents cannot use this browser.
 
 An agent-resistant result must name the routes it blocks and measure the routes it only makes harder. Read resistance and action resistance remain separate results. A finite test matrix supplies evidence for those routes, not proof against every future agent.

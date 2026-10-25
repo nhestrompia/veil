@@ -29,11 +29,13 @@ The user completed one physical task on the capture-restricted source-policy bui
 
 Fifteen fresh startup controls completed, while fifteen matched candidates showed no software binding or task action. A separate session-insertion matrix recorded eighteen explicit refusals against loaded diagnostics. These are distinct from the physical-session results.
 
-The project is not agent-free. A permissioned external observer recognized the fake phrase during a new physical task on the unchanged browser binary. Both Unicode and virtual-keycode matchers succeeded. The independent oracle accepted the task, and observer cleanup passed. This establishes a keyboard-observation gap. It does not establish an autonomous website action or arbitrary page disclosure.
+Agent-free operation remains unproven. A permissioned external observer recognized the fake phrase during a new physical task on the unchanged browser binary. Both Unicode and virtual-keycode matchers succeeded. The independent oracle accepted the task, and observer cleanup passed. This establishes a keyboard-observation gap. It does not establish an autonomous website action or arbitrary page disclosure. The current priority is autonomous action prevention while preserving human browsing.
 
 One physical task does not meet the PRD's human compatibility targets. External inspection, unfiltered capture on the current build, and broader session privacy remain open. The offline behavior pilot provides neither a trained classifier nor live adaptive replay evidence.
 
 Recent evidence:
+
+- [Safari remote inspection](docs/safari-remote-findings.md) completes a reference console action and finds no advertised candidate target.
 
 - [Physical-session attacks](docs/source-policy-session-findings.md) preserve the human control and native input results.
 - [Adaptive vision](docs/source-policy-vision-findings.md) continues from black images using matched page geometry.

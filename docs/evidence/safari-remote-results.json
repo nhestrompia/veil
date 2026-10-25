@@ -1,0 +1,57 @@
+{
+  "results": {
+    "target": "InspectableControl",
+    "pid": 73834,
+    "trialID": "50761b02c0d410d7",
+    "url": "http://127.0.0.1:8765/trial/50761b02c0d410d7",
+    "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+    "inspectorTransport": "safari-remote",
+    "developerExtrasRequested": false,
+    "persistentPreferencesChanged": false,
+    "operatorFinished": true,
+    "humanBaseline": false,
+    "targetAliveAtFinish": true,
+    "newSubmissions": [
+      {
+        "accepted": true
+      }
+    ],
+    "scope": "Inspector control on a readable research shell. Candidate results require a separate matched test."
+  },
+  "remote-console-evidence": {
+    "referencePID": 73834,
+    "trialID": "50761b02c0d410d7",
+    "remoteInspectorOpened": true,
+    "inspectorApplication": "Safari",
+    "markerReadThroughRemoteConsole": true,
+    "pathReadThroughRemoteConsole": "/trial/50761b02c0d410d7",
+    "acceptedActions": 1,
+    "localDeveloperExtrasRequested": false,
+    "inputGeneratedByAgent": true
+  },
+  "candidate-discovery": {
+    "candidatePID": 61893,
+    "candidateBinarySHA256": "43b1a9833d6c55b1e254b848f9bd09c202da46ba0f8d8833084df559e6a8a9d1",
+    "candidateStillRunningUnchanged": true,
+    "physicalBaselineEvidence": "docs/evidence/keyboard-readiness-physical-results.json",
+    "totalAcceptedActions": 1,
+    "expectedAcceptedPhysicalBaseline": 1,
+    "sameMacMenuShowsWorkingReference": true,
+    "referenceTargetListed": true,
+    "candidateTargetListed": false,
+    "candidateAttachmentAttempted": false,
+    "outcome": "not-advertised",
+    "scope": "Safari Mac-only Develop target discovery after a successful remote-console reference. No direct-identifier connection test."
+  },
+  "cleanup": {
+    "pid": 73834,
+    "verified": true
+  },
+  "settings-restoration": {
+    "initialEnabled": false,
+    "temporaryEnableExplicitlyApproved": true,
+    "finalEnabled": false,
+    "restorationVerifiedInUI": true,
+    "researchWindowsClosed": true
+  }
+}

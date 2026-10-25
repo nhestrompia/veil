@@ -14,7 +14,7 @@ from run_native import ROOT, Oracle, probe
 
 TARGETS = ("InspectableControl", "AgentFreeBrowser", "LocalInspectorControl")
 
-def run(output, target="InspectableControl"):
+def run(output, target="InspectableControl", transport="local"):
     if target not in TARGETS:
         raise ValueError("Inspector session target is not a readable research shell")
     output = output.resolve()
@@ -26,8 +26,10 @@ def run(output, target="InspectableControl"):
     oracle = Oracle()
     trial = oracle.create()
     log = output / "reference.log"
-    launcher, binary = launch(target, log,
-        ["-WebKitDebugDeveloperExtrasEnabled", "YES", "--url", trial["url"]])
+    arguments = ["--url", trial["url"]]
+    if transport == "local":
+        arguments += ["-WebKitDebugDeveloperExtrasEnabled", "YES"]
+    launcher, binary = launch(target, log, arguments)
     pid = None
     try:
         pid = ready(log, r"Browser ready: pid=(\d+)")
@@ -37,7 +39,8 @@ def run(output, target="InspectableControl"):
             raise RuntimeError("Reference has a submission before inspector attachment")
         session = {"target": target, "pid": pid, "trialID": trial["id"], "url": trial["url"],
                    "binarySHA256": hashlib.sha256(binary.read_bytes()).hexdigest(),
-                   "developerExtrasRequested": True, "persistentPreferencesChanged": False}
+                   "inspectorTransport": transport,
+                   "developerExtrasRequested": transport == "local", "persistentPreferencesChanged": False}
         (output / "session.json").write_text(json.dumps(session, indent=2) + "\n")
         print(json.dumps(session), flush=True)
         deadline = time.monotonic() + 240
@@ -48,7 +51,7 @@ def run(output, target="InspectableControl"):
         result = {**session, "operatorFinished": finish.exists(), "humanBaseline": False,
                   "targetAliveAtFinish": process_matches(pid, binary),
                   "newSubmissions": after["submissions"][len(before["submissions"]):],
-                  "scope": "Local inspector route on a readable shell. No device-browser or remote-transport claim."}
+                  "scope": "Inspector control on a readable research shell. Candidate results require a separate matched test."}
         (output / "results.json").write_text(json.dumps(result, indent=2) + "\n")
         print(json.dumps(result), flush=True)
     finally:
@@ -68,5 +71,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path, default=ROOT / "artifacts/local-inspector-control")
     parser.add_argument("--target", choices=TARGETS, default="InspectableControl")
+    parser.add_argument("--transport", choices=["local", "safari-remote"], default="local")
     args = parser.parse_args()
-    run(args.output, args.target)
+    run(args.output, args.target, args.transport)

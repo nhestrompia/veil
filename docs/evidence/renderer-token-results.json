@@ -1,0 +1,433 @@
+{
+  "initialTokenReference": {
+    "candidatePID": 61893,
+    "candidateBinarySHA256": "43b1a9833d6c55b1e254b848f9bd09c202da46ba0f8d8833084df559e6a8a9d1",
+    "rendererProbeSHA256": "00833c1a0cdd31b0b4d49acbd544a44cfa88f26e231fee063810dd9a7927e332",
+    "controls": [
+      {
+        "repetition": 0,
+        "pid": 85474,
+        "hostInitializationStatus": "observed",
+        "observation": {
+          "accessibility": true,
+          "accessibilityQueried": true,
+          "hostPID": 85474,
+          "inputTapInstalled": false,
+          "ownershipMethod": "Exact research executable, process start time, OS responsibility PID. Private metadata API.",
+          "permissionRequested": false,
+          "queries": [
+            {
+              "actionAttempted": false,
+              "buttonAvailable": true,
+              "discardedUnownedElements": 1,
+              "fieldAvailable": true,
+              "fixtureURLVerified": false,
+              "rawTextSaved": false,
+              "rendererPID": 85479,
+              "researchMarkers": [
+                "AFB-A9CD5E11"
+              ],
+              "resolvableTokenRoots": 21,
+              "roles": {
+                "AXApplication": 2,
+                "AXButton": 1,
+                "AXGroup": 6,
+                "AXHeading": 1,
+                "AXLink": 1,
+                "AXScrollArea": 1,
+                "AXStaticText": 8,
+                "AXTextField": 1
+              },
+              "scannedElementIDs": 1024,
+              "tokenFactoryAvailable": true,
+              "tokenScanRequested": true,
+              "traversalIncomplete": false,
+              "visitedCount": 22
+            }
+          ],
+          "renderers": [
+            {
+              "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+              "pid": 85479
+            }
+          ],
+          "status": "observed",
+          "cleanupVerified": true
+        },
+        "markerRecovered": true,
+        "acceptedActions": 0,
+        "newSubmissions": [],
+        "controlWorked": false,
+        "referenceCleanupVerified": true
+      }
+    ],
+    "results": [
+      {
+        "repetition": 0,
+        "skipped": true,
+        "reason": "Direct renderer AX reference did not recover a marker and complete its action"
+      }
+    ],
+    "tokenScan": true,
+    "route": "Direct renderer AX root, exact ownership, fixed loopback fixture actions. No input tap.",
+    "permissions": {
+      "accessibility": true,
+      "inputTapInstalled": false,
+      "permissionRequested": false,
+      "status": "observed",
+      "cleanupVerified": true
+    }
+  },
+  "matchedReadComparisons": {
+    "candidatePID": 61893,
+    "candidateBinarySHA256": "43b1a9833d6c55b1e254b848f9bd09c202da46ba0f8d8833084df559e6a8a9d1",
+    "rendererProbeSHA256": "00833c1a0cdd31b0b4d49acbd544a44cfa88f26e231fee063810dd9a7927e332",
+    "controls": [
+      {
+        "repetition": 0,
+        "pid": 86036,
+        "hostInitializationStatus": "observed",
+        "observation": {
+          "accessibility": true,
+          "accessibilityQueried": true,
+          "hostPID": 86036,
+          "inputTapInstalled": false,
+          "ownershipMethod": "Exact research executable, process start time, OS responsibility PID. Private metadata API.",
+          "permissionRequested": false,
+          "queries": [
+            {
+              "actionAttempted": false,
+              "buttonAvailable": true,
+              "discardedUnownedElements": 1,
+              "fieldAvailable": true,
+              "fixtureURLVerified": false,
+              "rawTextSaved": false,
+              "rendererPID": 86039,
+              "researchMarkers": [
+                "AFB-CEEDF43D"
+              ],
+              "resolvableTokenRoots": 21,
+              "roles": {
+                "AXApplication": 2,
+                "AXButton": 1,
+                "AXGroup": 6,
+                "AXHeading": 1,
+                "AXLink": 1,
+                "AXScrollArea": 1,
+                "AXStaticText": 8,
+                "AXTextField": 1
+              },
+              "scannedElementIDs": 1024,
+              "tokenFactoryAvailable": true,
+              "tokenScanRequested": true,
+              "traversalIncomplete": false,
+              "visitedCount": 22
+            }
+          ],
+          "renderers": [
+            {
+              "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+              "pid": 86039
+            }
+          ],
+          "status": "observed",
+          "cleanupVerified": true
+        },
+        "markerRecovered": true,
+        "acceptedActions": 0,
+        "newSubmissions": [],
+        "readControlWorked": true,
+        "controlWorked": false,
+        "referenceCleanupVerified": true
+      },
+      {
+        "repetition": 1,
+        "pid": 86073,
+        "hostInitializationStatus": "observed",
+        "observation": {
+          "accessibility": true,
+          "accessibilityQueried": true,
+          "hostPID": 86073,
+          "inputTapInstalled": false,
+          "ownershipMethod": "Exact research executable, process start time, OS responsibility PID. Private metadata API.",
+          "permissionRequested": false,
+          "queries": [
+            {
+              "actionAttempted": false,
+              "buttonAvailable": true,
+              "discardedUnownedElements": 1,
+              "fieldAvailable": true,
+              "fixtureURLVerified": false,
+              "rawTextSaved": false,
+              "rendererPID": 86077,
+              "researchMarkers": [
+                "AFB-040AB585"
+              ],
+              "resolvableTokenRoots": 21,
+              "roles": {
+                "AXApplication": 2,
+                "AXButton": 1,
+                "AXGroup": 6,
+                "AXHeading": 1,
+                "AXLink": 1,
+                "AXScrollArea": 1,
+                "AXStaticText": 8,
+                "AXTextField": 1
+              },
+              "scannedElementIDs": 1024,
+              "tokenFactoryAvailable": true,
+              "tokenScanRequested": true,
+              "traversalIncomplete": false,
+              "visitedCount": 22
+            }
+          ],
+          "renderers": [
+            {
+              "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+              "pid": 86077
+            }
+          ],
+          "status": "observed",
+          "cleanupVerified": true
+        },
+        "markerRecovered": true,
+        "acceptedActions": 0,
+        "newSubmissions": [],
+        "readControlWorked": true,
+        "controlWorked": false,
+        "referenceCleanupVerified": true
+      },
+      {
+        "repetition": 2,
+        "pid": 86114,
+        "hostInitializationStatus": "observed",
+        "observation": {
+          "accessibility": true,
+          "accessibilityQueried": true,
+          "hostPID": 86114,
+          "inputTapInstalled": false,
+          "ownershipMethod": "Exact research executable, process start time, OS responsibility PID. Private metadata API.",
+          "permissionRequested": false,
+          "queries": [
+            {
+              "actionAttempted": false,
+              "buttonAvailable": true,
+              "discardedUnownedElements": 1,
+              "fieldAvailable": true,
+              "fixtureURLVerified": false,
+              "rawTextSaved": false,
+              "rendererPID": 86118,
+              "researchMarkers": [
+                "AFB-496AE823"
+              ],
+              "resolvableTokenRoots": 21,
+              "roles": {
+                "AXApplication": 2,
+                "AXButton": 1,
+                "AXGroup": 6,
+                "AXHeading": 1,
+                "AXLink": 1,
+                "AXScrollArea": 1,
+                "AXStaticText": 8,
+                "AXTextField": 1
+              },
+              "scannedElementIDs": 1024,
+              "tokenFactoryAvailable": true,
+              "tokenScanRequested": true,
+              "traversalIncomplete": false,
+              "visitedCount": 22
+            }
+          ],
+          "renderers": [
+            {
+              "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+              "pid": 86118
+            }
+          ],
+          "status": "observed",
+          "cleanupVerified": true
+        },
+        "markerRecovered": true,
+        "acceptedActions": 0,
+        "newSubmissions": [],
+        "readControlWorked": true,
+        "controlWorked": false,
+        "referenceCleanupVerified": true
+      }
+    ],
+    "results": [
+      {
+        "pid": 61893,
+        "hostInitializationStatus": "observed",
+        "observation": {
+          "accessibility": true,
+          "accessibilityQueried": true,
+          "hostPID": 61893,
+          "inputTapInstalled": false,
+          "ownershipMethod": "Exact research executable, process start time, OS responsibility PID. Private metadata API.",
+          "permissionRequested": false,
+          "queries": [
+            {
+              "actionAttempted": false,
+              "buttonAvailable": false,
+              "discardedUnownedElements": 1,
+              "fieldAvailable": false,
+              "fixtureURLVerified": false,
+              "rawTextSaved": false,
+              "rendererPID": 63235,
+              "researchMarkers": [],
+              "resolvableTokenRoots": 2,
+              "roles": {
+                "AXApplication": 2,
+                "AXGroup": 1
+              },
+              "scannedElementIDs": 1024,
+              "tokenFactoryAvailable": true,
+              "tokenScanRequested": true,
+              "traversalIncomplete": false,
+              "visitedCount": 4
+            }
+          ],
+          "renderers": [
+            {
+              "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+              "pid": 63235
+            }
+          ],
+          "status": "observed",
+          "cleanupVerified": true
+        },
+        "markerRecovered": false,
+        "acceptedActions": 0,
+        "newSubmissions": [],
+        "repetition": 0,
+        "actionSkipped": true,
+        "actionSkipReason": "Matched action reference did not complete",
+        "outcome": "no-action-observed"
+      },
+      {
+        "pid": 61893,
+        "hostInitializationStatus": "observed",
+        "observation": {
+          "accessibility": true,
+          "accessibilityQueried": true,
+          "hostPID": 61893,
+          "inputTapInstalled": false,
+          "ownershipMethod": "Exact research executable, process start time, OS responsibility PID. Private metadata API.",
+          "permissionRequested": false,
+          "queries": [
+            {
+              "actionAttempted": false,
+              "buttonAvailable": false,
+              "discardedUnownedElements": 1,
+              "fieldAvailable": false,
+              "fixtureURLVerified": false,
+              "rawTextSaved": false,
+              "rendererPID": 63235,
+              "researchMarkers": [],
+              "resolvableTokenRoots": 3,
+              "roles": {
+                "AXApplication": 2,
+                "AXGroup": 1,
+                "AXScrollArea": 1
+              },
+              "scannedElementIDs": 1024,
+              "tokenFactoryAvailable": true,
+              "tokenScanRequested": true,
+              "traversalIncomplete": false,
+              "visitedCount": 5
+            }
+          ],
+          "renderers": [
+            {
+              "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+              "pid": 63235
+            }
+          ],
+          "status": "observed",
+          "cleanupVerified": true
+        },
+        "markerRecovered": false,
+        "acceptedActions": 0,
+        "newSubmissions": [],
+        "repetition": 1,
+        "actionSkipped": true,
+        "actionSkipReason": "Matched action reference did not complete",
+        "outcome": "no-action-observed"
+      },
+      {
+        "pid": 61893,
+        "hostInitializationStatus": "observed",
+        "observation": {
+          "accessibility": true,
+          "accessibilityQueried": true,
+          "hostPID": 61893,
+          "inputTapInstalled": false,
+          "ownershipMethod": "Exact research executable, process start time, OS responsibility PID. Private metadata API.",
+          "permissionRequested": false,
+          "queries": [
+            {
+              "actionAttempted": false,
+              "buttonAvailable": false,
+              "discardedUnownedElements": 6,
+              "fieldAvailable": false,
+              "fixtureURLVerified": false,
+              "rawTextSaved": false,
+              "rendererPID": 63235,
+              "researchMarkers": [],
+              "resolvableTokenRoots": 4,
+              "roles": {
+                "AXApplication": 2,
+                "AXGroup": 1,
+                "AXScrollArea": 1,
+                "AXWebArea": 1
+              },
+              "scannedElementIDs": 1024,
+              "tokenFactoryAvailable": true,
+              "tokenScanRequested": true,
+              "traversalIncomplete": false,
+              "visitedCount": 11
+            }
+          ],
+          "renderers": [
+            {
+              "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+              "pid": 63235
+            }
+          ],
+          "status": "observed",
+          "cleanupVerified": true
+        },
+        "markerRecovered": false,
+        "acceptedActions": 0,
+        "newSubmissions": [],
+        "repetition": 2,
+        "actionSkipped": true,
+        "actionSkipReason": "Matched action reference did not complete",
+        "outcome": "no-action-observed"
+      }
+    ],
+    "tokenScan": true,
+    "route": "Direct renderer AX root, exact ownership, fixed loopback fixture actions. No input tap.",
+    "permissions": {
+      "accessibility": true,
+      "inputTapInstalled": false,
+      "permissionRequested": false,
+      "status": "observed",
+      "cleanupVerified": true
+    }
+  },
+  "grantRecovery": {
+    "browserPID": 61893,
+    "browserBinaryUnchanged": true,
+    "rendererProbeSHA256": "00833c1a0cdd31b0b4d49acbd544a44cfa88f26e231fee063810dd9a7927e332",
+    "effectivePermission": true,
+    "scanRan": true,
+    "refreshApproved": true,
+    "appOnlyResetCompleted": true,
+    "exactBundleReadded": true,
+    "settingsRestarted": true,
+    "launchServicesRegistrationRefreshed": true,
+    "initialOffOnWorked": false
+  }
+}

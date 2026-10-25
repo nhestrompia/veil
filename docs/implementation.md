@@ -323,3 +323,9 @@ The approved temporary Safari setting returned to off. Reference cleanup passed.
 A separately approved AX helper discovers only research-owned WebContent processes. It verifies exact paths and process start times. Its fixed action adapter requires the disposable loopback fixture.
 
 Both direct-renderer reference attempts failed. Host initialization exposed an application role but no controls or page marker. Both candidate queries were skipped. All cleanup checks passed. All 70 Python checks and the Swift ownership and URL checks pass. See [renderer findings](renderer-root-findings.md).
+
+## Milestone 54: bounded renderer tokens
+
+The helper constructs process-scoped remote tokens with explicit scan and traversal budgets. Three readable references recovered their fresh markers. Three matched candidate reads recovered no marker or fixture control within IDs 0 through 1,023.
+
+Candidate writes were skipped because reference actions failed the fixture URL guard. Read and action controls are now independent. The approved app-only permission refresh restored access. All 70 Python checks and Swift boundary checks pass. See [token findings](renderer-token-findings.md).

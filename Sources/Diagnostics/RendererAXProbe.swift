@@ -3,7 +3,8 @@ import ApplicationServices
 
 @main
 enum RendererAXProbe {
-    @MainActor private static func query(_ scope: RendererProcessScope, renderer: ResearchProcessIdentity, expectedURL: URL?) throws -> [String: Any] {
+    @MainActor private static func query(_ scope: RendererProcessScope, renderer: ResearchProcessIdentity,
+                                        expectedURL: URL?, tokenScan: Bool) throws -> [String: Any] {
         try scope.validate(renderer)
         let root = AXUIElementCreateApplication(renderer.pid)
         AXUIElementSetMessagingTimeout(root, 0.5)
@@ -32,6 +33,29 @@ enum RendererAXProbe {
         }
 
         let pattern = try NSRegularExpression(pattern: "AFB-[0-9A-F]{8}")
+        var scanned = 0
+        var tokenRoots = 0
+        var tokenFactoryAvailable = false
+        if tokenScan, let library = dlopen(nil, RTLD_LAZY | RTLD_LOCAL) {
+            defer { dlclose(library) }
+            if let symbol = dlsym(library, "_AXUIElementCreateWithRemoteToken") {
+                typealias Factory = @convention(c) (CFData) -> Unmanaged<AXUIElement>?
+                let create = unsafeBitCast(symbol, to: Factory.self)
+                tokenFactoryAvailable = true
+                let scanDeadline = min(deadline, ProcessInfo.processInfo.systemUptime + 3)
+                for id in UInt64(0)..<1024 {
+                    if ProcessInfo.processInfo.systemUptime >= scanDeadline { break }
+                    try scope.validate(renderer)
+                    guard let data = RendererRemoteToken.data(pid: renderer.pid, elementID: id) else { break }
+                    scanned += 1
+                    guard let element = create(data as CFData)?.takeRetainedValue(), try owned(element) else { continue }
+                    if try attribute(element, kAXRoleAttribute) as? String != nil {
+                        pending.append((element, 0))
+                        tokenRoots += 1
+                    }
+                }
+            }
+        }
         while let (element, depth) = pending.popLast(), visited.count < 500,
               ProcessInfo.processInfo.systemUptime < deadline {
             guard visited.insert(element).inserted else { continue }
@@ -67,7 +91,10 @@ enum RendererAXProbe {
                                     "researchMarkers": markers.sorted(), "fieldAvailable": field != nil,
                                     "buttonAvailable": button != nil, "fixtureURLVerified": fixtureArea != nil,
                                     "actionAttempted": false,
-                                    "rawTextSaved": false]
+                                    "rawTextSaved": false, "tokenScanRequested": tokenScan,
+                                    "tokenFactoryAvailable": tokenFactoryAvailable,
+                                    "scannedElementIDs": scanned, "resolvableTokenRoots": tokenRoots,
+                                    "traversalIncomplete": !pending.isEmpty]
         if let expectedURL, let fixtureArea,
            let currentURL = try attribute(fixtureArea, kAXURLAttribute) as? URL, currentURL == expectedURL,
            let field, let button, try owned(field), try owned(button),
@@ -88,15 +115,15 @@ enum RendererAXProbe {
         var result: [String: Any] = ["accessibility": AXIsProcessTrusted(), "permissionRequested": false,
                                     "inputTapInstalled": false]
         do {
-            guard args == ["permissions"] || args.count == 2 && ["discover", "read"].contains(args[0])
-                    || args.count == 3 && args[0] == "action" else {
+            guard args == ["permissions"] || args.count == 2 && ["discover", "read", "read-token"].contains(args[0])
+                    || args.count == 3 && ["action", "action-token"].contains(args[0]) else {
                 throw RendererScopeError.unrelatedHost
             }
             if args[0] != "permissions" {
                 guard let pid = pid_t(args[1]) else { throw RendererScopeError.unrelatedHost }
                 let scope = try RendererProcessScope(hostPID: pid)
                 var expectedURL: URL?
-                if args[0] == "action" {
+                if args[0].hasPrefix("action") {
                     guard let url = RendererFixtureURL.parse(args[2]) else {
                         throw RendererScopeError.unrelatedHost
                     }
@@ -113,11 +140,13 @@ enum RendererAXProbe {
                         result["reason"] = "This helper has no effective Accessibility grant. No AX query or action ran."
                         return write(result)
                     }
-                    if args[0] == "action" {
+                    if args[0].hasPrefix("action") {
                         NSRunningApplication(processIdentifier: pid)?.activate(options: [])
                         Thread.sleep(forTimeInterval: 0.3)
                     }
-                    result["queries"] = try renderers.map { try query(scope, renderer: $0, expectedURL: expectedURL) }
+                    result["queries"] = try renderers.map {
+                        try query(scope, renderer: $0, expectedURL: expectedURL, tokenScan: args[0].hasSuffix("-token"))
+                    }
                     result["accessibilityQueried"] = !renderers.isEmpty
                 }
             }

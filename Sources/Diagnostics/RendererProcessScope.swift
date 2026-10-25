@@ -35,9 +35,22 @@ enum RendererScopeError: Error {
 enum RendererFixtureURL {
     static func parse(_ value: String) -> URL? {
         guard let url = URL(string: value), url.scheme == "http", url.host == "127.0.0.1",
-              url.port == 8765, url.path.range(of: "^/trial/[0-9a-f]{16}$", options: .regularExpression) != nil,
+              url.port == 8765, url.path.range(of: "\\A/trial/[0-9a-f]{16}\\z", options: .regularExpression) != nil,
               url.query == nil, url.fragment == nil, url.user == nil, url.password == nil else { return nil }
         return url
+    }
+}
+
+enum RendererRemoteToken {
+    static func data(pid: pid_t, elementID: UInt64) -> Data? {
+        guard pid > 1 else { return nil }
+        var result = Data()
+        for var value in [UInt32(bitPattern: pid).littleEndian, UInt32(0), UInt32(0x636f636f).littleEndian] {
+            withUnsafeBytes(of: &value) { result.append(contentsOf: $0) }
+        }
+        var identifier = elementID.littleEndian
+        withUnsafeBytes(of: &identifier) { result.append(contentsOf: $0) }
+        return result
     }
 }
 

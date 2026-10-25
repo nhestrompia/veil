@@ -35,6 +35,8 @@ One physical task does not meet the PRD's human compatibility targets. External 
 
 Recent evidence:
 
+- [Renderer token scans](docs/renderer-token-findings.md) calibrate three reads while preserving untested action status.
+
 - [Renderer AX roots](docs/renderer-root-findings.md) preserve two failed controls and skip candidate queries.
 
 - [Safari remote inspection](docs/safari-remote-findings.md) completes a reference console action and finds no advertised candidate target.

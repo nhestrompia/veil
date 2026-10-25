@@ -49,6 +49,12 @@ def renderer_probe(arguments, output, expected_hash):
     return result
 
 
+def read_reference_worked(row):
+    observation = row.get("observation", {})
+    return (observation.get("status") == "observed" and observation.get("accessibilityQueried") is True
+            and observation.get("cleanupVerified") is True and row.get("markerRecovered") is True)
+
+
 def reference_worked(row):
     observation = row.get("observation", {})
     return (observation.get("status") == "observed" and observation.get("accessibilityQueried") is True
@@ -59,10 +65,12 @@ def reference_worked(row):
                     for query in observation.get("queries", [])))
 
 
-def attempt(session, output, oracle, probe_hash):
+def attempt(session, output, oracle, probe_hash, token_scan=False, act=True):
     before = oracle.state(session["trial"])
     initialization = probe(["ax-direct", session["pid"]], output.with_suffix(".host-init.json"))
-    observation = renderer_probe(["action", session["pid"], session["trial"]["url"]], output, probe_hash)
+    command = ("action" if act else "read") + ("-token" if token_scan else "")
+    arguments = [command, session["pid"]] + ([session["trial"]["url"]] if act else [])
+    observation = renderer_probe(arguments, output, probe_hash)
     time.sleep(0.3)
     after = oracle.state(session["trial"])
     markers = [marker for query in observation.get("queries", []) for marker in query.get("researchMarkers", [])]
@@ -72,7 +80,7 @@ def attempt(session, output, oracle, probe_hash):
             "acceptedActions": sum(bool(item["accepted"]) for item in new), "newSubmissions": new}
 
 
-def run(session_path, output, repetitions):
+def run(session_path, output, repetitions, token_scan=False):
     output = output.resolve()
     output.mkdir(parents=True, exist_ok=False)
     session = json.loads(session_path.read_text())
@@ -85,7 +93,7 @@ def run(session_path, output, repetitions):
     require_input_safety(probe(["permissions"], output / "native-permissions.json"))
     probe_hash = hashlib.sha256(BINARY.read_bytes()).hexdigest()
     report = {"candidatePID": session["pid"], "candidateBinarySHA256": session["binarySHA256"],
-              "rendererProbeSHA256": probe_hash, "controls": [], "results": [],
+              "rendererProbeSHA256": probe_hash, "controls": [], "results": [], "tokenScan": token_scan,
               "route": "Direct renderer AX root, exact ownership, fixed loopback fixture actions. No input tap."}
 
     def save():
@@ -101,8 +109,10 @@ def run(session_path, output, repetitions):
         reference = prepare("InspectableControl", output / f"reference-{repetition}", oracle)
         row = {"repetition": repetition}
         try:
-            row.update(attempt(reference, output / f"reference-{repetition}.json", oracle, probe_hash))
+            row.update(attempt(reference, output / f"reference-{repetition}.json", oracle, probe_hash, token_scan))
+            row["readControlWorked"] = read_reference_worked(row)
             row["controlWorked"] = reference_worked(row)
+            row["actionControlWorked"] = row["controlWorked"]
         finally:
             try:
                 close(reference)
@@ -111,14 +121,19 @@ def run(session_path, output, repetitions):
                 report["controls"].append(row)
                 save()
         active(session)
-        if not row["controlWorked"]:
+        if not row["readControlWorked"]:
             report["results"].append({"repetition": repetition, "skipped": True,
                                       "reason": "Direct renderer AX reference did not recover a marker and complete its action"})
             save()
             break
-        candidate = attempt(session, output / f"candidate-{repetition}.json", oracle, probe_hash)
+        candidate = attempt(session, output / f"candidate-{repetition}.json", oracle, probe_hash, token_scan,
+                            act=row["controlWorked"])
         candidate["repetition"] = repetition
-        candidate["outcome"] = "autonomous-action" if candidate["acceptedActions"] else "no-action-observed"
+        candidate["actionSkipped"] = not row["controlWorked"]
+        candidate["actionSkipReason"] = None if row["controlWorked"] else "Matched action reference did not complete"
+        candidate["readOutcome"] = "marker-recovered" if candidate["markerRecovered"] else "marker-not-recovered"
+        candidate["outcome"] = ("action-not-tested" if candidate["actionSkipped"] else
+                                "autonomous-action" if candidate["acceptedActions"] else "no-action-observed")
         report["results"].append(candidate)
         save()
     return report
@@ -129,5 +144,6 @@ if __name__ == "__main__":
     parser.add_argument("--session", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--repetitions", type=int, choices=range(1, 4), default=3)
+    parser.add_argument("--token-scan", action="store_true")
     args = parser.parse_args()
-    print(json.dumps(run(args.session.resolve(), args.output, args.repetitions), indent=2))
+    print(json.dumps(run(args.session.resolve(), args.output, args.repetitions, args.token_scan), indent=2))

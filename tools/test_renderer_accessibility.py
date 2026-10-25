@@ -1,6 +1,6 @@
 import unittest
 
-from run_renderer_accessibility import reference_worked
+from run_renderer_accessibility import read_reference_worked, reference_worked
 
 
 class RendererCalibrationTests(unittest.TestCase):
@@ -15,6 +15,7 @@ class RendererCalibrationTests(unittest.TestCase):
         self.assertTrue(reference_worked(row))
         row["acceptedActions"] = 0
         self.assertFalse(reference_worked(row))
+        self.assertTrue(read_reference_worked(row))
 
     def test_attempt_without_fixture_verification_does_not_calibrate(self):
         row = self.control()

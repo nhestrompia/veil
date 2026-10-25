@@ -1,6 +1,6 @@
 # Current research state
 
-Updated 2026-10-25. Milestones 50 and 51 are committed. Milestone 52 completed a Safari remote-inspector control. Milestone 53 adds a scoped renderer helper and records failed root calibration. Agent-free operation remains unproven.
+Updated 2026-10-25. Milestones 50 and 51 are committed. Milestone 52 completed a Safari remote-inspector control. Milestone 53 recorded failed root calibration. Milestone 54 adds bounded token discovery and matched renderer reads. Agent-free operation remains unproven.
 
 ## Current priority and remote control
 
@@ -14,11 +14,15 @@ DockDoor and LinearMouse had restarted. Their verified processes stopped before 
 
 ## Renderer helper
 
-The user approved RendererAXProbe Accessibility. Its effective grant is true. Its executable SHA256 is `59600752f1b5672b0080cda4c5975c8bbfdbf80d47ed5f9e0819d88d8d871aa8`. It installs no input hooks. It checks exact research paths, process start times, and OS responsibility before reads.
+The user approved RendererAXProbe Accessibility. Its effective grant is true. Its executable SHA256 is `00833c1a0cdd31b0b4d49acbd544a44cfa88f26e231fee063810dd9a7927e332`. It installs no input hooks. It checks exact research paths, process start times, and OS responsibility before reads.
 
 Two direct-root references failed. Host initialization changed the renderer root from unavailable to AXApplication, with no controls or marker. Candidate AX queries were skipped. All cleanups passed. See [renderer root findings](renderer-root-findings.md).
 
-The next hypothesis is bounded remote-token discovery, with the same research ownership rules. No token scan ran yet. Preserve the current helper and its effective grant until a concrete replacement is ready. No app-only reset for this new helper was requested or approved.
+Three token references recovered their own markers. Three matched candidate reads recovered no marker or fixture controls within IDs 0 through 1,023. Candidate actions were skipped because the fixture URL guard prevented reference actions. Read and action calibration are now separate. See [token findings](renderer-token-findings.md).
+
+The user approved renderer-only off/on, exact-bundle re-add, and an app-only Accessibility reset if needed. Off/on failed. The reset succeeded. System Settings needed a normal restart before its Add button enabled. Exact-bundle Add restored effective access. No permission question remains pending. The scope excludes other apps and global resets.
+
+The next research target is native host controls reached by tokens. The ordinary host tree hides them, but Back, Reload, and the address field need direct checks. Do not claim autonomous-action prevention from read-only scans.
 
 ## Latest result
 

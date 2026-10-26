@@ -778,3 +778,18 @@ The known same-user pause bypass remains open. No administrator command ran. Cro
 Run `bash scripts/build-renderer-filesystem-control.sh`, then `python3 tools/run_renderer_filesystem_control.py --sandbox-kind NetworkSandbox --out artifacts/renderer-filesystem-new`. The output directory must not exist. The controller stops at the first inconclusive comparison.
 
 See [measured results](evidence/renderer-filesystem-results.json). Agent-free operation remains unmet.
+
+
+## Milestone 103: cross-user renderer preflight
+
+Milestone 103 adds a separate pipe-only renderer and finite native supervisor. It prepares one exact cross-user inline smoke test, but runs no administrator command. The known pause bypass remains open.
+
+The supervisor loads only libSystem. A fixed staging command checks four copied files before execution. The renderer child permanently drops to the existing `nobody` identity before AppKit or WebKit initialization. A detached watchdog protects only the fork-created child. Root treats output as opaque bytes and never acts on reported service identifiers.
+
+Three ordinary-user rendering trials pass, plus an inherited-signal regression. Watchdog, output-limit, deadline, foreground-group interruption, parent-only death, and closed-output controls pass. Four forbidden invocations refuse. Ten staging tests pass. The final ordinary-user staging rehearsal verifies the exact files, observes the required administrator-mode refusal, and removes staging.
+
+Static review found and fixed a masked dependency-tool failure and cleanup through sealed directories. The final command records the separate supervisor, copy, and tool alarms. The 32-second supervisor alarm does not bound the complete staging command. Outer-shell SIGKILL can leave staging files.
+
+All measured host and role credentials remain user ID 501. No cross-user renderer result exists yet. Framework caches, shared identity state, inherited session capabilities, sampled role identities, and auxiliary cleanup remain limitations. All frozen executable hashes match.
+
+The exact command and manifest are committed with the evidence. The earlier administrator approval is consumed and does not cover this proposed run. Obtain a separate one-run approval before execution. See [findings](renderer-identity-preflight-findings.md), [evidence](evidence/renderer-identity-preflight-results.json), and [run plan](evidence/renderer-identity-reviewed-run-plan.json).

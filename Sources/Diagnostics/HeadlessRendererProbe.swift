@@ -58,6 +58,16 @@ private final class HeadlessProbe: NSObject, NSApplicationDelegate, WKNavigation
         report["mode"] = loopbackPort == nil ? "same-user-inline" : "same-user-loopback"
         report["windowCountAtStart"] = NSApp.windows.count
         report["uid"] = getuid()
+        #if RENDERER_IDENTITY_CONTROL
+        report["identityControl"] = true
+        report["runtimeDirectories"] = [
+            "cwd": FileManager.default.currentDirectoryPath,
+            "home": FileManager.default.homeDirectoryForCurrentUser.path,
+            "temporary": FileManager.default.temporaryDirectory.path,
+            "cache": FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first?.path ?? "",
+            "environmentHome": ProcessInfo.processInfo.environment["HOME"] ?? ""
+        ]
+        #endif
         report["filesystemControl"] = filesystemReport
         report["resultTransport"] = output == nil ? "bounded-stdout-json" : "workspace-artifact"
         report["explicitSnapshotFileWrites"] = 0
@@ -266,8 +276,15 @@ private final class HeadlessProbe: NSObject, NSApplicationDelegate, WKNavigation
             NSApp.terminate(nil)
         }
         #else
+        #if RENDERER_IDENTITY_CONTROL
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [self] in
+            view = nil
+            NSApp.terminate(nil)
+        }
+        #else
         view = nil
         NSApp.terminate(nil)
+        #endif
         #endif
     }
 }
@@ -288,6 +305,9 @@ private enum HeadlessRendererMain {
         let port: Int? = nil
         let output: URL? = nil
         #else
+        #if RENDERER_IDENTITY_CONTROL
+        guard args.count == 2, args[1] == "--pipe-only" else { exit(64) }
+        #endif
         let pipeOnly = args.count == 2 && args[1] == "--pipe-only"
         let filesystemReport: [String: Any]? = nil
         var port: Int?
@@ -305,6 +325,11 @@ private enum HeadlessRendererMain {
                   (try? FileManager.default.contentsOfDirectory(atPath: directory.path))?.isEmpty == true else { exit(64) }
             output = directory
         }
+        #endif
+        #if RENDERER_IDENTITY_CONTROL
+        guard let identity = ProcessRecord(getpid()), getgid() != 0,
+              identity.realUID == getuid(), identity.effectiveUID == getuid(), identity.savedUID == getuid(),
+              identity.realGID == getgid(), identity.effectiveGID == getgid(), identity.savedGID == getgid() else { exit(66) }
         #endif
         let app = NSApplication.shared
         app.setActivationPolicy(.prohibited)

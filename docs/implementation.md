@@ -417,3 +417,8 @@ The first build stopped before compilation because root configurations were abse
 The diagnostic requires the private activity API and expected UI images. Its controller requires the own content executable and all three mapped framework paths. A real system fallback refused before creating a window. All 99 Python checks and the diagnostic compile pass. Positive custom-engine identity remains unverified.
 
 The second build stopped because the actual Metal compiler was absent. Apple MetalToolchain 27A266a now executes. The third attempt runs with quiet logs and a macOS 26 deployment target. Full engine compilation and live engine attacks remain incomplete. See [runtime findings](engine-runtime-findings.md).
+
+
+## Milestone 68: child-frame lifecycle controls
+
+The fixture now arms lifecycle listeners inside same-origin, cross-origin, and srcdoc frames. One fresh matched comparison per type reproduced one focus-only action with zero admitted keyboard events. All private baselines, resumed tasks, and cleanup checks passed. All 99 Python checks pass. The feature matrix also accepts the strict engine identity path. No custom-engine comparison ran. See [child-frame findings](child-frame-findings.md).

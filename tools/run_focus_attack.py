@@ -62,7 +62,7 @@ def activation_cycle(target, sink, oracle, hide=False):
             "syntheticInputPosted": False, "AXReadSent": False, "AXValueSet": False, "AXPressSent": False}
 
 
-def run(output, controller, repetitions, surface="focus-action", hide=False, password=False, resume=False, engine_root=None):
+def run(output, controller, repetitions, surface="focus-action", hide=False, password=False, resume=False, engine_root=None, frame_container=None):
     if engine_root is not None:
         from engine_runtime import engine_environment
         engine_environment(engine_root)
@@ -76,13 +76,15 @@ def run(output, controller, repetitions, surface="focus-action", hide=False, pas
         raise RuntimeError("A research reference or diagnostic already exists")
     hashes = {name: hashlib.sha256(binary.read_bytes()).hexdigest() for name, binary in binaries.items()}
     report = {"binarySHA256": hashes, "humanBaseline": False,
-              "surface": surface, "hideCycle": hide, "passwordField": password,
+              "surface": surface, "hideCycle": hide, "passwordField": password, "frameContainer": frame_container,
               "scope": "Agent activates only research apps. Candidate baseline is private authorized keyboard input. Focus listener is ordinary page code.", "runs": []}
 
     def save():
         (output / "results.json").write_text(json.dumps(report, indent=2) + "\n")
 
     suffix = f"?surface={surface}" + ("&field-kind=password" if password else "")
+    if frame_container:
+        suffix += "&frame-container=" + frame_container
 
     for repetition in range(repetitions):
         if any(hashlib.sha256(binary.read_bytes()).hexdigest() != hashes[name] for name, binary in binaries.items()):
@@ -148,5 +150,6 @@ if __name__ == "__main__":
     parser.add_argument("--password", action="store_true")
     parser.add_argument("--resume", action="store_true")
     parser.add_argument("--engine-frameworks", type=Path)
+    parser.add_argument("--frame-container", choices=["iframe", "cross-frame", "srcdoc"])
     args = parser.parse_args()
-    run(args.output, args.controller, args.repetitions, args.surface, args.hide, args.password, args.resume, args.engine_frameworks)
+    run(args.output, args.controller, args.repetitions, args.surface, args.hide, args.password, args.resume, args.engine_frameworks, args.frame_container)

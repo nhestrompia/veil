@@ -15,6 +15,7 @@ iframe{width:760px;height:480px;border:1px solid #667}output{display:block;margi
 <output id="result">No action recorded.</output>
 <script>
 const surface=new URLSearchParams(location.search).get('surface')||'form';
+const frameMode=new URLSearchParams(location.search).get('frame-container')||(['iframe','cross-frame','srcdoc'].includes(surface)?surface:null);
 const base=location.origin+location.pathname;
 const content=document.querySelector('main');
 const result=document.querySelector('output');
@@ -36,18 +37,26 @@ async function mount(){
     await new Promise(resolve=>setTimeout(resolve,100));
     history.replaceState(null,'','#task');
   }
-  if(['iframe','cross-frame','srcdoc'].includes(surface)){
+  if(frameMode){
     const frame=document.createElement('iframe');
     frame.title='Research task frame';
-    if(surface==='srcdoc'){
+    if(frameMode==='srcdoc'){
       frame.srcdoc=`<!doctype html><html><body><style>${document.querySelector('style').textContent}</style>${formHTML}<script>
         const field=document.getElementById('note');
-        document.querySelector('form').onsubmit=async e=>{e.preventDefault();await fetch(${JSON.stringify(base+'/action')},{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({note:field.value})});field.value='';};
+        if(${JSON.stringify(new URLSearchParams(location.search).get('field-kind'))}==='password')field.type='password';
+        let armed=false;
+        const action=async value=>{const response=await fetch(${JSON.stringify(base+'/action')},{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({note:value})});const state=await response.json();if(state.accepted)armed=true;};
+        document.querySelector('form').onsubmit=async e=>{e.preventDefault();await action(field.value);field.value='';};
+        const mode=${JSON.stringify(surface)};
+        addEventListener('focus',()=>{if(armed&&mode==='focus-action')action('native-input');});
+        addEventListener('blur',()=>{if(armed&&mode==='blur-action')action('native-input');});
+        document.addEventListener('visibilitychange',()=>{if(armed&&mode==='visibility-action')action('native-input');});
         addEventListener('message',e=>{if(e.data==='research-focus'){field.focus();parent.postMessage('research-focused','*');}});
         <\/script></body></html>`;
     }else{
-      const child=new URL(location.href);child.searchParams.set('surface','form');
-      if(surface==='cross-frame')child.hostname=location.hostname==='localhost'?'127.0.0.1':'localhost';
+      const child=new URL(location.href);child.searchParams.delete('frame-container');
+      child.searchParams.set('surface',['focus-action','blur-action','visibility-action'].includes(surface)?surface:'form');
+      if(frameMode==='cross-frame')child.hostname=location.hostname==='localhost'?'127.0.0.1':'localhost';
       frame.src=child.href;
     }
     content.append(frame);

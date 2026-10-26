@@ -169,3 +169,9 @@ Build receipts and logs are in .build/webkit-engine/. No completed engine or run
 The engine diagnostic compiles. A system-framework fallback refused before window creation. All 99 Python checks pass. Positive UI and content mapping checks remain untested against a completed custom engine. The prepared InternalKeyboardControl now uses the engine-stable variant and an ad hoc signature without hardened runtime. Do not launch it as an ordinary control. Frozen browser and probe binaries remain unchanged.
 
 The second build stopped at Metal shaders. Apple MetalToolchain 27A266a is now installed and its compiler executes. The third incremental build runs with quiet logs and a macOS 26 deployment target. Its monitor PID is in .build/webkit-engine/build-results.json. The active unified exec session is 67320. Preserve that monitor and its disk reserve. See [runtime findings](engine-runtime-findings.md).
+
+## Milestone 68 child-frame controls
+
+One matched ordinary comparison each reproduced a focus-only action in same-origin, cross-origin, and srcdoc child documents. Every private baseline and resumed task passed. The helper posted no input during each activation cycle. Cleanup passed and aggregate Secure Input was off. All 99 Python checks pass. See [child-frame findings](child-frame-findings.md).
+
+The prepared InternalKeyboardControl is now the ordinary capture-restricted variant with private resume and ownership logging. The feature fixture restarted on port 8766 in exec session 65052. Its previous controller key is obsolete. Preserve the failed srcdoc setup separately from its successful retry.

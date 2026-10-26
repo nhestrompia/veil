@@ -14,7 +14,10 @@ SURFACES = ["form", "textarea", "editable", "shadow-open", "shadow-closed", "spa
 ROUTES = ["hid", "curve-hid", "pid-keys-keycodes-hid", "vision-curve", "ax"]
 
 
-def run(output, controller, surfaces, routes):
+def run(output, controller, surfaces, routes, engine_root=None):
+    if engine_root is not None:
+        from engine_runtime import engine_environment
+        engine_environment(engine_root)
     output = output.resolve()
     output.mkdir(parents=True, exist_ok=False)
     oracle = Oracle(controller)
@@ -45,10 +48,12 @@ def run(output, controller, surfaces, routes):
         candidate = None
         try:
             try:
-                candidate = prepare("InternalKeyboardControl", output / f"candidate-{surface}", oracle, f"?surface={surface}")
+                candidate = prepare("InternalKeyboardControl", output / f"candidate-{surface}", oracle, f"?surface={surface}", engine_root)
                 if "focusAssistedByDiagnostic=true" not in candidate["log"].read_text():
                     raise RuntimeError("The feature-suite diagnostic build is required")
                 row.update(pid=candidate["pid"], baselineWorked=True, focusAssistedByDiagnostic=True)
+                if engine_root is not None:
+                    row["engineIdentity"] = candidate["engineIdentity"]
             except (RuntimeError, OSError) as error:
                 row.update(status="inconclusive", baselineError=str(error))
                 save()
@@ -115,5 +120,6 @@ if __name__ == "__main__":
     parser.add_argument("--controller", type=Path, default=ROOT / "artifacts/page-feature-controller.json")
     parser.add_argument("--surfaces", nargs="+", choices=SURFACES, default=SURFACES)
     parser.add_argument("--routes", nargs="+", choices=ROUTES, default=ROUTES)
+    parser.add_argument("--engine-frameworks", type=Path)
     args = parser.parse_args()
-    run(args.output, args.controller, args.surfaces, args.routes)
+    run(args.output, args.controller, args.surfaces, args.routes, args.engine_frameworks)

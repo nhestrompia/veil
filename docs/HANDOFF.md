@@ -1,6 +1,6 @@
 # Current research state
 
-Latest: milestone 87. Revised-engine password ownership and one private resumed task passed. Nine editor baselines passed, with 27 native blocks and 18 inconclusive vision/AX cases. Cleanup passed. All 112 Python checks pass. A separate scoped content-pause helper is prepared but untested live. Do not signal the frozen physical browser or system content processes.
+Latest: milestone 88. Three fresh native/stable comparisons confirm six timing-triggered website actions after scoped renderer pause/resume. All stationary controls passed, with zero admitted keys. Watchdog recovery and cleanup passed. The tested host and renderer lack Hardened Runtime. All 116 Python checks and six pure scope checks pass. Next: a disposable Hardened Runtime signal control. No permission question is pending. Keep the frozen browser and probes unchanged.
 
 Updated 2026-10-26. Milestone 58 confirms an external focus-only action bypass in three fresh diagnostic processes. Activating another research window and returning completed one new action in each candidate. The standalone helper posted no input and made no AX call during those cycles. The gate admitted zero keyboard events. Agent-free operation is unmet.
 

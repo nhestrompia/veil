@@ -76,6 +76,7 @@ Code injection into the browser process, a modified app binary, root access, ker
 | Blind input | Use known coordinates or keyboard sequences without reading current pixels. | Hiding content alone is insufficient. Test known layouts and repeated attempts. |
 | Exports and integrations | Use clipboard, drag, print, downloads, browser scripting, or external handoff. | No undocumented route exposes protected page content or commands. |
 | Session reuse | Inspect browser-created files or reuse credentials exposed by this browser. | No deliberate credential export or content logging. Test accessible residue and document remaining same-user limits. |
+| Process signals | Pause and resume a same-user content process without input or code injection. | A page must not complete a protected action from the interruption. Milestone 88 confirms this route in the custom-engine diagnostic. Release signing remains unmeasured. |
 | Another browser or direct API | Open a public URL elsewhere or use independently obtained credentials. | Outside the browser claim. This browser cannot revoke those capabilities. |
 
 The current prototype prioritizes independent agent operation. A person completing a task while a listener recognizes a known test phrase is not an agent-input bypass. That sample also does not demonstrate recovery of a fresh page-only secret. Keep keyboard privacy evidence separate from autonomous action and fresh-marker results.

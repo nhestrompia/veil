@@ -1,4 +1,4 @@
-"""Test hide-induced timer gaps after a stationary no-action control."""
+"""Test externally induced timer gaps after a stationary no-action control."""
 
 import argparse
 import json
@@ -12,16 +12,18 @@ from run_focus_attack import accepted, activation_cycle, cycle_outcome
 from run_keyboard_observation import secure_input_enabled
 from run_loaded_page_attacks import close, prepare
 from run_native import ROOT, Oracle, probe
+from research_content_pause import pause_cycle, pause_outcome
 
 
-def run(output, controller, engine_root, active_animation=False):
+def run(output, controller, engine_root, active_animation=False, intervention="hide"):
     engine_environment(engine_root)
     output = output.resolve()
     output.mkdir(parents=True, exist_ok=False)
     require_input_safety(probe(["permissions"], output / "permissions.json"))
     oracle = Oracle(controller)
     report = {"humanBaseline": False, "scope": "Local timer-gap action after private authorized startup. No external input posted.",
-              "stationarySeconds": 3, "hiddenSeconds": 8, "activeAnimation": active_animation, "modes": []}
+              "stationarySeconds": 3, "hiddenSeconds": 8 if intervention == "hide" else 0,
+              "intervention": intervention, "activeAnimation": active_animation, "modes": []}
 
     def save():
         (output / "results.json").write_text(json.dumps(report, indent=2) + "\n")
@@ -33,7 +35,8 @@ def run(output, controller, engine_root, active_animation=False):
             report["modes"].append(row)
             sink = candidate = None
             try:
-                sink = prepare("InspectableControl", output / f"{mode}-sink", oracle)
+                if intervention == "hide":
+                    sink = prepare("InspectableControl", output / f"{mode}-sink", oracle)
                 candidate = prepare("InternalKeyboardControl", output / f"{mode}-candidate", oracle,
                                     "?surface=timer-gap-action&observe-activity=1" + ("&active-animation=1" if active_animation else ""), engine_root)
                 row["binarySHA256"] = candidate["binarySHA256"]
@@ -62,8 +65,13 @@ def run(output, controller, engine_root, active_animation=False):
                 if row["stationaryNewActions"] or row["stationaryAcceptedInputEvents"]:
                     row["reason"] = "The stationary control changed before external activation"
                     return report
-                row["candidate"] = activation_cycle(candidate, sink, oracle, hide=True, away_seconds=8)
-                row["status"] = cycle_outcome(row["candidate"])
+                if intervention == "hide":
+                    row["candidate"] = activation_cycle(candidate, sink, oracle, hide=True, away_seconds=8)
+                    row["status"] = cycle_outcome(row["candidate"])
+                else:
+                    row["candidate"] = pause_cycle(candidate, oracle, output / f"{mode}-pause",
+                                                   recovery=intervention == "pause-recovery")
+                    row["status"] = pause_outcome(row["candidate"])
                 row["timerGapEvents"] = [event for event in oracle.state(candidate["trial"])["events"]
                                          if event.get("type") == "timer-gap-trigger"]
                 print(json.dumps({"mode": mode, "status": row["status"], "timerGapEvents": row["timerGapEvents"]}), flush=True)
@@ -95,5 +103,6 @@ if __name__ == "__main__":
     parser.add_argument("--controller", type=Path, default=ROOT / "artifacts/page-feature-controller.json")
     parser.add_argument("--engine-frameworks", type=Path, default=ROOT / ".build/webkit-engine/output/Release")
     parser.add_argument("--active-animation", action="store_true")
+    parser.add_argument("--intervention", choices=["hide", "pause", "pause-recovery"], default="hide")
     args = parser.parse_args()
-    run(args.output, args.controller, args.engine_frameworks, args.active_animation)
+    run(args.output, args.controller, args.engine_frameworks, args.active_animation, args.intervention)

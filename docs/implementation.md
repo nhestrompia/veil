@@ -583,3 +583,12 @@ All nine private editor baselines passed on the revised engine. The matched matr
 The separate password comparison admitted zero keys during activation and recorded no focus-triggered action. The per-view protection flag released while hidden and returned before private resumed typing. That sequence completed one task. Cleanup left Secure Event Input off.
 
 All 112 Python checks pass. These generated baselines do not replace physical-human controls. Pointer support, dynamic password changes, and independent process or website-action routes remain unverified. The physical browser and permissioned probes retain their frozen binaries.
+
+
+## Milestone 88: external process signals
+
+The new helper pauses only a verified custom-engine content process owned by a disposable diagnostic session. It checks exact paths and process start times. An independent watchdog resumes the same renderer even if the helper dies. Six pure scope checks exclude the physical browser, system WebKit, and invalid targets.
+
+Two normal comparisons and one watchdog-recovery comparison each produced a website action in native mode and stable mode. All six stationary controls passed. No cycle admitted keyboard events. Every renderer resumed and every disposable app passed cleanup. Secure Event Input returned to off. All 116 Python checks pass.
+
+The current engine remains vulnerable to this timing route. Both measured executables lack Hardened Runtime. A disposable signed control is the next test. Endpoint Security offers a possible authorization boundary but requires separate prerequisites and approval before installation. See the process-pause findings and signal-boundary research.

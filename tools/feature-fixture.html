@@ -88,6 +88,14 @@ async function mount(){
   const eventTypes=['keydown','input','pointerdown','click','drop','wheel'];
   for(const type of eventTypes)document.addEventListener(type,event=>post('events',{events:[{type,trusted:event.isTrusted}]}),{passive:true});
   await post('events',{events:[{type:'page-ready'}]});
+  if(new URLSearchParams(location.search).get('observe-activity')==='1'){
+    let lastActivity='';
+    const observe=()=>{
+      const state='activity-'+document.visibilityState+'-'+(document.hasFocus()?'focused':'unfocused');
+      if(state!==lastActivity){lastActivity=state;post('events',{events:[{type:state,t:performance.now()}]});}
+    };
+    observe();setInterval(observe,100);
+  }
 }
 mount();
 </script>

@@ -26,6 +26,10 @@ def accepted(state):
     return sum(bool(item["accepted"]) for item in state["submissions"])
 
 
+def activity_observations(state):
+    return [event for event in state["events"] if event.get("type", "").startswith("activity-")]
+
+
 def activate(pid, operation=None):
     args = [str(ROOT / ".build/research-focus")]
     if operation:
@@ -57,12 +61,15 @@ def activation_cycle(target, sink, oracle, hide=False):
             "diagnosticFocusEvents": [line for line in tail.splitlines() if line.startswith("FOCUS_DIAGNOSTIC") or line.startswith("FOCUS_ACTIVATION_REFUSED")],
             "secureInputBefore": secure_before, "secureInputWhileAway": secure_away,
             "secureInputAfterReturn": secure_input_enabled(),
+            "pageActivityBefore": activity_observations(before),
+            "pageActivityWhileAway": activity_observations(after_away),
+            "pageActivityAfterReturn": activity_observations(after),
             "awayStatus": away, "backStatus": back,
             "activationMethod": "NSRunningApplication.hide/unhide/activate; no Accessibility call" if hide else "NSRunningApplication.activate; no Accessibility call",
             "syntheticInputPosted": False, "AXReadSent": False, "AXValueSet": False, "AXPressSent": False}
 
 
-def run(output, controller, repetitions, surface="focus-action", hide=False, password=False, resume=False, engine_root=None, frame_container=None):
+def run(output, controller, repetitions, surface="focus-action", hide=False, password=False, resume=False, engine_root=None, frame_container=None, observe_activity=False):
     if engine_root is not None:
         from engine_runtime import engine_environment
         engine_environment(engine_root)
@@ -77,6 +84,7 @@ def run(output, controller, repetitions, surface="focus-action", hide=False, pas
     hashes = {name: hashlib.sha256(binary.read_bytes()).hexdigest() for name, binary in binaries.items()}
     report = {"binarySHA256": hashes, "humanBaseline": False,
               "surface": surface, "hideCycle": hide, "passwordField": password, "frameContainer": frame_container,
+              "pageActivityObservationEnabled": observe_activity,
               "scope": "Agent activates only research apps. Candidate baseline is private authorized keyboard input. Focus listener is ordinary page code.", "runs": []}
 
     def save():
@@ -85,6 +93,8 @@ def run(output, controller, repetitions, surface="focus-action", hide=False, pas
     suffix = f"?surface={surface}" + ("&field-kind=password" if password else "")
     if frame_container:
         suffix += "&frame-container=" + frame_container
+    if observe_activity:
+        suffix += "&observe-activity=1"
 
     for repetition in range(repetitions):
         if any(hashlib.sha256(binary.read_bytes()).hexdigest() != hashes[name] for name, binary in binaries.items()):
@@ -151,5 +161,6 @@ if __name__ == "__main__":
     parser.add_argument("--resume", action="store_true")
     parser.add_argument("--engine-frameworks", type=Path)
     parser.add_argument("--frame-container", choices=["iframe", "cross-frame", "srcdoc"])
+    parser.add_argument("--observe-activity", action="store_true")
     args = parser.parse_args()
-    run(args.output, args.controller, args.repetitions, args.surface, args.hide, args.password, args.resume, args.engine_frameworks, args.frame_container)
+    run(args.output, args.controller, args.repetitions, args.surface, args.hide, args.password, args.resume, args.engine_frameworks, args.frame_container, args.observe_activity)

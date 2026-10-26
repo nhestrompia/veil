@@ -442,3 +442,8 @@ Three fresh matched comparisons reproduced two visibility-triggered actions each
 ## Milestone 72: retry the broader cache setting
 
 The Swift-only cache experiment still failed WebGPU and PAL tasks. The sixth full build uses the exact umbrella cache setting from the passing narrow comparison. The diagnostic now reads its own content executable through proc_pidpath. It compiles. All 100 Python checks pass, including rejection of changed line endings before source mutation. Positive custom-engine identity and live engine results remain unverified. See [retry findings](engine-build-retry-findings.md).
+
+
+## Milestone 73: observe content focus and visibility
+
+The optional page observer records state transitions and page-local timestamps. A matched ordinary password comparison calibrated hidden and visible focus transitions. Its focus-only action reproduced. Private resume and cleanup passed. All 100 Python checks pass. Custom-engine native and stable comparisons remain pending. See [activity findings](page-activity-findings.md).

@@ -199,3 +199,9 @@ One fresh matched visibility comparison per child type reproduced two new action
 The Swift-only setting did not clear WebGPU and PAL failures. The sixth build uses COMPILATION_CACHE_ENABLE_CACHING=NO, matching the passing JavaScriptCore comparison. Its active exec session is 96959. Preserve the monitor and disk reserve. The complete engine remains unverified. See [retry findings](engine-build-retry-findings.md).
 
 The prepared InternalKeyboardControl is now engine-stable, capture-restricted, with private resume and ownership logging. Its content identity gate uses proc_pidpath. It compiles, but positive custom-engine identity is unverified. All 100 Python checks pass. The source staging regression rejects CRLF changes before mutation. A current scoped process audit found only physical browser PID 61893, no temporary research app, and aggregate Secure Input off.
+
+## Milestone 73 page-side activity calibration
+
+The fixture can now report focus and visibility state transitions without field text. One ordinary password comparison reported hidden state while away and visible focus transitions after return. The focus-only action reproduced. Private resume and cleanup passed. All 100 Python checks pass. See [activity findings](page-activity-findings.md). No protected custom-engine comparison ran.
+
+A later PAL reproduction proves the quiet-log zero-exit messages are cosmetic: the target exits zero and regenerates its object. Earlier cache-failure attribution is invalid. The seventh full build is active in exec session 3890, with normal logging and upstream cache defaults. The physical browser and permissioned probes remain unchanged.

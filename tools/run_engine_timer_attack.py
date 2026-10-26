@@ -14,14 +14,14 @@ from run_loaded_page_attacks import close, prepare
 from run_native import ROOT, Oracle, probe
 
 
-def run(output, controller, engine_root):
+def run(output, controller, engine_root, active_animation=False):
     engine_environment(engine_root)
     output = output.resolve()
     output.mkdir(parents=True, exist_ok=False)
     require_input_safety(probe(["permissions"], output / "permissions.json"))
     oracle = Oracle(controller)
     report = {"humanBaseline": False, "scope": "Local timer-gap action after private authorized startup. No external input posted.",
-              "stationarySeconds": 3, "hiddenSeconds": 3, "modes": []}
+              "stationarySeconds": 3, "hiddenSeconds": 3, "activeAnimation": active_animation, "modes": []}
 
     def save():
         (output / "results.json").write_text(json.dumps(report, indent=2) + "\n")
@@ -35,7 +35,8 @@ def run(output, controller, engine_root):
             try:
                 sink = prepare("InspectableControl", output / f"{mode}-sink", oracle)
                 candidate = prepare("InternalKeyboardControl", output / f"{mode}-candidate", oracle,
-                                    "?surface=timer-gap-action&observe-activity=1", engine_root)
+                                    "?surface=timer-gap-action&observe-activity=1" + ("&active-animation=1" if active_animation else ""), engine_root)
+                row["binarySHA256"] = candidate["binarySHA256"]
                 row["engineIdentity"] = candidate["engineIdentity"]
                 before = oracle.state(candidate["trial"])
                 row["initialAcceptedActions"] = accepted(before)
@@ -82,5 +83,6 @@ if __name__ == "__main__":
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--controller", type=Path, default=ROOT / "artifacts/page-feature-controller.json")
     parser.add_argument("--engine-frameworks", type=Path, default=ROOT / ".build/webkit-engine/output/Release")
+    parser.add_argument("--active-animation", action="store_true")
     args = parser.parse_args()
-    run(args.output, args.controller, args.engine_frameworks)
+    run(args.output, args.controller, args.engine_frameworks, args.active_animation)

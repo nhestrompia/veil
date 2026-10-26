@@ -1,6 +1,6 @@
 # Current research state
 
-Latest: milestone 82. The static timer experiment failed its control twice because its action occurred before hiding. The guarded retry stopped before external activation. No stable timing comparison ran. The nine lifecycle cases have passing stable results with two original inconclusive srcdoc controls retained. All 111 Python checks pass. The prepared diagnostic is engine-native without private resume. Feature fixture exec session 83296 remains on port 8766.
+Latest: milestone 83. The active-page timer experiment reproduced one external website action in both native and stable engines, after valid stationary controls. Both cycles admitted zero input. The stable page stayed visible and focused. Engine receipts and framework hashes are saved. Agent-free operation is unmet. Next, test clearing only the serialized visual-idle flag. The feature fixture remains on port 8766 in exec session 83296.
 
 Updated 2026-10-26. Milestone 58 confirms an external focus-only action bypass in three fresh diagnostic processes. Activating another research window and returning completed one new action in each candidate. The standalone helper posted no input and made no AX call during those cycles. The gate admitted zero keyboard events. Agent-free operation is unmet.
 
@@ -291,3 +291,14 @@ The first native-engine run already contained two accepted actions before the st
 No stable comparison follows without a valid native control. This experiment does not show that timing behavior is protected. All 111 Python checks pass. The physical browser and permissioned probes remain unchanged.
 
 The fresh guarded run also contained two initial actions. It returned inconclusive before hiding the app. Both temporary processes passed cleanup, and Secure Event Input returned to off.
+
+
+## Milestone 83: active-page timer bypass
+
+A small animation keeps the foreground fixture active. This distinguishes the experiment from the static page that triggered before the attack. Both native and stable modes began with exactly one startup action. Both passed three stationary seconds without a new action or admitted key.
+
+Hiding each app for three seconds triggered one accepted website action. Native mode recorded a timer gap of 1,001 milliseconds. Stable mode recorded 830 milliseconds. Both activation cycles admitted zero input events. No external input or candidate Accessibility action was sent.
+
+The stable page continued to report visible and focused state. The retained visual-idle flag controls timer alignment independently in the pinned source. This identifies the next hypothesis for a bounded patch. It does not yet prove that changing that flag closes the route.
+
+Every temporary process passed cleanup, and Secure Event Input returned to off. The evidence includes engine receipts and framework hashes. Agent-free operation remains unmet.

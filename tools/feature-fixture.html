@@ -34,6 +34,14 @@ for(const event of ['pagehide','unload'])addEventListener(event,()=>{
   if(focusActionArmed&&surface===event+'-action')navigator.sendBeacon(base+'/action',new Blob([JSON.stringify({note:'native-input'})],{type:'application/json'}));
 });
 if(surface==='timer-gap-action'){
+  if(new URLSearchParams(location.search).get('active-animation')==='1'){
+    const pulse=document.createElement('div');
+    pulse.style.cssText='width:24px;height:24px;background:#116456';
+    content.append(pulse);
+    let frame=0;
+    const animate=()=>{pulse.style.transform='translateX('+(frame++%40)+'px)';requestAnimationFrame(animate);};
+    requestAnimationFrame(animate);
+  }
   let previousTick=performance.now(),gapActionRecorded=false;
   setInterval(()=>{
     const now=performance.now(),gap=now-previousTick;

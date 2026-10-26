@@ -1,0 +1,320 @@
+{
+  "websiteTest": false,
+  "humanBaseline": false,
+  "scope": "Signals target only newly launched standalone CLI children. No browser or system process is targeted.",
+  "macOS": "26.6",
+  "trials": [
+    {
+      "mode": "ordinary",
+      "watchdogRecovery": false,
+      "runtimeFlag": false,
+      "binarySHA256": "3b25b045dc727c23bc7c9f348fe3239bfda797604af46253528b86ba2bb8515b",
+      "signing": [
+        "Executable=/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/signal-signing-control/ordinary",
+        "Identifier=ordinary-5555494463e55be655443abea9ad45c2d6f72bad",
+        "Format=Mach-O thin (arm64)",
+        "CodeDirectory v=20400 size=298 flags=0x2(adhoc) hashes=3+2 location=embedded",
+        "Signature=adhoc",
+        "Info.plist=not bound",
+        "TeamIdentifier=not set",
+        "Sealed Resources=none",
+        "Internal requirements count=0 size=12"
+      ],
+      "status": "external-pause-observed",
+      "pid": 49616,
+      "stopSent": true,
+      "stoppedStateObserved": true,
+      "continueSent": true,
+      "receipts": [
+        {
+          "ready": true,
+          "pid": 49616,
+          "watchdogPID": 49617
+        },
+        {
+          "watchdogResumed": true
+        },
+        {
+          "maximumGapSeconds": 1.028753,
+          "completed": true
+        }
+      ],
+      "exitCode": 0,
+      "cleanupVerified": true
+    },
+    {
+      "mode": "ordinary",
+      "watchdogRecovery": true,
+      "runtimeFlag": false,
+      "binarySHA256": "3b25b045dc727c23bc7c9f348fe3239bfda797604af46253528b86ba2bb8515b",
+      "signing": [
+        "Executable=/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/signal-signing-control/ordinary",
+        "Identifier=ordinary-5555494463e55be655443abea9ad45c2d6f72bad",
+        "Format=Mach-O thin (arm64)",
+        "CodeDirectory v=20400 size=298 flags=0x2(adhoc) hashes=3+2 location=embedded",
+        "Signature=adhoc",
+        "Info.plist=not bound",
+        "TeamIdentifier=not set",
+        "Sealed Resources=none",
+        "Internal requirements count=0 size=12"
+      ],
+      "status": "external-pause-observed",
+      "pid": 49655,
+      "stopSent": true,
+      "stoppedStateObserved": true,
+      "receipts": [
+        {
+          "ready": true,
+          "pid": 49655,
+          "watchdogPID": 49656
+        },
+        {
+          "watchdogResumed": true
+        },
+        {
+          "maximumGapSeconds": 2.736981,
+          "completed": true
+        }
+      ],
+      "exitCode": 0,
+      "cleanupVerified": true
+    },
+    {
+      "mode": "hardened",
+      "watchdogRecovery": false,
+      "runtimeFlag": true,
+      "binarySHA256": "75c5115b2ba228b56452b97b8b05c7c3ad74b7d47666e3307369dcfa2e112314",
+      "signing": [
+        "Executable=/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/signal-signing-control/hardened",
+        "Identifier=hardened-5555494425aa8a1340c53557be8164affb452fcc",
+        "Format=Mach-O thin (arm64)",
+        "CodeDirectory v=20500 size=306 flags=0x10002(adhoc,runtime) hashes=3+2 location=embedded",
+        "Signature=adhoc",
+        "Info.plist=not bound",
+        "TeamIdentifier=not set",
+        "Runtime Version=27.0.0",
+        "Sealed Resources=none",
+        "Internal requirements count=0 size=12"
+      ],
+      "status": "external-pause-observed",
+      "pid": 49665,
+      "stopSent": true,
+      "stoppedStateObserved": true,
+      "continueSent": true,
+      "receipts": [
+        {
+          "ready": true,
+          "pid": 49665,
+          "watchdogPID": 49669
+        },
+        {
+          "watchdogResumed": true
+        },
+        {
+          "maximumGapSeconds": 1.013175,
+          "completed": true
+        }
+      ],
+      "exitCode": 0,
+      "cleanupVerified": true
+    },
+    {
+      "mode": "hardened",
+      "watchdogRecovery": true,
+      "runtimeFlag": true,
+      "binarySHA256": "75c5115b2ba228b56452b97b8b05c7c3ad74b7d47666e3307369dcfa2e112314",
+      "signing": [
+        "Executable=/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/signal-signing-control/hardened",
+        "Identifier=hardened-5555494425aa8a1340c53557be8164affb452fcc",
+        "Format=Mach-O thin (arm64)",
+        "CodeDirectory v=20500 size=306 flags=0x10002(adhoc,runtime) hashes=3+2 location=embedded",
+        "Signature=adhoc",
+        "Info.plist=not bound",
+        "TeamIdentifier=not set",
+        "Runtime Version=27.0.0",
+        "Sealed Resources=none",
+        "Internal requirements count=0 size=12"
+      ],
+      "status": "external-pause-observed",
+      "pid": 49673,
+      "stopSent": true,
+      "stoppedStateObserved": true,
+      "receipts": [
+        {
+          "ready": true,
+          "pid": 49673,
+          "watchdogPID": 49674
+        },
+        {
+          "watchdogResumed": true
+        },
+        {
+          "maximumGapSeconds": 2.737706,
+          "completed": true
+        }
+      ],
+      "exitCode": 0,
+      "cleanupVerified": true
+    }
+  ],
+  "repeat": {
+    "websiteTest": false,
+    "humanBaseline": false,
+    "scope": "Signals target only newly launched standalone CLI children. No browser or system process is targeted.",
+    "macOS": "26.6",
+    "trials": [
+      {
+        "mode": "ordinary",
+        "watchdogRecovery": false,
+        "runtimeFlag": false,
+        "binarySHA256": "3b25b045dc727c23bc7c9f348fe3239bfda797604af46253528b86ba2bb8515b",
+        "signing": [
+          "Executable=/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/signal-signing-control/ordinary",
+          "Identifier=ordinary-5555494463e55be655443abea9ad45c2d6f72bad",
+          "Format=Mach-O thin (arm64)",
+          "CodeDirectory v=20400 size=298 flags=0x2(adhoc) hashes=3+2 location=embedded",
+          "Signature=adhoc",
+          "Info.plist=not bound",
+          "TeamIdentifier=not set",
+          "Sealed Resources=none",
+          "Internal requirements count=0 size=12"
+        ],
+        "status": "external-pause-observed",
+        "pid": 50036,
+        "stopSent": true,
+        "stoppedStateObserved": true,
+        "continueSent": true,
+        "receipts": [
+          {
+            "ready": true,
+            "pid": 50036,
+            "watchdogPID": 50037
+          },
+          {
+            "watchdogResumed": true
+          },
+          {
+            "maximumGapSeconds": 1.032412,
+            "completed": true
+          }
+        ],
+        "exitCode": 0,
+        "cleanupVerified": true
+      },
+      {
+        "mode": "ordinary",
+        "watchdogRecovery": true,
+        "runtimeFlag": false,
+        "binarySHA256": "3b25b045dc727c23bc7c9f348fe3239bfda797604af46253528b86ba2bb8515b",
+        "signing": [
+          "Executable=/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/signal-signing-control/ordinary",
+          "Identifier=ordinary-5555494463e55be655443abea9ad45c2d6f72bad",
+          "Format=Mach-O thin (arm64)",
+          "CodeDirectory v=20400 size=298 flags=0x2(adhoc) hashes=3+2 location=embedded",
+          "Signature=adhoc",
+          "Info.plist=not bound",
+          "TeamIdentifier=not set",
+          "Sealed Resources=none",
+          "Internal requirements count=0 size=12"
+        ],
+        "status": "external-pause-observed",
+        "pid": 50085,
+        "stopSent": true,
+        "stoppedStateObserved": true,
+        "receipts": [
+          {
+            "ready": true,
+            "pid": 50085,
+            "watchdogPID": 50086
+          },
+          {
+            "watchdogResumed": true
+          },
+          {
+            "maximumGapSeconds": 2.738672,
+            "completed": true
+          }
+        ],
+        "exitCode": 0,
+        "cleanupVerified": true
+      },
+      {
+        "mode": "hardened",
+        "watchdogRecovery": false,
+        "runtimeFlag": true,
+        "binarySHA256": "75c5115b2ba228b56452b97b8b05c7c3ad74b7d47666e3307369dcfa2e112314",
+        "signing": [
+          "Executable=/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/signal-signing-control/hardened",
+          "Identifier=hardened-5555494425aa8a1340c53557be8164affb452fcc",
+          "Format=Mach-O thin (arm64)",
+          "CodeDirectory v=20500 size=306 flags=0x10002(adhoc,runtime) hashes=3+2 location=embedded",
+          "Signature=adhoc",
+          "Info.plist=not bound",
+          "TeamIdentifier=not set",
+          "Runtime Version=27.0.0",
+          "Sealed Resources=none",
+          "Internal requirements count=0 size=12"
+        ],
+        "status": "external-pause-observed",
+        "pid": 50099,
+        "stopSent": true,
+        "stoppedStateObserved": true,
+        "continueSent": true,
+        "receipts": [
+          {
+            "ready": true,
+            "pid": 50099,
+            "watchdogPID": 50100
+          },
+          {
+            "watchdogResumed": true
+          },
+          {
+            "maximumGapSeconds": 1.019471,
+            "completed": true
+          }
+        ],
+        "exitCode": 0,
+        "cleanupVerified": true
+      },
+      {
+        "mode": "hardened",
+        "watchdogRecovery": true,
+        "runtimeFlag": true,
+        "binarySHA256": "75c5115b2ba228b56452b97b8b05c7c3ad74b7d47666e3307369dcfa2e112314",
+        "signing": [
+          "Executable=/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/signal-signing-control/hardened",
+          "Identifier=hardened-5555494425aa8a1340c53557be8164affb452fcc",
+          "Format=Mach-O thin (arm64)",
+          "CodeDirectory v=20500 size=306 flags=0x10002(adhoc,runtime) hashes=3+2 location=embedded",
+          "Signature=adhoc",
+          "Info.plist=not bound",
+          "TeamIdentifier=not set",
+          "Runtime Version=27.0.0",
+          "Sealed Resources=none",
+          "Internal requirements count=0 size=12"
+        ],
+        "status": "external-pause-observed",
+        "pid": 50104,
+        "stopSent": true,
+        "stoppedStateObserved": true,
+        "receipts": [
+          {
+            "ready": true,
+            "pid": 50104,
+            "watchdogPID": 50105
+          },
+          {
+            "watchdogResumed": true
+          },
+          {
+            "maximumGapSeconds": 2.717892,
+            "completed": true
+          }
+        ],
+        "exitCode": 0,
+        "cleanupVerified": true
+      }
+    ]
+  }
+}

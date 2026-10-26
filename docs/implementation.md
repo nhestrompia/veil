@@ -592,3 +592,12 @@ The new helper pauses only a verified custom-engine content process owned by a d
 Two normal comparisons and one watchdog-recovery comparison each produced a website action in native mode and stable mode. All six stationary controls passed. No cycle admitted keyboard events. Every renderer resumed and every disposable app passed cleanup. Secure Event Input returned to off. All 116 Python checks pass.
 
 The current engine remains vulnerable to this timing route. Both measured executables lack Hardened Runtime. A disposable signed control is the next test. Endpoint Security offers a possible authorization boundary but requires separate prerequisites and approval before installation. See the process-pause findings and signal-boundary research.
+
+
+## Milestone 89: Hardened Runtime signal control
+
+Ordinary and Hardened Runtime command-line targets both accepted external SIGSTOP and SIGCONT. Signature verification, runtime-flag readback, exact child-path checks, and stopped-state observations passed. Each signing mode also passed a separate watchdog-recovery trial. All four targets and watchdogs exited successfully.
+
+This control rules out an ordinary Hardened Runtime signing change as the signal-denial boundary. It does not test a fully hardened browser or establish a sandbox-specific result. The current custom engine remains vulnerable to the six website actions from milestone 88. A privileged enforcement design needs separate prerequisites and approval before installation. No service or permission changed.
+
+A fresh repeat reproduced all four outcomes. Across both runs, four Hardened Runtime trials and four ordinary-signing trials observed the external pause. Every target and watchdog passed cleanup. The final controller also refuses to rebuild a control while that exact executable is running.

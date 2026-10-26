@@ -793,3 +793,12 @@ Static review found and fixed a masked dependency-tool failure and cleanup throu
 All measured host and role credentials remain user ID 501. No cross-user renderer result exists yet. Framework caches, shared identity state, inherited session capabilities, sampled role identities, and auxiliary cleanup remain limitations. All frozen executable hashes match.
 
 The exact command and manifest are committed with the evidence. The earlier administrator approval is consumed and does not cover this proposed run. Obtain a separate one-run approval before execution. See [findings](renderer-identity-preflight-findings.md), [evidence](evidence/renderer-identity-preflight-results.json), and [run plan](evidence/renderer-identity-reviewed-run-plan.json).
+
+
+## Milestone 104: cross-user inline rendering
+
+The exact reviewed milestone 103 command runs once after the user's continuation approval. Its supervisor permanently drops the renderer to the existing nobody identity. The fixed inline page passes JavaScript and four image samples. Host, content, GPU, and network kernel records all show real, effective, and saved user/group IDs of 4294967294. Role samples remain stable across the snapshot.
+
+The host and watchdog exit normally. The supervisor reaps both. Independent ordinary-user checks find none of the five measured process identifiers and no staging directory. All frozen hashes match. The ordinary controller still uses user ID 501. No account, service, grant, input hook, or session repair changes.
+
+The one-run administrator authorization is consumed. This rendering smoke test includes no pause attack. Signal denial against actual WebKit roles and controller isolation remain open. The result retains shared-account, cache, inherited-session, and sampled-identity limitations. See [findings](renderer-identity-results-findings.md) and [evidence](evidence/renderer-identity-results.json).

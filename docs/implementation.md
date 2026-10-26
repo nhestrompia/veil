@@ -541,3 +541,14 @@ Hiding each app for three seconds triggered one accepted website action. Native 
 The stable page continued to report visible and focused state. The retained visual-idle flag controls timer alignment independently in the pinned source. This identifies the next hypothesis for a bounded patch. It does not yet prove that changing that flag closes the route.
 
 Every temporary process passed cleanup, and Secure Event Input returned to off. The evidence includes engine receipts and framework hashes. Agent-free operation remains unmet.
+
+
+## Milestone 84: clear serialized visual-idle state
+
+The research projection now clears IsVisuallyIdle in stable mode. It still sets the five focus, visibility, and window flags. Native mode remains an identity operation. The native UI state and Secure Event Input source remain unchanged.
+
+The exhaustive projection check first failed on the new visual-idle invariant. It now passes all 65,536 states in both modes. Every other flag retains its input value. All 112 Python checks pass.
+
+Source staging accepts only the exact measured predecessor header by its SHA256. A changed predecessor is refused before any other file write. Existing timestamps remain intact for byte-identical source. The prior engine receipt, source receipt, and log remain saved separately.
+
+The isolated engine rebuild completed with exit zero in 50.3 seconds. The first native timer control triggered before hiding and returned inconclusive. The stable comparison did not run. The new source rule is not yet a verified runtime fix.

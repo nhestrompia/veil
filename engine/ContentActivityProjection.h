@@ -18,7 +18,7 @@ constexpr std::underlying_type_t<Activity> projectContentActivity(
         | static_cast<Storage>(Activity::IsVisibleOrOccluded)
         | static_cast<Storage>(Activity::IsInWindow);
     return policy == ContentActivityPolicy::StableBrowsing
-        ? static_cast<Storage>(observed | stableFlags) : observed;
+        ? static_cast<Storage>((observed | stableFlags) & ~static_cast<Storage>(Activity::IsVisuallyIdle)) : observed;
 }
 
 } // namespace WebKit

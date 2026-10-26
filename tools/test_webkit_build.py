@@ -1,3 +1,4 @@
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -98,3 +99,26 @@ class ResearchEngineBuildTests(unittest.TestCase):
                 with self.assertRaisesRegex(RuntimeError, 'Refusing changed research source'):
                     build.stage(source)
             self.assertEqual((source / 'first').read_bytes(), b'old\n')
+
+    def test_projection_upgrade_accepts_only_exact_predecessor_bytes(self):
+        for previous, accepted in [('measured header', True), ('measured header\n', False)]:
+            with self.subTest(previous=previous), tempfile.TemporaryDirectory() as directory:
+                source = Path(directory)
+                (source / 'first').write_text('old')
+                (source / 'header').write_text(previous)
+                patch_file = source / 'patch'
+                patch_file.write_text('exact patch')
+                with patch.object(build, 'read_sources', return_value=({'revision': 'pinned'}, {'first': 'old'})), \
+                     patch.object(build, 'revision_of', return_value='pinned'), patch.object(build, 'generate'), \
+                     patch.object(build, 'changed_sources', return_value={'first': 'new', 'header': 'new header'}), \
+                     patch.object(build, 'HEADER', 'header'), \
+                     patch.object(build, 'PRIOR_PROJECTION_SHA256', hashlib.sha256(b'measured header').hexdigest()), \
+                     patch.object(build, 'BASE', source), patch.object(build, 'PATCH', patch_file):
+                    if accepted:
+                        build.stage(source)
+                        self.assertEqual((source / 'header').read_text(), 'new header')
+                        self.assertEqual((source / 'first').read_text(), 'new')
+                    else:
+                        with self.assertRaisesRegex(RuntimeError, 'Refusing changed research source'):
+                            build.stage(source)
+                        self.assertEqual((source / 'first').read_text(), 'old')

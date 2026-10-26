@@ -10,11 +10,12 @@ import subprocess
 import tempfile
 import time
 
-from prepare_webkit_activity import ROOT, PATCH, changed_sources, generate, read_sources
+from prepare_webkit_activity import ROOT, PATCH, HEADER, changed_sources, generate, read_sources
 from prepare_webkit_source import MIN_FREE, git_command, git_environment, monitored, require_disk, revision_of, terminate_group
 
 BASE = ROOT / ".build/webkit-engine"
 CACHE = ROOT / ".build/webkit-source-94f9"
+PRIOR_PROJECTION_SHA256 = "f4ed43fa6a99d3a192106811877990758075b4c5af4e3d1b25b82b5a6c991eda"
 
 
 def stage(source):
@@ -31,6 +32,9 @@ def stage(source):
             raise RuntimeError(f"Research source path escapes its checkout: {name}")
         actual = path.read_bytes().decode() if path.exists() else None
         allowed = [text, original.get(name)] if name in updated else [text]
+        # Permit only the exact measured five-flag predecessor for this header.
+        if name == HEADER and actual is not None and hashlib.sha256(actual.encode()).hexdigest() == PRIOR_PROJECTION_SHA256:
+            allowed.append(actual)
         if actual not in allowed:
             raise RuntimeError(f"Refusing changed research source: {name}")
     for name, text in updated.items():

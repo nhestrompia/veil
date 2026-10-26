@@ -22,6 +22,8 @@ int main()
     std::uint16_t protectedMask = 0;
     for (auto flag : protectedFlags)
         protectedMask |= static_cast<std::uint16_t>(flag);
+    constexpr auto visuallyIdleMask = static_cast<std::uint16_t>(Activity::IsVisuallyIdle);
+    protectedMask |= visuallyIdleMask;
 
     for (std::uint32_t raw = 0; raw <= UINT16_MAX; ++raw) {
         auto observed = static_cast<std::uint16_t>(raw);
@@ -30,6 +32,7 @@ int main()
         require(native == observed, "Native policy changed activity");
         for (auto flag : protectedFlags)
             require(stable & static_cast<std::uint16_t>(flag), "A protected activity flag is absent");
+        require(!(stable & visuallyIdleMask), "Stable content became visually idle");
         require((stable & static_cast<std::uint16_t>(~protectedMask))
             == (observed & static_cast<std::uint16_t>(~protectedMask)), "A nonprotected flag changed");
         require(WebKit::projectContentActivity<Activity>(stable, Policy::StableBrowsing) == stable,

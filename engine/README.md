@@ -2,7 +2,7 @@
 
 This directory contains a research patch for WebKit revision `94f9b7905e3ce9a3d7497f26b563adcad6b7525f`. It is not installed in the browser. The isolated engine scheme compiled successfully. Separate diagnostics verified UI and content framework paths. Native and stable activity comparisons now have measured results.
 
-The patch adds one configuration choice. Each WebPageProxy captures it as a constant policy. Native mode preserves outgoing state. Stable mode sets five activity flags before content-process updates and page creation. Native UI state, drawing, throttling, and Secure Event Input code stay unchanged.
+The patch adds one configuration choice. Each WebPageProxy captures it as a constant policy. Native mode preserves outgoing state. Stable mode sets five activity flags and clears IsVisuallyIdle before content-process updates and page creation. Native UI state and Secure Event Input code stay unchanged. The new visual-idle rule still needs a matched runtime comparison.
 
 ## Reproduce the bounded checks
 
@@ -23,7 +23,7 @@ python3 tools/prepare_webkit_activity.py
 
 Review the resulting patch before committing. The generator applies it with zero fuzz to temporary source copies and compares the exact output. It also checks that the native activity calculation remains unchanged.
 
-The standalone C++ test compiles the actual projection header. It extracts the exact ActivityState enum declaration from the pinned, hash-verified source header. It checks all 65,536 native flag combinations in both modes. Checks cover native identity, the five required flags, preservation of every other flag, and idempotence. It does not compile WTF OptionSet, WebPageProxy, Cocoa integration, or a browser.
+The standalone C++ test compiles the actual projection header. It extracts the exact ActivityState enum declaration from the pinned, hash-verified source header. It checks all 65,536 native flag combinations in both modes. Checks cover native identity, the five required flags, cleared visual-idle state, preservation of the remaining flags, and idempotence. It does not compile WTF OptionSet, WebPageProxy, Cocoa integration, or a browser.
 
 ## Remaining gates
 

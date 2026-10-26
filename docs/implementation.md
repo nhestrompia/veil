@@ -427,3 +427,8 @@ The fixture now arms lifecycle listeners inside same-origin, cross-origin, and s
 ## Milestone 69: preserve sandboxing during generated-source builds
 
 The actual Xcode sandbox profile reproduced the shared temporary-directory refusal. A target-local directory passed. The build now gives each target its own TMPDIR. The narrow WTF target changed from failure to success and generated all four Mach exception files. Engine source and script sandboxing remain unchanged. The full build restarted. See [temporary-directory findings](engine-temp-findings.md).
+
+
+## Milestone 70: compare cached and uncached Swift compilation
+
+The fourth full build reported Swift task failures despite zero exit codes. A narrow JavaScriptCore build passed with compilation caching disabled. The installed Xcode specification identifies a Swift-specific switch. The fifth full build now disables only Swift caching. Full WebKit compilation and live custom-engine tests remain pending. See [cache findings](engine-cache-findings.md).

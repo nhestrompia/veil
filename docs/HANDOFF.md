@@ -181,3 +181,9 @@ The prepared InternalKeyboardControl is now the ordinary capture-restricted vari
 The third build failed at Mach interface generation. The assigned shared TMPDIR was denied by Xcode script sandboxing. The actual sandbox profile rejects that path and permits TARGET_TEMP_DIR. Passing TMPDIR as the per-target Xcode setting fixes the narrow WTF target. All four generated files exist. Script sandboxing remains enabled. See [temporary-directory findings](engine-temp-findings.md).
 
 The fourth full build is active in unified exec session 36677. Its monitor and process-group PIDs appear in .build/webkit-engine/build-results.json. Preserve the monitor and disk reserve. The complete engine and all custom-engine runtime claims remain unverified.
+
+## Milestone 70 Swift cache experiment
+
+The fourth build reached Swift tasks but reported zero-exit/no-output failures. Its monitor stopped through scoped cleanup. A narrow JavaScriptCore target passed with compilation caching disabled and linked its framework. The fifth full build uses the narrower SWIFT_ENABLE_COMPILE_CACHE=NO setting. C++ caching remains enabled. The complete engine is still unverified. See [cache findings](engine-cache-findings.md).
+
+The active full-build exec session is 72341. Preserve the monitor and disk reserve. No custom-engine runtime test passed yet.

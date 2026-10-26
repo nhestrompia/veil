@@ -78,6 +78,7 @@ def build(source, timeout):
                "--release", "--only=Everything up to WebKit", "-quiet", "-jobs", "4",
                "ARCHS=arm64", "ONLY_ACTIVE_ARCH=YES", "MACOSX_DEPLOYMENT_TARGET=26.0",
                "TMPDIR=$(TARGET_TEMP_DIR)/",
+               "SWIFT_ENABLE_COMPILE_CACHE=NO",
                "-derivedDataPath", str(output / "DerivedData"),
                f"SHARED_PRECOMPS_DIR={output / 'PrecompiledHeaders'}"]
     report = {"command": command, "output": str(output), "source": str(source),

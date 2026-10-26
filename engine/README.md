@@ -78,3 +78,5 @@ Compile the engine diagnostic with --engine-native or --engine-stable, plus --bu
 After a successful build, pass --engine-frameworks .build/webkit-engine/output/Release to the focus controller. Startup requires expected UI images and content mappings. This path remains unverified against a completed engine. See [runtime gates](../docs/engine-runtime-findings.md).
 
 Xcode script phases use TMPDIR from TARGET_TEMP_DIR. A shared directory under OBJROOT is denied by their sandbox. The narrow WTF target passed with this correction. See [the build diagnosis](../docs/engine-temp-findings.md).
+
+The build disables Swift compilation caching after an uncached JavaScriptCore comparison passed. C++ caching stays enabled. Full WebKit integration remains unverified. See [cache findings](../docs/engine-cache-findings.md).

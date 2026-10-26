@@ -4,7 +4,7 @@
 
 A macOS-only research project for an agent-resistant browser, with agent-free browsing as the stronger research goal.
 
-The revised engine passed three matched adaptive timer comparisons. Native controls reproduced an action, while stable mode recorded none. Independent website-action routes remain open research. See the lifecycle and timer findings. Agent-free operation remains unmet. [Lifecycle results](docs/engine-activity-matrix-findings.md), [timer results](docs/engine-timer-findings.md).
+The current candidate remains vulnerable to renderer suspension. Sixteen calibrated trials complete website actions across four clock sources in native and stable engine modes. The prevention gate fails. Earlier stable hide/restore results remain bounded to that route. Agent-free operation remains unmet. See [timing results](docs/clock-channel-findings.md) and [feasibility research](docs/research/agent-free-feasibility-boundary.md).
 
 Start with the [proof-of-concept PRD](PRD.md). It defines the target, proposed architecture, MVP requirements, attack tests, and acceptance gates.
 

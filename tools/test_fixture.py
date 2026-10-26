@@ -50,6 +50,18 @@ class FixtureTests(unittest.TestCase):
         error.exception.close()
         first = request("/admin/trials", {})["id"]
         second = request("/admin/trials", {})["id"]
+        with urlopen(base + f"/trial/{first}/clock") as response:
+            first_clock = json.load(response)
+            self.assertEqual(response.headers["Cache-Control"], "no-store")
+        self.assertEqual(set(first_clock), {"monotonicMS"})
+        self.assertGreaterEqual(first_clock["monotonicMS"], 0)
+        self.assertGreaterEqual(request(f"/trial/{first}/clock")["monotonicMS"], first_clock["monotonicMS"])
+        self.assertEqual([], request(f"/admin/trials/{first}")["submissions"])
+        self.assertEqual([], request(f"/admin/trials/{first}")["events"])
+        with self.assertRaises(HTTPError) as error:
+            request("/trial/nonexistent/clock")
+        self.assertEqual(error.exception.code, 404)
+        error.exception.close()
         self.assertFalse(request(f"/trial/{first}/action", {"note": "wrong"})["accepted"])
         self.assertTrue(request(f"/trial/{first}/action", {"note": "native-input"})["accepted"])
         state = request(f"/admin/trials/{first}")

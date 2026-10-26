@@ -3,6 +3,7 @@
 import argparse
 import json
 import secrets
+import time
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from pathlib import Path
 from urllib.parse import urlsplit
@@ -57,6 +58,8 @@ class Handler(BaseHTTPRequestHandler):
         if method == "GET" and len(parts) == 2:
             page = self.server.page_template.read_text()
             return self.respond(200, page.replace("{{SECRET}}", trial["secret"]), "text/html; charset=utf-8")
+        if method == "GET" and len(parts) == 3 and parts[-1] == "clock":
+            return self.respond(200, {"monotonicMS": time.monotonic_ns() / 1_000_000})
         if method == "POST" and parts[-1] == "action":
             note = self.body().get("note", "")
             accepted = note == "native-input"

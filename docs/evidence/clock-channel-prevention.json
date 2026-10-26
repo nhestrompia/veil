@@ -1,0 +1,61 @@
+{
+  "scope": "Eight stable-engine renderer-pause comparisons with eight independent native controls. Failed claim on these tested diagnostics, not a release build claim.",
+  "results": [
+    {
+      "route": "renderer-pause-performance-0",
+      "controlWorked": true,
+      "verdict": "bypass",
+      "inputEventsAdmitted": 0,
+      "newAcceptedActions": 1
+    },
+    {
+      "route": "renderer-pause-wall-0",
+      "controlWorked": true,
+      "verdict": "bypass",
+      "inputEventsAdmitted": 0,
+      "newAcceptedActions": 1
+    },
+    {
+      "route": "renderer-pause-worker-0",
+      "controlWorked": true,
+      "verdict": "bypass",
+      "inputEventsAdmitted": 0,
+      "newAcceptedActions": 1
+    },
+    {
+      "route": "renderer-pause-server-0",
+      "controlWorked": true,
+      "verdict": "bypass",
+      "inputEventsAdmitted": 0,
+      "newAcceptedActions": 1
+    },
+    {
+      "route": "renderer-pause-performance-1",
+      "controlWorked": true,
+      "verdict": "bypass",
+      "inputEventsAdmitted": 0,
+      "newAcceptedActions": 1
+    },
+    {
+      "route": "renderer-pause-wall-1",
+      "controlWorked": true,
+      "verdict": "bypass",
+      "inputEventsAdmitted": 0,
+      "newAcceptedActions": 1
+    },
+    {
+      "route": "renderer-pause-worker-1",
+      "controlWorked": true,
+      "verdict": "bypass",
+      "inputEventsAdmitted": 0,
+      "newAcceptedActions": 1
+    },
+    {
+      "route": "renderer-pause-server-1",
+      "controlWorked": true,
+      "verdict": "bypass",
+      "inputEventsAdmitted": 0,
+      "newAcceptedActions": 1
+    }
+  ]
+}

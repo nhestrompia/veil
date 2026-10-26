@@ -15,7 +15,9 @@ from run_native import ROOT, Oracle, probe
 from research_content_pause import pause_cycle, pause_outcome
 
 
-def run(output, controller, engine_root, active_animation=False, intervention="hide"):
+def run(output, controller, engine_root, active_animation=False, intervention="hide", clock_source="performance"):
+    if clock_source not in ["performance", "wall", "worker", "server"]:
+        raise ValueError("Unknown fixture clock source")
     engine_environment(engine_root)
     output = output.resolve()
     output.mkdir(parents=True, exist_ok=False)
@@ -23,7 +25,8 @@ def run(output, controller, engine_root, active_animation=False, intervention="h
     oracle = Oracle(controller)
     report = {"humanBaseline": False, "scope": "Local timer-gap action after private authorized startup. No external input posted.",
               "stationarySeconds": 3, "hiddenSeconds": 8 if intervention == "hide" else 0,
-              "intervention": intervention, "activeAnimation": active_animation, "modes": []}
+              "intervention": intervention, "activeAnimation": active_animation,
+              "clockSource": clock_source, "modes": []}
 
     def save():
         (output / "results.json").write_text(json.dumps(report, indent=2) + "\n")
@@ -38,7 +41,7 @@ def run(output, controller, engine_root, active_animation=False, intervention="h
                 if intervention == "hide":
                     sink = prepare("InspectableControl", output / f"{mode}-sink", oracle)
                 candidate = prepare("InternalKeyboardControl", output / f"{mode}-candidate", oracle,
-                                    "?surface=timer-gap-action&observe-activity=1" + ("&active-animation=1" if active_animation else ""), engine_root)
+                                    "?surface=timer-gap-action&observe-activity=1&clock-source=" + clock_source + ("&active-animation=1" if active_animation else ""), engine_root)
                 row["binarySHA256"] = candidate["binarySHA256"]
                 row["engineIdentity"] = candidate["engineIdentity"]
                 deadline = time.monotonic() + 20
@@ -104,5 +107,6 @@ if __name__ == "__main__":
     parser.add_argument("--engine-frameworks", type=Path, default=ROOT / ".build/webkit-engine/output/Release")
     parser.add_argument("--active-animation", action="store_true")
     parser.add_argument("--intervention", choices=["hide", "pause", "pause-recovery"], default="hide")
+    parser.add_argument("--clock-source", choices=["performance", "wall", "worker", "server"], default="performance")
     args = parser.parse_args()
-    run(args.output, args.controller, args.engine_frameworks, args.active_animation, args.intervention)
+    run(args.output, args.controller, args.engine_frameworks, args.active_animation, args.intervention, args.clock_source)

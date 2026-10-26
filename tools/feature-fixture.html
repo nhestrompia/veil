@@ -20,6 +20,7 @@ const base=location.origin+location.pathname;
 const content=document.querySelector('main');
 const result=document.querySelector('output');
 let focusActionArmed=false;
+let timingWorker=null;
 let geometryArmed=false,geometryTriggered=false,geometryBaseline=null;
 const post=(part,value)=>fetch(base+'/'+part,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(value)});
 const record=async value=>{
@@ -27,6 +28,7 @@ const record=async value=>{
   const state=await response.json();
   result.textContent=state.accepted?'Task complete. Action recorded.':'Action refused.';
   if(state.accepted&&['focus-action','blur-action','visibility-action','pagehide-action','unload-action','timer-gap-action'].includes(surface))focusActionArmed=true;
+  if(focusActionArmed&&timingWorker)timingWorker.postMessage('arm');
   if(state.accepted&&!geometryTriggered&&['move-action','resize-action'].includes(surface)){
     geometryBaseline=surface==='move-action'?[window.screenX,window.screenY]:[innerWidth,innerHeight];
     geometryArmed=true;
@@ -57,27 +59,55 @@ if(surface==='timer-gap-action'){
     const animate=()=>{pulse.style.transform='translateX('+(frame++%40)+'px)';requestAnimationFrame(animate);};
     requestAnimationFrame(animate);
   }
-  let previousTick=performance.now(),gapActionRecorded=false,ready=false,threshold=Infinity;
-  const baselineGaps=[];
-  setInterval(()=>{
-    const now=performance.now(),gap=now-previousTick;
-    previousTick=now;
-    if(focusActionArmed&&!ready){
-      baselineGaps.push(gap);
-      if(baselineGaps.length===10){
-        const baselineMax=Math.max(...baselineGaps);
-        threshold=Math.max(500,baselineMax+250);
-        ready=true;
-        post('events',{events:[{type:'timer-ready',t:threshold,x:baselineMax,y:baselineGaps.length}]});
+  function gapDetector(emit){
+    let previousTick=null,recorded=false,ready=false,threshold=Infinity;
+    const baseline=[];
+    return (now,armed)=>{
+      const gap=previousTick===null?0:now-previousTick;
+      previousTick=now;
+      if(!armed)return;
+      if(!ready){
+        baseline.push(gap);
+        if(baseline.length===10){
+          const maximum=Math.max(...baseline);
+          threshold=Math.max(500,maximum+250);
+          ready=true;
+          emit({type:'timer-ready',t:threshold,x:maximum,y:baseline.length});
+        }
+      }else if(!recorded&&gap>threshold){
+        recorded=true;
+        emit({type:'timer-gap-trigger',t:gap});
       }
-      return;
-    }
-    if(focusActionArmed&&!gapActionRecorded&&gap>threshold){
-      gapActionRecorded=true;
-      post('events',{events:[{type:'timer-gap-trigger',t:gap}]});
-      record('native-input');
-    }
-  },100);
+    };
+  }
+  const receive=event=>{
+    post('events',{events:[event]});
+    if(event.type==='timer-gap-trigger')record('native-input');
+  };
+  const clockSource=new URLSearchParams(location.search).get('clock-source')||'performance';
+  const detect=gapDetector(receive);
+  if(clockSource==='worker'){
+    const script=gapDetector.toString()+`;const detect=gapDetector(event=>postMessage(event));let armed=false;onmessage=()=>{armed=true;};setInterval(()=>detect(performance.now(),armed),100);`;
+    const workerURL=URL.createObjectURL(new Blob([script],{type:'text/javascript'}));
+    timingWorker=new Worker(workerURL);
+    timingWorker.onmessage=event=>receive(event.data);
+    timingWorker.onerror=()=>receive({type:'timer-error'});
+    addEventListener('pagehide',()=>{timingWorker.terminate();URL.revokeObjectURL(workerURL);},{once:true});
+  }else if(clockSource==='server'){
+    const poll=async()=>{
+      try{
+        const response=await fetch(base+'/clock',{cache:'no-store'});
+        if(!response.ok)throw Error('clock unavailable');
+        const state=await response.json();
+        if(!Number.isFinite(state.monotonicMS))throw Error('invalid clock');
+        detect(state.monotonicMS,focusActionArmed);
+      }catch{receive({type:'timer-error'});}
+      setTimeout(poll,100);
+    };
+    poll();
+  }else{
+    setInterval(()=>detect(clockSource==='wall'?Date.now():performance.now(),focusActionArmed),100);
+  }
 }
 const formHTML='<form><label for="note">Enter native-input</label><input id="note" aria-label="Enter native-input" autocomplete="off"><button type="submit">Record action</button></form>';
 async function mount(){

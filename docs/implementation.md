@@ -655,3 +655,12 @@ A separate readable shell can pin its native frame. Actual AppKit tests confirm 
 The external pilot completes its ordinary startup task but receives no timely geometry action. Computer use returns after cleanup and reopens an empty shell. The controller preserves the inconclusive result and skips the fixed comparison. The extra empty shell is closed after executable verification.
 
 All 139 Python checks and AppKit controls pass. Temporary processes exit and Secure Event Input is off. Frozen app and probe hashes match. A primary-source review finds no demonstrated ordinary-app signal-denial boundary here. Identity isolation is untested. Clock changes need independent timing controls. No permission or operating-system service changes.
+
+
+## Milestone 96: independent timing channels
+
+The disposable fixture now measures main-page performance time, wall time, worker time, and independent server time. A temporary loopback server returns uncached timestamps without task-state changes. The controller owns its lifecycle and saves failed trial errors before cleanup.
+
+Sixteen repeated trials produce sixteen actions across four clocks and two engine modes. All stationary controls pass. Every scoped pause, normal resume, and watchdog recovery verifies. No cycle admits input. All framework identities and temporary cleanup checks pass. The separate two-trial server pilot also succeeds. The hide/restore regression still produces a native action and no stable action.
+
+The existing prevention verifier rejects the eight stable cases despite their successful native controls. All 141 Python checks and JavaScript syntax checks pass. These results expose timing channels. They do not validate a clock patch or a general signal-denial guarantee. No grant, service, input hook, frozen browser, or frozen probe changes.

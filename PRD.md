@@ -4,6 +4,10 @@ Status: research specification. The initial shell and independent fixture are im
 
 Date: October 23, 2026. Platform: macOS only.
 
+Current feasibility result, October 26, 2026: no agent-free build meets the declared threat model. Sixteen calibrated renderer-pause trials complete website actions through performance, wall, worker, and server clocks. G3 therefore fails. Geometry comparisons remain inconclusive, and human compatibility targets remain incomplete. See [timing results](docs/clock-channel-findings.md).
+
+The current architecture has no demonstrated signal-denial boundary. A patch to one exposed clock does not cover the measured independent channels. The next prevention design needs either the missing Endpoint Security entitlement or a separately scoped identity-isolation experiment. Both need live coverage and compatibility tests. This is a research blocker, not a completed agent-free MVP. See [feasibility research](docs/research/agent-free-feasibility-boundary.md).
+
 ## Product decision
 
 Build a minimal macOS browser that lets a person use ordinary websites while preventing external agents from inspecting or operating those websites through the browser. Websites require no changes. The browser accepts arbitrary HTTPS addresses and renders normal HTML, CSS, and JavaScript.
@@ -76,7 +80,7 @@ Code injection into the browser process, a modified app binary, root access, ker
 | Blind input | Use known coordinates or keyboard sequences without reading current pixels. | Hiding content alone is insufficient. Test known layouts and repeated attempts. |
 | Exports and integrations | Use clipboard, drag, print, downloads, browser scripting, or external handoff. | No undocumented route exposes protected page content or commands. |
 | Session reuse | Inspect browser-created files or reuse credentials exposed by this browser. | No deliberate credential export or content logging. Test accessible residue and document remaining same-user limits. |
-| Process signals | Pause and resume a same-user content process without input or code injection. | A page must not complete a protected action from the interruption. Milestone 88 confirms this route in the custom-engine diagnostic. Release signing remains unmeasured. |
+| Process signals | Pause and resume a same-user content process without input or code injection. | A page must not complete a protected action from the interruption. Milestone 96 reproduces this route across four clocks in sixteen custom-engine trials. Release-browser signing remains unmeasured. |
 | Another browser or direct API | Open a public URL elsewhere or use independently obtained credentials. | Outside the browser claim. This browser cannot revoke those capabilities. |
 
 The current prototype prioritizes independent agent operation. A person completing a task while a listener recognizes a known test phrase is not an agent-input bypass. That sample also does not demonstrate recovery of a fresh page-only secret. Keep keyboard privacy evidence separate from autonomous action and fresh-marker results.

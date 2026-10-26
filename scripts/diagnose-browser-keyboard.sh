@@ -13,6 +13,7 @@ owner_readback=false
 engine_mode=none
 password_transitions=false
 private_entry=false
+private_entry_attacks=false
 for argument in "$@"; do
     case "$argument" in
         --capture-restricted) restricted=true ;;
@@ -29,11 +30,16 @@ for argument in "$@"; do
         --engine-stable) engine_mode=stable ;;
         --password-transitions) password_transitions=true ;;
         --private-entry-session) private_entry=true ;;
+        --private-entry-attacks) private_entry_attacks=true ;;
         *) echo "Unknown diagnostic option: $argument" >&2; exit 2 ;;
     esac
 done
-if [ "$private_entry" = true ] && [ "$password_transitions" = false ]; then
-    echo "Private entry sessions require the password-transition diagnostic." >&2
+if [ "$private_entry" = true ] && [ "$password_transitions" = false ] && [ "$private_entry_attacks" = false ]; then
+    echo "Private entry sessions require a password-transition or external-attack diagnostic." >&2
+    exit 2
+fi
+if [ "$private_entry_attacks" = true ] && { [ "$private_entry" = false ] || [ "$password_transitions" = true ] || [ "$focus_resume" = true ] || [ "$feature_suite" = false ] || [ "$owner_readback" = false ] || [ "$engine_mode" = none ]; }; then
+    echo "Private entry attacks require a private session, feature suite, owner readback, and isolated engine, with no delayed typing." >&2
     exit 2
 fi
 if [ "$password_transitions" = true ] && { [ "$feature_suite" = false ] || [ "$owner_readback" = false ] || [ "$engine_mode" = none ] || [ "$focus_resume" = true ]; }; then
@@ -55,6 +61,7 @@ if [ "$engine_mode" != none ]; then defines+=(-D INTERNAL_ENGINE_ACTIVITY); fi
 if [ "$engine_mode" = stable ]; then defines+=(-D INTERNAL_ENGINE_STABLE_ACTIVITY); fi
 if [ "$password_transitions" = true ]; then defines+=(-D INTERNAL_PASSWORD_TRANSITIONS); fi
 if [ "$private_entry" = true ]; then defines+=(-D INTERNAL_PRIVATE_ENTRY); fi
+if [ "$private_entry_attacks" = true ]; then defines+=(-D INTERNAL_PRIVATE_ENTRY_ATTACKS); fi
 case "$focus_mode" in
     filter) defines+=(-D INTERNAL_ACTIVATION_FILTER) ;;
     logical) defines+=(-D INTERNAL_LOGICAL_KEY) ;;
@@ -257,6 +264,17 @@ Task { @MainActor in
     }
     #endif
     fflush(stdout)
+    #if INTERNAL_PRIVATE_ENTRY_ATTACKS
+    app.privateEntryProtection?.end(reason: "startup-finished")
+    let attackStartedWall = Date().timeIntervalSince1970
+    guard app.privateEntryProtection?.begin() == true else { NSApp.terminate(nil); return }
+    print("PRIVATE_ENTRY_ATTACK ready=true startedWall=\\(attackStartedWall) maximumSeconds=10 noFurtherPrivateTyping=true")
+    fflush(stdout)
+    try? await Task.sleep(for: .seconds(11))
+    app.privateEntryProtection?.end(reason: "attack-finished")
+    print("PRIVATE_ENTRY_ATTACK finished=true")
+    fflush(stdout)
+    #endif
     #if INTERNAL_PASSWORD_TRANSITIONS
     #if INTERNAL_PRIVATE_ENTRY
     app.privateEntryProtection?.end(reason: "startup-finished")

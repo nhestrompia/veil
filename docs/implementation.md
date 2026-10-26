@@ -626,3 +626,12 @@ The diagnostic now supports explicit private-entry sessions with a ten-second po
 Two stable-engine runs keep aggregate protection on before all transition and resumed keys. Each completes six private tasks and one readable reference task after native release. The final run also observes protection off after timer expiry. Nine acquisitions match nine successful releases. Every temporary process passes cleanup.
 
 All 56 pure private-entry checks and 124 Python checks pass. This remains a diagnostic feature without physical-human, observer-resistance, or general-website proof. The ordinary diagnostic is restored without delayed private input. No production browser feature or permission changed. The next external signal-denial experiment still needs an Apple-granted entitlement and approved deployment.
+
+
+## Milestone 93: guarded external input matrix
+
+The external-only diagnostic schedules no private typing after startup. Its ten-second protection window has a native timestamp marker. The controller requires active protection at both ends of an attempt, stable elapsed clocks, a deadline margin, and no private-input overlap. Failed references and posting errors cannot establish a block.
+
+All 27 readable controls and private baselines complete. Three external routes across nine surfaces produce zero admitted events and no new candidate task. Every lease expires cleanly, every temporary process passes cleanup, and all UI/content engine identities pass. All 130 Python checks pass.
+
+This is a regression result for the existing input gate with the new session owner. It does not isolate the owner's effect or establish physical-human, general-site, capture, or inspection resistance. The ordinary diagnostic is restored without delayed typing. A separate geometry helper compiles but has no effective posting access. It requests no grant and posts no input. Continue geometry research through the already-authorized computer-use tool if available.

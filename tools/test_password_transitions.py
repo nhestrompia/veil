@@ -1,6 +1,6 @@
 import unittest
 
-from run_password_transitions import PHASES, transition_outcome, parse_transitions
+from run_password_transitions import PHASES, transition_outcome, parse_transitions, private_entry_coverage
 
 
 def transitions():
@@ -12,6 +12,14 @@ def transitions():
 
 
 class PasswordTransitionTests(unittest.TestCase):
+    def test_private_entry_requires_an_aggregate_flag_for_every_key(self):
+        rows = transitions()
+        for row in rows:
+            row["secureInputBeforeKeys"] = ["true"] * 13
+        self.assertTrue(private_entry_coverage(rows, 5))
+        rows[2]["secureInputBeforeKeys"][0] = "false"
+        self.assertFalse(private_entry_coverage(rows, 5))
+
     def test_parser_keeps_native_and_global_flags_separate(self):
         rows = parse_transitions("\n".join([
             "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=false",

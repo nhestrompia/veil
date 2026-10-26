@@ -617,3 +617,12 @@ The adapter is compiled, not validated as an enforcement boundary. Live testing 
 Four fresh diagnostics each complete one startup task and four field-type transition tasks. The 300-millisecond controls match the requested type throughout typing. With no added wait, the first password key sees protection off and the first text key sees it still on. Both native and stable engine modes show the same pattern in two comparisons.
 
 Own-view and aggregate snapshots agree. They do not establish key recovery or agent-generated input. All engine identities and temporary cleanup checks pass. Secure Event Input returns to off. All 123 Python checks pass. The next experiment adds a separate foreground owner with balanced release and a readable-app control. No production browser change is enabled.
+
+
+## Milestone 92: bounded private-entry owner
+
+The diagnostic now supports explicit private-entry sessions with a ten-second policy limit. Its separate owner balances native protection calls and refuses input without current ownership and actual native focus. Focus loss ends the session. Timer expiry and explicit completion release its ownership. The timer needs a running process and does not solve hostile process suspension.
+
+Two stable-engine runs keep aggregate protection on before all transition and resumed keys. Each completes six private tasks and one readable reference task after native release. The final run also observes protection off after timer expiry. Nine acquisitions match nine successful releases. Every temporary process passes cleanup.
+
+All 56 pure private-entry checks and 124 Python checks pass. This remains a diagnostic feature without physical-human, observer-resistance, or general-website proof. The ordinary diagnostic is restored without delayed private input. No production browser feature or permission changed. The next external signal-denial experiment still needs an Apple-granted entitlement and approved deployment.

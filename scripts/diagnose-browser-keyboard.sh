@@ -12,6 +12,7 @@ focus_resume=false
 owner_readback=false
 engine_mode=none
 password_transitions=false
+private_entry=false
 for argument in "$@"; do
     case "$argument" in
         --capture-restricted) restricted=true ;;
@@ -27,9 +28,14 @@ for argument in "$@"; do
         --engine-native) engine_mode=native ;;
         --engine-stable) engine_mode=stable ;;
         --password-transitions) password_transitions=true ;;
+        --private-entry-session) private_entry=true ;;
         *) echo "Unknown diagnostic option: $argument" >&2; exit 2 ;;
     esac
 done
+if [ "$private_entry" = true ] && [ "$password_transitions" = false ]; then
+    echo "Private entry sessions require the password-transition diagnostic." >&2
+    exit 2
+fi
 if [ "$password_transitions" = true ] && { [ "$feature_suite" = false ] || [ "$owner_readback" = false ] || [ "$engine_mode" = none ] || [ "$focus_resume" = true ]; }; then
     echo "Password transitions require feature-suite, owner-readback, an isolated engine, and no focus-resume." >&2
     exit 2
@@ -48,6 +54,7 @@ if [ "$owner_readback" = true ]; then defines+=(-D INTERNAL_OWNER_READBACK); fi
 if [ "$engine_mode" != none ]; then defines+=(-D INTERNAL_ENGINE_ACTIVITY); fi
 if [ "$engine_mode" = stable ]; then defines+=(-D INTERNAL_ENGINE_STABLE_ACTIVITY); fi
 if [ "$password_transitions" = true ]; then defines+=(-D INTERNAL_PASSWORD_TRANSITIONS); fi
+if [ "$private_entry" = true ]; then defines+=(-D INTERNAL_PRIVATE_ENTRY); fi
 case "$focus_mode" in
     filter) defines+=(-D INTERNAL_ACTIVATION_FILTER) ;;
     logical) defines+=(-D INTERNAL_LOGICAL_KEY) ;;
@@ -101,6 +108,21 @@ boundary = boundary.replace('final class AXBoundaryWindow: NSWindow {', '''final
 ''', 1)
 Path('.build/InternalFocusBoundary.swift').write_text(boundary)
 device = Path('Sources/Browser/DeviceKeyboard.swift').read_text()
+assert device.count('let deviceGate = DeviceEventGate()') == 1
+assert device.count('            acceptedEventCount += 1') == 1
+device = device.replace('let deviceGate = DeviceEventGate()', '''let deviceGate = DeviceEventGate()
+    #if INTERNAL_PRIVATE_ENTRY
+    var privateEntryProtection: DiagnosticPrivateEntry?
+    #endif''', 1)
+device = device.replace('''            acceptedEventCount += 1''', '''            #if INTERNAL_PRIVATE_ENTRY
+            guard privateEntryProtection?.permitsInput() == true else {
+                refusedEventCount += 1
+                print("PRIVATE_ENTRY inputRefused=true")
+                fflush(stdout)
+                return
+            }
+            #endif
+            acceptedEventCount += 1''', 1)
 assert device.count('guard let window, window.isKeyWindow,') == 1
 device = device.replace('guard let window, window.isKeyWindow,',
                         'guard let window, (window as? AXBoundaryWindow)?.diagnosticActualKeyWindow == true,', 1)
@@ -136,6 +158,9 @@ assert source.count(marker) == 1
 source = source.replace('private var window: NSWindow!', 'private var window: NSWindow!\n    private var diagnosticBackdrop: NSWindow?')
 source = source.replace(marker, '''
 window.title = "Internal keyboard functionality control"
+#if INTERNAL_PRIVATE_ENTRY
+(NSApp as! DeviceKeyboardApplication).privateEntryProtection = DiagnosticPrivateEntry(window: window)
+#endif
 Task { @MainActor in
     try? await Task.sleep(for: .seconds(90))
     print("INTERNAL_KEYBOARD watchdog=true")
@@ -174,6 +199,9 @@ if let screen = window.screen {
 Task { @MainActor in
     try? await Task.sleep(for: .milliseconds(700))
     let app = NSApp as! DeviceKeyboardApplication
+    #if INTERNAL_PRIVATE_ENTRY
+    guard app.privateEntryProtection?.begin() == true else { NSApp.terminate(nil); return }
+    #endif
     @MainActor func key(_ code: UInt16, _ text: String, _ flags: NSEvent.ModifierFlags = []) {
         #if INTERNAL_OWNER_READBACK
         print("FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=\\(DiagnosticSecureInput.owner(in: window.contentView)) secureInput=\\(IsSecureEventInputEnabled())")
@@ -230,7 +258,16 @@ Task { @MainActor in
     #endif
     fflush(stdout)
     #if INTERNAL_PASSWORD_TRANSITIONS
+    #if INTERNAL_PRIVATE_ENTRY
+    app.privateEntryProtection?.end(reason: "startup-finished")
+    guard app.privateEntryProtection?.begin() == true else { NSApp.terminate(nil); return }
+    print("PRIVATE_ENTRY expiryControlReady=true")
+    fflush(stdout)
+    #endif
     try? await Task.sleep(for: .seconds(20))
+    #if INTERNAL_PRIVATE_ENTRY
+    guard app.privateEntryProtection?.begin() == true else { NSApp.terminate(nil); return }
+    #endif
     for (phase, kind, settle) in [("password-settled", "password", 300), ("text-settled", "text", 300),
                                   ("password-immediate", "password", 0), ("text-immediate", "text", 0)] {
         guard let transition = try? await webView.evaluateJavaScript("window.setResearchFieldKind('" + kind + "')") as? [String: Any],
@@ -250,8 +287,24 @@ Task { @MainActor in
         print("PASSWORD_TRANSITION end=\\(phase) afterOwner=\\(DiagnosticSecureInput.owner(in: window.contentView)) acceptedEvents=\\(app.acceptedEventCount - beforeCount)")
         fflush(stdout)
     }
+    #if INTERNAL_PRIVATE_ENTRY
+    app.privateEntryProtection?.end(reason: "transitions-finished")
+    guard app.privateEntryProtection?.begin() == true else { NSApp.terminate(nil); return }
+    print("PRIVATE_ENTRY focusLossControlReady=true")
+    #endif
     print("PASSWORD_TRANSITION sequenceFinished=true")
     fflush(stdout)
+    #if INTERNAL_PRIVATE_ENTRY
+    try? await Task.sleep(for: .seconds(20))
+    guard app.privateEntryProtection?.begin() == true else { NSApp.terminate(nil); return }
+    for (code, character) in zip(codes, "native-input\\r") {
+        key(code, String(character))
+        try? await Task.sleep(for: .milliseconds(50))
+    }
+    app.privateEntryProtection?.end(reason: "resume-finished")
+    print("PRIVATE_ENTRY resumeSequenceFinished=true")
+    fflush(stdout)
+    #endif
     #endif
     #if INTERNAL_FOCUS_RESUME
     #if INTERNAL_ENGINE_ACTIVITY
@@ -275,6 +328,7 @@ xcrun swiftc -swift-version 6 -warnings-as-errors -parse-as-library -O \
     -module-cache-path .build/module-cache .build/InternalFocusBoundary.swift \
     .build/InternalFocusDeviceKeyboard.swift Sources/Browser/HIDSourcePolicy.swift Sources/Browser/BrowserPolicy.swift \
     Sources/Diagnostics/DiagnosticSecureInput.swift \
+    Sources/Diagnostics/PrivateEntryPolicy.swift Sources/Diagnostics/DiagnosticPrivateEntry.swift \
     Sources/Diagnostics/EngineRuntime.swift \
     Sources/Browser/RestrictedWebView.swift \
     Sources/Browser/BrowserRuntimePolicy.swift \

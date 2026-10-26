@@ -1,6 +1,8 @@
 # Current research state
 
-Latest completed work: milestone 109 adds browser navigation controls. Ten owner-driven checks pass in a separate hidden diagnostic. Policy checks, device-source type checking, measured process cleanup, and frozen hashes pass. See [navigation findings](browser-navigation-findings.md).
+Latest completed work: milestone 110 calibrates post-attack page progress without administrator access. One baseline and three references pass. All twelve pauses and resumes calibrate. Fresh JavaScript, DOM, timer, and yellow snapshot checks occur after actor completion. All sixteen measured host and service identifiers exit. Forty-four Python checks, native metadata checks, and seven invocation refusals pass. See [progress findings](renderer-progress-control-findings.md).
+
+The new app is `dist/RendererProgressProbe.app`. Its actor is `.build/renderer-progress-actor`. The five permissioned binaries, earlier four root images, and earlier signal actor retain their hashes. Do not rebuild those existing binaries. Next, prepare a bounded cross-user progress proposal. No new administrator authorization exists.
 
 Milestone 108 now passes all three approved serial comparisons. All twelve SIGSTOP and twelve SIGCONT calls return EPERM for the cross-user host, content, GPU, and network roles. JavaScript, image samples, identity checks, helper exits, and cleanup pass. None of the fifteen measured process identifiers or three staging directories remain. Frozen binaries and approved input hashes match. See [signal-denial findings](renderer-signal-denial-findings.md).
 

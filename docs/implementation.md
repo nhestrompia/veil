@@ -853,3 +853,12 @@ A separate hidden diagnostic uses the actual controls against a disposable local
 Policy checks and device-source type checking pass. All five frozen binaries and the active comparison inputs match their hashes. No privacy setting, input hook, or root code changes. This functional result makes no external-agent protection claim. The known pause bypass remains open.
 
 Milestone 108 remains pending macOS authentication for the first approved comparison. See [navigation findings](browser-navigation-findings.md) and [evidence](evidence/browser-navigation-results.json).
+
+
+## Milestone 110: post-attack progress calibration
+
+A separate fixed inline diagnostic emits readiness, then runs a fresh page challenge and snapshot after the ordinary-user actor. One baseline and three references pass. All twelve pauses and resumes calibrate across host, content, GPU, and network roles. CLOCK_MONOTONIC ordering places every page sample after actor completion.
+
+The timer advances, the DOM returns its fresh challenge, and the canvas changes from blue to yellow. Role identities remain stable. All sixteen measured host and service identifiers exit. Recovery watchdogs are reaped. Forty-four Python checks, a native readonly metadata regression, and seven invocation refusals pass.
+
+The five frozen binaries and earlier root images remain unchanged. No administrator command or privacy setting changes. Cross-user progress and browser integration remain open. See [findings](renderer-progress-control-findings.md) and [evidence](evidence/renderer-progress-control-results.json).

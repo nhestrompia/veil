@@ -90,6 +90,11 @@ private final class HeadlessProbe: NSObject, NSApplicationDelegate, WKNavigation
             }
             webView.load(URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData))
         } else {
+            #if RENDERER_PROGRESS_CONTROL
+            let progressScript = "window.progressTicks=0;setInterval(()=>{window.progressTicks++;},20);"
+            #else
+            let progressScript = ""
+            #endif
             webView.loadHTMLString("""
         <!doctype html><meta name="viewport" content="width=device-width,initial-scale=1">
         <title>Headless renderer control</title>
@@ -97,7 +102,7 @@ private final class HeadlessProbe: NSObject, NSApplicationDelegate, WKNavigation
         #red{left:0;background:rgb(255,0,0)}#green{left:100px;background:rgb(0,255,0)}canvas{left:200px}</style>
         <div id="red"></div><div id="green"></div><canvas id="blue" width="100" height="100"></canvas>
         <script>window.testNonce='\(nonce)';let c=document.getElementById('blue').getContext('2d');
-        c.fillStyle='rgb(0,0,255)';c.fillRect(0,0,100,100);</script>
+        c.fillStyle='rgb(0,0,255)';c.fillRect(0,0,100,100);\(progressScript)</script>
         """, baseURL: nil)
         }
     }
@@ -143,7 +148,11 @@ private final class HeadlessProbe: NSObject, NSApplicationDelegate, WKNavigation
                 let after = identities(webView)
                 report["servicesAfterSnapshot"] = after
                 report["serviceIdentityStable"] = NSDictionary(dictionary: before).isEqual(to: after)
+                #if RENDERER_PROGRESS_CONTROL
+                try await beginProgressCheck(webView)
+                #else
                 finish()
+                #endif
             } catch {
                 finish(error: String(describing: error))
             }
@@ -158,7 +167,7 @@ private final class HeadlessProbe: NSObject, NSApplicationDelegate, WKNavigation
         finish(error: "web-content-process-terminated")
     }
 
-    private func recordSnapshot(_ image: NSImage) throws {
+    private func recordSnapshot(_ image: NSImage, progressed: Bool = false) throws {
         guard let tiff = image.tiffRepresentation,
               let original = NSBitmapImageRep(data: tiff),
               let png = original.representation(using: .png, properties: [:]),
@@ -175,7 +184,7 @@ private final class HeadlessProbe: NSObject, NSApplicationDelegate, WKNavigation
             report["snapshotPNGBase64"] = png.base64EncodedString()
         }
         var expected = [(50, 50, [255, 0, 0]), (150, 50, [0, 255, 0]),
-                        (250, 50, [0, 0, 255]), (400, 200, [255, 255, 255])]
+                        (250, 50, progressed ? [255, 255, 0] : [0, 0, 255]), (400, 200, [255, 255, 255])]
         if loopbackPort != nil { expected += [(350, 50, [255, 255, 0]), (50, 250, [0, 255, 255])] }
         var samples: [[String: Any]] = []
         var passed = bitmap.pixelsWide >= 800 && bitmap.pixelsHigh >= 600
@@ -198,6 +207,71 @@ private final class HeadlessProbe: NSObject, NSApplicationDelegate, WKNavigation
                               "colorSpace": bitmap.colorSpaceName.rawValue]
         report["snapshotPassed"] = passed
     }
+
+    #if RENDERER_PROGRESS_CONTROL
+    private func monotonicNanoseconds() -> UInt64 {
+        var value = timespec()
+        precondition(clock_gettime(CLOCK_MONOTONIC, &value) == 0)
+        return UInt64(value.tv_sec) * 1_000_000_000 + UInt64(value.tv_nsec)
+    }
+
+    private func beginProgressCheck(_ webView: WKWebView) async throws {
+        let before = try await webView.callAsyncJavaScript("return {nonce:window.testNonce,ticks:window.progressTicks};",
+            arguments: [:], in: nil, contentWorld: .page) as? [String: Any] ?? [:]
+        guard !finished else { return }
+        report["progressControl"] = true
+        report["progressBefore"] = before
+        report["baselineSnapshot"] = report["snapshot"]
+        report["baselineSnapshotPassed"] = report["snapshotPassed"]
+        report["readyMonotonicNanoseconds"] = monotonicNanoseconds()
+        var ready = report
+        ready.removeValue(forKey: "snapshotPNGBase64")
+        let bytes = try JSONSerialization.data(withJSONObject: ready, options: [.sortedKeys])
+        print("RENDERER_PROGRESS_READY " + String(decoding: bytes, as: UTF8.self))
+        fflush(stdout)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [self] in
+            Task { @MainActor in
+                do {
+                    guard !finished else { return }
+                    let challenge = UUID().uuidString
+                    report["progressSampleStartedMonotonicNanoseconds"] = monotonicNanoseconds()
+                    let after = try await webView.callAsyncJavaScript("""
+                        await new Promise(resolve=>setTimeout(resolve,60));
+                        window.fixtureCompletion=challenge;
+                        document.body.dataset.completed=challenge;
+                        let c=document.getElementById('blue').getContext('2d');
+                        c.fillStyle='rgb(255,255,0)';c.fillRect(0,0,100,100);
+                        return {nonce:window.testNonce,ticks:window.progressTicks,
+                          challenge:window.fixtureCompletion,domChallenge:document.body.dataset.completed};
+                        """, arguments: ["challenge": challenge], in: nil, contentWorld: .page) as? [String: Any] ?? [:]
+                    guard !finished else { return }
+                    report["progressAfter"] = after
+                    report["expectedChallenge"] = challenge
+                    report["progressSampleFinishedMonotonicNanoseconds"] = monotonicNanoseconds()
+                    let ticksAdvanced: Bool
+                    if let initial = before["ticks"] as? Int, let final = after["ticks"] as? Int, initial >= 0 {
+                        ticksAdvanced = final > initial
+                    } else { ticksAdvanced = false }
+                    report["progressPassed"] = before["nonce"] as? String == nonce
+                        && after["nonce"] as? String == nonce
+                        && after["challenge"] as? String == challenge && after["domChallenge"] as? String == challenge
+                        && ticksAdvanced
+                    let configuration = WKSnapshotConfiguration()
+                    configuration.rect = NSRect(x: 0, y: 0, width: 800, height: 600)
+                    configuration.snapshotWidth = 800
+                    let image = try await webView.takeSnapshot(configuration: configuration)
+                    guard !finished else { return }
+                    try recordSnapshot(image, progressed: true)
+                    let finalServices = identities(webView)
+                    report["servicesAfterProgress"] = finalServices
+                    report["progressIdentityStable"] = NSDictionary(dictionary: finalServices)
+                        .isEqual(to: report["servicesAfterSnapshot"])
+                    finish()
+                } catch { finish(error: String(describing: error)) }
+            }
+        }
+    }
+    #endif
 
     private func identities(_ webView: WKWebView) -> [String: Any] {
         let receivers: [(String, NSObject, String)] = [

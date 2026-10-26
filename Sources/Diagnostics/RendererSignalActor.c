@@ -21,6 +21,12 @@
 #error Compile with the ordinary research user ID.
 #endif
 
+#ifdef AFB_PROGRESS_CONTROL
+#define AFB_RENDERER_NAME "RendererProgressProbe"
+#else
+#define AFB_RENDERER_NAME "RendererIdentityProbe"
+#endif
+
 struct target {
     pid_t pid;
     struct proc_bsdinfo identity;
@@ -140,7 +146,7 @@ static bool host_path(const char *path, bool isolated)
             *end = 0;
         }
         char expected[PATH_MAX];
-        int count = snprintf(expected, sizeof(expected), "%s/dist/RendererIdentityProbe.app/Contents/MacOS/RendererIdentityProbe", root);
+        int count = snprintf(expected, sizeof(expected), "%s/dist/" AFB_RENDERER_NAME ".app/Contents/MacOS/" AFB_RENDERER_NAME, root);
         return count > 0 && count < (int)sizeof(expected) && !strcmp(expected, path);
     }
     const char *prefix = "/private/tmp/agentfreebrowser-renderer.";
@@ -148,7 +154,7 @@ static bool host_path(const char *path, bool isolated)
     if (strncmp(path, prefix, length) || strlen(path) <= length + 6) return false;
     for (size_t i = 0; i < 6; ++i)
         if (!isalnum((unsigned char)path[length + i])) return false;
-    if (strcmp(path + length + 6, "/RendererIdentityProbe.app/Contents/MacOS/RendererIdentityProbe")) return false;
+    if (strcmp(path + length + 6, "/" AFB_RENDERER_NAME ".app/Contents/MacOS/" AFB_RENDERER_NAME)) return false;
     char directory[PATH_MAX];
     memcpy(directory, path, length + 6);
     directory[length + 6] = 0;

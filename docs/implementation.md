@@ -835,6 +835,15 @@ Three fresh same-user comparisons verify twelve stops and resumes. Parent-death 
 The new proposal caps comparisons at three serial launches and stops after any failure or inconclusive result. Each invocation consumes an attempt. Verify the helper's exit, rendering, actor outcomes, process exits, and staging removal before another launch. No administrator command runs in this milestone. Fresh approval remains necessary. See [findings](renderer-metadata-findings.md) and [evidence](evidence/renderer-metadata-results.json).
 
 
+## Milestone 108: measured cross-user signal denial
+
+All three approved serial comparisons pass. The ordinary user attempts twelve SIGSTOP and twelve SIGCONT calls across host, content, GPU, and network roles. Every call returns EPERM. Target identities remain stable and no target enters a stopped state. The calibrated same-user references previously allowed the same actor to stop and resume all four roles.
+
+JavaScript, image samples, nobody credential checks, and helper exits pass. Each supervisor reaps its host and watchdog. Independent checks find none of the fifteen measured process identifiers. All three staging directories disappear. Frozen binaries and approved input hashes match. Later commands remain user ID 501.
+
+The three-invocation administrator approval is consumed. No further administrator run occurs. Post-attack page progress remains unmeasured. The ordinary browser does not integrate the cross-user boundary, so its pause bypass remains open. See [findings](renderer-signal-denial-findings.md) and [evidence](evidence/renderer-signal-denial-results.json).
+
+
 ## Milestone 109: browser navigation controls
 
 Forward, history availability, Reload/Stop, and page-load feedback now work in browser source. The address updates at document commit. Errors use the window subtitle, so the protection footer retains its status. The ordinary shell adds Command-L. The device experiment retains its physical keyboard route.

@@ -2,9 +2,11 @@
 
 Latest completed work: milestone 109 adds browser navigation controls. Ten owner-driven checks pass in a separate hidden diagnostic. Policy checks, device-source type checking, measured process cleanup, and frozen hashes pass. See [navigation findings](browser-navigation-findings.md).
 
-Milestone 108 is active. The user approved up to three serial comparisons under the committed milestone 107 plan. Trial 1 is invoked but waits before staging for macOS authentication. Unified exec session 2537 owns the batch. Do not launch a duplicate. Poll that session and read `artifacts/renderer-signal-108-live`. An authentication question remains pending. Root and ordinary inputs match the approved hashes. No comparison result exists yet. Any failed or inconclusive result stops the set.
+Milestone 108 now passes all three approved serial comparisons. All twelve SIGSTOP and twelve SIGCONT calls return EPERM for the cross-user host, content, GPU, and network roles. JavaScript, image samples, identity checks, helper exits, and cleanup pass. None of the fifteen measured process identifiers or three staging directories remain. Frozen binaries and approved input hashes match. See [signal-denial findings](renderer-signal-denial-findings.md).
 
-The repaired actor and root images must remain frozen until that set ends. The root command SHA256 remains `22f91657b4576912489eee95c9831c68e6b24842c9d738efe81c16d51cdd3d06`. All earlier scope, cache, session, and interrupted-staging limits remain. Agent-free operation remains unmet.
+Unified exec session 2537 is complete. All three invocation allowances are consumed. No authentication or permission question remains pending. Do not launch another administrator command under that approval. Root remains limited to the completed reviewed experiment. Future privileged work needs a separate concrete proposal.
+
+Post-attack page progress remains unmeasured. The ordinary browser does not integrate cross-user rendering, and its pause bypass remains open. Next, prepare a bounded progress comparison with same-user calibration before any new privileged proposal. Controller isolation, private input and presentation, and broader compatibility remain open. Agent-free operation remains unmet.
 
 Updated 2026-10-26. Milestone 58 confirms an external focus-only action bypass in three fresh diagnostic processes. Activating another research window and returning completed one new action in each candidate. The standalone helper posted no input and made no AX call during those cycles. The gate admitted zero keyboard events. Agent-free operation is unmet.
 

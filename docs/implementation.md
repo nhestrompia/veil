@@ -432,3 +432,8 @@ The actual Xcode sandbox profile reproduced the shared temporary-directory refus
 ## Milestone 70: compare cached and uncached Swift compilation
 
 The fourth full build reported Swift task failures despite zero exit codes. A narrow JavaScriptCore build passed with compilation caching disabled. The installed Xcode specification identifies a Swift-specific switch. The fifth full build now disables only Swift caching. Full WebKit compilation and live custom-engine tests remain pending. See [cache findings](engine-cache-findings.md).
+
+
+## Milestone 71: child-frame visibility controls
+
+Three fresh matched comparisons reproduced two visibility-triggered actions each inside child documents. The frame types were same-origin, cross-origin, and srcdoc. Every private baseline, resumed task, and cleanup passed. The helper posted no input during the cycles. The custom engine remains untested. See [child visibility findings](child-visibility-findings.md).

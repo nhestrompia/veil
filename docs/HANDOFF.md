@@ -187,3 +187,7 @@ The fourth full build is active in unified exec session 36677. Its monitor and p
 The fourth build reached Swift tasks but reported zero-exit/no-output failures. Its monitor stopped through scoped cleanup. A narrow JavaScriptCore target passed with compilation caching disabled and linked its framework. The fifth full build uses the narrower SWIFT_ENABLE_COMPILE_CACHE=NO setting. C++ caching remains enabled. The complete engine is still unverified. See [cache findings](engine-cache-findings.md).
 
 The active full-build exec session is 72341. Preserve the monitor and disk reserve. No custom-engine runtime test passed yet.
+
+## Milestone 71 child-frame visibility
+
+One fresh matched visibility comparison per child type reproduced two new actions during hide and restore. Same-origin, cross-origin, and srcdoc controls all passed. Every private baseline, resumed task, and temporary cleanup passed. No keyboard event was admitted during the cycles. Aggregate Secure Input was off afterward. See [child visibility findings](child-visibility-findings.md). These are ordinary diagnostic results.

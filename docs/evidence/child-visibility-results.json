@@ -1,0 +1,337 @@
+{
+  "milestone": 71,
+  "engineRuntimeTested": false,
+  "humanBaseline": false,
+  "experiments": {
+    "sameOrigin": {
+      "binarySHA256": {
+        "NativeProbe": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1",
+        "InternalKeyboardControl": "bcbc30ed28f7c0eded30e8a4183854741696916bb0561f8cc430408ab89c282b",
+        "InspectableControl": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+        "ResearchFocus": "3b79a2907468182beef9d4db688fd380ffdfdf2a344107e07621c685153293f3"
+      },
+      "humanBaseline": false,
+      "surface": "visibility-action",
+      "hideCycle": true,
+      "passwordField": false,
+      "frameContainer": "iframe",
+      "scope": "Agent activates only research apps. Candidate baseline is private authorized keyboard input. Focus listener is ordinary page code.",
+      "runs": [
+        {
+          "repetition": 0,
+          "referenceArming": {
+            "focusError": 0,
+            "pid": 22279,
+            "pressError": 0,
+            "setValueError": 0,
+            "status": "attempted",
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "control": {
+            "pid": 22279,
+            "beforeAccepted": 1,
+            "newActionsWhileDeactivating": 1,
+            "newActionsWhileActivating": 1,
+            "newSubmissions": [
+              {
+                "accepted": true
+              },
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedInputEvents": 0,
+            "diagnosticFocusEvents": [],
+            "secureInputBefore": false,
+            "secureInputWhileAway": false,
+            "secureInputAfterReturn": false,
+            "awayStatus": "observed",
+            "backStatus": "observed",
+            "activationMethod": "NSRunningApplication.hide/unhide/activate; no Accessibility call",
+            "syntheticInputPosted": false,
+            "AXReadSent": false,
+            "AXValueSet": false,
+            "AXPressSent": false
+          },
+          "referenceCleanupVerified": true,
+          "candidate": {
+            "pid": 22313,
+            "beforeAccepted": 1,
+            "newActionsWhileDeactivating": 1,
+            "newActionsWhileActivating": 1,
+            "newSubmissions": [
+              {
+                "accepted": true
+              },
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedInputEvents": 0,
+            "diagnosticFocusEvents": [
+              "FOCUS_DIAGNOSTIC phase=resigned-key viewSecureOwner=false",
+              "FOCUS_DIAGNOSTIC phase=resigned-key actualKey=false logicalKey=false actualVisible=false logicalVisible=false foreground=22313 secureInput=false",
+              "FOCUS_DIAGNOSTIC phase=resigned-key-settled viewSecureOwner=false",
+              "FOCUS_DIAGNOSTIC phase=resigned-key-settled actualKey=false logicalKey=false actualVisible=false logicalVisible=false foreground=22216 secureInput=false",
+              "FOCUS_DIAGNOSTIC phase=became-key viewSecureOwner=false",
+              "FOCUS_DIAGNOSTIC phase=became-key actualKey=true logicalKey=true actualVisible=true logicalVisible=true foreground=22313 secureInput=false",
+              "FOCUS_DIAGNOSTIC phase=became-key-settled viewSecureOwner=false",
+              "FOCUS_DIAGNOSTIC phase=became-key-settled actualKey=true logicalKey=true actualVisible=true logicalVisible=true foreground=22313 secureInput=false"
+            ],
+            "secureInputBefore": false,
+            "secureInputWhileAway": false,
+            "secureInputAfterReturn": false,
+            "awayStatus": "observed",
+            "backStatus": "observed",
+            "activationMethod": "NSRunningApplication.hide/unhide/activate; no Accessibility call",
+            "syntheticInputPosted": false,
+            "AXReadSent": false,
+            "AXValueSet": false,
+            "AXPressSent": false
+          },
+          "status": "autonomous-website-action",
+          "privateResumeCompleted": true,
+          "privateResumeOwnershipEvents": [
+            "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=false",
+            "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=false",
+            "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=false",
+            "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=false",
+            "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=false",
+            "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=false",
+            "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=false",
+            "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=false",
+            "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=false",
+            "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=false",
+            "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=false",
+            "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=false",
+            "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=false"
+          ],
+          "privateResumeNewActions": 1,
+          "candidateCleanupVerified": true,
+          "sinkCleanupVerified": true,
+          "secureInputAfterCleanup": false
+        }
+      ]
+    },
+    "crossOrigin": {
+      "binarySHA256": {
+        "NativeProbe": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1",
+        "InternalKeyboardControl": "bcbc30ed28f7c0eded30e8a4183854741696916bb0561f8cc430408ab89c282b",
+        "InspectableControl": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+        "ResearchFocus": "3b79a2907468182beef9d4db688fd380ffdfdf2a344107e07621c685153293f3"
+      },
+      "humanBaseline": false,
+      "surface": "visibility-action",
+      "hideCycle": true,
+      "passwordField": false,
+      "frameContainer": "cross-frame",
+      "scope": "Agent activates only research apps. Candidate baseline is private authorized keyboard input. Focus listener is ordinary page code.",
+      "runs": [
+        {
+          "repetition": 0,
+          "referenceArming": {
+            "focusError": 0,
+            "pid": 25575,
+            "pressError": 0,
+            "setValueError": 0,
+            "status": "attempted",
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "control": {
+            "pid": 25575,
+            "beforeAccepted": 1,
+            "newActionsWhileDeactivating": 1,
+            "newActionsWhileActivating": 1,
+            "newSubmissions": [
+              {
+                "accepted": true
+              },
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedInputEvents": 0,
+            "diagnosticFocusEvents": [],
+            "secureInputBefore": false,
+            "secureInputWhileAway": false,
+            "secureInputAfterReturn": false,
+            "awayStatus": "observed",
+            "backStatus": "observed",
+            "activationMethod": "NSRunningApplication.hide/unhide/activate; no Accessibility call",
+            "syntheticInputPosted": false,
+            "AXReadSent": false,
+            "AXValueSet": false,
+            "AXPressSent": false
+          },
+          "referenceCleanupVerified": true,
+          "candidate": {
+            "pid": 25596,
+            "beforeAccepted": 1,
+            "newActionsWhileDeactivating": 1,
+            "newActionsWhileActivating": 1,
+            "newSubmissions": [
+              {
+                "accepted": true
+              },
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedInputEvents": 0,
+            "diagnosticFocusEvents": [
+              "FOCUS_DIAGNOSTIC phase=resigned-key viewSecureOwner=false",
+              "FOCUS_DIAGNOSTIC phase=resigned-key actualKey=false logicalKey=false actualVisible=false logicalVisible=false foreground=25596 secureInput=false",
+              "FOCUS_DIAGNOSTIC phase=resigned-key-settled viewSecureOwner=false",
+              "FOCUS_DIAGNOSTIC phase=resigned-key-settled actualKey=false logicalKey=false actualVisible=false logicalVisible=false foreground=25564 secureInput=false",
+              "FOCUS_DIAGNOSTIC phase=became-key viewSecureOwner=false",
+              "FOCUS_DIAGNOSTIC phase=became-key actualKey=true logicalKey=true actualVisible=true logicalVisible=true foreground=25596 secureInput=false",
+              "FOCUS_DIAGNOSTIC phase=became-key-settled viewSecureOwner=false",
+              "FOCUS_DIAGNOSTIC phase=became-key-settled actualKey=true logicalKey=true actualVisible=true logicalVisible=true foreground=25596 secureInput=false"
+            ],
+            "secureInputBefore": false,
+            "secureInputWhileAway": false,
+            "secureInputAfterReturn": false,
+            "awayStatus": "observed",
+            "backStatus": "observed",
+            "activationMethod": "NSRunningApplication.hide/unhide/activate; no Accessibility call",
+            "syntheticInputPosted": false,
+            "AXReadSent": false,
+            "AXValueSet": false,
+            "AXPressSent": false
+          },
+          "status": "autonomous-website-action",
+          "privateResumeCompleted": true,
+          "privateResumeOwnershipEvents": [
+            "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=false",
+            "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=false",
+            "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=false",
+            "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=false",
+            "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=false",
+            "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=false",
+            "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=false",
+            "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=false",
+            "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=false",
+            "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=false",
+            "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=false",
+            "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=false",
+            "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=false"
+          ],
+          "privateResumeNewActions": 1,
+          "candidateCleanupVerified": true,
+          "sinkCleanupVerified": true,
+          "secureInputAfterCleanup": false
+        }
+      ]
+    },
+    "srcdoc": {
+      "binarySHA256": {
+        "NativeProbe": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1",
+        "InternalKeyboardControl": "bcbc30ed28f7c0eded30e8a4183854741696916bb0561f8cc430408ab89c282b",
+        "InspectableControl": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+        "ResearchFocus": "3b79a2907468182beef9d4db688fd380ffdfdf2a344107e07621c685153293f3"
+      },
+      "humanBaseline": false,
+      "surface": "visibility-action",
+      "hideCycle": true,
+      "passwordField": false,
+      "frameContainer": "srcdoc",
+      "scope": "Agent activates only research apps. Candidate baseline is private authorized keyboard input. Focus listener is ordinary page code.",
+      "runs": [
+        {
+          "repetition": 0,
+          "referenceArming": {
+            "focusError": 0,
+            "pid": 29023,
+            "pressError": 0,
+            "setValueError": 0,
+            "status": "attempted",
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "control": {
+            "pid": 29023,
+            "beforeAccepted": 1,
+            "newActionsWhileDeactivating": 1,
+            "newActionsWhileActivating": 1,
+            "newSubmissions": [
+              {
+                "accepted": true
+              },
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedInputEvents": 0,
+            "diagnosticFocusEvents": [],
+            "secureInputBefore": false,
+            "secureInputWhileAway": false,
+            "secureInputAfterReturn": false,
+            "awayStatus": "observed",
+            "backStatus": "observed",
+            "activationMethod": "NSRunningApplication.hide/unhide/activate; no Accessibility call",
+            "syntheticInputPosted": false,
+            "AXReadSent": false,
+            "AXValueSet": false,
+            "AXPressSent": false
+          },
+          "referenceCleanupVerified": true,
+          "candidate": {
+            "pid": 29175,
+            "beforeAccepted": 1,
+            "newActionsWhileDeactivating": 1,
+            "newActionsWhileActivating": 1,
+            "newSubmissions": [
+              {
+                "accepted": true
+              },
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedInputEvents": 0,
+            "diagnosticFocusEvents": [
+              "FOCUS_DIAGNOSTIC phase=resigned-key viewSecureOwner=false",
+              "FOCUS_DIAGNOSTIC phase=resigned-key actualKey=false logicalKey=false actualVisible=false logicalVisible=false foreground=29175 secureInput=false",
+              "FOCUS_DIAGNOSTIC phase=resigned-key-settled viewSecureOwner=false",
+              "FOCUS_DIAGNOSTIC phase=resigned-key-settled actualKey=false logicalKey=false actualVisible=false logicalVisible=false foreground=29013 secureInput=false",
+              "FOCUS_DIAGNOSTIC phase=became-key viewSecureOwner=false",
+              "FOCUS_DIAGNOSTIC phase=became-key actualKey=true logicalKey=true actualVisible=true logicalVisible=true foreground=29175 secureInput=false",
+              "FOCUS_DIAGNOSTIC phase=became-key-settled viewSecureOwner=false",
+              "FOCUS_DIAGNOSTIC phase=became-key-settled actualKey=true logicalKey=true actualVisible=true logicalVisible=true foreground=29175 secureInput=false"
+            ],
+            "secureInputBefore": false,
+            "secureInputWhileAway": false,
+            "secureInputAfterReturn": false,
+            "awayStatus": "observed",
+            "backStatus": "observed",
+            "activationMethod": "NSRunningApplication.hide/unhide/activate; no Accessibility call",
+            "syntheticInputPosted": false,
+            "AXReadSent": false,
+            "AXValueSet": false,
+            "AXPressSent": false
+          },
+          "status": "autonomous-website-action",
+          "privateResumeCompleted": true,
+          "privateResumeOwnershipEvents": [
+            "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=false",
+            "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=false",
+            "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=false",
+            "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=false",
+            "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=false",
+            "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=false",
+            "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=false",
+            "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=false",
+            "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=false",
+            "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=false",
+            "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=false",
+            "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=false",
+            "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=false"
+          ],
+          "privateResumeNewActions": 1,
+          "candidateCleanupVerified": true,
+          "sinkCleanupVerified": true,
+          "secureInputAfterCleanup": false
+        }
+      ]
+    }
+  }
+}

@@ -1,6 +1,6 @@
 # Current research state
 
-Latest: milestone 86. After the user unlocked the Mac, three native timer controls reproduced actions. Three revised stable comparisons recorded none, with valid stationary controls, zero admitted input, and complete cleanup. Password and broad input checks are next. The feature fixture runs on port 8766 in exec session 1174. A bounded keep-awake assertion runs in session 32355.
+Latest: milestone 87. Revised-engine password ownership and one private resumed task passed. Nine editor baselines passed, with 27 native blocks and 18 inconclusive vision/AX cases. Cleanup passed. All 112 Python checks pass. A separate scoped content-pause helper is prepared but untested live. Do not signal the frozen physical browser or system content processes.
 
 Updated 2026-10-26. Milestone 58 confirms an external focus-only action bypass in three fresh diagnostic processes. Activating another research window and returning completed one new action in each candidate. The standalone helper posted no input and made no AX call during those cycles. The gate admitted zero keyboard events. Agent-free operation is unmet.
 
@@ -335,3 +335,12 @@ Three fresh native/stable comparisons passed their stationary controls. Each nat
 All six activation cycles admitted zero input events. UI and content framework identities passed in every trial. Every temporary process passed cleanup. Secure Event Input returned to off after every comparison. The frozen physical browser and probes remain unchanged.
 
 These results support the revised projection for the measured adaptive timer route. They do not establish every timing signal or website as agent-free. Native ownership, independent element focus, and additional external actions remain separate checks.
+
+
+## Milestone 87: revised-engine editor and password checks
+
+All nine private editor baselines passed on the revised engine. The matched matrix blocked 27 native attempts across ordinary forms, textareas, editable content, both shadow modes, SPA content, and three frame types. Eighteen vision and Accessibility cases remain inconclusive. No accepted agent input or new website action appeared. Every temporary process passed cleanup.
+
+The separate password comparison admitted zero keys during activation and recorded no focus-triggered action. The per-view protection flag released while hidden and returned before private resumed typing. That sequence completed one task. Cleanup left Secure Event Input off.
+
+All 112 Python checks pass. These generated baselines do not replace physical-human controls. Pointer support, dynamic password changes, and independent process or website-action routes remain unverified. The physical browser and permissioned probes retain their frozen binaries.

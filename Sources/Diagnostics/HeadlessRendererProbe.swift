@@ -40,16 +40,20 @@ private struct ProcessRecord: Codable, Equatable {
 private final class HeadlessProbe: NSObject, NSApplicationDelegate, WKNavigationDelegate {
     private let output: URL
     private let nonce = UUID().uuidString
+    private let loopbackPort: Int?
     private var view: WKWebView?
     private var finished = false
     private var report: [String: Any] = [:]
 
-    init(output: URL) { self.output = output }
+    init(output: URL, loopbackPort: Int?) {
+        self.output = output
+        self.loopbackPort = loopbackPort
+    }
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         report["host"] = encoded(ProcessRecord(getpid()))
         report["session"] = sessionRecord()
-        report["mode"] = "same-user-no-window"
+        report["mode"] = loopbackPort == nil ? "same-user-inline" : "same-user-loopback"
         report["windowCountAtStart"] = NSApp.windows.count
         report["uid"] = getuid()
         report["frameworkPath"] = class_getImageName(WKWebView.self).map { String(cString: $0) }
@@ -64,7 +68,14 @@ private final class HeadlessProbe: NSObject, NSApplicationDelegate, WKNavigation
         DispatchQueue.main.asyncAfter(deadline: .now() + 20) { [self] in
             finish(error: "probe-deadline")
         }
-        webView.loadHTMLString("""
+        if let loopbackPort {
+            guard let url = URL(string: "http://127.0.0.1:\(loopbackPort)/fixture/\(nonce)") else {
+                finish(error: "invalid-fixed-fixture-url")
+                return
+            }
+            webView.load(URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData))
+        } else {
+            webView.loadHTMLString("""
         <!doctype html><meta name="viewport" content="width=device-width,initial-scale=1">
         <title>Headless renderer control</title>
         <style>html,body{margin:0;background:white}div,canvas{position:absolute;top:0;width:100px;height:100px}
@@ -73,25 +84,39 @@ private final class HeadlessProbe: NSObject, NSApplicationDelegate, WKNavigation
         <script>window.testNonce='\(nonce)';let c=document.getElementById('blue').getContext('2d');
         c.fillStyle='rgb(0,0,255)';c.fillRect(0,0,100,100);</script>
         """, baseURL: nil)
+        }
     }
 
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction) async -> WKNavigationActionPolicy {
-        navigationAction.request.url?.absoluteString == "about:blank" ? .allow : .cancel
+        guard let url = navigationAction.request.url else { return .cancel }
+        if loopbackPort == nil { return url.absoluteString == "about:blank" ? .allow : .cancel }
+        let route = navigationAction.targetFrame?.isMainFrame == true ? "fixture" : "frame"
+        return url.scheme == "http" && url.host == "127.0.0.1" && url.port == loopbackPort
+            && url.path == "/\(route)/\(nonce)" && url.query == nil && url.fragment == nil
+            && url.user == nil && url.password == nil ? .allow : .cancel
     }
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         Task { @MainActor in
             do {
-                let value = try await webView.evaluateJavaScript("""
-                ({nonce:window.testNonce,width:innerWidth,height:innerHeight,
-                  canvas:Array.from(document.getElementById('blue').getContext('2d').getImageData(20,20,1,1).data)})
-                """)
+                let value = try await webView.callAsyncJavaScript("""
+                await window.fixtureReady;
+                return {nonce:window.testNonce,width:innerWidth,height:innerHeight,
+                  canvas:Array.from(document.getElementById('blue').getContext('2d').getImageData(20,20,1,1).data),
+                  fetchedNonce:window.fetchedNonce ?? null,
+                  frameNonce:document.getElementById('child')?.contentWindow.frameNonce ?? null,
+                  imageWidth:document.getElementById('remote')?.naturalWidth ?? null};
+                """, arguments: [:], in: nil, contentWorld: .page)
                 guard !finished else { return }
                 let js = value as? [String: Any] ?? [:]
                 report["javascript"] = js
                 report["javascriptPassed"] = js["nonce"] as? String == nonce
                     && (js["width"] as? Int) == 800 && (js["height"] as? Int) == 600
                     && (js["canvas"] as? [Int]) == [0, 0, 255, 255]
+                if loopbackPort != nil {
+                    report["networkDocumentPassed"] = js["fetchedNonce"] as? String == nonce
+                        && js["frameNonce"] as? String == nonce && js["imageWidth"] as? Int == 1
+                }
                 let before = identities(webView)
                 report["servicesBeforeSnapshot"] = before
                 let config = WKSnapshotConfiguration()
@@ -122,10 +147,12 @@ private final class HeadlessProbe: NSObject, NSApplicationDelegate, WKNavigation
             throw NSError(domain: "HeadlessRendererProbe", code: 1)
         }
         try png.write(to: output.appendingPathComponent("snapshot.png"), options: .withoutOverwriting)
-        let expected = [(50, 50, [255, 0, 0]), (150, 50, [0, 255, 0]),
+        var expected = [(50, 50, [255, 0, 0]), (150, 50, [0, 255, 0]),
                         (250, 50, [0, 0, 255]), (400, 200, [255, 255, 255])]
+        if loopbackPort != nil { expected += [(350, 50, [255, 255, 0]), (50, 250, [0, 255, 255])] }
         var samples: [[String: Any]] = []
-        var passed = bitmap.pixelsWide == 2 * 800 && bitmap.pixelsHigh == 2 * 600
+        var passed = bitmap.pixelsWide >= 800 && bitmap.pixelsHigh >= 600
+            && bitmap.pixelsWide * 600 == bitmap.pixelsHigh * 800
             && bitmap.bitsPerSample == 8 && bitmap.samplesPerPixel == 4
             && !bitmap.bitmapFormat.contains(.alphaFirst)
         for (x, y, rgb) in expected {
@@ -218,7 +245,13 @@ private final class HeadlessProbe: NSObject, NSApplicationDelegate, WKNavigation
 @main
 private enum HeadlessRendererMain {
     @MainActor static func main() {
-        guard getuid() != 0, geteuid() != 0, CommandLine.arguments.count == 2 else { exit(64) }
+        let args = CommandLine.arguments
+        guard getuid() != 0, geteuid() != 0, args.count == 2 || args.count == 4 else { exit(64) }
+        var port: Int?
+        if args.count == 4 {
+            guard args[2] == "--loopback-port", let value = Int(args[3]), (1024...65535).contains(value) else { exit(64) }
+            port = value
+        }
         let output = URL(fileURLWithPath: CommandLine.arguments[1]).standardizedFileURL
         let root = URL(fileURLWithPath: #filePath).deletingLastPathComponent().deletingLastPathComponent()
             .deletingLastPathComponent().appendingPathComponent("artifacts").resolvingSymlinksInPath()
@@ -227,7 +260,7 @@ private enum HeadlessRendererMain {
               (try? FileManager.default.contentsOfDirectory(atPath: output.path))?.isEmpty == true else { exit(64) }
         let app = NSApplication.shared
         app.setActivationPolicy(.prohibited)
-        let delegate = HeadlessProbe(output: output)
+        let delegate = HeadlessProbe(output: output, loopbackPort: port)
         app.delegate = delegate
         withExtendedLifetime(delegate) { app.run() }
     }

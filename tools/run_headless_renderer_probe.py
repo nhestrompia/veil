@@ -1,6 +1,7 @@
 """Measure an ordinary-user WKWebView with no window or external input."""
 
 import argparse
+from contextlib import nullcontext
 import hashlib
 import json
 import os
@@ -9,13 +10,14 @@ import subprocess
 import time
 
 from process_cleanup import matching_pids, stop_launched
+from headless_renderer_fixture import serve_renderer_fixture
 
 
 ROOT = Path(__file__).resolve().parents[1]
 BINARY = ROOT / "dist/HeadlessRendererProbe.app/Contents/MacOS/HeadlessRendererProbe"
 
 
-def trial(directory):
+def trial(directory, fixture=None):
     directory.mkdir()
     payload = directory / "payload"
     payload.mkdir()
@@ -24,10 +26,14 @@ def trial(directory):
     if before:
         raise RuntimeError("A renderer probe already exists")
     result = {"verdict": "inconclusive", "controllerUID": os.getuid()}
+    expected_verdict = "same-user-loopback-baseline-passed" if fixture else "same-user-headless-baseline-passed"
+    arguments = [str(payload)]
+    if fixture:
+        arguments += ["--loopback-port", str(fixture.server_port)]
     with log.open("w") as stream:
         process = subprocess.Popen(
             ["open", "-g", "-n", "-W", str(BINARY.parents[2]), "--stdout", str(log),
-             "--stderr", str(log), "--args", str(payload)],
+             "--stderr", str(log), "--args", *arguments],
             stdout=stream, stderr=stream,
         )
         process.research_existing_pids = before
@@ -52,12 +58,21 @@ def trial(directory):
             pixels = payload / "snapshot.png"
             if pixels.is_file():
                 result["snapshotSHA256"] = hashlib.sha256(pixels.read_bytes()).hexdigest()
+            network_passed = True
+            if fixture:
+                nonce = native.get("javascript", {}).get("nonce")
+                requests = fixture.requests_for(nonce)
+                result["networkRequests"] = requests
+                network_passed = native.get("networkDocumentPassed") is True and {
+                    item["route"] for item in requests if item["status"] == 200
+                } == {"fixture", "frame", "fetch", "image"}
+                result["networkRequestsPassed"] = network_passed
             if (process.returncode == 0 and native.get("completed") is True
                     and native.get("javascriptPassed") is True and native.get("snapshotPassed") is True
                     and native.get("serviceIdentityStable") is True
                     and native.get("windowCountAtStart") == 0 and native.get("visibleWindowCountAtEnd") == 0
-                    and identities_known and same_user and pixels.is_file()):
-                result["verdict"] = "same-user-headless-baseline-passed"
+                    and identities_known and same_user and pixels.is_file() and network_passed):
+                result["verdict"] = expected_verdict
         except (RuntimeError, ValueError, subprocess.TimeoutExpired) as error:
             result["error"] = str(error)
         finally:
@@ -79,6 +94,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--out", required=True, type=Path)
     parser.add_argument("--repetitions", type=int, default=3, choices=range(1, 4))
+    parser.add_argument("--network", action="store_true")
     args = parser.parse_args()
     if os.getuid() == 0 or os.geteuid() == 0:
         parser.error("This probe must run as an ordinary user")
@@ -87,20 +103,24 @@ def main():
         parser.error("Output must be inside workspace artifacts")
     output.mkdir()
     results = []
-    for index in range(args.repetitions):
-        result = trial(output / f"trial-{index + 1}")
-        results.append(result)
-        if result["verdict"] != "same-user-headless-baseline-passed":
-            break
-        time.sleep(0.2)
+    expected_verdict = "same-user-loopback-baseline-passed" if args.network else "same-user-headless-baseline-passed"
+    with serve_renderer_fixture() if args.network else nullcontext() as fixture:
+        for index in range(args.repetitions):
+            result = trial(output / f"trial-{index + 1}", fixture)
+            results.append(result)
+            if result["verdict"] != expected_verdict:
+                break
+            time.sleep(0.2)
     summary = {
-        "milestone": 99,
-        "scope": "Same-user inline fixture, no window, no input, no privilege, no signal-denial claim",
+        "milestone": 100 if args.network else 99,
+        "mode": "loopback" if args.network else "inline",
+        "scope": "Same-user fixture, no explicit window, no input, no privilege, no signal-denial claim",
+        "temporaryServerCleanupVerified": args.network,
         "binarySHA256": hashlib.sha256(BINARY.read_bytes()).hexdigest(),
         "requestedTrials": args.repetitions,
         "trials": results,
         "allPassed": len(results) == args.repetitions and all(
-            result["verdict"] == "same-user-headless-baseline-passed" and result["cleanupVerified"]
+            result["verdict"] == expected_verdict and result["cleanupVerified"]
             for result in results),
     }
     (output / "results.json").write_text(json.dumps(summary, indent=2) + "\n")

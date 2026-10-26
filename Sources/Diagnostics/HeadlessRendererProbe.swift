@@ -44,10 +44,12 @@ private final class HeadlessProbe: NSObject, NSApplicationDelegate, WKNavigation
     private var view: WKWebView?
     private var finished = false
     private var report: [String: Any] = [:]
+    private let filesystemReport: [String: Any]?
 
-    init(output: URL?, loopbackPort: Int?) {
+    init(output: URL?, loopbackPort: Int?, filesystemReport: [String: Any]? = nil) {
         self.output = output
         self.loopbackPort = loopbackPort
+        self.filesystemReport = filesystemReport
     }
 
     func applicationDidFinishLaunching(_ notification: Notification) {
@@ -56,6 +58,7 @@ private final class HeadlessProbe: NSObject, NSApplicationDelegate, WKNavigation
         report["mode"] = loopbackPort == nil ? "same-user-inline" : "same-user-loopback"
         report["windowCountAtStart"] = NSApp.windows.count
         report["uid"] = getuid()
+        report["filesystemControl"] = filesystemReport
         report["resultTransport"] = output == nil ? "bounded-stdout-json" : "workspace-artifact"
         report["explicitSnapshotFileWrites"] = 0
         report["frameworkPath"] = class_getImageName(WKWebView.self).map { String(cString: $0) }
@@ -139,6 +142,10 @@ private final class HeadlessProbe: NSObject, NSApplicationDelegate, WKNavigation
 
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
         finish(error: String(describing: error))
+    }
+
+    func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
+        finish(error: "web-content-process-terminated")
     }
 
     private func recordSnapshot(_ image: NSImage) throws {
@@ -235,6 +242,12 @@ private final class HeadlessProbe: NSObject, NSApplicationDelegate, WKNavigation
         guard !finished else { return }
         finished = true
         report["error"] = error
+        #if RENDERER_FILESYSTEM_CONTROL
+        if let view {
+            report["servicesAtFinish"] = identities(view)
+            report["finishIdentityNetworkGetterCanLaunchService"] = true
+        }
+        #endif
         report["windowCountAtEnd"] = NSApp.windows.count
         report["windowsAtEnd"] = NSApp.windows.map {
             ["class": NSStringFromClass(type(of: $0)), "visible": $0.isVisible, "key": $0.isKeyWindow] as [String: Any]
@@ -247,8 +260,15 @@ private final class HeadlessProbe: NSObject, NSApplicationDelegate, WKNavigation
             fflush(stdout)
         }
         view?.stopLoading()
+        #if RENDERER_FILESYSTEM_CONTROL
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [self] in
+            view = nil
+            NSApp.terminate(nil)
+        }
+        #else
         view = nil
         NSApp.terminate(nil)
+        #endif
     }
 }
 
@@ -257,7 +277,19 @@ private enum HeadlessRendererMain {
     @MainActor static func main() {
         let args = CommandLine.arguments
         guard getuid() != 0, geteuid() != 0, args.count == 2 || args.count == 4 else { exit(64) }
+        #if RENDERER_FILESYSTEM_CONTROL
+        guard args.count == 4, args[1] == "--pipe-only", args[2] == "--canary" else { exit(64) }
+        let canary = URL(fileURLWithPath: args[3]).standardizedFileURL
+        let artifactRoot = URL(fileURLWithPath: #filePath).deletingLastPathComponent().deletingLastPathComponent()
+            .deletingLastPathComponent().appendingPathComponent("artifacts").path
+        guard canary.path == args[3], canary.path.hasPrefix(artifactRoot + "/"),
+              canary.lastPathComponent == "outside-canary" else { exit(64) }
+        let filesystemReport: [String: Any]? = RendererFilesystemControl.observe(canary: canary.path)
+        let port: Int? = nil
+        let output: URL? = nil
+        #else
         let pipeOnly = args.count == 2 && args[1] == "--pipe-only"
+        let filesystemReport: [String: Any]? = nil
         var port: Int?
         if args.count == 4 {
             guard args[2] == "--loopback-port", let value = Int(args[3]), (1024...65535).contains(value) else { exit(64) }
@@ -273,9 +305,10 @@ private enum HeadlessRendererMain {
                   (try? FileManager.default.contentsOfDirectory(atPath: directory.path))?.isEmpty == true else { exit(64) }
             output = directory
         }
+        #endif
         let app = NSApplication.shared
         app.setActivationPolicy(.prohibited)
-        let delegate = HeadlessProbe(output: output, loopbackPort: port)
+        let delegate = HeadlessProbe(output: output, loopbackPort: port, filesystemReport: filesystemReport)
         app.delegate = delegate
         withExtendedLifetime(delegate) { app.run() }
     }

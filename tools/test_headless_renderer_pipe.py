@@ -37,6 +37,13 @@ class HeadlessRendererPipeTests(unittest.TestCase):
         with self.assertRaises(subprocess.TimeoutExpired):
             collect_stdout(process, timeout=0.1)
 
+    def test_fragmented_lines_arrive_before_exit(self):
+        process = self.child("import os,time;os.write(1,b'first\\nsec');time.sleep(.05);os.write(1,b'ond\\n');time.sleep(.1)")
+        lines = []
+        data = collect_stdout(process, timeout=3, on_line=lambda line: lines.append((line, process.poll())))
+        self.assertEqual(data, b"first\nsecond\n")
+        self.assertEqual(lines, [(b"first", None), (b"second", None)])
+
 
 if __name__ == "__main__":
     unittest.main()

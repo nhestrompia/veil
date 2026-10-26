@@ -19,9 +19,10 @@ ROOT = Path(__file__).resolve().parents[1]
 BINARY = ROOT / "dist/HeadlessRendererProbe.app/Contents/MacOS/HeadlessRendererProbe"
 
 
-def collect_stdout(process, limit=3 * 1024 * 1024, timeout=30):
+def collect_stdout(process, limit=3 * 1024 * 1024, timeout=30, on_line=None):
     deadline = time.monotonic() + timeout
     output = bytearray()
+    line_start = 0
     with selectors.DefaultSelector() as reader:
         reader.register(process.stdout, selectors.EVENT_READ)
         while True:
@@ -36,6 +37,10 @@ def collect_stdout(process, limit=3 * 1024 * 1024, timeout=30):
             if len(output) + len(block) > limit:
                 raise RuntimeError("Native result exceeds the report limit")
             output.extend(block)
+            if on_line is not None:
+                while (line_end := output.find(b"\n", line_start)) >= 0:
+                    on_line(bytes(output[line_start:line_end]))
+                    line_start = line_end + 1
     process.wait(timeout=max(0.001, deadline - time.monotonic()))
     return bytes(output)
 

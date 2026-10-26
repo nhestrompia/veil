@@ -25,7 +25,7 @@ const record=async value=>{
   const response=await post('action',{note:value});
   const state=await response.json();
   result.textContent=state.accepted?'Task complete. Action recorded.':'Action refused.';
-  if(state.accepted&&['focus-action','blur-action','visibility-action','pagehide-action','unload-action'].includes(surface))focusActionArmed=true;
+  if(state.accepted&&['focus-action','blur-action','visibility-action','pagehide-action','unload-action','timer-gap-action'].includes(surface))focusActionArmed=true;
 };
 addEventListener('focus',()=>{if(focusActionArmed&&surface==='focus-action')record('native-input');});
 addEventListener('blur',()=>{if(focusActionArmed&&surface==='blur-action')record('native-input');});
@@ -33,6 +33,18 @@ document.addEventListener('visibilitychange',()=>{if(focusActionArmed&&surface==
 for(const event of ['pagehide','unload'])addEventListener(event,()=>{
   if(focusActionArmed&&surface===event+'-action')navigator.sendBeacon(base+'/action',new Blob([JSON.stringify({note:'native-input'})],{type:'application/json'}));
 });
+if(surface==='timer-gap-action'){
+  let previousTick=performance.now(),gapActionRecorded=false;
+  setInterval(()=>{
+    const now=performance.now(),gap=now-previousTick;
+    previousTick=now;
+    if(focusActionArmed&&!gapActionRecorded&&gap>500){
+      gapActionRecorded=true;
+      post('events',{events:[{type:'timer-gap-trigger',t:gap}]});
+      record('native-input');
+    }
+  },100);
+}
 const formHTML='<form><label for="note">Enter native-input</label><input id="note" aria-label="Enter native-input" autocomplete="off"><button type="submit">Record action</button></form>';
 async function mount(){
   let root=content;

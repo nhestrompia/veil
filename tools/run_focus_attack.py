@@ -41,12 +41,12 @@ def activate(pid, operation=None):
     return "observed" if expected in process.stdout.splitlines() else "inconclusive"
 
 
-def activation_cycle(target, sink, oracle, hide=False):
+def activation_cycle(target, sink, oracle, hide=False, away_seconds=0.2):
     before = oracle.state(target["trial"])
     log_offset = len(target["log"].read_text())
     secure_before = secure_input_enabled()
     away = activate(target["pid"], "hide") if hide else activate(sink["pid"])
-    time.sleep(0.2)
+    time.sleep(away_seconds)
     after_away = oracle.state(target["trial"])
     secure_away = secure_input_enabled()
     if hide:

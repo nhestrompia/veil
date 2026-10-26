@@ -1,6 +1,6 @@
 # Current research state
 
-Latest: milestone 84. The revised engine clears serialized IsVisuallyIdle and compiled with exit zero in 50.3 seconds. All 112 Python checks and exhaustive projection checks pass. Its first native timing control triggered before hiding, so stable mode was skipped. Runtime repair is unverified. The prepared diagnostic is engine-native without resume. The frozen physical browser and probes remain unchanged.
+Latest: milestone 85. The revised engine compiled and all 112 Python checks pass. The adaptive timer native control was inconclusive because return activation failed. macOS reports locked, and the user was asked to unlock through the asynchronous question tool. No stable timing result exists on the revised engine. No temporary research app remains, and Secure Event Input is off. Keep frozen physical apps and probes unchanged.
 
 Updated 2026-10-26. Milestone 58 confirms an external focus-only action bypass in three fresh diagnostic processes. Activating another research window and returning completed one new action in each candidate. The standalone helper posted no input and made no AX call during those cycles. The gate admitted zero keyboard events. Agent-free operation is unmet.
 
@@ -313,3 +313,16 @@ The exhaustive projection check first failed on the new visual-idle invariant. I
 Source staging accepts only the exact measured predecessor header by its SHA256. A changed predecessor is refused before any other file write. Existing timestamps remain intact for byte-identical source. The prior engine receipt, source receipt, and log remain saved separately.
 
 The isolated engine rebuild completed with exit zero in 50.3 seconds. The first native timer control triggered before hiding and returned inconclusive. The stable comparison did not run. The new source rule is not yet a verified runtime fix.
+
+
+## Milestone 85: adaptive timer controls and desktop prerequisite
+
+The first readiness check required ten intervals below 200 milliseconds. Its native control never reached that condition. The controller skipped the stable comparison and cleaned up both research processes.
+
+The adaptive variant measures ten baseline intervals. Its action threshold is the greater of 500 milliseconds or the observed maximum plus 250 milliseconds. The page records its threshold before the stationary control. The controller then requires three unchanged seconds and performs an eight-second hide cycle.
+
+The native trial measured a maximum interval of 1,000 milliseconds and chose a 1,250-millisecond threshold. Its stationary control passed. No timer action followed. Hide succeeded, but return activation failed. The result is inconclusive, and stable mode was skipped.
+
+macOS also reported the console locked. That flag remains advisory. The failed activation receipt independently prevents a valid negative comparison. All 112 Python checks pass. Temporary process cleanup passed, and Secure Event Input returned to off. The revised engine remains compiled, with its runtime repair unverified.
+
+A desktop-unlock request is pending. Resume with the adaptive timer comparison after foreground controls work. Then run the password ownership control and the broader editor/input matrix. Keep the frozen physical browser and permissioned probes unchanged.

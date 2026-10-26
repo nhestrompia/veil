@@ -552,3 +552,16 @@ The exhaustive projection check first failed on the new visual-idle invariant. I
 Source staging accepts only the exact measured predecessor header by its SHA256. A changed predecessor is refused before any other file write. Existing timestamps remain intact for byte-identical source. The prior engine receipt, source receipt, and log remain saved separately.
 
 The isolated engine rebuild completed with exit zero in 50.3 seconds. The first native timer control triggered before hiding and returned inconclusive. The stable comparison did not run. The new source rule is not yet a verified runtime fix.
+
+
+## Milestone 85: adaptive timer controls and desktop prerequisite
+
+The first readiness check required ten intervals below 200 milliseconds. Its native control never reached that condition. The controller skipped the stable comparison and cleaned up both research processes.
+
+The adaptive variant measures ten baseline intervals. Its action threshold is the greater of 500 milliseconds or the observed maximum plus 250 milliseconds. The page records its threshold before the stationary control. The controller then requires three unchanged seconds and performs an eight-second hide cycle.
+
+The native trial measured a maximum interval of 1,000 milliseconds and chose a 1,250-millisecond threshold. Its stationary control passed. No timer action followed. Hide succeeded, but return activation failed. The result is inconclusive, and stable mode was skipped.
+
+macOS also reported the console locked. That flag remains advisory. The failed activation receipt independently prevents a valid negative comparison. All 112 Python checks pass. Temporary process cleanup passed, and Secure Event Input returned to off. The revised engine remains compiled, with its runtime repair unverified.
+
+A desktop-unlock request is pending. Resume with the adaptive timer comparison after foreground controls work. Then run the password ownership control and the broader editor/input matrix. Keep the frozen physical browser and permissioned probes unchanged.

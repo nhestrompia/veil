@@ -1,0 +1,27 @@
+{
+  "humanBaseline": false,
+  "scope": "Local timer-gap action after private authorized startup. No external input posted.",
+  "stationarySeconds": 3,
+  "hiddenSeconds": 3,
+  "activeAnimation": true,
+  "modes": [
+    {
+      "mode": "native",
+      "status": "inconclusive",
+      "binarySHA256": "99b4724afdd704002ffbe63672c9c1451e9afe078e590e2f33196c4f7c950b10",
+      "engineIdentity": {
+        "pid": 28172,
+        "executable": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development",
+        "mappedFrameworks": {
+          "WebKit": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebKit.framework/Versions/A/WebKit",
+          "JavaScriptCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/JavaScriptCore.framework/Versions/A/JavaScriptCore",
+          "WebCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebCore.framework/Versions/A/WebCore"
+        }
+      },
+      "reason": "The page did not establish ten short timer intervals",
+      "candidateCleanupVerified": true,
+      "sinkCleanupVerified": true,
+      "secureInputAfterCleanup": false
+    }
+  ]
+}

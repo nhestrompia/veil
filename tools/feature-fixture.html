@@ -42,11 +42,22 @@ if(surface==='timer-gap-action'){
     const animate=()=>{pulse.style.transform='translateX('+(frame++%40)+'px)';requestAnimationFrame(animate);};
     requestAnimationFrame(animate);
   }
-  let previousTick=performance.now(),gapActionRecorded=false;
+  let previousTick=performance.now(),gapActionRecorded=false,ready=false,threshold=Infinity;
+  const baselineGaps=[];
   setInterval(()=>{
     const now=performance.now(),gap=now-previousTick;
     previousTick=now;
-    if(focusActionArmed&&!gapActionRecorded&&gap>500){
+    if(focusActionArmed&&!ready){
+      baselineGaps.push(gap);
+      if(baselineGaps.length===10){
+        const baselineMax=Math.max(...baselineGaps);
+        threshold=Math.max(500,baselineMax+250);
+        ready=true;
+        post('events',{events:[{type:'timer-ready',t:threshold,x:baselineMax,y:baselineGaps.length}]});
+      }
+      return;
+    }
+    if(focusActionArmed&&!gapActionRecorded&&gap>threshold){
       gapActionRecorded=true;
       post('events',{events:[{type:'timer-gap-trigger',t:gap}]});
       record('native-input');

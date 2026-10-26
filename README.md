@@ -4,6 +4,8 @@
 
 A macOS-only research project for an agent-resistant browser, with agent-free browsing as the stronger research goal.
 
+Current engine research reproduces native focus, blur, and visibility actions, including child frames. Stable-mode comparisons recorded no such actions with passing private typing controls. A separate timer test found a bypass. The revised engine clears visual-idle state, but its runtime repair remains unverified because the latest foreground control failed. See the lifecycle and timer findings. Agent-free operation remains unmet. [Lifecycle results](docs/engine-activity-matrix-findings.md), [timer results](docs/engine-timer-findings.md).
+
 Start with the [proof-of-concept PRD](PRD.md). It defines the target, proposed architecture, MVP requirements, attack tests, and acceptance gates.
 
 Supporting evidence:

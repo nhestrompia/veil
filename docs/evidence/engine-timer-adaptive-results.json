@@ -1,0 +1,124 @@
+{
+  "shortIntervalControl": {
+    "humanBaseline": false,
+    "scope": "Local timer-gap action after private authorized startup. No external input posted.",
+    "stationarySeconds": 3,
+    "hiddenSeconds": 3,
+    "activeAnimation": true,
+    "modes": [
+      {
+        "mode": "native",
+        "status": "inconclusive",
+        "binarySHA256": "99b4724afdd704002ffbe63672c9c1451e9afe078e590e2f33196c4f7c950b10",
+        "engineIdentity": {
+          "pid": 28172,
+          "executable": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development",
+          "mappedFrameworks": {
+            "WebKit": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebKit.framework/Versions/A/WebKit",
+            "JavaScriptCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/JavaScriptCore.framework/Versions/A/JavaScriptCore",
+            "WebCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebCore.framework/Versions/A/WebCore"
+          }
+        },
+        "reason": "The page did not establish ten short timer intervals",
+        "candidateCleanupVerified": true,
+        "sinkCleanupVerified": true,
+        "secureInputAfterCleanup": false
+      }
+    ]
+  },
+  "adaptiveControl": {
+    "humanBaseline": false,
+    "scope": "Local timer-gap action after private authorized startup. No external input posted.",
+    "stationarySeconds": 3,
+    "hiddenSeconds": 8,
+    "activeAnimation": true,
+    "modes": [
+      {
+        "mode": "native",
+        "status": "inconclusive",
+        "binarySHA256": "99b4724afdd704002ffbe63672c9c1451e9afe078e590e2f33196c4f7c950b10",
+        "engineIdentity": {
+          "pid": 28552,
+          "executable": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development",
+          "mappedFrameworks": {
+            "WebKit": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebKit.framework/Versions/A/WebKit",
+            "JavaScriptCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/JavaScriptCore.framework/Versions/A/JavaScriptCore",
+            "WebCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebCore.framework/Versions/A/WebCore"
+          }
+        },
+        "pageTimerReady": true,
+        "timerReadiness": [
+          {
+            "type": "timer-ready",
+            "t": 1250,
+            "x": 1000,
+            "y": 10
+          }
+        ],
+        "initialAcceptedActions": 1,
+        "stationaryNewActions": 0,
+        "stationaryAcceptedInputEvents": 0,
+        "candidate": {
+          "pid": 28549,
+          "beforeAccepted": 1,
+          "newActionsWhileDeactivating": 0,
+          "newActionsWhileActivating": 0,
+          "newSubmissions": [],
+          "acceptedInputEvents": 0,
+          "diagnosticFocusEvents": [],
+          "secureInputBefore": false,
+          "secureInputWhileAway": false,
+          "secureInputAfterReturn": false,
+          "pageActivityBefore": [
+            {
+              "type": "activity-hidden-unfocused",
+              "t": 44
+            },
+            {
+              "type": "activity-hidden-unfocused",
+              "t": 9
+            }
+          ],
+          "pageActivityWhileAway": [
+            {
+              "type": "activity-hidden-unfocused",
+              "t": 44
+            },
+            {
+              "type": "activity-hidden-unfocused",
+              "t": 9
+            }
+          ],
+          "pageActivityAfterReturn": [
+            {
+              "type": "activity-hidden-unfocused",
+              "t": 44
+            },
+            {
+              "type": "activity-hidden-unfocused",
+              "t": 9
+            }
+          ],
+          "awayStatus": "observed",
+          "backStatus": "inconclusive",
+          "activationMethod": "NSRunningApplication.hide/unhide/activate; no Accessibility call",
+          "syntheticInputPosted": false,
+          "AXReadSent": false,
+          "AXValueSet": false,
+          "AXPressSent": false
+        },
+        "timerGapEvents": [],
+        "candidateCleanupVerified": true,
+        "sinkCleanupVerified": true,
+        "secureInputAfterCleanup": false
+      }
+    ],
+    "stopReason": "The native-engine control did not reproduce a timer action"
+  },
+  "consoleObservation": {
+    "locked": true,
+    "advisory": true
+  },
+  "pythonChecksPassed": 112,
+  "runtimeRepairVerified": false
+}

@@ -21,7 +21,7 @@ def run(output, controller, engine_root, active_animation=False):
     require_input_safety(probe(["permissions"], output / "permissions.json"))
     oracle = Oracle(controller)
     report = {"humanBaseline": False, "scope": "Local timer-gap action after private authorized startup. No external input posted.",
-              "stationarySeconds": 3, "hiddenSeconds": 3, "activeAnimation": active_animation, "modes": []}
+              "stationarySeconds": 3, "hiddenSeconds": 8, "activeAnimation": active_animation, "modes": []}
 
     def save():
         (output / "results.json").write_text(json.dumps(report, indent=2) + "\n")
@@ -38,6 +38,17 @@ def run(output, controller, engine_root, active_animation=False):
                                     "?surface=timer-gap-action&observe-activity=1" + ("&active-animation=1" if active_animation else ""), engine_root)
                 row["binarySHA256"] = candidate["binarySHA256"]
                 row["engineIdentity"] = candidate["engineIdentity"]
+                deadline = time.monotonic() + 20
+                while time.monotonic() < deadline:
+                    state = oracle.state(candidate["trial"])
+                    if any(event.get("type") == "timer-ready" for event in state["events"]):
+                        break
+                    time.sleep(0.1)
+                else:
+                    row["reason"] = "The page did not collect ten baseline timer intervals"
+                    return report
+                row["pageTimerReady"] = True
+                row["timerReadiness"] = [event for event in state["events"] if event.get("type") == "timer-ready"]
                 before = oracle.state(candidate["trial"])
                 row["initialAcceptedActions"] = accepted(before)
                 if row["initialAcceptedActions"] != 1:
@@ -51,7 +62,7 @@ def run(output, controller, engine_root, active_animation=False):
                 if row["stationaryNewActions"] or row["stationaryAcceptedInputEvents"]:
                     row["reason"] = "The stationary control changed before external activation"
                     return report
-                row["candidate"] = activation_cycle(candidate, sink, oracle, hide=True, away_seconds=3)
+                row["candidate"] = activation_cycle(candidate, sink, oracle, hide=True, away_seconds=8)
                 row["status"] = cycle_outcome(row["candidate"])
                 row["timerGapEvents"] = [event for event in oracle.state(candidate["trial"])["events"]
                                          if event.get("type") == "timer-gap-trigger"]

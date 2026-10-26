@@ -80,3 +80,5 @@ After a successful build, pass --engine-frameworks .build/webkit-engine/output/R
 Xcode script phases use TMPDIR from TARGET_TEMP_DIR. A shared directory under OBJROOT is denied by their sandbox. The narrow WTF target passed with this correction. See [the build diagnosis](../docs/engine-temp-findings.md).
 
 The cache experiments were inconclusive. Quiet logging emitted cosmetic error wrappers despite successful command exits. The build now uses normal logging and upstream cache defaults. Full WebKit integration remains unverified. See [the corrected diagnosis](../docs/engine-log-findings.md).
+
+The deployment target follows the host macOS version. The current host is 26.6. The earlier 26.0 target failed newer credential API availability checks. Source staging preserves timestamps for byte-identical files. See [host findings](../docs/engine-host-findings.md).

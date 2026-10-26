@@ -1,4 +1,5 @@
 import json
+import os
 from pathlib import Path
 import subprocess
 import tempfile
@@ -75,10 +76,14 @@ class ResearchEngineBuildTests(unittest.TestCase):
                  patch.object(build, 'changed_sources', return_value={'first': 'new', 'second': 'new', 'header': 'new header'}), \
                  patch.object(build, 'BASE', source), patch.object(build, 'PATCH', patch_file):
                 build.stage(source)
+                for name in ['first', 'second', 'header']:
+                    os.utime(source / name, ns=(1_000_000_000, 1_000_000_000))
                 build.stage(source)
             self.assertEqual((source / 'second').read_text(), 'new')
             self.assertEqual((source / 'header').read_text(), 'new header')
             self.assertFalse(json.loads((source / 'applied-source.json').read_text())['engineCompiled'])
+            for name in ['first', 'second', 'header']:
+                self.assertEqual((source / name).stat().st_mtime_ns, 1_000_000_000)
 
     def test_line_ending_changes_are_refused_before_other_writes(self):
         with tempfile.TemporaryDirectory() as directory:

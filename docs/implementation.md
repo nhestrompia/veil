@@ -457,3 +457,8 @@ A forced PAL compile emitted the quiet-mode error wrapper but exited zero and re
 ## Milestone 75: graceful-quit controls and strict helper scope
 
 Readable pagehide and unload references terminated without recording beacon actions. The candidate comparisons were skipped. A third reference checked the refactored helper. All cleanups passed. Pure scope checks cover the two exact disposable targets and reject physical or mismatched identities. The rejected optional physical refusal check did not execute. All 102 Python checks pass. See [quit findings](quit-lifecycle-findings.md).
+
+
+## Milestone 76: build for the host and preserve source timestamps
+
+The seventh build failed on APIs requiring macOS 26.2 because the deployment target was 26.0. The eighth uses the host version, 26.6. Source staging now skips byte-identical files. Its timestamp regression changed from failure to success. All 102 Python checks pass. The complete engine and runtime comparisons remain pending. See [host findings](engine-host-findings.md).

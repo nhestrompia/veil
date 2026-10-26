@@ -1,6 +1,6 @@
 # Current research state
 
-Latest: milestone 74. The seventh isolated engine build is active with normal logging and upstream cache defaults. Full WebKit compilation and custom-engine runtime comparisons remain unverified. All 102 Python checks pass. See the latest sections below.
+Latest: milestone 76. The eighth isolated engine build is active for host macOS 26.6, with normal logging and upstream cache defaults. Full WebKit compilation and custom-engine runtime comparisons remain unverified. All 102 Python checks pass. See the latest sections below.
 
 Updated 2026-10-26. Milestone 58 confirms an external focus-only action bypass in three fresh diagnostic processes. Activating another research window and returning completed one new action in each candidate. The standalone helper posted no input and made no AX call during those cycles. The gate admitted zero keyboard events. Agent-free operation is unmet.
 
@@ -217,3 +217,9 @@ The seventh full build remains active in exec session 3890. It reached WebCore w
 Readable pagehide and unload controls both terminated but recorded no action. Their candidate tests were skipped. A third readable run verified the refactored helper against a disposable control. These are inconclusive, not blocked results. The helper permits only exact disposable app paths. Its pure scope tests reject the physical identity without process access. All 102 Python checks pass. See [quit findings](quit-lifecycle-findings.md).
 
 Automatic approval review rejected an optional live refusal test against the frozen physical browser. It did not execute. Pure tests replaced it, and no required permission question is pending. The eighth engine build is active in exec session 22023. The seventh genuinely failed because a credential API requires macOS 26.2. The eighth target matches this Mac at 26.6.
+
+## Milestone 76 host target and source timestamps
+
+The seventh build genuinely failed with exit code 65 on a credential API requiring macOS 26.2. The target was 26.0. The eighth build uses the host version, 26.6. Its active exec session is 22023. It currently compiles JavaScriptCore. Preserve the monitor, disk reserve, and actual exit-status evidence. See [host findings](engine-host-findings.md).
+
+Source staging now preserves timestamps for byte-identical files. Its regression failed before the change and passed afterward. All 102 Python checks pass. This optimization does not alter the running build. The prepared InternalKeyboardControl remains ordinary, capture-restricted, with private resume and ownership logging. The frozen physical browser and probes remain unchanged.

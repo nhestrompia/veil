@@ -5,6 +5,7 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import platform
 import subprocess
 import tempfile
 import time
@@ -34,6 +35,8 @@ def stage(source):
             raise RuntimeError(f"Refusing changed research source: {name}")
     for name, text in updated.items():
         path = source / name
+        if path.exists() and path.read_bytes() == text.encode():
+            continue
         with tempfile.NamedTemporaryFile(mode="w", dir=path.parent, delete=False) as temporary:
             temporary.write(text)
             temporary_path = Path(temporary.name)
@@ -76,7 +79,7 @@ def build(source, timeout):
     log = BASE / "build.log"
     command = ["/usr/bin/nice", "-n", "10", str(source / "Tools/Scripts/build-webkit"),
                "--release", "--only=Everything up to WebKit", "-jobs", "4",
-               "ARCHS=arm64", "ONLY_ACTIVE_ARCH=YES", "MACOSX_DEPLOYMENT_TARGET=26.0",
+               "ARCHS=arm64", "ONLY_ACTIVE_ARCH=YES", f"MACOSX_DEPLOYMENT_TARGET={platform.mac_ver()[0]}",
                "TMPDIR=$(TARGET_TEMP_DIR)/",
                "-derivedDataPath", str(output / "DerivedData"),
                f"SHARED_PRECOMPS_DIR={output / 'PrecompiledHeaders'}"]

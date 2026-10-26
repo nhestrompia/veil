@@ -1,0 +1,704 @@
+{
+  "comparisons": [
+    {
+      "humanBaseline": false,
+      "scope": "Local timer-gap action after private authorized startup. No external input posted.",
+      "stationarySeconds": 3,
+      "hiddenSeconds": 8,
+      "activeAnimation": true,
+      "modes": [
+        {
+          "mode": "native",
+          "status": "autonomous-website-action",
+          "binarySHA256": "99b4724afdd704002ffbe63672c9c1451e9afe078e590e2f33196c4f7c950b10",
+          "engineIdentity": {
+            "pid": 36569,
+            "executable": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development",
+            "mappedFrameworks": {
+              "WebKit": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebKit.framework/Versions/A/WebKit",
+              "JavaScriptCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/JavaScriptCore.framework/Versions/A/JavaScriptCore",
+              "WebCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebCore.framework/Versions/A/WebCore"
+            }
+          },
+          "pageTimerReady": true,
+          "timerReadiness": [
+            {
+              "type": "timer-ready",
+              "t": 732,
+              "x": 482,
+              "y": 10
+            }
+          ],
+          "initialAcceptedActions": 1,
+          "stationaryNewActions": 0,
+          "stationaryAcceptedInputEvents": 0,
+          "candidate": {
+            "pid": 36558,
+            "beforeAccepted": 1,
+            "newActionsWhileDeactivating": 1,
+            "newActionsWhileActivating": 0,
+            "newSubmissions": [
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedInputEvents": 0,
+            "diagnosticFocusEvents": [
+              "FOCUS_DIAGNOSTIC phase=resigned-key viewSecureOwner=false",
+              "FOCUS_DIAGNOSTIC phase=resigned-key actualKey=false logicalKey=false actualVisible=false logicalVisible=false foreground=36558 secureInput=false",
+              "FOCUS_DIAGNOSTIC phase=resigned-key-settled viewSecureOwner=false",
+              "FOCUS_DIAGNOSTIC phase=resigned-key-settled actualKey=false logicalKey=false actualVisible=false logicalVisible=false foreground=36550 secureInput=false",
+              "FOCUS_DIAGNOSTIC phase=became-key viewSecureOwner=false",
+              "FOCUS_DIAGNOSTIC phase=became-key actualKey=true logicalKey=true actualVisible=true logicalVisible=true foreground=36558 secureInput=false",
+              "FOCUS_DIAGNOSTIC phase=became-key-settled viewSecureOwner=false",
+              "FOCUS_DIAGNOSTIC phase=became-key-settled actualKey=true logicalKey=true actualVisible=true logicalVisible=true foreground=36558 secureInput=false"
+            ],
+            "secureInputBefore": false,
+            "secureInputWhileAway": false,
+            "secureInputAfterReturn": false,
+            "pageActivityBefore": [
+              {
+                "type": "activity-visible-focused",
+                "t": 52
+              },
+              {
+                "type": "activity-visible-focused",
+                "t": 9
+              }
+            ],
+            "pageActivityWhileAway": [
+              {
+                "type": "activity-visible-focused",
+                "t": 52
+              },
+              {
+                "type": "activity-visible-focused",
+                "t": 9
+              },
+              {
+                "type": "activity-hidden-focused",
+                "t": 5977
+              }
+            ],
+            "pageActivityAfterReturn": [
+              {
+                "type": "activity-visible-focused",
+                "t": 52
+              },
+              {
+                "type": "activity-visible-focused",
+                "t": 9
+              },
+              {
+                "type": "activity-hidden-focused",
+                "t": 5977
+              },
+              {
+                "type": "activity-visible-unfocused",
+                "t": 14276
+              },
+              {
+                "type": "activity-visible-focused",
+                "t": 14688
+              }
+            ],
+            "awayStatus": "observed",
+            "backStatus": "observed",
+            "activationMethod": "NSRunningApplication.hide/unhide/activate; no Accessibility call",
+            "syntheticInputPosted": false,
+            "AXReadSent": false,
+            "AXValueSet": false,
+            "AXPressSent": false
+          },
+          "timerGapEvents": [
+            {
+              "type": "timer-gap-trigger",
+              "t": 1000
+            }
+          ],
+          "candidateCleanupVerified": true,
+          "sinkCleanupVerified": true,
+          "secureInputAfterCleanup": false
+        },
+        {
+          "mode": "stable",
+          "status": "no-action-observed",
+          "binarySHA256": "9209232c7bb0f3186b4b3e8dd9d6f9187818c809d797131935733d02fcf4feac",
+          "engineIdentity": {
+            "pid": 36851,
+            "executable": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development",
+            "mappedFrameworks": {
+              "WebKit": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebKit.framework/Versions/A/WebKit",
+              "JavaScriptCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/JavaScriptCore.framework/Versions/A/JavaScriptCore",
+              "WebCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebCore.framework/Versions/A/WebCore"
+            }
+          },
+          "pageTimerReady": true,
+          "timerReadiness": [
+            {
+              "type": "timer-ready",
+              "t": 763,
+              "x": 513,
+              "y": 10
+            }
+          ],
+          "initialAcceptedActions": 1,
+          "stationaryNewActions": 0,
+          "stationaryAcceptedInputEvents": 0,
+          "candidate": {
+            "pid": 36848,
+            "beforeAccepted": 1,
+            "newActionsWhileDeactivating": 0,
+            "newActionsWhileActivating": 0,
+            "newSubmissions": [],
+            "acceptedInputEvents": 0,
+            "diagnosticFocusEvents": [
+              "FOCUS_DIAGNOSTIC phase=resigned-key viewSecureOwner=false",
+              "FOCUS_DIAGNOSTIC phase=resigned-key actualKey=false logicalKey=false actualVisible=false logicalVisible=false foreground=36848 secureInput=false",
+              "FOCUS_DIAGNOSTIC phase=resigned-key-settled viewSecureOwner=false",
+              "FOCUS_DIAGNOSTIC phase=resigned-key-settled actualKey=false logicalKey=false actualVisible=false logicalVisible=false foreground=36839 secureInput=false",
+              "FOCUS_DIAGNOSTIC phase=became-key viewSecureOwner=false",
+              "FOCUS_DIAGNOSTIC phase=became-key actualKey=true logicalKey=true actualVisible=true logicalVisible=true foreground=36848 secureInput=false",
+              "FOCUS_DIAGNOSTIC phase=became-key-settled viewSecureOwner=false",
+              "FOCUS_DIAGNOSTIC phase=became-key-settled actualKey=true logicalKey=true actualVisible=true logicalVisible=true foreground=36848 secureInput=false"
+            ],
+            "secureInputBefore": false,
+            "secureInputWhileAway": false,
+            "secureInputAfterReturn": false,
+            "pageActivityBefore": [
+              {
+                "type": "activity-visible-focused",
+                "t": 14
+              },
+              {
+                "type": "activity-visible-focused",
+                "t": 8
+              }
+            ],
+            "pageActivityWhileAway": [
+              {
+                "type": "activity-visible-focused",
+                "t": 14
+              },
+              {
+                "type": "activity-visible-focused",
+                "t": 8
+              }
+            ],
+            "pageActivityAfterReturn": [
+              {
+                "type": "activity-visible-focused",
+                "t": 14
+              },
+              {
+                "type": "activity-visible-focused",
+                "t": 8
+              }
+            ],
+            "awayStatus": "observed",
+            "backStatus": "observed",
+            "activationMethod": "NSRunningApplication.hide/unhide/activate; no Accessibility call",
+            "syntheticInputPosted": false,
+            "AXReadSent": false,
+            "AXValueSet": false,
+            "AXPressSent": false
+          },
+          "timerGapEvents": [],
+          "candidateCleanupVerified": true,
+          "sinkCleanupVerified": true,
+          "secureInputAfterCleanup": false
+        }
+      ]
+    },
+    {
+      "humanBaseline": false,
+      "scope": "Local timer-gap action after private authorized startup. No external input posted.",
+      "stationarySeconds": 3,
+      "hiddenSeconds": 8,
+      "activeAnimation": true,
+      "modes": [
+        {
+          "mode": "native",
+          "status": "autonomous-website-action",
+          "binarySHA256": "99b4724afdd704002ffbe63672c9c1451e9afe078e590e2f33196c4f7c950b10",
+          "engineIdentity": {
+            "pid": 37443,
+            "executable": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development",
+            "mappedFrameworks": {
+              "WebKit": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebKit.framework/Versions/A/WebKit",
+              "JavaScriptCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/JavaScriptCore.framework/Versions/A/JavaScriptCore",
+              "WebCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebCore.framework/Versions/A/WebCore"
+            }
+          },
+          "pageTimerReady": true,
+          "timerReadiness": [
+            {
+              "type": "timer-ready",
+              "t": 746,
+              "x": 496,
+              "y": 10
+            }
+          ],
+          "initialAcceptedActions": 1,
+          "stationaryNewActions": 0,
+          "stationaryAcceptedInputEvents": 0,
+          "candidate": {
+            "pid": 37437,
+            "beforeAccepted": 1,
+            "newActionsWhileDeactivating": 1,
+            "newActionsWhileActivating": 0,
+            "newSubmissions": [
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedInputEvents": 0,
+            "diagnosticFocusEvents": [
+              "FOCUS_DIAGNOSTIC phase=resigned-key viewSecureOwner=false",
+              "FOCUS_DIAGNOSTIC phase=resigned-key actualKey=false logicalKey=false actualVisible=false logicalVisible=false foreground=37437 secureInput=false",
+              "FOCUS_DIAGNOSTIC phase=resigned-key-settled viewSecureOwner=false",
+              "FOCUS_DIAGNOSTIC phase=resigned-key-settled actualKey=false logicalKey=false actualVisible=false logicalVisible=false foreground=37429 secureInput=false",
+              "FOCUS_DIAGNOSTIC phase=became-key viewSecureOwner=false",
+              "FOCUS_DIAGNOSTIC phase=became-key actualKey=true logicalKey=true actualVisible=true logicalVisible=true foreground=37437 secureInput=false",
+              "FOCUS_DIAGNOSTIC phase=became-key-settled viewSecureOwner=false",
+              "FOCUS_DIAGNOSTIC phase=became-key-settled actualKey=true logicalKey=true actualVisible=true logicalVisible=true foreground=37437 secureInput=false"
+            ],
+            "secureInputBefore": false,
+            "secureInputWhileAway": false,
+            "secureInputAfterReturn": false,
+            "pageActivityBefore": [
+              {
+                "type": "activity-visible-focused",
+                "t": 42
+              },
+              {
+                "type": "activity-visible-focused",
+                "t": 11
+              }
+            ],
+            "pageActivityWhileAway": [
+              {
+                "type": "activity-visible-focused",
+                "t": 42
+              },
+              {
+                "type": "activity-visible-focused",
+                "t": 11
+              },
+              {
+                "type": "activity-hidden-focused",
+                "t": 5995
+              }
+            ],
+            "pageActivityAfterReturn": [
+              {
+                "type": "activity-visible-focused",
+                "t": 42
+              },
+              {
+                "type": "activity-visible-focused",
+                "t": 11
+              },
+              {
+                "type": "activity-hidden-focused",
+                "t": 5995
+              },
+              {
+                "type": "activity-visible-unfocused",
+                "t": 14297
+              },
+              {
+                "type": "activity-visible-focused",
+                "t": 14712
+              }
+            ],
+            "awayStatus": "observed",
+            "backStatus": "observed",
+            "activationMethod": "NSRunningApplication.hide/unhide/activate; no Accessibility call",
+            "syntheticInputPosted": false,
+            "AXReadSent": false,
+            "AXValueSet": false,
+            "AXPressSent": false
+          },
+          "timerGapEvents": [
+            {
+              "type": "timer-gap-trigger",
+              "t": 1000
+            }
+          ],
+          "candidateCleanupVerified": true,
+          "sinkCleanupVerified": true,
+          "secureInputAfterCleanup": false
+        },
+        {
+          "mode": "stable",
+          "status": "no-action-observed",
+          "binarySHA256": "9209232c7bb0f3186b4b3e8dd9d6f9187818c809d797131935733d02fcf4feac",
+          "engineIdentity": {
+            "pid": 37686,
+            "executable": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development",
+            "mappedFrameworks": {
+              "WebKit": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebKit.framework/Versions/A/WebKit",
+              "JavaScriptCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/JavaScriptCore.framework/Versions/A/JavaScriptCore",
+              "WebCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebCore.framework/Versions/A/WebCore"
+            }
+          },
+          "pageTimerReady": true,
+          "timerReadiness": [
+            {
+              "type": "timer-ready",
+              "t": 757,
+              "x": 507,
+              "y": 10
+            }
+          ],
+          "initialAcceptedActions": 1,
+          "stationaryNewActions": 0,
+          "stationaryAcceptedInputEvents": 0,
+          "candidate": {
+            "pid": 37683,
+            "beforeAccepted": 1,
+            "newActionsWhileDeactivating": 0,
+            "newActionsWhileActivating": 0,
+            "newSubmissions": [],
+            "acceptedInputEvents": 0,
+            "diagnosticFocusEvents": [
+              "FOCUS_DIAGNOSTIC phase=resigned-key viewSecureOwner=false",
+              "FOCUS_DIAGNOSTIC phase=resigned-key actualKey=false logicalKey=false actualVisible=false logicalVisible=false foreground=37683 secureInput=false",
+              "FOCUS_DIAGNOSTIC phase=resigned-key-settled viewSecureOwner=false",
+              "FOCUS_DIAGNOSTIC phase=resigned-key-settled actualKey=false logicalKey=false actualVisible=false logicalVisible=false foreground=37675 secureInput=false",
+              "FOCUS_DIAGNOSTIC phase=became-key viewSecureOwner=false",
+              "FOCUS_DIAGNOSTIC phase=became-key actualKey=true logicalKey=true actualVisible=true logicalVisible=true foreground=37683 secureInput=false",
+              "FOCUS_DIAGNOSTIC phase=became-key-settled viewSecureOwner=false",
+              "FOCUS_DIAGNOSTIC phase=became-key-settled actualKey=true logicalKey=true actualVisible=true logicalVisible=true foreground=37683 secureInput=false"
+            ],
+            "secureInputBefore": false,
+            "secureInputWhileAway": false,
+            "secureInputAfterReturn": false,
+            "pageActivityBefore": [
+              {
+                "type": "activity-visible-focused",
+                "t": 10
+              },
+              {
+                "type": "activity-visible-focused",
+                "t": 9
+              }
+            ],
+            "pageActivityWhileAway": [
+              {
+                "type": "activity-visible-focused",
+                "t": 10
+              },
+              {
+                "type": "activity-visible-focused",
+                "t": 9
+              }
+            ],
+            "pageActivityAfterReturn": [
+              {
+                "type": "activity-visible-focused",
+                "t": 10
+              },
+              {
+                "type": "activity-visible-focused",
+                "t": 9
+              }
+            ],
+            "awayStatus": "observed",
+            "backStatus": "observed",
+            "activationMethod": "NSRunningApplication.hide/unhide/activate; no Accessibility call",
+            "syntheticInputPosted": false,
+            "AXReadSent": false,
+            "AXValueSet": false,
+            "AXPressSent": false
+          },
+          "timerGapEvents": [],
+          "candidateCleanupVerified": true,
+          "sinkCleanupVerified": true,
+          "secureInputAfterCleanup": false
+        }
+      ]
+    },
+    {
+      "humanBaseline": false,
+      "scope": "Local timer-gap action after private authorized startup. No external input posted.",
+      "stationarySeconds": 3,
+      "hiddenSeconds": 8,
+      "activeAnimation": true,
+      "modes": [
+        {
+          "mode": "native",
+          "status": "autonomous-website-action",
+          "binarySHA256": "99b4724afdd704002ffbe63672c9c1451e9afe078e590e2f33196c4f7c950b10",
+          "engineIdentity": {
+            "pid": 37916,
+            "executable": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development",
+            "mappedFrameworks": {
+              "WebKit": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebKit.framework/Versions/A/WebKit",
+              "JavaScriptCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/JavaScriptCore.framework/Versions/A/JavaScriptCore",
+              "WebCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebCore.framework/Versions/A/WebCore"
+            }
+          },
+          "pageTimerReady": true,
+          "timerReadiness": [
+            {
+              "type": "timer-ready",
+              "t": 692,
+              "x": 442,
+              "y": 10
+            }
+          ],
+          "initialAcceptedActions": 1,
+          "stationaryNewActions": 0,
+          "stationaryAcceptedInputEvents": 0,
+          "candidate": {
+            "pid": 37913,
+            "beforeAccepted": 1,
+            "newActionsWhileDeactivating": 1,
+            "newActionsWhileActivating": 0,
+            "newSubmissions": [
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedInputEvents": 0,
+            "diagnosticFocusEvents": [
+              "FOCUS_DIAGNOSTIC phase=resigned-key viewSecureOwner=false",
+              "FOCUS_DIAGNOSTIC phase=resigned-key actualKey=false logicalKey=false actualVisible=false logicalVisible=false foreground=37913 secureInput=false",
+              "FOCUS_DIAGNOSTIC phase=resigned-key-settled viewSecureOwner=false",
+              "FOCUS_DIAGNOSTIC phase=resigned-key-settled actualKey=false logicalKey=false actualVisible=false logicalVisible=false foreground=37905 secureInput=false",
+              "FOCUS_DIAGNOSTIC phase=became-key viewSecureOwner=false",
+              "FOCUS_DIAGNOSTIC phase=became-key actualKey=true logicalKey=true actualVisible=true logicalVisible=true foreground=37913 secureInput=false",
+              "FOCUS_DIAGNOSTIC phase=became-key-settled viewSecureOwner=false",
+              "FOCUS_DIAGNOSTIC phase=became-key-settled actualKey=true logicalKey=true actualVisible=true logicalVisible=true foreground=37913 secureInput=false"
+            ],
+            "secureInputBefore": false,
+            "secureInputWhileAway": false,
+            "secureInputAfterReturn": false,
+            "pageActivityBefore": [
+              {
+                "type": "activity-visible-focused",
+                "t": 12
+              },
+              {
+                "type": "activity-visible-focused",
+                "t": 10
+              }
+            ],
+            "pageActivityWhileAway": [
+              {
+                "type": "activity-visible-focused",
+                "t": 12
+              },
+              {
+                "type": "activity-visible-focused",
+                "t": 10
+              },
+              {
+                "type": "activity-hidden-focused",
+                "t": 5936
+              }
+            ],
+            "pageActivityAfterReturn": [
+              {
+                "type": "activity-visible-focused",
+                "t": 12
+              },
+              {
+                "type": "activity-visible-focused",
+                "t": 10
+              },
+              {
+                "type": "activity-hidden-focused",
+                "t": 5936
+              },
+              {
+                "type": "activity-visible-unfocused",
+                "t": 14231
+              },
+              {
+                "type": "activity-visible-focused",
+                "t": 14644
+              }
+            ],
+            "awayStatus": "observed",
+            "backStatus": "observed",
+            "activationMethod": "NSRunningApplication.hide/unhide/activate; no Accessibility call",
+            "syntheticInputPosted": false,
+            "AXReadSent": false,
+            "AXValueSet": false,
+            "AXPressSent": false
+          },
+          "timerGapEvents": [
+            {
+              "type": "timer-gap-trigger",
+              "t": 1079
+            }
+          ],
+          "candidateCleanupVerified": true,
+          "sinkCleanupVerified": true,
+          "secureInputAfterCleanup": false
+        },
+        {
+          "mode": "stable",
+          "status": "no-action-observed",
+          "binarySHA256": "9209232c7bb0f3186b4b3e8dd9d6f9187818c809d797131935733d02fcf4feac",
+          "engineIdentity": {
+            "pid": 38210,
+            "executable": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development",
+            "mappedFrameworks": {
+              "WebKit": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebKit.framework/Versions/A/WebKit",
+              "JavaScriptCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/JavaScriptCore.framework/Versions/A/JavaScriptCore",
+              "WebCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebCore.framework/Versions/A/WebCore"
+            }
+          },
+          "pageTimerReady": true,
+          "timerReadiness": [
+            {
+              "type": "timer-ready",
+              "t": 705,
+              "x": 455,
+              "y": 10
+            }
+          ],
+          "initialAcceptedActions": 1,
+          "stationaryNewActions": 0,
+          "stationaryAcceptedInputEvents": 0,
+          "candidate": {
+            "pid": 38204,
+            "beforeAccepted": 1,
+            "newActionsWhileDeactivating": 0,
+            "newActionsWhileActivating": 0,
+            "newSubmissions": [],
+            "acceptedInputEvents": 0,
+            "diagnosticFocusEvents": [
+              "FOCUS_DIAGNOSTIC phase=resigned-key viewSecureOwner=false",
+              "FOCUS_DIAGNOSTIC phase=resigned-key actualKey=false logicalKey=false actualVisible=false logicalVisible=false foreground=38204 secureInput=false",
+              "FOCUS_DIAGNOSTIC phase=resigned-key-settled viewSecureOwner=false",
+              "FOCUS_DIAGNOSTIC phase=resigned-key-settled actualKey=false logicalKey=false actualVisible=false logicalVisible=false foreground=38196 secureInput=false",
+              "FOCUS_DIAGNOSTIC phase=became-key viewSecureOwner=false",
+              "FOCUS_DIAGNOSTIC phase=became-key actualKey=true logicalKey=true actualVisible=true logicalVisible=true foreground=38204 secureInput=false",
+              "FOCUS_DIAGNOSTIC phase=became-key-settled viewSecureOwner=false",
+              "FOCUS_DIAGNOSTIC phase=became-key-settled actualKey=true logicalKey=true actualVisible=true logicalVisible=true foreground=38204 secureInput=false"
+            ],
+            "secureInputBefore": false,
+            "secureInputWhileAway": false,
+            "secureInputAfterReturn": false,
+            "pageActivityBefore": [
+              {
+                "type": "activity-visible-focused",
+                "t": 12
+              },
+              {
+                "type": "activity-visible-focused",
+                "t": 7
+              }
+            ],
+            "pageActivityWhileAway": [
+              {
+                "type": "activity-visible-focused",
+                "t": 12
+              },
+              {
+                "type": "activity-visible-focused",
+                "t": 7
+              }
+            ],
+            "pageActivityAfterReturn": [
+              {
+                "type": "activity-visible-focused",
+                "t": 12
+              },
+              {
+                "type": "activity-visible-focused",
+                "t": 7
+              }
+            ],
+            "awayStatus": "observed",
+            "backStatus": "observed",
+            "activationMethod": "NSRunningApplication.hide/unhide/activate; no Accessibility call",
+            "syntheticInputPosted": false,
+            "AXReadSent": false,
+            "AXValueSet": false,
+            "AXPressSent": false
+          },
+          "timerGapEvents": [],
+          "candidateCleanupVerified": true,
+          "sinkCleanupVerified": true,
+          "secureInputAfterCleanup": false
+        }
+      ]
+    }
+  ],
+  "build": {
+    "command": [
+      "/usr/bin/nice",
+      "-n",
+      "10",
+      "/usr/bin/xcrun",
+      "xcodebuild",
+      "-scheme",
+      "Everything up to WebKit",
+      "-UseSanitizedBuildSystemEnvironment=YES",
+      "-ShowBuildOperationDuration=YES",
+      "-workspace",
+      "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/WebKit-94f9b7905e3ce9a3d7497f26b563adcad6b7525f/WebKit.xcworkspace",
+      "-configuration",
+      "Release",
+      "-destination",
+      "platform=macOS,devicetype=Mac,arch=arm64",
+      "SYMROOT=/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output",
+      "OBJROOT=/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output",
+      "SDKROOT=macosx",
+      "-jobs",
+      "4",
+      "ARCHS=arm64",
+      "ONLY_ACTIVE_ARCH=YES",
+      "MACOSX_DEPLOYMENT_TARGET=26.6",
+      "TMPDIR=$(TARGET_TEMP_DIR)/",
+      "-derivedDataPath",
+      "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/DerivedData",
+      "SHARED_PRECOMPS_DIR=/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/PrecompiledHeaders"
+    ],
+    "output": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output",
+    "source": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/WebKit-94f9b7905e3ce9a3d7497f26b563adcad6b7525f",
+    "minimumFreeBytes": 64424509440,
+    "timeoutSeconds": 7200,
+    "metalCompiler": "Apple metal version 32023.921 (metalfe-32023.921.6)\nTarget: air64-apple-darwin25.6.0\nThread model: posix\nInstalledDir: /private/var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v27.1.266.1.KRj5MS/Metal.xctoolchain/usr/metal/current/bin",
+    "monitorPID": 27276,
+    "status": "succeeded",
+    "scope": "Everything up to WebKit scheme; ImageDiff excluded",
+    "engineCompiled": true,
+    "engineRuntimeTested": false,
+    "processGroupPID": 27280,
+    "exitCode": 0,
+    "elapsedSeconds": 50.3
+  },
+  "source": {
+    "revision": "94f9b7905e3ce9a3d7497f26b563adcad6b7525f",
+    "patchSHA256": "f615ce0df91cd1bd4f729c86b704d18bb1a00e00d1aadf3abe9fa203041bb6ac",
+    "files": {
+      "Source/WebKit/UIProcess/WebPageProxy.h": "14820bf1107ef6f84875b27d9d327b9f7fe3680869d041f801cefbaf94d0d327",
+      "Source/WebKit/UIProcess/WebPageProxy.cpp": "f9ef07131a4f6144cd4c1132b5e707df8c4828cd8dfa5c8182ab20d33de956b6",
+      "Source/WebKit/Shared/WebPageCreationParameters.h": "0062011494f74ce1f7ca6c760043bbcf2ba51b95850b8b3c6640a3e8e4211243",
+      "Source/WebKit/UIProcess/mac/WebViewImpl.mm": "1f67ebabf51704d820f9132d82b1914c8d0f5afaa0127b24f834b7508bbc7024",
+      "Source/WebKit/UIProcess/API/Cocoa/WKWebViewPrivate.h": "6876f58aa1b65fd3fa672bc5136f7063c16b4e42f4d48026e55a4d3f9876ae55",
+      "Source/WebCore/page/ActivityState.h": "82cc404269bf01aa3fac7819126440d54843c1d4ea26da9778fb96c1a9cea473",
+      "Source/WebKit/UIProcess/API/APIPageConfiguration.cpp": "58cf1440a4a3df0f21a8ddbc565e253c44d5a6f39139d34578915c4dbf0ea58f",
+      "Source/WebKit/UIProcess/API/APIPageConfiguration.h": "2174b4811d018dee7f8f34bf3c04a06c2c4f1b93ab69026b0861d609c439572f",
+      "Source/WebKit/UIProcess/API/Cocoa/WKWebViewConfiguration.mm": "8a3b9c315f49b306538a5b80e7a2e43334e656d8d4287f2234458e7e000a534e",
+      "Source/WebKit/UIProcess/API/Cocoa/WKWebViewConfigurationPrivate.h": "aa3d3dc63239bd5f7e35a9b4ee1f6500372b6a1307db3668445f105d7807ac5f",
+      "Tools/Scripts/build-webkit": "4802a9b261e77607edcce0cfc50965f161ab55c90b690f2d5909f775f629d93d",
+      "Tools/Scripts/webkitdirs.pm": "b2adefbc5ad2bd656458484fc9c5757c42c15124675dae1692788ec38b7857cf",
+      "Source/WebKit/UIProcess/ContentActivityProjection.h": "306e4cdb3ec895fd791a6fa90d62be63d0a47ecab1107ad72412ad76cb0bc933"
+    },
+    "engineCompiled": false,
+    "engineRuntimeTested": false
+  },
+  "frameworkSHA256": {
+    "WebKit": "e6d6d7e654ad69f2cadfbe4210c388f9942553b8c76e265e9d8ea083ed075adb",
+    "WebCore": "8991e52e0b60924f57e650b8b4645ba7d7987c5dc45af8024e03e02fe8a586b3",
+    "JavaScriptCore": "0eb64291e863b9f1b1561da2eebe0f373f35a34333722c4fa23e0e4a7eb49bb1"
+  }
+}

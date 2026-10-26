@@ -31,3 +31,12 @@ The native trial measured a maximum interval of 1,000 milliseconds and chose a 1
 macOS also reported the console locked. That flag remains advisory. The failed activation receipt independently prevents a valid negative comparison. All 112 Python checks pass. Temporary process cleanup passed, and Secure Event Input returned to off. The revised engine remains compiled, with its runtime repair unverified.
 
 A desktop-unlock request is pending. Resume with the adaptive timer comparison after foreground controls work. Then run the password ownership control and the broader editor/input matrix. Keep the frozen physical browser and permissioned probes unchanged.
+
+
+## Milestone 86: unlocked timer comparison
+
+Three fresh native/stable comparisons passed their stationary controls. Each native mode completed one timer-triggered action after hiding. Native gaps measured 1,000, 1,000, and 1,079 milliseconds. Each stable mode recorded no timer action during the same eight-second hide cycle.
+
+All six activation cycles admitted zero input events. UI and content framework identities passed in every trial. Every temporary process passed cleanup. Secure Event Input returned to off after every comparison. The frozen physical browser and probes remain unchanged.
+
+These results support the revised projection for the measured adaptive timer route. They do not establish every timing signal or website as agent-free. Native ownership, independent element focus, and additional external actions remain separate checks.

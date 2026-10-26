@@ -1,0 +1,113 @@
+{
+  "milestone": 75,
+  "pythonChecksPassed": 102,
+  "pureScopeChecksPassed": true,
+  "pureScopeChecksUseProcessAPI": false,
+  "experiments": {
+    "pagehide": {
+      "surface": "pagehide-action",
+      "humanBaseline": false,
+      "binarySHA256": {
+        "NativeProbe": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1",
+        "InternalKeyboardControl": "cea9e10892fc4f237c828ddb96514ba42db6f8498d70fc33e1ae09ae629eecf9",
+        "InspectableControl": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+        "ResearchQuit": "bd14f723d640c52ea64329ad222f1b33f28bb5391f23a759e8936b7fac128159"
+      },
+      "status": "inconclusive",
+      "referenceArming": {
+        "focusError": 0,
+        "pid": 75900,
+        "pressError": 0,
+        "setValueError": 0,
+        "status": "attempted",
+        "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+      },
+      "reference": {
+        "quit": {
+          "requested": true,
+          "terminated": true
+        },
+        "newSubmissions": [],
+        "acceptedInputEvents": 0,
+        "status": "inconclusive",
+        "syntheticInputPosted": false,
+        "AXCallDuringQuit": false
+      },
+      "referenceCleanupVerified": true,
+      "reason": "Readable reference did not record a quit action",
+      "secureInputAfterCleanup": false
+    },
+    "unload": {
+      "surface": "unload-action",
+      "humanBaseline": false,
+      "binarySHA256": {
+        "NativeProbe": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1",
+        "InternalKeyboardControl": "cea9e10892fc4f237c828ddb96514ba42db6f8498d70fc33e1ae09ae629eecf9",
+        "InspectableControl": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+        "ResearchQuit": "bd14f723d640c52ea64329ad222f1b33f28bb5391f23a759e8936b7fac128159"
+      },
+      "status": "inconclusive",
+      "referenceArming": {
+        "focusError": 0,
+        "pid": 76136,
+        "pressError": 0,
+        "setValueError": 0,
+        "status": "attempted",
+        "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+      },
+      "reference": {
+        "quit": {
+          "requested": true,
+          "terminated": true
+        },
+        "newSubmissions": [],
+        "acceptedInputEvents": 0,
+        "status": "inconclusive",
+        "syntheticInputPosted": false,
+        "AXCallDuringQuit": false
+      },
+      "referenceCleanupVerified": true,
+      "reason": "Readable reference did not record a quit action",
+      "secureInputAfterCleanup": false
+    },
+    "scopeIntegration": {
+      "surface": "pagehide-action",
+      "humanBaseline": false,
+      "binarySHA256": {
+        "NativeProbe": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1",
+        "InternalKeyboardControl": "cea9e10892fc4f237c828ddb96514ba42db6f8498d70fc33e1ae09ae629eecf9",
+        "InspectableControl": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+        "ResearchQuit": "a04c35775eeae5592cdb5d99572f2fadb1b50ea944e575c4e1e3d46fd3afe2f1"
+      },
+      "status": "inconclusive",
+      "referenceArming": {
+        "focusError": 0,
+        "pid": 82126,
+        "pressError": 0,
+        "setValueError": 0,
+        "status": "attempted",
+        "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+      },
+      "reference": {
+        "quit": {
+          "requested": true,
+          "terminated": true
+        },
+        "newSubmissions": [],
+        "acceptedInputEvents": 0,
+        "status": "inconclusive",
+        "syntheticInputPosted": false,
+        "AXCallDuringQuit": false
+      },
+      "referenceCleanupVerified": true,
+      "reason": "Readable reference did not record a quit action",
+      "secureInputAfterCleanup": false
+    }
+  },
+  "optionalPhysicalRefusalTest": {
+    "executed": false,
+    "automaticApprovalReview": "rejected: a faulty guard could close the frozen browser",
+    "replacement": "pure scope predicate checks"
+  },
+  "engineRuntimeTested": false
+}

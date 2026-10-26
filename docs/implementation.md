@@ -452,3 +452,8 @@ The optional page observer records state transitions and page-local timestamps. 
 ## Milestone 74: correct quiet-log interpretation
 
 A forced PAL compile emitted the quiet-mode error wrapper but exited zero and regenerated its object. The previous full-build cache interpretation was unsupported. Those runs stopped before their final exit status. The full build now uses normal logging and upstream caching. Explicit future receipt states distinguish success, failure, and a stopped monitor. All 102 Python checks pass, including two real child-process status checks. See [log findings](engine-log-findings.md).
+
+
+## Milestone 75: graceful-quit controls and strict helper scope
+
+Readable pagehide and unload references terminated without recording beacon actions. The candidate comparisons were skipped. A third reference checked the refactored helper. All cleanups passed. Pure scope checks cover the two exact disposable targets and reject physical or mismatched identities. The rejected optional physical refusal check did not execute. All 102 Python checks pass. See [quit findings](quit-lifecycle-findings.md).

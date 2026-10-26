@@ -211,3 +211,9 @@ A later PAL reproduction proves the quiet-log zero-exit messages are cosmetic: t
 A forced PAL Swift compile reproduced the zero-exit/no-output message in quiet mode, exited zero, and regenerated its object. The earlier cache-failure attribution is unsupported. Full attempts four through six were manually interrupted before their final exit. The confirmed configuration, Metal, and temporary-directory failures remain valid separate findings. See [log findings](engine-log-findings.md).
 
 The seventh full build remains active in exec session 3890. It reached WebCore with normal logging and upstream caching. Its current monitor predates the new explicit status field. Read its actual exitCode and engineCompiled fields when it ends. Do not stop it because a log line contains error wording. All 102 Python checks pass. The prepared InternalKeyboardControl is currently ordinary, capture-restricted, with private resume and ownership logging.
+
+## Milestone 75 graceful-quit controls
+
+Readable pagehide and unload controls both terminated but recorded no action. Their candidate tests were skipped. A third readable run verified the refactored helper against a disposable control. These are inconclusive, not blocked results. The helper permits only exact disposable app paths. Its pure scope tests reject the physical identity without process access. All 102 Python checks pass. See [quit findings](quit-lifecycle-findings.md).
+
+Automatic approval review rejected an optional live refusal test against the frozen physical browser. It did not execute. Pure tests replaced it, and no required permission question is pending. The eighth engine build is active in exec session 22023. The seventh genuinely failed because a credential API requires macOS 26.2. The eighth target matches this Mac at 26.6.

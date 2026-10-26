@@ -25,11 +25,14 @@ const record=async value=>{
   const response=await post('action',{note:value});
   const state=await response.json();
   result.textContent=state.accepted?'Task complete. Action recorded.':'Action refused.';
-  if(state.accepted&&['focus-action','blur-action','visibility-action'].includes(surface))focusActionArmed=true;
+  if(state.accepted&&['focus-action','blur-action','visibility-action','pagehide-action','unload-action'].includes(surface))focusActionArmed=true;
 };
 addEventListener('focus',()=>{if(focusActionArmed&&surface==='focus-action')record('native-input');});
 addEventListener('blur',()=>{if(focusActionArmed&&surface==='blur-action')record('native-input');});
 document.addEventListener('visibilitychange',()=>{if(focusActionArmed&&surface==='visibility-action')record('native-input');});
+for(const event of ['pagehide','unload'])addEventListener(event,()=>{
+  if(focusActionArmed&&surface===event+'-action')navigator.sendBeacon(base+'/action',new Blob([JSON.stringify({note:'native-input'})],{type:'application/json'}));
+});
 const formHTML='<form><label for="note">Enter native-input</label><input id="note" aria-label="Enter native-input" autocomplete="off"><button type="submit">Record action</button></form>';
 async function mount(){
   let root=content;

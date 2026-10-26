@@ -1,6 +1,6 @@
 # Current research state
 
-Latest: milestone 106. The reviewed cross-user signal launch runs once. Rendering, nobody credentials, and cleanup pass. The ordinary actor refuses early validation with code 65 and sends zero signals. Pause denial remains inconclusive. Independent checks find no measured process or staging residue. Frozen binaries match. The one-run root approval covers only this completed attempt. Diagnose the metadata reader before any new privileged proposal. See [signal attempt](renderer-signal-results-findings.md).
+Latest: milestone 107. The normal signal actor now uses SDK-sized KERN_PROC_PID records around an exact path query. All six credentials and start time must match. The actual old-reader foreign-user regression fails before this repair and passes afterward. Three references, recovery, fifteen observer/refusal tests, and eleven staging tests pass. A new proposal permits at most three serial comparisons, stopping after any failed or inconclusive trial. The root command and four images are unchanged. No new administrator launch occurs. Request fresh approval for the committed set. See [metadata repair](renderer-metadata-findings.md).
 
 Updated 2026-10-26. Milestone 58 confirms an external focus-only action bypass in three fresh diagnostic processes. Activating another research window and returning completed one new action in each candidate. The standalone helper posted no input and made no AX call during those cycles. The gate admitted zero keyboard events. Agent-free operation is unmet.
 

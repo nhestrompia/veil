@@ -12,6 +12,7 @@
 #include <string.h>
 #include <sys/proc.h>
 #include <sys/stat.h>
+#include <sys/sysctl.h>
 #include <sys/wait.h>
 #include <time.h>
 #include <unistd.h>
@@ -48,24 +49,84 @@ static bool number(const char *text, uint64_t *value)
     return !errno && !*end;
 }
 
+struct metadata_failure {
+    const char *api;
+    int error;
+    size_t bytes;
+};
+
+static bool same_metadata(const struct proc_bsdinfo *first, const struct proc_bsdinfo *second)
+{
+    return first->pbi_pid == second->pbi_pid && first->pbi_start_tvsec == second->pbi_start_tvsec
+        && first->pbi_start_tvusec == second->pbi_start_tvusec && first->pbi_uid == second->pbi_uid
+        && first->pbi_ruid == second->pbi_ruid && first->pbi_svuid == second->pbi_svuid
+        && first->pbi_gid == second->pbi_gid && first->pbi_rgid == second->pbi_rgid && first->pbi_svgid == second->pbi_svgid;
+}
+
+static bool read_kernel_identity(pid_t pid, struct proc_bsdinfo *identity, struct metadata_failure *failure, const char *api)
+{
+    *failure = (struct metadata_failure){api, EINVAL, 0};
+    if (pid <= 0) return false;
+    memset(identity, 0, sizeof(*identity));
+    struct kinfo_proc info = {0};
+    size_t size = sizeof(info);
+    int mib[] = {CTL_KERN, KERN_PROC, KERN_PROC_PID, pid};
+    errno = 0;
+    int result = sysctl(mib, 4, &info, &size, NULL, 0);
+    failure->error = result ? errno : ESRCH;
+    failure->bytes = size;
+    if (result || size != sizeof(info) || info.kp_proc.p_pid != pid) return false;
+    if (info.kp_eproc.e_ucred.cr_ngroups < 1 || info.kp_eproc.e_ucred.cr_ngroups > NGROUPS
+        || info.kp_proc.p_starttime.tv_sec <= 0 || info.kp_proc.p_starttime.tv_usec < 0
+        || info.kp_proc.p_starttime.tv_usec >= 1000000) {
+        failure->error = EPROTO;
+        return false;
+    }
+    identity->pbi_pid = pid;
+    identity->pbi_uid = info.kp_eproc.e_ucred.cr_uid;
+    identity->pbi_ruid = info.kp_eproc.e_pcred.p_ruid;
+    identity->pbi_svuid = info.kp_eproc.e_pcred.p_svuid;
+    identity->pbi_gid = info.kp_eproc.e_ucred.cr_groups[0];
+    identity->pbi_rgid = info.kp_eproc.e_pcred.p_rgid;
+    identity->pbi_svgid = info.kp_eproc.e_pcred.p_svgid;
+    identity->pbi_start_tvsec = info.kp_proc.p_starttime.tv_sec;
+    identity->pbi_start_tvusec = info.kp_proc.p_starttime.tv_usec;
+    identity->pbi_status = info.kp_proc.p_stat;
+    return true;
+}
+
+static bool read_target_detailed(pid_t pid, struct target *value, struct metadata_failure *failure)
+{
+    struct metadata_failure ignored;
+    if (!failure) failure = &ignored;
+    memset(value, 0, sizeof(*value));
+    if (!read_kernel_identity(pid, &value->identity, failure, "sysctl-kern-proc-pid")) return false;
+    value->pid = pid;
+    failure->api = "proc-pidpath";
+    errno = 0;
+    int length = proc_pidpath(pid, value->path, sizeof(value->path));
+    failure->error = errno;
+    failure->bytes = length > 0 ? (size_t)length : 0;
+    if (length <= 0) return false;
+    struct proc_bsdinfo after;
+    if (!read_kernel_identity(pid, &after, failure, "sysctl-kern-proc-pid-recheck")) return false;
+    if (!same_metadata(&value->identity, &after)) {
+        failure->error = EAGAIN;
+        return false;
+    }
+    value->identity.pbi_status = after.pbi_status;
+    return true;
+}
+
 static bool read_target(pid_t pid, struct target *value)
 {
-    value->pid = pid;
-    return proc_pidinfo(pid, PROC_PIDTBSDINFO, 0, &value->identity, sizeof(value->identity)) == sizeof(value->identity)
-        && proc_pidpath(pid, value->path, sizeof(value->path)) > 0;
+    return read_target_detailed(pid, value, NULL);
 }
 
 static bool unchanged(const struct target *expected, struct target *current)
 {
     return read_target(expected->pid, current) && !strcmp(expected->path, current->path)
-        && expected->identity.pbi_start_tvsec == current->identity.pbi_start_tvsec
-        && expected->identity.pbi_start_tvusec == current->identity.pbi_start_tvusec
-        && expected->identity.pbi_ruid == current->identity.pbi_ruid
-        && expected->identity.pbi_uid == current->identity.pbi_uid
-        && expected->identity.pbi_svuid == current->identity.pbi_svuid
-        && expected->identity.pbi_rgid == current->identity.pbi_rgid
-        && expected->identity.pbi_gid == current->identity.pbi_gid
-        && expected->identity.pbi_svgid == current->identity.pbi_svgid;
+        && same_metadata(&expected->identity, &current->identity);
 }
 
 static bool host_path(const char *path, bool isolated)
@@ -152,12 +213,19 @@ int main(int argc, char **argv)
         if (!number(argv[2 + i*3], &pid) || pid <= 1 || pid > INT_MAX
             || !number(argv[3 + i*3], &seconds) || !number(argv[4 + i*3], &microseconds) || microseconds >= 1000000)
             return 64;
-        if (!read_target((pid_t)pid, &targets[i])) return 65;
+        struct metadata_failure failure;
+        if (!read_target_detailed((pid_t)pid, &targets[i], &failure)) {
+            const char *role_names[] = {"host", "content", "gpu", "network"};
+            printf("SIGNAL_SCOPE_REFUSAL {\"role\":\"%s\",\"pid\":%d,\"api\":\"%s\",\"errno\":%d,\"bytes\":%zu,\"signalCallsSent\":0}\n",
+                role_names[i], (pid_t)pid, failure.api, failure.error, failure.bytes);
+            return 65;
+        }
         struct proc_bsdinfo *info = &targets[i].identity;
         if ((i == 0 ? !host_path(targets[i].path, isolated) : !service_path(targets[i].path, i))) return 66;
         if (info->pbi_start_tvsec != seconds || info->pbi_start_tvusec != microseconds
             || info->pbi_uid != uid || info->pbi_ruid != uid || info->pbi_svuid != uid
-            || info->pbi_gid != gid || info->pbi_rgid != gid || info->pbi_svgid != gid || info->pbi_status == SSTOP)
+            || info->pbi_gid != gid || info->pbi_rgid != gid || info->pbi_svgid != gid
+            || info->pbi_status == SSTOP || info->pbi_status == SZOMB)
             return 67;
         for (unsigned j = 0; j < i; ++j) if (targets[j].pid == (pid_t)pid) return 68;
     }
@@ -176,7 +244,8 @@ int main(int argc, char **argv)
     const char *names[] = {"host", "content", "gpu", "network"};
     for (unsigned i = 0; i < 4; ++i) {
         struct target current;
-        if (!unchanged(&targets[0], &current) || !unchanged(&targets[i], &current) || current.identity.pbi_status == SSTOP) {
+        if (!unchanged(&targets[0], &current) || !unchanged(&targets[i], &current)
+            || current.identity.pbi_status == SSTOP || current.identity.pbi_status == SZOMB) {
             passed = false;
             break;
         }
@@ -213,7 +282,7 @@ int main(int argc, char **argv)
         bool expected = isolated ? stopped == -1 && stop_error == EPERM && continue_expected && not_stopped
             : stopped == 0 && observed && continued == 0 && not_stopped;
         passed = passed && expected && stable;
-        printf("SIGNAL_RESULT {\"role\":\"%s\",\"pid\":%d,\"actorUID\":%u,\"targetUID\":%u,\"stopReturn\":%d,\"stopErrno\":%d,\"observedStopped\":%s,\"continueReturn\":%d,\"continueErrno\":%d,\"actorPOSIXSession\":%d,\"targetPOSIXSession\":%d,\"sameSessionContinue\":%s,\"identityStable\":%s,\"notStoppedAfter\":%s,\"expectedOutcome\":%s}\n",
+        printf("SIGNAL_RESULT {\"metadataAPI\":\"sysctl-kern-proc-pid-and-proc-pidpath\",\"role\":\"%s\",\"pid\":%d,\"actorUID\":%u,\"targetUID\":%u,\"stopReturn\":%d,\"stopErrno\":%d,\"observedStopped\":%s,\"continueReturn\":%d,\"continueErrno\":%d,\"actorPOSIXSession\":%d,\"targetPOSIXSession\":%d,\"sameSessionContinue\":%s,\"identityStable\":%s,\"notStoppedAfter\":%s,\"expectedOutcome\":%s}\n",
             names[i], targets[i].pid, getuid(), uid, stopped, stop_error, observed ? "true" : "false", continued, continue_error,
             actor_session, target_session, session_continue ? "true" : "false", stable ? "true" : "false", not_stopped ? "true" : "false", expected ? "true" : "false");
         if (!recovered) break;

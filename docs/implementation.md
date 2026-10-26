@@ -822,3 +822,14 @@ The reviewed command runs once after the user's continuation approval. The norma
 Rendering, image samples, and nobody credential checks pass. The supervisor reaps the normally exited host and watchdog. Independent checks find none of the five measured process identifiers or the staging directory. All frozen hashes match. Later commands use user ID 501.
 
 The one-run administrator approval covers only this completed attempt. No retry occurs. The actor needs operation-specific diagnostics and a cross-user-compatible metadata reader. See [findings](renderer-signal-results-findings.md) and [evidence](evidence/renderer-signal-results.json).
+
+
+## Milestone 107: cross-user-compatible diagnostic metadata
+
+A readonly comparison reproduces the old reader's cross-user API limitation. BSD info refuses init metadata with EPERM. The separate sysctl and path APIs succeed. The real actor-reader regression fails before the fix and passes afterward.
+
+The actor now reads the SDK process structure, validates its shape, and preserves all six credentials, start time, and exact path checks. A second identity sample brackets the path read. Initial failures name the operation before any signal. Stopped and zombie states refuse. This is a diagnostic SPI, not a production security contract or an atomic process handle.
+
+Three fresh same-user comparisons verify twelve stops and resumes. Parent-death recovery passes. Fifteen observer/refusal tests, eleven staging tests, and the native metadata regression pass. The final actor hash matches the calibrated binary. Root images and the per-launch administrator command remain unchanged.
+
+The new proposal caps comparisons at three serial launches and stops after any failure or inconclusive result. Each invocation consumes an attempt. Verify the helper's exit, rendering, actor outcomes, process exits, and staging removal before another launch. No administrator command runs in this milestone. Fresh approval remains necessary. See [findings](renderer-metadata-findings.md) and [evidence](evidence/renderer-metadata-results.json).

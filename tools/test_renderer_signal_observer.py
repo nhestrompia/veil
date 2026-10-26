@@ -118,6 +118,17 @@ class RendererSignalObserverTests(unittest.TestCase):
 
 @unittest.skipUnless(ACTOR.exists(), 'Build the separate signal actor first')
 class RendererSignalActorRefusalTests(unittest.TestCase):
+    def test_missing_process_reports_metadata_operation_without_signal(self):
+        run = subprocess.run([str(ACTOR), '--reference', *(['2147483647', '0', '0'] * 4)],
+                             capture_output=True, timeout=2)
+        self.assertEqual(run.returncode, 65)
+        prefix = b'SIGNAL_SCOPE_REFUSAL '
+        self.assertTrue(run.stdout.startswith(prefix))
+        record = json.loads(run.stdout[len(prefix):])
+        self.assertEqual(record['api'], 'sysctl-kern-proc-pid')
+        self.assertEqual(record['signalCallsSent'], 0)
+        self.assertEqual(record['bytes'], 0)
+
     def test_missing_or_unknown_mode(self):
         for arguments in ([], ['--unknown', *(['2', '1', '1'] * 4)]):
             run = subprocess.run([str(ACTOR), *arguments], capture_output=True, timeout=2)

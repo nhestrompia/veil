@@ -104,10 +104,15 @@ def observe(plan, baseline, output, launch_process):
                     (output / 'actor.stderr').write_bytes(actor.stderr)
                     rows = prefixed(actor.stdout, 'SIGNAL_RESULT ')
                     footer = prefixed(actor.stdout, 'SIGNAL_ACTOR_RESULT ')
+                    refusals = prefixed(actor.stdout, 'SIGNAL_SCOPE_REFUSAL ')
                     result.update({'exitCode': actor.returncode, 'signals': rows, 'footer': footer,
+                                       'scopeRefusals': refusals,
                                        'allPauseAttemptsDenied': actor.returncode == 0 and len(rows) == 4
                                        and all(row.get('expectedOutcome') is True for row in rows)
                                        and len(footer) == 1 and footer[0].get('passed') is True})
+                    result['verdict'] = ('pause-denied-for-measured-roles' if result['allPauseAttemptsDenied'] else
+                        'pause-permitted' if any(row.get('stopReturn') == 0 for row in rows) else
+                        'inconclusive-metadata-refusal' if refusals else 'inconclusive-actor-result')
                     break
             except FileNotFoundError:
                 pass

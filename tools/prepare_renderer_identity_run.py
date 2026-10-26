@@ -88,12 +88,16 @@ exec(''' + ",".join(values) + ''') or die "fixed tool exec";'''
     return "/usr/bin/perl -T -e " + shlex.quote(code) + ' "$stage"'
 
 
-def stage_script(manifest, source_uid, libraries, stage_uid=0, observe_signals=False):
+def stage_script(manifest, source_uid, libraries, stage_uid=0, observe_signals=False, progress=False):
+    if type(progress) is not bool:
+        raise ValueError('Use a fixed renderer profile')
+    renderer_name = 'RendererProgressProbe' if progress else 'RendererIdentityProbe'
+    app_dir = renderer_name + '.app'
+    executable = '"$stage/' + app_dir + '/Contents/MacOS/' + renderer_name + '"'
     fixed_files = [item["staged"] for item in manifest]
     if observe_signals:
         fixed_files.append("observation.log")
-    dirs = ["RendererIdentityProbe.app", "RendererIdentityProbe.app/Contents",
-            "RendererIdentityProbe.app/Contents/MacOS", "RendererIdentityProbe.app/Contents/_CodeSignature"]
+    dirs = [app_dir, app_dir + '/Contents', app_dir + '/Contents/MacOS', app_dir + '/Contents/_CodeSignature']
     quoted_files = " ".join('"$stage/' + value + '"' for value in fixed_files)
     quoted_dirs = " ".join('"$stage/' + value + '"' for value in dirs)
     cleanup_dirs = " ".join('"$stage/' + value + '"' for value in reversed(dirs))
@@ -103,7 +107,7 @@ def stage_script(manifest, source_uid, libraries, stage_uid=0, observe_signals=F
         'test "$actual" = "' + item["sha256"] + '  $stage/' + item["staged"] + '"'
         for item in manifest)
     checks = []
-    for relative in ("renderer-identity-supervisor", "RendererIdentityProbe.app"):
+    for relative in ("renderer-identity-supervisor", app_dir):
         checks.append(bounded_tool("/usr/bin/codesign", ["--verify", "--strict", "STAGE/" + relative]))
         show = bounded_tool("/usr/bin/codesign", ["-d", "--verbose=2", "STAGE/" + relative])
         checks.append('signature=$(' + show + ' 2>&1)\ncase "$signature" in *\'runtime)\'*) ;; *) exit 2 ;; esac')
@@ -144,12 +148,12 @@ trap 'exit 143' TERM
 /bin/mkdir -p -- ''' + quoted_dirs + '''
 cd "$stage"
 ''' + copy + "\n" + hashes + '''
-/bin/chmod 0700 "$stage/renderer-identity-supervisor" "$stage/RendererIdentityProbe.app/Contents/MacOS/RendererIdentityProbe"
+/bin/chmod 0700 "$stage/renderer-identity-supervisor" ''' + executable + '''
 ''' + "\n".join(checks) + ("\n" + observer_setup if observe_signals else "") + '''
 /bin/chmod -N ''' + quoted_files + " " + quoted_dirs + '''
 /bin/chmod 0444 ''' + quoted_files + '''
 /bin/chmod 0700 "$stage/renderer-identity-supervisor"
-/bin/chmod 0555 "$stage/RendererIdentityProbe.app/Contents/MacOS/RendererIdentityProbe" ''' + quoted_dirs + '''
+/bin/chmod 0555 ''' + executable + ' ' + quoted_dirs + '''
 /bin/chmod 0711 "$stage"
 set +e
 /usr/bin/env -i PATH=/usr/bin:/bin:/usr/sbin:/sbin LC_ALL=C "$stage/renderer-identity-supervisor" --root-smoke''' + observer_redirect + '''
@@ -162,14 +166,19 @@ printf '\\nSTAGING_RESULT {"helperExitCode":%s,"temporaryDirectory":"%s","stagin
 '''
 
 
-def prepare(output):
+def prepare(output, progress=False):
     if os.getuid() == 0 or os.geteuid() == 0:
         raise ValueError("Prepare only as the ordinary research user")
-    actual = sorted(str(path.relative_to(APP)) for path in APP.rglob("*") if path.is_file())
-    if actual != sorted(APP_FILES):
+    if type(progress) is not bool:
+        raise ValueError('Use a fixed renderer profile')
+    app = ROOT / 'dist/RendererProgressProbe.app' if progress else APP
+    supervisor = ROOT / '.build/renderer-progress-supervisor' if progress else SUPERVISOR
+    app_files = ('Contents/Info.plist', 'Contents/MacOS/' + app.stem, 'Contents/_CodeSignature/CodeResources')
+    actual = sorted(str(path.relative_to(app)) for path in app.rglob("*") if path.is_file())
+    if actual != sorted(app_files):
         raise ValueError("The probe bundle must contain exactly three known files")
     manifest = []
-    for source, staged in [(SUPERVISOR, "renderer-identity-supervisor"), *[(APP / name, "RendererIdentityProbe.app/" + name) for name in APP_FILES]]:
+    for source, staged in [(supervisor, "renderer-identity-supervisor"), *[(app / name, app.name + '/' + name) for name in app_files]]:
         info = source.lstat()
         if not stat.S_ISREG(info.st_mode) or info.st_uid != os.getuid() or info.st_nlink != 1 or info.st_mode & 0o022:
             raise ValueError("A source image has unsafe metadata")
@@ -178,7 +187,7 @@ def prepare(output):
         manifest.append({"source": str(source), "staged": staged, "size": info.st_size,
                          "sha256": hashlib.sha256(source.read_bytes()).hexdigest()})
     libraries = {}
-    for binary in (SUPERVISOR, APP / "Contents/MacOS/RendererIdentityProbe"):
+    for binary in (supervisor, app / ('Contents/MacOS/' + app.stem)):
         subprocess.run(["codesign", "--verify", "--strict", str(binary)], check=True, capture_output=True)
         show = subprocess.run(["codesign", "-dvv", str(binary)], check=True, capture_output=True, text=True)
         if "runtime)" not in show.stderr:
@@ -187,15 +196,15 @@ def prepare(output):
         dependencies = [line.strip().split()[0] for line in deps.splitlines()[1:]]
         if any(not value.startswith(("/usr/lib/", "/System/Library/Frameworks/")) for value in dependencies):
             raise ValueError("Only absolute system dependencies are accepted")
-        if binary == SUPERVISOR and dependencies != ["/usr/lib/libSystem.B.dylib"]:
+        if binary == supervisor and dependencies != ["/usr/lib/libSystem.B.dylib"]:
             raise ValueError("The root supervisor must load only libSystem")
         load = subprocess.run(["otool", "-l", str(binary)], check=True, capture_output=True, text=True).stdout
         if "LC_RPATH" in load or "LC_DYLD_ENVIRONMENT" in load:
             raise ValueError("Loader overrides are forbidden")
-        key = "renderer-identity-supervisor" if binary == SUPERVISOR else "RendererIdentityProbe.app/Contents/MacOS/RendererIdentityProbe"
+        key = "renderer-identity-supervisor" if binary == supervisor else app.name + '/Contents/MacOS/' + app.stem
         libraries[key] = dependencies
-    preflight = json.loads(subprocess.run([str(SUPERVISOR), "--preflight"], check=True, capture_output=True, text=True, timeout=4).stdout)
-    script = stage_script(manifest, os.getuid(), libraries)
+    preflight = json.loads(subprocess.run([str(supervisor), "--preflight"], check=True, capture_output=True, text=True, timeout=4).stdout)
+    script = stage_script(manifest, os.getuid(), libraries, progress=progress)
     command = "/usr/bin/env -i PATH=/usr/bin:/bin:/usr/sbin:/sbin LC_ALL=C /bin/sh -c " + shlex.quote(script)
     result = {"manifest": manifest, "libraries": libraries, "preflight": preflight,
               "administratorCommand": command, "administratorCommandSHA256": hashlib.sha256(command.encode()).hexdigest(),

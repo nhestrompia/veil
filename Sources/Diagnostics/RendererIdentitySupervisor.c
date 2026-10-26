@@ -21,6 +21,12 @@
 #error Compile this diagnostic with the ordinary research identity.
 #endif
 
+#ifdef AFB_PROGRESS_CONTROL
+#define AFB_RENDERER_NAME "RendererProgressProbe"
+#else
+#define AFB_RENDERER_NAME "RendererIdentityProbe"
+#endif
+
 enum mode { SMOKE, WATCHDOG_CONTROL, LIMIT_CONTROL, DEADLINE_CONTROL };
 struct readiness { unsigned magic; bool permanent_drop; };
 struct owned_child { pid_t pid; bool reaped; int status; };
@@ -193,10 +199,10 @@ static bool root_stage(char *application, size_t capacity)
         || strchr(resolved + strlen(prefix), '/') || !protected_path(resolved, 0711, true))
         return false;
     const char *suffixes[] = {
-        "/RendererIdentityProbe.app", "/RendererIdentityProbe.app/Contents",
-        "/RendererIdentityProbe.app/Contents/MacOS", "/RendererIdentityProbe.app/Contents/_CodeSignature",
-        "/RendererIdentityProbe.app/Contents/Info.plist", "/RendererIdentityProbe.app/Contents/_CodeSignature/CodeResources",
-        "/RendererIdentityProbe.app/Contents/MacOS/RendererIdentityProbe"
+        "/" AFB_RENDERER_NAME ".app", "/" AFB_RENDERER_NAME ".app/Contents",
+        "/" AFB_RENDERER_NAME ".app/Contents/MacOS", "/" AFB_RENDERER_NAME ".app/Contents/_CodeSignature",
+        "/" AFB_RENDERER_NAME ".app/Contents/Info.plist", "/" AFB_RENDERER_NAME ".app/Contents/_CodeSignature/CodeResources",
+        "/" AFB_RENDERER_NAME ".app/Contents/MacOS/" AFB_RENDERER_NAME
     };
     for (size_t i = 0; i < sizeof(suffixes) / sizeof(suffixes[0]); ++i) {
         char path[PATH_MAX];
@@ -220,7 +226,7 @@ static bool local_application(char *application, size_t capacity)
             return false;
         *end = 0;
     }
-    int count = snprintf(application, capacity, "%s/dist/RendererIdentityProbe.app/Contents/MacOS/RendererIdentityProbe", root);
+    int count = snprintf(application, capacity, "%s/dist/" AFB_RENDERER_NAME ".app/Contents/MacOS/" AFB_RENDERER_NAME, root);
     return count > 0 && count < (int)capacity;
 }
 

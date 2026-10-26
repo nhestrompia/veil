@@ -38,7 +38,7 @@ def read_fixed_file(path, owner, mode, maximum):
         os.close(descriptor)
 
 
-def read_native(stage, plan, owner=0):
+def read_native(stage, plan, owner=0, progress_ready=False):
     stage = Path(stage)
     if not STAGE_PATTERN.fullmatch(str(stage)):
         raise ValueError('Unexpected staging path')
@@ -51,7 +51,9 @@ def read_native(stage, plan, owner=0):
         raise ValueError('Unexpected staging directory metadata')
     data = read_fixed_file(stage / 'observation.log', owner, 0o444, LIMIT)
     complete = data.rsplit(b'\n', 1)[0] if b'\n' in data else b''
-    values = prefixed(complete + b'\n', 'HEADLESS_RENDERER_RESULT ')
+    if type(progress_ready) is not bool:
+        raise ValueError('Use a fixed report phase')
+    values = prefixed(complete + b'\n', 'RENDERER_PROGRESS_READY ' if progress_ready else 'HEADLESS_RENDERER_RESULT ')
     if not values:
         return None
     if len(values) != 1:
@@ -70,10 +72,12 @@ def read_native(stage, plan, owner=0):
         if len(image) != item['size'] or hashlib.sha256(image).hexdigest() != item['sha256']:
             raise ValueError('The staged image differs from the reviewed manifest')
     native = values[0]
-    if not isinstance(native, dict) or not all(native.get(key) is True for key in
-            ('completed', 'identityControl', 'javascriptPassed', 'snapshotPassed', 'serviceIdentityStable')):
+    required = ('progressControl', 'baselineSnapshotPassed', 'identityControl', 'javascriptPassed', 'snapshotPassed', 'serviceIdentityStable') if progress_ready else (
+        'completed', 'identityControl', 'javascriptPassed', 'snapshotPassed', 'serviceIdentityStable')
+    if not isinstance(native, dict) or not all(native.get(key) is True for key in required):
         raise ValueError('The native rendering control failed')
-    expected_path = str(stage / 'RendererIdentityProbe.app/Contents/MacOS/RendererIdentityProbe')
+    name = 'RendererProgressProbe' if progress_ready else 'RendererIdentityProbe'
+    expected_path = str(stage / (name + '.app/Contents/MacOS/' + name))
     if native.get('host', {}).get('path') != expected_path:
         raise ValueError('The native report names another host')
     native.pop('snapshotPNGBase64', None)

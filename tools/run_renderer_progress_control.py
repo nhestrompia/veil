@@ -71,8 +71,8 @@ def verify_progress(ready, native, attack, isolated=False):
     return {'passed': all(checks.values()), 'checks': checks}
 
 
-def attack_renderer(ready, directory):
-    args = actor_arguments(ready)
+def attack_renderer(ready, directory, isolated=False):
+    args = actor_arguments(ready, isolated=isolated)
     args[0] = str(ACTOR)
     started = time.clock_gettime_ns(time.CLOCK_MONOTONIC)
     process = subprocess.run(args, capture_output=True, timeout=9)
@@ -85,11 +85,12 @@ def attack_renderer(ready, directory):
             'footer': prefixed(process.stdout, 'SIGNAL_ACTOR_RESULT ')}
 
 
-def trial(directory, use_actor=True):
+def trial(directory, use_actor=True, supervised=False):
     directory.mkdir()
     ready = None
     attack = None
-    result = {'passed': False, 'ordinaryUID': os.getuid(), 'rootRun': False, 'useActor': use_actor}
+    result = {'passed': False, 'ordinaryUID': os.getuid(), 'rootRun': False,
+              'useActor': use_actor, 'supervised': supervised}
 
     def receive(line):
         nonlocal ready, attack
@@ -101,7 +102,8 @@ def trial(directory, use_actor=True):
                 attack = attack_renderer(ready, directory)
 
     with (directory / 'app.stderr').open('wb') as errors:
-        process = subprocess.Popen([str(BINARY), '--pipe-only'], stdin=subprocess.DEVNULL,
+        args = [str(ROOT / '.build/renderer-progress-supervisor'), '--same-user-control'] if supervised else [str(BINARY), '--pipe-only']
+        process = subprocess.Popen(args, stdin=subprocess.DEVNULL,
                                    stdout=subprocess.PIPE, stderr=errors)
         try:
             stdout = collect_stdout(process, timeout=28, limit=3 * 1024 * 1024, on_line=receive)
@@ -116,6 +118,13 @@ def trial(directory, use_actor=True):
                 raise ValueError('Invalid final snapshot')
             (directory / 'snapshot.png').write_bytes(png)
             known = {record['pid'] for record in identities(ready).values()}
+            if supervised:
+                supervisors = prefixed(stdout, 'SUPERVISOR_RESULT ')
+                supervisor_ready = prefixed(stdout, 'SUPERVISOR_READY ')
+                if len(supervisors) != 1 or len(supervisor_ready) != 1 or supervisors[0].get('passed') is not True:
+                    raise ValueError('The ordinary-user supervisor control failed')
+                result.update(supervisor=supervisors[0], supervisorReady=supervisor_ready[0])
+                known.add(supervisor_ready[0]['watchdogPID'])
             if attack:
                 verification = verify_progress(ready, native, attack)
                 result.update(actor=attack, verification=verification)
@@ -151,7 +160,7 @@ def trial(directory, use_actor=True):
     return result
 
 
-def run(directory):
+def run(directory, supervised=False):
     if os.getuid() == 0 or os.geteuid() == 0:
         raise ValueError('Use an ordinary user')
     directory = directory.resolve()
@@ -160,12 +169,13 @@ def run(directory):
     if matching_pids(BINARY) or matching_pids(ACTOR):
         raise ValueError('Existing research processes must remain untouched')
     directory.mkdir()
-    result = {'rootRun': False, 'binarySHA256': hashlib.sha256(BINARY.read_bytes()).hexdigest(),
+    result = {'rootRun': False, 'supervised': supervised,
+              'binarySHA256': hashlib.sha256(BINARY.read_bytes()).hexdigest(),
               'actorSHA256': hashlib.sha256(ACTOR.read_bytes()).hexdigest(), 'references': []}
-    result['baseline'] = trial(directory / 'baseline', use_actor=False)
+    result['baseline'] = trial(directory / 'baseline', use_actor=False, supervised=supervised)
     if result['baseline']['passed']:
         for index in range(3):
-            reference = trial(directory / f'reference-{index+1}')
+            reference = trial(directory / f'reference-{index+1}', supervised=supervised)
             result['references'].append(reference)
             if not reference['passed']:
                 break
@@ -178,6 +188,8 @@ def run(directory):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--out', required=True, type=Path)
-    result = run(parser.parse_args().out)
+    parser.add_argument('--supervised', action='store_true')
+    args = parser.parse_args()
+    result = run(args.out, supervised=args.supervised)
     print(json.dumps({'passed': result['passed'], 'references': len(result['references']), 'rootRun': False}))
     raise SystemExit(0 if result['passed'] else 1)

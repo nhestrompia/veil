@@ -84,6 +84,39 @@ class ProgressAcceptanceTests(unittest.TestCase):
         self.actor['footer'][0]['watchdogReaped'] = False
         self.assertFalse(self.check())
 
+    def isolated(self):
+        for report in (self.ready, self.native):
+            records = [report['host'], *[value['identity'] for value in report['servicesAfterSnapshot'].values()]]
+            records += [value['identity'] for value in report.get('servicesAfterProgress', {}).values()]
+            for record in records:
+                for key in ('realUID', 'effectiveUID', 'savedUID', 'realGID', 'effectiveGID', 'savedGID'):
+                    record[key] = 4294967294
+        self.actor['footer'][0]['crossUser'] = True
+        for row in self.actor['signals']:
+            row.update(targetUID=4294967294, stopReturn=-1, stopErrno=1, observedStopped=False,
+                       continueReturn=-1, continueErrno=1, sameSessionContinue=False,
+                       actorPOSIXSession=300, targetPOSIXSession=400)
+
+    def test_cross_user_denial_and_ordered_progress(self):
+        self.isolated()
+        self.assertTrue(verify_progress(self.ready, self.native, self.actor, isolated=True)['passed'])
+
+    def test_successful_cross_user_pause_cannot_claim_prevention(self):
+        self.isolated()
+        self.actor['signals'][0]['stopReturn'] = 0
+        self.assertFalse(verify_progress(self.ready, self.native, self.actor, isolated=True)['passed'])
+
+    def test_same_session_continue_permission_is_distinct_from_pause(self):
+        self.isolated()
+        self.actor['signals'][0].update(continueReturn=0, continueErrno=0,
+            sameSessionContinue=True, actorPOSIXSession=300, targetPOSIXSession=300)
+        self.assertTrue(verify_progress(self.ready, self.native, self.actor, isolated=True)['passed'])
+
+    def test_cross_user_continue_without_matching_session_refuses(self):
+        self.isolated()
+        self.actor['signals'][0].update(continueReturn=0, continueErrno=0, sameSessionContinue=True)
+        self.assertFalse(verify_progress(self.ready, self.native, self.actor, isolated=True)['passed'])
+
 
 if __name__ == '__main__':
     unittest.main()

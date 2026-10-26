@@ -862,3 +862,12 @@ A separate fixed inline diagnostic emits readiness, then runs a fresh page chall
 The timer advances, the DOM returns its fresh challenge, and the canvas changes from blue to yellow. Role identities remain stable. All sixteen measured host and service identifiers exit. Recovery watchdogs are reaped. Forty-four Python checks, a native readonly metadata regression, and seven invocation refusals pass.
 
 The five frozen binaries and earlier root images remain unchanged. No administrator command or privacy setting changes. Cross-user progress and browser integration remain open. See [findings](renderer-progress-control-findings.md) and [evidence](evidence/renderer-progress-control-results.json).
+
+
+## Milestone 111: cross-user progress preflight
+
+A separate supervisor profile binds the existing finite lifecycle to RendererProgressProbe. One ordinary-user baseline and three supervised references pass. All twelve pauses and resumes calibrate. The page completes its fresh challenge and yellow redraw afterward. The host and watchdog are reaped, and all twenty measured process identifiers exit.
+
+The readonly observer starts the ordinary actor from the verified readiness report. The comparison controller requires helper exit zero, pause denial, correct credentials, ordered progress, stable roles, and independent cleanup. Its administrator command has a separate pinned hash. Fifty-five Python checks pass. The ordinary staging rehearsal verifies the new images, observes code 64 for administrator-mode refusal, and removes staging.
+
+The one-run proposal remains unexecuted. It changes the reviewed images, so the earlier consumed approval cannot authorize it. All frozen binaries and earlier root images remain unchanged. The 32-second supervisor deadline and earlier cache, session, and interrupted-staging limits remain. See [preflight findings](renderer-progress-preflight-findings.md), [evidence](evidence/renderer-progress-preflight-results.json), and [reviewed plan](evidence/renderer-progress-reviewed-run-plan.json).

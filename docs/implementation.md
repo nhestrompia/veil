@@ -646,3 +646,12 @@ Computer-use zoom resizes the readable control and produces one new task without
 The user approves the separate helper's Accessibility request. Its packaged preflight confirms effective posting access and no modifying hooks. The executable remains unchanged after the grant. All 135 Python checks and pure Swift path checks pass. Temporary apps exit and aggregate protection returns to off. Frozen browser/probe hashes match. No Endpoint Security client or privileged service starts.
 
 See [geometry findings](window-geometry-findings.md). Agent-free operation remains unmet. Continue with safe geometry calibration and the unresolved process-pause boundary. The latter still lacks an Apple-granted Endpoint Security entitlement for its proposed live denial experiment.
+
+
+## Milestone 95: diagnostic frame policy and feasibility review
+
+A separate readable shell can pin its native frame. Actual AppKit tests confirm ordinary move/resize behavior, then preserve the pinned frame through eight operations. The policy removes movement and resizing for humans too. It remains outside the production browser.
+
+The external pilot completes its ordinary startup task but receives no timely geometry action. Computer use returns after cleanup and reopens an empty shell. The controller preserves the inconclusive result and skips the fixed comparison. The extra empty shell is closed after executable verification.
+
+All 139 Python checks and AppKit controls pass. Temporary processes exit and Secure Event Input is off. Frozen app and probe hashes match. A primary-source review finds no demonstrated ordinary-app signal-denial boundary here. Identity isolation is untested. Clock changes need independent timing controls. No permission or operating-system service changes.

@@ -28,7 +28,7 @@ def stage(source):
         path = source / name
         if path.is_symlink() or not path.resolve().is_relative_to(source.resolve()):
             raise RuntimeError(f"Research source path escapes its checkout: {name}")
-        actual = path.read_text() if path.exists() else None
+        actual = path.read_bytes().decode() if path.exists() else None
         allowed = [text, original.get(name)] if name in updated else [text]
         if actual not in allowed:
             raise RuntimeError(f"Refusing changed research source: {name}")
@@ -78,7 +78,7 @@ def build(source, timeout):
                "--release", "--only=Everything up to WebKit", "-quiet", "-jobs", "4",
                "ARCHS=arm64", "ONLY_ACTIVE_ARCH=YES", "MACOSX_DEPLOYMENT_TARGET=26.0",
                "TMPDIR=$(TARGET_TEMP_DIR)/",
-               "SWIFT_ENABLE_COMPILE_CACHE=NO",
+               "COMPILATION_CACHE_ENABLE_CACHING=NO",
                "-derivedDataPath", str(output / "DerivedData"),
                f"SHARED_PRECOMPS_DIR={output / 'PrecompiledHeaders'}"]
     report = {"command": command, "output": str(output), "source": str(source),

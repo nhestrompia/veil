@@ -46,3 +46,16 @@ class ResearchEngineBuildTests(unittest.TestCase):
             self.assertEqual((source / 'second').read_text(), 'new')
             self.assertEqual((source / 'header').read_text(), 'new header')
             self.assertFalse(json.loads((source / 'applied-source.json').read_text())['engineCompiled'])
+
+    def test_line_ending_changes_are_refused_before_other_writes(self):
+        with tempfile.TemporaryDirectory() as directory:
+            source = Path(directory)
+            (source / 'first').write_bytes(b'old\n')
+            (source / 'second').write_bytes(b'old\r\n')
+            with patch.object(build, 'read_sources', return_value=({'revision': 'pinned'}, {'first': 'old\n', 'second': 'old\n'})), \
+                 patch.object(build, 'revision_of', return_value='pinned'), \
+                 patch.object(build, 'generate'), \
+                 patch.object(build, 'changed_sources', return_value={'first': 'new\n'}):
+                with self.assertRaisesRegex(RuntimeError, 'Refusing changed research source'):
+                    build.stage(source)
+            self.assertEqual((source / 'first').read_bytes(), b'old\n')

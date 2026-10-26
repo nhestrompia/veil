@@ -437,3 +437,8 @@ The fourth full build reported Swift task failures despite zero exit codes. A na
 ## Milestone 71: child-frame visibility controls
 
 Three fresh matched comparisons reproduced two visibility-triggered actions each inside child documents. The frame types were same-origin, cross-origin, and srcdoc. Every private baseline, resumed task, and cleanup passed. The helper posted no input during the cycles. The custom engine remains untested. See [child visibility findings](child-visibility-findings.md).
+
+
+## Milestone 72: retry the broader cache setting
+
+The Swift-only cache experiment still failed WebGPU and PAL tasks. The sixth full build uses the exact umbrella cache setting from the passing narrow comparison. The diagnostic now reads its own content executable through proc_pidpath. It compiles. All 100 Python checks pass, including rejection of changed line endings before source mutation. Positive custom-engine identity and live engine results remain unverified. See [retry findings](engine-build-retry-findings.md).

@@ -2,6 +2,7 @@ import AppKit
 import WebKit
 import ObjectiveC.runtime
 import MachO
+import Darwin
 
 @MainActor
 enum EngineRuntime {
@@ -56,9 +57,11 @@ enum EngineRuntime {
         typealias Getter = @convention(c) (AnyObject, Selector) -> Int32
         let getter = unsafeBitCast(method_getImplementation(method), to: Getter.self)
         let pid = getter(webView, selector)
-        guard pid > 0,
-              let executable = NSRunningApplication(processIdentifier: pid)?.executableURL?.resolvingSymlinksInPath(),
-              executable.path.hasPrefix(root + "/") else {
+        var pathBytes = [CChar](repeating: 0, count: 4 * Int(MAXPATHLEN))
+        guard pid > 0, proc_pidpath(pid, &pathBytes, UInt32(pathBytes.count)) > 0 else { return false }
+        let path = String(decoding: pathBytes.prefix(while: { $0 != 0 }).map { UInt8(bitPattern: $0) }, as: UTF8.self)
+        let executable = URL(fileURLWithPath: path).resolvingSymlinksInPath()
+        guard executable.path.hasPrefix(root + "/") else {
             print("ENGINE_DIAGNOSTIC refused=unexpected-content-executable")
             return false
         }

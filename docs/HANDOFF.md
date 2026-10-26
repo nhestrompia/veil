@@ -1,5 +1,7 @@
 # Current research state
 
+Latest: milestone 72. The sixth isolated engine build is active. Full WebKit compilation and custom-engine runtime comparisons remain unverified. All 100 Python checks pass. See the latest sections below.
+
 Updated 2026-10-26. Milestone 58 confirms an external focus-only action bypass in three fresh diagnostic processes. Activating another research window and returning completed one new action in each candidate. The standalone helper posted no input and made no AX call during those cycles. The gate admitted zero keyboard events. Agent-free operation is unmet.
 
 Milestone 59 tested separate AppKit activation filtering and logical key-window state. Both stopped the original focus action and preserved private typing. Both failed a visibility-change action when an agent hid and restored the app. The final filter comparison reproduced two new actions in each of three candidates. No input was posted or admitted. The password control could not switch away and remains inconclusive. Temporary cleanup restored Secure Event Input to off. All 87 Python checks pass. See [lifecycle findings](lifecycle-findings.md).
@@ -191,3 +193,9 @@ The active full-build exec session is 72341. Preserve the monitor and disk reser
 ## Milestone 71 child-frame visibility
 
 One fresh matched visibility comparison per child type reproduced two new actions during hide and restore. Same-origin, cross-origin, and srcdoc controls all passed. Every private baseline, resumed task, and temporary cleanup passed. No keyboard event was admitted during the cycles. Aggregate Secure Input was off afterward. See [child visibility findings](child-visibility-findings.md). These are ordinary diagnostic results.
+
+## Milestone 72 broader cache retry and content identity
+
+The Swift-only setting did not clear WebGPU and PAL failures. The sixth build uses COMPILATION_CACHE_ENABLE_CACHING=NO, matching the passing JavaScriptCore comparison. Its active exec session is 96959. Preserve the monitor and disk reserve. The complete engine remains unverified. See [retry findings](engine-build-retry-findings.md).
+
+The prepared InternalKeyboardControl is now engine-stable, capture-restricted, with private resume and ownership logging. Its content identity gate uses proc_pidpath. It compiles, but positive custom-engine identity is unverified. All 100 Python checks pass. The source staging regression rejects CRLF changes before mutation. A current scoped process audit found only physical browser PID 61893, no temporary research app, and aggregate Secure Input off.

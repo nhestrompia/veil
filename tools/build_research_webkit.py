@@ -77,6 +77,7 @@ def build(source, timeout):
     command = ["/usr/bin/nice", "-n", "10", str(source / "Tools/Scripts/build-webkit"),
                "--release", "--only=Everything up to WebKit", "-quiet", "-jobs", "4",
                "ARCHS=arm64", "ONLY_ACTIVE_ARCH=YES", "MACOSX_DEPLOYMENT_TARGET=26.0",
+               "TMPDIR=$(TARGET_TEMP_DIR)/",
                "-derivedDataPath", str(output / "DerivedData"),
                f"SHARED_PRECOMPS_DIR={output / 'PrecompiledHeaders'}"]
     report = {"command": command, "output": str(output), "source": str(source),

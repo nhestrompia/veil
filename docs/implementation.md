@@ -422,3 +422,8 @@ The second build stopped because the actual Metal compiler was absent. Apple Met
 ## Milestone 68: child-frame lifecycle controls
 
 The fixture now arms lifecycle listeners inside same-origin, cross-origin, and srcdoc frames. One fresh matched comparison per type reproduced one focus-only action with zero admitted keyboard events. All private baselines, resumed tasks, and cleanup checks passed. All 99 Python checks pass. The feature matrix also accepts the strict engine identity path. No custom-engine comparison ran. See [child-frame findings](child-frame-findings.md).
+
+
+## Milestone 69: preserve sandboxing during generated-source builds
+
+The actual Xcode sandbox profile reproduced the shared temporary-directory refusal. A target-local directory passed. The build now gives each target its own TMPDIR. The narrow WTF target changed from failure to success and generated all four Mach exception files. Engine source and script sandboxing remain unchanged. The full build restarted. See [temporary-directory findings](engine-temp-findings.md).

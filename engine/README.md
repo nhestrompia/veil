@@ -76,3 +76,5 @@ The build log and receipts are in .build/webkit-engine/. A successful command do
 Compile the engine diagnostic with --engine-native or --engine-stable, plus --build-only. Logical host overrides are refused. The diagnostic uses an ad hoc signature without hardened runtime. Only that disposable app receives the custom loader environment.
 
 After a successful build, pass --engine-frameworks .build/webkit-engine/output/Release to the focus controller. Startup requires expected UI images and content mappings. This path remains unverified against a completed engine. See [runtime gates](../docs/engine-runtime-findings.md).
+
+Xcode script phases use TMPDIR from TARGET_TEMP_DIR. A shared directory under OBJROOT is denied by their sandbox. The narrow WTF target passed with this correction. See [the build diagnosis](../docs/engine-temp-findings.md).

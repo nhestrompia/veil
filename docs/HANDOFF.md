@@ -175,3 +175,9 @@ The second build stopped at Metal shaders. Apple MetalToolchain 27A266a is now i
 One matched ordinary comparison each reproduced a focus-only action in same-origin, cross-origin, and srcdoc child documents. Every private baseline and resumed task passed. The helper posted no input during each activation cycle. Cleanup passed and aggregate Secure Input was off. All 99 Python checks pass. See [child-frame findings](child-frame-findings.md).
 
 The prepared InternalKeyboardControl is now the ordinary capture-restricted variant with private resume and ownership logging. The feature fixture restarted on port 8766 in exec session 65052. Its previous controller key is obsolete. Preserve the failed srcdoc setup separately from its successful retry.
+
+## Milestone 69 temporary-directory build correction
+
+The third build failed at Mach interface generation. The assigned shared TMPDIR was denied by Xcode script sandboxing. The actual sandbox profile rejects that path and permits TARGET_TEMP_DIR. Passing TMPDIR as the per-target Xcode setting fixes the narrow WTF target. All four generated files exist. Script sandboxing remains enabled. See [temporary-directory findings](engine-temp-findings.md).
+
+The fourth full build is active in unified exec session 36677. Its monitor and process-group PIDs appear in .build/webkit-engine/build-results.json. Preserve the monitor and disk reserve. The complete engine and all custom-engine runtime claims remain unverified.

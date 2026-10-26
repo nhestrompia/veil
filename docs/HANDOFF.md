@@ -1,6 +1,6 @@
 # Current research state
 
-Latest: milestone 105. Three ordinary-user references verify twelve pauses and resumes across the exact host/content/GPU/network records. Parent-death recovery passes. Fourteen observer/refusal tests and eleven staging tests pass. The next cross-user signal plan reuses the frozen root images and adds one readonly observation file. No new root launch occurs. The milestone 104 approval covers only its completed rendering smoke test. Request separate approval for one execution of the new committed plan. The browser pause bypass remains open. See [signal controls](renderer-signal-preflight-findings.md).
+Latest: milestone 106. The reviewed cross-user signal launch runs once. Rendering, nobody credentials, and cleanup pass. The ordinary actor refuses early validation with code 65 and sends zero signals. Pause denial remains inconclusive. Independent checks find no measured process or staging residue. Frozen binaries match. The one-run root approval covers only this completed attempt. Diagnose the metadata reader before any new privileged proposal. See [signal attempt](renderer-signal-results-findings.md).
 
 Updated 2026-10-26. Milestone 58 confirms an external focus-only action bypass in three fresh diagnostic processes. Activating another research window and returning completed one new action in each candidate. The standalone helper posted no input and made no AX call during those cycles. The gate admitted zero keyboard events. Agent-free operation is unmet.
 

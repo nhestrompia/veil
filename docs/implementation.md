@@ -813,3 +813,12 @@ Fourteen observer/refusal tests and eleven staging tests pass. The observer bind
 The prepared cross-user proposal reuses the unchanged root images. It adds one fixed readonly observation log with a write descriptor opened before sealing. Root never acts on reported service identifiers. The exact ordinary-user staging rehearsal passes and administrator mode refuses. Default staging still reproduces the original milestone 103 command hash.
 
 No new administrator run occurs. The earlier one-run approval covers the completed milestone 104 smoke test only. A new one-run approval remains necessary. This test covers signal permission and sampled state, not post-attack page progress. Controller isolation, input, presentation, navigation, broader compatibility, and agent-free acceptance remain open. See [findings](renderer-signal-preflight-findings.md) and [evidence](evidence/renderer-signal-preflight-results.json).
+
+
+## Milestone 106: inconclusive cross-user signal attempt
+
+The reviewed command runs once after the user's continuation approval. The normal observer reads the fixed report and checks app hashes. Its actor returns code 65 before signal output. It sends no signal. This is an inconclusive attack, not a protection result.
+
+Rendering, image samples, and nobody credential checks pass. The supervisor reaps the normally exited host and watchdog. Independent checks find none of the five measured process identifiers or the staging directory. All frozen hashes match. Later commands use user ID 501.
+
+The one-run administrator approval covers only this completed attempt. No retry occurs. The actor needs operation-specific diagnostics and a cross-user-compatible metadata reader. See [findings](renderer-signal-results-findings.md) and [evidence](evidence/renderer-signal-results.json).

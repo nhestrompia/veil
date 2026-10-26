@@ -15,6 +15,11 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
     private let address = NSTextField()
     #endif
     private let status = NSTextField(labelWithString: "Research build. Desktop agents are not blocked.")
+    private let back = NSButton(title: "Back", target: nil, action: nil)
+    private let forward = NSButton(title: "Forward", target: nil, action: nil)
+    private let reload = NSButton(title: "Reload", target: nil, action: nil)
+    private var navigationObservations: [NSKeyValueObservation] = []
+    private var navigationNote = ""
     private var ownsSecureInput = false
     #if DEVICE_KEYBOARD_EXPERIMENT
     private var deviceKeyboard: DeviceKeyboardRouter?
@@ -71,9 +76,13 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
         address.target = self
         address.action = #selector(navigate)
         address.setAccessibilityLabel("Website address")
-        let back = NSButton(title: "Back", target: self, action: #selector(goBack))
-        let reload = NSButton(title: "Reload", target: self, action: #selector(reloadPage))
-        let bar = NSStackView(views: [back, address, reload])
+        back.target = self
+        back.action = #selector(goBack)
+        forward.target = self
+        forward.action = #selector(goForward)
+        reload.target = self
+        reload.action = #selector(reloadPage)
+        let bar = NSStackView(views: [back, forward, address, reload])
         bar.spacing = 8
         status.font = .systemFont(ofSize: 11)
         status.textColor = .secondaryLabelColor
@@ -114,8 +123,11 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
         #endif
         #endif
         window.contentView = content
+        observeNavigation()
+        #if !BROWSER_NAVIGATION_CONTROL
         window.makeKeyAndOrderFront(nil)
         NSApp.activate(ignoringOtherApps: true)
+        #endif
         let menu = NSMenu()
         let appItem = NSMenuItem()
         let appMenu = NSMenu()
@@ -123,6 +135,13 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
         appItem.submenu = appMenu
         menu.addItem(appItem)
         #if !DEVICE_KEYBOARD_EXPERIMENT
+        let fileItem = NSMenuItem()
+        let fileMenu = NSMenu(title: "File")
+        let openLocation = NSMenuItem(title: "Open Location", action: #selector(focusAddress), keyEquivalent: "l")
+        openLocation.target = self
+        fileMenu.addItem(openLocation)
+        fileItem.submenu = fileMenu
+        menu.addItem(fileItem)
         let editItem = NSMenuItem()
         let editMenu = NSMenu(title: "Edit")
         for (title, selector, key) in [("Cut", "cut:", "x"), ("Copy", "copy:", "c"), ("Paste", "paste:", "v"), ("Select All", "selectAll:", "a")] {
@@ -172,8 +191,34 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
         window.makeFirstResponder(webView)
     }
 
-    @objc private func goBack() { webView.goBack() }
-    @objc private func reloadPage() { webView.reload() }
+    private func observeNavigation() {
+        let properties: [KeyPath<WKWebView, Bool>] = [\.canGoBack, \.canGoForward, \.isLoading]
+        navigationObservations = properties.map { property in
+            webView.observe(property, options: [.initial, .new]) { [weak self] _, _ in
+                MainActor.assumeIsolated { self?.updateNavigation() }
+            }
+        }
+    }
+
+    private func updateNavigation() {
+        back.isEnabled = webView.canGoBack
+        forward.isEnabled = webView.canGoForward
+        reload.isEnabled = webView.isLoading || webView.url != nil
+        reload.title = webView.isLoading ? "Stop" : "Reload"
+        window.subtitle = webView.isLoading ? "Loading page" : navigationNote
+    }
+
+    @objc private func goBack() { if webView.canGoBack { webView.goBack() } }
+    @objc private func goForward() { if webView.canGoForward { webView.goForward() } }
+    @objc private func reloadPage() {
+        if webView.isLoading {
+            navigationNote = "Page load stopped."
+            webView.stopLoading()
+        } else {
+            webView.reload()
+        }
+        updateNavigation()
+    }
     @objc private func focusAddress() {
         window.makeFirstResponder(address)
         address.selectText(nil)
@@ -192,6 +237,8 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
     }
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        navigationNote = ""
+        updateNavigation()
         address.stringValue = webView.url?.absoluteString ?? ""
         status.stringValue = "Inspection: \(webView.isInspectable ? "control enabled" : "disabled"). Desktop capture and input: unprotected."
         #if METADATA_EXPERIMENT
@@ -206,6 +253,15 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
         #if DEVICE_KEYBOARD_EXPERIMENT
         status.stringValue = "Built-in keyboard only. Command-L selects the address. Mouse input is disabled. US ASCII only. Research build."
         #endif
+    }
+
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        navigationNote = ""
+        updateNavigation()
+    }
+
+    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+        if let url = webView.url { address.stringValue = url.absoluteString }
     }
 
     func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse,
@@ -228,11 +284,24 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
     }
 
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: any Error) {
-        status.stringValue = error.localizedDescription
+        recordNavigationError(error)
+    }
+
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: any Error) {
+        recordNavigationError(error)
+    }
+
+    private func recordNavigationError(_ error: any Error) {
+        let failure = error as NSError
+        if failure.domain != NSURLErrorDomain || failure.code != NSURLErrorCancelled {
+            navigationNote = error.localizedDescription
+        }
+        updateNavigation()
     }
 
     func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
-        status.stringValue = "Page process stopped. Reload to recover."
+        navigationNote = "Page process stopped. Reload to recover."
+        updateNavigation()
     }
 
     func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration,
@@ -291,6 +360,7 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
     }
 }
 
+#if !BROWSER_NAVIGATION_CONTROL
 @main
 enum BrowserApp {
     @MainActor static func main() {
@@ -323,3 +393,4 @@ enum BrowserApp {
         withExtendedLifetime(delegate) { app.run() }
     }
 }
+#endif

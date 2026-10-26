@@ -1,6 +1,10 @@
 # Current research state
 
-Latest: milestone 107. The normal signal actor now uses SDK-sized KERN_PROC_PID records around an exact path query. All six credentials and start time must match. The actual old-reader foreign-user regression fails before this repair and passes afterward. Three references, recovery, fifteen observer/refusal tests, and eleven staging tests pass. A new proposal permits at most three serial comparisons, stopping after any failed or inconclusive trial. The root command and four images are unchanged. No new administrator launch occurs. Request fresh approval for the committed set. See [metadata repair](renderer-metadata-findings.md).
+Latest completed work: milestone 109 adds browser navigation controls. Ten owner-driven checks pass in a separate hidden diagnostic. Policy checks, device-source type checking, measured process cleanup, and frozen hashes pass. See [navigation findings](browser-navigation-findings.md).
+
+Milestone 108 is active. The user approved up to three serial comparisons under the committed milestone 107 plan. Trial 1 is invoked but waits before staging for macOS authentication. Unified exec session 2537 owns the batch. Do not launch a duplicate. Poll that session and read `artifacts/renderer-signal-108-live`. An authentication question remains pending. Root and ordinary inputs match the approved hashes. No comparison result exists yet. Any failed or inconclusive result stops the set.
+
+The repaired actor and root images must remain frozen until that set ends. The root command SHA256 remains `22f91657b4576912489eee95c9831c68e6b24842c9d738efe81c16d51cdd3d06`. All earlier scope, cache, session, and interrupted-staging limits remain. Agent-free operation remains unmet.
 
 Updated 2026-10-26. Milestone 58 confirms an external focus-only action bypass in three fresh diagnostic processes. Activating another research window and returning completed one new action in each candidate. The standalone helper posted no input and made no AX call during those cycles. The gate admitted zero keyboard events. Agent-free operation is unmet.
 

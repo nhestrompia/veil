@@ -833,3 +833,14 @@ The actor now reads the SDK process structure, validates its shape, and preserve
 Three fresh same-user comparisons verify twelve stops and resumes. Parent-death recovery passes. Fifteen observer/refusal tests, eleven staging tests, and the native metadata regression pass. The final actor hash matches the calibrated binary. Root images and the per-launch administrator command remain unchanged.
 
 The new proposal caps comparisons at three serial launches and stops after any failure or inconclusive result. Each invocation consumes an attempt. Verify the helper's exit, rendering, actor outcomes, process exits, and staging removal before another launch. No administrator command runs in this milestone. Fresh approval remains necessary. See [findings](renderer-metadata-findings.md) and [evidence](evidence/renderer-metadata-results.json).
+
+
+## Milestone 109: browser navigation controls
+
+Forward, history availability, Reload/Stop, and page-load feedback now work in browser source. The address updates at document commit. Errors use the window subtitle, so the protection footer retains its status. The ordinary shell adds Command-L. The device experiment retains its physical keyboard route.
+
+A separate hidden diagnostic uses the actual controls against a disposable local server. All ten checks pass, including Stop, failed-response feedback, and recovery. The server records the expected routes. Every measured host and WebKit process exits. The initial timing failure remains in the evidence. The control now waits for the slow response before Stop.
+
+Policy checks and device-source type checking pass. All five frozen binaries and the active comparison inputs match their hashes. No privacy setting, input hook, or root code changes. This functional result makes no external-agent protection claim. The known pause bypass remains open.
+
+Milestone 108 remains pending macOS authentication for the first approved comparison. See [navigation findings](browser-navigation-findings.md) and [evidence](evidence/browser-navigation-results.json).

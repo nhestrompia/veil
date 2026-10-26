@@ -1,0 +1,1831 @@
+{
+  "milestone": 101,
+  "mode": "pipe",
+  "scope": "Same-user fixture, no explicit window, no input, no privilege, no signal-denial claim",
+  "temporaryServerCleanupVerified": false,
+  "binarySHA256": "336a77a7bda47f05aa54009908698ea318eb2dcb2d25c654bec2aa1037948896",
+  "requestedTrials": 3,
+  "trials": [
+    {
+      "verdict": "same-user-pipe-baseline-passed",
+      "controllerUID": 501,
+      "launchMethod": "direct-exec",
+      "launcherExitCode": 0,
+      "pipeImageBytes": 37593,
+      "native": {
+        "completed": true,
+        "explicitSnapshotFileWrites": 0,
+        "frameworkPath": "/System/Library/Frameworks/WebKit.framework/Versions/A/WebKit",
+        "frameworkVersion": "21624.4.5.11.5",
+        "host": {
+          "effectiveGID": 20,
+          "effectiveUID": 501,
+          "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/dist/HeadlessRendererProbe.app/Contents/MacOS/HeadlessRendererProbe",
+          "pid": 32964,
+          "realGID": 20,
+          "realUID": 501,
+          "savedGID": 20,
+          "savedUID": 501,
+          "startedMicroseconds": 3818,
+          "startedSeconds": 1793034860
+        },
+        "javascript": {
+          "canvas": [
+            0,
+            0,
+            255,
+            255
+          ],
+          "fetchedNonce": null,
+          "frameNonce": null,
+          "height": 600,
+          "imageWidth": null,
+          "nonce": "AC2626F4-E443-4A45-95A7-5EB5729E8CFD",
+          "width": 800
+        },
+        "javascriptPassed": true,
+        "mode": "same-user-inline",
+        "resultTransport": "bounded-stdout-json",
+        "serviceIdentityStable": true,
+        "servicesAfterSnapshot": {
+          "content": {
+            "identity": {
+              "effectiveGID": 20,
+              "effectiveUID": 501,
+              "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+              "pid": 32967,
+              "realGID": 20,
+              "realUID": 501,
+              "savedGID": 20,
+              "savedUID": 501,
+              "startedMicroseconds": 94427,
+              "startedSeconds": 1793034860
+            },
+            "networkGetterCanLaunchService": false,
+            "pid": 32967
+          },
+          "gpu": {
+            "identity": {
+              "effectiveGID": 20,
+              "effectiveUID": 501,
+              "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.GPU.xpc/Contents/MacOS/com.apple.WebKit.GPU",
+              "pid": 32965,
+              "realGID": 20,
+              "realUID": 501,
+              "savedGID": 20,
+              "savedUID": 501,
+              "startedMicroseconds": 80459,
+              "startedSeconds": 1793034860
+            },
+            "networkGetterCanLaunchService": false,
+            "pid": 32965
+          },
+          "network": {
+            "identity": {
+              "effectiveGID": 20,
+              "effectiveUID": 501,
+              "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking",
+              "pid": 32966,
+              "realGID": 20,
+              "realUID": 501,
+              "savedGID": 20,
+              "savedUID": 501,
+              "startedMicroseconds": 92202,
+              "startedSeconds": 1793034860
+            },
+            "networkGetterCanLaunchService": true,
+            "pid": 32966
+          }
+        },
+        "servicesBeforeSnapshot": {
+          "content": {
+            "identity": {
+              "effectiveGID": 20,
+              "effectiveUID": 501,
+              "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+              "pid": 32967,
+              "realGID": 20,
+              "realUID": 501,
+              "savedGID": 20,
+              "savedUID": 501,
+              "startedMicroseconds": 94427,
+              "startedSeconds": 1793034860
+            },
+            "networkGetterCanLaunchService": false,
+            "pid": 32967
+          },
+          "gpu": {
+            "identity": {
+              "effectiveGID": 20,
+              "effectiveUID": 501,
+              "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.GPU.xpc/Contents/MacOS/com.apple.WebKit.GPU",
+              "pid": 32965,
+              "realGID": 20,
+              "realUID": 501,
+              "savedGID": 20,
+              "savedUID": 501,
+              "startedMicroseconds": 80459,
+              "startedSeconds": 1793034860
+            },
+            "networkGetterCanLaunchService": false,
+            "pid": 32965
+          },
+          "network": {
+            "identity": {
+              "effectiveGID": 20,
+              "effectiveUID": 501,
+              "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking",
+              "pid": 32966,
+              "realGID": 20,
+              "realUID": 501,
+              "savedGID": 20,
+              "savedUID": 501,
+              "startedMicroseconds": 92202,
+              "startedSeconds": 1793034860
+            },
+            "networkGetterCanLaunchService": true,
+            "pid": 32966
+          }
+        },
+        "session": {
+          "attributes": 24624,
+          "consoleDictionaryAvailable": true,
+          "loginDone": true,
+          "onConsole": true,
+          "sessionID": 100024,
+          "status": 0,
+          "userID": 501
+        },
+        "snapshot": {
+          "bitsPerSample": 8,
+          "colorSpace": "NSCalibratedRGBColorSpace",
+          "height": 1200,
+          "samples": [
+            {
+              "expected": [
+                255,
+                0,
+                0
+              ],
+              "observed": [
+                255,
+                0,
+                0
+              ],
+              "passed": true,
+              "point": [
+                50,
+                50
+              ]
+            },
+            {
+              "expected": [
+                0,
+                255,
+                0
+              ],
+              "observed": [
+                0,
+                255,
+                0
+              ],
+              "passed": true,
+              "point": [
+                150,
+                50
+              ]
+            },
+            {
+              "expected": [
+                0,
+                0,
+                255
+              ],
+              "observed": [
+                0,
+                0,
+                255
+              ],
+              "passed": true,
+              "point": [
+                250,
+                50
+              ]
+            },
+            {
+              "expected": [
+                255,
+                255,
+                255
+              ],
+              "observed": [
+                255,
+                255,
+                255
+              ],
+              "passed": true,
+              "point": [
+                400,
+                200
+              ]
+            }
+          ],
+          "samplesPerPixel": 4,
+          "width": 1600
+        },
+        "snapshotPassed": true,
+        "uid": 501,
+        "visibleWindowCountAtEnd": 0,
+        "windowCountAtEnd": 1,
+        "windowCountAtStart": 0,
+        "windowsAtEnd": [
+          {
+            "class": "TUINSWindow",
+            "key": false,
+            "visible": false
+          }
+        ]
+      },
+      "allServiceIdentitiesKnown": true,
+      "allServicesSameUser": true,
+      "snapshotSHA256": "061fe47e3c7e8adf03029adef69ece1c841fdb94b709029621c118a4f2ba6277",
+      "cleanupVerified": true
+    },
+    {
+      "verdict": "same-user-pipe-baseline-passed",
+      "controllerUID": 501,
+      "launchMethod": "direct-exec",
+      "launcherExitCode": 0,
+      "pipeImageBytes": 37593,
+      "native": {
+        "completed": true,
+        "explicitSnapshotFileWrites": 0,
+        "frameworkPath": "/System/Library/Frameworks/WebKit.framework/Versions/A/WebKit",
+        "frameworkVersion": "21624.4.5.11.5",
+        "host": {
+          "effectiveGID": 20,
+          "effectiveUID": 501,
+          "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/dist/HeadlessRendererProbe.app/Contents/MacOS/HeadlessRendererProbe",
+          "pid": 32971,
+          "realGID": 20,
+          "realUID": 501,
+          "savedGID": 20,
+          "savedUID": 501,
+          "startedMicroseconds": 545362,
+          "startedSeconds": 1793034860
+        },
+        "javascript": {
+          "canvas": [
+            0,
+            0,
+            255,
+            255
+          ],
+          "fetchedNonce": null,
+          "frameNonce": null,
+          "height": 600,
+          "imageWidth": null,
+          "nonce": "9A26529C-DC4B-461C-8812-2D10C1B14D7D",
+          "width": 800
+        },
+        "javascriptPassed": true,
+        "mode": "same-user-inline",
+        "resultTransport": "bounded-stdout-json",
+        "serviceIdentityStable": true,
+        "servicesAfterSnapshot": {
+          "content": {
+            "identity": {
+              "effectiveGID": 20,
+              "effectiveUID": 501,
+              "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+              "pid": 32974,
+              "realGID": 20,
+              "realUID": 501,
+              "savedGID": 20,
+              "savedUID": 501,
+              "startedMicroseconds": 633130,
+              "startedSeconds": 1793034860
+            },
+            "networkGetterCanLaunchService": false,
+            "pid": 32974
+          },
+          "gpu": {
+            "identity": {
+              "effectiveGID": 20,
+              "effectiveUID": 501,
+              "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.GPU.xpc/Contents/MacOS/com.apple.WebKit.GPU",
+              "pid": 32972,
+              "realGID": 20,
+              "realUID": 501,
+              "savedGID": 20,
+              "savedUID": 501,
+              "startedMicroseconds": 618593,
+              "startedSeconds": 1793034860
+            },
+            "networkGetterCanLaunchService": false,
+            "pid": 32972
+          },
+          "network": {
+            "identity": {
+              "effectiveGID": 20,
+              "effectiveUID": 501,
+              "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking",
+              "pid": 32973,
+              "realGID": 20,
+              "realUID": 501,
+              "savedGID": 20,
+              "savedUID": 501,
+              "startedMicroseconds": 631071,
+              "startedSeconds": 1793034860
+            },
+            "networkGetterCanLaunchService": true,
+            "pid": 32973
+          }
+        },
+        "servicesBeforeSnapshot": {
+          "content": {
+            "identity": {
+              "effectiveGID": 20,
+              "effectiveUID": 501,
+              "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+              "pid": 32974,
+              "realGID": 20,
+              "realUID": 501,
+              "savedGID": 20,
+              "savedUID": 501,
+              "startedMicroseconds": 633130,
+              "startedSeconds": 1793034860
+            },
+            "networkGetterCanLaunchService": false,
+            "pid": 32974
+          },
+          "gpu": {
+            "identity": {
+              "effectiveGID": 20,
+              "effectiveUID": 501,
+              "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.GPU.xpc/Contents/MacOS/com.apple.WebKit.GPU",
+              "pid": 32972,
+              "realGID": 20,
+              "realUID": 501,
+              "savedGID": 20,
+              "savedUID": 501,
+              "startedMicroseconds": 618593,
+              "startedSeconds": 1793034860
+            },
+            "networkGetterCanLaunchService": false,
+            "pid": 32972
+          },
+          "network": {
+            "identity": {
+              "effectiveGID": 20,
+              "effectiveUID": 501,
+              "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking",
+              "pid": 32973,
+              "realGID": 20,
+              "realUID": 501,
+              "savedGID": 20,
+              "savedUID": 501,
+              "startedMicroseconds": 631071,
+              "startedSeconds": 1793034860
+            },
+            "networkGetterCanLaunchService": true,
+            "pid": 32973
+          }
+        },
+        "session": {
+          "attributes": 24624,
+          "consoleDictionaryAvailable": true,
+          "loginDone": true,
+          "onConsole": true,
+          "sessionID": 100024,
+          "status": 0,
+          "userID": 501
+        },
+        "snapshot": {
+          "bitsPerSample": 8,
+          "colorSpace": "NSCalibratedRGBColorSpace",
+          "height": 1200,
+          "samples": [
+            {
+              "expected": [
+                255,
+                0,
+                0
+              ],
+              "observed": [
+                255,
+                0,
+                0
+              ],
+              "passed": true,
+              "point": [
+                50,
+                50
+              ]
+            },
+            {
+              "expected": [
+                0,
+                255,
+                0
+              ],
+              "observed": [
+                0,
+                255,
+                0
+              ],
+              "passed": true,
+              "point": [
+                150,
+                50
+              ]
+            },
+            {
+              "expected": [
+                0,
+                0,
+                255
+              ],
+              "observed": [
+                0,
+                0,
+                255
+              ],
+              "passed": true,
+              "point": [
+                250,
+                50
+              ]
+            },
+            {
+              "expected": [
+                255,
+                255,
+                255
+              ],
+              "observed": [
+                255,
+                255,
+                255
+              ],
+              "passed": true,
+              "point": [
+                400,
+                200
+              ]
+            }
+          ],
+          "samplesPerPixel": 4,
+          "width": 1600
+        },
+        "snapshotPassed": true,
+        "uid": 501,
+        "visibleWindowCountAtEnd": 0,
+        "windowCountAtEnd": 1,
+        "windowCountAtStart": 0,
+        "windowsAtEnd": [
+          {
+            "class": "TUINSWindow",
+            "key": false,
+            "visible": false
+          }
+        ]
+      },
+      "allServiceIdentitiesKnown": true,
+      "allServicesSameUser": true,
+      "snapshotSHA256": "061fe47e3c7e8adf03029adef69ece1c841fdb94b709029621c118a4f2ba6277",
+      "cleanupVerified": true
+    },
+    {
+      "verdict": "same-user-pipe-baseline-passed",
+      "controllerUID": 501,
+      "launchMethod": "direct-exec",
+      "launcherExitCode": 0,
+      "pipeImageBytes": 37593,
+      "native": {
+        "completed": true,
+        "explicitSnapshotFileWrites": 0,
+        "frameworkPath": "/System/Library/Frameworks/WebKit.framework/Versions/A/WebKit",
+        "frameworkVersion": "21624.4.5.11.5",
+        "host": {
+          "effectiveGID": 20,
+          "effectiveUID": 501,
+          "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/dist/HeadlessRendererProbe.app/Contents/MacOS/HeadlessRendererProbe",
+          "pid": 32978,
+          "realGID": 20,
+          "realUID": 501,
+          "savedGID": 20,
+          "savedUID": 501,
+          "startedMicroseconds": 35469,
+          "startedSeconds": 1793034861
+        },
+        "javascript": {
+          "canvas": [
+            0,
+            0,
+            255,
+            255
+          ],
+          "fetchedNonce": null,
+          "frameNonce": null,
+          "height": 600,
+          "imageWidth": null,
+          "nonce": "63D1ADEC-F7B5-4691-AA21-FCD57B8144DD",
+          "width": 800
+        },
+        "javascriptPassed": true,
+        "mode": "same-user-inline",
+        "resultTransport": "bounded-stdout-json",
+        "serviceIdentityStable": true,
+        "servicesAfterSnapshot": {
+          "content": {
+            "identity": {
+              "effectiveGID": 20,
+              "effectiveUID": 501,
+              "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+              "pid": 32981,
+              "realGID": 20,
+              "realUID": 501,
+              "savedGID": 20,
+              "savedUID": 501,
+              "startedMicroseconds": 121129,
+              "startedSeconds": 1793034861
+            },
+            "networkGetterCanLaunchService": false,
+            "pid": 32981
+          },
+          "gpu": {
+            "identity": {
+              "effectiveGID": 20,
+              "effectiveUID": 501,
+              "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.GPU.xpc/Contents/MacOS/com.apple.WebKit.GPU",
+              "pid": 32979,
+              "realGID": 20,
+              "realUID": 501,
+              "savedGID": 20,
+              "savedUID": 501,
+              "startedMicroseconds": 109034,
+              "startedSeconds": 1793034861
+            },
+            "networkGetterCanLaunchService": false,
+            "pid": 32979
+          },
+          "network": {
+            "identity": {
+              "effectiveGID": 20,
+              "effectiveUID": 501,
+              "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking",
+              "pid": 32980,
+              "realGID": 20,
+              "realUID": 501,
+              "savedGID": 20,
+              "savedUID": 501,
+              "startedMicroseconds": 119029,
+              "startedSeconds": 1793034861
+            },
+            "networkGetterCanLaunchService": true,
+            "pid": 32980
+          }
+        },
+        "servicesBeforeSnapshot": {
+          "content": {
+            "identity": {
+              "effectiveGID": 20,
+              "effectiveUID": 501,
+              "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+              "pid": 32981,
+              "realGID": 20,
+              "realUID": 501,
+              "savedGID": 20,
+              "savedUID": 501,
+              "startedMicroseconds": 121129,
+              "startedSeconds": 1793034861
+            },
+            "networkGetterCanLaunchService": false,
+            "pid": 32981
+          },
+          "gpu": {
+            "identity": {
+              "effectiveGID": 20,
+              "effectiveUID": 501,
+              "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.GPU.xpc/Contents/MacOS/com.apple.WebKit.GPU",
+              "pid": 32979,
+              "realGID": 20,
+              "realUID": 501,
+              "savedGID": 20,
+              "savedUID": 501,
+              "startedMicroseconds": 109034,
+              "startedSeconds": 1793034861
+            },
+            "networkGetterCanLaunchService": false,
+            "pid": 32979
+          },
+          "network": {
+            "identity": {
+              "effectiveGID": 20,
+              "effectiveUID": 501,
+              "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking",
+              "pid": 32980,
+              "realGID": 20,
+              "realUID": 501,
+              "savedGID": 20,
+              "savedUID": 501,
+              "startedMicroseconds": 119029,
+              "startedSeconds": 1793034861
+            },
+            "networkGetterCanLaunchService": true,
+            "pid": 32980
+          }
+        },
+        "session": {
+          "attributes": 24624,
+          "consoleDictionaryAvailable": true,
+          "loginDone": true,
+          "onConsole": true,
+          "sessionID": 100024,
+          "status": 0,
+          "userID": 501
+        },
+        "snapshot": {
+          "bitsPerSample": 8,
+          "colorSpace": "NSCalibratedRGBColorSpace",
+          "height": 1200,
+          "samples": [
+            {
+              "expected": [
+                255,
+                0,
+                0
+              ],
+              "observed": [
+                255,
+                0,
+                0
+              ],
+              "passed": true,
+              "point": [
+                50,
+                50
+              ]
+            },
+            {
+              "expected": [
+                0,
+                255,
+                0
+              ],
+              "observed": [
+                0,
+                255,
+                0
+              ],
+              "passed": true,
+              "point": [
+                150,
+                50
+              ]
+            },
+            {
+              "expected": [
+                0,
+                0,
+                255
+              ],
+              "observed": [
+                0,
+                0,
+                255
+              ],
+              "passed": true,
+              "point": [
+                250,
+                50
+              ]
+            },
+            {
+              "expected": [
+                255,
+                255,
+                255
+              ],
+              "observed": [
+                255,
+                255,
+                255
+              ],
+              "passed": true,
+              "point": [
+                400,
+                200
+              ]
+            }
+          ],
+          "samplesPerPixel": 4,
+          "width": 1600
+        },
+        "snapshotPassed": true,
+        "uid": 501,
+        "visibleWindowCountAtEnd": 0,
+        "windowCountAtEnd": 1,
+        "windowCountAtStart": 0,
+        "windowsAtEnd": [
+          {
+            "class": "TUINSWindow",
+            "key": false,
+            "visible": false
+          }
+        ]
+      },
+      "allServiceIdentitiesKnown": true,
+      "allServicesSameUser": true,
+      "snapshotSHA256": "061fe47e3c7e8adf03029adef69ece1c841fdb94b709029621c118a4f2ba6277",
+      "cleanupVerified": true
+    }
+  ],
+  "allPassed": true,
+  "frozenBinarySHA256": {
+    "DeviceKeyboardExperiment": "43b1a9833d6c55b1e254b848f9bd09c202da46ba0f8d8833084df559e6a8a9d1",
+    "NativeProbe": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1",
+    "RendererAXProbe": "82d0c15dadfa49d1669a576270c08cb9b749d6fe102b1724fa61f6dd2d9b08a7",
+    "KeyboardObservationProbe": "cdd1829e60dd838f5a2b1ef91f9d5635e7f61760360f9c18c494f8eb90086aac",
+    "WindowGeometryProbe": "c99b7cb897180170e2ee5977d6518a0e2cb94db9549c75cd5867bc260606d960"
+  },
+  "independentMeasuredPIDsRemaining": [],
+  "receiverTests": {
+    "passed": 4,
+    "cases": [
+      "exact-byte-limit",
+      "excess-data-before-eof",
+      "silent-stream-deadline",
+      "eof-without-process-exit-deadline"
+    ]
+  },
+  "loopbackRegression": {
+    "milestone": 100,
+    "mode": "loopback",
+    "scope": "Same-user fixture, no explicit window, no input, no privilege, no signal-denial claim",
+    "temporaryServerCleanupVerified": true,
+    "binarySHA256": "336a77a7bda47f05aa54009908698ea318eb2dcb2d25c654bec2aa1037948896",
+    "requestedTrials": 1,
+    "trials": [
+      {
+        "verdict": "same-user-loopback-baseline-passed",
+        "controllerUID": 501,
+        "launchMethod": "launch-services",
+        "launcherExitCode": 0,
+        "native": {
+          "completed": true,
+          "explicitSnapshotFileWrites": 1,
+          "frameworkPath": "/System/Library/Frameworks/WebKit.framework/Versions/A/WebKit",
+          "frameworkVersion": "21624.4.5.11.5",
+          "host": {
+            "effectiveGID": 20,
+            "effectiveUID": 501,
+            "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/dist/HeadlessRendererProbe.app/Contents/MacOS/HeadlessRendererProbe",
+            "pid": 32828,
+            "realGID": 20,
+            "realUID": 501,
+            "savedGID": 20,
+            "savedUID": 501,
+            "startedMicroseconds": 454446,
+            "startedSeconds": 1793034808
+          },
+          "javascript": {
+            "canvas": [
+              0,
+              0,
+              255,
+              255
+            ],
+            "fetchedNonce": "E5E6EFB4-90B9-4AC8-80DC-7F64D5340244",
+            "frameNonce": "E5E6EFB4-90B9-4AC8-80DC-7F64D5340244",
+            "height": 600,
+            "imageWidth": 1,
+            "nonce": "E5E6EFB4-90B9-4AC8-80DC-7F64D5340244",
+            "width": 800
+          },
+          "javascriptPassed": true,
+          "mode": "same-user-loopback",
+          "networkDocumentPassed": true,
+          "resultTransport": "workspace-artifact",
+          "serviceIdentityStable": true,
+          "servicesAfterSnapshot": {
+            "content": {
+              "identity": {
+                "effectiveGID": 20,
+                "effectiveUID": 501,
+                "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+                "pid": 32840,
+                "realGID": 20,
+                "realUID": 501,
+                "savedGID": 20,
+                "savedUID": 501,
+                "startedMicroseconds": 591631,
+                "startedSeconds": 1793034808
+              },
+              "networkGetterCanLaunchService": false,
+              "pid": 32840
+            },
+            "gpu": {
+              "identity": {
+                "effectiveGID": 20,
+                "effectiveUID": 501,
+                "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.GPU.xpc/Contents/MacOS/com.apple.WebKit.GPU",
+                "pid": 32837,
+                "realGID": 20,
+                "realUID": 501,
+                "savedGID": 20,
+                "savedUID": 501,
+                "startedMicroseconds": 572941,
+                "startedSeconds": 1793034808
+              },
+              "networkGetterCanLaunchService": false,
+              "pid": 32837
+            },
+            "network": {
+              "identity": {
+                "effectiveGID": 20,
+                "effectiveUID": 501,
+                "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking",
+                "pid": 32839,
+                "realGID": 20,
+                "realUID": 501,
+                "savedGID": 20,
+                "savedUID": 501,
+                "startedMicroseconds": 588447,
+                "startedSeconds": 1793034808
+              },
+              "networkGetterCanLaunchService": true,
+              "pid": 32839
+            }
+          },
+          "servicesBeforeSnapshot": {
+            "content": {
+              "identity": {
+                "effectiveGID": 20,
+                "effectiveUID": 501,
+                "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+                "pid": 32840,
+                "realGID": 20,
+                "realUID": 501,
+                "savedGID": 20,
+                "savedUID": 501,
+                "startedMicroseconds": 591631,
+                "startedSeconds": 1793034808
+              },
+              "networkGetterCanLaunchService": false,
+              "pid": 32840
+            },
+            "gpu": {
+              "identity": {
+                "effectiveGID": 20,
+                "effectiveUID": 501,
+                "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.GPU.xpc/Contents/MacOS/com.apple.WebKit.GPU",
+                "pid": 32837,
+                "realGID": 20,
+                "realUID": 501,
+                "savedGID": 20,
+                "savedUID": 501,
+                "startedMicroseconds": 572941,
+                "startedSeconds": 1793034808
+              },
+              "networkGetterCanLaunchService": false,
+              "pid": 32837
+            },
+            "network": {
+              "identity": {
+                "effectiveGID": 20,
+                "effectiveUID": 501,
+                "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking",
+                "pid": 32839,
+                "realGID": 20,
+                "realUID": 501,
+                "savedGID": 20,
+                "savedUID": 501,
+                "startedMicroseconds": 588447,
+                "startedSeconds": 1793034808
+              },
+              "networkGetterCanLaunchService": true,
+              "pid": 32839
+            }
+          },
+          "session": {
+            "attributes": 24624,
+            "consoleDictionaryAvailable": true,
+            "loginDone": true,
+            "onConsole": true,
+            "sessionID": 100024,
+            "status": 0,
+            "userID": 501
+          },
+          "snapshot": {
+            "bitsPerSample": 8,
+            "colorSpace": "NSCalibratedRGBColorSpace",
+            "height": 1200,
+            "samples": [
+              {
+                "expected": [
+                  255,
+                  0,
+                  0
+                ],
+                "observed": [
+                  255,
+                  0,
+                  0
+                ],
+                "passed": true,
+                "point": [
+                  50,
+                  50
+                ]
+              },
+              {
+                "expected": [
+                  0,
+                  255,
+                  0
+                ],
+                "observed": [
+                  0,
+                  255,
+                  0
+                ],
+                "passed": true,
+                "point": [
+                  150,
+                  50
+                ]
+              },
+              {
+                "expected": [
+                  0,
+                  0,
+                  255
+                ],
+                "observed": [
+                  0,
+                  0,
+                  255
+                ],
+                "passed": true,
+                "point": [
+                  250,
+                  50
+                ]
+              },
+              {
+                "expected": [
+                  255,
+                  255,
+                  255
+                ],
+                "observed": [
+                  255,
+                  255,
+                  255
+                ],
+                "passed": true,
+                "point": [
+                  400,
+                  200
+                ]
+              },
+              {
+                "expected": [
+                  255,
+                  255,
+                  0
+                ],
+                "observed": [
+                  255,
+                  255,
+                  0
+                ],
+                "passed": true,
+                "point": [
+                  350,
+                  50
+                ]
+              },
+              {
+                "expected": [
+                  0,
+                  255,
+                  255
+                ],
+                "observed": [
+                  0,
+                  255,
+                  255
+                ],
+                "passed": true,
+                "point": [
+                  50,
+                  250
+                ]
+              }
+            ],
+            "samplesPerPixel": 4,
+            "width": 1600
+          },
+          "snapshotPassed": true,
+          "uid": 501,
+          "visibleWindowCountAtEnd": 0,
+          "windowCountAtEnd": 1,
+          "windowCountAtStart": 0,
+          "windowsAtEnd": [
+            {
+              "class": "TUINSWindow",
+              "key": false,
+              "visible": false
+            }
+          ]
+        },
+        "allServiceIdentitiesKnown": true,
+        "allServicesSameUser": true,
+        "snapshotSHA256": "fb45326ee16c6bf314b3e6729a45677fe3b2c0acbffdc34b831714854ae95a45",
+        "networkRequests": [
+          {
+            "route": "fixture",
+            "nonce": "E5E6EFB4-90B9-4AC8-80DC-7F64D5340244",
+            "method": "GET",
+            "status": 200
+          },
+          {
+            "route": "image",
+            "nonce": "E5E6EFB4-90B9-4AC8-80DC-7F64D5340244",
+            "method": "GET",
+            "status": 200
+          },
+          {
+            "route": "fetch",
+            "nonce": "E5E6EFB4-90B9-4AC8-80DC-7F64D5340244",
+            "method": "GET",
+            "status": 200
+          },
+          {
+            "route": "frame",
+            "nonce": "E5E6EFB4-90B9-4AC8-80DC-7F64D5340244",
+            "method": "GET",
+            "status": 200
+          }
+        ],
+        "networkRequestsPassed": true,
+        "cleanupVerified": true
+      }
+    ],
+    "allPassed": true
+  },
+  "initialDirectExecTrials": {
+    "milestone": 101,
+    "mode": "pipe",
+    "scope": "Same-user fixture, no explicit window, no input, no privilege, no signal-denial claim",
+    "temporaryServerCleanupVerified": false,
+    "binarySHA256": "336a77a7bda47f05aa54009908698ea318eb2dcb2d25c654bec2aa1037948896",
+    "requestedTrials": 3,
+    "trials": [
+      {
+        "verdict": "same-user-pipe-baseline-passed",
+        "controllerUID": 501,
+        "launchMethod": "direct-exec",
+        "launcherExitCode": 0,
+        "pipeImageBytes": 37593,
+        "native": {
+          "completed": true,
+          "explicitSnapshotFileWrites": 0,
+          "frameworkPath": "/System/Library/Frameworks/WebKit.framework/Versions/A/WebKit",
+          "frameworkVersion": "21624.4.5.11.5",
+          "host": {
+            "effectiveGID": 20,
+            "effectiveUID": 501,
+            "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/dist/HeadlessRendererProbe.app/Contents/MacOS/HeadlessRendererProbe",
+            "pid": 32714,
+            "realGID": 20,
+            "realUID": 501,
+            "savedGID": 20,
+            "savedUID": 501,
+            "startedMicroseconds": 49912,
+            "startedSeconds": 1793034771
+          },
+          "javascript": {
+            "canvas": [
+              0,
+              0,
+              255,
+              255
+            ],
+            "fetchedNonce": null,
+            "frameNonce": null,
+            "height": 600,
+            "imageWidth": null,
+            "nonce": "79AA319A-49FE-456C-B021-430AA46BB117",
+            "width": 800
+          },
+          "javascriptPassed": true,
+          "mode": "same-user-inline",
+          "resultTransport": "bounded-stdout-json",
+          "serviceIdentityStable": true,
+          "servicesAfterSnapshot": {
+            "content": {
+              "identity": {
+                "effectiveGID": 20,
+                "effectiveUID": 501,
+                "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+                "pid": 32721,
+                "realGID": 20,
+                "realUID": 501,
+                "savedGID": 20,
+                "savedUID": 501,
+                "startedMicroseconds": 194296,
+                "startedSeconds": 1793034771
+              },
+              "networkGetterCanLaunchService": false,
+              "pid": 32721
+            },
+            "gpu": {
+              "identity": {
+                "effectiveGID": 20,
+                "effectiveUID": 501,
+                "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.GPU.xpc/Contents/MacOS/com.apple.WebKit.GPU",
+                "pid": 32718,
+                "realGID": 20,
+                "realUID": 501,
+                "savedGID": 20,
+                "savedUID": 501,
+                "startedMicroseconds": 175956,
+                "startedSeconds": 1793034771
+              },
+              "networkGetterCanLaunchService": false,
+              "pid": 32718
+            },
+            "network": {
+              "identity": {
+                "effectiveGID": 20,
+                "effectiveUID": 501,
+                "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking",
+                "pid": 32720,
+                "realGID": 20,
+                "realUID": 501,
+                "savedGID": 20,
+                "savedUID": 501,
+                "startedMicroseconds": 191785,
+                "startedSeconds": 1793034771
+              },
+              "networkGetterCanLaunchService": true,
+              "pid": 32720
+            }
+          },
+          "servicesBeforeSnapshot": {
+            "content": {
+              "identity": {
+                "effectiveGID": 20,
+                "effectiveUID": 501,
+                "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+                "pid": 32721,
+                "realGID": 20,
+                "realUID": 501,
+                "savedGID": 20,
+                "savedUID": 501,
+                "startedMicroseconds": 194296,
+                "startedSeconds": 1793034771
+              },
+              "networkGetterCanLaunchService": false,
+              "pid": 32721
+            },
+            "gpu": {
+              "identity": {
+                "effectiveGID": 20,
+                "effectiveUID": 501,
+                "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.GPU.xpc/Contents/MacOS/com.apple.WebKit.GPU",
+                "pid": 32718,
+                "realGID": 20,
+                "realUID": 501,
+                "savedGID": 20,
+                "savedUID": 501,
+                "startedMicroseconds": 175956,
+                "startedSeconds": 1793034771
+              },
+              "networkGetterCanLaunchService": false,
+              "pid": 32718
+            },
+            "network": {
+              "identity": {
+                "effectiveGID": 20,
+                "effectiveUID": 501,
+                "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking",
+                "pid": 32720,
+                "realGID": 20,
+                "realUID": 501,
+                "savedGID": 20,
+                "savedUID": 501,
+                "startedMicroseconds": 191785,
+                "startedSeconds": 1793034771
+              },
+              "networkGetterCanLaunchService": true,
+              "pid": 32720
+            }
+          },
+          "session": {
+            "attributes": 24624,
+            "consoleDictionaryAvailable": true,
+            "loginDone": true,
+            "onConsole": true,
+            "sessionID": 100024,
+            "status": 0,
+            "userID": 501
+          },
+          "snapshot": {
+            "bitsPerSample": 8,
+            "colorSpace": "NSCalibratedRGBColorSpace",
+            "height": 1200,
+            "samples": [
+              {
+                "expected": [
+                  255,
+                  0,
+                  0
+                ],
+                "observed": [
+                  255,
+                  0,
+                  0
+                ],
+                "passed": true,
+                "point": [
+                  50,
+                  50
+                ]
+              },
+              {
+                "expected": [
+                  0,
+                  255,
+                  0
+                ],
+                "observed": [
+                  0,
+                  255,
+                  0
+                ],
+                "passed": true,
+                "point": [
+                  150,
+                  50
+                ]
+              },
+              {
+                "expected": [
+                  0,
+                  0,
+                  255
+                ],
+                "observed": [
+                  0,
+                  0,
+                  255
+                ],
+                "passed": true,
+                "point": [
+                  250,
+                  50
+                ]
+              },
+              {
+                "expected": [
+                  255,
+                  255,
+                  255
+                ],
+                "observed": [
+                  255,
+                  255,
+                  255
+                ],
+                "passed": true,
+                "point": [
+                  400,
+                  200
+                ]
+              }
+            ],
+            "samplesPerPixel": 4,
+            "width": 1600
+          },
+          "snapshotPassed": true,
+          "uid": 501,
+          "visibleWindowCountAtEnd": 0,
+          "windowCountAtEnd": 1,
+          "windowCountAtStart": 0,
+          "windowsAtEnd": [
+            {
+              "class": "TUINSWindow",
+              "key": false,
+              "visible": false
+            }
+          ]
+        },
+        "allServiceIdentitiesKnown": true,
+        "allServicesSameUser": true,
+        "snapshotSHA256": "061fe47e3c7e8adf03029adef69ece1c841fdb94b709029621c118a4f2ba6277",
+        "cleanupVerified": true
+      },
+      {
+        "verdict": "same-user-pipe-baseline-passed",
+        "controllerUID": 501,
+        "launchMethod": "direct-exec",
+        "launcherExitCode": 0,
+        "pipeImageBytes": 37593,
+        "native": {
+          "completed": true,
+          "explicitSnapshotFileWrites": 0,
+          "frameworkPath": "/System/Library/Frameworks/WebKit.framework/Versions/A/WebKit",
+          "frameworkVersion": "21624.4.5.11.5",
+          "host": {
+            "effectiveGID": 20,
+            "effectiveUID": 501,
+            "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/dist/HeadlessRendererProbe.app/Contents/MacOS/HeadlessRendererProbe",
+            "pid": 32728,
+            "realGID": 20,
+            "realUID": 501,
+            "savedGID": 20,
+            "savedUID": 501,
+            "startedMicroseconds": 688216,
+            "startedSeconds": 1793034771
+          },
+          "javascript": {
+            "canvas": [
+              0,
+              0,
+              255,
+              255
+            ],
+            "fetchedNonce": null,
+            "frameNonce": null,
+            "height": 600,
+            "imageWidth": null,
+            "nonce": "8D3845F1-D78E-435E-9900-5EFF73F7C4B8",
+            "width": 800
+          },
+          "javascriptPassed": true,
+          "mode": "same-user-inline",
+          "resultTransport": "bounded-stdout-json",
+          "serviceIdentityStable": true,
+          "servicesAfterSnapshot": {
+            "content": {
+              "identity": {
+                "effectiveGID": 20,
+                "effectiveUID": 501,
+                "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+                "pid": 32731,
+                "realGID": 20,
+                "realUID": 501,
+                "savedGID": 20,
+                "savedUID": 501,
+                "startedMicroseconds": 779106,
+                "startedSeconds": 1793034771
+              },
+              "networkGetterCanLaunchService": false,
+              "pid": 32731
+            },
+            "gpu": {
+              "identity": {
+                "effectiveGID": 20,
+                "effectiveUID": 501,
+                "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.GPU.xpc/Contents/MacOS/com.apple.WebKit.GPU",
+                "pid": 32729,
+                "realGID": 20,
+                "realUID": 501,
+                "savedGID": 20,
+                "savedUID": 501,
+                "startedMicroseconds": 766734,
+                "startedSeconds": 1793034771
+              },
+              "networkGetterCanLaunchService": false,
+              "pid": 32729
+            },
+            "network": {
+              "identity": {
+                "effectiveGID": 20,
+                "effectiveUID": 501,
+                "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking",
+                "pid": 32730,
+                "realGID": 20,
+                "realUID": 501,
+                "savedGID": 20,
+                "savedUID": 501,
+                "startedMicroseconds": 776915,
+                "startedSeconds": 1793034771
+              },
+              "networkGetterCanLaunchService": true,
+              "pid": 32730
+            }
+          },
+          "servicesBeforeSnapshot": {
+            "content": {
+              "identity": {
+                "effectiveGID": 20,
+                "effectiveUID": 501,
+                "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+                "pid": 32731,
+                "realGID": 20,
+                "realUID": 501,
+                "savedGID": 20,
+                "savedUID": 501,
+                "startedMicroseconds": 779106,
+                "startedSeconds": 1793034771
+              },
+              "networkGetterCanLaunchService": false,
+              "pid": 32731
+            },
+            "gpu": {
+              "identity": {
+                "effectiveGID": 20,
+                "effectiveUID": 501,
+                "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.GPU.xpc/Contents/MacOS/com.apple.WebKit.GPU",
+                "pid": 32729,
+                "realGID": 20,
+                "realUID": 501,
+                "savedGID": 20,
+                "savedUID": 501,
+                "startedMicroseconds": 766734,
+                "startedSeconds": 1793034771
+              },
+              "networkGetterCanLaunchService": false,
+              "pid": 32729
+            },
+            "network": {
+              "identity": {
+                "effectiveGID": 20,
+                "effectiveUID": 501,
+                "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking",
+                "pid": 32730,
+                "realGID": 20,
+                "realUID": 501,
+                "savedGID": 20,
+                "savedUID": 501,
+                "startedMicroseconds": 776915,
+                "startedSeconds": 1793034771
+              },
+              "networkGetterCanLaunchService": true,
+              "pid": 32730
+            }
+          },
+          "session": {
+            "attributes": 24624,
+            "consoleDictionaryAvailable": true,
+            "loginDone": true,
+            "onConsole": true,
+            "sessionID": 100024,
+            "status": 0,
+            "userID": 501
+          },
+          "snapshot": {
+            "bitsPerSample": 8,
+            "colorSpace": "NSCalibratedRGBColorSpace",
+            "height": 1200,
+            "samples": [
+              {
+                "expected": [
+                  255,
+                  0,
+                  0
+                ],
+                "observed": [
+                  255,
+                  0,
+                  0
+                ],
+                "passed": true,
+                "point": [
+                  50,
+                  50
+                ]
+              },
+              {
+                "expected": [
+                  0,
+                  255,
+                  0
+                ],
+                "observed": [
+                  0,
+                  255,
+                  0
+                ],
+                "passed": true,
+                "point": [
+                  150,
+                  50
+                ]
+              },
+              {
+                "expected": [
+                  0,
+                  0,
+                  255
+                ],
+                "observed": [
+                  0,
+                  0,
+                  255
+                ],
+                "passed": true,
+                "point": [
+                  250,
+                  50
+                ]
+              },
+              {
+                "expected": [
+                  255,
+                  255,
+                  255
+                ],
+                "observed": [
+                  255,
+                  255,
+                  255
+                ],
+                "passed": true,
+                "point": [
+                  400,
+                  200
+                ]
+              }
+            ],
+            "samplesPerPixel": 4,
+            "width": 1600
+          },
+          "snapshotPassed": true,
+          "uid": 501,
+          "visibleWindowCountAtEnd": 0,
+          "windowCountAtEnd": 1,
+          "windowCountAtStart": 0,
+          "windowsAtEnd": [
+            {
+              "class": "TUINSWindow",
+              "key": false,
+              "visible": false
+            }
+          ]
+        },
+        "allServiceIdentitiesKnown": true,
+        "allServicesSameUser": true,
+        "snapshotSHA256": "061fe47e3c7e8adf03029adef69ece1c841fdb94b709029621c118a4f2ba6277",
+        "cleanupVerified": true
+      },
+      {
+        "verdict": "same-user-pipe-baseline-passed",
+        "controllerUID": 501,
+        "launchMethod": "direct-exec",
+        "launcherExitCode": 0,
+        "pipeImageBytes": 37593,
+        "native": {
+          "completed": true,
+          "explicitSnapshotFileWrites": 0,
+          "frameworkPath": "/System/Library/Frameworks/WebKit.framework/Versions/A/WebKit",
+          "frameworkVersion": "21624.4.5.11.5",
+          "host": {
+            "effectiveGID": 20,
+            "effectiveUID": 501,
+            "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/dist/HeadlessRendererProbe.app/Contents/MacOS/HeadlessRendererProbe",
+            "pid": 32735,
+            "realGID": 20,
+            "realUID": 501,
+            "savedGID": 20,
+            "savedUID": 501,
+            "startedMicroseconds": 169838,
+            "startedSeconds": 1793034772
+          },
+          "javascript": {
+            "canvas": [
+              0,
+              0,
+              255,
+              255
+            ],
+            "fetchedNonce": null,
+            "frameNonce": null,
+            "height": 600,
+            "imageWidth": null,
+            "nonce": "8038CD8A-357E-43F9-A282-041B5DDAA7EC",
+            "width": 800
+          },
+          "javascriptPassed": true,
+          "mode": "same-user-inline",
+          "resultTransport": "bounded-stdout-json",
+          "serviceIdentityStable": true,
+          "servicesAfterSnapshot": {
+            "content": {
+              "identity": {
+                "effectiveGID": 20,
+                "effectiveUID": 501,
+                "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+                "pid": 32738,
+                "realGID": 20,
+                "realUID": 501,
+                "savedGID": 20,
+                "savedUID": 501,
+                "startedMicroseconds": 247034,
+                "startedSeconds": 1793034772
+              },
+              "networkGetterCanLaunchService": false,
+              "pid": 32738
+            },
+            "gpu": {
+              "identity": {
+                "effectiveGID": 20,
+                "effectiveUID": 501,
+                "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.GPU.xpc/Contents/MacOS/com.apple.WebKit.GPU",
+                "pid": 32736,
+                "realGID": 20,
+                "realUID": 501,
+                "savedGID": 20,
+                "savedUID": 501,
+                "startedMicroseconds": 235010,
+                "startedSeconds": 1793034772
+              },
+              "networkGetterCanLaunchService": false,
+              "pid": 32736
+            },
+            "network": {
+              "identity": {
+                "effectiveGID": 20,
+                "effectiveUID": 501,
+                "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking",
+                "pid": 32737,
+                "realGID": 20,
+                "realUID": 501,
+                "savedGID": 20,
+                "savedUID": 501,
+                "startedMicroseconds": 244939,
+                "startedSeconds": 1793034772
+              },
+              "networkGetterCanLaunchService": true,
+              "pid": 32737
+            }
+          },
+          "servicesBeforeSnapshot": {
+            "content": {
+              "identity": {
+                "effectiveGID": 20,
+                "effectiveUID": 501,
+                "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+                "pid": 32738,
+                "realGID": 20,
+                "realUID": 501,
+                "savedGID": 20,
+                "savedUID": 501,
+                "startedMicroseconds": 247034,
+                "startedSeconds": 1793034772
+              },
+              "networkGetterCanLaunchService": false,
+              "pid": 32738
+            },
+            "gpu": {
+              "identity": {
+                "effectiveGID": 20,
+                "effectiveUID": 501,
+                "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.GPU.xpc/Contents/MacOS/com.apple.WebKit.GPU",
+                "pid": 32736,
+                "realGID": 20,
+                "realUID": 501,
+                "savedGID": 20,
+                "savedUID": 501,
+                "startedMicroseconds": 235010,
+                "startedSeconds": 1793034772
+              },
+              "networkGetterCanLaunchService": false,
+              "pid": 32736
+            },
+            "network": {
+              "identity": {
+                "effectiveGID": 20,
+                "effectiveUID": 501,
+                "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking",
+                "pid": 32737,
+                "realGID": 20,
+                "realUID": 501,
+                "savedGID": 20,
+                "savedUID": 501,
+                "startedMicroseconds": 244939,
+                "startedSeconds": 1793034772
+              },
+              "networkGetterCanLaunchService": true,
+              "pid": 32737
+            }
+          },
+          "session": {
+            "attributes": 24624,
+            "consoleDictionaryAvailable": true,
+            "loginDone": true,
+            "onConsole": true,
+            "sessionID": 100024,
+            "status": 0,
+            "userID": 501
+          },
+          "snapshot": {
+            "bitsPerSample": 8,
+            "colorSpace": "NSCalibratedRGBColorSpace",
+            "height": 1200,
+            "samples": [
+              {
+                "expected": [
+                  255,
+                  0,
+                  0
+                ],
+                "observed": [
+                  255,
+                  0,
+                  0
+                ],
+                "passed": true,
+                "point": [
+                  50,
+                  50
+                ]
+              },
+              {
+                "expected": [
+                  0,
+                  255,
+                  0
+                ],
+                "observed": [
+                  0,
+                  255,
+                  0
+                ],
+                "passed": true,
+                "point": [
+                  150,
+                  50
+                ]
+              },
+              {
+                "expected": [
+                  0,
+                  0,
+                  255
+                ],
+                "observed": [
+                  0,
+                  0,
+                  255
+                ],
+                "passed": true,
+                "point": [
+                  250,
+                  50
+                ]
+              },
+              {
+                "expected": [
+                  255,
+                  255,
+                  255
+                ],
+                "observed": [
+                  255,
+                  255,
+                  255
+                ],
+                "passed": true,
+                "point": [
+                  400,
+                  200
+                ]
+              }
+            ],
+            "samplesPerPixel": 4,
+            "width": 1600
+          },
+          "snapshotPassed": true,
+          "uid": 501,
+          "visibleWindowCountAtEnd": 0,
+          "windowCountAtEnd": 1,
+          "windowCountAtStart": 0,
+          "windowsAtEnd": [
+            {
+              "class": "TUINSWindow",
+              "key": false,
+              "visible": false
+            }
+          ]
+        },
+        "allServiceIdentitiesKnown": true,
+        "allServicesSameUser": true,
+        "snapshotSHA256": "061fe47e3c7e8adf03029adef69ece1c841fdb94b709029621c118a4f2ba6277",
+        "cleanupVerified": true
+      }
+    ],
+    "allPassed": true
+  },
+  "forbiddenCombinedMode": {
+    "exitCode": 2,
+    "outputDirectoryAbsent": true
+  },
+  "administratorRunsForMilestone": 0
+}

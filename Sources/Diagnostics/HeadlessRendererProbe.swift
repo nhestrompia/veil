@@ -38,14 +38,14 @@ private struct ProcessRecord: Codable, Equatable {
 
 @MainActor
 private final class HeadlessProbe: NSObject, NSApplicationDelegate, WKNavigationDelegate {
-    private let output: URL
+    private let output: URL?
     private let nonce = UUID().uuidString
     private let loopbackPort: Int?
     private var view: WKWebView?
     private var finished = false
     private var report: [String: Any] = [:]
 
-    init(output: URL, loopbackPort: Int?) {
+    init(output: URL?, loopbackPort: Int?) {
         self.output = output
         self.loopbackPort = loopbackPort
     }
@@ -56,6 +56,8 @@ private final class HeadlessProbe: NSObject, NSApplicationDelegate, WKNavigation
         report["mode"] = loopbackPort == nil ? "same-user-inline" : "same-user-loopback"
         report["windowCountAtStart"] = NSApp.windows.count
         report["uid"] = getuid()
+        report["resultTransport"] = output == nil ? "bounded-stdout-json" : "workspace-artifact"
+        report["explicitSnapshotFileWrites"] = 0
         report["frameworkPath"] = class_getImageName(WKWebView.self).map { String(cString: $0) }
         report["frameworkVersion"] = Bundle(for: WKWebView.self).infoDictionary?["CFBundleVersion"]
         let configuration = WKWebViewConfiguration()
@@ -146,7 +148,15 @@ private final class HeadlessProbe: NSObject, NSApplicationDelegate, WKNavigation
               let bitmap = NSBitmapImageRep(data: png) else {
             throw NSError(domain: "HeadlessRendererProbe", code: 1)
         }
-        try png.write(to: output.appendingPathComponent("snapshot.png"), options: .withoutOverwriting)
+        guard png.count <= 2 * 1024 * 1024 else {
+            throw NSError(domain: "HeadlessRendererProbe", code: 2)
+        }
+        if let output {
+            try png.write(to: output.appendingPathComponent("snapshot.png"), options: .withoutOverwriting)
+            report["explicitSnapshotFileWrites"] = 1
+        } else {
+            report["snapshotPNGBase64"] = png.base64EncodedString()
+        }
         var expected = [(50, 50, [255, 0, 0]), (150, 50, [0, 255, 0]),
                         (250, 50, [0, 0, 255]), (400, 200, [255, 255, 255])]
         if loopbackPort != nil { expected += [(350, 50, [255, 255, 0]), (50, 250, [0, 255, 255])] }
@@ -247,17 +257,22 @@ private enum HeadlessRendererMain {
     @MainActor static func main() {
         let args = CommandLine.arguments
         guard getuid() != 0, geteuid() != 0, args.count == 2 || args.count == 4 else { exit(64) }
+        let pipeOnly = args.count == 2 && args[1] == "--pipe-only"
         var port: Int?
         if args.count == 4 {
             guard args[2] == "--loopback-port", let value = Int(args[3]), (1024...65535).contains(value) else { exit(64) }
             port = value
         }
-        let output = URL(fileURLWithPath: CommandLine.arguments[1]).standardizedFileURL
-        let root = URL(fileURLWithPath: #filePath).deletingLastPathComponent().deletingLastPathComponent()
-            .deletingLastPathComponent().appendingPathComponent("artifacts").resolvingSymlinksInPath()
-        guard output.resolvingSymlinksInPath().path == output.path,
-              output.path.hasPrefix(root.path + "/"),
-              (try? FileManager.default.contentsOfDirectory(atPath: output.path))?.isEmpty == true else { exit(64) }
+        var output: URL?
+        if !pipeOnly {
+            let directory = URL(fileURLWithPath: args[1]).standardizedFileURL
+            let root = URL(fileURLWithPath: #filePath).deletingLastPathComponent().deletingLastPathComponent()
+                .deletingLastPathComponent().appendingPathComponent("artifacts").resolvingSymlinksInPath()
+            guard directory.resolvingSymlinksInPath().path == directory.path,
+                  directory.path.hasPrefix(root.path + "/"),
+                  (try? FileManager.default.contentsOfDirectory(atPath: directory.path))?.isEmpty == true else { exit(64) }
+            output = directory
+        }
         let app = NSApplication.shared
         app.setActivationPolicy(.prohibited)
         let delegate = HeadlessProbe(output: output, loopbackPort: port)

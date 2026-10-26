@@ -1,11 +1,13 @@
 """Measure an ordinary-user WKWebView with no window or external input."""
 
 import argparse
+import base64
 from contextlib import nullcontext
 import hashlib
 import json
 import os
 from pathlib import Path
+import selectors
 import subprocess
 import time
 
@@ -17,7 +19,28 @@ ROOT = Path(__file__).resolve().parents[1]
 BINARY = ROOT / "dist/HeadlessRendererProbe.app/Contents/MacOS/HeadlessRendererProbe"
 
 
-def trial(directory, fixture=None):
+def collect_stdout(process, limit=3 * 1024 * 1024, timeout=30):
+    deadline = time.monotonic() + timeout
+    output = bytearray()
+    with selectors.DefaultSelector() as reader:
+        reader.register(process.stdout, selectors.EVENT_READ)
+        while True:
+            remaining = deadline - time.monotonic()
+            if remaining <= 0:
+                raise subprocess.TimeoutExpired(process.args, timeout)
+            if not reader.select(timeout=min(remaining, 0.25)):
+                continue
+            block = os.read(process.stdout.fileno(), 65536)
+            if not block:
+                break
+            if len(output) + len(block) > limit:
+                raise RuntimeError("Native result exceeds the report limit")
+            output.extend(block)
+    process.wait(timeout=max(0.001, deadline - time.monotonic()))
+    return bytes(output)
+
+
+def trial(directory, fixture=None, pipe_only=False):
     directory.mkdir()
     payload = directory / "payload"
     payload.mkdir()
@@ -26,25 +49,47 @@ def trial(directory, fixture=None):
     if before:
         raise RuntimeError("A renderer probe already exists")
     result = {"verdict": "inconclusive", "controllerUID": os.getuid()}
-    expected_verdict = "same-user-loopback-baseline-passed" if fixture else "same-user-headless-baseline-passed"
-    arguments = [str(payload)]
+    expected_verdict = ("same-user-loopback-baseline-passed" if fixture else
+                        "same-user-pipe-baseline-passed" if pipe_only else "same-user-headless-baseline-passed")
+    arguments = ["--pipe-only"] if pipe_only else [str(payload)]
     if fixture:
         arguments += ["--loopback-port", str(fixture.server_port)]
     with log.open("w") as stream:
-        process = subprocess.Popen(
-            ["open", "-g", "-n", "-W", str(BINARY.parents[2]), "--stdout", str(log),
-             "--stderr", str(log), "--args", *arguments],
-            stdout=stream, stderr=stream,
-        )
+        if pipe_only:
+            process = subprocess.Popen([str(BINARY), *arguments], cwd=payload,
+                                       stdout=subprocess.PIPE, stderr=stream)
+            result["launchMethod"] = "direct-exec"
+        else:
+            process = subprocess.Popen(
+                ["open", "-g", "-n", "-W", str(BINARY.parents[2]), "--stdout", str(log),
+                 "--stderr", str(log), "--args", *arguments],
+                stdout=stream, stderr=stream,
+            )
+            result["launchMethod"] = "launch-services"
         process.research_existing_pids = before
         try:
-            process.wait(timeout=30)
+            if pipe_only:
+                stdout = collect_stdout(process)
+                stream.write("\n" + stdout.decode("utf-8"))
+                stream.flush()
+            else:
+                process.wait(timeout=30)
             result["launcherExitCode"] = process.returncode
             lines = [line.removeprefix("HEADLESS_RENDERER_RESULT ")
                      for line in log.read_text().splitlines() if line.startswith("HEADLESS_RENDERER_RESULT ")]
             if len(lines) != 1:
                 raise RuntimeError("Expected one complete native report")
             native = json.loads(lines[0])
+            if pipe_only:
+                encoded = native.pop("snapshotPNGBase64", "")
+                if len(encoded) > 4 * ((2 * 1024 * 1024 + 2) // 3):
+                    raise RuntimeError("Snapshot pipe exceeds the image limit")
+                image = base64.b64decode(encoded, validate=True)
+                if not image.startswith(b"\x89PNG\r\n\x1a\n"):
+                    raise RuntimeError("Snapshot pipe did not contain a PNG")
+                with (payload / "snapshot.png").open("xb") as destination:
+                    destination.write(image)
+                result["pipeImageBytes"] = len(image)
             result["native"] = native
             services = native.get("servicesAfterSnapshot", {})
             identities_known = all(services.get(name, {}).get("identity")
@@ -71,9 +116,11 @@ def trial(directory, fixture=None):
                     and native.get("javascriptPassed") is True and native.get("snapshotPassed") is True
                     and native.get("serviceIdentityStable") is True
                     and native.get("windowCountAtStart") == 0 and native.get("visibleWindowCountAtEnd") == 0
-                    and identities_known and same_user and pixels.is_file() and network_passed):
+                    and identities_known and same_user and pixels.is_file() and network_passed
+                    and (not pipe_only or (native.get("resultTransport") == "bounded-stdout-json"
+                         and native.get("explicitSnapshotFileWrites") == 0))):
                 result["verdict"] = expected_verdict
-        except (RuntimeError, ValueError, subprocess.TimeoutExpired) as error:
+        except (RuntimeError, ValueError, OSError, subprocess.TimeoutExpired) as error:
             result["error"] = str(error)
         finally:
             result["cleanupVerified"] = stop_launched(process, BINARY)
@@ -86,6 +133,8 @@ def trial(directory, fixture=None):
                     process.wait(timeout=2)
             if not result["cleanupVerified"]:
                 result["verdict"] = "inconclusive"
+            if process.stdout is not None:
+                process.stdout.close()
     (directory / "result.json").write_text(json.dumps(result, indent=2) + "\n")
     return result
 
@@ -95,7 +144,10 @@ def main():
     parser.add_argument("--out", required=True, type=Path)
     parser.add_argument("--repetitions", type=int, default=3, choices=range(1, 4))
     parser.add_argument("--network", action="store_true")
+    parser.add_argument("--pipe", action="store_true")
     args = parser.parse_args()
+    if args.network and args.pipe:
+        parser.error("The pipe control accepts only the fixed inline fixture")
     if os.getuid() == 0 or os.geteuid() == 0:
         parser.error("This probe must run as an ordinary user")
     output = args.out.resolve()
@@ -103,17 +155,18 @@ def main():
         parser.error("Output must be inside workspace artifacts")
     output.mkdir()
     results = []
-    expected_verdict = "same-user-loopback-baseline-passed" if args.network else "same-user-headless-baseline-passed"
+    expected_verdict = ("same-user-loopback-baseline-passed" if args.network else
+                        "same-user-pipe-baseline-passed" if args.pipe else "same-user-headless-baseline-passed")
     with serve_renderer_fixture() if args.network else nullcontext() as fixture:
         for index in range(args.repetitions):
-            result = trial(output / f"trial-{index + 1}", fixture)
+            result = trial(output / f"trial-{index + 1}", fixture, args.pipe)
             results.append(result)
             if result["verdict"] != expected_verdict:
                 break
             time.sleep(0.2)
     summary = {
-        "milestone": 100 if args.network else 99,
-        "mode": "loopback" if args.network else "inline",
+        "milestone": 101 if args.pipe else 100 if args.network else 99,
+        "mode": "pipe" if args.pipe else "loopback" if args.network else "inline",
         "scope": "Same-user fixture, no explicit window, no input, no privilege, no signal-denial claim",
         "temporaryServerCleanupVerified": args.network,
         "binarySHA256": hashlib.sha256(BINARY.read_bytes()).hexdigest(),

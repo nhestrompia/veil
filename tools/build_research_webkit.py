@@ -63,6 +63,20 @@ def build_environment(output):
     return environment
 
 
+def engine_command(source, output):
+    # Match the upstream engine invocation without its separate ImageDiff build.
+    return ["/usr/bin/nice", "-n", "10", "/usr/bin/xcrun", "xcodebuild",
+            "-scheme", "Everything up to WebKit",
+            "-UseSanitizedBuildSystemEnvironment=YES", "-ShowBuildOperationDuration=YES",
+            "-workspace", str(source / "WebKit.xcworkspace"),
+            "-configuration", "Release", "-destination", "platform=macOS,devicetype=Mac,arch=arm64",
+            f"SYMROOT={output}", f"OBJROOT={output}", "SDKROOT=macosx",
+            "-jobs", "4", "ARCHS=arm64", "ONLY_ACTIVE_ARCH=YES",
+            f"MACOSX_DEPLOYMENT_TARGET={platform.mac_ver()[0]}", "TMPDIR=$(TARGET_TEMP_DIR)/",
+            "-derivedDataPath", str(output / "DerivedData"),
+            f"SHARED_PRECOMPS_DIR={output / 'PrecompiledHeaders'}"]
+
+
 def build(source, timeout):
     metal = subprocess.run(["xcrun", "metal", "--version"], capture_output=True, text=True, timeout=30)
     if metal.returncode:
@@ -77,16 +91,11 @@ def build(source, timeout):
     (output / "Temporary").mkdir(exist_ok=True)
     require_disk(BASE)
     log = BASE / "build.log"
-    command = ["/usr/bin/nice", "-n", "10", str(source / "Tools/Scripts/build-webkit"),
-               "--release", "--only=Everything up to WebKit", "-jobs", "4",
-               "ARCHS=arm64", "ONLY_ACTIVE_ARCH=YES", f"MACOSX_DEPLOYMENT_TARGET={platform.mac_ver()[0]}",
-               "TMPDIR=$(TARGET_TEMP_DIR)/",
-               "-derivedDataPath", str(output / "DerivedData"),
-               f"SHARED_PRECOMPS_DIR={output / 'PrecompiledHeaders'}"]
+    command = engine_command(source, output)
     report = {"command": command, "output": str(output), "source": str(source),
               "minimumFreeBytes": MIN_FREE, "timeoutSeconds": timeout,
               "metalCompiler": metal.stdout.strip(), "monitorPID": os.getpid(),
-              "status": "running",
+              "status": "running", "scope": "Everything up to WebKit scheme; ImageDiff excluded",
               "engineCompiled": False, "engineRuntimeTested": False}
     start = time.monotonic()
     result = BASE / "build-results.json"

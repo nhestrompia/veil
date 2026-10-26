@@ -471,3 +471,12 @@ The controller now marks an activation cycle inconclusive when the input gate ad
 Custom-engine diagnostics delay the private resume sequence for twenty seconds. This leaves time for the fifteen-second framework mapping check before external activation. The controller allows twenty-four seconds for that resume sequence. Ordinary diagnostics retain their existing timing.
 
 All 105 Python checks pass. Both ordinary and stable-engine diagnostic variants compile. A fresh ordinary password comparison reproduced one focus-only action with zero admitted keys. Private resume and all cleanup checks passed. Secure Event Input returned to off. The full engine build remains active. Custom-engine identity and action comparisons remain pending.
+
+
+## Milestone 78: isolate the engine scheme from ImageDiff
+
+The eighth command completed the WebKit scheme in 2,088.594 seconds. It then exited 64 while starting ImageDiff. That separate project cannot accept the inherited derived-data option without a scheme.
+
+The controller now invokes the same WebKit scheme directly through xcodebuild. Its arguments retain the workspace paths, target, four jobs, and reduced priority. ImageDiff is outside this browser experiment. The retry preserves completed objects and uses the same source patch. The overall failure receipt remains saved separately.
+
+The direct retry exited zero in 19.1 seconds. All 105 Python checks pass. Runtime framework identities and action comparisons remain unverified.

@@ -1,6 +1,6 @@
 # Isolated WebKit activity experiment
 
-This directory contains a research patch for WebKit revision `94f9b7905e3ce9a3d7497f26b563adcad6b7525f`. It is not installed in the browser. The full engine and its integration code have not been built or tested.
+This directory contains a research patch for WebKit revision `94f9b7905e3ce9a3d7497f26b563adcad6b7525f`. It is not installed in the browser. The isolated engine scheme compiled successfully. Runtime integration remains unverified.
 
 The patch adds one configuration choice. Each WebPageProxy captures it as a constant policy. Native mode preserves outgoing state. Stable mode sets five activity flags before content-process updates and page creation. Native UI state, drawing, throttling, and Secure Event Input code stay unchanged.
 
@@ -65,7 +65,7 @@ Start the bounded build:
 python3 tools/build_research_webkit.py --build
 ```
 
-The build uses the upstream Everything up to WebKit scheme. It includes engine dependencies. Four jobs run at reduced priority. Outputs, temporary files, module caches, and derived data stay inside the workspace. WEBKIT_OUTPUTDIR prevents upstream user-preference cleanup. The build preserves 60 GiB of free disk space. Its default limit is two hours. Failure cleanup targets only its own process group.
+The build invokes the upstream Everything up to WebKit scheme directly through xcodebuild. ImageDiff is excluded because it is a separate comparison utility. It includes engine dependencies. Four jobs run at reduced priority. Outputs, temporary files, module caches, and derived data stay inside the workspace. WEBKIT_OUTPUTDIR prevents upstream user-preference cleanup. The build preserves 60 GiB of free disk space. Its default limit is two hours. Failure cleanup targets only its own process group.
 
 The first attempt stopped before compilation because root configurations were absent. The source list now includes Configurations. The dependency scheme also replaces the incomplete WebKit-only scheme. The corrected attempt started compilation. No completed engine or runtime result exists yet.
 

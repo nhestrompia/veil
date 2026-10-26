@@ -21,7 +21,8 @@ class ResearchEngineBuildTests(unittest.TestCase):
                           f'exit {exit_code}\n')
         script.chmod(0o700)
         compiler = subprocess.CompletedProcess(['metal'], 0, stdout='test compiler', stderr='')
-        with patch.object(build, 'BASE', base), patch.object(build.subprocess, 'run', return_value=compiler):
+        with patch.object(build, 'BASE', base), patch.object(build.subprocess, 'run', return_value=compiler), \
+             patch.object(build, 'engine_command', return_value=[str(script)]):
             build.build(source, 5)
 
     def test_error_word_in_log_does_not_override_successful_exit(self):

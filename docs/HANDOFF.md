@@ -1,6 +1,6 @@
 # Current research state
 
-Latest: milestone 76. The eighth isolated engine build is active for host macOS 26.6, with normal logging and upstream cache defaults. Full WebKit compilation and custom-engine runtime comparisons remain unverified. All 102 Python checks pass. See the latest sections below.
+Latest: milestone 77. The eighth engine build remains active. All 105 Python checks pass. Focus cycles with admitted keys are inconclusive. A fresh ordinary password comparison still reproduced one external focus action with zero admitted keys. Private resume and cleanup passed. Custom-engine runtime comparisons remain pending.
 
 Updated 2026-10-26. Milestone 58 confirms an external focus-only action bypass in three fresh diagnostic processes. Activating another research window and returning completed one new action in each candidate. The standalone helper posted no input and made no AX call during those cycles. The gate admitted zero keyboard events. Agent-free operation is unmet.
 
@@ -223,3 +223,12 @@ Automatic approval review rejected an optional live refusal test against the fro
 The seventh build genuinely failed with exit code 65 on a credential API requiring macOS 26.2. The target was 26.0. The eighth build uses the host version, 26.6. Its active exec session is 22023. It currently compiles JavaScriptCore. Preserve the monitor, disk reserve, and actual exit-status evidence. See [host findings](engine-host-findings.md).
 
 Source staging now preserves timestamps for byte-identical files. Its regression failed before the change and passed afterward. All 102 Python checks pass. This optimization does not alter the running build. The prepared InternalKeyboardControl remains ordinary, capture-restricted, with private resume and ownership logging. The frozen physical browser and probes remain unchanged.
+
+
+## Milestone 77: separate private typing from activation results
+
+The controller now marks an activation cycle inconclusive when the input gate admits any key during that cycle. Its own scheduled typing can no longer establish an autonomous action or a block. Zero-input accepted actions retain their bypass result, even when activation receipts fail.
+
+Custom-engine diagnostics delay the private resume sequence for twenty seconds. This leaves time for the fifteen-second framework mapping check before external activation. The controller allows twenty-four seconds for that resume sequence. Ordinary diagnostics retain their existing timing.
+
+All 105 Python checks pass. Both ordinary and stable-engine diagnostic variants compile. A fresh ordinary password comparison reproduced one focus-only action with zero admitted keys. Private resume and all cleanup checks passed. Secure Event Input returned to off. The full engine build remains active. Custom-engine identity and action comparisons remain pending.

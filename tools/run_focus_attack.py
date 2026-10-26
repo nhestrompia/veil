@@ -15,6 +15,8 @@ from run_keyboard_observation import secure_input_enabled
 
 
 def cycle_outcome(cycle):
+    if cycle.get("acceptedInputEvents", 0):
+        return "inconclusive"
     if any(item["accepted"] for item in cycle["newSubmissions"]):
         return "autonomous-website-action"
     if cycle["awayStatus"] == "observed" and cycle["backStatus"] == "observed":
@@ -122,9 +124,11 @@ def run(output, controller, repetitions, surface="focus-action", hide=False, pas
                 row["engineIdentity"] = candidate["engineIdentity"]
             row["candidate"] = activation_cycle(candidate, sink, oracle, hide)
             row["status"] = cycle_outcome(row["candidate"])
+            if row["candidate"]["acceptedInputEvents"]:
+                row["reason"] = "Authorized input overlapped the activation-only cycle"
             if resume:
                 before_resume = accepted(oracle.state(candidate["trial"]))
-                deadline = time.monotonic() + 12
+                deadline = time.monotonic() + (24 if engine_root is not None else 12)
                 while time.monotonic() < deadline and "resumeSequenceFinished=true" not in candidate["log"].read_text():
                     time.sleep(0.1)
                 row["privateResumeCompleted"] = "resumeSequenceFinished=true" in candidate["log"].read_text()

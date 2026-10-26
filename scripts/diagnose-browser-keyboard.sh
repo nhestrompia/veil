@@ -223,7 +223,11 @@ Task { @MainActor in
     #endif
     fflush(stdout)
     #if INTERNAL_FOCUS_RESUME
+    #if INTERNAL_ENGINE_ACTIVITY
+    try? await Task.sleep(for: .seconds(20))
+    #else
     try? await Task.sleep(for: .seconds(8))
+    #endif
     for (code, character) in zip(codes, "native-input\\r") {
         key(code, String(character))
         try? await Task.sleep(for: .milliseconds(50))

@@ -462,3 +462,12 @@ Readable pagehide and unload references terminated without recording beacon acti
 ## Milestone 76: build for the host and preserve source timestamps
 
 The seventh build failed on APIs requiring macOS 26.2 because the deployment target was 26.0. The eighth uses the host version, 26.6. Source staging now skips byte-identical files. Its timestamp regression changed from failure to success. All 102 Python checks pass. The complete engine and runtime comparisons remain pending. See [host findings](engine-host-findings.md).
+
+
+## Milestone 77: separate private typing from activation results
+
+The controller now marks an activation cycle inconclusive when the input gate admits any key during that cycle. Its own scheduled typing can no longer establish an autonomous action or a block. Zero-input accepted actions retain their bypass result, even when activation receipts fail.
+
+Custom-engine diagnostics delay the private resume sequence for twenty seconds. This leaves time for the fifteen-second framework mapping check before external activation. The controller allows twenty-four seconds for that resume sequence. Ordinary diagnostics retain their existing timing.
+
+All 105 Python checks pass. Both ordinary and stable-engine diagnostic variants compile. A fresh ordinary password comparison reproduced one focus-only action with zero admitted keys. Private resume and all cleanup checks passed. Secure Event Input returned to off. The full engine build remains active. Custom-engine identity and action comparisons remain pending.

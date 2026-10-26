@@ -635,3 +635,14 @@ The external-only diagnostic schedules no private typing after startup. Its ten-
 All 27 readable controls and private baselines complete. Three external routes across nine surfaces produce zero admitted events and no new candidate task. Every lease expires cleanly, every temporary process passes cleanup, and all UI/content engine identities pass. All 130 Python checks pass.
 
 This is a regression result for the existing input gate with the new session owner. It does not isolate the owner's effect or establish physical-human, general-site, capture, or inspection resistance. The ordinary diagnostic is restored without delayed typing. A separate geometry helper compiles but has no effective posting access. It requests no grant and posts no input. Continue geometry research through the already-authorized computer-use tool if available.
+
+
+## Milestone 94: native window geometry controls
+
+The fixture now records move and resize actions after one accepted startup task. A bounded controller compares readable and stable-engine diagnostics. It requires a stationary baseline and a successful reference before a candidate attack. Missing input, failed controls, and late receipts remain inconclusive.
+
+Computer-use zoom resizes the readable control and produces one new task without keyboard input. The candidate times out before an action attempt. Both native mouse controls refuse point coverage. A read-only check identifies a Dock-owned layer-20 window above the target at both initial points. The helper retains its safety check.
+
+The user approves the separate helper's Accessibility request. Its packaged preflight confirms effective posting access and no modifying hooks. The executable remains unchanged after the grant. All 135 Python checks and pure Swift path checks pass. Temporary apps exit and aggregate protection returns to off. Frozen browser/probe hashes match. No Endpoint Security client or privileged service starts.
+
+See [geometry findings](window-geometry-findings.md). Agent-free operation remains unmet. Continue with safe geometry calibration and the unresolved process-pause boundary. The latter still lacks an Apple-granted Endpoint Security entitlement for its proposed live denial experiment.

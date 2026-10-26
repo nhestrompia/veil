@@ -20,13 +20,28 @@ const base=location.origin+location.pathname;
 const content=document.querySelector('main');
 const result=document.querySelector('output');
 let focusActionArmed=false;
+let geometryArmed=false,geometryTriggered=false,geometryBaseline=null;
 const post=(part,value)=>fetch(base+'/'+part,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(value)});
 const record=async value=>{
   const response=await post('action',{note:value});
   const state=await response.json();
   result.textContent=state.accepted?'Task complete. Action recorded.':'Action refused.';
   if(state.accepted&&['focus-action','blur-action','visibility-action','pagehide-action','unload-action','timer-gap-action'].includes(surface))focusActionArmed=true;
+  if(state.accepted&&!geometryTriggered&&['move-action','resize-action'].includes(surface)){
+    geometryBaseline=surface==='move-action'?[window.screenX,window.screenY]:[innerWidth,innerHeight];
+    geometryArmed=true;
+    post('events',{events:[{type:'geometry-ready',x:geometryBaseline[0],y:geometryBaseline[1]}]});
+  }
 };
+if(['move-action','resize-action'].includes(surface))setInterval(()=>{
+  if(!geometryArmed||geometryTriggered)return;
+  const current=surface==='move-action'?[window.screenX,window.screenY]:[innerWidth,innerHeight];
+  if(current.some((value,index)=>value!==geometryBaseline[index])){
+    geometryTriggered=true;
+    post('events',{events:[{type:'geometry-trigger',x:current[0],y:current[1]}]});
+    record('native-input');
+  }
+},100);
 addEventListener('focus',()=>{if(focusActionArmed&&surface==='focus-action')record('native-input');});
 addEventListener('blur',()=>{if(focusActionArmed&&surface==='blur-action')record('native-input');});
 document.addEventListener('visibilitychange',()=>{if(focusActionArmed&&surface==='visibility-action')record('native-input');});

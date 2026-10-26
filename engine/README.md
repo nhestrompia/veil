@@ -79,4 +79,4 @@ After a successful build, pass --engine-frameworks .build/webkit-engine/output/R
 
 Xcode script phases use TMPDIR from TARGET_TEMP_DIR. A shared directory under OBJROOT is denied by their sandbox. The narrow WTF target passed with this correction. See [the build diagnosis](../docs/engine-temp-findings.md).
 
-Milestone 70 tried disabling Swift compilation caching alone. WebGPU and PAL still failed. The build now disables the umbrella compilation cache, matching the passing JavaScriptCore comparison. Full WebKit integration remains unverified. See [cache findings](../docs/engine-cache-findings.md).
+The cache experiments were inconclusive. Quiet logging emitted cosmetic error wrappers despite successful command exits. The build now uses normal logging and upstream cache defaults. Full WebKit integration remains unverified. See [the corrected diagnosis](../docs/engine-log-findings.md).

@@ -1,5 +1,7 @@
 # Broader cache setting and content lookup
 
+Correction from milestone 74: quiet-mode zero-exit messages are cosmetic. A forced PAL compile emitted one and exited zero. Earlier full-build cache attribution was unsupported because the monitors were interrupted before final exit. The current build uses normal logging and upstream cache defaults. See [the correction](engine-log-findings.md).
+
 The fifth full build still reported zero-exit/no-output failures in WebGPU and PAL after Swift caching was disabled. The narrower switch did not clear all failing tasks. The monitor stopped through its own cleanup. The failed evidence remains saved.
 
 The sixth build uses COMPILATION_CACHE_ENABLE_CACHING=NO. This is the exact umbrella setting that passed the narrow JavaScriptCore target. Both Swift and C++ compilation caching are disabled for this isolated build. The complete engine remains unverified.

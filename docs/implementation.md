@@ -447,3 +447,8 @@ The Swift-only cache experiment still failed WebGPU and PAL tasks. The sixth ful
 ## Milestone 73: observe content focus and visibility
 
 The optional page observer records state transitions and page-local timestamps. A matched ordinary password comparison calibrated hidden and visible focus transitions. Its focus-only action reproduced. Private resume and cleanup passed. All 100 Python checks pass. Custom-engine native and stable comparisons remain pending. See [activity findings](page-activity-findings.md).
+
+
+## Milestone 74: correct quiet-log interpretation
+
+A forced PAL compile emitted the quiet-mode error wrapper but exited zero and regenerated its object. The previous full-build cache interpretation was unsupported. Those runs stopped before their final exit status. The full build now uses normal logging and upstream caching. Explicit future receipt states distinguish success, failure, and a stopped monitor. All 102 Python checks pass, including two real child-process status checks. See [log findings](engine-log-findings.md).

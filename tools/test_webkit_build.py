@@ -1,5 +1,6 @@
 import json
 from pathlib import Path
+import subprocess
 import tempfile
 import unittest
 from unittest.mock import patch
@@ -8,6 +9,38 @@ import build_research_webkit as build
 
 
 class ResearchEngineBuildTests(unittest.TestCase):
+    def run_fake_build(self, directory, exit_code):
+        base = Path(directory)
+        source = base / 'source'
+        (source / 'Configurations').mkdir(parents=True)
+        (source / 'Configurations/CommonBase.xcconfig').write_text('')
+        script = source / 'Tools/Scripts/build-webkit'
+        script.parent.mkdir(parents=True)
+        script.write_text('#!/bin/sh\necho "error: command exited zero but produced no further output"\n'
+                          f'exit {exit_code}\n')
+        script.chmod(0o700)
+        compiler = subprocess.CompletedProcess(['metal'], 0, stdout='test compiler', stderr='')
+        with patch.object(build, 'BASE', base), patch.object(build.subprocess, 'run', return_value=compiler):
+            build.build(source, 5)
+
+    def test_error_word_in_log_does_not_override_successful_exit(self):
+        with tempfile.TemporaryDirectory() as directory:
+            self.run_fake_build(directory, 0)
+            report = json.loads((Path(directory) / 'build-results.json').read_text())
+            self.assertEqual(report['status'], 'succeeded')
+            self.assertEqual(report['exitCode'], 0)
+            self.assertTrue(report['engineCompiled'])
+            self.assertFalse(report['engineRuntimeTested'])
+
+    def test_nonzero_exit_records_failure(self):
+        with tempfile.TemporaryDirectory() as directory:
+            with self.assertRaisesRegex(RuntimeError, 'exit 7'):
+                self.run_fake_build(directory, 7)
+            report = json.loads((Path(directory) / 'build-results.json').read_text())
+            self.assertEqual(report['status'], 'failed')
+            self.assertEqual(report['exitCode'], 7)
+            self.assertFalse(report['engineCompiled'])
+
     def test_output_environment_bypasses_user_xcode_preferences(self):
         output = Path('/workspace/output')
         with patch.dict('os.environ', {'BUILD_WEBKIT_PRE_SCRIPT': '/unexpected/script'}):

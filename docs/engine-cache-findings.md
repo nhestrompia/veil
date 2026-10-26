@@ -1,5 +1,7 @@
 # Swift compilation-cache comparison
 
+Correction from milestone 74: quiet-mode zero-exit messages are cosmetic. A forced PAL compile emitted one and exited zero. Earlier full-build cache attribution was unsupported because the monitors were interrupted before final exit. The current build uses normal logging and upstream cache defaults. See [the correction](engine-log-findings.md).
+
 The fourth full build reached Swift tasks in JavaScriptCore, WebGPU, and PAL. Xcode reported successful command exit codes but treated those tasks as failed. The log contained cache-miss messages and no source diagnostic for those failures. The build monitor stopped through its own cleanup before the comparison.
 
 A narrow JavaScriptCore build disabled compilation caching. Its Swift tasks compiled, and the framework linked successfully. The comparison retained the deployment target, source, and target-local temporary directory. The broader cache setting also changed C++ compilation, so this result alone does not isolate every cache component.

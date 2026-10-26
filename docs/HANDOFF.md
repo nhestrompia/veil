@@ -1,6 +1,6 @@
 # Current research state
 
-Latest: milestone 72. The sixth isolated engine build is active. Full WebKit compilation and custom-engine runtime comparisons remain unverified. All 100 Python checks pass. See the latest sections below.
+Latest: milestone 74. The seventh isolated engine build is active with normal logging and upstream cache defaults. Full WebKit compilation and custom-engine runtime comparisons remain unverified. All 102 Python checks pass. See the latest sections below.
 
 Updated 2026-10-26. Milestone 58 confirms an external focus-only action bypass in three fresh diagnostic processes. Activating another research window and returning completed one new action in each candidate. The standalone helper posted no input and made no AX call during those cycles. The gate admitted zero keyboard events. Agent-free operation is unmet.
 
@@ -205,3 +205,9 @@ The prepared InternalKeyboardControl is now engine-stable, capture-restricted, w
 The fixture can now report focus and visibility state transitions without field text. One ordinary password comparison reported hidden state while away and visible focus transitions after return. The focus-only action reproduced. Private resume and cleanup passed. All 100 Python checks pass. See [activity findings](page-activity-findings.md). No protected custom-engine comparison ran.
 
 A later PAL reproduction proves the quiet-log zero-exit messages are cosmetic: the target exits zero and regenerates its object. Earlier cache-failure attribution is invalid. The seventh full build is active in exec session 3890, with normal logging and upstream cache defaults. The physical browser and permissioned probes remain unchanged.
+
+## Milestone 74 quiet-log diagnosis correction
+
+A forced PAL Swift compile reproduced the zero-exit/no-output message in quiet mode, exited zero, and regenerated its object. The earlier cache-failure attribution is unsupported. Full attempts four through six were manually interrupted before their final exit. The confirmed configuration, Metal, and temporary-directory failures remain valid separate findings. See [log findings](engine-log-findings.md).
+
+The seventh full build remains active in exec session 3890. It reached WebCore with normal logging and upstream caching. Its current monitor predates the new explicit status field. Read its actual exitCode and engineCompiled fields when it ends. Do not stop it because a log line contains error wording. All 102 Python checks pass. The prepared InternalKeyboardControl is currently ordinary, capture-restricted, with private resume and ownership logging.

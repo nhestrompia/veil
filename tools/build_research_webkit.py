@@ -75,15 +75,15 @@ def build(source, timeout):
     require_disk(BASE)
     log = BASE / "build.log"
     command = ["/usr/bin/nice", "-n", "10", str(source / "Tools/Scripts/build-webkit"),
-               "--release", "--only=Everything up to WebKit", "-quiet", "-jobs", "4",
+               "--release", "--only=Everything up to WebKit", "-jobs", "4",
                "ARCHS=arm64", "ONLY_ACTIVE_ARCH=YES", "MACOSX_DEPLOYMENT_TARGET=26.0",
                "TMPDIR=$(TARGET_TEMP_DIR)/",
-               "COMPILATION_CACHE_ENABLE_CACHING=NO",
                "-derivedDataPath", str(output / "DerivedData"),
                f"SHARED_PRECOMPS_DIR={output / 'PrecompiledHeaders'}"]
     report = {"command": command, "output": str(output), "source": str(source),
               "minimumFreeBytes": MIN_FREE, "timeoutSeconds": timeout,
               "metalCompiler": metal.stdout.strip(), "monitorPID": os.getpid(),
+              "status": "running",
               "engineCompiled": False, "engineRuntimeTested": False}
     start = time.monotonic()
     result = BASE / "build-results.json"
@@ -98,15 +98,18 @@ def build(source, timeout):
                 require_disk(BASE)
                 if time.monotonic() - start > timeout:
                     raise RuntimeError("Research engine build reached its time limit")
-                if log.stat().st_size > 256 * 1024 ** 2:
+                if log.stat().st_size > 512 * 1024 ** 2:
                     raise RuntimeError("Research engine build log reached its size limit")
                 time.sleep(1)
             report["exitCode"] = process.returncode
+            report["status"] = "succeeded" if process.returncode == 0 else "failed"
             report["engineCompiled"] = process.returncode == 0
             if process.returncode:
                 raise RuntimeError(f"Research engine build failed with exit {process.returncode}; see {log}")
         except BaseException as error:
-            report["error"] = str(error)
+            if report["status"] == "running":
+                report["status"] = "stopped"
+            report["error"] = f"{type(error).__name__}: {error}"
             terminate_group(process)
             raise
         finally:

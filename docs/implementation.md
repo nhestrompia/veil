@@ -664,3 +664,12 @@ The disposable fixture now measures main-page performance time, wall time, worke
 Sixteen repeated trials produce sixteen actions across four clocks and two engine modes. All stationary controls pass. Every scoped pause, normal resume, and watchdog recovery verifies. No cycle admits input. All framework identities and temporary cleanup checks pass. The separate two-trial server pilot also succeeds. The hide/restore regression still produces a native action and no stable action.
 
 The existing prevention verifier rejects the eight stable cases despite their successful native controls. All 141 Python checks and JavaScript syntax checks pass. These results expose timing channels. They do not validate a clock patch or a general signal-denial guarantee. No grant, service, input hook, frozen browser, or frozen probe changes.
+
+
+## Milestone 97: finite identity-boundary experiment
+
+A new native diagnostic prepares permanent credential drops for freshly forked children. It accepts no target PID, user ID, path, or arbitrary command. Root mode requires protected temporary staging. No privileged test ran.
+
+Seven unprivileged controls pass. These include normal stop/resume, inherited signal-state normalization, watchdog-only recovery, process-group interruption, and parent death. Four invalid or unprivileged root invocations refuse. All temporary children exit. All 145 Python checks pass.
+
+A primary-source review corrected staging, signal inheritance, watchdog isolation, and cleanup ownership before the administrator request. The exact binary and command hashes bind the reviewed plan. The next test needs explicit approval for a temporary root parent. It creates no account, service, browser grant, or input hook. A successful command-line comparison would still leave browser integration untested. See [identity findings](identity-signal-findings.md).

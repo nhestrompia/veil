@@ -1,0 +1,19 @@
+# Cross-identity signal experiment
+
+Milestone 97 prepares a finite administrator test. No root experiment ran. The current browser still has the confirmed renderer-pause bypass.
+
+The native helper accepts no runtime PID, user ID, path, or command. Its actor, target, and watchdog come only from its own fork calls. The compiled actor identity is UID 501 and GID 20. The proposed isolated target uses this Mac's existing `nobody` account, UID and GID 4294967294. This experiment creates no account, service, permission grant, or input hook.
+
+The proposed root parent permanently changes each child identity through supplementary groups, group ID, then user ID. Both children must fail attempts to regain root. The parent independently reads their real, effective, and saved kernel IDs. The same-user control must reach a stopped state. The cross-user test must return EPERM and answer a heartbeat before any recovery signal. A one-and-a-half-second limit keeps that heartbeat before the watchdog's first resume at two seconds.
+
+The helper normalizes inherited signal masks and dispositions before it forks. A detached watchdog acknowledges its new session and process group before the actor can send SIGSTOP. It resumes the exact tracked process after two seconds and terminates it after six seconds if needed. The parent has a twenty-second alarm. Children have eight-second alarms. Cleanup checks child ownership through waitpid and sends no further signal after ECHILD.
+
+Seven unprivileged controls pass. Three normal same-user trials confirm stop, resume, heartbeat, and reaping. A fourth trial starts with blocked or ignored alarm and child signals, then confirms normal operation. A watchdog-only trial resumes without a parent SIGCONT. Separate fault trials terminate the original process group and kill only the parent while the target is stopped. The detached watchdog survives and all tracked processes disappear. Four forbidden invocations safely refuse. No temporary helper remains.
+
+The administrator plan copies the final binary into a private temporary directory owned by root. It removes inherited ACLs and sets directory and file modes to 0700. It compares the copied hash, then repeats signature, runtime, dependency, and loader checks on that protected copy. Both shell and native program start with cleared environments. The image loads only Apple's system library. The shell deletes only its exact staged executable and directory. It installs no set-user-ID bit.
+
+The prepared binary SHA256 is `56cf27977127c0a53d0fbc30a98780662f2f5e791a3e86494e28ef20488e3744`. The administrator command SHA256 is `0d1ddf74cbd6927b27ce7d6c252ace0574b27fe14577cbef9c4e838b93693e44`. Approval must bind to these artifacts. A later rebuild needs a new reviewed plan. The full command remains in `artifacts/identity-signal-97-reviewed-candidate/reviewed-run-plan.json`.
+
+All 145 Python checks pass. The plan tests validate malformed hashes, shell quoting, exact cleanup, cleared environments, and checks after protected staging. They never elevate. A separate primary-source review found and corrected staging, inherited-signal, watchdog, and cleanup hazards before any approval request. See the [experiment plan](research/identity-signal-experiment-plan.md).
+
+A successful root comparison would establish one kernel signal boundary for disposable command-line processes. It would not protect WKWebView, prove arbitrary-site compatibility, or close the exposed user-side UI and network paths. The shared nobody identity is unsuitable as a private browser identity. Separate renderer design, trusted interprocess messages, physical input, display access, and adversarial browser tests would remain. [Evidence](evidence/identity-signal-preflight-results.json) records only the completed unprivileged controls and the unexecuted administrator plan.

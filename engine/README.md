@@ -1,6 +1,6 @@
 # Isolated WebKit activity experiment
 
-This directory contains a research patch for WebKit revision `94f9b7905e3ce9a3d7497f26b563adcad6b7525f`. It is not installed in the browser. The isolated engine scheme compiled successfully. Runtime integration remains unverified.
+This directory contains a research patch for WebKit revision `94f9b7905e3ce9a3d7497f26b563adcad6b7525f`. It is not installed in the browser. The isolated engine scheme compiled successfully. Separate diagnostics verified UI and content framework paths. Native and stable activity comparisons now have measured results.
 
 The patch adds one configuration choice. Each WebPageProxy captures it as a constant policy. Native mode preserves outgoing state. Stable mode sets five activity flags before content-process updates and page creation. Native UI state, drawing, throttling, and Secure Event Input code stay unchanged.
 
@@ -67,7 +67,7 @@ python3 tools/build_research_webkit.py --build
 
 The build invokes the upstream Everything up to WebKit scheme directly through xcodebuild. ImageDiff is excluded because it is a separate comparison utility. It includes engine dependencies. Four jobs run at reduced priority. Outputs, temporary files, module caches, and derived data stay inside the workspace. WEBKIT_OUTPUTDIR prevents upstream user-preference cleanup. The build preserves 60 GiB of free disk space. Its default limit is two hours. Failure cleanup targets only its own process group.
 
-The first attempt stopped before compilation because root configurations were absent. The source list now includes Configurations. The dependency scheme also replaces the incomplete WebKit-only scheme. The corrected attempt started compilation. No completed engine or runtime result exists yet.
+The first attempt stopped before compilation because root configurations were absent. The source list now includes Configurations. The dependency scheme also replaces the incomplete WebKit-only scheme. The corrected attempt started compilation. The direct engine scheme now completes. See the later runtime results.
 
 The build log and receipts are in .build/webkit-engine/. A successful command does not prove which frameworks a research browser loads. Check UI and content-process framework identities before live claims. The frozen physical browser and permissioned probes remain unchanged.
 
@@ -75,7 +75,7 @@ The build log and receipts are in .build/webkit-engine/. A successful command do
 
 Compile the engine diagnostic with --engine-native or --engine-stable, plus --build-only. Logical host overrides are refused. The diagnostic uses an ad hoc signature without hardened runtime. Only that disposable app receives the custom loader environment.
 
-After a successful build, pass --engine-frameworks .build/webkit-engine/output/Release to the focus controller. Startup requires expected UI images and content mappings. This path remains unverified against a completed engine. See [runtime gates](../docs/engine-runtime-findings.md).
+After a successful build, pass --engine-frameworks .build/webkit-engine/output/Release to the focus controller. Startup requires expected UI images and content mappings. This path now passes in native and stable diagnostics. See [the activity comparisons](../docs/engine-activity-matrix-findings.md). See [runtime gates](../docs/engine-runtime-findings.md).
 
 Xcode script phases use TMPDIR from TARGET_TEMP_DIR. A shared directory under OBJROOT is denied by their sandbox. The narrow WTF target passed with this correction. See [the build diagnosis](../docs/engine-temp-findings.md).
 

@@ -1,6 +1,6 @@
 # Current research state
 
-Latest: milestone 80. Three stable-engine password focus trials recorded no new action. The native-engine bypass reproduced. Private resumed tasks and actual native ownership release passed. All 108 Python checks pass. The broader native/stable activity matrix is active in exec session 98440, output artifacts/engine-activity-matrix-81.
+Latest: milestone 81. The engine matrix reproduced all nine native actions. Seven stable cases passed without actions. Two srcdoc resume controls failed, but fresh focus and visibility retries passed. The original failures remain inconclusive. All 111 Python checks pass. Timer testing is prepared. The feature fixture runs on port 8766 in exec session 83296.
 
 Updated 2026-10-26. Milestone 58 confirms an external focus-only action bypass in three fresh diagnostic processes. Activating another research window and returning completed one new action in each candidate. The standalone helper posted no input and made no AX call during those cycles. The gate admitted zero keyboard events. Agent-free operation is unmet.
 
@@ -265,3 +265,18 @@ Each stable trial admitted zero keys during external activation. The page contin
 The per-view Secure Event Input flag became false while hidden and true after return. Every private resumed sequence completed one task. All temporary processes passed cleanup. Aggregate Secure Event Input returned to off.
 
 These results apply to the measured focus route. The patch remains isolated from the physical browser. Blur, visibility, child frames, changing password fields, and physical usability still require separate controls. This result does not establish agent-free operation across the web.
+
+
+## Milestone 81: compare native and stable activity across frame types
+
+The new controller builds each mode of the same isolated engine diagnostic. It runs a native control before accepting a stable result for each case. Failed controls cause explicit skips. Each case uses a fresh process, verified content framework mappings, and a private resumed typing control.
+
+The cases cover password focus, ordinary blur, ordinary visibility, and focus plus visibility in three child-frame types. Those types are same-origin, cross-origin, and srcdoc. The controller stops if stable mode permits an autonomous website action. It preserves per-case receipts and verifies process cleanup.
+
+These comparisons exercise page code that reacts to native activity. They do not prove physical usability, pointer support, or compatibility with every website. Timing behavior and independent element-focus commands remain separate tests.
+
+The first complete matrix reproduced all nine native actions. Seven stable cases recorded no action and passed private resume. Both srcdoc cases recorded no action, but their resumed typing controls failed. All eighteen cases passed process cleanup. These two cases remain inconclusive in the original receipt.
+
+A fresh srcdoc focus retry recorded no action and passed its resumed task. The first retry could not reach the stopped fixture and launched no app. The later retry used the restored fixture. All 111 Python checks pass, including missing-control skips and preservation of positive action evidence after a failed resume.
+
+The fresh srcdoc visibility retry also recorded no action and passed one resumed task. Both retries passed cleanup and left Secure Event Input off. Their successful results do not erase the two original inconclusive cases. The resume failures remain unexplained.

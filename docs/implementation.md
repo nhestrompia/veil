@@ -480,3 +480,16 @@ The eighth command completed the WebKit scheme in 2,088.594 seconds. It then exi
 The controller now invokes the same WebKit scheme directly through xcodebuild. Its arguments retain the workspace paths, target, four jobs, and reduced priority. ImageDiff is outside this browser experiment. The retry preserves completed objects and uses the same source patch. The overall failure receipt remains saved separately.
 
 The direct retry exited zero in 19.1 seconds. All 105 Python checks pass. Runtime framework identities and action comparisons remain unverified.
+
+
+## Milestone 79: validate content framework paths
+
+The first identity check refused before any candidate activation. The parser treated the slash in vmmap permissions as a path prefix. A fresh diagnostic reproduced the exact error. A regression check failed before the parser correction.
+
+A second refusal came from rows that vmmap labels unused. Those rows describe shared-cache fragments on dirty pages. The saved rows show all three custom frameworks with executable text mappings. System framework fragments carry the explicit unused label.
+
+The parser now ignores only rows with that unused prefix. Such rows cannot satisfy the required identities. Actual system framework mappings still cause refusal. The controller saves only framework mapping rows for diagnosis. Both new unused-row checks failed before this correction.
+
+The diagnostic and frozen probes retain their existing identities. No candidate activation result follows from the failed identity trials.
+
+All 108 Python checks pass. A fresh native-mode trial verified custom framework paths in both processes. It reproduced one focus-only action with zero admitted keys. Private resume completed one task. Ownership released while hidden and returned afterward. Every temporary process passed cleanup, and Secure Event Input returned to off.

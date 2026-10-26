@@ -54,12 +54,15 @@ def mapped_frameworks(text, root):
     root = root.resolve()
     found = {}
     for line in text.splitlines():
-        match = re.search(r'(/[^\n]*?/(WebKit|WebCore|JavaScriptCore)\.framework/(?:Versions/[^/]+/)?\2)(?:\s|$)', line)
+        # vmmap labels unused shared-cache fragments on a dirty page separately.
+        if line.lstrip().startswith('unused '):
+            continue
+        match = re.search(r'(?<!\S)(/[^\n]*?/(WebKit|WebCore|JavaScriptCore)\.framework/(?:Versions/[^/]+/)?\2)(?:\s|$)', line)
         if not match:
             continue
         path = Path(match[1]).resolve()
         if not path.is_relative_to(root):
-            raise RuntimeError(f'A system or unexpected framework is mapped: {match[2]}')
+            raise RuntimeError(f'A system or unexpected framework is mapped: {match[2]} at {path}')
         found[match[2]] = str(path)
     if set(found) != REQUIRED:
         raise RuntimeError('Mapped framework identity is incomplete')
@@ -82,6 +85,9 @@ def verify_content(log, root, output):
                             capture_output=True, text=True, timeout=15)
     if result.returncode:
         raise RuntimeError('Content framework mapping is unavailable')
+    framework_lines = [line for line in result.stdout.splitlines()
+                       if any(f'/{name}.framework/' in line for name in REQUIRED)]
+    output.with_suffix('.framework-lines.json').write_text(json.dumps(framework_lines, indent=2) + '\n')
     report = {'pid': pid, 'executable': str(executable),
               'mappedFrameworks': mapped_frameworks(result.stdout, root)}
     output.write_text(json.dumps(report, indent=2) + '\n')

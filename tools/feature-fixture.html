@@ -117,6 +117,12 @@ async function mount(){
       if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();root.querySelector('form').requestSubmit();}
     });
     window.focusResearchField=()=>{field.focus();return true;};
+    window.setResearchFieldKind=kind=>{
+      if(!(field instanceof HTMLInputElement)||!['text','password'].includes(kind))return null;
+      field.type=kind;
+      post('events',{events:[{type:'field-kind-'+kind,t:performance.now()}]});
+      return {kind:field.type,focused:document.activeElement===field};
+    };
     addEventListener('message',event=>{if(event.data==='research-focus'){field.focus();parent.postMessage('research-focused','*');}});
   }
   const eventTypes=['keydown','input','pointerdown','click','drop','wheel'];

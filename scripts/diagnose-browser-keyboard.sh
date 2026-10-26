@@ -11,6 +11,7 @@ focus_mode=ordinary
 focus_resume=false
 owner_readback=false
 engine_mode=none
+password_transitions=false
 for argument in "$@"; do
     case "$argument" in
         --capture-restricted) restricted=true ;;
@@ -25,9 +26,14 @@ for argument in "$@"; do
         --owner-readback) owner_readback=true ;;
         --engine-native) engine_mode=native ;;
         --engine-stable) engine_mode=stable ;;
+        --password-transitions) password_transitions=true ;;
         *) echo "Unknown diagnostic option: $argument" >&2; exit 2 ;;
     esac
 done
+if [ "$password_transitions" = true ] && { [ "$feature_suite" = false ] || [ "$owner_readback" = false ] || [ "$engine_mode" = none ] || [ "$focus_resume" = true ]; }; then
+    echo "Password transitions require feature-suite, owner-readback, an isolated engine, and no focus-resume." >&2
+    exit 2
+fi
 if [ "$engine_mode" != none ] && { [ "$focus_mode" != ordinary ] || [ "$build_only" = false ]; }; then
     echo "Engine diagnostics require --build-only and actual host window state." >&2
     exit 2
@@ -41,6 +47,7 @@ if [ "$focus_resume" = true ]; then defines+=(-D INTERNAL_FOCUS_RESUME); fi
 if [ "$owner_readback" = true ]; then defines+=(-D INTERNAL_OWNER_READBACK); fi
 if [ "$engine_mode" != none ]; then defines+=(-D INTERNAL_ENGINE_ACTIVITY); fi
 if [ "$engine_mode" = stable ]; then defines+=(-D INTERNAL_ENGINE_STABLE_ACTIVITY); fi
+if [ "$password_transitions" = true ]; then defines+=(-D INTERNAL_PASSWORD_TRANSITIONS); fi
 case "$focus_mode" in
     filter) defines+=(-D INTERNAL_ACTIVATION_FILTER) ;;
     logical) defines+=(-D INTERNAL_LOGICAL_KEY) ;;
@@ -222,6 +229,30 @@ Task { @MainActor in
     }
     #endif
     fflush(stdout)
+    #if INTERNAL_PASSWORD_TRANSITIONS
+    try? await Task.sleep(for: .seconds(20))
+    for (phase, kind, settle) in [("password-settled", "password", 300), ("text-settled", "text", 300),
+                                  ("password-immediate", "password", 0), ("text-immediate", "text", 0)] {
+        guard let transition = try? await webView.evaluateJavaScript("window.setResearchFieldKind('" + kind + "')") as? [String: Any],
+              transition["kind"] as? String == kind, transition["focused"] as? Bool == true else {
+            print("PASSWORD_TRANSITION refused=field-change")
+            NSApp.terminate(nil)
+            return
+        }
+        if settle > 0 { try? await Task.sleep(for: .milliseconds(settle)) }
+        print("PASSWORD_TRANSITION begin=\\(phase) kind=\\(kind) settleMS=\\(settle) beforeOwner=\\(DiagnosticSecureInput.owner(in: window.contentView))")
+        let beforeCount = app.acceptedEventCount
+        for (code, character) in zip(codes, "native-input\\r") {
+            key(code, String(character))
+            try? await Task.sleep(for: .milliseconds(50))
+        }
+        try? await Task.sleep(for: .milliseconds(150))
+        print("PASSWORD_TRANSITION end=\\(phase) afterOwner=\\(DiagnosticSecureInput.owner(in: window.contentView)) acceptedEvents=\\(app.acceptedEventCount - beforeCount)")
+        fflush(stdout)
+    }
+    print("PASSWORD_TRANSITION sequenceFinished=true")
+    fflush(stdout)
+    #endif
     #if INTERNAL_FOCUS_RESUME
     #if INTERNAL_ENGINE_ACTIVITY
     try? await Task.sleep(for: .seconds(20))

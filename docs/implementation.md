@@ -610,3 +610,10 @@ The new prototype limits SIGSTOP denial to one exact disposable target for at mo
 The compiled helper reports no entitlement and no root privilege. The user confirmed no Apple-granted entitlement for this project. Six integration checks verify target parsing and safe refusals without creating an ES client or subscription. All temporary controls exited. All 116 Python checks pass.
 
 The adapter is compiled, not validated as an enforcement boundary. Live testing needs approved signing, privileged deployment, explicit approval, and independent coverage controls. No service or permission changed. The pause bypass remains open. Continue browser tests that use existing permissions.
+
+
+## Milestone 91: focused password transitions
+
+Four fresh diagnostics each complete one startup task and four field-type transition tasks. The 300-millisecond controls match the requested type throughout typing. With no added wait, the first password key sees protection off and the first text key sees it still on. Both native and stable engine modes show the same pattern in two comparisons.
+
+Own-view and aggregate snapshots agree. They do not establish key recovery or agent-generated input. All engine identities and temporary cleanup checks pass. Secure Event Input returns to off. All 123 Python checks pass. The next experiment adds a separate foreground owner with balanced release and a readable-app control. No production browser change is enabled.

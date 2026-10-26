@@ -1,6 +1,6 @@
 # Current research state
 
-Latest: milestone 90. The finite signal-authorization prototype compiles and passes 65 pure policy checks plus six safe-refusal checks. It creates no ES client in the tested configuration. The user confirmed no Apple-granted Endpoint Security entitlement. Live signal denial is unavailable, and the pause bypass remains open. All 116 Python checks pass. Next: independent password-transition tests with existing permissions. No permission question is pending. Keep the frozen browser and probes unchanged.
+Latest: milestone 91. Two fresh native/stable comparisons reproduce the same focused password-transition ordering gap. All twenty private tasks complete. The immediate password phase begins with protection off, and the immediate text phase begins with it still on. Both settle before the next key. This is not an autonomous input bypass or a disclosure result. Cleanup passes, and all 123 Python checks pass. Next: a scoped foreground protection owner. The ES entitlement remains unavailable. Keep the frozen browser and probes unchanged.
 
 Updated 2026-10-26. Milestone 58 confirms an external focus-only action bypass in three fresh diagnostic processes. Activating another research window and returning completed one new action in each candidate. The standalone helper posted no input and made no AX call during those cycles. The gate admitted zero keyboard events. Agent-free operation is unmet.
 

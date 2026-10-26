@@ -871,3 +871,12 @@ A separate supervisor profile binds the existing finite lifecycle to RendererPro
 The readonly observer starts the ordinary actor from the verified readiness report. The comparison controller requires helper exit zero, pause denial, correct credentials, ordered progress, stable roles, and independent cleanup. Its administrator command has a separate pinned hash. Fifty-five Python checks pass. The ordinary staging rehearsal verifies the new images, observes code 64 for administrator-mode refusal, and removes staging.
 
 The one-run proposal remains unexecuted. It changes the reviewed images, so the earlier consumed approval cannot authorize it. All frozen binaries and earlier root images remain unchanged. The 32-second supervisor deadline and earlier cache, session, and interrupted-staging limits remain. See [preflight findings](renderer-progress-preflight-findings.md), [evidence](evidence/renderer-progress-preflight-results.json), and [reviewed plan](evidence/renderer-progress-reviewed-run-plan.json).
+
+
+## Milestone 112: measured cross-user page progress
+
+The approved single comparison passes. All four pause and four resume attempts return EPERM for the nobody host, content, GPU, and network roles. After the actor finishes, JavaScript completes a fresh challenge, the DOM stores it, the timer advances from three to nine, and the canvas redraws yellow. All seven acceptance checks pass. Role identities remain stable.
+
+The helper exits zero. The supervisor reaps its host and watchdog. Independent checks find none of the five measured process identifiers or staging directory. Reviewed inputs, frozen permissioned binaries, and earlier root images match. Later commands remain user ID 501.
+
+The one-run administrator approval is consumed. This result applies to one fixed inline comparison. Network progress, workers, physical human use, and general websites remain outside the measurement. The ordinary browser still needs isolated rendering and a protected control channel. Its existing pause bypass remains open. See [findings](renderer-progress-findings.md) and [evidence](evidence/renderer-progress-results.json).

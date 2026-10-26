@@ -601,3 +601,12 @@ Ordinary and Hardened Runtime command-line targets both accepted external SIGSTO
 This control rules out an ordinary Hardened Runtime signing change as the signal-denial boundary. It does not test a fully hardened browser or establish a sandbox-specific result. The current custom engine remains vulnerable to the six website actions from milestone 88. A privileged enforcement design needs separate prerequisites and approval before installation. No service or permission changed.
 
 A fresh repeat reproduced all four outcomes. Across both runs, four Hardened Runtime trials and four ordinary-signing trials observed the external pause. Every target and watchdog passed cleanup. The final controller also refuses to rebuild a control while that exact executable is running.
+
+
+## Milestone 90: scoped signal authorization
+
+The new prototype limits SIGSTOP denial to one exact disposable target for at most fifteen seconds. It matches the PID, path, and process start time. It leaves other signals, unrelated targets, stale identities, and expired windows allowed. Pure checks cover these boundaries and exclude the frozen browser and system WebKit.
+
+The compiled helper reports no entitlement and no root privilege. The user confirmed no Apple-granted entitlement for this project. Six integration checks verify target parsing and safe refusals without creating an ES client or subscription. All temporary controls exited. All 116 Python checks pass.
+
+The adapter is compiled, not validated as an enforcement boundary. Live testing needs approved signing, privileged deployment, explicit approval, and independent coverage controls. No service or permission changed. The pause bypass remains open. Continue browser tests that use existing permissions.

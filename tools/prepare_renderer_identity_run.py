@@ -88,8 +88,10 @@ exec(''' + ",".join(values) + ''') or die "fixed tool exec";'''
     return "/usr/bin/perl -T -e " + shlex.quote(code) + ' "$stage"'
 
 
-def stage_script(manifest, source_uid, libraries, stage_uid=0):
+def stage_script(manifest, source_uid, libraries, stage_uid=0, observe_signals=False):
     fixed_files = [item["staged"] for item in manifest]
+    if observe_signals:
+        fixed_files.append("observation.log")
     dirs = ["RendererIdentityProbe.app", "RendererIdentityProbe.app/Contents",
             "RendererIdentityProbe.app/Contents/MacOS", "RendererIdentityProbe.app/Contents/_CodeSignature"]
     quoted_files = " ".join('"$stage/' + value + '"' for value in fixed_files)
@@ -112,6 +114,13 @@ def stage_script(manifest, source_uid, libraries, stage_uid=0):
                       'test "$dependencies" = ' + shlex.quote("\n".join(expected)))
         tool = bounded_tool("/usr/bin/otool", ["-l", "STAGE/" + relative])
         checks.append('commands=$(' + tool + ')\ncase "$commands" in *LC_RPATH*|*LC_DYLD_ENVIRONMENT*) exit 2 ;; esac')
+    observer_setup = '''set -C
+exec 3> "$stage/observation.log"
+set +C
+/bin/chmod 0444 "$stage/observation.log"
+''' if observe_signals else ""
+    observer_redirect = ' >&3 2>&1' if observe_signals else ""
+    observer_replay = 'exec 3>&-\n/bin/cat "$stage/observation.log"\n' if observe_signals else ""
     return '''set -eu
 umask 077
 stage=$(/usr/bin/mktemp -d /private/tmp/agentfreebrowser-renderer.XXXXXX)
@@ -136,17 +145,17 @@ trap 'exit 143' TERM
 cd "$stage"
 ''' + copy + "\n" + hashes + '''
 /bin/chmod 0700 "$stage/renderer-identity-supervisor" "$stage/RendererIdentityProbe.app/Contents/MacOS/RendererIdentityProbe"
-''' + "\n".join(checks) + '''
+''' + "\n".join(checks) + ("\n" + observer_setup if observe_signals else "") + '''
 /bin/chmod -N ''' + quoted_files + " " + quoted_dirs + '''
 /bin/chmod 0444 ''' + quoted_files + '''
 /bin/chmod 0700 "$stage/renderer-identity-supervisor"
 /bin/chmod 0555 "$stage/RendererIdentityProbe.app/Contents/MacOS/RendererIdentityProbe" ''' + quoted_dirs + '''
 /bin/chmod 0711 "$stage"
 set +e
-/usr/bin/env -i PATH=/usr/bin:/bin:/usr/sbin:/sbin LC_ALL=C "$stage/renderer-identity-supervisor" --root-smoke
+/usr/bin/env -i PATH=/usr/bin:/bin:/usr/sbin:/sbin LC_ALL=C "$stage/renderer-identity-supervisor" --root-smoke''' + observer_redirect + '''
 helper_status=$?
 set -e
-cleanup
+''' + observer_replay + '''cleanup
 trap - EXIT
 test ! -e "$stage"
 printf '\\nSTAGING_RESULT {"helperExitCode":%s,"temporaryDirectory":"%s","stagingRemoved":true}\\n' "$helper_status" "$stage"

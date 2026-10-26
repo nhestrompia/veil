@@ -6,7 +6,7 @@ Date: October 23, 2026. Platform: macOS only.
 
 Current feasibility result, October 26, 2026: no agent-free build meets the declared threat model. Sixteen calibrated renderer-pause trials complete website actions through performance, wall, worker, and server clocks. G3 therefore fails. Geometry comparisons remain inconclusive, and human compatibility targets remain incomplete. See [timing results](docs/clock-channel-findings.md).
 
-The current architecture has no demonstrated signal-denial boundary. A patch to one exposed clock does not cover the measured independent channels. The next prevention design needs either the missing Endpoint Security entitlement or a separately scoped identity-isolation experiment. Both need live coverage and compatibility tests. This is a research blocker, not a completed agent-free MVP. See [feasibility research](docs/research/agent-free-feasibility-boundary.md).
+Milestone 104 renders the fixed inline fixture after a permanent drop to nobody. Sampled host, content, GPU, and network credentials match that identity. JavaScript, image, and cleanup controls pass. This supplies a rendering control, not a live pause-prevention result. Milestone 105 calibrates a normal-user signal actor and prepares a separate cross-user comparison. Its privileged launch remains unexecuted. Controller isolation and general website compatibility also remain open. See [cross-user rendering](docs/renderer-identity-results-findings.md) and [signal controls](docs/renderer-signal-preflight-findings.md).
 
 ## Product decision
 

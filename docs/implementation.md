@@ -802,3 +802,14 @@ The exact reviewed milestone 103 command runs once after the user's continuation
 The host and watchdog exit normally. The supervisor reaps both. Independent ordinary-user checks find none of the five measured process identifiers and no staging directory. All frozen hashes match. The ordinary controller still uses user ID 501. No account, service, grant, input hook, or session repair changes.
 
 The one-run administrator authorization is consumed. This rendering smoke test includes no pause attack. Signal denial against actual WebKit roles and controller isolation remain open. The result retains shared-account, cache, inherited-session, and sampled-identity limitations. See [findings](renderer-identity-results-findings.md) and [evidence](evidence/renderer-identity-results.json).
+
+
+## Milestone 105: calibrated renderer signal actor
+
+A new ordinary-user actor checks the exact fixed probe host, role paths, kernel credentials, and start times before any signal. Three fresh references verify twelve actual pauses and resumes across host, content, GPU, and network roles. Killing the actor during its first stopped target triggers detached recovery. Every measured reference process exits.
+
+Fourteen observer/refusal tests and eleven staging tests pass. The observer binds role arguments to the fresh probe report and readable staged app hashes. It checks only metadata for the root-only supervisor. Root staging verifies that helper's bytes. Process-state samples exclude zombies. Separate POSIX session records distinguish permitted same-session SIGCONT from pause permission.
+
+The prepared cross-user proposal reuses the unchanged root images. It adds one fixed readonly observation log with a write descriptor opened before sealing. Root never acts on reported service identifiers. The exact ordinary-user staging rehearsal passes and administrator mode refuses. Default staging still reproduces the original milestone 103 command hash.
+
+No new administrator run occurs. The earlier one-run approval covers the completed milestone 104 smoke test only. A new one-run approval remains necessary. This test covers signal permission and sampled state, not post-attack page progress. Controller isolation, input, presentation, navigation, broader compatibility, and agent-free acceptance remain open. See [findings](renderer-signal-preflight-findings.md) and [evidence](evidence/renderer-signal-preflight-results.json).

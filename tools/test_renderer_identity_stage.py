@@ -1,7 +1,9 @@
 import hashlib
+import json
 import os
 from pathlib import Path
 import shutil
+import shlex
 import subprocess
 import tempfile
 import unittest
@@ -76,6 +78,13 @@ class RendererIdentityStageTests(unittest.TestCase):
         self.assertNotIn("/bin/cp", script)
         self.assertNotIn("rm -rf", script)
         self.assertNotIn("launchctl", script)
+
+    def test_observation_disabled_preserves_reviewed_command_bytes(self):
+        plan_path = Path(__file__).resolve().parents[1] / 'docs/evidence/renderer-identity-reviewed-run-plan.json'
+        plan = json.loads(plan_path.read_text())
+        script = stage_script(plan['manifest'], plan['preflight']['compiledUID'], plan['libraries'])
+        command = '/usr/bin/env -i PATH=/usr/bin:/bin:/usr/sbin:/sbin LC_ALL=C /bin/sh -c ' + shlex.quote(script)
+        self.assertEqual(hashlib.sha256(command.encode()).hexdigest(), plan['administratorCommandSHA256'])
 
     @unittest.skipUnless(SUPERVISOR.exists() and APP.exists(), "Build the separate renderer diagnostic first")
     def test_partial_library_output_with_failure_stops_before_helper(self):

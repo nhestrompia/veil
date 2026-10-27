@@ -19,4 +19,4 @@ This inventory separates attempted routes from remaining work. It does not enume
 | Direct website APIs outside this browser | Independent HTTP or another browser session | Outside the agreed browser boundary. The oracle is used only to score tests. |
 | Modified binaries, root, kernel changes, and external cameras | No attempt in this audit | Outside the agreed PoC threat model. |
 
-The next required baseline is physical use of the frozen combined image. No detector accuracy or universal agent-blocking rate follows from these observations.
+The first physical test of the frozen combined image fails. Its protected page is black, while the clear control is visible. See [physical findings](pixel-keyboard-physical-findings.md). No detector accuracy or universal agent-blocking rate follows from these observations.

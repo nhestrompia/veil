@@ -1,0 +1,181 @@
+{
+  "date": "2026-10-27",
+  "userPermissionReport": "enabled",
+  "launchServicesPermissionReadback": "PIXEL_INPUT listenGranted=true",
+  "terminalPermissionReadback": "PIXEL_INPUT listenGranted=false",
+  "physicalProtectedReport": "The window or page is black",
+  "physicalClearReport": "The address and webpage are visible",
+  "physicalTaskCompletionVerified": false,
+  "actualSyntheticInputAttacksRan": false,
+  "probePermissions": {
+    "accessibility": true,
+    "desktopInputSafety": {
+      "available": true,
+      "blockingMouseHookPIDs": [
+        63961,
+        64027
+      ]
+    },
+    "pid": 21740,
+    "postEvents": true,
+    "screenCapture": true
+  },
+  "live": {
+    "target": null,
+    "pid": 21391,
+    "binarySHA256": "4b39843faec345d8484cbfdf829644e27fb306d160c1c77272e7961cc381acc8",
+    "launchMethod": "LaunchServices",
+    "listening": true,
+    "acceptedSubmissions": 0,
+    "ownedAppStopped": null,
+    "ownedFixtureStopped": null,
+    "relevantLog": [
+      "DEVICE_KEYBOARD permission=true openStatus=0 bindWithDeviceSpace=true sourcePolicy=measured-built-in-keyboard",
+      "PIXEL_RENDER ready pid=21391 preventsCapture=true pendingPhysicalSubmit=true",
+      "PIXEL_RENDER codec=H264 hardwareEncoderRequired=true readbackStatus=-12900",
+      "PIXEL_RENDER readiness frames=5",
+      "DEVICE_KEYBOARD bound=true bootstrapAttested=false",
+      "PIXEL_NAVIGATION deviceBound=true pageFocus=true"
+    ],
+    "eventCounts": {
+      "page-ready": 1,
+      "keydown": 8
+    }
+  },
+  "clear": {
+    "target": "PixelKeyboardRoutingControl",
+    "pid": 23138,
+    "binarySHA256": "aac4fd5424ceebd7d792fda99a0ade9fefc3acaef546b30a2849faabcd24f1fe",
+    "launchMethod": "LaunchServices",
+    "listening": false,
+    "acceptedSubmissions": 1,
+    "ownedAppStopped": null,
+    "ownedFixtureStopped": null,
+    "relevantLog": [
+      "DEVICE_KEYBOARD permission=false; no automatic request",
+      "PIXEL_RENDER ready pid=23138 preventsCapture=false pendingPhysicalSubmit=true",
+      "PIXEL_RENDER codec=H264 hardwareEncoderRequired=true readbackStatus=-12900",
+      "PIXEL_NAVIGATION deviceBound=true pageFocus=true",
+      "PIXEL_RENDER readiness frames=5",
+      "PIXEL_ROUTING_CALIBRATION sequenceFinished=true"
+    ],
+    "eventCounts": {
+      "page-ready": 1,
+      "input": 12,
+      "keydown": 14,
+      "click": 1
+    }
+  },
+  "hostAX": {
+    "elements": [
+      {
+        "actions": [],
+        "AXRole": "AXApplication",
+        "AXTitle": "PixelKeyboardExperiment"
+      },
+      {
+        "actions": [],
+        "AXRole": "AXWindow",
+        "AXTitle": "Protected Keyboard Browser",
+        "position": [
+          100,
+          110
+        ],
+        "size": [
+          1000,
+          772
+        ]
+      }
+    ],
+    "pid": 21391,
+    "status": "observed"
+  },
+  "directAX": {
+    "elements": [
+      {
+        "actions": [],
+        "AXRole": "AXApplication",
+        "AXTitle": "PixelKeyboardExperiment"
+      },
+      {
+        "actions": [],
+        "AXRole": "AXWindow",
+        "AXTitle": "Protected Keyboard Browser",
+        "position": [
+          100,
+          110
+        ],
+        "size": [
+          1000,
+          772
+        ]
+      }
+    ],
+    "queries": [
+      {
+        "error": 0,
+        "ownedElement": true,
+        "query": "application:AXMainWindow"
+      },
+      {
+        "error": 0,
+        "ownedElement": true,
+        "query": "application:AXFocusedWindow"
+      },
+      {
+        "error": -25212,
+        "ownedElement": false,
+        "query": "application:AXFocusedUIElement"
+      },
+      {
+        "error": -25212,
+        "ownedElement": false,
+        "query": "system:AXFocusedUIElement"
+      },
+      {
+        "error": -25208,
+        "ownedElement": false,
+        "query": "system:hit-test"
+      },
+      {
+        "error": -25208,
+        "ownedElement": false,
+        "query": "system:hit-test"
+      }
+    ],
+    "scope": "Only exact target-PID elements; File/Edit use the separate menu adapter",
+    "status": "observed"
+  },
+  "protectedCapture": {
+    "frame": [
+      100,
+      110,
+      1000,
+      772
+    ],
+    "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/pixel-keyboard-122/protected.png",
+    "pid": 21391,
+    "pixels": [
+      2000,
+      1544
+    ],
+    "status": "captured",
+    "windowID": 111024
+  },
+  "clearCapture": {
+    "frame": [
+      100,
+      110,
+      1000,
+      772
+    ],
+    "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/pixel-keyboard-122/clear.png",
+    "pid": 23138,
+    "pixels": [
+      2000,
+      1544
+    ],
+    "status": "captured",
+    "windowID": 111044
+  }
+}

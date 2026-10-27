@@ -1,5 +1,7 @@
 # Current research state
 
+Milestone 122 confirms the grant through LaunchServices, but the physical protected page is black. The clear control is visible and completes one internal task. The protected session receives physical navigation and keys but completes no action. See [physical findings](pixel-keyboard-physical-findings.md). Keep the permissioned browser frozen. Source clipping and frame layout need isolated diagnosis. Bounded sessions remain open until their original deadlines.
+
 The user then authorized this grant in Settings. The readable pane listed DeviceKeyboardExperiment and HIDObservation, but omitted PixelKeyboardExperiment. The Add click returned `windowNotFoundAtPosition`. Settings then appeared dimmed. The tool did not show an authentication prompt. A system-dialog observation stalled for 1261 seconds despite its 20-second timeout. The unchanged app still reports `listenGranted=false`. Neither the grant nor the app addition has confirmation. Native UI control cannot complete this step.
 
 The user approved the exact PixelKeyboardExperiment Input Monitoring request. The request ran through LaunchServices and exited zero. The unchanged binary still reports `listenGranted=false` after the request and on a later read. The earlier automatic approval rejection is resolved by this consent.

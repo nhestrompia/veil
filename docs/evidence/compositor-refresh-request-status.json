@@ -1,0 +1,32 @@
+{
+  "permissionApproved": true,
+  "requestIssued": true,
+  "requestResult": {
+    "capturesAudio": false,
+    "probePID": 84126,
+    "requestReturned": false,
+    "screenRecordingGranted": false,
+    "status": "requested",
+    "systemInputPosted": false
+  },
+  "latestPreflight": {
+    "capturesAudio": false,
+    "probePID": 85179,
+    "screenRecordingGranted": false,
+    "status": "preflight",
+    "systemInputPosted": false
+  },
+  "comparisonGateResult": {
+    "status": "permission-required",
+    "rows": [],
+    "systemInputPosted": false
+  },
+  "browserHostLaunched": false,
+  "captureAttempted": false,
+  "filterUpdatesExecuted": false,
+  "allRecordedHelperProcessesAbsent": true,
+  "helperExecutableUnchanged": true,
+  "helperSourceUnchanged": true,
+  "manualEnablePending": true,
+  "administratorAccessUsed": false
+}

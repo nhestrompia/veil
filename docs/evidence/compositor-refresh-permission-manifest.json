@@ -5,8 +5,8 @@
   "executableSHA256": "dc8265f8cfe12d417d8e5e5c9780a9d9429ad3cebb195ba5ced933a8fd01e52c",
   "sourceSHA256": "6e39767636b6f6df8242ff6e64b9bac21bf8bc3e97fb4fb3673a9ffdf62b8215",
   "permission": "macOS Screen Recording",
-  "permissionApproved": false,
-  "permissionRequested": false,
+  "permissionApproved": true,
+  "permissionRequested": true,
   "automaticRequestAtLaunch": false,
   "capturesUnfilteredDisplay": true,
   "captureScope": "Crop inside verified opaque owned research coverage. Helper app exclusion toggles only.",
@@ -28,8 +28,21 @@
     "--out",
     "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/compositor-refresh-129/approved-request.json"
   ],
-  "requestCommandExecuted": false,
+  "requestCommandExecuted": true,
   "metadataOnlyCoverageMode": "Geometry and overlay checks only; no shareability claim without grant",
   "supersedesUnapprovedCandidateSHA256": "662e4cf772d3b0a8f1ab894804e9773c374ddb3ba2f91dd71601b54dd2f25040",
-  "liveCaptureRequiresShareableBackdrop": true
+  "liveCaptureRequiresShareableBackdrop": true,
+  "permissionApproval": "User replied Yes to this exact CompositorRefreshProbe Screen Recording request.",
+  "requestIssuedUnixSeconds": 1793115491.7003882,
+  "effectiveGrantAfterRequest": false,
+  "effectiveGrantConfirmed": false,
+  "manualExactAppAddPending": true,
+  "permissionRequestResult": {
+    "capturesAudio": false,
+    "probePID": 84126,
+    "requestReturned": false,
+    "screenRecordingGranted": false,
+    "status": "requested",
+    "systemInputPosted": false
+  }
 }

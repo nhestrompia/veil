@@ -1,5 +1,13 @@
 # Unfiltered stream refresh preparation
 
+The user approves the exact CompositorRefreshProbe Screen Recording request. The pinned request executes once through LaunchServices. It returns false and reports access off. System Settings opens at Screen & System Audio Recording, and Finder reveals the exact app for addition if needed.
+
+The new comparison runner checks permission before it builds or launches a browser control. Its first run returns permission-required with no rows. No live capture, filter update, audio, or input occurs. The runner is ready to compare the archived clear image, restricted image, then clear image again. It requires readable references and verified stream shutdown.
+
+No grant refresh, reset, unrelated setting, or administrator action runs. The helper remains unchanged. The next step is to enable the approved app in macOS and verify effective access through LaunchServices.
+
+## Preparation record
+
 Milestone 129 prepares CompositorRefreshProbe for the remaining exclusion-toggle attack. The existing frozen NativeProbe captures an unfiltered screenshot or first stream frame. CaptureRefreshProbe updates only inclusion filters. Neither can run the [Apple forum report's exclusion-toggle sequence](https://developer.apple.com/forums/thread/808016).
 
 The new helper starts a display stream that excludes itself. It then excludes no apps, then excludes itself again. The target and opaque backdrop remain included throughout. A small noninteractive helper indicator sits outside the crop so the helper has a discoverable application identity. The helper refuses any indicator overlap with the capture region.

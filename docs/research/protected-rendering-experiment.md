@@ -1,6 +1,6 @@
 # Protected-rendering experiment
 
-Status: a public-API HTML-to-pixel candidate now compiles. Capture resistance, human visibility, and interaction remain unverified. No Chromium modification exists. See the [candidate findings](../pixel-rendering-findings.md).
+Status: both uncompressed protected candidates failed direct-display visibility checks. The matched unprotected control remained visible. Interaction remains unimplemented. These results reject those configurations, not every DRM design. See the [candidate findings](../pixel-rendering-findings.md).
 
 ## Question and separation from the MVP
 

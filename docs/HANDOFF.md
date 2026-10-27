@@ -1,5 +1,9 @@
 # Current research state
 
+Current focus: screenshots, scripts, accessibility, and input. See the [route research](research/agent-access-routes.md). A file watcher misses capture in memory.
+
+The mouse pilot is offline. No keyboard classifier exists. Both protected layers hid the page from the person. Prioritize visible protected output and direct automation checks. The user authorized no new privilege.
+
 Milestone 116 completes the approved single cross-user channel comparison. All four renderer SIGSTOP and four SIGCONT calls return EPERM. The ordinary-user display still stops and resumes successfully. During its pause, the isolated renderer completes eleven fresh page-and-image samples and advances its timer from six to seven. Fresh display output resumes, one stale frame refuses, and sampling continues after peer exit. See [live findings](renderer-channel-live-findings.md).
 
 All 23 comparison checks pass. Both app hosts and the native watchdog are reaped. Signal actors reap their recovery watchdogs. Independent checks find none of seven measured process identifiers and no staging directory. Five frozen permissioned binaries and every reviewed input retain their hashes. The ordinary controller remains user ID 501.

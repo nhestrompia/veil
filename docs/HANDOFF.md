@@ -1,5 +1,21 @@
 # Current research state
 
+The user then authorized this grant in Settings. The readable pane listed DeviceKeyboardExperiment and HIDObservation, but omitted PixelKeyboardExperiment. The Add click returned `windowNotFoundAtPosition`. Settings then appeared dimmed. The tool did not show an authentication prompt. A system-dialog observation stalled for 1261 seconds despite its 20-second timeout. The unchanged app still reports `listenGranted=false`. Neither the grant nor the app addition has confirmation. Native UI control cannot complete this step.
+
+The user approved the exact PixelKeyboardExperiment Input Monitoring request. The request ran through LaunchServices and exited zero. The unchanged binary still reports `listenGranted=false` after the request and on a later read. The earlier automatic approval rejection is resolved by this consent.
+
+System Settings returns `cgWindowNotFound` on two UI attempts. Opening the Input Monitoring pane succeeds, but the UI tool cannot read its window. No switch, reset, re-add, authentication, or other grant change occurs. The user must enable this app in that pane before physical tests can proceed. Do not claim that the Mac is locked from this error.
+
+Keep the manifest-pinned app unchanged. The next tests require physical navigation and form completion, then external attacks against the same loaded session. No physical baseline or new attack result follows from the permission request.
+
+Milestones 120 and 121 complete an external agent audit and prepare a combined protected-pixel keyboard browser. The audit finds a real launch-URL action bypass in the old pixel app. The new PixelKeyboardExperiment prefills that URL and waits for device binding and Return. Its final launch comparison records no page-ready event or action. See [the attack audit](pixel-agent-audit-findings.md), [combined findings](pixel-keyboard-findings.md), and [route inventory](agent-attack-inventory.md).
+
+The compile-time routing control completes exactly one form action through process-local keys. It is not a physical baseline. The protected image excludes that generator. Its address editor and WebView stay outside clipped window bounds; their pixels reach the protected media producer. No mouse bridge exists.
+
+Playwright/CDP completes a task in isolated Chrome. Native debugging-port attempts refuse. The new host's AX tree exposes only its root. Its direct AX and screenshot checks fail calibration and remain inconclusive. The old pixel app's capture results do not prove capture protection for this new combined image.
+
+The new app still reports Input Monitoring off after the approved request. Keep the [manifest-pinned images](evidence/pixel-keyboard-permission-manifest.json) unchanged through consent and physical tests. The original five permissioned images remain frozen. No input hook, device seizure, administrator access, or unrelated-process change occurs. Existing modifying mouse hooks still prevent safe synthetic input tests.
+
 Milestone 119 adds a separate H.264 producer pair after a detailed Antiagent evidence review. Three encode/decode frames and changed-size refusal pass. Two paired comparisons recover the control marker through three routes and omits the protected marker. Unfiltered compositor capture refuses the missing owned backdrop. The user reports a readable page on the physical display. No exact marker was supplied. Same-process follow-up captures omit the page through three routes. See [compressed findings](compressed-rendering-findings.md).
 
 The encoder hardware readback is unsupported on this Mac. Hardware remains required at session creation. Hardware decoder readback passes in the round-trip check. No capture guarantee follows from these checks. Five frozen permissioned images retain their hashes. No new grant, hook, or administrator action occurs.

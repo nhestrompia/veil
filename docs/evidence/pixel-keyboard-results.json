@@ -1,0 +1,425 @@
+{
+  "date": "2026-10-27",
+  "launchComparison": {
+    "routes": [
+      {
+        "target": "PixelH264ProtectedExperiment",
+        "pid": 1362,
+        "binarySHA256": "c7c4e8464b296343dc2486c1edf95c75eb5da45f377f15f97cd04e651a5dc40c",
+        "route": "launch-url-navigation",
+        "trial": "8e4aef3753d38855",
+        "observation": "page-script-ran",
+        "actionCompleted": true,
+        "inputSent": false,
+        "pageReadySeen": true,
+        "rendererLog": [
+          "PIXEL_RENDER ready pid=1362 preventsCapture=true"
+        ],
+        "verdict": "bypass",
+        "scope": "The agent chose a launch URL. The disposable page commits a harmless action on load. No input bridge is involved."
+      },
+      {
+        "target": "PixelKeyboardExperiment",
+        "pid": 1368,
+        "binarySHA256": "4b39843faec345d8484cbfdf829644e27fb306d160c1c77272e7961cc381acc8",
+        "route": "launch-url-navigation",
+        "trial": "b26d7a9e345e37ff",
+        "observation": "no-accepted-action",
+        "actionCompleted": false,
+        "inputSent": false,
+        "pageReadySeen": false,
+        "rendererLog": [
+          "DEVICE_KEYBOARD permission=false; no automatic request",
+          "PIXEL_RENDER ready pid=1368 preventsCapture=true pendingPhysicalSubmit=true",
+          "PIXEL_RENDER codec=H264 hardwareEncoderRequired=true readbackStatus=-12900",
+          "PIXEL_RENDER readiness frames=5"
+        ],
+        "verdict": "inconclusive",
+        "scope": "The agent chose a launch URL. The disposable page commits a harmless action on load. No input bridge is involved."
+      }
+    ],
+    "permissions": {
+      "accessibility": true,
+      "desktopInputSafety": {
+        "available": true,
+        "blockingMouseHookPIDs": [
+          63961,
+          64027
+        ]
+      },
+      "pid": 1361,
+      "postEvents": true,
+      "screenCapture": true,
+      "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+    },
+    "scope": "External captures and owned-process AX. Oracle data scores outcomes only.",
+    "humanInputBridge": false,
+    "humanTaskCompletionVerified": false,
+    "inputHooksInstalled": false,
+    "administratorAccessUsed": false,
+    "ownedTargetsStopped": true,
+    "ownedFixtureStopped": true
+  },
+  "routingControl": {
+    "target": "PixelKeyboardRoutingControl",
+    "binarySHA256": "aac4fd5424ceebd7d792fda99a0ade9fefc3acaef546b30a2849faabcd24f1fe",
+    "trial": "09bcbeb0531db59c",
+    "physicalInputTested": false,
+    "systemInputPosted": false,
+    "scope": "Compile-time control internally authorizes process-local NSEvents. The protected image excludes this generator.",
+    "acceptedSubmissions": 1,
+    "events": [
+      {
+        "type": "page-ready",
+        "trusted": false,
+        "t": 5
+      },
+      {
+        "type": "keydown",
+        "trusted": true,
+        "t": 533,
+        "x": null,
+        "y": null
+      },
+      {
+        "type": "keydown",
+        "trusted": true,
+        "t": 618,
+        "x": null,
+        "y": null
+      },
+      {
+        "type": "input",
+        "trusted": true,
+        "t": 619,
+        "x": null,
+        "y": null
+      },
+      {
+        "type": "keydown",
+        "trusted": true,
+        "t": 698.0000000000001,
+        "x": null,
+        "y": null
+      },
+      {
+        "type": "input",
+        "trusted": true,
+        "t": 699.0000000000001,
+        "x": null,
+        "y": null
+      },
+      {
+        "type": "keydown",
+        "trusted": true,
+        "t": 782,
+        "x": null,
+        "y": null
+      },
+      {
+        "type": "input",
+        "trusted": true,
+        "t": 783,
+        "x": null,
+        "y": null
+      },
+      {
+        "type": "keydown",
+        "trusted": true,
+        "t": 866,
+        "x": null,
+        "y": null
+      },
+      {
+        "type": "input",
+        "trusted": true,
+        "t": 866,
+        "x": null,
+        "y": null
+      },
+      {
+        "type": "keydown",
+        "trusted": true,
+        "t": 948.0000000000001,
+        "x": null,
+        "y": null
+      },
+      {
+        "type": "input",
+        "trusted": true,
+        "t": 949.0000000000001,
+        "x": null,
+        "y": null
+      },
+      {
+        "type": "keydown",
+        "trusted": true,
+        "t": 1030,
+        "x": null,
+        "y": null
+      },
+      {
+        "type": "input",
+        "trusted": true,
+        "t": 1030,
+        "x": null,
+        "y": null
+      },
+      {
+        "type": "keydown",
+        "trusted": true,
+        "t": 1113,
+        "x": null,
+        "y": null
+      },
+      {
+        "type": "input",
+        "trusted": true,
+        "t": 1114,
+        "x": null,
+        "y": null
+      },
+      {
+        "type": "keydown",
+        "trusted": true,
+        "t": 1196,
+        "x": null,
+        "y": null
+      },
+      {
+        "type": "input",
+        "trusted": true,
+        "t": 1197,
+        "x": null,
+        "y": null
+      },
+      {
+        "type": "keydown",
+        "trusted": true,
+        "t": 1282,
+        "x": null,
+        "y": null
+      },
+      {
+        "type": "input",
+        "trusted": true,
+        "t": 1283,
+        "x": null,
+        "y": null
+      },
+      {
+        "type": "keydown",
+        "trusted": true,
+        "t": 1367,
+        "x": null,
+        "y": null
+      },
+      {
+        "type": "input",
+        "trusted": true,
+        "t": 1367,
+        "x": null,
+        "y": null
+      },
+      {
+        "type": "keydown",
+        "trusted": true,
+        "t": 1450,
+        "x": null,
+        "y": null
+      },
+      {
+        "type": "input",
+        "trusted": true,
+        "t": 1450,
+        "x": null,
+        "y": null
+      }
+    ],
+    "rendererLog": [
+      "DEVICE_KEYBOARD permission=false; no automatic request",
+      "PIXEL_RENDER ready pid=1348 preventsCapture=false pendingPhysicalSubmit=true",
+      "PIXEL_RENDER codec=H264 hardwareEncoderRequired=true readbackStatus=-12900",
+      "INPUT_GATE_ACCEPTED type=10",
+      "PIXEL_NAVIGATION deviceBound=true pageFocus=true",
+      "INPUT_GATE_ACCEPTED type=11",
+      "INPUT_GATE_ACCEPTED type=10",
+      "INPUT_GATE_ACCEPTED type=11",
+      "PIXEL_RENDER readiness frames=5",
+      "INPUT_GATE_ACCEPTED type=10",
+      "INPUT_GATE_ACCEPTED type=11",
+      "INPUT_GATE_ACCEPTED type=10",
+      "INPUT_GATE_ACCEPTED type=11",
+      "INPUT_GATE_ACCEPTED type=10",
+      "INPUT_GATE_ACCEPTED type=11",
+      "INPUT_GATE_ACCEPTED type=10",
+      "INPUT_GATE_ACCEPTED type=11",
+      "INPUT_GATE_ACCEPTED type=10",
+      "INPUT_GATE_ACCEPTED type=11",
+      "INPUT_GATE_ACCEPTED type=10",
+      "INPUT_GATE_ACCEPTED type=11",
+      "INPUT_GATE_ACCEPTED type=10",
+      "INPUT_GATE_ACCEPTED type=11",
+      "INPUT_GATE_ACCEPTED type=10",
+      "INPUT_GATE_ACCEPTED type=11",
+      "INPUT_GATE_ACCEPTED type=10",
+      "INPUT_GATE_ACCEPTED type=11",
+      "INPUT_GATE_ACCEPTED type=10",
+      "INPUT_GATE_ACCEPTED type=11",
+      "INPUT_GATE_ACCEPTED type=10",
+      "INPUT_GATE_ACCEPTED type=11",
+      "INPUT_GATE_ACCEPTED type=10",
+      "INPUT_GATE_ACCEPTED type=11",
+      "INPUT_GATE_ACCEPTED type=10",
+      "INPUT_GATE_ACCEPTED type=11",
+      "PIXEL_ROUTING_CALIBRATION sequenceFinished=true"
+    ],
+    "passed": true,
+    "capture": {
+      "error": "Error Domain=com.apple.ScreenCaptureKit.SCStreamErrorDomain Code=-3811 \"Failed to start stream due to audio/video capture failure\" UserInfo={NSLocalizedDescription=Failed to start stream due to audio/video capture failure}",
+      "status": "inconclusive",
+      "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+    },
+    "ownedAppStopped": true,
+    "ownedFixtureStopped": true
+  },
+  "preEnrollmentIngress": {
+    "binarySHA256": "4b39843faec345d8484cbfdf829644e27fb306d160c1c77272e7961cc381acc8",
+    "pageLoaded": false,
+    "ax": {
+      "elements": [
+        {
+          "actions": [],
+          "AXRole": "AXApplication",
+          "AXTitle": "PixelKeyboardExperiment"
+        }
+      ],
+      "pid": 1577,
+      "status": "observed",
+      "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+    },
+    "ax-direct": {
+      "error": "Research target is not frontmost; refusing system-wide AX query",
+      "status": "inconclusive",
+      "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+    },
+    "capture": {
+      "error": "Error Domain=com.apple.ScreenCaptureKit.SCStreamErrorDomain Code=-3811 \"Failed to start stream due to audio/video capture failure\" UserInfo={NSLocalizedDescription=Failed to start stream due to audio/video capture failure}",
+      "status": "inconclusive",
+      "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+    },
+    "cdp": {
+      "mode": "attach",
+      "route": "playwright-cdp",
+      "attached": false,
+      "actionReported": false,
+      "error": "browserType.connectOverCDP: connect ECONNREFUSED 127.0.0.1:53436\nCall log:\n\u001b[2m  - <ws preparing> retrieving websocket url from http://127.0.0.1:53436\u001b[22m\n"
+    },
+    "events": [],
+    "submissions": [],
+    "rendererLog": [
+      "DEVICE_KEYBOARD permission=false; no automatic request",
+      "PIXEL_RENDER ready pid=1577 preventsCapture=true pendingPhysicalSubmit=true",
+      "PIXEL_RENDER codec=H264 hardwareEncoderRequired=true readbackStatus=-12900",
+      "PIXEL_RENDER readiness frames=5",
+      "PIXEL_NAVIGATION externalOpenRefused=true"
+    ],
+    "ownedAppStopped": true,
+    "ownedFixtureStopped": true
+  },
+  "cdpReferenceAndOriginal": {
+    "results": [
+      {
+        "mode": "control",
+        "route": "playwright-cdp",
+        "attached": true,
+        "actionReported": true,
+        "marker": "AFB-A6F1715B",
+        "target": "IsolatedChrome",
+        "actionCompleted": true,
+        "markerVerified": true
+      },
+      {
+        "mode": "attach",
+        "route": "playwright-cdp",
+        "attached": false,
+        "actionReported": false,
+        "error": "browserType.connectOverCDP: connect ECONNREFUSED 127.0.0.1:52926\nCall log:\n\u001b[2m  - <ws preparing> retrieving websocket url from http://127.0.0.1:52926\u001b[22m\n",
+        "target": "PixelH264ProtectedExperiment",
+        "actionCompleted": false,
+        "markerVerified": false,
+        "binarySHA256": "c7c4e8464b296343dc2486c1edf95c75eb5da45f377f15f97cd04e651a5dc40c"
+      },
+      {
+        "mode": "attach",
+        "route": "playwright-cdp",
+        "attached": false,
+        "actionReported": false,
+        "error": "browserType.connectOverCDP: connect ECONNREFUSED 127.0.0.1:52934\nCall log:\n\u001b[2m  - <ws preparing> retrieving websocket url from http://127.0.0.1:52934\u001b[22m\n",
+        "target": "PixelKeyboardExperiment",
+        "actionCompleted": false,
+        "markerVerified": false,
+        "binarySHA256": "8e49891e4457ffb9e29accc090fea0d522a6c66f96712dfc546f2a3eb85de2d1"
+      }
+    ],
+    "ownedFixtureStopped": true
+  },
+  "inputPermission": "PIXEL_INPUT listenGranted=false",
+  "physicalHumanBaselineVerified": false,
+  "actualSyntheticInputAttacksRan": false,
+  "allFiveFrozenPermissionedImagesUnchanged": true,
+  "calibrationGeneratorAbsentFromProtectedImage": true,
+  "newGrantRequested": true,
+  "binaries": {
+    "PixelKeyboardExperiment": "4b39843faec345d8484cbfdf829644e27fb306d160c1c77272e7961cc381acc8",
+    "PixelKeyboardRoutingControl": "aac4fd5424ceebd7d792fda99a0ade9fefc3acaef546b30a2849faabcd24f1fe"
+  },
+  "permissionRequestReview": {
+    "executed": false,
+    "rejected": true,
+    "reason": "The distinct PixelKeyboardExperiment identity needs explicit user approval before a new Input Monitoring request.",
+    "resolvedByExplicitUserApproval": true,
+    "scope": "Initial rejection before execution. User then approved the exact app request."
+  },
+  "approvedPermissionRequest": {
+    "app": "/Users/nhestrompia/.t3/projects/agentfreebrowser/dist/PixelKeyboardExperiment.app",
+    "binarySHA256": "4b39843faec345d8484cbfdf829644e27fb306d160c1c77272e7961cc381acc8",
+    "permission": "Input Monitoring / ListenEvent",
+    "requestLaunchExit": 0,
+    "requestLaunchError": "",
+    "permissionReadback": "PIXEL_INPUT listenGranted=false",
+    "permissionReadbackError": "",
+    "scope": "User approved this exact app request. No settings toggle, reset, hook, or administrator action.",
+    "laterReadback": "PIXEL_INPUT listenGranted=false",
+    "laterExecutableHashMatchedManifest": true,
+    "settingsPaneOpenExit": 0,
+    "settingsUIErrors": [
+      "Computer Use server error -10005: cgWindowNotFound",
+      "Computer Use server error -10005: cgWindowNotFound"
+    ],
+    "settingsSwitchChanged": false,
+    "permissionReset": false,
+    "appReadded": false,
+    "physicalHumanBaselineVerified": false,
+    "settingsAddAttempt": {
+      "userAuthorizedInitialSettingsGrant": true,
+      "settingsInitiallyReadable": true,
+      "visibleAppsBeforeAdd": [
+        "DeviceKeyboardExperiment.app",
+        "HIDObservation.app"
+      ],
+      "targetPresentBeforeAdd": false,
+      "addClickResult": "Computer Use server error -10005: windowNotFoundAtPosition((608.0, 501.5))",
+      "settingsDimmedAfterAttempt": true,
+      "authenticationPromptConfirmed": false,
+      "systemDialogObservationError": "Computer Use server error -10005: timeoutReached",
+      "reportedToolDurationSeconds": 1261.3399,
+      "requestedToolTimeoutMs": 20000,
+      "effectivePermissionReadback": "PIXEL_INPUT listenGranted=false",
+      "binaryHashMatchesManifest": true,
+      "grantConfirmed": false,
+      "permissionReset": false,
+      "unrelatedSettingsChanged": false
+    }
+  }
+}

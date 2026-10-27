@@ -4,6 +4,9 @@ import CoreMedia
 import CoreVideo
 import WebKit
 import VideoToolbox
+#if PIXEL_KEYBOARD
+import CoreText
+#endif
 
 @MainActor
 final class PixelDisplay: NSView {
@@ -29,27 +32,46 @@ final class PixelDisplay: NSView {
         display.frame = bounds
     }
 
-    func present(_ image: CGImage) throws {
+    func present(_ image: CGImage, address: String? = nil) throws {
+        #if PIXEL_KEYBOARD
+        let outputHeight = image.height + 64
+        #else
+        let outputHeight = image.height
+        #endif
         var pixelBuffer: CVPixelBuffer?
         let attributes: [CFString: Any] = [kCVPixelBufferCGImageCompatibilityKey: true,
             kCVPixelBufferCGBitmapContextCompatibilityKey: true, kCVPixelBufferIOSurfacePropertiesKey: [:]]
-        let allocation = CVPixelBufferCreate(kCFAllocatorDefault, image.width, image.height,
+        let allocation = CVPixelBufferCreate(kCFAllocatorDefault, image.width, outputHeight,
             kCVPixelFormatType_32BGRA, attributes as CFDictionary, &pixelBuffer)
         guard allocation == kCVReturnSuccess, let pixelBuffer else { throw RenderFailure("Pixel allocation failed") }
         guard CVPixelBufferLockBaseAddress(pixelBuffer, []) == kCVReturnSuccess else { throw RenderFailure("Pixel lock failed") }
         do {
             defer { CVPixelBufferUnlockBaseAddress(pixelBuffer, []) }
             guard let context = CGContext(data: CVPixelBufferGetBaseAddress(pixelBuffer), width: image.width,
-                height: image.height, bitsPerComponent: 8, bytesPerRow: CVPixelBufferGetBytesPerRow(pixelBuffer),
+                height: outputHeight, bitsPerComponent: 8, bytesPerRow: CVPixelBufferGetBytesPerRow(pixelBuffer),
                 space: CGColorSpaceCreateDeviceRGB(), bitmapInfo: CGImageAlphaInfo.premultipliedFirst.rawValue | CGBitmapInfo.byteOrder32Little.rawValue)
             else { throw RenderFailure("Pixel context failed") }
             context.draw(image, in: CGRect(x: 0, y: 0, width: image.width, height: image.height))
+            #if PIXEL_KEYBOARD
+            context.setFillColor(CGColor(gray: 0.93, alpha: 1))
+            context.fill(CGRect(x: 0, y: image.height, width: image.width, height: 64))
+            context.saveGState()
+            context.clip(to: CGRect(x: 12, y: image.height, width: image.width - 24, height: 64))
+            let attributes: [NSAttributedString.Key: Any] = [
+                NSAttributedString.Key(kCTFontAttributeName as String): CTFontCreateWithName("Menlo" as CFString, 24, nil),
+                NSAttributedString.Key(kCTForegroundColorAttributeName as String): CGColor(gray: 0.1, alpha: 1),
+            ]
+            let line = CTLineCreateWithAttributedString(NSAttributedString(string: address ?? "", attributes: attributes))
+            context.textPosition = CGPoint(x: 16, y: image.height + 20)
+            CTLineDraw(line, context)
+            context.restoreGState()
+            #endif
         }
         let renderBuffer: CVPixelBuffer
         #if PIXEL_NV12 || PIXEL_H264
         var converted: CVPixelBuffer?
         let nv12Attributes: [CFString: Any] = [kCVPixelBufferIOSurfacePropertiesKey: [:]]
-        guard CVPixelBufferCreate(kCFAllocatorDefault, image.width, image.height,
+        guard CVPixelBufferCreate(kCFAllocatorDefault, image.width, outputHeight,
             kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange, nv12Attributes as CFDictionary, &converted) == kCVReturnSuccess,
               let converted else { throw RenderFailure("NV12 allocation failed") }
         if transfer == nil {
@@ -99,6 +121,7 @@ struct RenderFailure: Error, CustomStringConvertible {
     init(_ description: String) { self.description = description }
 }
 
+#if !PIXEL_KEYBOARD
 @MainActor
 final class RenderController: NSObject, NSApplicationDelegate, WKNavigationDelegate {
     private var window: NSWindow!
@@ -240,3 +263,4 @@ enum RenderApp {
         withExtendedLifetime(controller) { app.run() }
     }
 }
+#endif

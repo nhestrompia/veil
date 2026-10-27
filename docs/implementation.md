@@ -880,3 +880,14 @@ The approved single comparison passes. All four pause and four resume attempts r
 The helper exits zero. The supervisor reaps its host and watchdog. Independent checks find none of the five measured process identifiers or staging directory. Reviewed inputs, frozen permissioned binaries, and earlier root images match. Later commands remain user ID 501.
 
 The one-run administrator approval is consumed. This result applies to one fixed inline comparison. Network progress, workers, physical human use, and general websites remain outside the measurement. The ordinary browser still needs isolated rendering and a protected control channel. Its existing pause bypass remains open. See [findings](renderer-progress-findings.md) and [evidence](evidence/renderer-progress-results.json).
+
+
+## Milestone 113: private renderer channel under display suspension
+
+A separate anonymous socket connects a hidden WKWebView renderer to a hidden image display. Strict framing bounds navigation and pixels. Sequence and timestamp checks reject replay and expiry. Nonblocking output preserves the active partial frame and replaces one pending frame. The renderer continues after a paused or disconnected display.
+
+Three fresh comparisons pass. Each blocking reference stalls across display resume for about 1.2 seconds. The nonblocking candidates complete 11, 12, and 11 page samples entirely during the pause. Every candidate rejects expired pixels, resumes fresh image assignment, and advances its page timer after display exit. Killing the pause actor triggers independent recovery. All 42 measured process identifiers exit.
+
+The optimized and Address Sanitizer suites each pass 257 checks. The readonly native metadata regression and all 55 existing Python checks pass. Frozen permissioned binaries, earlier privileged images, and earlier signal actors retain their hashes. The first polling-only pilot remains inconclusive in the evidence. Readiness callbacks repair normal delivery before the final comparisons.
+
+Every channel app uses ordinary user ID 501. This diagnostic does not integrate the cross-user renderer or the physical keyboard browser. Its display stays hidden, and software sends the initial navigation. Original hardware timestamps, secure peer enrollment, physical display usability, and broader websites remain open. No new administrator execution, permission change, or input hook occurs. See [findings](renderer-channel-findings.md) and [evidence](evidence/renderer-channel-results.json).

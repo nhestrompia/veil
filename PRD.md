@@ -6,7 +6,7 @@ Date: October 23, 2026. Platform: macOS only.
 
 Current feasibility result, October 26, 2026: no agent-free build meets the declared threat model. Sixteen calibrated renderer-pause trials complete website actions through performance, wall, worker, and server clocks. G3 therefore fails. Geometry comparisons remain inconclusive, and human compatibility targets remain incomplete. See [timing results](docs/clock-channel-findings.md).
 
-Milestone 104 renders the fixed inline fixture after a permanent drop to nobody. Sampled host, content, GPU, and network credentials match that identity. JavaScript, image, and cleanup controls pass. This supplies a rendering control, not a live pause-prevention result. Milestone 105 calibrates a normal-user signal actor and prepares a separate cross-user comparison. Its privileged launch remains unexecuted. Controller isolation and general website compatibility also remain open. See [cross-user rendering](docs/renderer-identity-results-findings.md) and [signal controls](docs/renderer-signal-preflight-findings.md).
+Milestones 108 and 112 test an isolated nobody renderer. All calibrated cross-user pause and resume attempts return EPERM. A fresh page challenge and redraw pass after the milestone 112 actor finishes. Milestone 113 tests a separate private channel under ordinary user ID 501. Its nonblocking renderer continues page samples while the display process pauses. Cross-user channel integration, physical input, and general website compatibility remain open. The current browser still has its same-user pause bypass. See [signal denial](docs/renderer-signal-denial-findings.md), [page progress](docs/renderer-progress-findings.md), and [channel findings](docs/renderer-channel-findings.md).
 
 ## Product decision
 

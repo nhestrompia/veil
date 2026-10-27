@@ -21,10 +21,16 @@
 #error Compile with the ordinary research user ID.
 #endif
 
+#ifdef AFB_CHANNEL_DISPLAY_CONTROL
+#define AFB_RENDERER_NAME "ChannelDisplayProbe"
+#define AFB_TARGET_COUNT 1
+#else
+#define AFB_TARGET_COUNT 4
 #ifdef AFB_PROGRESS_CONTROL
 #define AFB_RENDERER_NAME "RendererProgressProbe"
 #else
 #define AFB_RENDERER_NAME "RendererIdentityProbe"
+#endif
 #endif
 
 struct target {
@@ -176,7 +182,7 @@ static bool service_path(const char *path, unsigned role)
     return false;
 }
 
-static void recovery(const struct target targets[4], int cancellation, int ready)
+static void recovery(const struct target targets[AFB_TARGET_COUNT], int cancellation, int ready)
 {
     alarm(6);
     int maximum = getdtablesize();
@@ -189,7 +195,7 @@ static void recovery(const struct target targets[4], int cancellation, int ready
     int found = poll(&item, 1, 4000);
     char byte = 0;
     if (found > 0 && read(cancellation, &byte, 1) == 1 && byte == 'q') _exit(0);
-    for (unsigned i = 0; i < 4; ++i) {
+    for (unsigned i = 0; i < AFB_TARGET_COUNT; ++i) {
         struct target current;
         if (unchanged(&targets[i], &current)) kill(targets[i].pid, SIGCONT);
     }
@@ -198,8 +204,11 @@ static void recovery(const struct target targets[4], int cancellation, int ready
 
 int main(int argc, char **argv)
 {
-    if (getuid() != AFB_RESEARCH_UID || geteuid() != AFB_RESEARCH_UID || argc != 14) return 64;
+    if (getuid() != AFB_RESEARCH_UID || geteuid() != AFB_RESEARCH_UID || argc != 2 + AFB_TARGET_COUNT * 3) return 64;
     bool isolated = !strcmp(argv[1], "--cross-user");
+    #ifdef AFB_CHANNEL_DISPLAY_CONTROL
+    if (isolated) return 64;
+    #endif
     if (!isolated && strcmp(argv[1], "--reference")) return 64;
     sigset_t mask;
     sigemptyset(&mask);
@@ -213,8 +222,8 @@ int main(int argc, char **argv)
     if (!account || !account->pw_uid || account->pw_uid == getuid() || !account->pw_gid) return 65;
     uid_t uid = isolated ? account->pw_uid : getuid();
     gid_t gid = isolated ? account->pw_gid : getgid();
-    struct target targets[4];
-    for (unsigned i = 0; i < 4; ++i) {
+    struct target targets[AFB_TARGET_COUNT];
+    for (unsigned i = 0; i < AFB_TARGET_COUNT; ++i) {
         uint64_t pid, seconds, microseconds;
         if (!number(argv[2 + i*3], &pid) || pid <= 1 || pid > INT_MAX
             || !number(argv[3 + i*3], &seconds) || !number(argv[4 + i*3], &microseconds) || microseconds >= 1000000)
@@ -248,7 +257,7 @@ int main(int argc, char **argv)
     close(ready[0]);
     bool passed = true, recovered = true;
     const char *names[] = {"host", "content", "gpu", "network"};
-    for (unsigned i = 0; i < 4; ++i) {
+    for (unsigned i = 0; i < AFB_TARGET_COUNT; ++i) {
         struct target current;
         if (!unchanged(&targets[0], &current) || !unchanged(&targets[i], &current)
             || current.identity.pbi_status == SSTOP || current.identity.pbi_status == SZOMB) {
@@ -258,6 +267,9 @@ int main(int argc, char **argv)
         errno = 0;
         int stopped = kill(targets[i].pid, SIGSTOP), stop_error = errno;
         bool observed = false;
+        #ifdef AFB_CHANNEL_DISPLAY_CONTROL
+        double pause_began = 0;
+        #endif
         if (!stopped) {
             double deadline = monotonic() + 0.1;
             do {
@@ -267,11 +279,23 @@ int main(int argc, char **argv)
                 delay(1);
             } while (monotonic() < deadline);
             printf("SIGNAL_STOPPED {\"role\":\"%s\",\"pid\":%d,\"watchdogPID\":%d,\"observed\":%s}\n", names[i], targets[i].pid, guard, observed ? "true" : "false");
+            #ifdef AFB_CHANNEL_DISPLAY_CONTROL
+            pause_began = monotonic();
+            delay(1200);
+            #else
             delay(100);
+            #endif
         }
         bool stable = unchanged(&targets[i], &current);
         errno = 0;
+        #ifdef AFB_CHANNEL_DISPLAY_CONTROL
+        double pause_ended = monotonic();
+        #endif
         int continued = stable ? kill(targets[i].pid, SIGCONT) : -1;
+        #ifdef AFB_CHANNEL_DISPLAY_CONTROL
+        printf("CHANNEL_PAUSE_INTERVAL {\"beganNanoseconds\":%llu,\"endedNanoseconds\":%llu}\n",
+            (unsigned long long)(pause_began * 1e9), (unsigned long long)(pause_ended * 1e9));
+        #endif
         int continue_error = stable ? errno : ESRCH;
         double deadline = monotonic() + 0.1;
         bool not_stopped = false;

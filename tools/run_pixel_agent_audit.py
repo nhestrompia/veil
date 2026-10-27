@@ -14,8 +14,9 @@ from run_native import ROOT, Oracle, probe
 
 def marker_recovery(ocr, expected):
     text = json.dumps(ocr, ensure_ascii=False)
-    # Vision emitted Cyrillic E for a visible Latin E in the first clear control.
-    aliases = str.maketrans({"А": "A", "В": "B", "С": "C", "Е": "E", "Α": "A", "Β": "B", "Ε": "E"})
+    # Vision emits these glyph aliases in the fixed AFB hexadecimal fixture marker.
+    aliases = str.maketrans({"А": "A", "В": "B", "С": "C", "Е": "E", "О": "0", "З": "3",
+                            "Α": "A", "Β": "B", "Ε": "E"})
     return {"exact": expected in text, "visualHexAliases": expected in text.translate(aliases)}
 
 

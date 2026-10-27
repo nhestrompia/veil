@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Launch navigation research</title>
+<style>body{font:24px system-ui;margin:48px;background:white;color:#172b35}</style>
+<h1>Launch navigation research</h1>
+<p>Disposable local action. No external effect.</p>
+<p>Disclosure marker: <strong>{{SECRET}}</strong></p>
+<output>Waiting for the local response.</output>
+<script>
+fetch(location.pathname+'/action',{
+  method:'POST',headers:{'Content-Type':'application/json'},
+  body:JSON.stringify({note:'native-input'})
+}).then(response=>response.json()).then(result=>{
+  document.querySelector('output').textContent=result.accepted?'Local action recorded.':'Local action refused.';
+});
+</script>
+</html>

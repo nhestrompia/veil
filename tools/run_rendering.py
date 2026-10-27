@@ -11,7 +11,7 @@ from native_environment import observe_console
 from run_native import ROOT, Oracle, probe
 
 
-def run(targets, repetitions, output):
+def run(targets, repetitions, output, controller=None):
     output = output.resolve()
     output.mkdir(parents=True, exist_ok=True)
     summary = {"results": [], "humanBaseline": False,
@@ -21,7 +21,7 @@ def run(targets, repetitions, output):
         (output / "results.json").write_text(json.dumps(summary, indent=2))
 
     summary["environment"] = observe_console()
-    oracle = Oracle()
+    oracle = Oracle(controller)
     summary["permissions"] = probe(["permissions"], output / "permissions.json")
     summary["system"] = subprocess.check_output(["sw_vers"], text=True)
     for target in targets:
@@ -79,8 +79,10 @@ def run(targets, repetitions, output):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--targets", nargs="+", default=["PixelControl", "PixelProtectedExperiment"],
-                        choices=["PixelControl", "PixelProtectedExperiment", "PixelNV12Control", "PixelNV12ProtectedExperiment"])
+                        choices=["PixelControl", "PixelProtectedExperiment", "PixelNV12Control", "PixelNV12ProtectedExperiment",
+                                 "PixelH264Control", "PixelH264ProtectedExperiment"])
     parser.add_argument("--repetitions", type=int, default=3)
     parser.add_argument("--output", type=Path, default=ROOT / "artifacts/pixel-rendering")
+    parser.add_argument("--controller", type=Path, help="Fixture controller configuration for an isolated server")
     args = parser.parse_args()
-    run(args.targets, args.repetitions, args.output)
+    run(args.targets, args.repetitions, args.output, args.controller)

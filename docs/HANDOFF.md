@@ -1,5 +1,13 @@
 # Current research state
 
+Milestone 119 adds a separate H.264 producer pair after a detailed Antiagent evidence review. Three encode/decode frames and changed-size refusal pass. Two paired comparisons recover the control marker through three routes and omits the protected marker. Unfiltered compositor capture refuses the missing owned backdrop. The user reports a readable page on the physical display. No exact marker was supplied. Same-process follow-up captures omit the page through three routes. See [compressed findings](compressed-rendering-findings.md).
+
+The encoder hardware readback is unsupported on this Mac. Hardware remains required at session creation. Hardware decoder readback passes in the round-trip check. No capture guarantee follows from these checks. Five frozen permissioned images retain their hashes. No new grant, hook, or administrator action occurs.
+
+Bounded exec session 75457 finished and stopped its app and fixture. The delayed computer-use call opened an empty app after the trial. That invalid observation adds no capture result, and the empty owned instance was stopped. No observation question remains pending.
+
+The final smoke-fixture correction changes app hashes but not rendering code. The codec and paired capture checks pass on the final images. The physical readability report applies to the earlier rendering-identical image. Unfiltered display and continuous capture, transitions, and input remain open. Preserve this useful result without claiming general screenshot protection.
+
 Current focus: screenshots, scripts, accessibility, and input. See the [route research](research/agent-access-routes.md). A file watcher misses capture in memory.
 
 The mouse pilot is offline. No keyboard classifier exists. Both protected layers hid the page from the person. Prioritize visible protected output and direct automation checks. The user authorized no new privilege.

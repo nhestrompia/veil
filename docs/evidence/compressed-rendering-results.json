@@ -1,0 +1,456 @@
+{
+  "date": "2026-10-27",
+  "scope": "One paired compressed-HTML capture pilot. No physical visibility or input claim. No DRM encryption.",
+  "antiagentSourcesReviewed": [
+    {
+      "path": "/Users/nhestrompia/Projects/antiagent/docs/protected-ui-findings.md",
+      "sha256": "8670f2faeed398dbffe3319fde3c2d04cb6d9f2c78bcf7fbae9a8f658d5236b7"
+    },
+    {
+      "path": "/Users/nhestrompia/Projects/antiagent/docs/protected-output-findings.md",
+      "sha256": "1aa3a00db2b224c361b7ad34bbf70eb65993536fc5bf0609b50994b46a985c4e"
+    },
+    {
+      "path": "/Users/nhestrompia/Projects/antiagent/docs/protected-output-results.json",
+      "sha256": "e0b0b568ab09814a637e59ca6616457388cd5e9063affcd071e8a731522ad88e"
+    },
+    {
+      "path": "/Users/nhestrompia/Projects/antiagent/docs/compositor-capture-research.md",
+      "sha256": "71a797e620cbc9827f48b2db792fac38551eebc8ee8320bcdec4b0fdf180708e"
+    },
+    {
+      "path": "/Users/nhestrompia/Projects/antiagent/docs/fairplay-webkit-capture-research.md",
+      "sha256": "30cd7400378ba898e6b8b87b288c92dc1fc5df8c11e84d55436f2a38d3d19c73"
+    },
+    {
+      "path": "/Users/nhestrompia/Projects/antiagent/docs/drm-live-ui-boundary-review.md",
+      "sha256": "3944046e1031d73b9206636c25a92b4c6e91c939d8415bc6813286ef7f99aa38"
+    },
+    {
+      "path": "/Users/nhestrompia/Projects/antiagent/docs/gpu-pixel-guard-findings.md",
+      "sha256": "46e880f935b9ade01f8c012e7c2a29b81c9f27e4e05d2688cab0545a153d4cb4"
+    },
+    {
+      "path": "/Users/nhestrompia/Projects/antiagent/docs/gpu-guard-no-cdp-results.json",
+      "sha256": "9aa5407851b5ee19f0b252f55703255668901571b609202d7929d355473355aa"
+    },
+    {
+      "path": "/Users/nhestrompia/Projects/antiagent/docs/capture-cover-findings.md",
+      "sha256": "57a444c1ea700c36811014044fd2cef72cc7c8adb4d7335362f4174443e98511"
+    },
+    {
+      "path": "/Users/nhestrompia/Projects/antiagent/docs/evidence/protected-ui/report.json",
+      "sha256": "4728c10610f7e6513cbb70fef2117cab4728241fe287f780159e88390d341241"
+    },
+    {
+      "path": "/Users/nhestrompia/Projects/antiagent/docs/evidence/protected-ui/encrypted-surface.png",
+      "sha256": "63d8d6734a4ea92b0864fa8574d786a0344ca8c065e401623056db741c46a4bc"
+    },
+    {
+      "path": "/Users/nhestrompia/Projects/antiagent/docs/evidence/protected-ui/encrypted-view.png",
+      "sha256": "195d22f8c649044d886ee0e8e730b33535489d93a095bd025a6f12b0994c7cd4"
+    }
+  ],
+  "antiagentFinalMatrix": {
+    "sessions": 18,
+    "clearSessions": 3,
+    "clearCompositorReadable": 3,
+    "clearViewReadable": 3,
+    "softwareEncryptedSessions": 6,
+    "softwareEncryptedCompositorReadable": 6,
+    "softwareEncryptedViewReadable": 0,
+    "unsupportedHardwareSessions": 9
+  },
+  "codecRoundTrip": {
+    "captureTested": false,
+    "changedSizeRefused": true,
+    "codec": "H264",
+    "encryptedMedia": false,
+    "frames": [
+      {
+        "bytes": 72,
+        "contentMatched": true,
+        "frame": 0,
+        "hardwareDecoderReadback": true,
+        "hardwareDecoderReadbackStatus": 0,
+        "hardwareDecoderRequired": true,
+        "leftBrightness": 28,
+        "pts": 0,
+        "rightBrightness": 190
+      },
+      {
+        "bytes": 71,
+        "contentMatched": true,
+        "frame": 1,
+        "hardwareDecoderReadback": true,
+        "hardwareDecoderReadbackStatus": 0,
+        "hardwareDecoderRequired": true,
+        "leftBrightness": 51,
+        "pts": 0.2,
+        "rightBrightness": 167
+      },
+      {
+        "bytes": 71,
+        "contentMatched": true,
+        "frame": 2,
+        "hardwareDecoderReadback": true,
+        "hardwareDecoderReadbackStatus": 0,
+        "hardwareDecoderRequired": true,
+        "leftBrightness": 74,
+        "pts": 0.4,
+        "rightBrightness": 143.66666666666666
+      }
+    ],
+    "hardwareEncoderReadback": null,
+    "hardwareEncoderReadbackStatus": -12900,
+    "hardwareEncoderRequired": true,
+    "physicalVisibilityVerified": false,
+    "status": "passed"
+  },
+  "permissions": {
+    "accessibility": true,
+    "postEvents": true,
+    "screenCapture": true,
+    "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+  },
+  "system": "ProductName:\t\tmacOS\nProductVersion:\t\t26.6\nBuildVersion:\t\t25G72\n",
+  "captureResults": [
+    {
+      "target": "PixelH264Control",
+      "repetition": 0,
+      "binarySHA256": "ba751f4d546f5524a2ad53731bfe31f72067ca5b2ddd70fe97fcebdf397b08b2",
+      "frameSubmitted": true,
+      "rendererLog": [
+        "PIXEL_RENDER ready pid=93723 preventsCapture=false",
+        "PIXEL_RENDER codec=H264 hardwareEncoderRequired=true readbackStatus=-12900",
+        "PIXEL_RENDER first_frame rendererStatus=1",
+        "PIXEL_RENDER readiness ready=true obscured=false"
+      ],
+      "verdict": "bypass",
+      "captures": {
+        "screenkit": {
+          "frame": [
+            100,
+            110,
+            1000,
+            772
+          ],
+          "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/compressed-rendering-119/final-build/captures/PixelH264Control-0.screenkit.png",
+          "pid": 93723,
+          "pixels": [
+            2000,
+            1544
+          ],
+          "status": "captured",
+          "windowID": 110681,
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1",
+          "secretRecovered": true
+        },
+        "display": {
+          "frame": [
+            100,
+            110,
+            1000,
+            772
+          ],
+          "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/compressed-rendering-119/final-build/captures/PixelH264Control-0.display.png",
+          "pid": 93723,
+          "pixels": [
+            2000,
+            1544
+          ],
+          "status": "captured",
+          "windowID": 110681,
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1",
+          "secretRecovered": true
+        },
+        "compositor": {
+          "error": "Use isolated-compositor-capture with a verified research backdrop",
+          "status": "inconclusive",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "system": {
+          "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/compressed-rendering-119/final-build/captures/PixelH264Control-0.system.png",
+          "pid": 93723,
+          "status": "captured",
+          "windowID": 110681,
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1",
+          "secretRecovered": true
+        }
+      },
+      "axDisclosure": false,
+      "disclosure": true
+    },
+    {
+      "target": "PixelH264ProtectedExperiment",
+      "repetition": 0,
+      "binarySHA256": "c7c4e8464b296343dc2486c1edf95c75eb5da45f377f15f97cd04e651a5dc40c",
+      "frameSubmitted": true,
+      "rendererLog": [
+        "PIXEL_RENDER ready pid=93756 preventsCapture=true",
+        "PIXEL_RENDER codec=H264 hardwareEncoderRequired=true readbackStatus=-12900",
+        "PIXEL_RENDER first_frame rendererStatus=1",
+        "PIXEL_RENDER readiness ready=true obscured=false"
+      ],
+      "verdict": "inconclusive",
+      "captures": {
+        "screenkit": {
+          "frame": [
+            100,
+            110,
+            1000,
+            772
+          ],
+          "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/compressed-rendering-119/final-build/captures/PixelH264ProtectedExperiment-0.screenkit.png",
+          "pid": 93756,
+          "pixels": [
+            2000,
+            1544
+          ],
+          "status": "captured",
+          "windowID": 110688,
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1",
+          "secretRecovered": false
+        },
+        "display": {
+          "frame": [
+            100,
+            110,
+            1000,
+            772
+          ],
+          "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/compressed-rendering-119/final-build/captures/PixelH264ProtectedExperiment-0.display.png",
+          "pid": 93756,
+          "pixels": [
+            2000,
+            1544
+          ],
+          "status": "captured",
+          "windowID": 110688,
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1",
+          "secretRecovered": false
+        },
+        "compositor": {
+          "error": "Use isolated-compositor-capture with a verified research backdrop",
+          "status": "inconclusive",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "system": {
+          "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/compressed-rendering-119/final-build/captures/PixelH264ProtectedExperiment-0.system.png",
+          "pid": 93756,
+          "status": "captured",
+          "windowID": 110688,
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1",
+          "secretRecovered": false
+        }
+      },
+      "axDisclosure": false,
+      "disclosure": false,
+      "reason": "No exact marker recovery. Human visibility, matched controls, and wider capture routes still required."
+    }
+  ],
+  "humanVisibility": "User reports readable on direct physical display. No exact marker supplied.",
+  "allFiveFrozenPermissionedBinaryHashesMatched": true,
+  "inputAttacksRan": false,
+  "newGrantsRequested": false,
+  "administratorAccessUsed": false,
+  "allCaptureRoutesProvenBlocked": false,
+  "physicalCheck": {
+    "userObservation": "I can read",
+    "markerProvided": false,
+    "scope": "Same physical-check process. Initial captures lacked visible windows until app activation. A subsequent relative-output-path error was corrected. Neither failed run counts as prevention.",
+    "captures": {
+      "window": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/compressed-rendering-119/physical-check/absolute-window.png",
+        "pid": 87003,
+        "pixels": [
+          2000,
+          1544
+        ],
+        "status": "captured",
+        "windowID": 110111,
+        "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1",
+        "secretRecovered": false
+      },
+      "filtered-display": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/compressed-rendering-119/physical-check/absolute-filtered-display.png",
+        "pid": 87003,
+        "pixels": [
+          2000,
+          1544
+        ],
+        "status": "captured",
+        "windowID": 110111,
+        "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1",
+        "secretRecovered": false
+      },
+      "system-window": {
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/compressed-rendering-119/physical-check/absolute-system-window.png",
+        "pid": 87003,
+        "status": "captured",
+        "windowID": 110111,
+        "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1",
+        "secretRecovered": false
+      }
+    },
+    "captureBuildScope": "Same running process as the physical observation. Rendering code matches the pilot. The final smoke-fixture setup correction changes on-disk app hashes, not the rendering branch."
+  },
+  "finalBinarySHA256": {
+    "PixelH264Control": "ba751f4d546f5524a2ad53731bfe31f72067ca5b2ddd70fe97fcebdf397b08b2",
+    "PixelH264ProtectedExperiment": "c7c4e8464b296343dc2486c1edf95c75eb5da45f377f15f97cd04e651a5dc40c"
+  },
+  "finalImageCaptureRerun": true,
+  "computerUseObservation": {
+    "validTrial": false,
+    "reason": "Tool returned after the ten-minute trial ended and opened an empty app. That empty owned instance was stopped."
+  },
+  "physicalTrialCleanup": "Owned app and fixture exited. Empty app opened by computer use was separately stopped.",
+  "initialCaptureResults": [
+    {
+      "target": "PixelH264Control",
+      "repetition": 0,
+      "binarySHA256": "a9045c2b9c5ce2e1a3781f9c65a998421e4746dac08cae6519be040c48aab93f",
+      "frameSubmitted": true,
+      "rendererLog": [
+        "PIXEL_RENDER ready pid=85956 preventsCapture=false",
+        "PIXEL_RENDER codec=H264 hardwareEncoderRequired=true readbackStatus=-12900",
+        "PIXEL_RENDER first_frame rendererStatus=1",
+        "PIXEL_RENDER readiness ready=true obscured=false"
+      ],
+      "verdict": "bypass",
+      "captures": {
+        "screenkit": {
+          "frame": [
+            100,
+            110,
+            1000,
+            772
+          ],
+          "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/compressed-rendering-119/capture-pilot/PixelH264Control-0.screenkit.png",
+          "pid": 85956,
+          "pixels": [
+            2000,
+            1544
+          ],
+          "status": "captured",
+          "windowID": 109927,
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1",
+          "secretRecovered": true
+        },
+        "display": {
+          "frame": [
+            100,
+            110,
+            1000,
+            772
+          ],
+          "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/compressed-rendering-119/capture-pilot/PixelH264Control-0.display.png",
+          "pid": 85956,
+          "pixels": [
+            2000,
+            1544
+          ],
+          "status": "captured",
+          "windowID": 109927,
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1",
+          "secretRecovered": true
+        },
+        "compositor": {
+          "error": "Use isolated-compositor-capture with a verified research backdrop",
+          "status": "inconclusive",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "system": {
+          "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/compressed-rendering-119/capture-pilot/PixelH264Control-0.system.png",
+          "pid": 85956,
+          "status": "captured",
+          "windowID": 109927,
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1",
+          "secretRecovered": true
+        }
+      },
+      "axDisclosure": false,
+      "disclosure": true
+    },
+    {
+      "target": "PixelH264ProtectedExperiment",
+      "repetition": 0,
+      "binarySHA256": "952fc4e910f301d465719589e84a947c47cedec93cbf35c815074d67f5d9725a",
+      "frameSubmitted": true,
+      "rendererLog": [
+        "PIXEL_RENDER ready pid=85999 preventsCapture=true",
+        "PIXEL_RENDER codec=H264 hardwareEncoderRequired=true readbackStatus=-12900",
+        "PIXEL_RENDER first_frame rendererStatus=1",
+        "PIXEL_RENDER readiness ready=true obscured=false"
+      ],
+      "verdict": "inconclusive",
+      "captures": {
+        "screenkit": {
+          "frame": [
+            100,
+            110,
+            1000,
+            772
+          ],
+          "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/compressed-rendering-119/capture-pilot/PixelH264ProtectedExperiment-0.screenkit.png",
+          "pid": 85999,
+          "pixels": [
+            2000,
+            1544
+          ],
+          "status": "captured",
+          "windowID": 109955,
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1",
+          "secretRecovered": false
+        },
+        "display": {
+          "frame": [
+            100,
+            110,
+            1000,
+            772
+          ],
+          "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/compressed-rendering-119/capture-pilot/PixelH264ProtectedExperiment-0.display.png",
+          "pid": 85999,
+          "pixels": [
+            2000,
+            1544
+          ],
+          "status": "captured",
+          "windowID": 109955,
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1",
+          "secretRecovered": false
+        },
+        "compositor": {
+          "error": "Use isolated-compositor-capture with a verified research backdrop",
+          "status": "inconclusive",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "system": {
+          "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/compressed-rendering-119/capture-pilot/PixelH264ProtectedExperiment-0.system.png",
+          "pid": 85999,
+          "status": "captured",
+          "windowID": 109955,
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1",
+          "secretRecovered": false
+        }
+      },
+      "axDisclosure": false,
+      "disclosure": false,
+      "reason": "No exact marker recovery. Human visibility, matched controls, and wider capture routes still required."
+    }
+  ],
+  "physicalObservationSameFinalImage": false
+}

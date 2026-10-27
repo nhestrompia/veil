@@ -9,6 +9,9 @@ import VideoToolbox
 final class PixelDisplay: NSView {
     let display = AVSampleBufferDisplayLayer()
     private var transfer: VTPixelTransferSession?
+    #if PIXEL_H264
+    private var encoder: H264Frames?
+    #endif
 
     init(protected: Bool) {
         super.init(frame: .zero)
@@ -43,7 +46,7 @@ final class PixelDisplay: NSView {
             context.draw(image, in: CGRect(x: 0, y: 0, width: image.width, height: image.height))
         }
         let renderBuffer: CVPixelBuffer
-        #if PIXEL_NV12
+        #if PIXEL_NV12 || PIXEL_H264
         var converted: CVPixelBuffer?
         let nv12Attributes: [CFString: Any] = [kCVPixelBufferIOSurfacePropertiesKey: [:]]
         guard CVPixelBufferCreate(kCFAllocatorDefault, image.width, image.height,
@@ -61,6 +64,15 @@ final class PixelDisplay: NSView {
         #else
         renderBuffer = pixelBuffer
         #endif
+        #if PIXEL_H264
+        if encoder == nil {
+            encoder = try H264Frames(width: CVPixelBufferGetWidth(renderBuffer), height: CVPixelBufferGetHeight(renderBuffer))
+            print("PIXEL_RENDER codec=H264 hardwareEncoderRequired=true readbackStatus=\(encoder?.hardwareReadbackStatus ?? -1)")
+            fflush(stdout)
+        }
+        guard let encoder else { throw RenderFailure("Compressed producer unavailable") }
+        let sample = try encoder.encode(renderBuffer)
+        #else
         var format: CMVideoFormatDescription?
         guard CMVideoFormatDescriptionCreateForImageBuffer(allocator: kCFAllocatorDefault, imageBuffer: renderBuffer,
             formatDescriptionOut: &format) == noErr, let format else { throw RenderFailure("Video format failed") }
@@ -69,6 +81,7 @@ final class PixelDisplay: NSView {
         guard CMSampleBufferCreateReadyWithImageBuffer(allocator: kCFAllocatorDefault, imageBuffer: renderBuffer,
             formatDescription: format, sampleTiming: &timing, sampleBufferOut: &sample) == noErr, let sample
         else { throw RenderFailure("Sample creation failed") }
+        #endif
         guard let attachments = CMSampleBufferGetSampleAttachmentsArray(sample, createIfNecessary: true) as? [NSMutableDictionary],
               let attachment = attachments.first else { throw RenderFailure("Sample attachment missing") }
         attachment[kCMSampleAttachmentKey_DisplayImmediately] = true
@@ -77,6 +90,8 @@ final class PixelDisplay: NSView {
             throw RenderFailure(display.sampleBufferRenderer.error?.localizedDescription ?? "Renderer failed")
         }
     }
+
+    func stop() { display.isHidden = true }
 }
 
 struct RenderFailure: Error, CustomStringConvertible {
@@ -97,14 +112,18 @@ final class RenderController: NSObject, NSApplicationDelegate, WKNavigationDeleg
     func applicationDidFinishLaunching(_ notification: Notification) {
         #if PIXEL_PROTECTION
         let protected = true
-        #if PIXEL_NV12
+        #if PIXEL_H264
+        let name = "H264 Protection Experiment"
+        #elseif PIXEL_NV12
         let name = "NV12 Protection Experiment"
         #else
         let name = "Pixel Protection Experiment"
         #endif
         #else
         let protected = false
-        #if PIXEL_NV12
+        #if PIXEL_H264
+        let name = "H264 Control"
+        #elseif PIXEL_NV12
         let name = "NV12 Control"
         #else
         let name = "Pixel Control"
@@ -186,6 +205,7 @@ final class RenderController: NSObject, NSApplicationDelegate, WKNavigationDeleg
                     try await Task.sleep(for: .milliseconds(200))
                 } catch {
                     if Task.isCancelled { return }
+                    pixels.stop()
                     status.stringValue = "Renderer stopped. \(error.localizedDescription)"
                     print("PIXEL_RENDER failed \(error)")
                     fflush(stdout)
@@ -202,6 +222,17 @@ final class RenderController: NSObject, NSApplicationDelegate, WKNavigationDeleg
 @main
 enum RenderApp {
     @MainActor static func main() {
+        #if PIXEL_H264
+        if CommandLine.arguments.contains("--codec-smoke") {
+            do {
+                try CompressedSmoke.run()
+            } catch {
+                print("CODEC_SMOKE failed \(error)")
+                exit(1)
+            }
+            return
+        }
+        #endif
         let app = NSApplication.shared
         let controller = RenderController()
         app.setActivationPolicy(.regular)

@@ -4,7 +4,7 @@ This inventory separates attempted routes from remaining work. It does not enume
 
 | Agent method | What the agent tried | Result and scope |
 | --- | --- | --- |
-| Screenshot plus vision | Native window, filtered display, and system-window captures of fresh pages | Earlier H.264 target omits content while the clear control is readable. The agent visually checked saved images and corrected an OCR alias error. |
+| Screenshot plus vision | Native window, filtered display, and system-window captures of fresh pages | Earlier H.264 captures omit content, but the fresh physical test also reports black. The clear control is readable. The agent visually checked saved images and corrected an OCR alias error. |
 | Accessibility text | Host tree, focused-element reads, and hit tests | Earlier pixel target reveals no page marker. The new host returns one application root. Direct new-host queries fail foreground calibration. |
 | Accessibility actions | Set the fixture field and press its button | Works in the ordinary reference. Pixel-only controls are absent. Loaded-page actions in the new browser remain untested. |
 | Browser protocol | Real Playwright/CDP attachment and DOM/form operations | Works in isolated Chrome. Requested native debugging ports refuse connections. Other inspection transports remain untested. |

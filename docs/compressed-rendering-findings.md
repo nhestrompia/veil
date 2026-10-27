@@ -1,5 +1,7 @@
 # Compressed HTML capture pilot
 
+Update, milestone 123. The unchanged final H.264 protected image is black on the physical display in a fresh test. The earlier readability report is not reproducible. See [presentation findings](pixel-compositing-findings.md). Captured black images do not establish a useful visible-output defense.
+
 Milestone 119, October 27, 2026. A new H.264 producer passes a real encode/decode check and two paired capture comparisons. The protected screenshots omit the page. The user reports a readable page on the direct physical display. No exact marker was supplied. This is not an agent-free result.
 
 ## What the Antiagent evidence established

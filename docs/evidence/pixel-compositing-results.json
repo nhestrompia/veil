@@ -1,0 +1,210 @@
+{
+  "date": "2026-10-27",
+  "physicalReports": {
+    "PixelKeyboardExperiment": "The window or page is black",
+    "PixelKeyboardRoutingControl": "The address and webpage are visible",
+    "PixelCompositingExperiment-source-only": "black",
+    "PixelH264ProtectedExperiment": "black"
+  },
+  "rootCauseEstablished": false,
+  "physicalVisibilityPassed": false,
+  "allSevenFrozenImagesUnchanged": true,
+  "newPermissionRequested": false,
+  "actualSyntheticInputAttacksRan": false,
+  "systemInputPosted": false,
+  "displayMetadata": {
+    "displays": [
+      {
+        "active": true,
+        "builtIn": true,
+        "mirrored": false,
+        "online": true,
+        "ordinal": 0,
+        "pixels": [
+          1512,
+          982
+        ]
+      }
+    ],
+    "enumerationErrors": [
+      0,
+      0
+    ]
+  },
+  "sourceOnlyCaptures": [
+    {
+      "route": "capture",
+      "result": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/pixel-compositing-123/source/capture.png",
+        "pid": 25470,
+        "pixels": [
+          2000,
+          1544
+        ],
+        "status": "captured",
+        "windowID": 111067,
+        "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+      },
+      "markerRecovery": {
+        "exact": false,
+        "visualHexAliases": false
+      }
+    },
+    {
+      "route": "display-capture",
+      "result": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/pixel-compositing-123/source/display-capture.png",
+        "pid": 25470,
+        "pixels": [
+          2000,
+          1544
+        ],
+        "status": "captured",
+        "windowID": 111067,
+        "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+      },
+      "markerRecovery": {
+        "exact": false,
+        "visualHexAliases": false
+      }
+    },
+    {
+      "route": "system-capture",
+      "result": {
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/pixel-compositing-123/source/system-capture.png",
+        "pid": 25470,
+        "status": "captured",
+        "windowID": 111067,
+        "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+      },
+      "markerRecovery": {
+        "exact": false,
+        "visualHexAliases": false
+      }
+    }
+  ],
+  "originalCapture": {
+    "frame": [
+      100,
+      110,
+      1000,
+      772
+    ],
+    "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/pixel-compositing-123/original/capture.png",
+    "pid": 26408,
+    "pixels": [
+      2000,
+      1544
+    ],
+    "status": "captured",
+    "windowID": 111083
+  },
+  "rootDiagnosticModeRun": false,
+  "checks": {
+    "diagnosticBuild": true,
+    "diagnosticStrictSignature": true,
+    "productionSwift6Typecheck": true,
+    "pythonCompilation": true,
+    "shellSyntax": true
+  },
+  "combined": {
+    "pid": 21391,
+    "binarySHA256": "4b39843faec345d8484cbfdf829644e27fb306d160c1c77272e7961cc381acc8",
+    "acceptedSubmissions": 0,
+    "ownedAppStopped": true,
+    "ownedFixtureStopped": true,
+    "maximumDurationSeconds": 900,
+    "relevantLog": [
+      "DEVICE_KEYBOARD permission=true openStatus=0 bindWithDeviceSpace=true sourcePolicy=measured-built-in-keyboard",
+      "PIXEL_RENDER ready pid=21391 preventsCapture=true pendingPhysicalSubmit=true",
+      "PIXEL_RENDER codec=H264 hardwareEncoderRequired=true readbackStatus=-12900",
+      "PIXEL_RENDER readiness frames=5",
+      "DEVICE_KEYBOARD bound=true bootstrapAttested=false",
+      "PIXEL_NAVIGATION deviceBound=true pageFocus=true"
+    ]
+  },
+  "clear": {
+    "pid": 23138,
+    "binarySHA256": "aac4fd5424ceebd7d792fda99a0ade9fefc3acaef546b30a2849faabcd24f1fe",
+    "acceptedSubmissions": 1,
+    "ownedAppStopped": true,
+    "ownedFixtureStopped": true,
+    "maximumDurationSeconds": 600,
+    "relevantLog": [
+      "DEVICE_KEYBOARD permission=false; no automatic request",
+      "PIXEL_RENDER ready pid=23138 preventsCapture=false pendingPhysicalSubmit=true",
+      "PIXEL_RENDER codec=H264 hardwareEncoderRequired=true readbackStatus=-12900",
+      "PIXEL_NAVIGATION deviceBound=true pageFocus=true",
+      "PIXEL_RENDER readiness frames=5",
+      "PIXEL_ROUTING_CALIBRATION sequenceFinished=true"
+    ]
+  },
+  "sourceOnly": {
+    "pid": 25470,
+    "binarySHA256": "06a2674fcf0d0621900f99f8feddf211fc390083e1d7f9a5dbc74a6335cb8cdf",
+    "acceptedSubmissions": 1,
+    "ownedAppStopped": true,
+    "ownedFixtureStopped": true,
+    "maximumDurationSeconds": 600,
+    "relevantLog": [
+      "DEVICE_KEYBOARD permission=false; no automatic request",
+      "PIXEL_RENDER ready pid=25470 preventsCapture=true pendingPhysicalSubmit=true",
+      "PIXEL_RENDER codec=H264 hardwareEncoderRequired=true readbackStatus=-12900",
+      "PIXEL_NAVIGATION deviceBound=true pageFocus=true",
+      "PIXEL_RENDER readiness frames=5",
+      "PIXEL_COMPOSITING sourceOnlyClipping=true ready=true obscured=false rendererStatus=1",
+      "PIXEL_ROUTING_CALIBRATION sequenceFinished=true"
+    ]
+  },
+  "original": {
+    "pid": 26408,
+    "binarySHA256": "c7c4e8464b296343dc2486c1edf95c75eb5da45f377f15f97cd04e651a5dc40c",
+    "acceptedSubmissions": 0,
+    "ownedAppStopped": true,
+    "ownedFixtureStopped": true,
+    "maximumDurationSeconds": 600,
+    "relevantLog": [
+      "PIXEL_RENDER ready pid=26408 preventsCapture=true",
+      "PIXEL_RENDER codec=H264 hardwareEncoderRequired=true readbackStatus=-12900",
+      "PIXEL_RENDER first_frame rendererStatus=1",
+      "PIXEL_RENDER readiness ready=true obscured=false"
+    ]
+  },
+  "originalRetestOtherProtectedWindowPresent": true,
+  "soloOriginalRetestNeeded": false,
+  "threeCompletedTestHostsAbsent": [
+    23138,
+    25470,
+    26408
+  ],
+  "soloOriginalPreflightAllResearchHostsAbsent": true,
+  "soloOriginal": {
+    "pid": 30753,
+    "binarySHA256": "c7c4e8464b296343dc2486c1edf95c75eb5da45f377f15f97cd04e651a5dc40c",
+    "acceptedSubmissions": 0,
+    "ownedAppStopped": true,
+    "ownedFixtureStopped": true,
+    "physicalReport": "black",
+    "screenshotRequestedDuringPhysicalObservation": false,
+    "rendererLog": [
+      "PIXEL_RENDER ready pid=30753 preventsCapture=true",
+      "PIXEL_RENDER codec=H264 hardwareEncoderRequired=true readbackStatus=-12900",
+      "PIXEL_RENDER first_frame rendererStatus=1",
+      "PIXEL_RENDER readiness ready=true obscured=false"
+    ]
+  },
+  "allFiveTestHostsAbsent": true,
+  "allFiveOwnedFixturesStopped": true
+}

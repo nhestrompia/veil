@@ -10,6 +10,6 @@ Host AX and direct focused-element queries return the protected app and window t
 
 Two existing modifying mouse hooks remain active. No external synthetic input runs. No permission reset, new grant request, or unrelated process change occurs. The combined browser and original permissioned binaries remain unchanged.
 
-The bounded session runner uses LaunchServices, pins the executable hash, saves independent oracle counts, and posts no system input. The protected and clear sessions retain their original time limits. Cleanup results remain pending until those limits expire. An automatic review rejected early closure of the protected session, so that closure did not run.
+The bounded session runner uses LaunchServices, pins the executable hash, saves independent oracle counts, and posts no system input. The protected session reaches its original fifteen-minute deadline. Both owned app hosts and fixtures then report stopped. The clear control stops after its completed observation. An automatic review rejected early closure of the protected session, so that closure did not run.
 
 Next, compare clipping and presentation layout in a separate diagnostic image. The current integration has no verified physical task completion and is not agent-free.

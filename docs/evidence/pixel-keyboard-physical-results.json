@@ -27,8 +27,8 @@
     "launchMethod": "LaunchServices",
     "listening": true,
     "acceptedSubmissions": 0,
-    "ownedAppStopped": null,
-    "ownedFixtureStopped": null,
+    "ownedAppStopped": true,
+    "ownedFixtureStopped": true,
     "relevantLog": [
       "DEVICE_KEYBOARD permission=true openStatus=0 bindWithDeviceSpace=true sourcePolicy=measured-built-in-keyboard",
       "PIXEL_RENDER ready pid=21391 preventsCapture=true pendingPhysicalSubmit=true",
@@ -49,8 +49,8 @@
     "launchMethod": "LaunchServices",
     "listening": false,
     "acceptedSubmissions": 1,
-    "ownedAppStopped": null,
-    "ownedFixtureStopped": null,
+    "ownedAppStopped": true,
+    "ownedFixtureStopped": true,
     "relevantLog": [
       "DEVICE_KEYBOARD permission=false; no automatic request",
       "PIXEL_RENDER ready pid=23138 preventsCapture=false pendingPhysicalSubmit=true",

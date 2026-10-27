@@ -21,10 +21,13 @@ def process_matches(pid, binary):
     return result.returncode == 0 and result.stdout.strip() == str(binary)
 
 
-def run(output, duration, target):
+def run(output, duration, target, source_only_clipping=False):
     output = output.resolve()
     output.mkdir(parents=True, exist_ok=True)
-    manifest = json.loads((ROOT / "docs/evidence/pixel-keyboard-permission-manifest.json").read_text())
+    manifest_name = "pixel-compositing-manifest.json" if target in {"PixelCompositingExperiment", "PixelH264ProtectedExperiment"} else "pixel-keyboard-permission-manifest.json"
+    manifest = json.loads((ROOT / "docs/evidence" / manifest_name).read_text())
+    if source_only_clipping and target != "PixelCompositingExperiment":
+        raise ValueError("Source-only clipping requires the separate compositing diagnostic")
     entry = manifest["apps"][target]
     app = Path(entry["path"])
     binary = app / "Contents/MacOS" / target
@@ -47,7 +50,8 @@ def run(output, duration, target):
     pid = None
     report = {"target": target, "binarySHA256": digest, "trial": trial, "launchMethod": "LaunchServices",
               "inputPosted": False, "maximumDurationSeconds": duration,
-              "internalCalibration": target == "PixelKeyboardRoutingControl"}
+              "internalCalibration": target in {"PixelKeyboardRoutingControl", "PixelCompositingExperiment"},
+              "sourceOnlyClipping": source_only_clipping}
 
     def save():
         state = oracle.state(trial)
@@ -59,7 +63,8 @@ def run(output, duration, target):
     try:
         started = time.monotonic()
         launched = subprocess.run(["open", "-n", "--stdout", str(log_path), "--stderr",
-                                   str(output / "browser-error.log"), str(app), "--args", "--url", trial["url"]],
+                                   str(output / "browser-error.log"), str(app), "--args", "--url", trial["url"],
+                                   *(["--source-only-clipping"] if source_only_clipping else [])],
                                   capture_output=True, text=True, timeout=10)
         if launched.returncode:
             raise RuntimeError(launched.stderr.strip())
@@ -109,7 +114,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--duration", type=int, default=900, choices=range(60, 1801))
-    parser.add_argument("--target", choices=["PixelKeyboardExperiment", "PixelKeyboardRoutingControl"],
+    parser.add_argument("--target", choices=["PixelKeyboardExperiment", "PixelKeyboardRoutingControl", "PixelCompositingExperiment", "PixelH264ProtectedExperiment"],
                         default="PixelKeyboardExperiment")
+    parser.add_argument("--source-only-clipping", action="store_true")
     args = parser.parse_args()
-    run(args.output, args.duration, args.target)
+    run(args.output, args.duration, args.target, args.source_only_clipping)

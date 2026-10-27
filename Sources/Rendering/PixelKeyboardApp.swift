@@ -20,7 +20,11 @@ final class PixelKeyboardController: NSObject, NSApplicationDelegate, WKNavigati
     #endif
 
     func applicationDidFinishLaunching(_ notification: Notification) {
-        #if PIXEL_ROUTING_CONTROL
+        #if PIXEL_COMPOSITING_CONTROL
+        let protected = true
+        let isolatedSource = CommandLine.arguments.contains("--source-only-clipping")
+        let name = isolatedSource ? "Compositing: clipped source" : "Compositing: clipped root"
+        #elseif PIXEL_ROUTING_CONTROL
         let protected = false
         let name = "Keyboard Routing Control"
         #else
@@ -29,8 +33,24 @@ final class PixelKeyboardController: NSObject, NSApplicationDelegate, WKNavigati
         #endif
         pixels = PixelDisplay(protected: protected)
         let content = NSView()
+        #if PIXEL_COMPOSITING_CONTROL
+        let sources: NSView
+        if isolatedSource {
+            sources = NSView(frame: NSRect(x: 0, y: 0, width: 1000, height: 740))
+            sources.autoresizingMask = [.width, .height]
+            sources.wantsLayer = true
+            sources.layer?.masksToBounds = true
+            content.addSubview(sources)
+        } else {
+            sources = content
+            content.wantsLayer = true
+            content.layer?.masksToBounds = true
+        }
+        #else
+        let sources = content
         content.wantsLayer = true
         content.layer?.masksToBounds = true
+        #endif
         content.addSubview(pixels)
         content.addSubview(status)
         pixels.translatesAutoresizingMaskIntoConstraints = false
@@ -59,11 +79,11 @@ final class PixelKeyboardController: NSObject, NSApplicationDelegate, WKNavigati
         webView.isInspectable = false
         webView.navigationDelegate = self
         webView.setAccessibilityHidden(true)
-        content.addSubview(webView)
+        sources.addSubview(webView)
         address.frame = NSRect(x: -1200, y: -1100, width: 1000, height: 40)
         address.delegate = self
         address.setAccessibilityHidden(true)
-        content.addSubview(address)
+        sources.addSubview(address)
         let args = CommandLine.arguments
         if let index = args.firstIndex(of: "--url"), args.indices.contains(index + 1) {
             address.stringValue = args[index + 1]
@@ -204,6 +224,9 @@ final class PixelKeyboardController: NSObject, NSApplicationDelegate, WKNavigati
                     frames += 1
                     if frames == 5 {
                         print("PIXEL_RENDER readiness frames=\(frames)")
+                        #if PIXEL_COMPOSITING_CONTROL
+                        print("PIXEL_COMPOSITING sourceOnlyClipping=\(CommandLine.arguments.contains("--source-only-clipping")) ready=\(pixels.display.isReadyForDisplay) obscured=\(pixels.display.isOutputObscuredDueToInsufficientExternalProtection) rendererStatus=\(pixels.display.sampleBufferRenderer.status.rawValue)")
+                        #endif
                         fflush(stdout)
                     }
                     try await Task.sleep(for: .milliseconds(200))

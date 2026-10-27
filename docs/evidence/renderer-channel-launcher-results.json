@@ -1,0 +1,429 @@
+{
+  "milestone": 114,
+  "rootRun": false,
+  "ordinaryUID": 501,
+  "finalMatrix": {
+    "rootRun": false,
+    "ordinaryUID": 501,
+    "trials": [
+      {
+        "mode": "--control",
+        "inheritedSignals": false,
+        "exitCode": 0,
+        "launcher": {
+          "passed": true,
+          "cleanupVerified": true,
+          "rendererReaped": true,
+          "displayReaped": true,
+          "watchdogReaped": true,
+          "watchdogNormalExit": true,
+          "displayStartedAfterRendererReady": true,
+          "outputLimitExceeded": false,
+          "deadlineReached": false,
+          "outputFailed": false,
+          "bytesRelayed": 36801,
+          "rootRun": false
+        },
+        "checks": {
+          "ordinaryUID": true,
+          "reapedChildren": true,
+          "cleanup": true,
+          "boundedOutput": true,
+          "normalExit": true,
+          "nativeControls": true,
+          "fixture": true,
+          "pixels": true,
+          "noVisibleWindows": true,
+          "orderedStartup": true,
+          "continuedAfterDisplayExit": true
+        },
+        "measuredPIDs": [
+          46685,
+          46686,
+          46687,
+          46688,
+          46690,
+          46691,
+          46692
+        ],
+        "remainingMeasuredPIDs": [],
+        "remainingAppPIDs": [],
+        "passed": true
+      },
+      {
+        "mode": "--control",
+        "inheritedSignals": true,
+        "exitCode": 0,
+        "launcher": {
+          "passed": true,
+          "cleanupVerified": true,
+          "rendererReaped": true,
+          "displayReaped": true,
+          "watchdogReaped": true,
+          "watchdogNormalExit": true,
+          "displayStartedAfterRendererReady": true,
+          "outputLimitExceeded": false,
+          "deadlineReached": false,
+          "outputFailed": false,
+          "bytesRelayed": 37112,
+          "rootRun": false
+        },
+        "checks": {
+          "ordinaryUID": true,
+          "reapedChildren": true,
+          "cleanup": true,
+          "boundedOutput": true,
+          "normalExit": true,
+          "nativeControls": true,
+          "fixture": true,
+          "pixels": true,
+          "noVisibleWindows": true,
+          "orderedStartup": true,
+          "continuedAfterDisplayExit": true
+        },
+        "measuredPIDs": [
+          46764,
+          46765,
+          46766,
+          46767,
+          46768,
+          46769,
+          46770
+        ],
+        "remainingMeasuredPIDs": [],
+        "remainingAppPIDs": [],
+        "passed": true
+      },
+      {
+        "mode": "--control",
+        "inheritedSignals": false,
+        "exitCode": 0,
+        "launcher": {
+          "passed": true,
+          "cleanupVerified": true,
+          "rendererReaped": true,
+          "displayReaped": true,
+          "watchdogReaped": true,
+          "watchdogNormalExit": true,
+          "displayStartedAfterRendererReady": true,
+          "outputLimitExceeded": false,
+          "deadlineReached": false,
+          "outputFailed": false,
+          "bytesRelayed": 36899,
+          "rootRun": false
+        },
+        "checks": {
+          "ordinaryUID": true,
+          "reapedChildren": true,
+          "cleanup": true,
+          "boundedOutput": true,
+          "normalExit": true,
+          "nativeControls": true,
+          "fixture": true,
+          "pixels": true,
+          "noVisibleWindows": true,
+          "orderedStartup": true,
+          "continuedAfterDisplayExit": true
+        },
+        "measuredPIDs": [
+          46826,
+          46827,
+          46828,
+          46829,
+          46831,
+          46832,
+          46833
+        ],
+        "remainingMeasuredPIDs": [],
+        "remainingAppPIDs": [],
+        "passed": true
+      },
+      {
+        "mode": "--deadline-control",
+        "inheritedSignals": false,
+        "exitCode": 1,
+        "launcher": {
+          "passed": false,
+          "cleanupVerified": true,
+          "rendererReaped": true,
+          "displayReaped": true,
+          "watchdogReaped": true,
+          "watchdogNormalExit": true,
+          "displayStartedAfterRendererReady": true,
+          "outputLimitExceeded": false,
+          "deadlineReached": true,
+          "outputFailed": false,
+          "bytesRelayed": 2173,
+          "rootRun": false
+        },
+        "checks": {
+          "ordinaryUID": true,
+          "reapedChildren": true,
+          "cleanup": true,
+          "boundedOutput": true,
+          "controlledFailure": true,
+          "expectedFailure": true
+        },
+        "measuredPIDs": [
+          46892,
+          46893,
+          46894,
+          46895
+        ],
+        "remainingMeasuredPIDs": [],
+        "remainingAppPIDs": [],
+        "passed": true
+      },
+      {
+        "mode": "--output-limit-control",
+        "inheritedSignals": false,
+        "exitCode": 1,
+        "launcher": {
+          "passed": false,
+          "cleanupVerified": true,
+          "rendererReaped": true,
+          "displayReaped": true,
+          "watchdogReaped": true,
+          "watchdogNormalExit": true,
+          "displayStartedAfterRendererReady": true,
+          "outputLimitExceeded": true,
+          "deadlineReached": false,
+          "outputFailed": false,
+          "bytesRelayed": 1011,
+          "rootRun": false
+        },
+        "checks": {
+          "ordinaryUID": true,
+          "reapedChildren": true,
+          "cleanup": true,
+          "boundedOutput": true,
+          "controlledFailure": true,
+          "expectedFailure": true
+        },
+        "measuredPIDs": [
+          46908,
+          46909,
+          46910,
+          46911
+        ],
+        "remainingMeasuredPIDs": [],
+        "remainingAppPIDs": [],
+        "passed": true
+      },
+      {
+        "mode": "--stalled-control",
+        "inheritedSignals": false,
+        "exitCode": 1,
+        "launcher": {
+          "passed": false,
+          "cleanupVerified": true,
+          "rendererReaped": true,
+          "displayReaped": true,
+          "watchdogReaped": true,
+          "watchdogNormalExit": true,
+          "displayStartedAfterRendererReady": false,
+          "outputLimitExceeded": false,
+          "deadlineReached": true,
+          "outputFailed": false,
+          "bytesRelayed": 0,
+          "rootRun": false
+        },
+        "checks": {
+          "ordinaryUID": true,
+          "reapedChildren": true,
+          "cleanup": true,
+          "boundedOutput": true,
+          "controlledFailure": true,
+          "expectedFailure": true
+        },
+        "measuredPIDs": [
+          46921,
+          46922,
+          46923,
+          46924
+        ],
+        "remainingMeasuredPIDs": [],
+        "remainingAppPIDs": [],
+        "passed": true
+      }
+    ],
+    "faults": [
+      {
+        "kind": "parent-death",
+        "exitCode": -9,
+        "measuredPIDs": [
+          46945,
+          46946,
+          46947,
+          46948
+        ],
+        "auxiliaryWebKitRolesMeasured": false,
+        "remainingMeasuredPIDs": [],
+        "remainingAppPIDs": [],
+        "passed": true
+      },
+      {
+        "kind": "group-termination",
+        "exitCode": -15,
+        "measuredPIDs": [
+          46968,
+          46969,
+          46970,
+          46971
+        ],
+        "auxiliaryWebKitRolesMeasured": false,
+        "remainingMeasuredPIDs": [],
+        "remainingAppPIDs": [],
+        "passed": true
+      },
+      {
+        "kind": "closed-output",
+        "exitCode": 1,
+        "measuredPIDs": [
+          46992,
+          46993,
+          46994,
+          46995
+        ],
+        "auxiliaryWebKitRolesMeasured": false,
+        "remainingMeasuredPIDs": [],
+        "remainingAppPIDs": [],
+        "passed": true
+      }
+    ],
+    "binaryHashes": {
+      ".build/renderer-channel-launcher": "e08c786c56b337a26532dfec95214521989c8f063429ccaa1987b515edb2c1ac",
+      "dist/ChannelRendererProbe.app/Contents/MacOS/ChannelRendererProbe": "6ad8c88abaafb0b48c3a92e856a0362ca83d0fa4065bc76d29ed8d758bed4c82",
+      "dist/ChannelDisplayProbe.app/Contents/MacOS/ChannelDisplayProbe": "4e599553fbeeae3f019f68f6a29efb0079ded44fbd58c791e687dc0361414d7f"
+    },
+    "refusals": [
+      {
+        "arguments": [],
+        "exitCode": 64,
+        "passed": true
+      },
+      {
+        "arguments": [
+          "--root-smoke",
+          "http://127.0.0.1:8765/channel/0123456789abcdef"
+        ],
+        "exitCode": 64,
+        "passed": true
+      },
+      {
+        "arguments": [
+          "--control",
+          "https://example.com/"
+        ],
+        "exitCode": 64,
+        "passed": true
+      },
+      {
+        "arguments": [
+          "--control",
+          "http://127.0.0.1:80/channel/0123456789abcdef"
+        ],
+        "exitCode": 64,
+        "passed": true
+      },
+      {
+        "arguments": [
+          "--control",
+          "http://127.0.0.1:8765/channel/0123456789abcdef?extra=1"
+        ],
+        "exitCode": 64,
+        "passed": true
+      },
+      {
+        "arguments": [
+          "--control",
+          "http://127.0.0.1:8765/channel/0123456789abcdeg"
+        ],
+        "exitCode": 64,
+        "passed": true
+      }
+    ],
+    "passed": true
+  },
+  "initialCollectorPilot": {
+    "passed": false,
+    "rootRun": false,
+    "inconclusive": true,
+    "reason": "Python cleanup collector attempted list concatenation on two sets after the native trial completed",
+    "native": [
+      {
+        "passed": true,
+        "cleanupVerified": true,
+        "rendererReaped": true,
+        "displayReaped": true,
+        "watchdogReaped": true,
+        "watchdogNormalExit": true,
+        "displayStartedAfterRendererReady": true,
+        "outputLimitExceeded": false,
+        "deadlineReached": false,
+        "outputFailed": false,
+        "bytesRelayed": 36790,
+        "rootRun": false
+      }
+    ],
+    "cleanup": {
+      "remainingMeasuredPIDs": [],
+      "remainingAppPIDs": []
+    }
+  },
+  "staticAnalyzerDiagnostics": 0,
+  "frozenBinariesMatch": {
+    "DeviceKeyboardExperiment": true,
+    "NativeProbe": true,
+    "RendererAXProbe": true,
+    "KeyboardObservationProbe": true,
+    "WindowGeometryProbe": true
+  },
+  "earlierPrivilegedImagesMatch": {
+    "renderer-metadata-reviewed-run-plan.json": {
+      "renderer-identity-supervisor": true,
+      "RendererIdentityProbe.app/Contents/Info.plist": true,
+      "RendererIdentityProbe.app/Contents/MacOS/RendererIdentityProbe": true,
+      "RendererIdentityProbe.app/Contents/_CodeSignature/CodeResources": true
+    },
+    "renderer-progress-reviewed-run-plan.json": {
+      "renderer-identity-supervisor": true,
+      "RendererProgressProbe.app/Contents/Info.plist": true,
+      "RendererProgressProbe.app/Contents/MacOS/RendererProgressProbe": true,
+      "RendererProgressProbe.app/Contents/_CodeSignature/CodeResources": true
+    }
+  },
+  "milestone113DiagnosticImagesMatch": {
+    "dist/ChannelDisplayProbe.app/Contents/MacOS/ChannelDisplayProbe": true,
+    ".build/channel-display-pause-actor": true,
+    "dist/ChannelRendererProbe.app/Contents/MacOS/ChannelRendererProbe": true,
+    "dist/ChannelBlockingProbe.app/Contents/MacOS/ChannelBlockingProbe": true
+  },
+  "sourceHashes": {
+    "Sources/Diagnostics/RendererChannelLauncher.c": "d844fff7c429eb73756a95327332d3fd4d0c82b9b8932beca8595080dadfd75d",
+    "scripts/build-renderer-channel-launcher.sh": "0e850cfe79da6acd214c9ab5d1c75c23d7df7723b7846999d04ba7192fe3ef66",
+    "tools/run_renderer_channel_launcher.py": "9dc3f90c9460a06e69bb3809f19182da2ba506fbe2c67d4e53397012e8a267cc"
+  },
+  "measuredProcessCount": 45,
+  "limits": [
+    "The launcher refuses root and accepts only compiled ordinary UID 501. No cross-user execution occurs.",
+    "Only the disposable loopback fixture runs. Both display and renderer remain hidden.",
+    "The launcher and app files are ordinary-user owned. Secure enrollment and tamper-resistant staging remain open.",
+    "Fault checks measure launcher, two app hosts, and watchdog. Auxiliary WebKit role coverage is incomplete after interrupted runs.",
+    "The watchdog protects the two app hosts only. It never signals WebKit process identifiers reported by an app.",
+    "No physical input, capture exclusion, hardware origin, or general website compatibility result.",
+    "The current browser still has its known same-user renderer pause bypass."
+  ],
+  "proseLint": {
+    "maximumPer100Words": 2.5,
+    "findings": 0.27,
+    "handoffAddition": 2.12,
+    "implementationAddition": 0.0,
+    "readmeAddition": 0.0,
+    "commit": 0.0
+  },
+  "launcherDependencies": [
+    "/usr/lib/libSystem.B.dylib"
+  ],
+  "hardenedRuntimeSignatureVerified": true
+}

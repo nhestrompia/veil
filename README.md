@@ -37,6 +37,8 @@ One physical task does not meet the PRD's human compatibility targets. External 
 
 Recent evidence:
 
+- [Native channel launcher](docs/renderer-channel-launcher-findings.md) passes private descriptor transfer and bounded cleanup controls without administrator access. Cross-user launch and secure enrollment remain open.
+
 - [Private renderer channel](docs/renderer-channel-findings.md) passes three display-pause comparisons and a recovery trial. The separate renderer continues page samples through backpressure and peer exit. Cross-user browser integration remains open.
 
 - [Cross-user page progress](docs/renderer-progress-findings.md) records four denied pause attempts. A fresh page challenge and redraw pass afterward. The browser does not yet use this renderer.

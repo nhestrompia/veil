@@ -1,6 +1,16 @@
 # Current research state
 
-Latest completed work: milestone 113 passes three private-channel comparisons and one pause-helper recovery trial, all under ordinary user ID 501. A paused display stalls the blocking reference for about 1.2 seconds. The nonblocking renderer completes 11, 12, and 11 page samples entirely inside those pauses. Fresh images resume, expired frames refuse, and page samples continue after peer exit. All 42 measured process identifiers exit. See [channel findings](renderer-channel-findings.md).
+Latest completed work: milestone 114 passes native descriptor handoff under ordinary user ID 501. Three hidden page/display controls pass, including inherited ignored and blocked signals. Deadline, output-limit, stalled-startup, parent-death, group-termination, and closed-output controls pass. Six forbidden invocations refuse. All 45 measured process identifiers exit. Auxiliary WebKit cleanup coverage remains incomplete after interrupted trials. See [launcher findings](renderer-channel-launcher-findings.md).
+
+The native launcher owns both fork-created app hosts. It gives each child one socket endpoint and arms a detached watchdog before execution. It starts the display only after renderer readiness. A bounded report pipe carries diagnostic output. The watchdog targets only verified host identities. Root is refused. No privilege, grant, hook, visible window, or existing app image changes.
+
+Clang static analysis reports zero diagnostics. The first collector pilot remains inconclusive despite its successful native result. The final repaired matrix passes. Five frozen permissioned executables, earlier privileged images, and all milestone 113 diagnostic images retain their hashes.
+
+Next, prepare a separate cross-user launcher or isolated coordinator with secure staging and finite cleanup. The ordinary-user launcher is a control, not a protected enrollment path. Original HID timestamps, physical input, private presentation, general websites, and other action channels remain open. The current browser still has its confirmed same-user pause bypass. Agent-free operation remains unmet.
+
+Every earlier administrator allowance is consumed. No authentication or permission question remains pending. No new privileged command is prepared or authorized by milestone 114.
+
+Milestone 113 passes three private-channel comparisons and one pause-helper recovery trial, all under ordinary user ID 501. A paused display stalls the blocking reference for about 1.2 seconds. The nonblocking renderer completes 11, 12, and 11 page samples entirely inside those pauses. Fresh images resume, expired frames refuse, and page samples continue after peer exit. All 42 measured process identifiers exit. See [channel findings](renderer-channel-findings.md).
 
 The channel uses an inherited anonymous socket pair, bounded messages, session framing, expiry, and one replaceable pending frame. No listener or token file exists. The hidden display proves image decoding and assignment only. Software sends initial navigation. Session possession does not establish human origin or secure peer enrollment. Cross-user channel wiring and physical input remain untested.
 

@@ -891,3 +891,14 @@ Three fresh comparisons pass. Each blocking reference stalls across display resu
 The optimized and Address Sanitizer suites each pass 257 checks. The readonly native metadata regression and all 55 existing Python checks pass. Frozen permissioned binaries, earlier privileged images, and earlier signal actors retain their hashes. The first polling-only pilot remains inconclusive in the evidence. Readiness callbacks repair normal delivery before the final comparisons.
 
 Every channel app uses ordinary user ID 501. This diagnostic does not integrate the cross-user renderer or the physical keyboard browser. Its display stays hidden, and software sends the initial navigation. Original hardware timestamps, secure peer enrollment, physical display usability, and broader websites remain open. No new administrator execution, permission change, or input hook occurs. See [findings](renderer-channel-findings.md) and [evidence](evidence/renderer-channel-results.json).
+
+
+## Milestone 114: native private-channel launch ownership
+
+A separate ordinary-user native launcher creates the socket pair and gives each fork-created app one endpoint. Private gates hold both children until a detached watchdog acknowledges readiness. The renderer starts first. Its readiness record releases the display. The parent closes all endpoint copies and bounds the report pipe.
+
+Three hidden native controls pass, including inherited blocked signals. Deadline, output-limit, stalled-startup, parent-death, group-termination, and closed-output controls pass. Six invocation refusals pass. All 45 measured process identifiers exit. Interrupted trials retain incomplete auxiliary WebKit coverage. Clang static analysis reports zero diagnostics.
+
+The first Python collector fails after a successful native trial. The evidence preserves that inconclusive pilot and independent cleanup. The repaired final matrix passes. Frozen permissioned executables, earlier privileged images, and milestone 113 images remain unchanged.
+
+The new launcher refuses root and uses only ordinary user ID 501. Its paths remain user-owned. Cross-user execution, secure enrollment, hardware input, and normal-browser integration remain open. No administrator code, grant, hook, or visible window changes. See [findings](renderer-channel-launcher-findings.md) and [evidence](evidence/renderer-channel-launcher-results.json).

@@ -14,6 +14,8 @@ engine_mode=none
 password_transitions=false
 private_entry=false
 private_entry_attacks=false
+physical_capture=false
+physical_window=false
 for argument in "$@"; do
     case "$argument" in
         --capture-restricted) restricted=true ;;
@@ -31,9 +33,19 @@ for argument in "$@"; do
         --password-transitions) password_transitions=true ;;
         --private-entry-session) private_entry=true ;;
         --private-entry-attacks) private_entry_attacks=true ;;
+        --physical-capture-session) physical_capture=true; backdrop=true ;;
+        --physical-window-session) physical_capture=true; physical_window=true ;;
         *) echo "Unknown diagnostic option: $argument" >&2; exit 2 ;;
     esac
 done
+if [ "$physical_window" = true ] && [ "$backdrop" = true ]; then
+    echo "Physical window sessions do not use the compositor backdrop." >&2
+    exit 2
+fi
+if [ "$physical_capture" = true ] && { [ "$build_only" = false ] || [ "$feature_suite" = true ] || [ "$focus_mode" != ordinary ] || [ "$engine_mode" != none ] || [ "$private_entry" = true ] || [ "$focus_resume" = true ] || [ "$password_transitions" = true ] || [ "$invalid_backdrop" = true ] || [ "$owner_readback" = true ]; }; then
+    echo "Physical capture sessions require a build-only ordinary fixture with no other diagnostic modes." >&2
+    exit 2
+fi
 if [ "$private_entry" = true ] && [ "$password_transitions" = false ] && [ "$private_entry_attacks" = false ]; then
     echo "Private entry sessions require a password-transition or external-attack diagnostic." >&2
     exit 2
@@ -62,6 +74,7 @@ if [ "$engine_mode" = stable ]; then defines+=(-D INTERNAL_ENGINE_STABLE_ACTIVIT
 if [ "$password_transitions" = true ]; then defines+=(-D INTERNAL_PASSWORD_TRANSITIONS); fi
 if [ "$private_entry" = true ]; then defines+=(-D INTERNAL_PRIVATE_ENTRY); fi
 if [ "$private_entry_attacks" = true ]; then defines+=(-D INTERNAL_PRIVATE_ENTRY_ATTACKS); fi
+if [ "$physical_capture" = true ]; then defines+=(-D INTERNAL_PHYSICAL_CAPTURE_SESSION); fi
 case "$focus_mode" in
     filter) defines+=(-D INTERNAL_ACTIVATION_FILTER) ;;
     logical) defines+=(-D INTERNAL_LOGICAL_KEY) ;;
@@ -144,6 +157,15 @@ device = device.replace('''        switch event.type {''', '''        #if INTERN
         switch event.type {''', 1)
 Path('.build/InternalFocusDeviceKeyboard.swift').write_text(device)
 source = Path('Sources/Browser/BrowserApp.swift').read_text()
+source = source.replace('import AppKit', 'import AppKit\nimport Darwin', 1)
+main_marker = '@MainActor static func main() {'
+assert source.count(main_marker) == 1
+source = source.replace(main_marker, main_marker + '''
+        #if INTERNAL_PHYSICAL_CAPTURE_SESSION
+        signal(SIGALRM, SIG_DFL)
+        alarm(660)
+        #endif
+''', 1)
 configuration_marker = 'let configuration = WKWebViewConfiguration()'
 assert source.count(configuration_marker) == 1
 source = source.replace(configuration_marker, configuration_marker + '''
@@ -169,7 +191,11 @@ window.title = "Internal keyboard functionality control"
 (NSApp as! DeviceKeyboardApplication).privateEntryProtection = DiagnosticPrivateEntry(window: window)
 #endif
 Task { @MainActor in
+    #if INTERNAL_PHYSICAL_CAPTURE_SESSION
+    try? await Task.sleep(for: .seconds(600))
+    #else
     try? await Task.sleep(for: .seconds(90))
+    #endif
     print("INTERNAL_KEYBOARD watchdog=true")
     fflush(stdout)
     NSApp.terminate(nil)
@@ -179,6 +205,8 @@ print("INTERNAL_KEYBOARD windowSharingEnabled=\\(window.sharingType != .none)")
 if let screen = window.screen {
     #if INTERNAL_SMALL_CAPTURE_BACKDROP
     let backdropFrame = NSRect(x: 0, y: 0, width: 40, height: 40)
+    #elseif INTERNAL_PHYSICAL_CAPTURE_SESSION
+    let backdropFrame = window.frame
     #else
     let backdropFrame = screen.frame
     #endif
@@ -193,7 +221,11 @@ if let screen = window.screen {
     let label = NSTextField(labelWithString: "Controlled research backdrop")
     label.font = .systemFont(ofSize: 32)
     label.textColor = .white
+    #if INTERNAL_PHYSICAL_CAPTURE_SESSION
+    label.frame = NSRect(x: 60, y: backdropFrame.height / 2, width: 880, height: 50)
+    #else
     label.frame = NSRect(x: 260, y: screen.frame.height / 2, width: 720, height: 50)
+    #endif
     backdrop.contentView?.addSubview(label)
     diagnosticBackdrop = backdrop
     window.level = NSWindow.Level(rawValue: NSWindow.Level.screenSaver.rawValue + 1)

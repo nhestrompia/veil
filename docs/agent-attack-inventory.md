@@ -4,7 +4,7 @@ This inventory separates attempted routes from remaining work. It does not enume
 
 | Agent method | What the agent tried | Result and scope |
 | --- | --- | --- |
-| Screenshot plus vision | Native window, filtered display, and system-window captures of fresh pages | Earlier H.264 captures omit content, but the fresh physical test also reports black. The clear control is readable. The agent visually checked saved images and corrected an OCR alias error. |
+| Screenshot plus vision | Native window, filtered display, and system-window captures of fresh pages | H.264 output also fails physical readability. A separate ordinary sharing-none diagnostic is physically readable and black in two ScreenCaptureKit screenshot routes, with exact clear-reference recovery. Its system capture fails and remains inconclusive. See [window-sharing findings](window-sharing-physical-findings.md). |
 | Accessibility text | Host tree, focused-element reads, and hit tests | Earlier pixel target reveals no page marker. The new host returns one application root. Direct new-host queries fail foreground calibration. |
 | Accessibility actions | Set the fixture field and press its button | Works in the ordinary reference. Pixel-only controls are absent. Loaded-page actions in the new browser remain untested. |
 | Browser protocol | Real Playwright/CDP attachment and DOM/form operations | Works in isolated Chrome. Requested native debugging ports refuse connections. Other inspection transports remain untested. |
@@ -12,7 +12,7 @@ This inventory separates attempted routes from remaining work. It does not enume
 | External URL opening | Send a URL to the running combined app | The new delegate explicitly refuses. No page-ready event or action follows before enrollment. |
 | Native mouse and keyboard | Planned CGEvent, HID-state, curved, directed, and blind attempts | Not run in this audit because modifying mouse hooks are active. The new app also lacks its physical baseline. |
 | Computer-use adapter | Earlier native tool invocation | It returned after the timed trial and opened an empty app. Invalid observation, not a block. Current model-directed image/AX attempts use the scoped native probe. |
-| Continuous and unfiltered capture | ScreenCaptureKit stream and whole-display methods | Still require a calibrated adapter with safe research-only coverage. No blocked result exists here. |
+| Continuous and unfiltered capture | ScreenCaptureKit stream and whole-display methods | Compact high-level adapters fail both clear and restricted window-availability controls. No blocked result exists here. Filter-refresh capture remains untested. |
 | Renderer accessibility | Query WebKit processes independently | The frozen helper rejects unrelated host identities. A reviewed expanded scope is needed. |
 | Clipboard, printing, downloads, and popups | Existing restrictions reused in the combined app | Source-level restrictions are present. New live export trials remain necessary after physical enrollment. |
 | Focus, visibility, resize, timers, and process pause | Earlier project trials found zero-input actions | Not retested or solved by this integration. Signal isolation remains separate. |

@@ -14,13 +14,18 @@ from run_native import ROOT, probe
 from run_window_capture_reads import run as capture_reads
 
 
-def run(output, variant, restricted=False, capture=False, use_physical_archive=False):
+def run(output, variant, restricted=False, capture=False, use_physical_archive=False, compositor_refresh=False):
     output = output.resolve()
     if not output.is_relative_to((ROOT / 'artifacts').resolve()):
         raise ValueError('Use a new project artifact directory')
     output.mkdir(parents=True, exist_ok=False, mode=0o700)
     if use_physical_archive and variant != 'compact':
         raise ValueError('The physical archive covers only the compact backdrop')
+    if compositor_refresh:
+        from run_compositor_refresh_probe import invoke
+        permission = invoke(['--permissions'], output / 'compositor-permissions.json')
+        if not permission.get('screenRecordingGranted'):
+            raise RuntimeError('The new compositor helper needs its separate approved Screen Recording grant')
     binary = ROOT / 'dist/InternalKeyboardControl.app/Contents/MacOS/InternalKeyboardControl'
     if matching_pids(binary):
         raise RuntimeError('An internal diagnostic already runs')
@@ -65,7 +70,10 @@ def run(output, variant, restricted=False, capture=False, use_physical_archive=F
         frozen = probe(['windows', session['pid']], output / 'frozen-windows.json', background=True)
         if capture:
             capture_reads(directory)
-        print(json.dumps({'variant': variant, 'restricted': restricted, 'captureAttempted': capture, 'physicalArchiveRestored': use_physical_archive, 'ownedAll': len(metadata['allOwnedWindows']),
+        if compositor_refresh:
+            from run_compositor_refresh_probe import run as compositor_reads
+            compositor_reads(output / 'compositor-refresh', directory / 'session.json')
+        print(json.dumps({'variant': variant, 'restricted': restricted, 'captureAttempted': capture, 'physicalArchiveRestored': use_physical_archive, 'compositorRefreshAttempted': compositor_refresh, 'ownedAll': len(metadata['allOwnedWindows']),
                           'ownedOnScreen': len(metadata['onScreenOwnedWindows']),
                           'frozenOnScreen': len(frozen.get('windows', []))}), flush=True)
     finally:
@@ -93,5 +101,6 @@ if __name__ == '__main__':
     parser.add_argument('--restricted', action='store_true')
     parser.add_argument('--capture', action='store_true')
     parser.add_argument('--use-physical-archive', action='store_true')
+    parser.add_argument('--compositor-refresh', action='store_true')
     args = parser.parse_args()
-    run(args.output, args.variant, args.restricted, args.capture, args.use_physical_archive)
+    run(args.output, args.variant, args.restricted, args.capture, args.use_physical_archive, args.compositor_refresh)

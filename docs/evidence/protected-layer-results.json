@@ -1,0 +1,239 @@
+{
+  "date": "2026-10-27",
+  "session": {
+    "app": "/Users/nhestrompia/.t3/projects/agentfreebrowser/dist/ProtectedLayerExperiment.app",
+    "pid": 33404,
+    "binarySHA256": "99032fa9384868a207fa31366eb721dabfe81b620be7a00923638489dfbfb22e",
+    "mode": "Hosted H264",
+    "output": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/protected-layer-124/hosted-h264",
+    "newPermissionRequested": false,
+    "systemInputPosted": false,
+    "nativeAlarmSeconds": 660
+  },
+  "metadata": {
+    "failure": null,
+    "mode": "Hosted H264",
+    "pid": 33404
+  },
+  "clear": {
+    "compressed": true,
+    "error": null,
+    "frames": 1583,
+    "hosted": true,
+    "layerBounds": [
+      520,
+      340
+    ],
+    "obscured": false,
+    "preventsCapture": false,
+    "ready": true,
+    "rendererStatus": 1,
+    "rootLayerIsVideo": true,
+    "viewBounds": [
+      520,
+      340
+    ]
+  },
+  "protected": {
+    "compressed": true,
+    "error": null,
+    "frames": 1583,
+    "hosted": true,
+    "layerBounds": [
+      520,
+      340
+    ],
+    "obscured": false,
+    "preventsCapture": true,
+    "ready": true,
+    "rendererStatus": 1,
+    "rootLayerIsVideo": true,
+    "viewBounds": [
+      520,
+      340
+    ]
+  },
+  "physicalObservation": "Both tested hosted modes: left visible, right black",
+  "captureAttempted": true,
+  "allSevenFrozenImagesUnchanged": true,
+  "checks": {
+    "swift6WarningsAsErrorsBuild": true,
+    "strictSignature": true,
+    "pythonCompilation": true,
+    "shellSyntax": true
+  },
+  "agentFreeClaim": false,
+  "cleanup": "complete",
+  "initialSessionCleanup": {
+    "pid": 33404,
+    "ownedHostAbsent": true
+  },
+  "reopenedSession": {
+    "app": "/Users/nhestrompia/.t3/projects/agentfreebrowser/dist/ProtectedLayerExperiment.app",
+    "pid": 42742,
+    "binarySHA256": "99032fa9384868a207fa31366eb721dabfe81b620be7a00923638489dfbfb22e",
+    "mode": "hosted-h264",
+    "startedUnixSeconds": 1793108987.311427,
+    "newPermissionRequested": false,
+    "systemInputPosted": false,
+    "nativeAlarmSeconds": 660,
+    "onScreenWindowConfirmed": true,
+    "physicalObservation": "left text and colors visible; right black",
+    "captureAttempted": true
+  },
+  "comparisons": [
+    {
+      "physicalReport": "left text and colors visible; right protected trial black",
+      "capture": {
+        "frame": [
+          196,
+          122,
+          1120,
+          532
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/protected-layer-124/hosted-h264-reopened/window.png",
+        "pid": 42742,
+        "pixels": [
+          2240,
+          1064
+        ],
+        "status": "captured",
+        "windowID": 111122,
+        "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+      },
+      "clearMarkerRecovery": {
+        "exact": true,
+        "visualHexAliases": true
+      },
+      "protectedMarkerRecovery": {
+        "exact": false,
+        "visualHexAliases": false
+      },
+      "scope": "Physical protected output fails. Marker comparisons describe this capture only.",
+      "metadata": {
+        "failure": null,
+        "mode": "Hosted H264",
+        "pid": 42742
+      },
+      "clear": {
+        "compressed": true,
+        "error": null,
+        "frames": 329,
+        "hosted": true,
+        "layerBounds": [
+          520,
+          340
+        ],
+        "obscured": false,
+        "preventsCapture": false,
+        "ready": true,
+        "rendererStatus": 1,
+        "rootLayerIsVideo": true,
+        "viewBounds": [
+          520,
+          340
+        ]
+      },
+      "protected": {
+        "compressed": true,
+        "error": null,
+        "frames": 329,
+        "hosted": true,
+        "layerBounds": [
+          520,
+          340
+        ],
+        "obscured": false,
+        "preventsCapture": true,
+        "ready": true,
+        "rendererStatus": 1,
+        "rootLayerIsVideo": true,
+        "viewBounds": [
+          520,
+          340
+        ]
+      },
+      "cleanup": {
+        "pid": 42742,
+        "ownedHostAbsent": true
+      }
+    },
+    {
+      "physicalReport": "left visible, right black",
+      "capture": {
+        "frame": [
+          196,
+          122,
+          1120,
+          532
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/protected-layer-124/hosted-nv12/window.png",
+        "pid": 44691,
+        "pixels": [
+          2240,
+          1064
+        ],
+        "status": "captured",
+        "windowID": 111146,
+        "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+      },
+      "clearMarkerRecovery": {
+        "exact": true,
+        "visualHexAliases": true
+      },
+      "protectedMarkerRecovery": {
+        "exact": false,
+        "visualHexAliases": false
+      },
+      "scope": "Physical protected output fails. Marker comparisons describe this capture only.",
+      "metadata": {
+        "failure": null,
+        "mode": "Hosted NV12",
+        "pid": 44691
+      },
+      "clear": {
+        "compressed": false,
+        "error": null,
+        "frames": 214,
+        "hosted": true,
+        "layerBounds": [
+          520,
+          340
+        ],
+        "obscured": false,
+        "preventsCapture": false,
+        "ready": true,
+        "rendererStatus": 1,
+        "rootLayerIsVideo": true,
+        "viewBounds": [
+          520,
+          340
+        ]
+      },
+      "protected": {
+        "compressed": false,
+        "error": null,
+        "frames": 214,
+        "hosted": true,
+        "layerBounds": [
+          520,
+          340
+        ],
+        "obscured": false,
+        "preventsCapture": true,
+        "ready": true,
+        "rendererStatus": 1,
+        "rootLayerIsVideo": true,
+        "viewBounds": [
+          520,
+          340
+        ]
+      },
+      "cleanup": {
+        "pid": 44691,
+        "ownedHostAbsent": true
+      }
+    }
+  ],
+  "allThreeDiagnosticHostsAbsent": true
+}

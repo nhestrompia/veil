@@ -21,12 +21,18 @@
 #error Compile with the ordinary research user ID.
 #endif
 
-#ifdef AFB_CHANNEL_DISPLAY_CONTROL
+#if defined(AFB_CHANNEL_DISPLAY_CONTROL) || defined(AFB_CHANNEL_STAGED_DISPLAY)
+#ifdef AFB_CHANNEL_STAGED_DISPLAY
+#define AFB_RENDERER_NAME "ChannelIsolatedDisplayProbe"
+#else
 #define AFB_RENDERER_NAME "ChannelDisplayProbe"
+#endif
 #define AFB_TARGET_COUNT 1
 #else
 #define AFB_TARGET_COUNT 4
-#ifdef AFB_PROGRESS_CONTROL
+#if defined(AFB_CHANNEL_RENDERER_CONTROL)
+#define AFB_RENDERER_NAME "ChannelIsolatedRendererProbe"
+#elif defined(AFB_PROGRESS_CONTROL)
 #define AFB_RENDERER_NAME "RendererProgressProbe"
 #else
 #define AFB_RENDERER_NAME "RendererIdentityProbe"
@@ -153,7 +159,10 @@ static bool host_path(const char *path, bool isolated)
         }
         char expected[PATH_MAX];
         int count = snprintf(expected, sizeof(expected), "%s/dist/" AFB_RENDERER_NAME ".app/Contents/MacOS/" AFB_RENDERER_NAME, root);
-        return count > 0 && count < (int)sizeof(expected) && !strcmp(expected, path);
+        if (count > 0 && count < (int)sizeof(expected) && !strcmp(expected, path)) return true;
+        #ifndef AFB_CHANNEL_STAGED_DISPLAY
+        return false;
+        #endif
     }
     const char *prefix = "/private/tmp/agentfreebrowser-renderer.";
     size_t length = strlen(prefix);
@@ -206,7 +215,7 @@ int main(int argc, char **argv)
 {
     if (getuid() != AFB_RESEARCH_UID || geteuid() != AFB_RESEARCH_UID || argc != 2 + AFB_TARGET_COUNT * 3) return 64;
     bool isolated = !strcmp(argv[1], "--cross-user");
-    #ifdef AFB_CHANNEL_DISPLAY_CONTROL
+    #if defined(AFB_CHANNEL_DISPLAY_CONTROL) || defined(AFB_CHANNEL_STAGED_DISPLAY)
     if (isolated) return 64;
     #endif
     if (!isolated && strcmp(argv[1], "--reference")) return 64;
@@ -267,7 +276,7 @@ int main(int argc, char **argv)
         errno = 0;
         int stopped = kill(targets[i].pid, SIGSTOP), stop_error = errno;
         bool observed = false;
-        #ifdef AFB_CHANNEL_DISPLAY_CONTROL
+        #if defined(AFB_CHANNEL_DISPLAY_CONTROL) || defined(AFB_CHANNEL_STAGED_DISPLAY)
         double pause_began = 0;
         #endif
         if (!stopped) {
@@ -279,7 +288,7 @@ int main(int argc, char **argv)
                 delay(1);
             } while (monotonic() < deadline);
             printf("SIGNAL_STOPPED {\"role\":\"%s\",\"pid\":%d,\"watchdogPID\":%d,\"observed\":%s}\n", names[i], targets[i].pid, guard, observed ? "true" : "false");
-            #ifdef AFB_CHANNEL_DISPLAY_CONTROL
+            #if defined(AFB_CHANNEL_DISPLAY_CONTROL) || defined(AFB_CHANNEL_STAGED_DISPLAY)
             pause_began = monotonic();
             delay(1200);
             #else
@@ -288,15 +297,15 @@ int main(int argc, char **argv)
         }
         bool stable = unchanged(&targets[i], &current);
         errno = 0;
-        #ifdef AFB_CHANNEL_DISPLAY_CONTROL
+        #if defined(AFB_CHANNEL_DISPLAY_CONTROL) || defined(AFB_CHANNEL_STAGED_DISPLAY)
         double pause_ended = monotonic();
         #endif
         int continued = stable ? kill(targets[i].pid, SIGCONT) : -1;
-        #ifdef AFB_CHANNEL_DISPLAY_CONTROL
+        int continue_error = stable ? errno : ESRCH;
+        #if defined(AFB_CHANNEL_DISPLAY_CONTROL) || defined(AFB_CHANNEL_STAGED_DISPLAY)
         printf("CHANNEL_PAUSE_INTERVAL {\"beganNanoseconds\":%llu,\"endedNanoseconds\":%llu}\n",
             (unsigned long long)(pause_began * 1e9), (unsigned long long)(pause_ended * 1e9));
         #endif
-        int continue_error = stable ? errno : ESRCH;
         double deadline = monotonic() + 0.1;
         bool not_stopped = false;
         do {

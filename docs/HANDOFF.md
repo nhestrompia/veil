@@ -1,6 +1,18 @@
 # Current research state
 
-Latest completed work: milestone 114 passes native descriptor handoff under ordinary user ID 501. Three hidden page/display controls pass, including inherited ignored and blocked signals. Deadline, output-limit, stalled-startup, parent-death, group-termination, and closed-output controls pass. Six forbidden invocations refuse. All 45 measured process identifiers exit. Auxiliary WebKit cleanup coverage remains incomplete after interrupted trials. See [launcher findings](renderer-channel-launcher-findings.md).
+Latest completed work: milestone 115 calibrates the separate channel supervisor and prepares one unexecuted cross-user proposal. Three final-image comparisons pass. Twelve renderer stops and resumes and three display stops and resumes calibrate. The renderer completes 11, 11, and 11 samples entirely during display pauses. Native lifecycle and fault controls pass. All 72 measured process identifiers exit. See [preflight findings](renderer-channel-preflight-findings.md).
+
+All 78 Python checks pass, plus the native readonly metadata regression. Clang static analysis reports zero diagnostics. The ordinary-user staging rehearsal verifies the real images, observes administrator-mode refusal with code 64, and removes staging. The final images contain no loader search path. Earlier loader-bearing images remain only as an earlier ordinary control result.
+
+The [exact proposal](evidence/renderer-channel-reviewed-run-plan.json) covers one administrator invocation. It stages seven verified images, creates two app children, and permanently drops them to nobody and ordinary user ID 501. A finite root parent and watchdog protect only those known app hosts. No root process acts on reported WebKit identifiers. The apps stay hidden and use one fixed disposable loopback fixture.
+
+No new administrator command runs during preparation. All earlier root allowances are consumed. This changed helper requires separate one-run approval. No macOS authentication dialog is pending. Keep the reviewed images and source hashes frozen. The controller pins the full plan and command, and records consumption before requesting authentication.
+
+Five frozen permissioned executables, earlier privileged images and actors, and milestone 113 and 114 images remain unchanged. No grant, hook, account, service, or visible window changes. Auxiliary cleanup after interrupted trials, shared nobody state, framework caches, and inherited capabilities remain limits. The native alarms do not bound authentication or the entire staging command.
+
+After approval, the single comparison can measure renderer pause denial alongside a permissioned display pause and continued private pixels. Cross-user operation remains unmeasured now. Physical input, original HID timestamps, private visible presentation, broader websites, and normal-browser integration remain open. Agent-free operation remains unmet.
+
+Milestone 114 passes native descriptor handoff under ordinary user ID 501. Three hidden page/display controls pass, including inherited ignored and blocked signals. Deadline, output-limit, stalled-startup, parent-death, group-termination, and closed-output controls pass. Six forbidden invocations refuse. All 45 measured process identifiers exit. Auxiliary WebKit cleanup coverage remains incomplete after interrupted trials. See [launcher findings](renderer-channel-launcher-findings.md).
 
 The native launcher owns both fork-created app hosts. It gives each child one socket endpoint and arms a detached watchdog before execution. It starts the display only after renderer readiness. A bounded report pipe carries diagnostic output. The watchdog targets only verified host identities. Root is refused. No privilege, grant, hook, visible window, or existing app image changes.
 

@@ -23,8 +23,11 @@ ACTOR = ROOT / '.build/channel-display-pause-actor'
 
 
 @contextmanager
-def fixture():
-    nonce = secrets.token_hex(8)
+def fixture(port=0, nonce=None):
+    nonce = secrets.token_hex(8) if nonce is None else nonce
+    if (type(port) is not int or not (port == 0 or 1024 <= port <= 65535)
+            or type(nonce) is not str or len(nonce) != 16 or any(value not in '0123456789abcdef' for value in nonce)):
+        raise ValueError('Use the fixed local fixture format')
     receipts = []
 
     class Handler(BaseHTTPRequestHandler):
@@ -51,7 +54,7 @@ def fixture():
             self.end_headers()
             self.wfile.write(body)
 
-    server = ThreadingHTTPServer(('127.0.0.1', 0), Handler)
+    server = ThreadingHTTPServer(('127.0.0.1', port), Handler)
     server.daemon_threads = True
     thread = threading.Thread(target=server.serve_forever, daemon=True)
     thread.start()

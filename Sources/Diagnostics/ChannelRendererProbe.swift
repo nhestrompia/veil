@@ -15,6 +15,9 @@ private final class ChannelRenderer: NSObject, NSApplicationDelegate, WKNavigati
     private var frames = 0
     private var refusedCommands = 0
     private var acceptedCommands = 0
+    #if CHANNEL_IDENTITY_CONTROL
+    private var initialRoles: [String: [String: Any]] = [:]
+    #endif
 
     init(channel: RendererChannel, fixture: URL) { self.channel = channel; self.fixture = fixture }
 
@@ -69,6 +72,13 @@ private final class ChannelRenderer: NSObject, NSApplicationDelegate, WKNavigati
                       let png = bitmap.representation(using: .png, properties: [:]) else { return }
                 try channel.offerPixels(png)
                 frames += 1
+                #if CHANNEL_IDENTITY_CONTROL
+                if frames == 1 {
+                    initialRoles = ChannelProbeSupport.roleIdentities(view)
+                    ChannelProbeSupport.log("CHANNEL_ATTACK_READY", ["host": ChannelProbeSupport.identity(),
+                        "services": initialRoles, "sample": sample, "readyNanoseconds": RendererChannel.now()])
+                }
+                #endif
                 ChannelProbeSupport.log("CHANNEL_FRAME_PRODUCED", ["frame": frames, "sample": sample,
                     "startedNanoseconds": started, "finishedNanoseconds": RendererChannel.now(),
                     "wouldBlock": channel.wouldBlock, "replacedFrames": channel.replacedFrames,
@@ -99,6 +109,11 @@ private final class ChannelRenderer: NSObject, NSApplicationDelegate, WKNavigati
             "peakBufferedBytes": channel.peakBufferedBytes, "channelClosed": channel.closed,
             "visibleWindows": NSApp.windows.filter(\.isVisible).count, "rootRun": false]
         if let error { result["error"] = error }
+        #if CHANNEL_IDENTITY_CONTROL
+        let finalRoles = view.map(ChannelProbeSupport.roleIdentities) ?? [:]
+        result["services"] = finalRoles
+        result["serviceIdentitiesStable"] = !initialRoles.isEmpty && NSDictionary(dictionary: initialRoles).isEqual(to: finalRoles)
+        #endif
         ChannelProbeSupport.log("CHANNEL_RENDERER_RESULT", result)
         channel.close()
         view?.stopLoading()

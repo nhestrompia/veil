@@ -902,3 +902,14 @@ Three hidden native controls pass, including inherited blocked signals. Deadline
 The first Python collector fails after a successful native trial. The evidence preserves that inconclusive pilot and independent cleanup. The repaired final matrix passes. Frozen permissioned executables, earlier privileged images, and milestone 113 images remain unchanged.
 
 The new launcher refuses root and uses only ordinary user ID 501. Its paths remain user-owned. Cross-user execution, secure enrollment, hardware input, and normal-browser integration remain open. No administrator code, grant, hook, or visible window changes. See [findings](renderer-channel-launcher-findings.md) and [evidence](evidence/renderer-channel-launcher-results.json).
+
+
+## Milestone 115: cross-user channel preflight
+
+A separately built supervisor prepares private socket transfer between a nobody renderer and an ordinary-user display. Its privileged path verifies sealed staging and permanently drops both children before app execution. Root owns only finite staging, two known app hosts, their watchdog, diagnostic output, and fixed cleanup. No privileged invocation runs in this milestone.
+
+Three final-image ordinary comparisons pass. Twelve renderer stops and resumes and three display stops and resumes calibrate. The renderer completes 11, 11, and 11 samples during display pauses, rejects expired output, and continues after peer exit. Lifecycle and fault controls pass. All 72 measured process identifiers exit.
+
+All 78 Python checks pass. The readonly metadata regression passes, and static analysis reports zero diagnostics. The exact ordinary staging rehearsal observes the required administrator-mode refusal and removes staging. The initial loader search path causes proposal refusal. The final build removes that path and repeats all controls successfully.
+
+Five frozen permissioned binaries, earlier privileged images and actors, and earlier channel images remain unchanged. The committed plan covers exactly one proposed administrator invocation. The controller pins its complete bytes and records consumption before authentication. Earlier approvals are consumed. Separate approval remains necessary. Cross-user operation and normal-browser integration remain unmeasured. See [findings](renderer-channel-preflight-findings.md), [evidence](evidence/renderer-channel-preflight-results.json), and [reviewed plan](evidence/renderer-channel-reviewed-run-plan.json).

@@ -22,10 +22,33 @@ enum ChannelProbeSupport {
     }
 
     static func identity() -> [String: Any] {
+        #if CHANNEL_IDENTITY_CONTROL
+        return processIdentity(getpid())
+        #else
         var info = proc_bsdinfo()
         guard proc_pidinfo(getpid(), PROC_PIDTBSDINFO, 0, &info, Int32(MemoryLayout<proc_bsdinfo>.size)) == MemoryLayout<proc_bsdinfo>.size else { return [:] }
         return ["pid": getpid(), "startedSeconds": info.pbi_start_tvsec, "startedMicroseconds": info.pbi_start_tvusec]
+        #endif
     }
+
+    #if CHANNEL_IDENTITY_CONTROL
+    static func processIdentity(_ pid: pid_t) -> [String: Any] {
+        guard pid > 1 else { return [:] }
+        var info = proc_bsdinfo()
+        let size = Int32(MemoryLayout<proc_bsdinfo>.size)
+        var path = [CChar](repeating: 0, count: 4 * Int(MAXPATHLEN))
+        guard proc_pidinfo(pid, PROC_PIDTBSDINFO, 0, &info, size) == size,
+              proc_pidpath(pid, &path, UInt32(path.count)) > 0 else { return [:] }
+        return ["pid": pid, "startedSeconds": info.pbi_start_tvsec, "startedMicroseconds": info.pbi_start_tvusec,
+            "path": String(decoding: path.prefix(while: { $0 != 0 }).map { UInt8(bitPattern: $0) }, as: UTF8.self),
+            "realUID": info.pbi_ruid, "effectiveUID": info.pbi_uid, "savedUID": info.pbi_svuid,
+            "realGID": info.pbi_rgid, "effectiveGID": info.pbi_gid, "savedGID": info.pbi_svgid]
+    }
+
+    static func roleIdentities(_ view: WKWebView) -> [String: [String: Any]] {
+        roles(view).mapValues(processIdentity)
+    }
+    #endif
 
     static func roles(_ view: WKWebView) -> [String: Int32] {
         var result: [String: Int32] = [:]

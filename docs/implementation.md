@@ -913,3 +913,12 @@ Three final-image ordinary comparisons pass. Twelve renderer stops and resumes a
 All 78 Python checks pass. The readonly metadata regression passes, and static analysis reports zero diagnostics. The exact ordinary staging rehearsal observes the required administrator-mode refusal and removes staging. The initial loader search path causes proposal refusal. The final build removes that path and repeats all controls successfully.
 
 Five frozen permissioned binaries, earlier privileged images and actors, and earlier channel images remain unchanged. The committed plan covers exactly one proposed administrator invocation. The controller pins its complete bytes and records consumption before authentication. Earlier approvals are consumed. Separate approval remains necessary. Cross-user operation and normal-browser integration remain unmeasured. See [findings](renderer-channel-preflight-findings.md), [evidence](evidence/renderer-channel-preflight-results.json), and [reviewed plan](evidence/renderer-channel-reviewed-run-plan.json).
+
+
+## Milestone 116: live cross-user private channel
+
+The approved comparison runs once. The ordinary actor receives EPERM for four renderer stops and four resumes. The same-user display stop and resume succeed. During the display pause, eleven fresh page-and-image samples complete and the page timer advances from six to seven. After display exit, sampling continues and the timer advances from thirteen to sixteen.
+
+The nobody renderer and services retain all six credentials. The display retains ordinary user ID 501. All 23 acceptance checks pass. The helper exits zero and reaps both app hosts and its watchdog. Ordinary actors reap their recovery watchdogs. Independent checks find none of seven measured process identifiers or staging. Reviewed inputs and frozen executables remain unchanged.
+
+The one-run administrator allowance is consumed. No retry occurs. This hidden fixed-fixture diagnostic has no human input route and does not replace the physical keyboard browser. The gap audit distinguishes unfinished engineering from unresolved privacy research and final validation. See [live findings](renderer-channel-live-findings.md), [evidence](evidence/renderer-channel-live-results.json), and [remaining gaps](agent-free-gap-audit.md).

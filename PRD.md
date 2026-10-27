@@ -4,9 +4,9 @@ Status: research specification. The initial shell and independent fixture are im
 
 Date: October 23, 2026. Platform: macOS only.
 
-Current feasibility result, October 26, 2026: no agent-free build meets the declared threat model. Sixteen calibrated renderer-pause trials complete website actions through performance, wall, worker, and server clocks. G3 therefore fails. Geometry comparisons remain inconclusive, and human compatibility targets remain incomplete. See [timing results](docs/clock-channel-findings.md).
+Current feasibility result, October 27, 2026: no integrated agent-free build meets the declared threat model. Earlier same-user candidates completed sixteen calibrated timing attacks. The physical keyboard browser does not incorporate the later isolated renderer. Human input, private visible output, and final browser-wide acceptance remain incomplete. See [remaining gaps](docs/agent-free-gap-audit.md).
 
-Milestones 108 and 112 test an isolated nobody renderer. All calibrated cross-user pause and resume attempts return EPERM. A fresh page challenge and redraw pass after the milestone 112 actor finishes. Milestone 113 tests a separate private channel under ordinary user ID 501. Its nonblocking renderer continues page samples while the display process pauses. Cross-user channel integration, physical input, and general website compatibility remain open. The current browser still has its same-user pause bypass. See [signal denial](docs/renderer-signal-denial-findings.md), [page progress](docs/renderer-progress-findings.md), and [channel findings](docs/renderer-channel-findings.md).
+Milestone 116 runs one cross-user channel comparison. macOS denies four renderer pauses and resumes, while an ordinary-user display pause allows eleven new page-and-image samples. The helper exits successfully and measured cleanup passes. This hidden, fixed-fixture pair has no physical input route. It validates process isolation and transport, not agent-free website use. See [live findings](docs/renderer-channel-live-findings.md).
 
 ## Product decision
 

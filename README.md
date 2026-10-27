@@ -37,6 +37,8 @@ One physical task does not meet the PRD's human compatibility targets. External 
 
 Recent evidence:
 
+- [Live cross-user channel](docs/renderer-channel-live-findings.md) denies the measured renderer pauses while page sampling survives display suspension. The separate target remains hidden and fixture-only.
+
 - [Cross-user channel preflight](docs/renderer-channel-preflight-findings.md) passes same-user attack and cleanup controls. One proposed administrator comparison still requires separate approval.
 
 - [Native channel launcher](docs/renderer-channel-launcher-findings.md) passes private descriptor transfer and bounded cleanup controls without administrator access. Cross-user launch and secure enrollment remain open.

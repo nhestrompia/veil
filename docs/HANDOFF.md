@@ -1,6 +1,16 @@
 # Current research state
 
-Latest completed work: milestone 115 calibrates the separate channel supervisor and prepares one unexecuted cross-user proposal. Three final-image comparisons pass. Twelve renderer stops and resumes and three display stops and resumes calibrate. The renderer completes 11, 11, and 11 samples entirely during display pauses. Native lifecycle and fault controls pass. All 72 measured process identifiers exit. See [preflight findings](renderer-channel-preflight-findings.md).
+Milestone 116 completes the approved single cross-user channel comparison. All four renderer SIGSTOP and four SIGCONT calls return EPERM. The ordinary-user display still stops and resumes successfully. During its pause, the isolated renderer completes eleven fresh page-and-image samples and advances its timer from six to seven. Fresh display output resumes, one stale frame refuses, and sampling continues after peer exit. See [live findings](renderer-channel-live-findings.md).
+
+All 23 comparison checks pass. Both app hosts and the native watchdog are reaped. Signal actors reap their recovery watchdogs. Independent checks find none of seven measured process identifiers and no staging directory. Five frozen permissioned binaries and every reviewed input retain their hashes. The ordinary controller remains user ID 501.
+
+The one-invocation administrator allowance is consumed. Its exclusive ledger is artifacts/renderer-channel-115-authorization-consumed.json. Unified exec session 4815 completed with exit zero. No authentication or permission question remains pending. Do not rerun the command or use this allowance for another root action.
+
+The user requested a clear explanation of why agent-free browsing remains unmet. The [gap audit](agent-free-gap-audit.md) records unfinished integration, complete physical input, non-input action routes, unresolved visible-output privacy, and final same-build validation. The current two-process target is hidden, fixture-only, and has no human input route. The earlier physical keyboard browser remains separate. Do not describe this result as a delivered agent-free browser.
+
+No further privilege, grant, account, service, or input-hook change occurs. The next engineering deliverable is one visible, human-usable integrated prototype. Capture privacy remains open research. Root attacks and modified binaries remain outside the existing PoC scope.
+
+Milestone 115 calibrates the separate channel supervisor and prepares one unexecuted cross-user proposal. Three final-image comparisons pass. Twelve renderer stops and resumes and three display stops and resumes calibrate. The renderer completes 11, 11, and 11 samples entirely during display pauses. Native lifecycle and fault controls pass. All 72 measured process identifiers exit. See [preflight findings](renderer-channel-preflight-findings.md).
 
 All 78 Python checks pass, plus the native readonly metadata regression. Clang static analysis reports zero diagnostics. The ordinary-user staging rehearsal verifies the real images, observes administrator-mode refusal with code 64, and removes staging. The final images contain no loader search path. Earlier loader-bearing images remain only as an earlier ordinary control result.
 

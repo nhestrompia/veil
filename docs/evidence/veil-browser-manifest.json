@@ -24,7 +24,7 @@
     "Veil": {
       "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/dist/Veil.app",
       "bundleIdentifier": "research.agentfreebrowser.veil",
-      "binarySHA256": "da45deb6c384b660b84ee340f3facf1015ed077120f3ae59e24bff1b4c4a7984",
+      "binarySHA256": "dc0725ded122316f7a51427295e75f4c1d8ed2cb5447d017583ad69652f8c1ef",
       "defines": [
         "DEVICE_KEYBOARD_EXPERIMENT",
         "INTEGRATED_BROWSER",
@@ -45,10 +45,10 @@
   "hardenedRuntime": false,
   "sourceHashes": {
     "Sources/Browser/AXBoundary.swift": "033f95e7ae7d4bd907d8abf4a7a980aa9603162e275d9da7e51dbc319f92400b",
-    "Sources/Browser/BrowserApp.swift": "0ff42e4cfe111cf523f5bc7347589c20481f289f05c25c317d1d01f7d8c86212",
+    "Sources/Browser/BrowserApp.swift": "d360f35f9174884c533b2becafe1f133c6ee6dd597eb8bf6205a5a3a9fd3d703",
     "Sources/Browser/BrowserPolicy.swift": "f7311bc7f6bf89d5bef0c8628991306bc782f06f139a7b733f6b84c290283fce",
     "Sources/Browser/BrowserRuntimePolicy.swift": "11b22ce324ab20a041623a165999ec20cec8ae4933027d22334312b33b562adb",
-    "Sources/Browser/DeviceKeyboard.swift": "9306abd7ab4d6ef60b4d248b53c1a34147a8bef3805dcf4e67ea5bc900131a2c",
+    "Sources/Browser/DeviceKeyboard.swift": "de5e1dbb3c436291779fa6c011e8f9dc8a6ddfdde237b412c077d36580af9501",
     "Sources/Browser/DevicePointer.swift": "f9362d4aed8f14c30234946b5b4a81f12225a2fbf973e8e74c55b5e23582e7ec",
     "Sources/Browser/HIDPointerPolicy.swift": "746beb02e89bbad19c821c7fb3e3a495534683b31ca719ca785c1461746bf645",
     "Sources/Browser/HIDSourcePolicy.swift": "ea1b9b29117b190f218f47db438a74f5f00988ee3448417a95c13bd1d5155116",

@@ -28,6 +28,7 @@ final class VeilMouseCheck: NSObject, WKNavigationDelegate {
         content.addSubview(button)
         window.contentView = content
         window.title = "Veil internal mouse and wheel control"
+        window.setFrameOrigin(CGPoint(x: 180, y: 200))
         window.sharingType = .none
         window.acceptsMouseMovedEvents = true
         view.navigationDelegate = self
@@ -43,7 +44,7 @@ final class VeilMouseCheck: NSObject, WKNavigationDelegate {
         <button onclick="window.clicks++">Local page control</button>
         <script>window.clicks=0;window.moves=0;window.wheels=[];
         addEventListener('pointermove',()=>window.moves++);
-        addEventListener('wheel',e=>window.wheels.push(e.deltaY),{passive:true});</script>
+        addEventListener('wheel',e=>window.wheels.push([e.deltaY,e.clientX,e.clientY]),{passive:true});</script>
         """, baseURL: URL(string: "https://veil-mouse-control.invalid/"))
     }
 
@@ -80,9 +81,11 @@ final class VeilMouseCheck: NSObject, WKNavigationDelegate {
                           let data = text.data(using: .utf8),
                           let result = try? JSONSerialization.jsonObject(with: data) as? [String: Any] else { exit(1) }
                     print("VEIL_MOUSE_CONTROL \(text) nativeClicks=\(nativeClicks) refused=\(app.refusedEventCount)")
+                    let wheels = result["wheels"] as? [[Double]] ?? []
                     let passed = result["clicks"] as? Int == 1 && nativeClicks == 1
                         && (result["moves"] as? Int ?? 0) > 0
-                        && (result["wheels"] as? [Double])?.count == 1
+                        && wheels.count == 1 && wheels[0].count == 3
+                        && wheels[0][1] == 320 && wheels[0][2] == 170
                         && (result["y"] as? Double ?? 0) > 0 && app.refusedEventCount >= 5
                     print("VEIL_MOUSE_CONTROL passed=\(passed) physicalInputVerified=false externalAttack=false")
                     window.orderOut(nil)

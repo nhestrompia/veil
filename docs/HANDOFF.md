@@ -1,5 +1,13 @@
 # Current research state
 
+## Milestone 156
+
+The user names the project Veil, removes the README attribution, and explicitly selects the normal system cursor with physical-click authorization. The accepted limit is software redirection of a concurrent physical click. Commit 767373e rewrites the README. A separate Veil.app implements automatic device activation, normal cursor coordinates, primary page/native clicks, physical hover, and vertical USB wheel reports. No overlay, pointer shortcut, cursor warp/hide, event hook, or exclusive device exists. Earlier permissioned browser images stay unchanged.
+
+The first in-process WebKit control failed hover/wheel delivery. Direct private target-view routing repairs it. The final control passes one page click, one native button click, one pointer move, and one wheel event with a 120-point scroll, while refusing five forged direct/queued events. It opens no HID reader and supplies no external attack or physical usability proof. All 73 relevant Python checks and the pointer policy suites pass.
+
+The new Veil image has no approved or effective Input Monitoring grant yet. No request has run. Freeze its final manifest before requesting consent. Do not transfer the earlier model/capture results or seven armed native trials to the changed image. The next live work is this app's scoped grant, physical mouse/wheel control, and external takeover comparisons. See [normal mouse findings](normal-mouse-findings.md). The old unattributed click remains unresolved.
+
 ## Milestone 155
 
 The user selects hardware mouse support as the default and requests serial browser tests with GPT-6.1-terra, GPT-6-luna, and GPT-6-astra. Both agent launchers default to AgentFreeBrowserPointer. The frozen app and its existing grant stay unchanged. The README and current guides describe primary webpage clicks through the green pointer, with no hover, drag, or scrolling.

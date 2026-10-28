@@ -89,14 +89,13 @@ final class DeviceKeyboardApplication: AXBoundaryApplication {
         guard (-127...127).contains(lines), lines != 0,
               let cg = CGEvent(scrollWheelEvent2Source: nil, units: .line, wheelCount: 1,
                                wheel1: Int32(lines), wheel2: 0, wheel3: 0) else { return }
-        let screen = window.convertPoint(toScreen: point)
-        guard let display = window.screen else { return }
-        // Core Graphics uses the top edge of the main display as its global origin.
-        let mainHeight = NSScreen.screens.first?.frame.height ?? display.frame.height
-        cg.location = CGPoint(x: screen.x, y: mainHeight - screen.y)
-        cg.setIntegerValueField(.mouseEventWindowUnderMousePointer, value: Int64(window.windowNumber))
-        cg.setIntegerValueField(.mouseEventWindowUnderMousePointerThatCanHandleThisEvent, value: Int64(window.windowNumber))
-        guard let event = NSEvent(cgEvent: cg) else { return }
+        guard let mainHeight = NSScreen.screens.first?.frame.height else { return }
+        // NSEvent(cgEvent:) has no NSWindow. This event is routed directly to an
+        // owned view, so its locationInWindow must contain window-local points.
+        cg.location = CGPoint(x: point.x, y: mainHeight - point.y)
+        guard let event = NSEvent(cgEvent: cg), event.window == nil,
+              abs(event.locationInWindow.x - point.x) < 0.001,
+              abs(event.locationInWindow.y - point.y) < 0.001 else { return }
         dispatchDeviceViewEvent(event, at: point, in: window)
     }
 

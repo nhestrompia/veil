@@ -1,6 +1,6 @@
 {
   "milestone": 156,
-  "browserSHA256": "da45deb6c384b660b84ee340f3facf1015ed077120f3ae59e24bff1b4c4a7984",
+  "browserSHA256": "dc0725ded122316f7a51427295e75f4c1d8ed2cb5447d017583ad69652f8c1ef",
   "normalCursor": true,
   "automaticPhysicalDeviceActivation": true,
   "greenOverlay": false,
@@ -55,11 +55,69 @@
         "physicalInputVerified": false,
         "externalAttack": false
       }
+    },
+    {
+      "path": "artifacts/veil-mouse-156/webkit-control-4/results.json",
+      "sha256": "f1082fb0dffc83fac45f654e85ea750bc565649797ea7b512133c1f966bbf416",
+      "result": {
+        "exitCode": 1,
+        "clickDelivered": false,
+        "wheelAndNativeControlDelivered": false,
+        "controlOnly": true,
+        "physicalInputVerified": false,
+        "externalAttack": false
+      }
+    },
+    {
+      "path": "artifacts/veil-mouse-156/webkit-control-5-diagnostic/results.json",
+      "sha256": "f1082fb0dffc83fac45f654e85ea750bc565649797ea7b512133c1f966bbf416",
+      "result": {
+        "exitCode": 1,
+        "clickDelivered": false,
+        "wheelAndNativeControlDelivered": false,
+        "controlOnly": true,
+        "physicalInputVerified": false,
+        "externalAttack": false
+      }
+    },
+    {
+      "path": "artifacts/veil-mouse-156/webkit-control-6/results.json",
+      "sha256": "751a1cbaa848ca2b6554ca65a458d19179ef9ff913a4f7a140b1e59c6ea422f4",
+      "result": {
+        "exitCode": 0,
+        "clickDelivered": true,
+        "wheelAndNativeControlDelivered": true,
+        "controlOnly": true,
+        "physicalInputVerified": false,
+        "externalAttack": false
+      }
+    },
+    {
+      "path": "artifacts/veil-mouse-156/webkit-control-final/results.json",
+      "sha256": "751a1cbaa848ca2b6554ca65a458d19179ef9ff913a4f7a140b1e59c6ea422f4",
+      "result": {
+        "exitCode": 0,
+        "clickDelivered": true,
+        "wheelAndNativeControlDelivered": true,
+        "controlOnly": true,
+        "physicalInputVerified": false,
+        "externalAttack": false
+      }
     }
   ],
   "remaining": [
     "Approve and enable this new app's Input Monitoring grant",
     "Verify physical click, native toolbar, and wheel in this exact image",
     "Run external software-input and loaded-page takeover comparisons on this exact image"
-  ]
+  ],
+  "pythonChecksPassed": 73,
+  "coordinateRegression": {
+    "initialNonzeroOriginFailed": true,
+    "finalClientCoordinates": [
+      320,
+      170
+    ],
+    "realDeviceInput": false
+  },
+  "sourceIdentityMatches": true
 }

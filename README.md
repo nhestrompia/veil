@@ -6,7 +6,7 @@ A macOS browser proof of concept for human browsing without agent control.
 
 **GPT-6.1-Sol, GPT-6.1-Terra, GPT-6-Luna, and GPT-6-Astra did not complete the protected-browser search tasks we tested.**
 
-Sol's earlier tests cover native input and loaded pages on earlier builds. In the latest comparison, Terra, Luna, and Astra could not complete startup navigation. All three successfully searched Wikipedia in a separate, unprotected control app. Those searches were not in Veil.
+These results belong to earlier recorded builds. The new normal-cursor build still needs live validation. Sol's earlier tests cover native input and loaded pages. In the latest comparison, Terra, Luna, and Astra could not complete startup navigation. All three successfully searched Wikipedia in a separate, unprotected control app. Those searches were not in Veil.
 
 These are bounded test results. The latest comparison did not test takeover of a loaded page. An earlier trial recorded an unattributed click that remains unresolved. [Results and evidence](docs/model-comparison-155.md) · [Earlier search tests](docs/loaded-public-website-findings.md)
 
@@ -15,14 +15,14 @@ These are bounded test results. The latest comparison did not test takeover of a
 On the prepared test Mac, run from the project folder:
 
 ```sh
-open dist/AgentFreeBrowserPointer.app --args --url 'https://www.google.com/'
+open dist/Veil.app --args --url 'https://www.google.com/'
 ```
 
 1. Select the browser with Command-Tab.
 2. Press Space, then Return on the built-in keyboard to load the page.
-3. Press Command-Option-M, then use the tested USB mouse and green ring for webpage clicks.
+3. Use the tested USB mouse normally for clicks and wheel scrolling. No shortcut or green ring is needed.
 
-This is the mouse-enabled build. The shortcut and green pointer are temporary research controls. Scrolling, dragging, and toolbar mouse clicks are not implemented. Use Command-L for the address and Command-Q to quit. [Manual guide](docs/testing-with-agents.md#test-it-yourself)
+This new app needs its own Input Monitoring grant. Physical clicks, hover, toolbar clicks, and USB wheel scrolling are implemented. Live validation is pending. Trackpad gestures, dragging, and other click types remain unsupported. Use Command-L for the address and Command-Q to quit. [Manual guide](docs/testing-with-agents.md#test-it-yourself)
 
 ## Let your agent try
 
@@ -34,6 +34,8 @@ python3 tools/agent_browser.py start \
 ```
 
 Tell the agent to read the returned `taskFile` and use its own computer-use, native, or supported browser-automation tools. It must operate the returned app and PID. It must record partial actions, failures, and cleanup. Using another browser does not count. [Agent testing guide](docs/testing-with-agents.md)
+
+Using the normal cursor means software could redirect a click that a human physically makes. Software events alone do not authorize input. [Mouse design and current tests](docs/normal-mouse-findings.md)
 
 ## Availability
 

@@ -274,7 +274,11 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
         #if INTEGRATED_BROWSER
         let granted = IOHIDCheckAccess(kIOHIDRequestTypeListenEvent) == kIOHIDAccessTypeGranted
         if !granted {
+            #if VEIL_BROWSER
+            status.stringValue = "Input Monitoring is required for Veil's physical keyboard and mouse. Command-Tab switches apps."
+            #else
             status.stringValue = "Input Monitoring is required for this keyboard-only preview. Command-Tab switches to another app."
+            #endif
         }
         print("INTEGRATED_BROWSER ready=true ordinaryWindow=\(window.level == .normal) sharingRestricted=\(window.sharingType == .none) contentRestricted=\(BrowserRuntimePolicy.contentIsRestricted(webView.configuration)) inspectable=\(webView.isInspectable) inputMonitoringGranted=\(granted) diagnosticInput=false")
         #endif

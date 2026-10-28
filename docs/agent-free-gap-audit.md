@@ -1,35 +1,27 @@
 # Remaining agent-free gaps
 
-Status after milestone 116: no integrated agent-free browser exists. The cross-user channel comparison passes. The ordinary usable candidate and separate diagnostics still cover different parts of the goal. Passing their checks does not combine their protections.
+Status after milestone 141: the combined minimal browser exists at dist/AgentFreeBrowserPreview.app. It supplies one page, an address field, navigation controls, and the measured built-in keyboard route. Its agent-free claim remains unproven. The previous physical session expires under its one-hour watchdog. No current physical session exists.
 
-The existing PRD defines two outcomes. Action prevention stops an external agent from completing a website task. Disclosure prevention stops recovery of a fresh secret shown only inside the browser. The broad agent-free claim requires both, plus working human use. Physical typing observed by a listener is not an autonomous input bypass.
+The two requirements remain separate. Disclosure prevention stops recovery of a fresh page-only secret. Action prevention stops an external agent from completing a website task, including blind operation. Both require usable human access on the same final build.
 
-## Missing engineering
+## Protection work that remains
 
-1. One visible browser must combine the isolated renderer, private display channel, and trusted human navigation. The current pair stays hidden and accepts one fixed local address. It has no interactive address bar, links, or form input across the process boundary. The earlier keyboard browser remains a separate build. Completion requires a person to navigate ordinary HTTPS pages and complete a form in the integrated target.
-2. Physical input must cross that boundary without accepting agent input. The earlier working router supports one built-in keyboard and US ASCII. Mouse input is disabled. The channel carries only navigation and pixels. It carries no keyboard, pointer, or scroll events. Original HID timestamps also do not reach the receiver. Completion requires normal physical input and refusal of permissioned synthetic and semantic input on that same build.
-3. Browser state must not supply an alternative action route. Earlier candidates completed tasks after focus, visibility, or process-clock changes without admitted input. Milestone 116 denies the tested renderer pause, but its fixture measures page progress rather than task prevention. Completion requires the previous successful attack fixtures to fail on the integrated build while legitimate activity still works.
+1. Close the capture gap on the actual preview. Window-scoped continuous capture returns 948 black complete frames with readable controls before and after. App-filtered display capture delivers no complete candidate frames and remains inconclusive. The new unfiltered recorder has no effective Screen Recording access. Its readable placement controls also fail on a Dock overlay. Neither failure proves protection. First-display, resize, fullscreen, and other transitions remain open.
+2. Complete semantic and script access tests. One bounded renderer token comparison recovers the readable control's marker and no preview marker. Other renderer reads fail their controls. No calibrated external inspector attachment client tests the preview. A missing TCP listener does not establish protection against Cocoa's XPC transport. Keyboard observation also needs its separate preview result.
+3. Close zero-input action routes on the final image. Five matched native-input routes produce 206 explicit refusals and no new action in one physically completed preview. Another route fails its control. Earlier shared-browser diagnostics complete website actions through focus and timing changes without admitted input. Their later mitigations and identity-isolated renderer are separate experiments. The current preview does not integrate those protections. Repeat the successful attack fixtures on the final architecture before an agent-free claim.
 
-The relevant code is [the channel](../Sources/Channel/RendererChannel.swift), [the fixed-fixture renderer](../Sources/Diagnostics/ChannelRendererProbe.swift), and [the earlier keyboard router](../Sources/Browser/DeviceKeyboard.swift). The recorded action bypasses are in [timing findings](clock-channel-findings.md) and [lifecycle findings](lifecycle-findings.md).
+The evidence is in [stream results](preview-stream-live-findings.md), [compositor preparation](preview-compositor-findings.md), [renderer reads](preview-renderer-live-findings.md), [native input](preview-native-input-findings.md), [focus actions](page-feature-findings.md), and [clock actions](clock-channel-findings.md).
 
-## Unresolved privacy research
+## Human use and release acceptance
 
-A capture path must remain unreadable to a permissioned external agent while the person can read the actual page. Some window and filtered-display captures returned black against the usable keyboard candidate. Unfiltered display and other required capture paths remain unverified. The protected BGRA and NV12 experiments also looked black directly to the person. Those configurations failed the human-visible output requirement.
+The current candidate supports this Mac's measured built-in keyboard and US ASCII. Mouse input is disabled. Unicode, input methods, broad website compatibility, and the PRD's human-use targets remain unmet. These are explicit usability limits, not additional agent defenses. A physically black page cannot pass.
 
-A permissioned keyboard observer recognized the fixed phrase during a physical task. That establishes the measured observation route. It does not establish an autonomous website action or recovery of an unknown page-only secret. Input refusal and keyboard privacy therefore need separate results.
+Final validation needs one report for the same final image and declared attack suite. It must cover browser transports, accessibility, synthetic and blind input, captures, lifecycle changes, and enabled exports or session residue. Each claimed block needs a working reference. Fresh secrets and task outcomes come from an independent oracle. Required inconclusive results prevent acceptance.
 
-Completion requires a validated human-visible output design and matched capture tests with effective grants. The current project has no general private-output solution. This remains a research uncertainty, not merely an unfinished interface feature. See [capture findings](source-policy-capture-findings.md), [physical visibility failures](route-calibration.md), and [keyboard observation](keyboard-readiness-findings.md).
+A finite attack suite supports a bounded result about the tested capabilities. It cannot prove protection against all websites and future agents. The project must not call an unfinished test, a permission failure, or a diagnostic-only defense an agent-free MVP.
 
-## Missing final validation
+## Scope that stays fixed
 
-The integrated build needs one attack report with working human and attacker controls. It must cover direct browser transports, accessibility, synthetic and blind input, capture, lifecycle changes, and browser-created exports or session residue. Fresh page secrets and task outcomes must come from an independent oracle. Required inconclusive results cannot count as blocks.
+Root attacks, modified browser images, kernel exploits, malicious hardware, and external cameras remain outside the PoC threat model. An agent's separate browser and unrelated API credentials are also outside the browser claim. No new browser feature expansion is needed to finish the protection research.
 
-Remote-inspector discovery currently omits the restricted target, but that does not prove every direct attachment path refuses. Several native and capture routes retain failed controls. Previous successful attacks must repeat against the final integrated build. Ordinary websites must also preserve navigation, forms, frames, redirects, and normal sessions. See [inspection limits](safari-remote-findings.md) and [the PRD contract](../PRD.md).
-
-This is not a demand to test every future model. It is a demand to test the capabilities available to an adaptive external agent. A finite matrix supports a bounded claim about those capabilities. It cannot establish a universal theorem about all websites and future agents.
-
-## Scope that must stay fixed
-
-Root attacks, modified browser binaries, kernel exploits, malicious hardware, and external cameras already sit outside this PoC's threat model. An agent's independent use of another browser or unrelated API credentials is also outside the browser claim. Those capabilities are not new prerequisites for completion.
-
-The recent isolation work addresses a real zero-input action bypass. The delivery gap is that its result remains separate from the physical browser. The next engineering deliverable is one human-usable browser with the combined protections and one end-to-end attack report. More component-test passes alone do not establish that deliverable. Strict private output remains the largest unresolved research question.
+The cross-user renderer work addresses a measured signal bypass, but it does not supply the preview's visible output and physical input. Do not treat that component's success as integrated protection. The remaining work concerns real enforcement and validation. It is not a missing tab bar or bookmark manager.

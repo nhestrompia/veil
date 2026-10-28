@@ -1,5 +1,17 @@
 # Current research state
 
+Milestone 141 prepares PreviewCompositorProbe for unfiltered display capture and filter changes, but no recording runs. Both metadata-only readable coverage trials refuse a full-display Dock window above the target and backdrop. No guard is weakened. The unfiltered capture gap remains open. See [preparation findings](preview-compositor-findings.md).
+
+The final helper hash is 78a3fba76544384970a008b1e32b7da9ca13a1178f5acf05861500c09a236642. Its manifest is docs/evidence/preview-compositor-permission-manifest.json. The exact Screen Recording request is approved and executed. Effective access remains false. The user is away and asks for automatic enablement. System Events refuses scoped Settings access with -25211. No setting changes. Do not repeat the consent question or request a reset. Preserve the signed image.
+
+The first failed coverage trial is artifacts/preview-compositor-141/coverage-only/results.json. The second and its bounded geometry trace are in artifacts/preview-compositor-141/coverage-trace. The Dock overlay belongs to /System/Library/CoreServices/Dock.app/Contents/MacOS/Dock, PID 662, window 14, layer 20. Its metadata reports sharing zero and alpha one. That does not establish its actual pixels. No capture occurs. Do not suppress the overlap guard or quit Dock.
+
+All 22 Python checks pass. Four Swift Testing tests pass with twelve invocations. Swift 6 compilation, strict signature, Python compilation, and overwrite refusal pass. All thirteen earlier permissioned images and browser sources remain unchanged. All transient helpers, references, and fixtures stop. No global input, root, or computer-use start occurs.
+
+Physical session PID 35426 expires under its original watchdog. Its owned host and fixture stop. No current physical session exists. Do not transfer its declaration to a new PID. Continue with independent work while the grant is unavailable. A future live comparison needs effective consent, a successful readable coverage reference, and a new physical completion. These are separate conditions. The MVP already exists. Agent-free behavior remains unproven.
+
+## Milestone 140
+
 Milestone 140 confirms effective Screen Recording for the unchanged PreviewStreamCaptureProbe and completes a matched 30-second independent-window comparison on the actual preview. All 948 delivered complete candidate frames have zero RGB and uniform alpha. Before and after references audit 956 and 954 readable frames and recover their markers. No new preview submission occurs. See [live findings](preview-stream-live-findings.md).
 
 The app-filtered display reference recovers its marker across 935 frames. Its candidate produces no complete frames, so the route stops as inconclusive. No after-reference or display-blocking claim follows. Both stream modes stop. No input, AX action, audio, root, or unrelated app capture occurs.

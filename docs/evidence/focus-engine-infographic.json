@@ -1,0 +1,9 @@
+{
+  "asset": "assets/agentfreebrowser-test-infographic.png",
+  "assetSHA256": "72338841718f079e3f1ffd97188f2c0c110b32c76ccbfb6573aea1f91c4eb789",
+  "generationMode": "built-in image_gen",
+  "sourceEvidence": "docs/evidence/focus-engine-live-results.json",
+  "sourceEvidenceSHA256": "f00e58fd6fc6330d5f07a97ae3e62901c86ada7573db140e75f7d85d12774ce0",
+  "claim": "GPT-6.1-sol did not complete the website task through the tested native input, Accessibility, and focus routes.",
+  "scope": "Current engine build, local test page, milestone 153. No claim that every agent or every route fails."
+}

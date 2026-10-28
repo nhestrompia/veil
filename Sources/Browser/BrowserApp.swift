@@ -29,6 +29,9 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
     private var ownsSecureInput = false
     #if DEVICE_KEYBOARD_EXPERIMENT
     private var deviceKeyboard: DeviceKeyboardRouter?
+    #if DEVICE_POINTER_EXPERIMENT
+    private var devicePointer: DevicePointerRouter?
+    #endif
     #endif
 
     func applicationDidFinishLaunching(_ notification: Notification) {
@@ -72,7 +75,11 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
         #elseif DEVICE_KEYBOARD_EXPERIMENT
         #if INTEGRATED_BROWSER
         #if STABLE_ENGINE_BROWSER
+        #if DEVICE_POINTER_EXPERIMENT
+        let name = "Agent-free Browser Hardware Pointer Candidate"
+        #else
         let name = "Agent-free Browser Engine Candidate"
+        #endif
         #else
         let name = "Agent-free Browser Preview"
         #endif
@@ -151,6 +158,23 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
         #endif
         #endif
         window.contentView = content
+        #if DEVICE_POINTER_EXPERIMENT
+        let pointerOverlay = HardwarePointerOverlay(frame: .zero)
+        pointerOverlay.isHidden = true
+        pointerOverlay.translatesAutoresizingMaskIntoConstraints = false
+        content.addSubview(pointerOverlay, positioned: .above, relativeTo: webView)
+        NSLayoutConstraint.activate([
+            pointerOverlay.leadingAnchor.constraint(equalTo: webView.leadingAnchor),
+            pointerOverlay.trailingAnchor.constraint(equalTo: webView.trailingAnchor),
+            pointerOverlay.topAnchor.constraint(equalTo: webView.topAnchor),
+            pointerOverlay.bottomAnchor.constraint(equalTo: webView.bottomAnchor)
+        ])
+        devicePointer = DevicePointerRouter(window: window, overlay: pointerOverlay)
+        (NSApp as? DeviceKeyboardApplication)?.onArmPointer = { [weak self] in
+            self?.devicePointer?.arm()
+            self?.status.stringValue = "Move the hardware mouse, then use the green ring to click. Command-Option-M re-arms. Webpage primary clicks only."
+        }
+        #endif
         #if INTEGRATED_BROWSER
         window.isOpaque = true
         window.backgroundColor = .windowBackgroundColor
@@ -222,6 +246,9 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
         }
         #if !BROWSER_NAVIGATION_CONTROL
         deviceKeyboard?.start()
+        #if DEVICE_POINTER_EXPERIMENT
+        devicePointer?.start()
+        #endif
         #endif
         #if INTEGRATED_BROWSER
         let granted = IOHIDCheckAccess(kIOHIDRequestTypeListenEvent) == kIOHIDAccessTypeGranted
@@ -235,6 +262,9 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
     }
 
     @objc private func navigate() {
+        #if DEVICE_POINTER_EXPERIMENT
+        devicePointer?.cancel()
+        #endif
         guard let url = BrowserPolicy.address(address.stringValue) else {
             status.stringValue = "Use HTTPS, or loopback HTTP for a research fixture."
             return
@@ -319,9 +349,15 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
         status.stringValue = "Built-in keyboard only. Command-L selects the address. Mouse input is disabled. US ASCII only. Research build."
         #endif
         #endif
+        #if DEVICE_POINTER_EXPERIMENT
+        status.stringValue = "Command-Option-M: arm hardware mouse. Click with the green ring. Command-L: address. Primary webpage clicks only."
+        #endif
     }
 
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        #if DEVICE_POINTER_EXPERIMENT
+        devicePointer?.cancel()
+        #endif
         navigationNote = ""
         updateNavigation()
     }
@@ -373,6 +409,9 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
     }
 
     func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
+        #if DEVICE_POINTER_EXPERIMENT
+        devicePointer?.cancel()
+        #endif
         #if STABLE_ENGINE_BROWSER
         print("FOCUS_ENGINE contentTerminated=true replacementRequiresVerification=true")
         fflush(stdout)
@@ -425,12 +464,18 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
         releaseSecureInput()
         #if DEVICE_KEYBOARD_EXPERIMENT
         deviceKeyboard?.resetPending()
+        #if DEVICE_POINTER_EXPERIMENT
+        devicePointer?.cancel()
+        #endif
         #endif
     }
     func applicationWillTerminate(_ notification: Notification) {
         releaseSecureInput()
         #if DEVICE_KEYBOARD_EXPERIMENT
         deviceKeyboard?.stop()
+        #if DEVICE_POINTER_EXPERIMENT
+        devicePointer?.stop()
+        #endif
         #endif
     }
 

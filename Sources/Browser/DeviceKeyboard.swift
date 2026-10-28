@@ -39,6 +39,7 @@ final class DeviceEventGate {
     private var pending: [ObjectIdentifier: NSEvent] = [:]
 
     func authorize(_ event: NSEvent) { pending[ObjectIdentifier(event)] = event }
+    func isAuthorized(_ event: NSEvent) -> Bool { pending[ObjectIdentifier(event)] === event }
     func consume(_ event: NSEvent) -> Bool {
         pending.removeValue(forKey: ObjectIdentifier(event)) != nil
     }
@@ -52,6 +53,53 @@ final class DeviceKeyboardApplication: AXBoundaryApplication {
     private(set) var refusedEventCount = 0
     private var awaitingInitialNavigation = true
     var onOpenLocation: (() -> Void)?
+    #if DEVICE_POINTER_EXPERIMENT
+    var onArmPointer: (() -> Void)?
+    private var pendingPointerRelease: NSEvent?
+
+    func dispatchDevicePointerClick(at point: CGPoint, in window: NSWindow) {
+        guard pendingPointerRelease == nil,
+              let down = NSEvent.mouseEvent(with: .leftMouseDown, location: point, modifierFlags: [],
+                timestamp: ProcessInfo.processInfo.systemUptime, windowNumber: window.windowNumber,
+                context: nil, eventNumber: 0, clickCount: 1, pressure: 1),
+              let up = NSEvent.mouseEvent(with: .leftMouseUp, location: point, modifierFlags: [],
+                timestamp: ProcessInfo.processInfo.systemUptime, windowNumber: window.windowNumber,
+                context: nil, eventNumber: 0, clickCount: 1, pressure: 0) else { return }
+        deviceGate.authorize(up)
+        pendingPointerRelease = up
+        deviceGate.authorize(down)
+        sendEvent(down)
+        if pendingPointerRelease === up {
+            pendingPointerRelease = nil
+            sendEvent(up)
+        }
+    }
+
+    override func nextEvent(matching mask: NSEvent.EventTypeMask, until expiration: Date?,
+                            inMode mode: RunLoop.Mode, dequeue flag: Bool) -> NSEvent? {
+        if let up = pendingPointerRelease, deviceGate.isAuthorized(up), mask.contains(.leftMouseUp) {
+            if flag {
+                pendingPointerRelease = nil
+                _ = deviceGate.consume(up)
+                recordAccepted(up)
+            }
+            return up
+        }
+        while let event = super.nextEvent(matching: mask, until: expiration, inMode: mode, dequeue: flag) {
+            switch event.type {
+            case .appKitDefined, .systemDefined, .applicationDefined, .periodic: return event
+            default:
+                refusedEventCount += 1
+                print("INPUT_QUEUE_REFUSED type=\(event.type.rawValue)")
+                fflush(stdout)
+                if !flag {
+                    _ = super.nextEvent(matching: mask, until: expiration, inMode: mode, dequeue: true)
+                }
+            }
+        }
+        return nil
+    }
+    #endif
     #if INTEGRATED_BROWSER
     enum NavigationCommand { case back, forward, reloadOrStop }
     var onNavigation: ((NavigationCommand) -> Void)?
@@ -60,6 +108,7 @@ final class DeviceKeyboardApplication: AXBoundaryApplication {
     func didBeginNavigation() { awaitingInitialNavigation = false }
 
     func dispatchDeviceEvent(_ event: NSEvent) {
+        guard event.type == .keyDown || event.type == .keyUp else { return }
         // Repeated binding gestures must not replace the selected startup URL.
         if awaitingInitialNavigation, event.keyCode == 49 { return }
         deviceGate.authorize(event)
@@ -77,9 +126,14 @@ final class DeviceKeyboardApplication: AXBoundaryApplication {
                 fflush(stdout)
                 return
             }
-            acceptedEventCount += 1
-            print("INPUT_GATE_ACCEPTED type=\(event.type.rawValue)")
-            fflush(stdout)
+            recordAccepted(event)
+            #if DEVICE_POINTER_EXPERIMENT
+            if event.type == .keyDown, event.keyCode == 46,
+               event.modifierFlags.intersection([.command, .option, .control, .shift]) == [.command, .option] {
+                onArmPointer?()
+                return
+            }
+            #endif
             if event.type == .keyDown, event.keyCode == 37, event.modifierFlags.contains(.command),
                let onOpenLocation {
                 onOpenLocation()
@@ -97,6 +151,12 @@ final class DeviceKeyboardApplication: AXBoundaryApplication {
             #endif
             super.sendEvent(event)
         }
+    }
+
+    private func recordAccepted(_ event: NSEvent) {
+        acceptedEventCount += 1
+        print("INPUT_GATE_ACCEPTED type=\(event.type.rawValue)")
+        fflush(stdout)
     }
 }
 

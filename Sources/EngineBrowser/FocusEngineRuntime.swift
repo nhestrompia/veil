@@ -66,12 +66,18 @@ enum FocusEngineRuntime {
     static func inputRequestApproved() -> Bool {
         let project = URL(fileURLWithPath: #filePath).deletingLastPathComponent()
             .deletingLastPathComponent().deletingLastPathComponent()
+        #if DEVICE_POINTER_EXPERIMENT
+        let manifest = project.appendingPathComponent("docs/evidence/hardware-pointer-browser-manifest.json")
+        let targetName = "AgentFreeBrowserPointer"
+        #else
         let manifest = project.appendingPathComponent("docs/evidence/focus-engine-browser-manifest.json")
+        let targetName = "AgentFreeBrowserEngine"
+        #endif
         guard let data = try? Data(contentsOf: manifest),
               let record = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
               record["permissionApproved"] as? Bool == true,
               let targets = record["targets"] as? [String: [String: Any]],
-              let target = targets["AgentFreeBrowserEngine"],
+              let target = targets[targetName],
               let executable = Bundle.main.executableURL?.resolvingSymlinksInPath(),
               let expected = target["binarySHA256"] as? String, let actual = hash(executable),
               target["path"] as? String == Bundle.main.bundleURL.resolvingSymlinksInPath().path,

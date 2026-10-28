@@ -1,7 +1,7 @@
 {
   "approvalRequired": true,
-  "approved": false,
-  "executed": false,
+  "approved": true,
+  "executed": true,
   "scope": "Reset only this stale Accessibility entry, then request/re-add the same pinned research helper.",
   "bundleIdentifier": "research.agentfreebrowser.previewrendererread",
   "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/dist/PreviewRendererReadProbe.app",
@@ -30,5 +30,22 @@
   "otherAppsMayBeReset": false,
   "otherServicesMayBeReset": false,
   "mayRebuildOrResign": false,
-  "userAuthentication": "Only directly in macOS if requested."
+  "userAuthentication": "Only directly in macOS if requested.",
+  "approvalResponse": "yes",
+  "approvalRecordedUnixSeconds": 1793184508.835113,
+  "resetExitCode": 0,
+  "resetOutput": "Successfully reset Accessibility approval status for research.agentfreebrowser.previewrendererread",
+  "resetError": "",
+  "requestExitCode": 0,
+  "requestResult": {
+    "accessibility": false,
+    "accessibilityQueried": false,
+    "actionsSent": false,
+    "hooksInstalled": false,
+    "inputPosted": false,
+    "permissionRequested": true,
+    "probePID": 34308,
+    "rawTextSaved": false,
+    "status": "requested"
+  }
 }

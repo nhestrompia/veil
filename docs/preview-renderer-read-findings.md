@@ -1,5 +1,7 @@
 # Renderer reads on the combined preview
 
+Milestone 138 later restores effective access and completes a matched token-read comparison. See [live findings](preview-renderer-live-findings.md). The sections below preserve the preparation and stale-grant history.
+
 Milestone 136 prepares a new read-only probe for the unchanged AgentFreeBrowserPreview. Live ownership checks identify its WebKit renderer and a fresh readable control's renderer. No accessibility read, input event, or website action runs. The new helper has no Accessibility grant, and no permission request runs.
 
 The existing RendererAXProbe cannot target the preview. Its scope permits only two earlier app identities. Rebuilding that granted helper would change its reviewed image. The new PreviewRendererReadProbe has a separate identity and leaves all existing grants intact.
@@ -46,7 +48,7 @@ An app-only reset and another request for the same pinned app need separate appr
 
 The earlier unapproved helper launches explain a possible source of the stale identity. They queried trust before the final image existed. Future helper preparation must complete and pin the final signature before any trust query or permission request. This checkpoint does not change the frozen helper to address that preparation mistake.
 
-## Next live comparison
+## Comparison plan from milestone 136
 
 The new helper has user approval for macOS Accessibility, but its grant remains ineffective. This is a broad system permission. The helper's reviewed code limits reads to the two pinned research apps and their owned renderers. Do not rebuild or re-sign it after approval. Do not refresh any existing grant.
 

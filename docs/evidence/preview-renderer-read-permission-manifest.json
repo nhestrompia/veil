@@ -63,11 +63,25 @@
     "status": "requested"
   },
   "userConfirmedEnabled": true,
-  "effectiveGrantConfirmed": false,
-  "effectivePreflight": "artifacts/preview-renderer-137/enabled-preflight.json",
+  "effectiveGrantConfirmed": true,
+  "effectivePreflight": "artifacts/preview-renderer-138/reference-preflight/permissions.json",
   "identityMismatchObserved": true,
   "currentCDHash": "934b8785990d0f3f6144a18f46f1860a4135f29a",
   "grantDiagnosis": "artifacts/preview-renderer-137/grant-results.json",
-  "appOnlyResetApproved": false,
-  "appOnlyResetExecuted": false
+  "appOnlyResetApproved": true,
+  "appOnlyResetExecuted": true,
+  "resetRequestResult": {
+    "accessibility": false,
+    "accessibilityQueried": false,
+    "actionsSent": false,
+    "hooksInstalled": false,
+    "inputPosted": false,
+    "permissionRequested": true,
+    "probePID": 34308,
+    "rawTextSaved": false,
+    "status": "requested"
+  },
+  "userConfirmedEnabledAfterReset": true,
+  "effectiveGrantRecordedUnixSeconds": 1793184652.450696,
+  "identityMismatchResolvedByAppOnlyReset": true
 }

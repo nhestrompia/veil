@@ -1,5 +1,17 @@
 # Current research state
 
+Milestone 138 completes the approved app-only Accessibility reset and re-request for PreviewRendererReadProbe. The user enables it again. Effective access is now true, and the frozen helper recovers a fresh readable reference's marker directly from its renderer. The helper and all earlier granted images remain unchanged. See [live findings](preview-renderer-live-findings.md).
+
+The old physical preview PID 2892 expires under its original watchdog. A new unchanged preview runs as PID 35426. The user reports Task complete, device binding is present, and its independent fixture accepts exactly one action. A fresh matched token scan recovers the reference marker and no candidate marker. Both candidate host and renderer scans cover IDs zero through 1,023, without budget exhaustion. No new preview submission occurs.
+
+Plain renderer-root calibration fails its separate readable control, so no plain-root candidate query runs. The token comparison uses its own fresh successful reference. No renderer write, AX action, synthetic input, or inspector attachment runs. Do not interpret the bounded token result as universal prevention.
+
+The new session is artifacts/preview-renderer-138/physical-session/session.json. Its separate user declaration is artifacts/preview-renderer-138/physical-control.json. The controller exec session is 52976. Its stop file closes the owned preview and fixture. Both retain their original one-hour watchdog. Check exact PID and image before reuse. Do not use the expired milestone-134 session.
+
+Twelve Python checks and compilation pass. All transient probes and references stop. All 12 permissioned images and the browser sources retain their hashes. Both modifier apps remain running, so the existing guard still prohibits global synthetic input. No permission question is pending. Continuous capture on this preview, external inspector attachment, autonomous page actions, and broad website compatibility remain open. Agent-free browsing remains unproven.
+
+## Historical checkpoint 137
+
 Checkpoint 137 issues the user-approved Accessibility request for the unchanged PreviewRendererReadProbe. The user reports Enabled. Two fresh LaunchServices processes still report access false. TCC logs explicitly reject the helper against an older code requirement. The running image retains its pinned SHA-256. No renderer AX read, input event, or permission reset runs. See [grant evidence](evidence/preview-renderer-read-grant-results.json).
 
 The next step needs approval for an app-only Accessibility reset and another request for the same pinned app. The exact reset is tccutil reset Accessibility research.agentfreebrowser.previewrendererread. It is not yet approved or executed. Do not reset other apps, rebuild this helper, or change its identity. The requested grant itself is already approved.

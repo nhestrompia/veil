@@ -59,9 +59,9 @@
     }
   },
   "permission": "macOS Input Monitoring / ListenEvent",
-  "permissionApproved": false,
-  "permissionRequested": false,
-  "effectiveGrantConfirmed": false,
+  "permissionApproved": true,
+  "permissionRequested": true,
+  "effectiveGrantConfirmed": true,
   "engineBundled": false,
   "hardenedRuntime": false,
   "launchRequirement": "Native app bootstrap or tools/launch_focus_browser.py; workspace research engine required",
@@ -82,5 +82,7 @@
     "Sources/Diagnostics/DiagnosticSecureInput.swift": "3cc86114f69d8f945f5279b8164b62671fa2235652eac3c657c64fe215cce879",
     "Sources/Diagnostics/FocusEngineActivation.swift": "ea3b8b66a274e7689705c9bec8dbb567d356586610f88c47c753fe4fb8a0614a"
   },
-  "activationHelperSHA256": "8c5e8f1e9b5756fab620e2ed86941e725406c343dea44e6c29ffcf9406396c3c"
+  "activationHelperSHA256": "8c5e8f1e9b5756fab620e2ed86941e725406c343dea44e6c29ffcf9406396c3c",
+  "permissionApprovalScope": "User approved the separate Input Monitoring request for the pinned AgentFreeBrowserEngine app after milestone 152.",
+  "permissionEvidence": "artifacts/focus-engine-153/native-input-preflight.log"
 }

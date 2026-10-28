@@ -36,9 +36,20 @@ def launch(log, arguments, name='AgentFreeBrowserEngine'):
     binary, environment = verified_target(name)
     if matching_pids(binary):
         raise RuntimeError('This focus-browser target already runs')
-    with log.open('w') as stream:
-        process = subprocess.Popen([str(binary), *arguments], env=environment,
-                                   stdout=stream, stderr=subprocess.STDOUT)
+    log = log.resolve()
+    if name == 'AgentFreeBrowserEngine':
+        # LaunchServices gives this app its own consent identity. The native
+        # bootstrap supplies the verified engine environment after launch.
+        environment = {key: value for key, value in environment.items()
+                       if not key.startswith(('DYLD_', '__XPC_DYLD_', 'AFB_'))}
+        log.write_text('')
+        process = subprocess.Popen(['open', '-n', '-W', str(binary.parents[2]),
+                                    '--stdout', str(log), '--stderr', str(log), '--args', *arguments],
+                                   env=environment, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    else:
+        with log.open('w') as stream:
+            process = subprocess.Popen([str(binary), *arguments], env=environment,
+                                       stdout=stream, stderr=subprocess.STDOUT)
     process.research_existing_pids = set()
     return process, binary
 

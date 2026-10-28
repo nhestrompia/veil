@@ -14,7 +14,7 @@ from run_native import ROOT, probe
 from run_window_capture_reads import run as capture_reads
 
 
-def run(output, variant, restricted=False, capture=False, use_physical_archive=False, compositor_refresh=False):
+def run(output, variant, restricted=False, capture=False, use_physical_archive=False, compositor_refresh=False, capture_stress=None):
     output = output.resolve()
     if not output.is_relative_to((ROOT / 'artifacts').resolve()):
         raise ValueError('Use a new project artifact directory')
@@ -26,6 +26,9 @@ def run(output, variant, restricted=False, capture=False, use_physical_archive=F
         permission = invoke(['--permissions'], output / 'compositor-permissions.json')
         if not permission.get('screenRecordingGranted'):
             raise RuntimeError('The new compositor helper needs its separate approved Screen Recording grant')
+    if capture_stress:
+        from run_capture_stress import permission_preflight
+        permission_preflight(output / 'stress-permissions.json', require_consent=True)
     binary = ROOT / 'dist/InternalKeyboardControl.app/Contents/MacOS/InternalKeyboardControl'
     if matching_pids(binary):
         raise RuntimeError('An internal diagnostic already runs')
@@ -73,7 +76,10 @@ def run(output, variant, restricted=False, capture=False, use_physical_archive=F
         if compositor_refresh:
             from run_compositor_refresh_probe import run as compositor_reads
             compositor_reads(output / 'compositor-refresh', directory / 'session.json')
-        print(json.dumps({'variant': variant, 'restricted': restricted, 'captureAttempted': capture, 'physicalArchiveRestored': use_physical_archive, 'compositorRefreshAttempted': compositor_refresh, 'ownedAll': len(metadata['allOwnedWindows']),
+        if capture_stress:
+            from run_capture_stress import capture_session
+            capture_session(output / 'capture-stress', directory / 'session.json', capture_stress)
+        print(json.dumps({'variant': variant, 'restricted': restricted, 'captureAttempted': capture, 'physicalArchiveRestored': use_physical_archive, 'compositorRefreshAttempted': compositor_refresh, 'captureStressAttempted': bool(capture_stress), 'ownedAll': len(metadata['allOwnedWindows']),
                           'ownedOnScreen': len(metadata['onScreenOwnedWindows']),
                           'frozenOnScreen': len(frozen.get('windows', []))}), flush=True)
     finally:

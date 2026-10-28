@@ -1,0 +1,248 @@
+{
+  "milestone": 131,
+  "checks": [
+    {
+      "name": "valid-geometry-launchservices",
+      "report": {
+        "backdropShareabilityChecked": false,
+        "captureAttempted": false,
+        "capturesAudio": false,
+        "crop": [
+          124,
+          158,
+          952,
+          676
+        ],
+        "probePID": 91483,
+        "status": "geometry-verified",
+        "systemInputPosted": false
+      }
+    },
+    {
+      "name": "unknown",
+      "report": {
+        "capturesAudio": false,
+        "error": "Use sequence, steady, or coverage PID WINDOW_ID BACKDROP_ID RECORDED_SHA256 --out ARTIFACT.json",
+        "probePID": 91485,
+        "status": "refused",
+        "systemInputPosted": false
+      }
+    },
+    {
+      "name": "unrelated",
+      "report": {
+        "capturesAudio": false,
+        "error": "Target is not the exact owned InternalKeyboardControl app",
+        "probePID": 91486,
+        "status": "refused",
+        "systemInputPosted": false
+      }
+    },
+    {
+      "name": "invalid-hash",
+      "report": {
+        "capturesAudio": false,
+        "error": "Use sequence, steady, or coverage PID WINDOW_ID BACKDROP_ID RECORDED_SHA256 --out ARTIFACT.json",
+        "probePID": 91487,
+        "status": "refused",
+        "systemInputPosted": false
+      }
+    },
+    {
+      "name": "equal-windows",
+      "report": {
+        "capturesAudio": false,
+        "error": "Use sequence, steady, or coverage PID WINDOW_ID BACKDROP_ID RECORDED_SHA256 --out ARTIFACT.json",
+        "probePID": 91488,
+        "status": "refused",
+        "systemInputPosted": false
+      }
+    },
+    {
+      "name": "wrong-owned-hash",
+      "report": {
+        "capturesAudio": false,
+        "error": "Target executable hash differs from the recorded session",
+        "probePID": 91489,
+        "status": "refused",
+        "systemInputPosted": false
+      }
+    },
+    {
+      "name": "unowned-backdrop",
+      "report": {
+        "capturesAudio": false,
+        "error": "Owned research window ordering is invalid",
+        "probePID": 91490,
+        "status": "refused",
+        "systemInputPosted": false
+      }
+    },
+    {
+      "name": "absent-grant-sequence",
+      "report": {
+        "capturesAudio": false,
+        "error": "Screen Recording permission is absent",
+        "probePID": 91491,
+        "status": "refused",
+        "systemInputPosted": false
+      }
+    },
+    {
+      "name": "absent-grant-steady",
+      "report": {
+        "capturesAudio": false,
+        "error": "Screen Recording permission is absent",
+        "probePID": 91492,
+        "status": "refused",
+        "systemInputPosted": false
+      }
+    },
+    {
+      "name": "output-scope",
+      "report": {
+        "capturesAudio": false,
+        "error": "Output must be a new JSON file within project artifacts",
+        "probePID": 91493,
+        "status": "refused",
+        "systemInputPosted": false
+      }
+    },
+    {
+      "name": "overwrite-refusal",
+      "report": {
+        "capturesAudio": false,
+        "error": "Output must be a new JSON file within project artifacts",
+        "probePID": 91494,
+        "status": "refused",
+        "systemInputPosted": false
+      }
+    },
+    {
+      "name": "runner-consent-gate",
+      "report": {
+        "status": "consent-required",
+        "mode": "sequence",
+        "rows": [],
+        "systemInputPosted": false
+      }
+    },
+    {
+      "name": "previous-three-trial-score-unchanged",
+      "passed": true
+    }
+  ],
+  "noCaptureOrGrantRequest": true,
+  "ownedHostStopped": true,
+  "ownedFixtureStopped": true,
+  "helperPIDs": [
+    91483,
+    91485,
+    91486,
+    91487,
+    91488,
+    91489,
+    91490,
+    91491,
+    91492,
+    91493,
+    91494
+  ],
+  "helperProcessesAbsent": true,
+  "controlPID": 91470,
+  "permissionPreflight": {
+    "capturesAudio": false,
+    "probePID": 90641,
+    "screenRecordingGranted": false,
+    "status": "preflight",
+    "systemInputPosted": false
+  },
+  "initialGeometryFailure": {
+    "capturesAudio": false,
+    "error": "Owned target metadata is unavailable",
+    "probePID": 91302,
+    "status": "refused",
+    "systemInputPosted": false
+  },
+  "sessions": [
+    {
+      "artifacts": "artifacts/capture-stress-131/session",
+      "hostStopped": true,
+      "fixtureStopped": true,
+      "fixturePortClosed": true
+    },
+    {
+      "artifacts": "artifacts/capture-stress-131/launchservices-preflight/session",
+      "hostStopped": true,
+      "fixtureStopped": true,
+      "fixturePortClosed": true
+    }
+  ],
+  "recordedProcesses": {
+    "90641": "absent",
+    "91109": "absent",
+    "91296": "absent",
+    "91297": "absent",
+    "91298": "absent",
+    "91299": "absent",
+    "91300": "absent",
+    "91301": "absent",
+    "91302": "absent",
+    "91470": "absent",
+    "91483": "absent",
+    "91485": "absent",
+    "91486": "absent",
+    "91487": "absent",
+    "91488": "absent",
+    "91489": "absent",
+    "91490": "absent",
+    "91491": "absent",
+    "91492": "absent",
+    "91493": "absent",
+    "91494": "absent"
+  },
+  "allRecordedProcessesAbsent": true,
+  "earlierGrantedImages": {
+    "DeviceKeyboardExperiment": {
+      "sha256": "43b1a9833d6c55b1e254b848f9bd09c202da46ba0f8d8833084df559e6a8a9d1",
+      "unchanged": true
+    },
+    "NativeProbe": {
+      "sha256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1",
+      "unchanged": true
+    },
+    "RendererAXProbe": {
+      "sha256": "82d0c15dadfa49d1669a576270c08cb9b749d6fe102b1724fa61f6dd2d9b08a7",
+      "unchanged": true
+    },
+    "KeyboardObservationProbe": {
+      "sha256": "cdd1829e60dd838f5a2b1ef91f9d5635e7f61760360f9c18c494f8eb90086aac",
+      "unchanged": true
+    },
+    "WindowGeometryProbe": {
+      "sha256": "c99b7cb897180170e2ee5977d6518a0e2cb94db9549c75cd5867bc260606d960",
+      "unchanged": true
+    },
+    "PixelKeyboardExperiment": {
+      "sha256": "4b39843faec345d8484cbfdf829644e27fb306d160c1c77272e7961cc381acc8",
+      "unchanged": true
+    },
+    "PixelKeyboardRoutingControl": {
+      "sha256": "aac4fd5424ceebd7d792fda99a0ade9fefc3acaef546b30a2849faabcd24f1fe",
+      "unchanged": true
+    },
+    "CaptureRefreshProbe": {
+      "sha256": "cbd7a3ff6772e0c80ef83bea8cfb9eaacfdf9370204517e12b66c07b1a72d4f1",
+      "unchanged": true
+    },
+    "CompositorRefreshProbe": {
+      "sha256": "dc8265f8cfe12d417d8e5e5c9780a9d9429ad3cebb195ba5ced933a8fd01e52c",
+      "unchanged": true
+    }
+  },
+  "sourceAndExecutablePinned": true,
+  "swift6WarningsAsErrors": true,
+  "strictSignatureVerified": true,
+  "pythonCompilation": true,
+  "shellSyntax": true
+}

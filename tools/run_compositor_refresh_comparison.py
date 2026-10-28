@@ -12,24 +12,24 @@ from run_native import ROOT
 STAGES = ['initial-exclude-helper', 'updated-include-helper', 'updated-exclude-helper']
 
 
-def score(directory, name):
-    summary = json.loads((directory / 'compositor-refresh/summary.json').read_text())
-    raw = json.loads((directory / 'compositor-refresh/sequence.json').read_text())
-    stages = []
-    for stage in STAGES:
+def score(directory, name, subdirectory='compositor-refresh', stages=STAGES):
+    summary = json.loads((directory / subdirectory / 'summary.json').read_text())
+    raw = json.loads((directory / subdirectory / 'sequence.json').read_text())
+    stage_rows = []
+    for stage in stages:
         frames = [r for r in summary['recoveries'] if r['stage'] == stage]
         native = next((r for r in summary['stageReports'] if r['stage'] == stage), {})
-        stages.append({'stage': stage, 'imagesSaved': len(frames),
+        stage_rows.append({'stage': stage, 'imagesSaved': len(frames),
                        'completeFramesObserved': native.get('completeFramesSinceBaseline', 0),
                        'ocrSamples': sum(r['ocrAvailable'] for r in frames),
                        'pageSamples': sum(any(r['markerRecovery'].values()) for r in frames),
                        'backdropSamples': sum(r['backdropLabelRecovered'] for r in frames)})
     return {'name': name, 'launchFocus': summary.get('launchFocus', {}), 'status': summary['status'], 'streamStopped': summary.get('streamStopped'),
             'targetPID': summary['targetPID'], 'targetBinarySHA256': summary['targetBinarySHA256'],
-            'windowSharingEnabled': summary['windowSharingEnabled'], 'stages': stages,
+            'windowSharingEnabled': summary['windowSharingEnabled'], 'stages': stage_rows,
             'error': raw.get('error'),
-            'allStagesReadable': all(s['pageSamples'] > 0 for s in stages),
-            'allStagesSampled': all(s['imagesSaved'] > 0 and s['ocrSamples'] == s['imagesSaved'] for s in stages)}
+            'allStagesReadable': all(s['pageSamples'] > 0 for s in stage_rows),
+            'allStagesSampled': all(s['imagesSaved'] > 0 and s['ocrSamples'] == s['imagesSaved'] for s in stage_rows)}
 
 
 def run(output):

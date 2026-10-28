@@ -1,8 +1,16 @@
 # Current research state
 
+Milestone 131 prepares and pins CaptureStressProbe for display/window/display changes and a separate 30-second display stream. Thirteen preparation checks pass. No capture or permission request occurs. Its LaunchServices preflight reports Screen Recording off. See [preparation findings](capture-stress-findings.md), [checks](evidence/capture-stress-preflight-results.json), and the [exact manifest](evidence/capture-stress-permission-manifest.json).
+
+The next step needs separate consent for this helper's Screen Recording request. Its manifest records permissionApproved=false and requestCommandExecuted=false. Do not request access before approval, rebuild the pinned image, reset grants, use root, or install input hooks. After consent, run tools/run_capture_stress.py with mode sequence, then steady. Each comparison uses clear/restricted/clear archived images and a fresh artifact directory. Stop on failed calibration.
+
+The helper has a 60-second alarm and captures no audio. Its update order preserves owned coverage but differs from Apple's sample. The new live type-switch and steady modes remain untested. All earlier granted images remain unchanged. Both preparation hosts and fixture servers stop. No physical question is pending.
+
+## Last completed capture comparison
+
 Milestone 130 completes the approved unfiltered stream exclusion comparison. Clear references before and after expose their page marker in all 48 saved samples. The exact archived restricted image exposes only its owned backdrop in all 24 samples. All three filter stages complete and all streams stop. See [live findings](compositor-refresh-live-findings.md) and [results](evidence/compositor-refresh-live-results.json). Agent-free browsing remains unproven.
 
-CompositorRefreshProbe now reports effective Screen Recording through LaunchServices after the user confirms its switch is on. Its executable and source remain pinned. No permission or physical question is pending. Do not rebuild, re-sign, refresh, or reset either granted capture helper. No administrator access is authorized or needed.
+CompositorRefreshProbe now reports effective Screen Recording through LaunchServices after the user confirms its switch is on. Its executable and source remain pinned. No question remains for CompositorRefreshProbe. Do not rebuild, re-sign, refresh, or reset either granted capture helper. No administrator access is authorized or needed.
 
 Three prior clear controls fail foreground checks and never launch a restricted candidate. A new bounded coordinator can select only the verified research target. The successful comparison records zero activations, so it does not establish a causal focus fix. The coordinator sends no input and installs no hooks. Native capture guards remain unchanged.
 

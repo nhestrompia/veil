@@ -4,6 +4,7 @@ import argparse
 import json
 from pathlib import Path
 import threading
+import time
 
 from fixture import FixtureServer
 from process_cleanup import matching_pids
@@ -12,7 +13,20 @@ from run_native import ROOT, Oracle
 from run_preview_compositor_comparison import capture, fully_audited, invoke
 
 
-def calibrate(output, coverage_only=False):
+def await_setup(output, reference, seconds=60):
+    (output / "ready.json").write_text(json.dumps({"pid": reference["pid"], "target": "InspectableControl",
+                                                 "maximumWaitSeconds": seconds}) + "\n")
+    deadline = time.monotonic() + seconds
+    while time.monotonic() < deadline:
+        if (output / "stop").exists():
+            return False
+        if (output / "setup-complete").exists():
+            return True
+        time.sleep(0.1)
+    return False
+
+
+def calibrate(output, coverage_only=False, wait_for_setup=False):
     output = output.resolve()
     if not output.is_relative_to((ROOT / "artifacts").resolve()):
         raise ValueError("Use a fresh project artifact directory")
@@ -20,7 +34,7 @@ def calibrate(output, coverage_only=False):
         raise RuntimeError("A readable reference already exists")
     output.mkdir(parents=True, mode=0o700, exist_ok=False)
     report = {"status": "inconclusive", "inputPosted": False, "candidateLaunched": False,
-              "coverageOnly": coverage_only}
+              "coverageOnly": coverage_only, "waitForSetup": wait_for_setup}
 
     def save():
         (output / "results.json").write_text(json.dumps(report, indent=2) + "\n")
@@ -41,16 +55,19 @@ def calibrate(output, coverage_only=False):
         oracle = Oracle(controller)
         reference = prepare("InspectableControl", output / "reference", oracle)
         report["referencePID"] = reference["pid"]
-        report["reference"] = capture(reference, output / "reference", oracle,
-                                      "coverage" if coverage_only else "sequence")
-        report["submissions"] = oracle.state(reference["trial"])["submissions"]
-        row = report["reference"]
-        if coverage_only:
-            report["status"] = "coverage-verified" if row.get("status") == "coverage-verified" else "inconclusive"
-        elif fully_audited(row) and row.get("stageMarkers") == [True] * 3:
-            report["status"] = "calibrated"
+        if wait_for_setup and not await_setup(output, reference):
+            report["reason"] = "Bounded setup did not complete; no capture ran"
         else:
-            report["reason"] = "Readable control failed; no candidate ran"
+            report["reference"] = capture(reference, output / "reference", oracle,
+                                          "coverage" if coverage_only else "sequence")
+            report["submissions"] = oracle.state(reference["trial"])["submissions"]
+            row = report["reference"]
+            if coverage_only:
+                report["status"] = "coverage-verified" if row.get("status") == "coverage-verified" else "inconclusive"
+            elif fully_audited(row) and row.get("stageMarkers") == [True] * 3:
+                report["status"] = "calibrated"
+            else:
+                report["reason"] = "Readable control failed; no candidate ran"
     except Exception as error:
         report["error"] = str(error)
     finally:
@@ -75,7 +92,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--coverage-only", action="store_true")
+    parser.add_argument("--wait-for-setup", action="store_true")
     args = parser.parse_args()
-    result = calibrate(args.output, args.coverage_only)
+    result = calibrate(args.output, args.coverage_only, args.wait_for_setup)
     print(json.dumps({key: result.get(key) for key in ["status", "reason", "error", "referenceCleanupVerified", "fixtureStopped"]}))
     raise SystemExit(0 if result["status"] in ["calibrated", "coverage-verified"] else 1)

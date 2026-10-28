@@ -2,14 +2,17 @@
   "milestone": 141,
   "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/dist/PreviewCompositorProbe.app",
   "bundleIdentifier": "research.agentfreebrowser.previewcompositor",
-  "executableSHA256": "78a3fba76544384970a008b1e32b7da9ca13a1178f5acf05861500c09a236642",
+  "executableSHA256": "2ce201a2876e295fe6695fbda6506b72e1d9ac706f6051226377f5a8fa3f4a2b",
   "sourceHashes": {
     "Sources/Diagnostics/RendererProcessScope.swift": "4e7f0bd22ced093ec33c598a9d255162bb03b2989d62b0792338f5ccc2046e95",
     "Sources/Diagnostics/PreviewAXScope.swift": "85e30c933226e50f386a1de62565c71884a1d0f55ae01b7ae0e5160f36ede40d",
     "Sources/Diagnostics/PreviewCompositorPixels.swift": "f3bf7fbb071de62f9d18565b252585eadcf52d814c7092886a0c02005275510a",
     "Sources/Diagnostics/PreviewCompositorProbe.swift": "47f37f86ece6dfb6a40174a557c1d465082f1452b7e31d23b7bb934ae9271668",
     "scripts/build-preview-compositor-probe.sh": "49a25cfe8d50edf8f7ce3097eecdf7ada5c28b17a78f8fc887bc0705d772f971",
-    "tools/run_preview_compositor_comparison.py": "c6f1e640ad3f96c29ebfeb3cda6bdce7d87318016d3997b216d36c5e2276a995"
+    "tools/run_preview_compositor_comparison.py": "c6f1e640ad3f96c29ebfeb3cda6bdce7d87318016d3997b216d36c5e2276a995",
+    "Sources/Diagnostics/PreviewCompositorBackdrop.swift": "e6824527560e42a458d616c144b084ac43aaa6a03d8c570e8917829724ff9c91",
+    ".build/diagnostics/PreviewCompositorPanelProbe.swift": "5e6f0f63d310947df291ca578e4e00cfe64ae1e5d3e65d566c1830da1404f070",
+    "tools/build_preview_compositor_update.py": "bbe833493543beb3c29e7ee1e5e16af830667ea223effffa7af26e38ca8de7b2"
   },
   "permission": "macOS Screen Recording",
   "permissionApproved": true,
@@ -43,7 +46,7 @@
     "status": "requested"
   },
   "effectiveGrantConfirmed": true,
-  "effectivePreflight": "artifacts/preview-compositor-142/enabled-preflight.json",
+  "effectivePreflight": "artifacts/preview-compositor-143/recorder-update/post-reset-readd-preflight.json",
   "existingNativeUIUsed": true,
   "settingsToggleReadback": "on",
   "grantCheckedUnixSeconds": 1793189492.484201,
@@ -54,6 +57,56 @@
       "newSHA256": "c6f1e640ad3f96c29ebfeb3cda6bdce7d87318016d3997b216d36c5e2276a995",
       "reason": "Exclude fullscreen decoration windows smaller than the native content geometry limits. Native helper and native guards unchanged.",
       "recordedUnixSeconds": 1793189941.529954
+    }
+  ],
+  "grantRefreshApproved": true,
+  "updateApproval": "User explicitly approved this reviewed recorder update and its app-only Screen Recording refresh sequence.",
+  "imageUpdate": {
+    "oldSHA256": "78a3fba76544384970a008b1e32b7da9ca13a1178f5acf05861500c09a236642",
+    "newSHA256": "2ce201a2876e295fe6695fbda6506b72e1d9ac706f6051226377f5a8fa3f4a2b",
+    "backup": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-compositor-143/recorder-update/original/PreviewCompositorProbe.app",
+    "retiredApp": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-compositor-143/recorder-update/retired/PreviewCompositorProbe.app",
+    "installedUnixSeconds": 1793191573.471461,
+    "reason": "Use a nonactivating panel one level below the target, with its exact level checked by the coverage guard.",
+    "permissionScopeChanged": false,
+    "firstTrustQueryAfterPin": true
+  },
+  "grantRefresh": [
+    {
+      "step": "approved-off-on",
+      "effective": false,
+      "recordedUnixSeconds": 1793191621.9375281
+    },
+    {
+      "step": "approved-readd",
+      "effective": false,
+      "recordedUnixSeconds": 1793191690.5499961
+    },
+    {
+      "step": "approved-app-only-reset",
+      "exitCode": 0,
+      "stdout": "Successfully reset ScreenCapture approval status for research.agentfreebrowser.previewcompositor",
+      "stderr": "",
+      "recordedUnixSeconds": 1793191721.448537
+    },
+    {
+      "step": "request-after-approved-reset",
+      "exitCode": 0,
+      "result": {
+        "audioCaptured": false,
+        "hooksInstalled": false,
+        "inputPosted": false,
+        "permissionRequested": true,
+        "probePID": 80793,
+        "requestReturned": false,
+        "screenRecordingGranted": false,
+        "status": "requested"
+      },
+      "recordedUnixSeconds": 1793191721.564358
+    },
+    {
+      "step": "approved-post-reset-readd",
+      "effective": true
     }
   ]
 }

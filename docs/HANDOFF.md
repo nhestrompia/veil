@@ -1,5 +1,17 @@
 # Current research state
 
+Milestone 143 installs the explicitly approved recorder layout update and completes its app-only Screen Recording refresh. The effective grant is true for image 2ce201a2876e295fe6695fbda6506b72e1d9ac706f6051226377f5a8fa3f4a2b. Preserve the signed app and pinned generated source .build/diagnostics/PreviewCompositorPanelProbe.swift. The original signed app remains backed up. No further grant refresh is pending. See [layout findings](preview-compositor-layout-update-findings.md).
+
+A metadata-only fullscreen control passes with a nonactivating panel at level minus one. The updated recorder changes only its panel factory, panel level, and expected owned level. Other coverage checks remain. Two later readable controls fail before useful capture: foreground loss, then overlap. A timing trace identifies UserNotificationCenter window 114719 at layer eight throughout the crop. Its first sample also precedes backdrop placement. Neither failed control proves protection.
+
+Automatic approval review rejects inspection of UserNotificationCenter because it can expose unrelated private notifications. Do not inspect it through another route. The user is away and asks for work without help. Leave that alert untouched. Resume readable calibration only after the crop is clear. The approved recorder update and app-only refresh are complete.
+
+The calibration command supports --wait-for-setup with a 60-second bound and stop-file precedence. It writes ready.json. Enter fullscreen on the exact readable control through cua_repl, then create setup-complete. Require all three stage markers before any candidate. Keep the overlap guard intact. No physical preview exists. The candidate still needs a new human completion on its exact process before a live comparison.
+
+All 29 Python checks pass. Swift 6 and strict signature checks pass. Seven manifest image checks pass and all nine browser sources match their committed versions. All research references, fixtures, and transient helpers stop. The browser image stays dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70. No NativeProbe input adapter, root access, unrelated app change, or capture of unrelated content runs. Agent-free acceptance remains unmet.
+
+## Milestone 142
+
 Milestone 142 enables the already-approved PreviewCompositorProbe switch through the existing native UI service. The fresh preflight confirms Screen Recording true. The helper keeps hash 78a3fba76544384970a008b1e32b7da9ca13a1178f5acf05861500c09a236642. No reset, authentication, native rebuild, or other grant change occurs. Do not repeat the consent question. See [findings](preview-compositor-grant-findings.md).
 
 The ordinary readable calibration still refuses the Dock overlay before streaming. Its new command is PYTHONPATH=tools python3 tools/calibrate_preview_compositor.py --output artifacts/FRESH. It needs no physical session and closes its reference and fixture on failure. No protected candidate runs.

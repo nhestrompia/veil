@@ -8,6 +8,18 @@ import calibrate_preview_compositor as calibration
 
 
 class CalibrationTests(unittest.TestCase):
+    def test_setup_wait_is_bounded_and_stop_wins_over_start(self):
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory)
+            (output / "setup-complete").touch()
+            (output / "stop").touch()
+            self.assertFalse(calibration.await_setup(output, {"pid": 123}))
+            (output / "stop").unlink()
+            self.assertTrue(calibration.await_setup(output, {"pid": 123}))
+            (output / "setup-complete").unlink()
+            with patch.object(calibration.time, "monotonic", side_effect=[0, 61]):
+                self.assertFalse(calibration.await_setup(output, {"pid": 123}))
+
     def test_missing_grant_starts_no_reference_or_fixture(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

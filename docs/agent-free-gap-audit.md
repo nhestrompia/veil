@@ -1,16 +1,16 @@
 # Remaining agent-free gaps
 
-Status after milestone 142: the combined minimal browser exists at dist/AgentFreeBrowserPreview.app. It supplies one page, an address field, navigation controls, and the measured built-in keyboard route. Its agent-free claim remains unproven. The previous physical session expires under its one-hour watchdog. No current physical session exists.
+Status after milestone 143: the combined minimal browser exists at dist/AgentFreeBrowserPreview.app. It supplies one page, an address field, navigation controls, and the measured built-in keyboard route. Its agent-free claim remains unproven. The previous physical session expires under its one-hour watchdog. No current physical session exists.
 
 The two requirements remain separate. Disclosure prevention stops recovery of a fresh page-only secret. Action prevention stops an external agent from completing a website task, including blind operation. Both require usable human access on the same final build.
 
 ## Protection work that remains
 
-1. Close the capture gap on the actual preview. Window-scoped continuous capture returns 948 black complete frames with readable controls before and after. App-filtered display capture delivers no complete candidate frames and remains inconclusive. The new unfiltered recorder has effective Screen Recording access. Its readable placement controls fail on a Dock overlay or fullscreen backdrop ordering. Neither failure proves protection. First-display, resize, fullscreen, and other transitions remain open.
+1. Close the capture gap on the actual preview. Window-scoped continuous capture returns 948 black complete frames with readable controls before and after. App-filtered display capture delivers no complete candidate frames and remains inconclusive. The new unfiltered recorder has effective Screen Recording access. The approved layout update passes one metadata-only fullscreen control. Later readable capture controls fail on focus or an overlapping system alert. Neither failure proves protection. First-display, resize, fullscreen, and other transitions remain open.
 2. Complete semantic and script access tests. One bounded renderer token comparison recovers the readable control's marker and no preview marker. Other renderer reads fail their controls. No calibrated external inspector attachment client tests the preview. A missing TCP listener does not establish protection against Cocoa's XPC transport. Keyboard observation also needs its separate preview result.
 3. Close zero-input action routes on the final image. Five matched native-input routes produce 206 explicit refusals and no new action in one physically completed preview. Another route fails its control. Earlier shared-browser diagnostics complete website actions through focus and timing changes without admitted input. Their later mitigations and identity-isolated renderer are separate experiments. The current preview does not integrate those protections. Repeat the successful attack fixtures on the final architecture before an agent-free claim.
 
-The evidence is in [stream results](preview-stream-live-findings.md), [compositor calibration](preview-compositor-grant-findings.md), [renderer reads](preview-renderer-live-findings.md), [native input](preview-native-input-findings.md), [focus actions](page-feature-findings.md), and [clock actions](clock-channel-findings.md).
+The evidence is in [stream results](preview-stream-live-findings.md), [compositor calibration](preview-compositor-layout-update-findings.md), [renderer reads](preview-renderer-live-findings.md), [native input](preview-native-input-findings.md), [focus actions](page-feature-findings.md), and [clock actions](clock-channel-findings.md).
 
 ## Human use and release acceptance
 

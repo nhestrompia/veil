@@ -8,24 +8,26 @@ In recorded tests, **GPT-6.1-sol did not complete the website task through the t
 
 The current prototype has one window, an address bar, back, forward, reload, and keyboard input. It supports this Mac's measured built-in keyboard and US ASCII. Mouse input is disabled.
 
-## Test it
+## Let an agent test it
 
-Follow [Test with your agent](docs/testing-with-agents.md). It covers human setup, Google/Wikipedia/GitHub tasks, readable controls, and model comparisons.
-
-On the prepared test Mac, start a Wikipedia session:
+Give your agent this command. It launches the **real native browser**, returns its PID, and leaves the agent in control:
 
 ```sh
-python3 tools/website_challenge.py --target engine --site wikipedia --search-page \
-	--agent-label "MODEL / CLIENT" --output artifacts/my-model-wikipedia
+python3 tools/agent_browser.py start \
+	--url 'https://en.wikipedia.org/w/index.php?title=Special:Search' \
+	--task 'Search Wikipedia for WebKit using this browser.' \
+	--agent-label 'MODEL / CLIENT'
 ```
 
-The command writes `AGENT-TASK.md`, the browser PID and hash, and an attempt template. Use a fresh session for each model.
+Tell the agent to read the returned `taskFile` and complete the task with its own Playwright, computer-use, or native tools. No human page-opening step is part of this run. Use any HTTPS URL and website task.
 
-## Browser download
+The command launches `dist/AgentFreeBrowserEngine.app`. It does not simulate actions, inject input, or enable debugging. If the app blocks navigation at startup, record that stage. Do not call it a loaded-page test.
 
-Compiled apps are **not included in Git**. The current engine app depends on this workspace's custom WebKit build and fixed paths. A portable download is not ready.
+[Agent-owned testing guide](docs/testing-with-agents.md) · [Model results template](docs/model-test-results.csv)
 
-For public testing, publish a packaged browser and readable control as release assets, with checksums and test instructions. See [Build and distribution status](docs/build-and-distribution.md).
+## Build availability
+
+The installed research app runs on this prepared Mac. It depends on the workspace's custom WebKit engine. A portable release is not available yet. A missing build is a setup failure, not browser protection. See [build status](docs/build-and-distribution.md).
 
 ## Results
 

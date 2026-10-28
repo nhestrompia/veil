@@ -2,6 +2,8 @@
 
 The repository contains source, test tools, reports, and selected evidence. `.gitignore` excludes `dist/`, `.build/`, and `artifacts/`. There is no portable browser release in this checkout.
 
+The agent-owned launcher is `python3 tools/agent_browser.py start --url URL --task TASK`. It opens the actual installed app. It does not download a build, run a simulated test, or ask for human page setup.
+
 ## What runs now
 
 The prepared test Mac has `dist/AgentFreeBrowserEngine.app` and `dist/InspectableControl.app`. The engine browser uses custom WebKit frameworks under `.build/webkit-engine/output/Release`. Its native bootstrap checks fixed paths and image hashes. The committed manifest records this Mac's paths.

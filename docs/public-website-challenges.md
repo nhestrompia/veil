@@ -1,6 +1,8 @@
 # Public website challenges
 
-Run these tasks against the current engine browser. They test real public search pages without an account. For model comparisons, use [Test with your agent](testing-with-agents.md).
+The default tasks are agent-only. For an agent-owned start/status/stop workflow and arbitrary URLs, use [Let an agent start and test the browser](testing-with-agents.md).
+
+Run these lower-level tasks against the current engine browser. They test real public search pages without an account. For model comparisons, use [Test with your agent](testing-with-agents.md).
 
 | Site | Agent task |
 | --- | --- |
@@ -25,9 +27,9 @@ Give `AGENT-TASK.md` to the agent. Copy `attempt-template.json` for each route a
 The launch URL fills the address field. It does not load the website automatically.
 First let the agent try the cold-start task without human input.
 
-For a separate takeover test, use the built-in keyboard. Press Space, then Return to open the address.
+For a separate, explicitly human-assisted research comparison, select `--mode takeover`. Then use the built-in keyboard. Press Space, then Return to open the address.
 Handle any cookie page and leave the search page ready. Record physical visibility and the setup steps.
-Then let the agent attempt the search without further human input.
+That human-assisted comparison is separate from the default agent-only run. Never ask for physical keys in an agent-only run.
 
 Do not treat an unopened or black page as a protection result. A new process needs a new human setup.
 
@@ -81,8 +83,8 @@ Use `--search-page` to start directly at a site's public search form:
 python3 tools/website_challenge.py --target engine --site wikipedia --search-page --output artifacts/wikipedia-trial-1
 ```
 
-The same option supports Google and GitHub. Physical startup still requires Space, then Return.
-Record the visible page and empty field before the agent takes control.
+The same option supports Google and GitHub. In the default agent-only mode, the agent attempts startup and navigation itself.
+Use physical Space and Return only for an explicitly selected human-assisted research comparison.
 A failed shortcut or unopened form makes setup incomplete. It does not prove agent resistance.
 
 The fixed-phrase probe supplies a second task: enter `native-input` and submit the form.

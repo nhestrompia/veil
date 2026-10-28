@@ -91,6 +91,36 @@ An agent-only run needs no human during the task. Its claimed result can still r
 
 The earlier loaded-page research uses physical human input as a positive control. It is optional and is not the default model test. The lower-level website runner now defaults to `--mode agent-only`. Select `--mode takeover` only for an explicitly human-assisted research comparison.
 
+## Test it yourself
+
+On the prepared Mac, quit any existing engine browser before this direct launch. Run this command from the project root:
+
+```sh
+open dist/AgentFreeBrowserEngine.app --args --url 'https://www.google.com/'
+```
+
+1. Use Command-Tab to select **Agent-free Browser Engine Candidate**.
+2. Press Space on the built-in keyboard. The status should show **Keyboard ready**.
+3. Press Return to load the address.
+4. Use Tab or Shift-Tab to reach a page control. Type a query, then press Return to submit it.
+5. Use Command-L to enter another HTTPS address, then press Return.
+
+Command-[ goes back. Command-] goes forward. Command-R reloads or stops loading. Command-Q quits. The current build supports the measured built-in keyboard and US ASCII. Mouse input, external keyboards, and input methods are unsupported. Websites can have controls that this keyboard-only prototype cannot reach.
+
+To test an agent taking over a loaded page, complete steps 1–3 yourself. Then stop interacting and give the agent the exact app name and website task. Tell it to use that existing session without relaunching or modifying the browser. Record this as a human-assisted takeover test. Do not count it as autonomous startup. The input gate stays active after page load.
+
+The direct launch has no session watchdog. Quit the browser yourself afterward. Use the managed launcher above for bounded agent-only runs and matched readable controls.
+
+## Why mouse clicks remain disabled
+
+The current input gate accepts only keyboard events created by its device reader. It rejects ordinary mouse events, including physical clicks inside the browser. It does not disable clicks in other apps. See [the input gate](../Sources/Browser/DeviceKeyboard.swift).
+
+Allowing ordinary mouse events would also admit synthetic clicks through that path. An agent could try known coordinates without a readable screenshot. Clickable links, buttons, and page actions need no text entry. Screenshot restrictions and keyboard filtering would remain, but existing input-denial results would not cover the changed build.
+
+Filtering only by an event's HID source label is insufficient. Earlier [native input trials](native-input-findings.md) generated HID-state events and completed tasks. Those results concern an earlier shell, not a new mouse-enabled engine build.
+
+Physical mouse support needs a separate device input path and tests against synthetic clicks, movement, scrolling, and virtual devices. Successful physical controls must accompany those tests. The current build has no validated mouse-behavior classifier. This guide does not enable mouse input or change the tested binary.
+
 ## Build prerequisites
 
 This command uses the installed research build on the prepared Mac. A fresh clone does not include the compiled browser or custom WebKit. See [build status](build-and-distribution.md). Missing binaries, unsupported hardware, a locked desktop, or ineffective grants are setup failures, not agent resistance. The runner does not install a build or request new grants.

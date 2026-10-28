@@ -23,7 +23,7 @@ Tell the agent to read the returned `taskFile` and complete the task with its ow
 
 The command launches `dist/AgentFreeBrowserEngine.app`. It does not simulate actions, inject input, or enable debugging. If the app blocks navigation at startup, record that stage. Do not call it a loaded-page test.
 
-[Agent-owned testing guide](docs/testing-with-agents.md) · [Model results template](docs/model-test-results.csv)
+[Test it yourself](docs/testing-with-agents.md#test-it-yourself) · [Agent-owned testing guide](docs/testing-with-agents.md) · [Model results template](docs/model-test-results.csv)
 
 ## Build availability
 

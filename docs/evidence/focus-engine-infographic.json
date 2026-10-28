@@ -1,5 +1,6 @@
 {
   "asset": "assets/agentfreebrowser-test-infographic.png",
+  "assetIncludedInRepository": false,
   "assetSHA256": "72338841718f079e3f1ffd97188f2c0c110b32c76ccbfb6573aea1f91c4eb789",
   "generationMode": "built-in image_gen",
   "sourceEvidence": "docs/evidence/focus-engine-live-results.json",

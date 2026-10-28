@@ -1,5 +1,21 @@
 # Current research state
 
+## Milestone 151
+
+The actual frozen preview now fails the broad agent-free requirement. After the user physically arms a focus-sensitive local page, three external app activation cycles each cause one new server-accepted action. Every stationary control has zero new actions, and every attack interval has zero admitted input events. The helper sends no input, AX action, or HTTP request. This is a page-assisted focus action, not public-site search automation. See [focus findings](preview-focus-action-findings.md) and the [publication draft](publication-report.md).
+
+The user reports Task complete and leaves the window untouched. Candidate PID 62070 retains image dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70. The oracle contains four actions after the focus test, including one human action. A later metadata-only coverage check activates the preview and adds a fifth action outside the scored cycles. Full oracle state is saved before shutdown. Physical inactivity is user-attested. The action endpoint has no authenticated browser-process attribution or per-submission timestamps. The independent source review supports the bounded result with these limits.
+
+The pinned compositor recorder passes a fullscreen readable reference across unfiltered-display, owned-apps, and unfiltered-display stages. Each stage delivers one complete audited frame and recovers its page marker. Actual preview metadata-only coverage refuses an overlapping window before capture. No unfiltered candidate sequence runs. Do not inspect the unrelated overlap, weaken the privacy guard, or count this as a capture defense.
+
+The no-input helper builds with Swift 6 warnings as errors and has a five-second alarm. Its target checks pin executable paths, hashes, identifiers, and launch identity. The physical-session runner now supports the existing lifecycle fixtures without altering default form behavior. All 39 relevant Python tests and the diff check pass. The preview and granted helper images remain unchanged. The new harness is committed as mnq.
+
+All owned references, sinks, transient probes, the preview, and fixtures stop with verified cleanup. No physical session remains. LinearMouse and DockDoor remain untouched in this milestone. No grant change, administrator action, or input hook occurs. Before more candidate testing, obtain a fresh physical control on its exact process. No permission request is pending.
+
+Next work must address the demonstrated lifecycle route in the integrated browser and preserve physical browsing. Do not claim a defense from a JavaScript event-listener patch. Capture, scripted inspector, preview keyboard observation, and human compatibility gaps remain. Publish measured resistance and the demonstrated bypass. Do not publish this image as agent-free.
+
+## Milestone 150
+
 Milestone 150 completes actual loaded-page agent trials on Google, Wikipedia's search page, and GitHub's search page. The user physically opens each page in the pinned preview and confirms it is visible. The parent attempts five native routes on Google. The parent and subagent independently attempt directed-window key-code input on Wikipedia. The parent attempts that route on GitHub, then sends an external search URL and JavaScript URL. The user confirms all three pages stay unchanged with empty search fields.
 
 The directed-window route submits the fixed phrase in all three readable references. Google reaches cookie consent with its submitted query. Wikipedia and GitHub show native-input search results. GitHub's toolbar URL stays stale during its client-side navigation, so its page heading supplies the evidence. Four other native routes in this run remain uncalibrated. Do not turn those failures into block claims.

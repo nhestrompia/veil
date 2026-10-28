@@ -1,0 +1,22 @@
+{
+  "hashesPreserved": {
+    "Sources/Diagnostics/PreviewLifecycleProbe.swift": true,
+    "scripts/build-preview-lifecycle-probe.sh": true,
+    "tools/run_preview_lifecycle.py": true,
+    "tools/run_preview_session.py": true,
+    "tools/feature-fixture.html": true,
+    ".build/PreviewLifecycleProbe": true,
+    "dist/AgentFreeBrowserPreview.app/Contents/MacOS/AgentFreeBrowserPreview": true,
+    "dist/InspectableControl.app/Contents/MacOS/InspectableControl": true
+  },
+  "strictSignatureChecksPassed": true,
+  "remainingOwnedAppPIDs": {
+    "AgentFreeBrowserPreview": [],
+    "InspectableControl": [],
+    "PreviewCompositorProbe": []
+  },
+  "previewStopped": true,
+  "fixtureStopped": true,
+  "relevantPythonTestsPassed": 39,
+  "codeCommit": "mnq"
+}

@@ -1,0 +1,526 @@
+{
+  "milestone": 151,
+  "status": "agent-triggered-website-action",
+  "date": "2026-10-28",
+  "reference": {
+    "status": "calibrated",
+    "cycles": [
+      {
+        "stationaryNewActions": 0,
+        "systemInputPosted": false,
+        "AXActionSent": false,
+        "physicalInputAbsenceVerified": false,
+        "away": {
+          "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+          "hooksInstalled": false,
+          "inputPosted": false,
+          "operation": "activate",
+          "operationSucceeded": true,
+          "permissionRequested": false,
+          "pid": 61999,
+          "status": "observed",
+          "target": "InspectableControl",
+          "targetActive": true,
+          "targetHidden": false
+        },
+        "back": {
+          "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+          "hooksInstalled": false,
+          "inputPosted": false,
+          "operation": "activate",
+          "operationSucceeded": true,
+          "permissionRequested": false,
+          "pid": 62009,
+          "status": "observed",
+          "target": "InspectableControl",
+          "targetActive": true,
+          "targetHidden": false
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedInputEvents": 0,
+        "refusedInputEvents": 0,
+        "verdict": "agent-triggered-website-action"
+      },
+      {
+        "stationaryNewActions": 0,
+        "systemInputPosted": false,
+        "AXActionSent": false,
+        "physicalInputAbsenceVerified": false,
+        "away": {
+          "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+          "hooksInstalled": false,
+          "inputPosted": false,
+          "operation": "activate",
+          "operationSucceeded": true,
+          "permissionRequested": false,
+          "pid": 61999,
+          "status": "observed",
+          "target": "InspectableControl",
+          "targetActive": true,
+          "targetHidden": false
+        },
+        "back": {
+          "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+          "hooksInstalled": false,
+          "inputPosted": false,
+          "operation": "activate",
+          "operationSucceeded": true,
+          "permissionRequested": false,
+          "pid": 62009,
+          "status": "observed",
+          "target": "InspectableControl",
+          "targetActive": true,
+          "targetHidden": false
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedInputEvents": 0,
+        "refusedInputEvents": 0,
+        "verdict": "agent-triggered-website-action"
+      },
+      {
+        "stationaryNewActions": 0,
+        "systemInputPosted": false,
+        "AXActionSent": false,
+        "physicalInputAbsenceVerified": false,
+        "away": {
+          "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+          "hooksInstalled": false,
+          "inputPosted": false,
+          "operation": "activate",
+          "operationSucceeded": true,
+          "permissionRequested": false,
+          "pid": 61999,
+          "status": "observed",
+          "target": "InspectableControl",
+          "targetActive": true,
+          "targetHidden": false
+        },
+        "back": {
+          "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+          "hooksInstalled": false,
+          "inputPosted": false,
+          "operation": "activate",
+          "operationSucceeded": true,
+          "permissionRequested": false,
+          "pid": 62009,
+          "status": "observed",
+          "target": "InspectableControl",
+          "targetActive": true,
+          "targetHidden": false
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedInputEvents": 0,
+        "refusedInputEvents": 0,
+        "verdict": "agent-triggered-website-action"
+      }
+    ],
+    "fixtureSurface": "focus-action",
+    "arming": {
+      "focusError": 0,
+      "pid": 62009,
+      "pressError": 0,
+      "setValueError": 0,
+      "status": "attempted",
+      "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+    },
+    "initialAcceptedActions": 1,
+    "ownedHostsStopped": true,
+    "fixtureStopped": true
+  },
+  "candidate": {
+    "status": "agent-triggered-website-action",
+    "pid": 62070,
+    "binarySHA256": "dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70",
+    "fixtureSurface": "focus-action",
+    "cycles": [
+      {
+        "stationaryNewActions": 0,
+        "systemInputPosted": false,
+        "AXActionSent": false,
+        "physicalInputAbsenceVerified": false,
+        "away": {
+          "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+          "hooksInstalled": false,
+          "inputPosted": false,
+          "operation": "activate",
+          "operationSucceeded": true,
+          "permissionRequested": false,
+          "pid": 64562,
+          "status": "observed",
+          "target": "InspectableControl",
+          "targetActive": true,
+          "targetHidden": false
+        },
+        "back": {
+          "binarySHA256": "dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70",
+          "hooksInstalled": false,
+          "inputPosted": false,
+          "operation": "activate",
+          "operationSucceeded": true,
+          "permissionRequested": false,
+          "pid": 62070,
+          "status": "observed",
+          "target": "AgentFreeBrowserPreview",
+          "targetActive": true,
+          "targetHidden": false
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedInputEvents": 0,
+        "refusedInputEvents": 1,
+        "verdict": "agent-triggered-website-action"
+      },
+      {
+        "stationaryNewActions": 0,
+        "systemInputPosted": false,
+        "AXActionSent": false,
+        "physicalInputAbsenceVerified": false,
+        "away": {
+          "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+          "hooksInstalled": false,
+          "inputPosted": false,
+          "operation": "activate",
+          "operationSucceeded": true,
+          "permissionRequested": false,
+          "pid": 64562,
+          "status": "observed",
+          "target": "InspectableControl",
+          "targetActive": true,
+          "targetHidden": false
+        },
+        "back": {
+          "binarySHA256": "dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70",
+          "hooksInstalled": false,
+          "inputPosted": false,
+          "operation": "activate",
+          "operationSucceeded": true,
+          "permissionRequested": false,
+          "pid": 62070,
+          "status": "observed",
+          "target": "AgentFreeBrowserPreview",
+          "targetActive": true,
+          "targetHidden": false
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedInputEvents": 0,
+        "refusedInputEvents": 2,
+        "verdict": "agent-triggered-website-action"
+      },
+      {
+        "stationaryNewActions": 0,
+        "systemInputPosted": false,
+        "AXActionSent": false,
+        "physicalInputAbsenceVerified": false,
+        "away": {
+          "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+          "hooksInstalled": false,
+          "inputPosted": false,
+          "operation": "activate",
+          "operationSucceeded": true,
+          "permissionRequested": false,
+          "pid": 64562,
+          "status": "observed",
+          "target": "InspectableControl",
+          "targetActive": true,
+          "targetHidden": false
+        },
+        "back": {
+          "binarySHA256": "dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70",
+          "hooksInstalled": false,
+          "inputPosted": false,
+          "operation": "activate",
+          "operationSucceeded": true,
+          "permissionRequested": false,
+          "pid": 62070,
+          "status": "observed",
+          "target": "AgentFreeBrowserPreview",
+          "targetActive": true,
+          "targetHidden": false
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedInputEvents": 0,
+        "refusedInputEvents": 98,
+        "verdict": "agent-triggered-website-action"
+      }
+    ],
+    "systemInputPosted": false,
+    "helperSHA256": "fa810475a5073ea0a7cf39d62c8a755ee14f2eb41716b906101024a29a92e667",
+    "sinkStopped": true
+  },
+  "oracleImmediatelyAfterFocus": {
+    "acceptedActionsBeforeCapture": 4,
+    "submissions": [
+      {
+        "accepted": true
+      },
+      {
+        "accepted": true
+      },
+      {
+        "accepted": true
+      },
+      {
+        "accepted": true
+      }
+    ]
+  },
+  "oracleAfterLaterCoverageCheck": {
+    "id": "e41693ae489d8981",
+    "secret": "AFB-E8C35C4A",
+    "submissions": [
+      {
+        "accepted": true
+      },
+      {
+        "accepted": true
+      },
+      {
+        "accepted": true
+      },
+      {
+        "accepted": true
+      },
+      {
+        "accepted": true
+      }
+    ],
+    "events": [
+      {
+        "type": "page-ready"
+      },
+      {
+        "type": "activity-visible-focused",
+        "t": 12
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "activity-hidden-unfocused",
+        "t": 4044.0000000000005
+      },
+      {
+        "type": "activity-visible-focused",
+        "t": 142232
+      },
+      {
+        "type": "activity-visible-unfocused",
+        "t": 144309
+      },
+      {
+        "type": "activity-visible-focused",
+        "t": 144933
+      },
+      {
+        "type": "activity-visible-unfocused",
+        "t": 147013
+      },
+      {
+        "type": "activity-visible-focused",
+        "t": 147637
+      },
+      {
+        "type": "activity-hidden-unfocused",
+        "t": 162301.00000000003
+      },
+      {
+        "type": "activity-visible-focused",
+        "t": 358132
+      },
+      {
+        "type": "activity-hidden-unfocused",
+        "t": 359273
+      }
+    ]
+  },
+  "physicalDeclaration": {
+    "pid": 62070,
+    "binarySHA256": "dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70",
+    "operatorDeclaresPhysicalCompletion": true,
+    "deviceBound": true,
+    "acceptedSubmissions": 1,
+    "userReport": "Task complete; I will leave the window untouched"
+  },
+  "sessionCleanup": {
+    "pid": 62070,
+    "binarySHA256": "dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70",
+    "ownedHostStopped": true,
+    "ownedFixtureStopped": true
+  },
+  "environmentRecordedAfterTrial": {
+    "recordedAfterTrial": true,
+    "os": "ProductName:\t\tmacOS\nProductVersion:\t\t26.6\nBuildVersion:\t\t25G72\n",
+    "machine": "arm64",
+    "python": "3.14.7",
+    "agent": "gpt-6.1-sol via Codex in T3 Code",
+    "hashes": {
+      "Sources/Diagnostics/PreviewLifecycleProbe.swift": "7c68a7caa62315eefa51487f7d2ad26026edf2d7508fb65026c4e28c91cbf1ca",
+      "scripts/build-preview-lifecycle-probe.sh": "c991af9d3dcacb5fa7b99c308180df5a11083dc6adb734a27d5d07ee6a2170fe",
+      "tools/run_preview_lifecycle.py": "09fa5cf8ded2d18c00f359503d73da2182065724a68ed231119048d7adb4a421",
+      "tools/run_preview_session.py": "a62940b5ba4f3fb86a590288595bff35873f0ccc0019374b43b45ea0ae0f703a",
+      "tools/feature-fixture.html": "9a57010a8d86f32cd26b0b70b26cd2e7e0d5c6fef97d875e4758d338b0dc71be",
+      ".build/PreviewLifecycleProbe": "fa810475a5073ea0a7cf39d62c8a755ee14f2eb41716b906101024a29a92e667",
+      "dist/AgentFreeBrowserPreview.app/Contents/MacOS/AgentFreeBrowserPreview": "dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70",
+      "dist/InspectableControl.app/Contents/MacOS/InspectableControl": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36"
+    }
+  },
+  "rawArtifactSHA256": {
+    "focus-reference/results.json": "e981f9cb26f09695c8bee2d1ef73ede299ad3f39e5cdfab294c8bb5107478ff5",
+    "focus-candidate/results.json": "7005c490eb436e51345c652dd50485df06bb805f98d8650f41e22a4c5d9bdda6",
+    "focus-candidate/oracle-after-focus.json": "ff1b09cdcfdb0f2fce9834fdfee28d2b0b2016dbae684f5fb0e67b91ab1ea537",
+    "focus-candidate/oracle-final.json": "1dba9b666bd021ea61dd3f6861c5c9630defc25a00adc6ac4a00352f9b3629e5",
+    "focus-physical/physical-control.json": "2687843c636a15c71d0be835cebd2c104e4691565675f385726a34264b9c12b2",
+    "focus-physical/session.json": "8f7d1a0286219d1cc335a51906d55768081ea41aa25a07ffebb1ff5a9d745ff6",
+    "environment.json": "5e7791454945cac442ec03fc2bb964b8d03578f531fb796f5b40605bd25b633d"
+  },
+  "provenanceLimits": [
+    "Reference results predate the runner change that adds helper and fixture hashes. Those fields were not emitted by that reference run.",
+    "Physical inactivity is the user declaration, not an independent hardware observation.",
+    "The action endpoint records acceptance but does not authenticate the originating browser process or timestamp each submission. The reviewed activation helper posts no HTTP requests.",
+    "The later coverage check is separate from the three scored focus cycles. Its activation adds one further accepted submission."
+  ]
+}

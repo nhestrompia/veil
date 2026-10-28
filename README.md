@@ -2,7 +2,9 @@
 
 # agentfreebrowser
 
-A macOS-only research MVP for an agent-free browser. The existing combined app is the candidate; its agent-free claim remains unproven. The [MVP scope](docs/mvp-scope.md) keeps browser features minimal and prioritizes the remaining protection gaps.
+A macOS-only research MVP for an agent-free browser. The existing combined app is the candidate. Its current build fails the broad agent-free requirement: an external agent triggers website actions through app focus changes. See the [publication draft](docs/publication-report.md), [focus bypass](docs/preview-focus-action-findings.md), and [MVP scope](docs/mvp-scope.md).
+
+Milestone 151 reproduces that bypass in the actual preview after human setup. Three app activation cycles each cause one new server-accepted action, with zero admitted input. The page contains a normal focus handler. This does not show search automation on Google, Wikipedia, or GitHub. Their earlier input results remain valid for the tested methods.
 
 Try the [public website challenges](docs/public-website-challenges.md) on Google, Wikipedia, and GitHub. Each session writes a task for agents and pins the research browser process. Public-site results require independent review.
 
@@ -16,7 +18,7 @@ The renderer probe now has effective Accessibility after the approved app-only r
 
 The actual preview completes a matched 30-second independent-window capture test. All 948 delivered complete frames are black, while readable controls before and after expose their markers. App-filtered display capture produces no complete candidate frames and remains inconclusive. See [continuous-capture findings](docs/preview-stream-live-findings.md).
 
-The approved compositor layout update has effective Screen Recording access. A metadata-only fullscreen layout passes, but later readable controls fail on focus or an overlapping system alert. No unfiltered capture result exists. See [current layout findings](docs/preview-compositor-layout-update-findings.md).
+The approved compositor recorder now passes a fullscreen readable control across three filter stages. Actual preview coverage still refuses an overlapping window before capture. Unfiltered candidate capture remains inconclusive. See the [capture evidence](docs/evidence/publication-capture-calibration-results.json).
 
 Earlier renderer diagnostics remain vulnerable to suspension. Sixteen calibrated trials complete website actions across four clock sources in native and stable engine modes. Those experiments are not integrated into the preview. See [timing results](docs/clock-channel-findings.md) and [feasibility research](docs/research/agent-free-feasibility-boundary.md). Agent-free operation remains unproven.
 

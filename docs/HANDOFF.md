@@ -1,5 +1,13 @@
 # Current research state
 
+Milestone 149 adds Google, Wikipedia, and GitHub challenges through tools/website_challenge.py. The runner keeps the existing browser images and grants. It writes a task for agents, pins the process and executable, and stops its owned app after a bounded session. Commit vtl contains the runner, runbook, and tests. All 17 relevant Python checks pass.
+
+The parent agent completes Google search in InspectableControl. A subagent completes Wikipedia and GitHub searches in the same readable native app. Google and Wikipedia preview bindings return timeoutReached twice each. The GitHub preview launches but its site task does not run. No human opens a public page in these sessions, so loaded-page takeover remains untested. All six sessions stop with successful cleanup. Neither research browser remains running.
+
+No bypass or new browser defense follows from these incomplete preview attempts. Do not call the client timeouts proof of protection. The next useful test needs a physically opened public page in the pinned preview, followed by calibrated agent takeover. Keep screenshots, scripts, semantic actions, and blind input as separate routes. The existing capture, inspector, and lifecycle gaps remain open. See public-website-findings.md and evidence/public-website-results.json. The user asks for real-site tests with the parent and a subagent, then defenses for proven bypasses. Preserve that focus.
+
+## Milestone 148
+
 Milestone 148 compares the inspector client as an ad-hoc signed app bundle. It loses its local target about 51 milliseconds into discovery and finds no application or fixture page. The standalone control loses its target after about 55 milliseconds. Bundling does not resolve discovery in this comparison. No channel, script, candidate, capture, grant request, or administrator action runs. See [bundle findings](inspector-bundle-findings.md).
 
 The comparison app is dist/InspectorDiscoveryControl.app, identifier research.agentfreebrowser.inspectordiscovery. Its hash is 68ca39c83c6fff85153bdbeabc527116e9ac1719dba7e08aeacc348a5d0bb7b0. Preserve it. Its prelaunch image and source manifest is docs/evidence/inspector-discovery-app-manifest.json. The builder refuses overwrites. The runner supports --bundled and checks the pinned image, source hashes, identifier, and strict signature. Timeout cleanup stops only this verified helper and its launcher. Its code requests no macOS permission.

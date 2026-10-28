@@ -70,3 +70,5 @@ python3 tools/run_preview_session.py --output artifacts/local-control-1
 
 The browser remains keyboard-only and supports this Mac's measured keyboard with US ASCII.
 The [remaining gaps](agent-free-gap-audit.md) still apply. These public tasks do not certify all websites.
+
+The [first agent trials](public-website-findings.md) record control successes and the incomplete preview tests.

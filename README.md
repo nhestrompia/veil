@@ -4,7 +4,9 @@
 
 A macOS-only research project for an agent-resistant browser, with agent-free browsing as the stronger research goal.
 
-The current combined preview is [AgentFreeBrowserPreview.app](dist/AgentFreeBrowserPreview.app). It includes direct webpage rendering, ordinary-window capture restriction, keyboard routing, and the existing inspection, accessibility, export, and navigation policies. All 14 owner-driven navigation and policy checks pass. This new app still needs its own Input Monitoring grant, a physical completion control, and external attacks on the same executable. See [integration findings](docs/integrated-browser-findings.md).
+The current combined preview is [AgentFreeBrowserPreview.app](dist/AgentFreeBrowserPreview.app). It includes direct webpage rendering, ordinary-window capture restriction, keyboard routing, and inspection, accessibility, export, and navigation policies. All 14 owner-driven navigation checks pass. The user completes a physical form task on the unchanged preview. Both scoped screenshot routes return black images while readable references expose their markers before and after. See [live session findings](docs/preview-session-findings.md) and [integration findings](docs/integrated-browser-findings.md).
+
+Native-input attacks on this build remain pending. The safety guard detects modifying mouse hooks in LinearMouse and DockDoor. Neither app is changed. The combined preview remains keyboard-only, and agent-free operation remains unproven.
 
 Earlier renderer diagnostics remain vulnerable to suspension. Sixteen calibrated trials complete website actions across four clock sources in native and stable engine modes. Those experiments are not integrated into the preview. See [timing results](docs/clock-channel-findings.md) and [feasibility research](docs/research/agent-free-feasibility-boundary.md). Agent-free operation remains unproven.
 

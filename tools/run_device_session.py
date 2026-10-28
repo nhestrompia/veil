@@ -18,10 +18,19 @@ ROUTES = ["session", "hid", "private", "pid-hid", "curve-hid", "keycodes-hid", "
 
 
 def active(session):
-    if not process_matches(session["pid"], BINARY):
+    binary = BINARY
+    if session.get("target") == "AgentFreeBrowserPreview":
+        binary = ROOT / "dist/AgentFreeBrowserPreview.app/Contents/MacOS/AgentFreeBrowserPreview"
+        manifest = json.loads((ROOT / "docs/evidence/integrated-browser-permission-manifest.json").read_text())
+        if session["binarySHA256"] != manifest["executableSHA256"]:
+            raise RuntimeError("The preview differs from its pinned consent image")
+    elif session.get("target", NAME) != NAME:
+        raise RuntimeError("Unsupported physical-session browser")
+    if not process_matches(session["pid"], binary):
         raise RuntimeError("The recorded research browser is no longer running")
-    if hashlib.sha256(BINARY.read_bytes()).hexdigest() != session["binarySHA256"]:
+    if hashlib.sha256(binary.read_bytes()).hexdigest() != session["binarySHA256"]:
         raise RuntimeError("The browser changed after session start")
+    return binary
 
 
 def start(path):
@@ -63,7 +72,7 @@ def attack(path, controls, repetitions, confirmed, routes=None, post_tap="hid"):
     routes = ROUTES if routes is None else routes
     session = json.loads(path.read_text())
     active(session)
-    oracle = Oracle()
+    oracle = Oracle(session.get("controller"))
     before = oracle.state(session["trial"])
     log_path = Path(session["log"])
     if not confirmed or not any(s["accepted"] for s in before["submissions"]) or "DEVICE_KEYBOARD bound=true" not in log_path.read_text():
@@ -154,6 +163,6 @@ if __name__ == "__main__":
         args.operator_physical_completion_confirmed, args.routes, args.post_tap)
     else:
         session = json.loads(args.session.read_text())
-        active(session)
-        if not stop_owned(session["pid"], BINARY):
+        binary = active(session)
+        if not stop_owned(session["pid"], binary):
             raise RuntimeError("Physical-session cleanup failed. Stop desktop tests.")

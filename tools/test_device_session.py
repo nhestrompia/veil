@@ -11,6 +11,34 @@ import run_device_session as device
 
 
 class DeviceSessionTests(unittest.TestCase):
+    def test_unsupported_session_target_is_refused_before_process_access(self):
+        with patch.object(device, "process_matches") as matches:
+            with self.assertRaisesRegex(RuntimeError, "Unsupported physical-session"):
+                device.active({"target": "UnrelatedApp"})
+            matches.assert_not_called()
+
+    def test_preview_requires_pinned_hash_and_returns_exact_binary(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            binary = root / "dist/AgentFreeBrowserPreview.app/Contents/MacOS/AgentFreeBrowserPreview"
+            binary.parent.mkdir(parents=True)
+            binary.write_bytes(b"pinned preview")
+            digest = hashlib.sha256(binary.read_bytes()).hexdigest()
+            manifest = root / "docs/evidence/integrated-browser-permission-manifest.json"
+            manifest.parent.mkdir(parents=True)
+            manifest.write_text(json.dumps({"executableSHA256": digest}))
+            session = {"target": "AgentFreeBrowserPreview", "pid": 12345, "binarySHA256": digest}
+            with patch.object(device, "ROOT", root), patch.object(device, "process_matches", return_value=True) as matches:
+                self.assertEqual(device.active(session), binary)
+                matches.assert_called_once_with(12345, binary)
+                matches.reset_mock()
+                with self.assertRaisesRegex(RuntimeError, "pinned consent image"):
+                    device.active({**session, "binarySHA256": "0" * 64})
+                matches.assert_not_called()
+                binary.write_bytes(b"changed preview")
+                with self.assertRaisesRegex(RuntimeError, "changed after session start"):
+                    device.active(session)
+
     def test_failed_readiness_cleans_exact_launched_app(self):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "session.json"

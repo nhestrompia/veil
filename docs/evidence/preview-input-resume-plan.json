@@ -1,0 +1,32 @@
+{
+  "approvalRequired": true,
+  "approved": false,
+  "executed": false,
+  "targets": [
+    {
+      "app": "LinearMouse",
+      "pidAtSafetyCheck": 63961,
+      "path": "/Applications/LinearMouse.app",
+      "bundleIdentifier": "com.lujjjh.LinearMouse"
+    },
+    {
+      "app": "DockDoor",
+      "pidAtSafetyCheck": 64027,
+      "path": "/Applications/DockDoor.app",
+      "bundleIdentifier": "com.ethanbills.DockDoor"
+    }
+  ],
+  "operation": "Temporarily request normal app termination. Never force-quit. Reopen the two originally running apps only after all input probes stop.",
+  "beforeInput": "Recheck NativeProbe permissions and require an available mouse-hook list with no modifying hooks. Abort if any modifier remains.",
+  "testScope": "Only the pinned preview and fresh disposable readable references. Same physically calibrated preview PID and image required.",
+  "stopConditions": [
+    "Failed safety check",
+    "Failed reference",
+    "Changed preview image or process",
+    "Candidate input admission or new action"
+  ],
+  "rootAllowed": false,
+  "computerUseServiceMayBeStarted": false,
+  "additionalAppsMayBeChanged": false,
+  "agentMayChangePreferences": false
+}

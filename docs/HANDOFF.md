@@ -1,5 +1,17 @@
 # Current research state
 
+Milestone 134 confirms effective Input Monitoring for the unchanged AgentFreeBrowserPreview. The user reports Task complete, the fixture records one accepted action, and device binding is present. Preserve PID 2892 and image dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70 while the session remains live. See [live findings](preview-session-findings.md).
+
+The session controller runs tools/run_preview_session.py. Its state is artifacts/integrated-browser-134/physical-session/session.json. It owns a private fixture and one preview, with a one-hour alarm. Create its stop file to end both. Physical-control evidence is artifacts/integrated-browser-134/physical-control.json. The controller's initial declaration field remains false, so use that separate user-declaration record. Do not infer physical origin from server receipts alone.
+
+Both scoped screenshot routes return black preview images while readable references recover exact markers before and after. AX reads expose host metadata without page text. The matched AX form action succeeds in the reference but finds no candidate controls and creates no action. That raw action verdict remains inconclusive. Playwright completes one isolated Chrome control. The preview host has no TCP listener, which is not a general inspection result.
+
+Native input is NOT tested. The safety check detects modifying mouse hooks in LinearMouse PID 63961 and DockDoor PID 64027. Do not post CGEvent/HID input or suppress the guard. The next step needs approval for temporary normal quits of those exact apps, then a fresh empty-hook check. The unexecuted scope is docs/evidence/preview-input-resume-plan.json. Do not use root, change app preferences, force-quit either modifier app, or start the computer-use service.
+
+If approved, reuse the unchanged physical session and fresh matched native references. Stop on a failed safety check, failed reference, candidate admission, or changed image. Reopen only the two originally running modifier apps after all input probes stop. Agent-free browsing remains unproven. The new session code passes 17 regression tests, and all granted images remain unchanged.
+
+## Integration preparation
+
 Milestone 133 builds the first combined direct-rendering browser at dist/AgentFreeBrowserPreview.app. It combines ordinary sharing-none capture restriction, the existing device-keyboard gate, accessibility boundaries, inspection restrictions, and export/navigation policies. It omits protected media and high-level backdrops. See [integration findings](integrated-browser-findings.md) and [results](evidence/integrated-browser-results.json).
 
 All 14 owner-driven navigation and policy checks pass. Address/response and exact-event gate checks pass. The real app reports effective restrictions and sends no unattended launch-page request, while its control sends one. Input Monitoring is off, so the startup verdict remains inconclusive. No new grant request occurs. All test hosts and fixture servers stop, and granted helper images remain unchanged.

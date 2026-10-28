@@ -22,7 +22,7 @@ def run(session_path, output, routes, repetitions):
     session = json.loads(session_path.read_text())
     session["log"] = Path(session["log"])
     active(session)
-    oracle = Oracle()
+    oracle = Oracle(session.get("controller"))
     initial = oracle.state(session["trial"])
     if not any(item["accepted"] for item in initial["submissions"]) or "DEVICE_KEYBOARD bound=true" not in session["log"].read_text():
         raise RuntimeError("Need physical completion and device binding in the unchanged browser")

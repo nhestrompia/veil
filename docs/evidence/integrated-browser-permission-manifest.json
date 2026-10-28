@@ -15,8 +15,8 @@
     "Sources/Browser/SecureInputWindow.swift": "63d690a7797f984f28d6b6a89933dc1238168a72e2b76d0e2cd8f00c1ca4c1be"
   },
   "permission": "macOS Input Monitoring / ListenEvent",
-  "permissionApproved": false,
-  "permissionRequested": false,
+  "permissionApproved": true,
+  "permissionRequested": true,
   "automaticRequestAtLaunch": false,
   "installsInputHooks": false,
   "seizesDevices": false,
@@ -37,8 +37,14 @@
     "--args",
     "--request-permissions"
   ],
-  "requestCommandExecuted": false,
-  "effectiveGrantConfirmed": false,
+  "requestCommandExecuted": true,
+  "effectiveGrantConfirmed": true,
   "supersedesUnapprovedCandidateSHA256": "1eafe8cb702ec2e9db3859fe6826862cb8344ffbb8ae24009eded4678d34a60e",
-  "navigationShortcutsRequireExactEventAdmission": true
+  "navigationShortcutsRequireExactEventAdmission": true,
+  "permissionApproval": "User replied yes to the exact AgentFreeBrowserPreview Input Monitoring request.",
+  "requestIssuedUnixSeconds": 1793180456.281971,
+  "requestExitCode": 0,
+  "requestOutput": "DEVICE_KEYBOARD permission=false",
+  "userConfirmedEnabled": true,
+  "effectiveGrantPreflightLog": "artifacts/integrated-browser-134/grant-preflight.log"
 }

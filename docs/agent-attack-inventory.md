@@ -1,6 +1,6 @@
 # Agent attack inventory
 
-This inventory records earlier attacks and remaining work. The current combined preview is AgentFreeBrowserPreview. Its physical control and external attacks are pending. The rows below describe the earlier named builds. Their results do not transfer automatically to the preview. See [integration findings](integrated-browser-findings.md).
+This inventory records earlier attacks and remaining work. The current combined preview is AgentFreeBrowserPreview. Its physical control passes. Scoped capture and accessibility trials are recorded. Native-input attacks remain pending because modifying mouse hooks are active. The rows below describe the earlier named builds. Their results do not transfer automatically to the preview. See [live findings](preview-session-findings.md) and [integration findings](integrated-browser-findings.md).
 
 | Agent method | What the agent tried | Result and scope |
 | --- | --- | --- |

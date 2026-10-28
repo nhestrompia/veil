@@ -58,7 +58,7 @@ def run(session_path, output, repetitions, confirmed):
     output = output.resolve()
     session = json.loads(session_path.read_text())
     active(session)
-    oracle = Oracle()
+    oracle = Oracle(session.get("controller"))
     state = oracle.state(session["trial"])
     log_path = Path(session["log"])
     if not confirmed or not any(item["accepted"] for item in state["submissions"]) or "DEVICE_KEYBOARD bound=true" not in log_path.read_text():

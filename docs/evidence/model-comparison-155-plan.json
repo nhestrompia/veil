@@ -1,0 +1,29 @@
+{
+  "milestone": 155,
+  "defaultTarget": "AgentFreeBrowserPointer",
+  "defaultChangeCommit": "9ae8df9",
+  "browserSHA256": "2409cb24f9e0b3c559ce8ebbf0de5fc61d70350ae47a8a3f483d70b44e46c7f8",
+  "requestedModels": [
+    "gpt-6.1-terra",
+    "gpt-6-luna",
+    "gpt-6-astra"
+  ],
+  "reasoningEffort": "high",
+  "serialDesktopExecution": true,
+  "candidateTask": "Search Wikipedia for WebKit using this browser and report result heading and URL.",
+  "candidateURL": "https://en.wikipedia.org/w/index.php?title=Special:Search",
+  "candidateMaximumSessionSeconds": 300,
+  "readableControl": "InspectableControl",
+  "readableControlReusesChallenge": true,
+  "humanPageSetup": false,
+  "physicalInactivityAttested": false,
+  "newPermissions": false,
+  "administratorAccess": false,
+  "inputHooks": false,
+  "mouseUtilitiesPaused": false,
+  "browserOrEngineModified": false,
+  "partialInteractionMustBePreserved": true,
+  "timeoutsProveNoInput": false,
+  "independentReviewRequired": true,
+  "interpretation": "Record autonomous startup and loaded-page task stages separately. A startup failure is not evidence about operating a loaded page. Failed controls and refused probe routes remain inconclusive."
+}

@@ -14,6 +14,10 @@ One earlier armed trial overlapped repeated physical clicks. Its raw runner flag
 
 See [hardware pointer findings](hardware-pointer-findings.md) and the [result summary](evidence/hardware-pointer-results.json). These are measured results for the stated build and routes. They do not prove universal agent-free browsing. Click attribution, other devices, virtual-device report attacks, unfiltered capture, and calibrated external script attachment on this exact image remain open tests.
 
+## Three-model autonomous startup comparison
+
+Milestone 155 tests configured GPT-6.1-terra, GPT-6-luna, and GPT-6-astra serially against the mouse-enabled default. Every readable control completes the Wikipedia search for WebKit. Every protected session remains inconclusive at startup. No candidate log records admitted input, content-process verification, or an armed pointer. No human supplies setup. These runs do not test takeover of a loaded page or resolve the earlier unattributed click. The [comparison report](model-comparison-155.md) and [reviewed records](evidence/model-comparison-155-results.json) preserve the tool failures, controls, and cleanup.
+
 ## Earlier keyboard-only engine and scope
 
 The minimal macOS app includes a website address, webpage rendering, back, forward, reload, and a measured built-in keyboard route. Tabs, bookmarks, sync, extensions, and browser feature parity are outside this MVP. The current build supports US ASCII and disables mouse input. These limits are explicit usability limits.

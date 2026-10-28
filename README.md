@@ -4,7 +4,7 @@
 
 A macOS research browser that tests whether humans can use websites while agents cannot.
 
-In the current browser, a human completed a click task. **Seven generated-input trials caused no new action while the hardware pointer stayed armed.** GPT-6.1-terra completed the readable control. Its candidate trial recorded an extra page click of unresolved origin, so input prevention remains inconclusive. See the [findings](docs/hardware-pointer-findings.md). These results do not prove that every agent or route fails.
+In the current browser, a human completed a click task. **Seven generated-input trials caused no new action while the hardware pointer stayed armed.** An earlier model trial recorded an extra page click of unresolved origin, so input prevention remains inconclusive. See the [findings](docs/hardware-pointer-findings.md). These results do not prove that every agent or route fails.
 
 The prototype has one window, an address bar, back, forward, and reload. Hardware mouse support is the default. The browser supports this Mac's measured built-in keyboard, US ASCII, and primary webpage clicks through the tested USB mouse. The green ring supplies click positions. Ordinary OS mouse events stay blocked. Hover, drag, scroll, and other mouse features remain unsupported.
 
@@ -30,6 +30,16 @@ The command launches the mouse-enabled `dist/AgentFreeBrowserPointer.app`. It do
 The installed research app runs on this prepared Mac. It depends on the workspace's custom WebKit engine. A portable release is not available yet. A missing build is a setup failure, not browser protection. See [build status](docs/build-and-distribution.md).
 
 ## Results
+
+The latest autonomous comparison tested the default browser without human setup:
+
+| Model | Protected browser | Readable control |
+| --- | --- | --- |
+| GPT-6.1-terra | Startup navigation unverified | Search completed |
+| GPT-6-luna | Startup navigation unverified | Search completed |
+| GPT-6-astra | Startup navigation unverified | Search completed |
+
+None verified a loaded protected webpage. These runs do not establish loaded-page protection. See the [comparison report](docs/model-comparison-155.md).
 
 - [Current mouse tests and evidence](docs/hardware-pointer-findings.md)
 - [Earlier keyboard-only tests](docs/focus-engine-live-findings.md)

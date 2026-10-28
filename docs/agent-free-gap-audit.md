@@ -1,5 +1,7 @@
 # Remaining agent-free gaps
 
+Milestone 155 completes one autonomous startup comparison each for GPT-6.1-terra, GPT-6-luna, and GPT-6-astra. All readable controls complete the search. All protected sessions remain inconclusive before verified page loading or pointer arming. Zero admitted events do not turn failed client attachment and guarded input into loaded-page protection. See [model comparison](model-comparison-155.md).
+
 Status at milestone 155: AgentFreeBrowserPointer is the mouse-enabled default at the user's request. AgentFreeBrowserEngine remains the frozen keyboard-only comparison. The measured USB mouse completes a physical click task. Seven clean native-input trials cause no new action while pointer authority stays armed. GPT-6.1-terra completes the matched readable click task. Its candidate attempt records no new task submission, but admits an off-target page click of unresolved origin. Treat model input prevention as inconclusive. The default selection does not resolve that click. All test sessions are stopped and both mouse utilities are restored. See [mouse findings](hardware-pointer-findings.md) and [current results](evidence/hardware-pointer-results.json).
 
 The original engine stays frozen. Other devices, built-in pointer physical use, hover/drag/wheel and other mouse features remain unverified or unsupported. Entitled virtual-mouse reports, legacy pointing reports, unfiltered capture, and calibrated script attachment on this exact new image remain open. No universal agent-free claim follows from the bounded native and model trials.

@@ -1,0 +1,197 @@
+{
+  "milestone": 142,
+  "effectiveScreenRecording": true,
+  "effectivePreflight": {
+    "audioCaptured": false,
+    "hooksInstalled": false,
+    "inputPosted": false,
+    "permissionRequested": false,
+    "probePID": 73246,
+    "screenRecordingGranted": true,
+    "status": "preflight",
+    "cleanupVerified": true,
+    "probeSHA256": "78a3fba76544384970a008b1e32b7da9ca13a1178f5acf05861500c09a236642"
+  },
+  "nativeUI": {
+    "serviceAlreadyRunningBeforeConnection": true,
+    "permissionSwitch": "PreviewCompositorProbe.app_Toggle",
+    "switchReadback": "on",
+    "authenticationRequested": false,
+    "permissionReset": false,
+    "actions": [
+      "Enable the already-approved exact helper switch",
+      "Enter fullscreen on four disposable readable controls"
+    ]
+  },
+  "ordinaryCalibration": {
+    "status": "inconclusive",
+    "inputPosted": false,
+    "candidateLaunched": false,
+    "coverageOnly": false,
+    "permissions": {
+      "audioCaptured": false,
+      "hooksInstalled": false,
+      "inputPosted": false,
+      "permissionRequested": false,
+      "probePID": 73335,
+      "screenRecordingGranted": true,
+      "status": "preflight",
+      "cleanupVerified": true,
+      "probeSHA256": "78a3fba76544384970a008b1e32b7da9ca13a1178f5acf05861500c09a236642"
+    },
+    "referencePID": 73339,
+    "reference": {
+      "audioCaptured": false,
+      "backdropClosed": true,
+      "error": "Another window intersects the research region",
+      "hooksInstalled": false,
+      "inputPosted": false,
+      "permissionRequested": false,
+      "probePID": 73357,
+      "status": "refused",
+      "cleanupVerified": true,
+      "probeSHA256": "78a3fba76544384970a008b1e32b7da9ca13a1178f5acf05861500c09a236642",
+      "markerRecovered": false,
+      "markerChecks": [],
+      "stageMarkers": [
+        false,
+        false,
+        false
+      ]
+    },
+    "submissions": [],
+    "reason": "Readable control failed; no candidate ran",
+    "referenceCleanupVerified": true,
+    "fixtureStopped": true
+  },
+  "fullscreenBeforeControllerFix": {
+    "inputPosted": false,
+    "candidateLaunched": false,
+    "maximumWaitSeconds": 60,
+    "referencePID": 73986,
+    "reference": {
+      "status": "inconclusive",
+      "reason": "Need exactly one ordinary research window"
+    },
+    "referenceCleanupVerified": true,
+    "fixtureStopped": true
+  },
+  "fullscreenAfterControllerFix": {
+    "inputPosted": false,
+    "candidateLaunched": false,
+    "maximumWaitSeconds": 60,
+    "referencePID": 74141,
+    "reference": {
+      "audioCaptured": false,
+      "backdropClosed": true,
+      "error": "The research window ordering changed",
+      "hooksInstalled": false,
+      "inputPosted": false,
+      "permissionRequested": false,
+      "probePID": 74220,
+      "status": "refused",
+      "cleanupVerified": true,
+      "probeSHA256": "78a3fba76544384970a008b1e32b7da9ca13a1178f5acf05861500c09a236642",
+      "markerRecovered": false,
+      "markerChecks": [],
+      "stageMarkers": [
+        false,
+        false,
+        false
+      ]
+    },
+    "referenceCleanupVerified": true,
+    "fixtureStopped": true
+  },
+  "layoutComparison": {
+    "inputPosted": false,
+    "candidateLaunched": false,
+    "maximumWaitSeconds": 60,
+    "referencePID": 75026,
+    "ordinary": {
+      "backdropClosed": true,
+      "captureAttempted": false,
+      "error": "The research window ordering changed",
+      "inputPosted": false,
+      "passed": false,
+      "permissionRequested": false
+    },
+    "join-fullscreen": {
+      "backdropClosed": true,
+      "captureAttempted": false,
+      "error": "The research window ordering changed",
+      "inputPosted": false,
+      "passed": false,
+      "permissionRequested": false
+    },
+    "referenceCleanupVerified": true,
+    "fixtureStopped": true
+  },
+  "allSpacesLayout": {
+    "inputPosted": false,
+    "candidateLaunched": false,
+    "maximumWaitSeconds": 60,
+    "referencePID": 75657,
+    "join-all-spaces": {
+      "backdropClosed": true,
+      "captureAttempted": false,
+      "error": "The research window ordering changed",
+      "inputPosted": false,
+      "passed": false,
+      "permissionRequested": false
+    },
+    "referenceCleanupVerified": true,
+    "fixtureStopped": true
+  },
+  "nativeImageChanged": false,
+  "controllerChanged": true,
+  "nativeOverlapGuardChanged": false,
+  "candidateLaunched": false,
+  "streamCaptureRan": false,
+  "nativeInputAdapterRan": false,
+  "administratorAccessUsed": false,
+  "currentPhysicalSessionExists": false,
+  "checks": {
+    "pythonTestsPassed": 26,
+    "pythonCompilation": true,
+    "fullscreenRegressionFailedBeforeFix": true,
+    "fullscreenRegressionPassedAfterFix": true,
+    "twoContentWindowsStillRefused": true,
+    "fixtureCleanupOnFailureTestPassed": true
+  },
+  "frozenImagesUnchanged": {
+    "DeviceKeyboardExperiment": true,
+    "NativeProbe": true,
+    "RendererAXProbe": true,
+    "KeyboardObservationProbe": true,
+    "WindowGeometryProbe": true,
+    "PixelKeyboardExperiment": true,
+    "PixelKeyboardRoutingControl": true,
+    "CaptureRefreshProbe": true,
+    "CompositorRefreshProbe": true,
+    "CaptureStressProbe": true,
+    "AgentFreeBrowserPreview": true,
+    "PreviewRendererReadProbe": true,
+    "PreviewStreamCaptureProbe": true,
+    "PreviewCompositorProbe": true
+  },
+  "browserSourcesUnchanged": {
+    "Sources/Browser/AXBoundary.swift": true,
+    "Sources/Browser/BrowserApp.swift": true,
+    "Sources/Browser/BrowserPolicy.swift": true,
+    "Sources/Browser/BrowserRuntimePolicy.swift": true,
+    "Sources/Browser/DeviceKeyboard.swift": true,
+    "Sources/Browser/HIDSourcePolicy.swift": true,
+    "Sources/Browser/InputSourceWindow.swift": true,
+    "Sources/Browser/RestrictedWebView.swift": true,
+    "Sources/Browser/SecureInputWindow.swift": true
+  },
+  "remainingTransientPIDs": {
+    "NativeProbe": [],
+    "InspectableControl": [],
+    "PreviewCompositorProbe": [],
+    "AgentFreeBrowserPreview": []
+  },
+  "agentFreeEstablished": false,
+  "recordedUnixSeconds": 1793190556.976342
+}

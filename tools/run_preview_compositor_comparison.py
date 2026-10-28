@@ -101,7 +101,10 @@ def capture(session, prefix, oracle, command="sequence"):
         return {"status": "inconclusive", "reason": "Research foreground state unavailable"}
     windows = probe(["windows", session["pid"]], prefix.with_suffix(".windows.json"), background=True)
     owned = [row for row in windows.get("windows", [])
-             if row.get("kCGWindowOwnerPID") == session["pid"] and row.get("kCGWindowLayer") == 0]
+             if row.get("kCGWindowOwnerPID") == session["pid"] and row.get("kCGWindowLayer") == 0
+             and row.get("kCGWindowAlpha") == 1
+             and 600 <= row.get("kCGWindowBounds", {}).get("Width", 0) <= 4096
+             and 400 <= row.get("kCGWindowBounds", {}).get("Height", 0) <= 4096]
     if len(owned) != 1:
         return {"status": "inconclusive", "reason": "Need exactly one ordinary research window"}
     result = invoke([command, session["pid"], owned[0]["kCGWindowNumber"]], prefix.with_suffix(".json"))

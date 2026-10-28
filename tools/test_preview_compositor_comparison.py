@@ -15,6 +15,31 @@ def audited(reference=False):
 
 
 class CompositorComparisonTests(unittest.TestCase):
+    def test_fullscreen_decorations_do_not_hide_the_content_window(self):
+        # The live fullscreen control also owns a sharing pill and titlebar windows.
+        rows = [
+            {"kCGWindowOwnerPID": 123, "kCGWindowNumber": 1, "kCGWindowLayer": 26, "kCGWindowAlpha": 0,
+             "kCGWindowBounds": {"Width": 1512, "Height": 33}},
+            {"kCGWindowOwnerPID": 123, "kCGWindowNumber": 2, "kCGWindowLayer": 0, "kCGWindowAlpha": 1,
+             "kCGWindowBounds": {"Width": 66, "Height": 20}},
+            {"kCGWindowOwnerPID": 123, "kCGWindowNumber": 3, "kCGWindowLayer": 0, "kCGWindowAlpha": 0,
+             "kCGWindowBounds": {"Width": 1512, "Height": 32}},
+            {"kCGWindowOwnerPID": 123, "kCGWindowNumber": 4, "kCGWindowLayer": 0, "kCGWindowAlpha": 1,
+             "kCGWindowBounds": {"Width": 1512, "Height": 949}},
+        ]
+        with patch.object(comparison, "probe", side_effect=[{"status": "observed"}, {"windows": rows}]), patch.object(comparison, "invoke", return_value={"status": "refused"}) as invoke:
+            comparison.capture({"pid": 123}, Path("/unused"), None, "coverage")
+        invoke.assert_called_once_with(["coverage", 123, 4], Path("/unused.json"))
+
+    def test_two_full_size_content_windows_remain_ambiguous(self):
+        row = {"kCGWindowOwnerPID": 123, "kCGWindowLayer": 0, "kCGWindowAlpha": 1,
+               "kCGWindowBounds": {"Width": 1000, "Height": 772}}
+        rows = [dict(row, kCGWindowNumber=1), dict(row, kCGWindowNumber=2)]
+        with patch.object(comparison, "probe", side_effect=[{"status": "observed"}, {"windows": rows}]), patch.object(comparison, "invoke") as invoke:
+            report = comparison.capture({"pid": 123}, Path("/unused"), None, "coverage")
+        self.assertEqual(report["status"], "inconclusive")
+        invoke.assert_not_called()
+
     def test_uniform_stream_requires_readable_controls_in_every_stage(self):
         reference = audited(True)
         self.assertEqual(comparison.score(reference, audited(), reference),

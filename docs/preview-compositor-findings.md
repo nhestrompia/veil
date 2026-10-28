@@ -1,5 +1,7 @@
 # Unfiltered compositor probe preparation
 
+Milestone 142 later confirms effective access and runs further calibration. See [current findings](preview-compositor-grant-findings.md). The sections below preserve milestone 141.
+
 Milestone 141 prepares a separate recorder for unfiltered display capture and live filter changes on the unchanged MVP. No compositor recording runs. Two metadata-only readable controls fail the coverage check. Missing permission and failed controls remain inconclusive.
 
 ## Test design

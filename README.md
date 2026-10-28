@@ -12,7 +12,7 @@ The renderer probe now has effective Accessibility after the approved app-only r
 
 The actual preview completes a matched 30-second independent-window capture test. All 948 delivered complete frames are black, while readable controls before and after expose their markers. App-filtered display capture produces no complete candidate frames and remains inconclusive. See [continuous-capture findings](docs/preview-stream-live-findings.md).
 
-A separate unfiltered compositor recorder is now prepared. Its grant is approved but ineffective, and both readable placement controls refuse an overlapping Dock window. No new capture runs. See [compositor preparation](docs/preview-compositor-findings.md).
+The unfiltered compositor recorder now has effective Screen Recording access. Readable calibration still fails on the Dock overlay or fullscreen backdrop ordering. The ordinary controller now handles small fullscreen decoration windows. No unfiltered capture result exists. See [current calibration findings](docs/preview-compositor-grant-findings.md).
 
 Earlier renderer diagnostics remain vulnerable to suspension. Sixteen calibrated trials complete website actions across four clock sources in native and stable engine modes. Those experiments are not integrated into the preview. See [timing results](docs/clock-channel-findings.md) and [feasibility research](docs/research/agent-free-feasibility-boundary.md). Agent-free operation remains unproven.
 

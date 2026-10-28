@@ -11,3 +11,5 @@ The current candidate is keyboard-only and supports the measured built-in keyboa
 Milestone 140 tests steady window capture on the actual preview. Unfiltered capture and transition tests remain open. Preserve all permissioned images, use a new scoped helper when an old helper cannot target it, and pin its final signature before its first trust query. Keep external inspector, keyboard-observation, and autonomous-action gaps separate. The agent-free claim remains unproven until the declared acceptance gates pass.
 
 Milestone 141 prepares unfiltered compositor recording and filter changes. The approved grant remains ineffective, and readable placement controls fail before capture. The previous physical session expires. See [current gaps](agent-free-gap-audit.md) and [compositor preparation](preview-compositor-findings.md).
+
+Milestone 142 confirms effective compositor access and repairs fullscreen content-window selection in the ordinary controller. Readable coverage still fails on the Dock overlay or fullscreen backdrop ordering. No protected candidate or stream runs. See [calibration findings](preview-compositor-grant-findings.md).

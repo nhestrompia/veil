@@ -9,7 +9,7 @@
     "Sources/Diagnostics/PreviewCompositorPixels.swift": "f3bf7fbb071de62f9d18565b252585eadcf52d814c7092886a0c02005275510a",
     "Sources/Diagnostics/PreviewCompositorProbe.swift": "47f37f86ece6dfb6a40174a557c1d465082f1452b7e31d23b7bb934ae9271668",
     "scripts/build-preview-compositor-probe.sh": "49a25cfe8d50edf8f7ce3097eecdf7ada5c28b17a78f8fc887bc0705d772f971",
-    "tools/run_preview_compositor_comparison.py": "a6ef8595bced95518e21b7907f31b20eba74e83765a74d938612dc31b8e2bfc0"
+    "tools/run_preview_compositor_comparison.py": "c6f1e640ad3f96c29ebfeb3cda6bdce7d87318016d3997b216d36c5e2276a995"
   },
   "permission": "macOS Screen Recording",
   "permissionApproved": true,
@@ -41,5 +41,19 @@
     "requestReturned": false,
     "screenRecordingGranted": false,
     "status": "requested"
-  }
+  },
+  "effectiveGrantConfirmed": true,
+  "effectivePreflight": "artifacts/preview-compositor-142/enabled-preflight.json",
+  "existingNativeUIUsed": true,
+  "settingsToggleReadback": "on",
+  "grantCheckedUnixSeconds": 1793189492.484201,
+  "controllerUpdates": [
+    {
+      "path": "tools/run_preview_compositor_comparison.py",
+      "oldSHA256": "a6ef8595bced95518e21b7907f31b20eba74e83765a74d938612dc31b8e2bfc0",
+      "newSHA256": "c6f1e640ad3f96c29ebfeb3cda6bdce7d87318016d3997b216d36c5e2276a995",
+      "reason": "Exclude fullscreen decoration windows smaller than the native content geometry limits. Native helper and native guards unchanged.",
+      "recordedUnixSeconds": 1793189941.529954
+    }
+  ]
 }

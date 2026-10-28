@@ -1,5 +1,21 @@
 # Current research state
 
+Milestone 142 enables the already-approved PreviewCompositorProbe switch through the existing native UI service. The fresh preflight confirms Screen Recording true. The helper keeps hash 78a3fba76544384970a008b1e32b7da9ca13a1178f5acf05861500c09a236642. No reset, authentication, native rebuild, or other grant change occurs. Do not repeat the consent question. See [findings](preview-compositor-grant-findings.md).
+
+The ordinary readable calibration still refuses the Dock overlay before streaming. Its new command is PYTHONPATH=tools python3 tools/calibrate_preview_compositor.py --output artifacts/FRESH. It needs no physical session and closes its reference and fixture on failure. No protected candidate runs.
+
+Fullscreen reveals a controller bug. Small titlebar and sharing-status windows cause the old single-window count to fail. A regression fails before the fix and passes after it. Selection now uses the native helper's existing opacity and size bounds. Two content windows remain refused. Only the ordinary Python controller and its recorded hash change.
+
+The corrected fullscreen trial reaches the native helper but fails backdrop ordering. A separate metadata-only layout diagnostic tries ordinary, fullscreen-joining, and all-Spaces placement. All fail the frozen guard. No capture starts and no guard changes. The diagnostic source and scripts persist only in artifacts/preview-compositor-142. Do not treat these failures as protection or a successful repair.
+
+All 26 Python checks and compilation pass. All fourteen signed images and browser sources remain unchanged. All five references, fixtures, and transient probes stop. No current physical preview exists. Native UI enables only the approved switch and enters fullscreen on four disposable references. No NativeProbe input adapter or root action runs.
+
+The existing native UI service was already running before connection. No service start or input-hook installation is requested. Avoid global input adapters while modifier hooks remain. The latest native UI documentation requires cua_repl for UI actions. The current Settings grant is now effective, so the old System Events failure is historical.
+
+The remaining capture blocker is a valid owned layout under the unmodified guard, not permission. Other independent protection gaps remain. Preserve the browser image and the current granted recorder. Agent-free acceptance remains unmet.
+
+## Milestone 141
+
 Milestone 141 prepares PreviewCompositorProbe for unfiltered display capture and filter changes, but no recording runs. Both metadata-only readable coverage trials refuse a full-display Dock window above the target and backdrop. No guard is weakened. The unfiltered capture gap remains open. See [preparation findings](preview-compositor-findings.md).
 
 The final helper hash is 78a3fba76544384970a008b1e32b7da9ca13a1178f5acf05861500c09a236642. Its manifest is docs/evidence/preview-compositor-permission-manifest.json. The exact Screen Recording request is approved and executed. Effective access remains false. The user is away and asks for automatic enablement. System Events refuses scoped Settings access with -25211. No setting changes. Do not repeat the consent question or request a reset. Preserve the signed image.

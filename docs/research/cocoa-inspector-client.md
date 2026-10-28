@@ -41,3 +41,5 @@ On macOS 26.6, all ten classes exist. RWIManager exposes openChannelForDebuggabl
 These results identify installed interfaces. They do not establish how to initialize a scoped client or whether the daemon accepts it. The diagnostic does not audit dynamic-library initializers or monitor relay traffic. No attachment, script read, or script action runs. No browser image or granted helper changes.
 
 The source is Sources/Diagnostics/InspectorRelayMetadata.swift. The bounded [metadata results](../evidence/inspector-relay-metadata-results.json) preserve the installed evidence. Full local reports remain in artifacts/inspector-client-144. Agent-free acceptance remains unmet.
+
+The later [discovery control](../inspector-discovery-control-findings.md) implements the installed lifecycle interfaces. Three readable references remain undiscovered. That result does not establish attachment refusal or daemon admission policy.

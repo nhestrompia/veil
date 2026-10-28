@@ -1,5 +1,15 @@
 # Current research state
 
+Milestone 145 implements and runs an external Cocoa discovery control while the user is away. All three fresh readable controls remain inconclusive. Ordinary manager construction and sharedManager expose no current-machine target. Explicit local-target creation exposes that target, but zero owned applications or fixture pages appear. No channel opens, no debugger message runs, and no candidate launches. Do not call this an attachment refusal or protection result. See [discovery findings](inspector-discovery-control-findings.md).
+
+The new native client accepts only hash-pinned InspectableControl and a strict loopback fixture URL. It queries application identifiers only for that verified host and its verified renderers. It reads page URLs only within those applications. Method encodings precede dynamic calls. The final version uses sharedManager, explicit local-target creation, and deferred removal. Discovery lasts at most eight seconds under a 15-second alarm. The Python runner bounds the child and closes the reference and fixture.
+
+Swift 6 compilation and four native boundary controls pass. All three reference and fixture cleanups pass with zero website submissions. No client process remains. The preview and recorder preserve their hashes. No grant, administrator action, physical input, screen capture, or browser-image change occurs. The next client work must establish connection state and successful reference discovery before attachment. The daemon's admission policy remains unknown.
+
+The user remains away and requests independent work. The unrelated system alert still blocks compositor calibration. Do not inspect UserNotificationCenter through another route. Its inspection was rejected because it can expose unrelated private notifications. The recorder update and app-only grant refresh are complete. Agent-free acceptance remains unmet. No current physical preview exists.
+
+## Milestone 144
+
 Milestone 144 completes independent external-inspector preparation while the user is away. It adds InspectorRelayMetadata, a five-second metadata-only diagnostic. On macOS 26.6 it finds ten named private WebInspector classes and their method encodings. It creates no client, invokes no client method, and requests no relay connection. It requests no grant or input. The library's initializers and relay traffic are not audited. Swift 6 compilation and the extra-argument refusal control pass. No browser or granted-helper image changes.
 
 Primary-source research distinguishes the frontend SPI from the missing transport. The webinspectord entitlement check authenticates the relay peer. It does not establish external debugger admission rules. Installed RWIManager and RWIChannel selectors are concrete client entry points, not successful attachment. The next independent step is a scoped external client with an inspectable reference. Preserve unrelated-app boundaries and require a successful reference before a candidate verdict. See [client research](research/cocoa-inspector-client.md).

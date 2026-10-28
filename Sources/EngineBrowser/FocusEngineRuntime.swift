@@ -62,6 +62,24 @@ enum FocusEngineRuntime {
         EngineRuntime.stablePolicy(in: configuration) == stable
     }
 
+    #if !BROWSER_NAVIGATION_CONTROL
+    static func inputRequestApproved() -> Bool {
+        let project = URL(fileURLWithPath: #filePath).deletingLastPathComponent()
+            .deletingLastPathComponent().deletingLastPathComponent()
+        let manifest = project.appendingPathComponent("docs/evidence/focus-engine-browser-manifest.json")
+        guard let data = try? Data(contentsOf: manifest),
+              let record = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
+              record["permissionApproved"] as? Bool == true,
+              let targets = record["targets"] as? [String: [String: Any]],
+              let target = targets["AgentFreeBrowserEngine"],
+              let executable = Bundle.main.executableURL?.resolvingSymlinksInPath(),
+              let expected = target["binarySHA256"] as? String, let actual = hash(executable),
+              target["path"] as? String == Bundle.main.bundleURL.resolvingSymlinksInPath().path,
+              expected == actual else { return false }
+        return true
+    }
+    #endif
+
     static func reportContent(_ view: WKWebView) -> Bool {
         guard configurationMatches(view.configuration), let identity = EngineRuntime.contentIdentity(view) else {
             print("FOCUS_ENGINE refused=content-identity")

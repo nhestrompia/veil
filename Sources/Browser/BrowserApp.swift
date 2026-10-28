@@ -462,6 +462,12 @@ enum BrowserApp {
         precondition(app is DeviceKeyboardApplication, "The device experiment requires its application subclass")
         if CommandLine.arguments.contains("--permissions") || CommandLine.arguments.contains("--request-permissions") {
             if CommandLine.arguments.contains("--request-permissions") {
+                #if STABLE_ENGINE_BROWSER
+                guard FocusEngineRuntime.inputRequestApproved() else {
+                    print("FOCUS_ENGINE refused=input-request-not-approved")
+                    return
+                }
+                #endif
                 _ = IOHIDRequestAccess(kIOHIDRequestTypeListenEvent)
             }
             print("DEVICE_KEYBOARD permission=\(IOHIDCheckAccess(kIOHIDRequestTypeListenEvent) == kIOHIDAccessTypeGranted)")

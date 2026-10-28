@@ -24,7 +24,7 @@
     "AgentFreeBrowserEngine": {
       "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/dist/AgentFreeBrowserEngine.app",
       "bundleIdentifier": "research.agentfreebrowser.focusengine",
-      "binarySHA256": "028da9434ec0256e915e69836522ce587410a07102feb10215c3ddd707934c12",
+      "binarySHA256": "12de797fbbfea6f5536b13b8ba890354170f3561f681620bb49be42f2fdf7e21",
       "defines": [
         "DEVICE_KEYBOARD_EXPERIMENT",
         "INTEGRATED_BROWSER",
@@ -35,7 +35,7 @@
     "FocusEngineNativeControl": {
       "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/FocusEngineNativeControl.app",
       "bundleIdentifier": "research.agentfreebrowser.focusengine.nativecontrol",
-      "binarySHA256": "1f85ef50033c9749c10c727611bfb96eb8c2376b52ae80e3cff24d084fc86d08",
+      "binarySHA256": "ee5403757c2f5ea4745ac0144300a59561044c96a20192de9d5f7c299cec851b",
       "defines": [
         "DEVICE_KEYBOARD_EXPERIMENT",
         "INTEGRATED_BROWSER",
@@ -48,7 +48,7 @@
     "FocusEngineStableControl": {
       "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/FocusEngineStableControl.app",
       "bundleIdentifier": "research.agentfreebrowser.focusengine.stablecontrol",
-      "binarySHA256": "f763c2ec2ad63ef4b4b6dd5d24c51dfcf3b106a84bb9f85e986b49d709145da2",
+      "binarySHA256": "9c39f36dd0426d01601b559ce1dbbcf87405523ad8fa80670fe69ea25e0efcd2",
       "defines": [
         "DEVICE_KEYBOARD_EXPERIMENT",
         "INTEGRATED_BROWSER",
@@ -67,7 +67,7 @@
   "launchRequirement": "Native app bootstrap or tools/launch_focus_browser.py; workspace research engine required",
   "sourceHashes": {
     "Sources/Browser/AXBoundary.swift": "033f95e7ae7d4bd907d8abf4a7a980aa9603162e275d9da7e51dbc319f92400b",
-    "Sources/Browser/BrowserApp.swift": "9891a9f636cb19b01045798f4726b3ebfa0684ef8dca2105fe2a27b159ff0230",
+    "Sources/Browser/BrowserApp.swift": "6439a6a0ff154cc3e858823faa713fb29ac21c100a7f131e857982cf9db893f0",
     "Sources/Browser/BrowserPolicy.swift": "f7311bc7f6bf89d5bef0c8628991306bc782f06f139a7b733f6b84c290283fce",
     "Sources/Browser/BrowserRuntimePolicy.swift": "11b22ce324ab20a041623a165999ec20cec8ae4933027d22334312b33b562adb",
     "Sources/Browser/DeviceKeyboard.swift": "caa85cd6d89e05c334a4d6667c5d399d70a8c83931cef702879046f75029fa15",
@@ -76,11 +76,11 @@
     "Sources/Browser/RestrictedWebView.swift": "424eb6c2d41831dddeed1a2db5a79c1cdd4c4d205162becd691f5fa0c76a50f5",
     "Sources/Browser/SecureInputWindow.swift": "63d690a7797f984f28d6b6a89933dc1238168a72e2b76d0e2cd8f00c1ca4c1be",
     "Sources/Diagnostics/EngineRuntime.swift": "e8d2e0fbf1397d6e4a3aa9d9e3cb3a7f9dfc0a34c244fb2b2ef4c98473da817c",
-    "Sources/EngineBrowser/FocusEngineRuntime.swift": "13a02de2fee3a2b685b7bd3d34b6cdd3adc2d11de902850f7a0caf59238111d0",
+    "Sources/EngineBrowser/FocusEngineRuntime.swift": "b55f9520ce6c776b4df7743b24d268efe194ac46b4128fe32f405f1793192db3",
     "tools/build_focus_browser.py": "adc8fe33d799377480a7e51d9b8f18df456a7be62dfe7b05aaea828e1b4f458c",
     "Sources/Diagnostics/FocusEngineControl.swift": "822defa6b1dd51c35f9f4d18fdcd9bff10600eaf95ba4c4be0c105263097e28a",
     "Sources/Diagnostics/DiagnosticSecureInput.swift": "3cc86114f69d8f945f5279b8164b62671fa2235652eac3c657c64fe215cce879",
     "Sources/Diagnostics/FocusEngineActivation.swift": "ea3b8b66a274e7689705c9bec8dbb567d356586610f88c47c753fe4fb8a0614a"
   },
-  "activationHelperSHA256": "4671d0b7f957eaccffb7ae2c892ba3a003c9189ee19ac7deb88a286b4fba1178"
+  "activationHelperSHA256": "8c5e8f1e9b5756fab620e2ed86941e725406c343dea44e6c29ffcf9406396c3c"
 }

@@ -1,0 +1,185 @@
+{
+  "milestone": 156,
+  "browserSHA256": "dc0725ded122316f7a51427295e75f4c1d8ed2cb5447d017583ad69652f8c1ef",
+  "normalCursor": true,
+  "automaticPhysicalDeviceActivation": true,
+  "greenOverlay": false,
+  "manualPointerArmingRequired": false,
+  "softwareCanRedirectConcurrentPhysicalInput": true,
+  "coordinateLimitAcceptedByUser": true,
+  "permissionPreflight": "DEVICE_KEYBOARD permission=true",
+  "permissionRequested": true,
+  "physicalMouseVerified": true,
+  "physicalWheelVerified": true,
+  "externalAgentTrialsOnThisImage": true,
+  "agentFreeProven": false,
+  "frozenEarlierImagesUnchanged": {
+    "AgentFreeBrowserPointer": "2409cb24f9e0b3c559ce8ebbf0de5fc61d70350ae47a8a3f483d70b44e46c7f8",
+    "AgentFreeBrowserEngine": "12de797fbbfea6f5536b13b8ba890354170f3561f681620bb49be42f2fdf7e21"
+  },
+  "policyChecks": "passed",
+  "earlierOfflineAdversarialChecks": 2010,
+  "webkitControls": [
+    {
+      "path": "artifacts/veil-mouse-156/webkit-control-1/results.json",
+      "sha256": "f1082fb0dffc83fac45f654e85ea750bc565649797ea7b512133c1f966bbf416",
+      "result": {
+        "exitCode": 1,
+        "clickDelivered": false,
+        "wheelAndNativeControlDelivered": false,
+        "controlOnly": true,
+        "physicalInputVerified": false,
+        "externalAttack": false
+      }
+    },
+    {
+      "path": "artifacts/veil-mouse-156/webkit-control-2/results.json",
+      "sha256": "751a1cbaa848ca2b6554ca65a458d19179ef9ff913a4f7a140b1e59c6ea422f4",
+      "result": {
+        "exitCode": 0,
+        "clickDelivered": true,
+        "wheelAndNativeControlDelivered": true,
+        "controlOnly": true,
+        "physicalInputVerified": false,
+        "externalAttack": false
+      }
+    },
+    {
+      "path": "artifacts/veil-mouse-156/webkit-control-3/results.json",
+      "sha256": "751a1cbaa848ca2b6554ca65a458d19179ef9ff913a4f7a140b1e59c6ea422f4",
+      "result": {
+        "exitCode": 0,
+        "clickDelivered": true,
+        "wheelAndNativeControlDelivered": true,
+        "controlOnly": true,
+        "physicalInputVerified": false,
+        "externalAttack": false
+      }
+    },
+    {
+      "path": "artifacts/veil-mouse-156/webkit-control-4/results.json",
+      "sha256": "f1082fb0dffc83fac45f654e85ea750bc565649797ea7b512133c1f966bbf416",
+      "result": {
+        "exitCode": 1,
+        "clickDelivered": false,
+        "wheelAndNativeControlDelivered": false,
+        "controlOnly": true,
+        "physicalInputVerified": false,
+        "externalAttack": false
+      }
+    },
+    {
+      "path": "artifacts/veil-mouse-156/webkit-control-5-diagnostic/results.json",
+      "sha256": "f1082fb0dffc83fac45f654e85ea750bc565649797ea7b512133c1f966bbf416",
+      "result": {
+        "exitCode": 1,
+        "clickDelivered": false,
+        "wheelAndNativeControlDelivered": false,
+        "controlOnly": true,
+        "physicalInputVerified": false,
+        "externalAttack": false
+      }
+    },
+    {
+      "path": "artifacts/veil-mouse-156/webkit-control-6/results.json",
+      "sha256": "751a1cbaa848ca2b6554ca65a458d19179ef9ff913a4f7a140b1e59c6ea422f4",
+      "result": {
+        "exitCode": 0,
+        "clickDelivered": true,
+        "wheelAndNativeControlDelivered": true,
+        "controlOnly": true,
+        "physicalInputVerified": false,
+        "externalAttack": false
+      }
+    },
+    {
+      "path": "artifacts/veil-mouse-156/webkit-control-final/results.json",
+      "sha256": "751a1cbaa848ca2b6554ca65a458d19179ef9ff913a4f7a140b1e59c6ea422f4",
+      "result": {
+        "exitCode": 0,
+        "clickDelivered": true,
+        "wheelAndNativeControlDelivered": true,
+        "controlOnly": true,
+        "physicalInputVerified": false,
+        "externalAttack": false
+      }
+    }
+  ],
+  "remaining": [
+    "Resolve the admitted hover events with an isolated no-physical-input comparison",
+    "Verify physical native toolbar use",
+    "Complete native input, loaded-page agent, capture and script-attachment tests on this image"
+  ],
+  "pythonChecksPassed": 73,
+  "coordinateRegression": {
+    "initialNonzeroOriginFailed": true,
+    "finalClientCoordinates": [
+      320,
+      170
+    ],
+    "realDeviceInput": false
+  },
+  "sourceIdentityMatches": true,
+  "permissionRequestLog": "artifacts/veil-mouse-156/input-request.log",
+  "permissionRequestLogSHA256": "077d744c5cd5871bee104b0a29fb2054e80d569285e1dc19af9df29a1e66251b",
+  "permissionUI": {
+    "settingsOpened": true,
+    "exactAppRevealed": true,
+    "nativeToolError": "Sky Computer Use native pipe startup failed",
+    "initializationAttempts": 2,
+    "effectiveGrantConfirmed": true
+  },
+  "effectiveGrantConfirmed": true,
+  "effectiveGrantLog": "artifacts/veil-mouse-156/enabled-preflight.log",
+  "effectiveGrantLogSHA256": "872d1cd4cc8eab1a9874920026cac267e8d6d5e0d26238597839d9daccfbefc1",
+  "physicalControlEvidence": "artifacts/veil-mouse-156/physical-session/physical-control.json",
+  "physicalAcceptedClicks": 1,
+  "physicalWheelEvents": 40,
+  "physicalScrollEvents": 34,
+  "physicalMaximumScrollY": 1653,
+  "nativeToolbarPhysicalControlVerified": false,
+  "readOnlyComparison": {
+    "path": "artifacts/veil-mouse-156/observations-2/results.json",
+    "sha256": "a57dd193cd5e5e00f3b0d496f8e4f0ac4043c882810c671e15f5352569e4cf30",
+    "axReadableControlElements": 30,
+    "axCandidateElements": 2,
+    "candidatePageControlsExposed": false,
+    "candidateCaptureRoutesInconclusive": [
+      "capture",
+      "display-capture",
+      "system-capture"
+    ],
+    "captureReason": "NativeProbe could not locate a visible Veil window; all three readable references succeeded",
+    "newAdmittedInput": 0,
+    "newPageInputEvents": 0,
+    "newActions": 0,
+    "firstRunnerFailure": "Marker lookup used trial response instead of oracle state; fixed and rerun; reference cleanup verified"
+  },
+  "computerUse": {
+    "status": "unavailable",
+    "error": "Sky Computer Use native pipe startup failed",
+    "defenseResult": false
+  },
+  "nativeInputStatus": "Stopped after the first calibrated HID-source attempt: 35 admitted hover events, origin unresolved; 65 refusals; no new page input or action",
+  "nativePlan": "docs/evidence/veil-native-input-plan.json",
+  "nativeRunnerGuardTestsPassed": 2,
+  "nativeInputComparison": {
+    "path": "artifacts/veil-mouse-156/native-input/results.json",
+    "sha256": "0afc622a1c5f444659329d67557bc52d647bbecd8a440d170a2472a5dfbb6eda",
+    "plannedMaximumCandidateTrials": 10,
+    "candidateTrialsRun": 1,
+    "controlWorked": true,
+    "candidateRefusedEvents": 65,
+    "candidateAdmittedEvents": 35,
+    "admittedEventType": "mouseMoved (5)",
+    "newPageInputEvents": 0,
+    "newAcceptedActions": 0,
+    "verdict": "interaction-observed-origin-unresolved",
+    "attributionEstablished": false,
+    "restored": true,
+    "remainingPostingProbePIDs": [],
+    "taskCompletionComparison": false,
+    "operatorPhysicalInputAbsence": "unconfirmed",
+    "operatorResponse": "I'm not sure"
+  }
+}

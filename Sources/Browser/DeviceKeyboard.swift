@@ -54,7 +54,9 @@ final class DeviceKeyboardApplication: AXBoundaryApplication {
     private var awaitingInitialNavigation = true
     var onOpenLocation: (() -> Void)?
     #if DEVICE_POINTER_EXPERIMENT
+    #if !VEIL_BROWSER
     var onArmPointer: (() -> Void)?
+    #endif
     private var pendingPointerRelease: NSEvent?
 
     func dispatchDevicePointerClick(at point: CGPoint, in window: NSWindow) {
@@ -74,6 +76,43 @@ final class DeviceKeyboardApplication: AXBoundaryApplication {
             sendEvent(up)
         }
     }
+
+    #if VEIL_BROWSER
+    func dispatchDevicePointerMove(at point: CGPoint, in window: NSWindow) {
+        guard let event = NSEvent.mouseEvent(with: .mouseMoved, location: point, modifierFlags: [],
+            timestamp: ProcessInfo.processInfo.systemUptime, windowNumber: window.windowNumber,
+            context: nil, eventNumber: 0, clickCount: 0, pressure: 0) else { return }
+        dispatchDeviceViewEvent(event, at: point, in: window)
+    }
+
+    func dispatchDeviceWheel(at point: CGPoint, lines: Int, in window: NSWindow) {
+        guard (-127...127).contains(lines), lines != 0,
+              let cg = CGEvent(scrollWheelEvent2Source: nil, units: .line, wheelCount: 1,
+                               wheel1: Int32(lines), wheel2: 0, wheel3: 0) else { return }
+        guard let mainHeight = NSScreen.screens.first?.frame.height else { return }
+        // NSEvent(cgEvent:) has no NSWindow. This event is routed directly to an
+        // owned view, so its locationInWindow must contain window-local points.
+        cg.location = CGPoint(x: point.x, y: mainHeight - point.y)
+        guard let event = NSEvent(cgEvent: cg), event.window == nil,
+              abs(event.locationInWindow.x - point.x) < 0.001,
+              abs(event.locationInWindow.y - point.y) < 0.001 else { return }
+        dispatchDeviceViewEvent(event, at: point, in: window)
+    }
+
+    private func dispatchDeviceViewEvent(_ event: NSEvent, at point: CGPoint, in window: NSWindow) {
+        guard let content = window.contentView,
+              content.bounds.contains(content.convert(point, from: nil)),
+              let target = content.hitTest(content.convert(point, from: nil)), target.window === window else { return }
+        deviceGate.authorize(event)
+        guard deviceGate.consume(event) else { return }
+        recordAccepted(event)
+        switch event.type {
+        case .mouseMoved: target.mouseMoved(with: event)
+        case .scrollWheel: target.scrollWheel(with: event)
+        default: preconditionFailure("Unsupported private mouse event")
+        }
+    }
+    #endif
 
     override func nextEvent(matching mask: NSEvent.EventTypeMask, until expiration: Date?,
                             inMode mode: RunLoop.Mode, dequeue flag: Bool) -> NSEvent? {
@@ -127,7 +166,7 @@ final class DeviceKeyboardApplication: AXBoundaryApplication {
                 return
             }
             recordAccepted(event)
-            #if DEVICE_POINTER_EXPERIMENT
+            #if DEVICE_POINTER_EXPERIMENT && !VEIL_BROWSER
             if event.type == .keyDown, event.keyCode == 46,
                event.modifierFlags.intersection([.command, .option, .control, .shift]) == [.command, .option] {
                 onArmPointer?()

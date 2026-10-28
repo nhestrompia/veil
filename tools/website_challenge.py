@@ -16,9 +16,10 @@ from run_drag_delivery import launch, ready
 from run_native import ROOT
 from launch_focus_browser import launch as launch_engine, verified_target as verified_engine_target
 from launch_pointer_browser import launch as launch_pointer, verified_target as verified_pointer_target
+from launch_veil_browser import launch as launch_veil, verified_target as verified_veil_target
 
 
-TARGETS = {"engine": "AgentFreeBrowserEngine", "pointer": "AgentFreeBrowserPointer",
+TARGETS = {"veil": "Veil", "engine": "AgentFreeBrowserEngine", "pointer": "AgentFreeBrowserPointer",
            "preview": "AgentFreeBrowserPreview", "control": "InspectableControl"}
 SITES = {
     "google": ("https://www.google.com/", "WebKit browser engine"),
@@ -197,8 +198,10 @@ Create `{session['stopFile']}` to stop this session, or wait for its timeout.
 
 def pinned_image(target):
     name = TARGETS[target]
-    if target in ['engine', 'pointer']:
-        binary, _ = verified_engine_target() if target == 'engine' else verified_pointer_target()
+    if target in ['veil', 'engine', 'pointer']:
+        verifier = {'veil': verified_veil_target, 'engine': verified_engine_target,
+                    'pointer': verified_pointer_target}[target]
+        binary, _ = verifier()
         return name, binary.parents[2], binary, hashlib.sha256(binary.read_bytes()).hexdigest()
     manifest = json.loads((ROOT / "docs/evidence/preview-renderer-read-permission-manifest.json").read_text())
     expected = next(p["sha256"] for p in manifest["targetPolicies"] if p["name"] == name)
@@ -244,7 +247,8 @@ def run(target, site, output, seconds, reuse=None, search_page=False, agent_labe
                "agentLabel": agent_label,
                'mode': mode, 'humanAssistanceRequestedByRunner': mode == 'takeover',
                'appPath': str(app), 'binaryPath': str(binary),
-               'bundleIdentifier': {'engine': 'research.agentfreebrowser.focusengine',
+               'bundleIdentifier': {'veil': 'research.agentfreebrowser.veil',
+                                    'engine': 'research.agentfreebrowser.focusengine',
                                     'pointer': 'research.agentfreebrowser.pointer',
                                     'preview': 'research.agentfreebrowser.preview',
                                     'control': 'research.agentfreebrowser.control'}[target],
@@ -264,13 +268,15 @@ def run(target, site, output, seconds, reuse=None, search_page=False, agent_labe
                 for number in [signal.SIGTERM, signal.SIGINT, signal.SIGALRM]}
     signal.alarm(seconds + 30)
     def start(log, arguments):
+        if target == 'veil':
+            return launch_veil(log, arguments)
         if target == 'engine':
             return launch_engine(log, arguments)
         if target == 'pointer':
             return launch_pointer(log, arguments)
         return launch(name, log, arguments)
     try:
-        if target in ['engine', 'pointer', 'preview']:
+        if target in ['veil', 'engine', 'pointer', 'preview']:
             preflight = output / "permission.log"
             preflight_launcher, _ = start(preflight, ["--permissions"])
             try:
@@ -324,7 +330,7 @@ def run(target, site, output, seconds, reuse=None, search_page=False, agent_labe
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--target", choices=TARGETS, default="pointer")
+    parser.add_argument("--target", choices=TARGETS, default="veil")
     parser.add_argument("--site", choices=SITES, default="google")
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--seconds", type=int, default=600)

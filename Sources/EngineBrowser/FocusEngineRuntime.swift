@@ -66,7 +66,10 @@ enum FocusEngineRuntime {
     static func inputRequestApproved() -> Bool {
         let project = URL(fileURLWithPath: #filePath).deletingLastPathComponent()
             .deletingLastPathComponent().deletingLastPathComponent()
-        #if DEVICE_POINTER_EXPERIMENT
+        #if VEIL_BROWSER
+        let manifest = project.appendingPathComponent("docs/evidence/veil-browser-manifest.json")
+        let targetName = "Veil"
+        #elseif DEVICE_POINTER_EXPERIMENT
         let manifest = project.appendingPathComponent("docs/evidence/hardware-pointer-browser-manifest.json")
         let targetName = "AgentFreeBrowserPointer"
         #else

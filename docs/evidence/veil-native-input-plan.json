@@ -1,0 +1,25 @@
+{
+  "approved": true,
+  "executed": true,
+  "sessionFile": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/veil-mouse-156/physical-session/session.json",
+  "binarySHA256": "dc0725ded122316f7a51427295e75f4c1d8ed2cb5447d017583ad69652f8c1ef",
+  "runnerSHA256": "68ef2f3d693e1bd17f3d21be5887146496b8d09eba448b26ee3ba2fba798acd6",
+  "probeSHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1",
+  "pauseHelperSHA256": "e62a28a8b65f16fbfaf8d12c23d653054e571ff2db13fa1fba2e36045f0b99ff",
+  "routes": [
+    "hid",
+    "session",
+    "private",
+    "curve-hid",
+    "pid-keys-keycodes-hid"
+  ],
+  "repetitions": 2,
+  "maximumSeconds": 240,
+  "modifierApps": [
+    "com.lujjjh.LinearMouse",
+    "com.ethanbills.DockDoor"
+  ],
+  "output": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/veil-mouse-156/native-input",
+  "scope": "Ordinary-user native input against the same local Veil fixture and readable controls. Pause only LinearMouse and DockDoor; restore original apps after posting probes stop. No new hooks, permissions, root access, or browser changes. Score input admission, not task completion: the candidate button is offscreen after physical scrolling.",
+  "userResponse": "Allow this bounded pause, native tests, and restore"
+}

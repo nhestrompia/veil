@@ -11,29 +11,29 @@ from launch_focus_browser import verified_target as verified_engine
 from process_cleanup import matching_pids, stop_launched
 
 
-def verified_target():
-    record = json.loads(MANIFEST.read_text())
-    target = record['targets'][NAME]
-    binary = APP / 'Contents/MacOS' / NAME
-    if target['path'] != str(APP) or digest(binary) != target['binarySHA256']:
+def verified_target(*, name=NAME, app_path=APP, manifest_path=MANIFEST):
+    record = json.loads(manifest_path.read_text())
+    target = record['targets'][name]
+    binary = app_path / 'Contents/MacOS' / name
+    if target['path'] != str(app_path) or digest(binary) != target['binarySHA256']:
         raise RuntimeError('The pinned hardware-pointer candidate changed')
     _, environment = verified_engine()
     engine = json.loads(ENGINE_MANIFEST.read_text())
     if record['engineRoot'] != engine['engineRoot'] or record['engineSHA256'] != engine['engineSHA256']:
         raise RuntimeError('The hardware-pointer engine pins differ from the tested engine')
-    subprocess.run(['codesign', '--verify', '--strict', str(APP)], check=True, capture_output=True, timeout=10)
+    subprocess.run(['codesign', '--verify', '--strict', str(app_path)], check=True, capture_output=True, timeout=10)
     return binary, environment
 
 
-def launch(log, arguments):
-    binary, environment = verified_target()
+def launch(log, arguments, *, name=NAME, app_path=APP, manifest_path=MANIFEST):
+    binary, environment = verified_target(name=name, app_path=app_path, manifest_path=manifest_path)
     if matching_pids(binary):
         raise RuntimeError('The hardware-pointer candidate already runs')
     environment = {key: value for key, value in environment.items()
                    if not key.startswith(('DYLD_', '__XPC_DYLD_', 'AFB_'))}
     log = log.resolve()
     log.write_text('')
-    process = subprocess.Popen(['open', '-n', '-W', str(APP), '--stdout', str(log), '--stderr', str(log),
+    process = subprocess.Popen(['open', '-n', '-W', str(app_path), '--stdout', str(log), '--stderr', str(log),
                                 '--args', *arguments], env=environment,
                                stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     process.research_existing_pids = set()

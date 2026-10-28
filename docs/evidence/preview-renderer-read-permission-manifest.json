@@ -1,0 +1,50 @@
+{
+  "milestone": 136,
+  "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/dist/PreviewRendererReadProbe.app",
+  "bundleIdentifier": "research.agentfreebrowser.previewrendererread",
+  "executableSHA256": "18c7df1aba7af587ba002f52f38b4e07c6a0fd06be275493ce2d220fe4db8f8f",
+  "sourceHashes": {
+    "Sources/Diagnostics/RendererProcessScope.swift": "4e7f0bd22ced093ec33c598a9d255162bb03b2989d62b0792338f5ccc2046e95",
+    "Sources/Diagnostics/PreviewAXScope.swift": "85e30c933226e50f386a1de62565c71884a1d0f55ae01b7ae0e5160f36ede40d",
+    "Sources/Diagnostics/PreviewRendererReadProbe.swift": "fcd58a1c97625e3dda62e77b5b00d091be1003280612d101d3d0351cf72d4e35",
+    "scripts/build-preview-renderer-read-probe.sh": "cd50e4285e43edf10ede632c4d32c5045c3e56c2a7803f5d69ccacb78f1f2ce5",
+    "tools/run_preview_renderer_reads.py": "1aa5c7bf51bb85b4fb6d308c475432b2e22b1bd99788e1d479e742db0a270a82"
+  },
+  "permission": "macOS Accessibility",
+  "permissionApproved": false,
+  "permissionRequested": false,
+  "requestCommandExecuted": false,
+  "automaticRequestAtLaunch": false,
+  "scope": "Read only the two hash-pinned research hosts and their OS-owned WebKit renderers. Save fixed research markers and counts only.",
+  "inputPosted": false,
+  "actionsSent": false,
+  "hooksInstalled": false,
+  "rawTextSaved": false,
+  "nativeAlarmSeconds": 20,
+  "queryBudgetSeconds": 12,
+  "maximumRendererCount": 4,
+  "maximumElementCountPerProcess": 500,
+  "maximumTokenIDsPerProcess": 1024,
+  "targetPolicies": [
+    {
+      "name": "AgentFreeBrowserPreview",
+      "sha256": "dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70"
+    },
+    {
+      "name": "InspectableControl",
+      "sha256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36"
+    }
+  ],
+  "requestCommand": [
+    "open",
+    "-g",
+    "-n",
+    "-W",
+    "/Users/nhestrompia/.t3/projects/agentfreebrowser/dist/PreviewRendererReadProbe.app",
+    "--args",
+    "request-accessibility",
+    "--out",
+    "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-renderer-136/approved-accessibility-request.json"
+  ],
+  "supersedesUnapprovedSHA256": "906a4b00e6c24fd1fa3f0edde8352aae68970771f78d3490da8ead2487a79eec"
+}

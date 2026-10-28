@@ -1,10 +1,24 @@
 # Current research state
 
+Milestone 136 prepares and pins PreviewRendererReadProbe. It identifies the unchanged preview PID 2892 and its owned WebKit renderer PID 3422. A fresh readable reference also passes ownership checks. An unrelated target is refused. The final runner stops before all AX reads because its new Accessibility grant is absent. No permission request or website action runs. See [preparation findings](preview-renderer-read-findings.md).
+
+The next step needs separate Accessibility approval for this exact new helper. Its manifest is docs/evidence/preview-renderer-read-permission-manifest.json. The final image hash is 18c7df1aba7af587ba002f52f38b4e07c6a0fd06be275493ce2d220fe4db8f8f. Its explicit request command remains unexecuted. Existing RendererAXProbe cannot target the preview. Do not rebuild or expand any granted helper.
+
+Seventeen Swift policy checks and seven Python checks pass. All existing granted images and browser source hashes remain unchanged. All new helpers and readable references stop. Both modifier apps remain running, so global synthetic-input tests remain prohibited by the existing guard. Renderer reads use no input or AX actions and need no modifier pause.
+
+The physical preview and fixture remain live under their original one-hour watchdog. Check the exact session before reuse. tools/run_preview_renderer_reads.py takes its session file and separate physical-control record. It requires a fresh renderer-marker reference before each candidate mode. A failed reference or incomplete candidate stops later modes. If the physical session expires, do not transfer its result to another process.
+
+The inspector review finds no validated standalone Cocoa attachment client. The installed frontend classes and selectors exist, but no inspector is instantiated or contacted. Cocoa inspection uses XPC, so a missing TCP listener is not prevention evidence. See [research](research/preview-inspection-next-step.md). Continuous capture and autonomous page-action gaps remain open. Agent-free browsing remains unproven.
+
+## Milestone 135
+
 Milestone 135 completes the approved temporary pause of LinearMouse and DockDoor. Five fresh readable references complete their tasks. The same physically calibrated preview PID 2892 refuses all 206 candidate events, admits zero, and records no new action. The sixth, direct-to-process reference fails its task. The candidate is skipped and all later routes stop. See [native findings](preview-native-input-findings.md).
 
 Both approved apps terminate normally and reopen only after all native input probes stop. All six references stop. The restored apps again own modifying mouse hooks. Do not post more input while those hooks are active. No root, computer-use service, preference change, or other app pause occurs. All 11 granted images and the preview sources remain unchanged. The consumed approval cannot run again.
 
 The physical preview and its fixture remain live under their original one-hour watchdog. Their session file is artifacts/integrated-browser-134/physical-session/session.json. Check its exact process and image before reuse. Stop-file cleanup remains available. Independent renderer accessibility, other inspector transports, continuous capture on this preview, and autonomous page actions remain open. Five native blocks and two scoped black captures do not establish agent-free browsing.
+
+## Historical milestone 134
 
 Milestone 134 confirms effective Input Monitoring for the unchanged AgentFreeBrowserPreview. The user reports Task complete, the fixture records one accepted action, and device binding is present. Preserve PID 2892 and image dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70 while the session remains live. See [live findings](preview-session-findings.md).
 

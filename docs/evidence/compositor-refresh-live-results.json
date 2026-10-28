@@ -1,0 +1,486 @@
+{
+  "status": "backdrop-only-in-sampled-frames",
+  "rows": [
+    {
+      "name": "clear-before",
+      "launchFocus": {
+        "activations": 0,
+        "events": [
+          {
+            "foregroundRole": "research-target",
+            "seconds": 1.3750046491622925e-05
+          }
+        ],
+        "hooksInstalled": false,
+        "inputPosted": false,
+        "maximumActivations": 3,
+        "maximumActiveSeconds": 8,
+        "probePID": 87641,
+        "status": "observed",
+        "targetPID": 87619
+      },
+      "status": "sampled",
+      "streamStopped": true,
+      "targetPID": 87619,
+      "targetBinarySHA256": "be47fd551b98123a64c581b264d93595270ee8f9f6895f19ce421c7cb5f81e18",
+      "windowSharingEnabled": true,
+      "stages": [
+        {
+          "stage": "initial-exclude-helper",
+          "imagesSaved": 8,
+          "completeFramesObserved": 62,
+          "ocrSamples": 8,
+          "pageSamples": 8,
+          "backdropSamples": 0
+        },
+        {
+          "stage": "updated-include-helper",
+          "imagesSaved": 8,
+          "completeFramesObserved": 21,
+          "ocrSamples": 8,
+          "pageSamples": 8,
+          "backdropSamples": 0
+        },
+        {
+          "stage": "updated-exclude-helper",
+          "imagesSaved": 8,
+          "completeFramesObserved": 69,
+          "ocrSamples": 8,
+          "pageSamples": 8,
+          "backdropSamples": 0
+        }
+      ],
+      "error": null,
+      "allStagesReadable": true,
+      "allStagesSampled": true
+    },
+    {
+      "name": "restricted",
+      "launchFocus": {
+        "activations": 0,
+        "events": [
+          {
+            "foregroundRole": "research-target",
+            "seconds": 1.2249918654561043e-05
+          }
+        ],
+        "hooksInstalled": false,
+        "inputPosted": false,
+        "maximumActivations": 3,
+        "maximumActiveSeconds": 8,
+        "probePID": 87879,
+        "status": "observed",
+        "targetPID": 87854
+      },
+      "status": "sampled",
+      "streamStopped": true,
+      "targetPID": 87854,
+      "targetBinarySHA256": "c14248c3ac02acac3bbfe3130479744c2e8780a13a0c50a1534af1b5e7789f4a",
+      "windowSharingEnabled": false,
+      "stages": [
+        {
+          "stage": "initial-exclude-helper",
+          "imagesSaved": 8,
+          "completeFramesObserved": 66,
+          "ocrSamples": 8,
+          "pageSamples": 0,
+          "backdropSamples": 8
+        },
+        {
+          "stage": "updated-include-helper",
+          "imagesSaved": 8,
+          "completeFramesObserved": 67,
+          "ocrSamples": 8,
+          "pageSamples": 0,
+          "backdropSamples": 8
+        },
+        {
+          "stage": "updated-exclude-helper",
+          "imagesSaved": 8,
+          "completeFramesObserved": 67,
+          "ocrSamples": 8,
+          "pageSamples": 0,
+          "backdropSamples": 8
+        }
+      ],
+      "error": null,
+      "allStagesReadable": false,
+      "allStagesSampled": true
+    },
+    {
+      "name": "clear-after",
+      "launchFocus": {
+        "activations": 0,
+        "events": [
+          {
+            "foregroundRole": "research-target",
+            "seconds": 1.1958414688706398e-05
+          }
+        ],
+        "hooksInstalled": false,
+        "inputPosted": false,
+        "maximumActivations": 3,
+        "maximumActiveSeconds": 8,
+        "probePID": 88054,
+        "status": "observed",
+        "targetPID": 88028
+      },
+      "status": "sampled",
+      "streamStopped": true,
+      "targetPID": 88028,
+      "targetBinarySHA256": "be47fd551b98123a64c581b264d93595270ee8f9f6895f19ce421c7cb5f81e18",
+      "windowSharingEnabled": true,
+      "stages": [
+        {
+          "stage": "initial-exclude-helper",
+          "imagesSaved": 8,
+          "completeFramesObserved": 69,
+          "ocrSamples": 8,
+          "pageSamples": 8,
+          "backdropSamples": 0
+        },
+        {
+          "stage": "updated-include-helper",
+          "imagesSaved": 8,
+          "completeFramesObserved": 21,
+          "ocrSamples": 8,
+          "pageSamples": 8,
+          "backdropSamples": 0
+        },
+        {
+          "stage": "updated-exclude-helper",
+          "imagesSaved": 8,
+          "completeFramesObserved": 69,
+          "ocrSamples": 8,
+          "pageSamples": 8,
+          "backdropSamples": 0
+        }
+      ],
+      "error": null,
+      "allStagesReadable": true,
+      "allStagesSampled": true
+    }
+  ],
+  "systemInputPosted": false,
+  "scope": "Exact physical-test images. Three two-second stages, up to eight sampled frames each. Non-atomic coverage checks and queued frames remain limits.",
+  "milestone": 130,
+  "artifactDirectory": "artifacts/compositor-refresh-130/20261028-coordinated",
+  "verification": {
+    "recordedProcesses": {
+      "87580": "absent",
+      "87585": "absent",
+      "87619": "absent",
+      "87628": "absent",
+      "87632": "absent",
+      "87636": "absent",
+      "87641": "absent",
+      "87753": "absent",
+      "87756": "absent",
+      "87758": "absent",
+      "87760": "absent",
+      "87763": "absent",
+      "87765": "absent",
+      "87767": "absent",
+      "87770": "absent",
+      "87772": "absent",
+      "87774": "absent",
+      "87777": "absent",
+      "87779": "absent",
+      "87782": "absent",
+      "87784": "absent",
+      "87786": "absent",
+      "87789": "absent",
+      "87794": "absent",
+      "87796": "absent",
+      "87799": "absent",
+      "87802": "absent",
+      "87804": "absent",
+      "87807": "absent",
+      "87809": "absent",
+      "87811": "absent",
+      "87819": "absent",
+      "87854": "absent",
+      "87863": "absent",
+      "87867": "absent",
+      "87874": "absent",
+      "87879": "absent",
+      "87926": "absent",
+      "87929": "absent",
+      "87931": "absent",
+      "87933": "absent",
+      "87935": "absent",
+      "87938": "absent",
+      "87940": "absent",
+      "87942": "absent",
+      "87945": "absent",
+      "87947": "absent",
+      "87949": "absent",
+      "87952": "absent",
+      "87954": "absent",
+      "87956": "absent",
+      "87962": "absent",
+      "87964": "absent",
+      "87966": "absent",
+      "87969": "absent",
+      "87973": "absent",
+      "87975": "absent",
+      "87977": "absent",
+      "87980": "absent",
+      "87982": "absent",
+      "87985": "absent",
+      "87993": "absent",
+      "88028": "absent",
+      "88041": "absent",
+      "88045": "absent",
+      "88049": "absent",
+      "88054": "absent",
+      "88070": "absent",
+      "88072": "absent",
+      "88074": "absent",
+      "88077": "absent",
+      "88079": "absent",
+      "88081": "absent",
+      "88084": "absent",
+      "88086": "absent",
+      "88088": "absent",
+      "88091": "absent",
+      "88096": "absent",
+      "88099": "absent",
+      "88102": "absent",
+      "88104": "absent",
+      "88106": "absent",
+      "88109": "absent",
+      "88111": "absent",
+      "88114": "absent",
+      "88156": "absent",
+      "88158": "absent",
+      "88161": "absent",
+      "88163": "absent",
+      "88165": "absent",
+      "88168": "absent"
+    },
+    "allRecordedProcessesAbsent": true,
+    "frozenImages": {
+      "DeviceKeyboardExperiment": {
+        "sha256": "43b1a9833d6c55b1e254b848f9bd09c202da46ba0f8d8833084df559e6a8a9d1",
+        "unchanged": true
+      },
+      "NativeProbe": {
+        "sha256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1",
+        "unchanged": true
+      },
+      "RendererAXProbe": {
+        "sha256": "82d0c15dadfa49d1669a576270c08cb9b749d6fe102b1724fa61f6dd2d9b08a7",
+        "unchanged": true
+      },
+      "KeyboardObservationProbe": {
+        "sha256": "cdd1829e60dd838f5a2b1ef91f9d5635e7f61760360f9c18c494f8eb90086aac",
+        "unchanged": true
+      },
+      "WindowGeometryProbe": {
+        "sha256": "c99b7cb897180170e2ee5977d6518a0e2cb94db9549c75cd5867bc260606d960",
+        "unchanged": true
+      },
+      "PixelKeyboardExperiment": {
+        "sha256": "4b39843faec345d8484cbfdf829644e27fb306d160c1c77272e7961cc381acc8",
+        "unchanged": true
+      },
+      "PixelKeyboardRoutingControl": {
+        "sha256": "aac4fd5424ceebd7d792fda99a0ade9fefc3acaef546b30a2849faabcd24f1fe",
+        "unchanged": true
+      },
+      "CaptureRefreshProbe": {
+        "sha256": "cbd7a3ff6772e0c80ef83bea8cfb9eaacfdf9370204517e12b66c07b1a72d4f1",
+        "unchanged": true,
+        "sourceUnchanged": true
+      },
+      "CompositorRefreshProbe": {
+        "sha256": "dc8265f8cfe12d417d8e5e5c9780a9d9429ad3cebb195ba5ced933a8fd01e52c",
+        "unchanged": true,
+        "sourceUnchanged": true
+      }
+    },
+    "sessions": [
+      {
+        "name": "clear-before",
+        "hostStopped": true,
+        "fixtureStopped": true,
+        "fixturePortClosed": true,
+        "deviceReaderStarted": false,
+        "acceptedInternalSubmissions": 1
+      },
+      {
+        "name": "restricted",
+        "hostStopped": true,
+        "fixtureStopped": true,
+        "fixturePortClosed": true,
+        "deviceReaderStarted": false,
+        "acceptedInternalSubmissions": 1
+      },
+      {
+        "name": "clear-after",
+        "hostStopped": true,
+        "fixtureStopped": true,
+        "fixturePortClosed": true,
+        "deviceReaderStarted": false,
+        "acceptedInternalSubmissions": 1
+      }
+    ],
+    "allFrozenImagesUnchanged": true,
+    "focusDiagnosticsStopped": true,
+    "compileChecks": {
+      "swift6WarningsAsErrors": true,
+      "pythonCompilation": true,
+      "shellSyntax": true
+    }
+  },
+  "physicalBaseline": {
+    "milestone": 125,
+    "sameExecutable": true,
+    "newPhysicalObservation": false,
+    "scope": "User reported readable for the exact archived compact restricted image. Current high-level window configuration remains diagnostic."
+  },
+  "failedClearControls": [
+    {
+      "artifacts": "artifacts/compositor-refresh-130/20261028-comparison",
+      "status": "inconclusive",
+      "error": "A clear reference failed calibration",
+      "rows": [
+        {
+          "name": "clear-before",
+          "status": "inconclusive",
+          "streamStopped": true,
+          "targetPID": 83479,
+          "targetBinarySHA256": "be47fd551b98123a64c581b264d93595270ee8f9f6895f19ce421c7cb5f81e18",
+          "windowSharingEnabled": true,
+          "stages": [
+            {
+              "stage": "initial-exclude-helper",
+              "imagesSaved": 0,
+              "completeFramesObserved": 0,
+              "ocrSamples": 0,
+              "pageSamples": 0,
+              "backdropSamples": 0
+            },
+            {
+              "stage": "updated-include-helper",
+              "imagesSaved": 0,
+              "completeFramesObserved": 0,
+              "ocrSamples": 0,
+              "pageSamples": 0,
+              "backdropSamples": 0
+            },
+            {
+              "stage": "updated-exclude-helper",
+              "imagesSaved": 0,
+              "completeFramesObserved": 0,
+              "ocrSamples": 0,
+              "pageSamples": 0,
+              "backdropSamples": 0
+            }
+          ],
+          "error": "Target identity or foreground state changed",
+          "allStagesReadable": false,
+          "allStagesSampled": false
+        }
+      ],
+      "restrictedCandidateLaunched": false
+    },
+    {
+      "artifacts": "artifacts/compositor-refresh-130/20261028-focus-diagnosis/comparison",
+      "status": "inconclusive",
+      "error": "A clear reference failed calibration",
+      "rows": [
+        {
+          "name": "clear-before",
+          "status": "inconclusive",
+          "streamStopped": true,
+          "targetPID": 85118,
+          "targetBinarySHA256": "be47fd551b98123a64c581b264d93595270ee8f9f6895f19ce421c7cb5f81e18",
+          "windowSharingEnabled": true,
+          "stages": [
+            {
+              "stage": "initial-exclude-helper",
+              "imagesSaved": 8,
+              "completeFramesObserved": 64,
+              "ocrSamples": 8,
+              "pageSamples": 8,
+              "backdropSamples": 0
+            },
+            {
+              "stage": "updated-include-helper",
+              "imagesSaved": 0,
+              "completeFramesObserved": 0,
+              "ocrSamples": 0,
+              "pageSamples": 0,
+              "backdropSamples": 0
+            },
+            {
+              "stage": "updated-exclude-helper",
+              "imagesSaved": 0,
+              "completeFramesObserved": 0,
+              "ocrSamples": 0,
+              "pageSamples": 0,
+              "backdropSamples": 0
+            }
+          ],
+          "error": "Target identity or foreground state changed",
+          "allStagesReadable": false,
+          "allStagesSampled": false
+        }
+      ],
+      "restrictedCandidateLaunched": false
+    },
+    {
+      "artifacts": "artifacts/compositor-refresh-130/20261028-retry-idle",
+      "status": "inconclusive",
+      "error": "A clear reference failed calibration",
+      "rows": [
+        {
+          "name": "clear-before",
+          "status": "inconclusive",
+          "streamStopped": true,
+          "targetPID": 86150,
+          "targetBinarySHA256": "be47fd551b98123a64c581b264d93595270ee8f9f6895f19ce421c7cb5f81e18",
+          "windowSharingEnabled": true,
+          "stages": [
+            {
+              "stage": "initial-exclude-helper",
+              "imagesSaved": 8,
+              "completeFramesObserved": 66,
+              "ocrSamples": 8,
+              "pageSamples": 8,
+              "backdropSamples": 0
+            },
+            {
+              "stage": "updated-include-helper",
+              "imagesSaved": 0,
+              "completeFramesObserved": 0,
+              "ocrSamples": 0,
+              "pageSamples": 0,
+              "backdropSamples": 0
+            },
+            {
+              "stage": "updated-exclude-helper",
+              "imagesSaved": 0,
+              "completeFramesObserved": 0,
+              "ocrSamples": 0,
+              "pageSamples": 0,
+              "backdropSamples": 0
+            }
+          ],
+          "error": "Target identity or foreground state changed",
+          "allStagesReadable": false,
+          "allStagesSampled": false
+        }
+      ],
+      "restrictedCandidateLaunched": false
+    }
+  ],
+  "deviceReaderStarted": false,
+  "administratorAccessUsed": false,
+  "visuallyInspectedSamples": [
+    "restricted/compositor-refresh/sequence.updated-include-helper-0.png",
+    "clear-after/compositor-refresh/sequence.updated-include-helper-0.png"
+  ]
+}

@@ -21,10 +21,20 @@ def invoke(arguments, output):
     existing = matching_pids(binary)
     if existing:
         raise RuntimeError('A capture-refresh helper already runs')
+    coordinate = bool(arguments and str(arguments[0]) == 'sequence')
+    focus_binary = ROOT / '.build/ResearchCaptureFocus'
+    focus_output = output.with_suffix('.focus.json')
+    if coordinate and (not focus_binary.is_file() or focus_output.exists()):
+        raise RuntimeError('Build the bounded focus coordinator and use a fresh output')
+    focus = None
     launcher = subprocess.Popen(['open', '-g', '-n', '-W', str(app), '--args', *map(str, arguments),
                                  '--out', str(output)], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     launcher.research_existing_pids = existing
     try:
+        if coordinate:
+            focus = subprocess.Popen([str(focus_binary), str(arguments[1]), str(arguments[4]),
+                                      manifest['executableSHA256'], str(focus_output)],
+                                     stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         launcher.wait(timeout=40)
         return json.loads(output.read_text())
     finally:
@@ -32,6 +42,13 @@ def invoke(arguments, output):
         if launcher.poll() is None:
             launcher.terminate()
             launcher.wait(timeout=3)
+        if focus is not None:
+            try:
+                focus.wait(timeout=17)
+            except subprocess.TimeoutExpired:
+                focus.terminate()
+                focus.wait(timeout=3)
+                raise RuntimeError('The bounded focus coordinator failed to stop')
         if not clean:
             raise RuntimeError('The scoped capture helper did not stop')
 
@@ -70,7 +87,9 @@ def run(output, session_path=None):
                                'ocrAvailable': isinstance(ocr.get('text'), list),
                                'markerRecovery': marker_recovery(ocr, session['secret']),
                                'backdropLabelRecovered': 'controlled research backdrop' in json.dumps(ocr).lower()})
-    summary = {'status': result['status'], 'streamStopped': result.get('streamStopped'),
+    focus_path = (output / 'sequence.json').with_suffix('.focus.json')
+    focus_report = json.loads(focus_path.read_text()) if focus_path.exists() else {}
+    summary = {'launchFocus': focus_report, 'status': result['status'], 'streamStopped': result.get('streamStopped'),
                'targetPID': session['pid'], 'targetBinarySHA256': session['binarySHA256'],
                'windowSharingEnabled': session['windowSharingEnabled'], 'recoveries': recoveries,
                'stageReports': [{k: stage[k] for k in ['stage', 'status', 'completeFramesSinceBaseline', 'statuses']}

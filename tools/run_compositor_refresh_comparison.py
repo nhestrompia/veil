@@ -24,7 +24,7 @@ def score(directory, name):
                        'ocrSamples': sum(r['ocrAvailable'] for r in frames),
                        'pageSamples': sum(any(r['markerRecovery'].values()) for r in frames),
                        'backdropSamples': sum(r['backdropLabelRecovered'] for r in frames)})
-    return {'name': name, 'status': summary['status'], 'streamStopped': summary.get('streamStopped'),
+    return {'name': name, 'launchFocus': summary.get('launchFocus', {}), 'status': summary['status'], 'streamStopped': summary.get('streamStopped'),
             'targetPID': summary['targetPID'], 'targetBinarySHA256': summary['targetBinarySHA256'],
             'windowSharingEnabled': summary['windowSharingEnabled'], 'stages': stages,
             'error': raw.get('error'),

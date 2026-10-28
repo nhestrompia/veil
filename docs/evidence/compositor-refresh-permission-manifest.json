@@ -35,8 +35,8 @@
   "permissionApproval": "User replied Yes to this exact CompositorRefreshProbe Screen Recording request.",
   "requestIssuedUnixSeconds": 1793115491.7003882,
   "effectiveGrantAfterRequest": false,
-  "effectiveGrantConfirmed": false,
-  "manualExactAppAddPending": true,
+  "effectiveGrantConfirmed": true,
+  "manualExactAppAddPending": false,
   "permissionRequestResult": {
     "capturesAudio": false,
     "probePID": 84126,
@@ -44,5 +44,24 @@
     "screenRecordingGranted": false,
     "status": "requested",
     "systemInputPosted": false
-  }
+  },
+  "additionalRequestAttempts": [
+    {
+      "authorization": "User said if not trigger again after reporting they may have added the app.",
+      "issuedUnixSeconds": 1793175998.723092,
+      "resultPath": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/compositor-refresh-130/20261028-authorized-retry.json",
+      "result": {
+        "capturesAudio": false,
+        "probePID": 81594,
+        "requestReturned": false,
+        "screenRecordingGranted": false,
+        "status": "requested",
+        "systemInputPosted": false
+      }
+    }
+  ],
+  "userReportedMaybeAdded": true,
+  "manualGrantVerificationPending": false,
+  "userConfirmedSwitchOn": true,
+  "effectiveGrantPreflightPath": "artifacts/compositor-refresh-130/20261028-enabled-confirmation/permissions.json"
 }

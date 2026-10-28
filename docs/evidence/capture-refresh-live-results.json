@@ -1,0 +1,192 @@
+{
+  "milestone": 127,
+  "helperExecutableSHA256": "cbd7a3ff6772e0c80ef83bea8cfb9eaacfdf9370204517e12b66c07b1a72d4f1",
+  "helperSourceSHA256": "2b59fbf7d1975bb7435f5691f2fa8e0a37bd473d5c235f61ec92c2f0e9833d93",
+  "effectiveGrant": true,
+  "rows": [
+    {
+      "name": "clear-before",
+      "targetPID": 67199,
+      "targetBinarySHA256": "bf00577a6612d63731005a737315f28ff414732b3693d06c68413e8005ba81bf",
+      "windowSharingEnabled": true,
+      "acceptedInternalSubmissions": 1,
+      "streamStatus": "sampled",
+      "streamStopped": true,
+      "stages": [
+        {
+          "stage": "initial-window-filter",
+          "status": "sampled",
+          "completeFramesSinceBaseline": 60,
+          "statuses": [
+            0
+          ],
+          "imagesSaved": 8,
+          "markerRecoveryCount": 8,
+          "ocrSamples": 8
+        },
+        {
+          "stage": "updated-app-filter",
+          "status": "sampled",
+          "completeFramesSinceBaseline": 69,
+          "statuses": [
+            0
+          ],
+          "imagesSaved": 8,
+          "markerRecoveryCount": 8,
+          "ocrSamples": 8
+        },
+        {
+          "stage": "updated-window-filter",
+          "status": "sampled",
+          "completeFramesSinceBaseline": 65,
+          "statuses": [
+            0
+          ],
+          "imagesSaved": 8,
+          "markerRecoveryCount": 8,
+          "ocrSamples": 8
+        }
+      ]
+    },
+    {
+      "name": "restricted",
+      "targetPID": 67337,
+      "targetBinarySHA256": "bbba6edbd25d6b453a278e1e9909f96931101913c47f95c9d5e9009157b725c0",
+      "windowSharingEnabled": false,
+      "acceptedInternalSubmissions": 1,
+      "streamStatus": "inconclusive",
+      "streamStopped": true,
+      "stages": [
+        {
+          "stage": "initial-window-filter",
+          "status": "inconclusive",
+          "completeFramesSinceBaseline": 0,
+          "statuses": [],
+          "imagesSaved": 0,
+          "markerRecoveryCount": 0,
+          "ocrSamples": 0
+        },
+        {
+          "stage": "updated-app-filter",
+          "status": "inconclusive",
+          "completeFramesSinceBaseline": 0,
+          "statuses": [],
+          "imagesSaved": 0,
+          "markerRecoveryCount": 0,
+          "ocrSamples": 0
+        },
+        {
+          "stage": "updated-window-filter",
+          "status": "inconclusive",
+          "completeFramesSinceBaseline": 0,
+          "statuses": [],
+          "imagesSaved": 0,
+          "markerRecoveryCount": 0,
+          "ocrSamples": 0
+        }
+      ]
+    },
+    {
+      "name": "clear-after",
+      "targetPID": 67569,
+      "targetBinarySHA256": "bf00577a6612d63731005a737315f28ff414732b3693d06c68413e8005ba81bf",
+      "windowSharingEnabled": true,
+      "acceptedInternalSubmissions": 1,
+      "streamStatus": "sampled",
+      "streamStopped": true,
+      "stages": [
+        {
+          "stage": "initial-window-filter",
+          "status": "sampled",
+          "completeFramesSinceBaseline": 63,
+          "statuses": [
+            0
+          ],
+          "imagesSaved": 8,
+          "markerRecoveryCount": 8,
+          "ocrSamples": 8
+        },
+        {
+          "stage": "updated-app-filter",
+          "status": "sampled",
+          "completeFramesSinceBaseline": 65,
+          "statuses": [
+            0
+          ],
+          "imagesSaved": 8,
+          "markerRecoveryCount": 8,
+          "ocrSamples": 8
+        },
+        {
+          "stage": "updated-window-filter",
+          "status": "sampled",
+          "completeFramesSinceBaseline": 65,
+          "statuses": [
+            0
+          ],
+          "imagesSaved": 8,
+          "markerRecoveryCount": 8,
+          "ocrSamples": 8
+        }
+      ]
+    }
+  ],
+  "finalReferenceCompletedSeparately": true,
+  "candidateMarkerRecovered": false,
+  "verdict": "No disclosure through tested inclusion filters; candidate frame-content exclusion remains inconclusive.",
+  "originalPhysicalImageHashesVerified": true,
+  "originalBundleSignaturesVerified": true,
+  "cleanup": [
+    {
+      "session": "artifacts/capture-refresh-127/comparison-1/clear-before/session/session.json",
+      "pid": 66621,
+      "ownedHostStopped": true,
+      "ownedFixtureStopped": true
+    },
+    {
+      "session": "artifacts/capture-refresh-127/comparison-2/clear-before/session/session.json",
+      "pid": 66843,
+      "ownedHostStopped": true,
+      "ownedFixtureStopped": true
+    },
+    {
+      "session": "artifacts/capture-refresh-127/comparison-3/restricted/session/session.json",
+      "pid": 67337,
+      "ownedHostStopped": true,
+      "ownedFixtureStopped": true
+    },
+    {
+      "session": "artifacts/capture-refresh-127/comparison-3/clear-before/session/session.json",
+      "pid": 67199,
+      "ownedHostStopped": true,
+      "ownedFixtureStopped": true
+    },
+    {
+      "session": "artifacts/capture-refresh-127/comparison-3/clear-after/session/session.json",
+      "pid": 67569,
+      "ownedHostStopped": true,
+      "ownedFixtureStopped": true
+    }
+  ],
+  "recordedProcessCount": 119,
+  "allRecordedProcessesAbsent": true,
+  "frozenImagesUnchanged": true,
+  "pilotCorrections": [
+    "comparison-1 clear frames were readable but OCR glyph aliases caused a scoring false negative. All 24 rescore positively.",
+    "comparison-2 stopped before candidate launch on a rebuilt executable hash mismatch.",
+    "comparison-3 uses original archived executables and signatures."
+  ],
+  "regressionChecksPassed": 3,
+  "newAdministratorAccess": false,
+  "systemInputPosted": false,
+  "capturesAudio": false,
+  "limits": [
+    "No unfiltered display or QuickTime capture test.",
+    "Three two-second stream stages. At most eight sampled complete frames per stage.",
+    "Physical visibility inherited from the exact milestone-125 executable.",
+    "Internal local task is not physical input or an external agent action.",
+    "Agent-free browsing remains unproven."
+  ],
+  "candidateCompleteFramesObserved": 0,
+  "allCallbackCountsMeasured": false
+}

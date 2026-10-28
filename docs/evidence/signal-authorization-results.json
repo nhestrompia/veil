@@ -1,0 +1,100 @@
+{
+  "enforcementVerified": false,
+  "clientCreated": false,
+  "cases": [
+    {
+      "case": "missing-prerequisites",
+      "exitCode": 1,
+      "result": {
+        "enforcementVerified": false,
+        "error": "missingPrerequisites",
+        "status": "refused-or-failed"
+      },
+      "passed": true
+    },
+    {
+      "case": "public-manifest",
+      "exitCode": 1,
+      "result": {
+        "enforcementVerified": false,
+        "error": "invalidManifest",
+        "status": "refused-or-failed"
+      },
+      "passed": true
+    },
+    {
+      "case": "oversized-manifest",
+      "exitCode": 1,
+      "result": {
+        "enforcementVerified": false,
+        "error": "invalidManifest",
+        "status": "refused-or-failed"
+      },
+      "passed": true
+    },
+    {
+      "case": "stale-process-identity",
+      "exitCode": 1,
+      "result": {
+        "enforcementVerified": false,
+        "error": "invalidTarget",
+        "status": "refused-or-failed"
+      },
+      "passed": true
+    },
+    {
+      "case": "symlink-manifest",
+      "exitCode": 1,
+      "result": {
+        "enforcementVerified": false,
+        "error": "invalidManifest",
+        "status": "refused-or-failed"
+      },
+      "passed": true
+    },
+    {
+      "case": "wrong-manifest-name",
+      "exitCode": 1,
+      "result": {
+        "enforcementVerified": false,
+        "error": "invalidManifest",
+        "status": "refused-or-failed"
+      },
+      "passed": true
+    }
+  ],
+  "helperSHA256": "fcfa0a708707cc35835b75a8f2fd8d61ed25417732fc2afbcf1bd03e2ef519b8",
+  "preflight": {
+    "exitCode": 0,
+    "result": {
+      "canAttemptConnection": false,
+      "clientCreated": false,
+      "endpointSecurityEntitlement": false,
+      "enforcementVerified": false,
+      "eventsSubscribed": false,
+      "runningAsRoot": false,
+      "status": "preflight-only",
+      "TCC": "not-tested"
+    }
+  },
+  "targetSnapshot": {
+    "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/signal-signing-control/hardened",
+    "pid": 58730,
+    "startedSeconds": 1793022935,
+    "startedMicroseconds": 343439
+  },
+  "targetExitCode": 0,
+  "status": "safe-refusals-verified",
+  "targetCleanupVerified": true,
+  "milestone": 90,
+  "purePolicyChecksPassed": 65,
+  "pythonChecksPassed": 116,
+  "userHasAppleGrantedEntitlement": false,
+  "sourceSHA256": {
+    "Sources/Diagnostics/SignalAuthorization.swift": "a63c46788f6e7b41c61ce91a13d5df8ef400dfef6896a9518f66993c20e39764",
+    "Sources/Diagnostics/SignalAuthorizationPolicy.swift": "92244b77e5391e35ab3c7c8beb04a67bcbcbeaade56a02ee896010f12fb3d5ba",
+    "Tests/SignalAuthorizationPolicyTests.swift": "603902367b4cd23fc33f2f5f6637f26a082c6ca5cd2a29e826725895c23264f7",
+    "scripts/build-signal-authorization.sh": "8fa2b08eaad4e3442b6faa51d02890694052602d0413050f49a94730e43818b3",
+    "tools/run_signal_authorization_preflight.py": "cab953597a0aac7c2e24ba02670acb1cc91835968013633da68a2e55a7167df8"
+  }
+}

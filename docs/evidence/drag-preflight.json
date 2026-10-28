@@ -1,0 +1,22 @@
+{
+  "results": [
+    {
+      "verdict": "inconclusive",
+      "route": "permission-preflight",
+      "error": "The existing probe grants are not effective. No drag or target launch occurred."
+    }
+  ],
+  "permissions": {
+    "accessibility": false,
+    "pid": 77221,
+    "postEvents": false,
+    "screenCapture": false,
+    "probeBinarySHA256": "dea5d69ca217ff16fe67d26b2379ef59d683893c24a54a0c1c0ff59ecfdf9eac"
+  },
+  "environment": {
+    "locked": true,
+    "advisory": true
+  },
+  "probeBinarySHA256": "dea5d69ca217ff16fe67d26b2379ef59d683893c24a54a0c1c0ff59ecfdf9eac",
+  "dragSourceBinarySHA256": "81253d8eb1565f50f4627c8054e7f94877c15a5128b4e3dfee5491853d009a1c"
+}

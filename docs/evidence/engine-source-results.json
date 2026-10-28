@@ -1,0 +1,28 @@
+{
+  "milestone": 64,
+  "preparation": {
+    "revision": "94f9b7905e3ce9a3d7497f26b563adcad6b7525f",
+    "remote": "https://github.com/WebKit/WebKit.git",
+    "source": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/WebKit-94f9b7905e3ce9a3d7497f26b563adcad6b7525f",
+    "method": "shallow sparse dependency clone",
+    "sourceDirectories": [
+      "Source",
+      "Tools",
+      "WebKitLibraries",
+      "WebKit.xcworkspace"
+    ],
+    "gitMetadataBytes": 469947311,
+    "checkoutBytes": 1326963695,
+    "pinnedFilesVerified": 12,
+    "minimumFreeBytes": 64424509440,
+    "engineBuilt": false,
+    "engineExecuted": false,
+    "archiveAttempt": {
+      "url": "https://codeload.github.com/WebKit/WebKit/tar.gz/94f9b7905e3ce9a3d7497f26b563adcad6b7525f",
+      "httpStatus": 422,
+      "response": "422: Content creation is blocked"
+    },
+    "pristineReuseVerified": true,
+    "pythonChecksPassed": 92
+  }
+}

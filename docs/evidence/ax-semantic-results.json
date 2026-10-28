@@ -1,0 +1,301 @@
+{
+  "permissions": {
+    "accessibility": true,
+    "pid": 12600,
+    "postEvents": true,
+    "screenCapture": true
+  },
+  "environment": {
+    "locked": null,
+    "reason": "Console lock flag unavailable",
+    "advisory": true
+  },
+  "positiveControlTarget": "InspectableControl",
+  "system": "ProductName:\t\tmacOS\nProductVersion:\t\t26.6\nBuildVersion:\t\t25G72\n",
+  "results": [
+    {
+      "target": "InspectableControl",
+      "route": "ax",
+      "repetition": 0,
+      "trial": "4e94b5395f0abc56",
+      "binarySHA256": "fdc78d4a76268b5cd78c1727f3931636c1714b8a4ef0442d26ecc66ec1046f96",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "first": {
+          "focusError": 0,
+          "pid": 12601,
+          "pressError": 0,
+          "setValueError": 0,
+          "status": "attempted"
+        },
+        "retry": {
+          "focusError": 0,
+          "pid": 12601,
+          "pressError": 0,
+          "setValueError": 0,
+          "status": "attempted"
+        }
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        },
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ],
+      "secureInputEvents": {
+        "enabled": 0,
+        "disabled": 0
+      },
+      "inputGate": {
+        "acceptedEvents": 0,
+        "refusedEvents": 0
+      },
+      "controlWorked": false
+    },
+    {
+      "target": "InspectableControl",
+      "route": "ax",
+      "repetition": 1,
+      "trial": "91caaadfe7645d54",
+      "binarySHA256": "fdc78d4a76268b5cd78c1727f3931636c1714b8a4ef0442d26ecc66ec1046f96",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "first": {
+          "focusError": 0,
+          "pid": 12620,
+          "pressError": 0,
+          "setValueError": 0,
+          "status": "attempted"
+        },
+        "retry": {
+          "focusError": 0,
+          "pid": 12620,
+          "pressError": 0,
+          "setValueError": 0,
+          "status": "attempted"
+        }
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        },
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ],
+      "secureInputEvents": {
+        "enabled": 0,
+        "disabled": 0
+      },
+      "inputGate": {
+        "acceptedEvents": 0,
+        "refusedEvents": 0
+      },
+      "controlWorked": false
+    },
+    {
+      "target": "InspectableControl",
+      "route": "ax",
+      "repetition": 2,
+      "trial": "837eccad8ed9bf89",
+      "binarySHA256": "fdc78d4a76268b5cd78c1727f3931636c1714b8a4ef0442d26ecc66ec1046f96",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "first": {
+          "focusError": 0,
+          "pid": 12705,
+          "pressError": 0,
+          "setValueError": 0,
+          "status": "attempted"
+        },
+        "retry": {
+          "focusError": 0,
+          "pid": 12705,
+          "pressError": 0,
+          "setValueError": 0,
+          "status": "attempted"
+        }
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        },
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ],
+      "secureInputEvents": {
+        "enabled": 0,
+        "disabled": 0
+      },
+      "inputGate": {
+        "acceptedEvents": 0,
+        "refusedEvents": 0
+      },
+      "controlWorked": false
+    },
+    {
+      "target": "ReducedExposureExperiment",
+      "route": "ax",
+      "repetition": 0,
+      "trial": "082d5ca02ae27479",
+      "binarySHA256": "5299bd6301d1eeea20014892dff98a8bfc6352edb34de31fd1927863f06b432a",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "first": {
+          "focusError": 0,
+          "pid": 12720,
+          "pressError": 0,
+          "setValueError": 0,
+          "status": "attempted"
+        },
+        "retry": {
+          "focusError": 0,
+          "pid": 12720,
+          "pressError": 0,
+          "setValueError": 0,
+          "status": "attempted"
+        }
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        },
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ],
+      "secureInputEvents": {
+        "enabled": 0,
+        "disabled": 0
+      },
+      "inputGate": {
+        "acceptedEvents": 0,
+        "refusedEvents": 0
+      },
+      "controlWorked": true
+    },
+    {
+      "target": "ReducedExposureExperiment",
+      "route": "ax",
+      "repetition": 1,
+      "trial": "ad1647ee1555e433",
+      "binarySHA256": "5299bd6301d1eeea20014892dff98a8bfc6352edb34de31fd1927863f06b432a",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "first": {
+          "focusError": 0,
+          "pid": 12738,
+          "pressError": 0,
+          "setValueError": 0,
+          "status": "attempted"
+        },
+        "retry": {
+          "focusError": 0,
+          "pid": 12738,
+          "pressError": 0,
+          "setValueError": 0,
+          "status": "attempted"
+        }
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        },
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ],
+      "secureInputEvents": {
+        "enabled": 0,
+        "disabled": 0
+      },
+      "inputGate": {
+        "acceptedEvents": 0,
+        "refusedEvents": 0
+      },
+      "controlWorked": true
+    },
+    {
+      "target": "ReducedExposureExperiment",
+      "route": "ax",
+      "repetition": 2,
+      "trial": "594b2cf2813d43bb",
+      "binarySHA256": "5299bd6301d1eeea20014892dff98a8bfc6352edb34de31fd1927863f06b432a",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "first": {
+          "focusError": 0,
+          "pid": 12754,
+          "pressError": 0,
+          "setValueError": 0,
+          "status": "attempted"
+        },
+        "retry": {
+          "focusError": 0,
+          "pid": 12754,
+          "pressError": 0,
+          "setValueError": 0,
+          "status": "attempted"
+        }
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        },
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ],
+      "secureInputEvents": {
+        "enabled": 0,
+        "disabled": 0
+      },
+      "inputGate": {
+        "acceptedEvents": 0,
+        "refusedEvents": 0
+      },
+      "controlWorked": true
+    }
+  ],
+  "humanBaseline": false,
+  "routeContract": "Probe uses native APIs only. Controller alone queries the oracle. Input coordinates come from AX."
+}

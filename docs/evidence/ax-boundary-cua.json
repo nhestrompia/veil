@@ -1,0 +1,9 @@
+{
+  "tool": "native computer use",
+  "controlAcceptedActions": 1,
+  "targetAcceptedActions": 0,
+  "targetAttachError": "Computer Use server error -10005: timeoutReached",
+  "targetActionAttempted": false,
+  "verdict": "inconclusive",
+  "scope": "Only disposable research pages. No target action occurred after attachment timed out."
+}

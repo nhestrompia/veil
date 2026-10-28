@@ -1,0 +1,273 @@
+{
+  "rootExperimentRun": false,
+  "scope": "Fresh same-user children and safe unprivileged refusals only.",
+  "controls": [
+    {
+      "case": "same-user",
+      "targetUID": 501,
+      "actorUID": 501,
+      "targetPID": 23298,
+      "actorPID": 23300,
+      "targetRealUID": 501,
+      "targetEffectiveUID": 501,
+      "targetSavedUID": 501,
+      "actorRealUID": 501,
+      "actorEffectiveUID": 501,
+      "actorSavedUID": 501,
+      "targetRealGID": 20,
+      "targetEffectiveGID": 20,
+      "targetSavedGID": 20,
+      "actorRealGID": 20,
+      "actorEffectiveGID": 20,
+      "actorSavedGID": 20,
+      "permanentDropChecks": false,
+      "signalReturn": 0,
+      "signalErrno": 0,
+      "stopObserved": true,
+      "continued": true,
+      "heartbeat": true,
+      "heartbeatAfterWatchdogArmedSeconds": 0.000338,
+      "watchdogDetached": true,
+      "watchdogRecoveryControl": false,
+      "cleanupVerified": true,
+      "passed": true,
+      "repetition": 0,
+      "exitCode": 0
+    },
+    {
+      "case": "same-user",
+      "targetUID": 501,
+      "actorUID": 501,
+      "targetPID": 23302,
+      "actorPID": 23304,
+      "targetRealUID": 501,
+      "targetEffectiveUID": 501,
+      "targetSavedUID": 501,
+      "actorRealUID": 501,
+      "actorEffectiveUID": 501,
+      "actorSavedUID": 501,
+      "targetRealGID": 20,
+      "targetEffectiveGID": 20,
+      "targetSavedGID": 20,
+      "actorRealGID": 20,
+      "actorEffectiveGID": 20,
+      "actorSavedGID": 20,
+      "permanentDropChecks": false,
+      "signalReturn": 0,
+      "signalErrno": 0,
+      "stopObserved": true,
+      "continued": true,
+      "heartbeat": true,
+      "heartbeatAfterWatchdogArmedSeconds": 0.000316,
+      "watchdogDetached": true,
+      "watchdogRecoveryControl": false,
+      "cleanupVerified": true,
+      "passed": true,
+      "repetition": 1,
+      "exitCode": 0
+    },
+    {
+      "case": "same-user",
+      "targetUID": 501,
+      "actorUID": 501,
+      "targetPID": 23306,
+      "actorPID": 23308,
+      "targetRealUID": 501,
+      "targetEffectiveUID": 501,
+      "targetSavedUID": 501,
+      "actorRealUID": 501,
+      "actorEffectiveUID": 501,
+      "actorSavedUID": 501,
+      "targetRealGID": 20,
+      "targetEffectiveGID": 20,
+      "targetSavedGID": 20,
+      "actorRealGID": 20,
+      "actorEffectiveGID": 20,
+      "actorSavedGID": 20,
+      "permanentDropChecks": false,
+      "signalReturn": 0,
+      "signalErrno": 0,
+      "stopObserved": true,
+      "continued": true,
+      "heartbeat": true,
+      "heartbeatAfterWatchdogArmedSeconds": 0.00043,
+      "watchdogDetached": true,
+      "watchdogRecoveryControl": false,
+      "cleanupVerified": true,
+      "passed": true,
+      "repetition": 2,
+      "exitCode": 0
+    }
+  ],
+  "binarySHA256": "56cf27977127c0a53d0fbc30a98780662f2f5e791a3e86494e28ef20488e3744",
+  "plan": {
+    "binary": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/identity-signal-control",
+    "binarySHA256": "56cf27977127c0a53d0fbc30a98780662f2f5e791a3e86494e28ef20488e3744",
+    "preflight": {
+      "effectiveUID": 501,
+      "compiledUID": 501,
+      "compiledGID": 20,
+      "isolatedUID": 4294967294,
+      "isolatedGID": 4294967294,
+      "accountValid": true,
+      "rootStaged": false,
+      "signalsSent": false
+    },
+    "dependencies": [
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "administratorCommand": "/usr/bin/env -i PATH=/usr/bin:/bin:/usr/sbin:/sbin LC_ALL=C /bin/sh -c 'set -eu\numask 077\nstage=$(/usr/bin/mktemp -d /private/tmp/agentfreebrowser-identity.XXXXXX)\ncleanup() {\n    /bin/rm -f -- \"$stage/identity-signal-control\"\n    cd /private/tmp\n    /bin/rmdir -- \"$stage\"\n}\ntrap cleanup EXIT\ntrap '\"'\"'exit 130'\"'\"' INT\ntrap '\"'\"'exit 143'\"'\"' TERM\n/bin/chmod -N \"$stage\"\n/bin/chmod 0700 \"$stage\"\n/bin/cp -X -- /Users/nhestrompia/.t3/projects/agentfreebrowser/.build/identity-signal-control \"$stage/identity-signal-control\"\n/bin/chmod -N \"$stage/identity-signal-control\"\n/bin/chmod 0700 \"$stage/identity-signal-control\"\nactual=$(/usr/bin/shasum -a 256 \"$stage/identity-signal-control\")\nexpected=\"56cf27977127c0a53d0fbc30a98780662f2f5e791a3e86494e28ef20488e3744  $stage/identity-signal-control\"\nif [ \"$actual\" != \"$expected\" ]; then\n    echo '\"'\"'The staged helper hash differs. No experiment ran.'\"'\"' >&2\n    exit 2\nfi\n/usr/bin/codesign --verify --strict \"$stage/identity-signal-control\"\nsignature=$(/usr/bin/codesign -d --verbose=2 \"$stage/identity-signal-control\" 2>&1)\ncase \"$signature\" in\n    *'\"'\"'runtime)'\"'\"'*) ;;\n    *) echo '\"'\"'The staged helper lacks Hardened Runtime.'\"'\"' >&2; exit 2 ;;\nesac\ndependencies=$(/usr/bin/otool -L \"$stage/identity-signal-control\" | /usr/bin/awk '\"'\"'NR>1 {print $1}'\"'\"')\nif [ \"$dependencies\" != /usr/lib/libSystem.B.dylib ]; then\n    echo '\"'\"'The staged helper has an unexpected dependency.'\"'\"' >&2\n    exit 2\nfi\nload_commands=$(/usr/bin/otool -l \"$stage/identity-signal-control\")\ncase \"$load_commands\" in\n    *LC_RPATH*|*LC_DYLD_ENVIRONMENT*) echo '\"'\"'The staged helper adds loader configuration.'\"'\"' >&2; exit 2 ;;\nesac\ncd \"$stage\"\nset +e\n/usr/bin/env -i PATH=/usr/bin:/bin:/usr/sbin:/sbin LC_ALL=C \"$stage/identity-signal-control\" --root-experiment\nhelper_status=$?\nset -e\ncleanup\ntrap - EXIT\ntest ! -e \"$stage\"\nprintf '\"'\"'{\"status\":\"root-run-finished\",\"helperExitCode\":%s,\"temporaryDirectory\":\"%s\",\"temporaryCleanupVerified\":true}\\n'\"'\"' \"$helper_status\" \"$stage\"\n'",
+    "administratorCommandSHA256": "0d1ddf74cbd6927b27ce7d6c252ace0574b27fe14577cbef9c4e838b93693e44",
+    "elevationRequested": false,
+    "rootExperimentRun": false,
+    "scope": "Finite own-child signal tests, twenty-second parent deadline. No account, service, browser, or permission changes."
+  },
+  "watchdogControl": [
+    {
+      "stage": "stopped-control",
+      "targetPID": 23310,
+      "actorPID": 23312,
+      "watchdogPID": 23311,
+      "watchdogDetached": true
+    },
+    {
+      "case": "same-user",
+      "targetUID": 501,
+      "actorUID": 501,
+      "targetPID": 23310,
+      "actorPID": 23312,
+      "targetRealUID": 501,
+      "targetEffectiveUID": 501,
+      "targetSavedUID": 501,
+      "actorRealUID": 501,
+      "actorEffectiveUID": 501,
+      "actorSavedUID": 501,
+      "targetRealGID": 20,
+      "targetEffectiveGID": 20,
+      "targetSavedGID": 20,
+      "actorRealGID": 20,
+      "actorEffectiveGID": 20,
+      "actorSavedGID": 20,
+      "permanentDropChecks": false,
+      "signalReturn": 0,
+      "signalErrno": 0,
+      "stopObserved": true,
+      "continued": false,
+      "heartbeat": true,
+      "heartbeatAfterWatchdogArmedSeconds": 2.302993,
+      "watchdogDetached": true,
+      "watchdogRecoveryControl": true,
+      "cleanupVerified": true,
+      "passed": true
+    }
+  ],
+  "groupInterruption": {
+    "kind": "terminate-original-process-group",
+    "verified": true,
+    "stage": {
+      "stage": "stopped-control",
+      "targetPID": 23316,
+      "actorPID": 23318,
+      "watchdogPID": 23317,
+      "watchdogDetached": true
+    },
+    "parentExitCode": -15,
+    "remainingPIDs": []
+  },
+  "parentKilled": {
+    "kind": "kill-parent-only",
+    "verified": true,
+    "stage": {
+      "stage": "stopped-control",
+      "targetPID": 23400,
+      "actorPID": 23402,
+      "watchdogPID": 23401,
+      "watchdogDetached": true
+    },
+    "parentExitCode": -9,
+    "remainingPIDs": []
+  },
+  "inheritedSignalControl": {
+    "case": "same-user",
+    "targetUID": 501,
+    "actorUID": 501,
+    "targetPID": 23490,
+    "actorPID": 23492,
+    "targetRealUID": 501,
+    "targetEffectiveUID": 501,
+    "targetSavedUID": 501,
+    "actorRealUID": 501,
+    "actorEffectiveUID": 501,
+    "actorSavedUID": 501,
+    "targetRealGID": 20,
+    "targetEffectiveGID": 20,
+    "targetSavedGID": 20,
+    "actorRealGID": 20,
+    "actorEffectiveGID": 20,
+    "actorSavedGID": 20,
+    "permanentDropChecks": false,
+    "signalReturn": 0,
+    "signalErrno": 0,
+    "stopObserved": true,
+    "continued": true,
+    "heartbeat": true,
+    "heartbeatAfterWatchdogArmedSeconds": 0.000225,
+    "watchdogDetached": true,
+    "watchdogRecoveryControl": false,
+    "cleanupVerified": true,
+    "passed": true
+  },
+  "refusals": [
+    {
+      "arguments": [
+        "--root-experiment"
+      ],
+      "result": {
+        "status": "refused",
+        "reason": "Identity or protected staging prerequisite is absent",
+        "signalsSent": false
+      },
+      "exitCode": 2
+    },
+    {
+      "arguments": [
+        "--root-experiment",
+        "1"
+      ],
+      "result": {
+        "status": "refused",
+        "reason": "No runtime PID, path, identity, or command is accepted"
+      },
+      "exitCode": 2
+    },
+    {
+      "arguments": [
+        "--same-user-control",
+        "501"
+      ],
+      "result": {
+        "status": "refused",
+        "reason": "No runtime PID, path, identity, or command is accepted"
+      },
+      "exitCode": 2
+    },
+    {
+      "arguments": [
+        "--unknown"
+      ],
+      "result": {
+        "status": "refused",
+        "reason": "No runtime PID, path, identity, or command is accepted"
+      },
+      "exitCode": 2
+    }
+  ],
+  "remainingPIDs": [],
+  "frozenBinarySHA256": {
+    "DeviceKeyboardExperiment": "43b1a9833d6c55b1e254b848f9bd09c202da46ba0f8d8833084df559e6a8a9d1",
+    "NativeProbe": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1",
+    "RendererAXProbe": "82d0c15dadfa49d1669a576270c08cb9b749d6fe102b1724fa61f6dd2d9b08a7",
+    "KeyboardObservationProbe": "cdd1829e60dd838f5a2b1ef91f9d5635e7f61760360f9c18c494f8eb90086aac",
+    "WindowGeometryProbe": "c99b7cb897180170e2ee5977d6518a0e2cb94db9549c75cd5867bc260606d960"
+  }
+}

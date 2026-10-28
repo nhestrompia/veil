@@ -1,0 +1,43 @@
+Use case: infographic-diagram.
+Create one polished, simple editorial research infographic, portrait 4:5 composition, crisp large readable typography, generous whitespace. Warm off-white background, near-black type, cobalt blue accents, muted jade green for successful human controls, amber for pending tests. Flat clean geometric icons, no gradients, no decorative stock art, no official OpenAI logo, no invented certification seals. A small minimal browser outline can connect a human keyboard icon with a green check and an agent/computer icon with a blocked arrow. This is about a real macOS research browser; it must not imply universal security or complete protection.
+
+Use exactly this visible copy, preserving meaning and numbers. Make the scope qualifier directly below the headline prominent, NOT hidden in tiny print. Balanced clean layout, all text legible.
+
+Top small label:
+"AgentFreeBrowser"
+"macOS research prototype"
+
+Large main headline:
+"GPT-6.1-sol did not
+complete the website task."
+
+Immediately below, clear subtitle:
+"Through the tested native input,
+Accessibility, and focus routes."
+
+Two prominent metric cards:
+"Human"
+"2 physical task completions"
+
+"Agent"
+"0 new task completions"
+
+Section label:
+"On the current engine build"
+
+Four clean short rows with simple line icons:
+"Focus attack: 0 actions across 3 cycles"
+"Synthetic typing: 0 admitted events"
+"Accessibility action: no completion"
+"Scoped screenshots: no page marker recovered"
+
+A compact amber outlined section:
+"Still to test"
+"Unfiltered display capture"
+"External script attachment"
+
+Bottom small but fully readable footer:
+"Local test page · 28 Oct 2026"
+"Measured results, not proof against every agent."
+
+Do not add the words SOTA, agent-free certified, unhackable, all agents blocked, or 100% secure. Do not add extra metrics, badges, brand marks, fake sources, device screenshots, or any other copy. The result should look like a confident, precise, publication-ready research result card rather than a marketing ad.

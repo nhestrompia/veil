@@ -1,0 +1,445 @@
+{
+  "milestone": 88,
+  "date": "2026-10-26",
+  "humanBaseline": false,
+  "agentFree": false,
+  "scope": "Fresh private-startup custom-engine diagnostics only. No physical-browser or system-renderer signals.",
+  "comparisons": [
+    {
+      "evidence": "artifacts/engine-pause-recovery-88/results.json",
+      "intervention": "pause-recovery",
+      "modes": [
+        {
+          "mode": "native",
+          "status": "autonomous-website-action",
+          "binarySHA256": "99b4724afdd704002ffbe63672c9c1451e9afe078e590e2f33196c4f7c950b10",
+          "engineIdentity": {
+            "pid": 46457,
+            "executable": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development",
+            "mappedFrameworks": {
+              "WebKit": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebKit.framework/Versions/A/WebKit",
+              "JavaScriptCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/JavaScriptCore.framework/Versions/A/JavaScriptCore",
+              "WebCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebCore.framework/Versions/A/WebCore"
+            }
+          },
+          "timerReadiness": [
+            {
+              "type": "timer-ready",
+              "t": 706,
+              "x": 456,
+              "y": 10
+            }
+          ],
+          "stationaryNewActions": 0,
+          "stationaryAcceptedInputEvents": 0,
+          "candidate": {
+            "hostPID": 46454,
+            "contentPID": 46457,
+            "receipts": [
+              {
+                "contentPID": 46457,
+                "hostPID": 46454,
+                "status": "paused",
+                "stopSent": true,
+                "watchdogPID": 46558
+              },
+              {
+                "continueSent": true,
+                "pid": 46457,
+                "status": "watchdog-resume"
+              }
+            ],
+            "watchdogRecoveryTest": true,
+            "controllerChildKilled": true,
+            "helperExitCode": -9,
+            "helperSHA256": "0aa35957a08b4fd7b572709ffb766562fd159d53145f0fabf996306b7d3fdffb",
+            "rendererRunningAfterRecovery": true,
+            "interventionVerified": true,
+            "newSubmissions": [
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedInputEvents": 0,
+            "syntheticInputPosted": false
+          },
+          "timerGapEvents": [
+            {
+              "type": "timer-gap-trigger",
+              "t": 4093
+            }
+          ],
+          "candidateCleanupVerified": true,
+          "secureInputAfterCleanup": false
+        },
+        {
+          "mode": "stable",
+          "status": "autonomous-website-action",
+          "binarySHA256": "9209232c7bb0f3186b4b3e8dd9d6f9187818c809d797131935733d02fcf4feac",
+          "engineIdentity": {
+            "pid": 46800,
+            "executable": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development",
+            "mappedFrameworks": {
+              "WebKit": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebKit.framework/Versions/A/WebKit",
+              "JavaScriptCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/JavaScriptCore.framework/Versions/A/JavaScriptCore",
+              "WebCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebCore.framework/Versions/A/WebCore"
+            }
+          },
+          "timerReadiness": [
+            {
+              "type": "timer-ready",
+              "t": 793,
+              "x": 543,
+              "y": 10
+            }
+          ],
+          "stationaryNewActions": 0,
+          "stationaryAcceptedInputEvents": 0,
+          "candidate": {
+            "hostPID": 46797,
+            "contentPID": 46800,
+            "receipts": [
+              {
+                "contentPID": 46800,
+                "hostPID": 46797,
+                "status": "paused",
+                "stopSent": true,
+                "watchdogPID": 46809
+              },
+              {
+                "continueSent": true,
+                "pid": 46800,
+                "status": "watchdog-resume"
+              }
+            ],
+            "watchdogRecoveryTest": true,
+            "controllerChildKilled": true,
+            "helperExitCode": -9,
+            "helperSHA256": "0aa35957a08b4fd7b572709ffb766562fd159d53145f0fabf996306b7d3fdffb",
+            "rendererRunningAfterRecovery": true,
+            "interventionVerified": true,
+            "newSubmissions": [
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedInputEvents": 0,
+            "syntheticInputPosted": false
+          },
+          "timerGapEvents": [
+            {
+              "type": "timer-gap-trigger",
+              "t": 4026
+            }
+          ],
+          "candidateCleanupVerified": true,
+          "secureInputAfterCleanup": false
+        }
+      ]
+    },
+    {
+      "evidence": "artifacts/engine-pause-88-1/results.json",
+      "intervention": "pause",
+      "modes": [
+        {
+          "mode": "native",
+          "status": "autonomous-website-action",
+          "binarySHA256": "99b4724afdd704002ffbe63672c9c1451e9afe078e590e2f33196c4f7c950b10",
+          "engineIdentity": {
+            "pid": 47231,
+            "executable": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development",
+            "mappedFrameworks": {
+              "WebKit": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebKit.framework/Versions/A/WebKit",
+              "JavaScriptCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/JavaScriptCore.framework/Versions/A/JavaScriptCore",
+              "WebCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebCore.framework/Versions/A/WebCore"
+            }
+          },
+          "timerReadiness": [
+            {
+              "type": "timer-ready",
+              "t": 770,
+              "x": 520,
+              "y": 10
+            }
+          ],
+          "stationaryNewActions": 0,
+          "stationaryAcceptedInputEvents": 0,
+          "candidate": {
+            "hostPID": 47124,
+            "contentPID": 47231,
+            "receipts": [
+              {
+                "contentPID": 47231,
+                "hostPID": 47124,
+                "status": "paused",
+                "stopSent": true,
+                "watchdogPID": 47260
+              },
+              {
+                "contentPID": 47231,
+                "continueSent": true,
+                "status": "resumed"
+              },
+              {
+                "continueSent": true,
+                "pid": 47231,
+                "status": "watchdog-resume"
+              }
+            ],
+            "watchdogRecoveryTest": false,
+            "controllerChildKilled": false,
+            "helperExitCode": 0,
+            "helperSHA256": "0aa35957a08b4fd7b572709ffb766562fd159d53145f0fabf996306b7d3fdffb",
+            "rendererRunningAfterRecovery": true,
+            "interventionVerified": true,
+            "newSubmissions": [
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedInputEvents": 0,
+            "syntheticInputPosted": false
+          },
+          "timerGapEvents": [
+            {
+              "type": "timer-gap-trigger",
+              "t": 3018
+            }
+          ],
+          "candidateCleanupVerified": true,
+          "secureInputAfterCleanup": false
+        },
+        {
+          "mode": "stable",
+          "status": "autonomous-website-action",
+          "binarySHA256": "9209232c7bb0f3186b4b3e8dd9d6f9187818c809d797131935733d02fcf4feac",
+          "engineIdentity": {
+            "pid": 47468,
+            "executable": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development",
+            "mappedFrameworks": {
+              "WebKit": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebKit.framework/Versions/A/WebKit",
+              "JavaScriptCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/JavaScriptCore.framework/Versions/A/JavaScriptCore",
+              "WebCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebCore.framework/Versions/A/WebCore"
+            }
+          },
+          "timerReadiness": [
+            {
+              "type": "timer-ready",
+              "t": 756,
+              "x": 506,
+              "y": 10
+            }
+          ],
+          "stationaryNewActions": 0,
+          "stationaryAcceptedInputEvents": 0,
+          "candidate": {
+            "hostPID": 47465,
+            "contentPID": 47468,
+            "receipts": [
+              {
+                "contentPID": 47468,
+                "hostPID": 47465,
+                "status": "paused",
+                "stopSent": true,
+                "watchdogPID": 47477
+              },
+              {
+                "contentPID": 47468,
+                "continueSent": true,
+                "status": "resumed"
+              },
+              {
+                "continueSent": true,
+                "pid": 47468,
+                "status": "watchdog-resume"
+              }
+            ],
+            "watchdogRecoveryTest": false,
+            "controllerChildKilled": false,
+            "helperExitCode": 0,
+            "helperSHA256": "0aa35957a08b4fd7b572709ffb766562fd159d53145f0fabf996306b7d3fdffb",
+            "rendererRunningAfterRecovery": true,
+            "interventionVerified": true,
+            "newSubmissions": [
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedInputEvents": 0,
+            "syntheticInputPosted": false
+          },
+          "timerGapEvents": [
+            {
+              "type": "timer-gap-trigger",
+              "t": 3030
+            }
+          ],
+          "candidateCleanupVerified": true,
+          "secureInputAfterCleanup": false
+        }
+      ]
+    },
+    {
+      "evidence": "artifacts/engine-pause-88-2/results.json",
+      "intervention": "pause",
+      "modes": [
+        {
+          "mode": "native",
+          "status": "autonomous-website-action",
+          "binarySHA256": "99b4724afdd704002ffbe63672c9c1451e9afe078e590e2f33196c4f7c950b10",
+          "engineIdentity": {
+            "pid": 48193,
+            "executable": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development",
+            "mappedFrameworks": {
+              "WebKit": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebKit.framework/Versions/A/WebKit",
+              "JavaScriptCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/JavaScriptCore.framework/Versions/A/JavaScriptCore",
+              "WebCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebCore.framework/Versions/A/WebCore"
+            }
+          },
+          "timerReadiness": [
+            {
+              "type": "timer-ready",
+              "t": 734,
+              "x": 484,
+              "y": 10
+            }
+          ],
+          "stationaryNewActions": 0,
+          "stationaryAcceptedInputEvents": 0,
+          "candidate": {
+            "hostPID": 48180,
+            "contentPID": 48193,
+            "receipts": [
+              {
+                "contentPID": 48193,
+                "hostPID": 48180,
+                "status": "paused",
+                "stopSent": true,
+                "watchdogPID": 48230
+              },
+              {
+                "contentPID": 48193,
+                "continueSent": true,
+                "status": "resumed"
+              },
+              {
+                "continueSent": true,
+                "pid": 48193,
+                "status": "watchdog-resume"
+              }
+            ],
+            "watchdogRecoveryTest": false,
+            "controllerChildKilled": false,
+            "helperExitCode": 0,
+            "helperSHA256": "0aa35957a08b4fd7b572709ffb766562fd159d53145f0fabf996306b7d3fdffb",
+            "rendererRunningAfterRecovery": true,
+            "interventionVerified": true,
+            "newSubmissions": [
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedInputEvents": 0,
+            "syntheticInputPosted": false
+          },
+          "timerGapEvents": [
+            {
+              "type": "timer-gap-trigger",
+              "t": 3029
+            }
+          ],
+          "candidateCleanupVerified": true,
+          "secureInputAfterCleanup": false
+        },
+        {
+          "mode": "stable",
+          "status": "autonomous-website-action",
+          "binarySHA256": "9209232c7bb0f3186b4b3e8dd9d6f9187818c809d797131935733d02fcf4feac",
+          "engineIdentity": {
+            "pid": 48457,
+            "executable": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development",
+            "mappedFrameworks": {
+              "WebKit": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebKit.framework/Versions/A/WebKit",
+              "JavaScriptCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/JavaScriptCore.framework/Versions/A/JavaScriptCore",
+              "WebCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebCore.framework/Versions/A/WebCore"
+            }
+          },
+          "timerReadiness": [
+            {
+              "type": "timer-ready",
+              "t": 711,
+              "x": 461,
+              "y": 10
+            }
+          ],
+          "stationaryNewActions": 0,
+          "stationaryAcceptedInputEvents": 0,
+          "candidate": {
+            "hostPID": 48454,
+            "contentPID": 48457,
+            "receipts": [
+              {
+                "contentPID": 48457,
+                "hostPID": 48454,
+                "status": "paused",
+                "stopSent": true,
+                "watchdogPID": 48542
+              },
+              {
+                "contentPID": 48457,
+                "continueSent": true,
+                "status": "resumed"
+              },
+              {
+                "continueSent": true,
+                "pid": 48457,
+                "status": "watchdog-resume"
+              }
+            ],
+            "watchdogRecoveryTest": false,
+            "controllerChildKilled": false,
+            "helperExitCode": 0,
+            "helperSHA256": "0aa35957a08b4fd7b572709ffb766562fd159d53145f0fabf996306b7d3fdffb",
+            "rendererRunningAfterRecovery": true,
+            "interventionVerified": true,
+            "newSubmissions": [
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedInputEvents": 0,
+            "syntheticInputPosted": false
+          },
+          "timerGapEvents": [
+            {
+              "type": "timer-gap-trigger",
+              "t": 3032
+            }
+          ],
+          "candidateCleanupVerified": true,
+          "secureInputAfterCleanup": false
+        }
+      ]
+    }
+  ],
+  "pythonChecksPassed": 116,
+  "scopeChecksPassed": 6,
+  "signing": {
+    "host": {
+      "path": "dist/InternalKeyboardControl.app",
+      "lines": [
+        "Identifier=research.agentfreebrowser.internalkeyboardcontrol",
+        "CodeDirectory v=20400 size=842 flags=0x2(adhoc) hashes=19+3 location=embedded",
+        "Signature=adhoc"
+      ]
+    },
+    "content": {
+      "path": ".build/webkit-engine/output/Release/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development",
+      "lines": [
+        "Identifier=com.apple.WebKit.WebContent",
+        "CodeDirectory v=20400 size=436 flags=0x2(adhoc) hashes=3+7 location=embedded",
+        "Signature=adhoc"
+      ]
+    }
+  }
+}

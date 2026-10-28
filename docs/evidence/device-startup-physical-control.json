@@ -1,0 +1,12 @@
+{
+  "sessionPID": 55105,
+  "binarySHA256": "6e21d4cda4cf17e1cd87a733d964696ef19b98a3d65534f7bcd21fddd63d08a6",
+  "trial": "f590bd3b154c5453",
+  "operatorDeclaresPhysicalCompletion": true,
+  "operatorResponse": "Task complete",
+  "acceptedSubmissions": 1,
+  "bound": true,
+  "bootstrapAttested": false,
+  "visibleControlBuild": true,
+  "windowSharingEnabled": true
+}

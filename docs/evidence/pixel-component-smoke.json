@@ -1,0 +1,13 @@
+{
+  "system": "ProductName:\t\tmacOS\nProductVersion:\t\t26.6\nBuildVersion:\t\t25G72\n",
+  "target": "PixelControl",
+  "binarySHA256": "cf616d0cbf53b418cbc32e11f9c222d0e98c4433009dd7dacd54da19379af453",
+  "componentLog": [
+    "PIXEL_RENDER ready pid=79943 preventsCapture=false",
+    "PIXEL_RENDER first_frame rendererStatus=1"
+  ],
+  "consoleReportedLocked": true,
+  "captureAttempted": false,
+  "humanVisibilityVerified": false,
+  "verdict": "component-submission-only"
+}

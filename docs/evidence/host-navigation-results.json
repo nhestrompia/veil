@@ -1,0 +1,406 @@
+{
+  "milestone": 55,
+  "runs": [
+    {
+      "candidatePID": 61893,
+      "candidateBinarySHA256": "43b1a9833d6c55b1e254b848f9bd09c202da46ba0f8d8833084df559e6a8a9d1",
+      "probeSHA256": "82d0c15dadfa49d1669a576270c08cb9b749d6fe102b1724fa61f6dd2d9b08a7",
+      "formTaskAttempted": false,
+      "scope": "Native Reload on the exact research fixture. Page-ready events corroborate navigation, not form completion.",
+      "permissions": {
+        "accessibility": true,
+        "inputTapInstalled": false,
+        "permissionRequested": false,
+        "status": "observed",
+        "cleanupVerified": true
+      },
+      "control": {
+        "pid": 751,
+        "observation": {
+          "accessibility": true,
+          "accessibilityQueried": true,
+          "hostPID": 751,
+          "inputTapInstalled": false,
+          "ownershipMethod": "Exact research executable, process start time, OS responsibility PID. Private metadata API.",
+          "permissionRequested": false,
+          "queries": [
+            {
+              "actionAttempted": false,
+              "addressFieldAvailable": true,
+              "buttonAvailable": true,
+              "discardedOwnershipChecks": {},
+              "discardedUnownedElements": 0,
+              "fieldAvailable": true,
+              "fixtureURLVerified": true,
+              "navigationContextVerified": true,
+              "processKind": "host",
+              "rawTextSaved": false,
+              "reloadActionAttempted": true,
+              "reloadButtonAvailable": true,
+              "reloadPressError": 0,
+              "rendererPID": 751,
+              "researchMarkers": [
+                "AFB-11B92BC4"
+              ],
+              "resolvableTokenRoots": 4,
+              "roles": {
+                "AXApplication": 2,
+                "AXButton": 6,
+                "AXGroup": 8,
+                "AXHeading": 1,
+                "AXLink": 1,
+                "AXMenuBar": 1,
+                "AXScrollArea": 1,
+                "AXStaticText": 10,
+                "AXTextField": 2,
+                "AXWebArea": 1,
+                "AXWindow": 1
+              },
+              "scannedElementIDs": 1024,
+              "tokenFactoryAvailable": true,
+              "tokenScanRequested": true,
+              "traversalIncomplete": false,
+              "visitedCount": 34
+            }
+          ],
+          "renderers": [
+            {
+              "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+              "pid": 759
+            }
+          ],
+          "status": "observed",
+          "cleanupVerified": true
+        },
+        "newPageReadyEvents": 1,
+        "newAcceptedFormActions": 0,
+        "newSubmissions": [],
+        "controlWorked": true
+      },
+      "referenceCleanupVerified": true,
+      "candidate": {
+        "pid": 61893,
+        "observation": {
+          "accessibility": true,
+          "accessibilityQueried": true,
+          "hostPID": 61893,
+          "inputTapInstalled": false,
+          "ownershipMethod": "Exact research executable, process start time, OS responsibility PID. Private metadata API.",
+          "permissionRequested": false,
+          "queries": [
+            {
+              "actionAttempted": false,
+              "addressFieldAvailable": false,
+              "buttonAvailable": false,
+              "discardedOwnershipChecks": {},
+              "discardedUnownedElements": 0,
+              "fieldAvailable": false,
+              "fixtureURLVerified": false,
+              "processKind": "host",
+              "rawTextSaved": false,
+              "reloadActionAttempted": false,
+              "reloadButtonAvailable": false,
+              "rendererPID": 61893,
+              "researchMarkers": [],
+              "resolvableTokenRoots": 5,
+              "roles": {
+                "AXApplication": 2,
+                "AXButton": 1,
+                "AXGroup": 1,
+                "AXMenuBar": 1,
+                "AXWindow": 1
+              },
+              "scannedElementIDs": 1024,
+              "tokenFactoryAvailable": true,
+              "tokenScanRequested": true,
+              "traversalIncomplete": false,
+              "visitedCount": 6
+            }
+          ],
+          "renderers": [
+            {
+              "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+              "pid": 63235
+            }
+          ],
+          "status": "observed",
+          "cleanupVerified": true
+        },
+        "newPageReadyEvents": 0,
+        "newAcceptedFormActions": 0,
+        "newSubmissions": [],
+        "reloadWorked": false
+      }
+    },
+    {
+      "candidatePID": 61893,
+      "candidateBinarySHA256": "43b1a9833d6c55b1e254b848f9bd09c202da46ba0f8d8833084df559e6a8a9d1",
+      "probeSHA256": "82d0c15dadfa49d1669a576270c08cb9b749d6fe102b1724fa61f6dd2d9b08a7",
+      "formTaskAttempted": false,
+      "scope": "Native Reload on the exact research fixture. Page-ready events corroborate navigation, not form completion.",
+      "permissions": {
+        "accessibility": true,
+        "inputTapInstalled": false,
+        "permissionRequested": false,
+        "status": "observed",
+        "cleanupVerified": true
+      },
+      "control": {
+        "pid": 859,
+        "observation": {
+          "accessibility": true,
+          "accessibilityQueried": true,
+          "hostPID": 859,
+          "inputTapInstalled": false,
+          "ownershipMethod": "Exact research executable, process start time, OS responsibility PID. Private metadata API.",
+          "permissionRequested": false,
+          "queries": [
+            {
+              "actionAttempted": false,
+              "addressFieldAvailable": true,
+              "buttonAvailable": true,
+              "discardedOwnershipChecks": {},
+              "discardedUnownedElements": 0,
+              "fieldAvailable": true,
+              "fixtureURLVerified": true,
+              "navigationContextVerified": true,
+              "processKind": "host",
+              "rawTextSaved": false,
+              "reloadActionAttempted": true,
+              "reloadButtonAvailable": true,
+              "reloadPressError": 0,
+              "rendererPID": 859,
+              "researchMarkers": [
+                "AFB-B9CEA1C5"
+              ],
+              "resolvableTokenRoots": 4,
+              "roles": {
+                "AXApplication": 2,
+                "AXButton": 6,
+                "AXGroup": 8,
+                "AXHeading": 1,
+                "AXLink": 1,
+                "AXMenuBar": 1,
+                "AXScrollArea": 1,
+                "AXStaticText": 10,
+                "AXTextField": 2,
+                "AXWebArea": 1,
+                "AXWindow": 1
+              },
+              "scannedElementIDs": 1024,
+              "tokenFactoryAvailable": true,
+              "tokenScanRequested": true,
+              "traversalIncomplete": false,
+              "visitedCount": 34
+            }
+          ],
+          "renderers": [
+            {
+              "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+              "pid": 863
+            }
+          ],
+          "status": "observed",
+          "cleanupVerified": true
+        },
+        "newPageReadyEvents": 1,
+        "newAcceptedFormActions": 0,
+        "newSubmissions": [],
+        "controlWorked": true
+      },
+      "referenceCleanupVerified": true,
+      "candidate": {
+        "pid": 61893,
+        "observation": {
+          "accessibility": true,
+          "accessibilityQueried": true,
+          "hostPID": 61893,
+          "inputTapInstalled": false,
+          "ownershipMethod": "Exact research executable, process start time, OS responsibility PID. Private metadata API.",
+          "permissionRequested": false,
+          "queries": [
+            {
+              "actionAttempted": false,
+              "addressFieldAvailable": false,
+              "buttonAvailable": false,
+              "discardedOwnershipChecks": {},
+              "discardedUnownedElements": 0,
+              "fieldAvailable": false,
+              "fixtureURLVerified": false,
+              "processKind": "host",
+              "rawTextSaved": false,
+              "reloadActionAttempted": false,
+              "reloadButtonAvailable": false,
+              "rendererPID": 61893,
+              "researchMarkers": [],
+              "resolvableTokenRoots": 5,
+              "roles": {
+                "AXApplication": 2,
+                "AXButton": 1,
+                "AXGroup": 1,
+                "AXMenuBar": 1,
+                "AXWindow": 1
+              },
+              "scannedElementIDs": 1024,
+              "tokenFactoryAvailable": true,
+              "tokenScanRequested": true,
+              "traversalIncomplete": false,
+              "visitedCount": 6
+            }
+          ],
+          "renderers": [
+            {
+              "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+              "pid": 63235
+            }
+          ],
+          "status": "observed",
+          "cleanupVerified": true
+        },
+        "newPageReadyEvents": 0,
+        "newAcceptedFormActions": 0,
+        "newSubmissions": [],
+        "reloadWorked": false
+      }
+    },
+    {
+      "candidatePID": 61893,
+      "candidateBinarySHA256": "43b1a9833d6c55b1e254b848f9bd09c202da46ba0f8d8833084df559e6a8a9d1",
+      "probeSHA256": "82d0c15dadfa49d1669a576270c08cb9b749d6fe102b1724fa61f6dd2d9b08a7",
+      "formTaskAttempted": false,
+      "scope": "Native Reload on the exact research fixture. Page-ready events corroborate navigation, not form completion.",
+      "permissions": {
+        "accessibility": true,
+        "inputTapInstalled": false,
+        "permissionRequested": false,
+        "status": "observed",
+        "cleanupVerified": true
+      },
+      "control": {
+        "pid": 918,
+        "observation": {
+          "accessibility": true,
+          "accessibilityQueried": true,
+          "hostPID": 918,
+          "inputTapInstalled": false,
+          "ownershipMethod": "Exact research executable, process start time, OS responsibility PID. Private metadata API.",
+          "permissionRequested": false,
+          "queries": [
+            {
+              "actionAttempted": true,
+              "addressFieldAvailable": true,
+              "buttonAvailable": true,
+              "discardedOwnershipChecks": {},
+              "discardedUnownedElements": 0,
+              "fieldAvailable": true,
+              "fixtureURLVerified": true,
+              "navigationContextVerified": true,
+              "pressError": 0,
+              "processKind": "host",
+              "rawTextSaved": false,
+              "reloadActionAttempted": true,
+              "reloadButtonAvailable": true,
+              "reloadPressError": 0,
+              "rendererPID": 918,
+              "researchMarkers": [
+                "AFB-397E5520"
+              ],
+              "resolvableTokenRoots": 4,
+              "roles": {
+                "AXApplication": 2,
+                "AXButton": 6,
+                "AXGroup": 8,
+                "AXHeading": 1,
+                "AXLink": 1,
+                "AXMenuBar": 1,
+                "AXScrollArea": 1,
+                "AXStaticText": 10,
+                "AXTextField": 2,
+                "AXWebArea": 1,
+                "AXWindow": 1
+              },
+              "scannedElementIDs": 1024,
+              "setValueError": 0,
+              "tokenFactoryAvailable": true,
+              "tokenScanRequested": true,
+              "traversalIncomplete": false,
+              "visitedCount": 34
+            }
+          ],
+          "renderers": [
+            {
+              "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+              "pid": 921
+            }
+          ],
+          "status": "observed",
+          "cleanupVerified": true
+        },
+        "newPageReadyEvents": 1,
+        "newAcceptedFormActions": 0,
+        "newSubmissions": [],
+        "controlWorked": true
+      },
+      "referenceCleanupVerified": true,
+      "candidate": {
+        "pid": 61893,
+        "observation": {
+          "accessibility": true,
+          "accessibilityQueried": true,
+          "hostPID": 61893,
+          "inputTapInstalled": false,
+          "ownershipMethod": "Exact research executable, process start time, OS responsibility PID. Private metadata API.",
+          "permissionRequested": false,
+          "queries": [
+            {
+              "actionAttempted": false,
+              "addressFieldAvailable": false,
+              "buttonAvailable": false,
+              "discardedOwnershipChecks": {},
+              "discardedUnownedElements": 0,
+              "fieldAvailable": false,
+              "fixtureURLVerified": false,
+              "processKind": "host",
+              "rawTextSaved": false,
+              "reloadActionAttempted": false,
+              "reloadButtonAvailable": false,
+              "rendererPID": 61893,
+              "researchMarkers": [],
+              "resolvableTokenRoots": 5,
+              "roles": {
+                "AXApplication": 2,
+                "AXButton": 1,
+                "AXGroup": 1,
+                "AXMenuBar": 1,
+                "AXWindow": 1
+              },
+              "scannedElementIDs": 1024,
+              "tokenFactoryAvailable": true,
+              "tokenScanRequested": true,
+              "traversalIncomplete": false,
+              "visitedCount": 6
+            }
+          ],
+          "renderers": [
+            {
+              "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+              "pid": 63235
+            }
+          ],
+          "status": "observed",
+          "cleanupVerified": true
+        },
+        "newPageReadyEvents": 0,
+        "newAcceptedFormActions": 0,
+        "newSubmissions": [],
+        "reloadWorked": false
+      }
+    }
+  ],
+  "conclusion": "Three references reloaded; no candidate navigation controls resolved within the scan budget. No candidate action was attempted.",
+  "limitations": [
+    "Element IDs 0 through 1023 only, with a three-second scan and eight-second query budget.",
+    "Page-ready is fixture lifecycle evidence, not an authenticated action receipt.",
+    "A missing control does not establish rejection of a directly addressed action."
+  ]
+}

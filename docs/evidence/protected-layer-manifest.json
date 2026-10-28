@@ -1,0 +1,12 @@
+{
+  "app": "/Users/nhestrompia/.t3/projects/agentfreebrowser/dist/ProtectedLayerExperiment.app",
+  "executableSHA256": "99032fa9384868a207fa31366eb721dabfe81b620be7a00923638489dfbfb22e",
+  "sources": {
+    "Sources/Diagnostics/ProtectedLayerExperiment.swift": "10229b84b5124c75ac9cab6a6ebcfe5cab5fe0ca29ee3ab69a5a31e6a204c38f",
+    "Sources/Rendering/H264Frames.swift": "227eee27c2c75f4ed24585143e04e8fbe6daaf5889cf8638be66866e0e4e6966",
+    "scripts/build-protected-layer.sh": "f4ced2dc263e3c47c7f5f95ac9ac75ab4ad94db08c5adfef89a8864621ae55e9"
+  },
+  "permissionsRequested": false,
+  "nativeAlarmSeconds": 660,
+  "networkAccessUsed": false
+}

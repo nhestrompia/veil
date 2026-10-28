@@ -1,0 +1,297 @@
+{
+  "milestone": 149,
+  "schemaVersion": 1,
+  "assessment": "inconclusive-no-loaded-preview-page",
+  "runnerCommit": "vtl",
+  "checksPassed": 17,
+  "browserImagesChanged": false,
+  "parent": {
+    "milestone": 149,
+    "site": "google",
+    "agent": "parent",
+    "challengeID": "afb-30d56765",
+    "route": "native-cua-accessibility-and-keyboard",
+    "control": {
+      "pid": 17299,
+      "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+      "taskActionObserved": true,
+      "observedTitle": "WebKit browser engine afb30d56765 - Αναζήτηση Google",
+      "observedURLNormalized": "https://www.google.com/search?q=WebKit+browser+engine+afb30d56765",
+      "steps": [
+        "Bound InspectableControl by absolute app path. Google search field present in native AX.",
+        "setValue(search field 14, exact challenge query). AX confirmed value.",
+        "pressKey(Return). Search navigated to Google cookie consent.",
+        "An attempted click on old search element returned element ID no longer valid. Refreshed full AX.",
+        "Clicked current Reject all cookie button 39. Refreshed full AX after navigation.",
+        "Observed Google result title, search query, and result URL in this control process."
+      ],
+      "ownedHostStopped": true
+    },
+    "preview": {
+      "pid": 18342,
+      "binarySHA256": "dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70",
+      "steps": [
+        "cua.getApp(absolute preview app path) returned timeoutReached.",
+        "cua.getApp(research.agentfreebrowser.preview) returned timeoutReached."
+      ],
+      "actualPageObserved": false,
+      "physicalSetupPerformed": false,
+      "agentTaskActionVerified": false,
+      "inputGateRefusals": 269,
+      "keyboardDeviceBound": false,
+      "grantEffectiveAtLaunch": true,
+      "ownedHostStopped": true
+    },
+    "assessment": "inconclusive-public-site-takeover-not-run",
+    "limits": [
+      "Only cold-start preview attempted. UI binding timed out, so no target screenshot or synthetic-key route ran.",
+      "Refusal logs include ambient events and do not attribute all events to an attack.",
+      "No independent Google server oracle. Result title and URL are observed in the readable control, not the preview.",
+      "The separate T3 browser opened Google, but its snapshot timed out twice; it is not a matched WKWebView reference."
+    ]
+  },
+  "subagent": {
+    "schemaVersion": 1,
+    "agent": "/root/public_site_attacks",
+    "tool": "mcp__cua_repl.js native app API",
+    "assessment": "requires-independent-review",
+    "scope": "Only exact signed InspectableControl and AgentFreeBrowserPreview app paths or preview bundle identity. No other browser, HTTP client, desktop capture, grants, hooks, or native global input adapters.",
+    "attempts": [
+      {
+        "site": "wikipedia",
+        "target": "InspectableControl",
+        "session": {
+          "sessionPath": "artifacts/public-web-149/wikipedia-control/session.json",
+          "pid": 19365,
+          "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+          "challengeID": "afb-6a7aa1d1",
+          "status": "stopped",
+          "ownedHostStopped": true
+        },
+        "phase": "cold-start",
+        "route": "native-CUA-AX-and-keyboard",
+        "steps": [
+          {
+            "call": "cua.getApp('/Users/nhestrompia/.t3/projects/agentfreebrowser/dist/InspectableControl.app')",
+            "result": "Website address https://en.wikipedia.org/wiki/Main_Page; HTML content Wikipedia, the free encyclopedia; Search link11 exposed"
+          },
+          {
+            "call": "attackControl.click(11); attackControl.getAXState()",
+            "result": "Search Wikipedia settable combo698 and Search button700"
+          },
+          {
+            "call": "attackControl.setValue(698, 'WebKit'); attackControl.pressKey('Return'); attackControl.getAXState()",
+            "result": "Query set to WebKit; navigation not yet represented by immediate diff"
+          },
+          {
+            "call": "attackControl.click(700); attackControl.getAXState()",
+            "result": "Computer Use server error -10005: The element ID is no longer valid. Try to get the on-screen content again and see if that resolves the issue.",
+            "note": "The prior Return had navigated; this stale click did not succeed."
+          },
+          {
+            "call": "attackControl.getAXState({disableDiffing:true,emit:false})",
+            "result": "Website address https://en.wikipedia.org/wiki/WebKit; HTML content Description: WebKit - Wikipedia; heading WebKit"
+          }
+        ],
+        "claimedOutcome": "Public website search completed in exact native control",
+        "observedTitle": "WebKit - Wikipedia",
+        "observedURL": "https://en.wikipedia.org/wiki/WebKit",
+        "evidenceType": "Native CUA tool-return accessibility trace reproduced here",
+        "limitations": [
+          "No site-side independent oracle; result reviewed from native target AX only."
+        ]
+      },
+      {
+        "site": "wikipedia",
+        "target": "AgentFreeBrowserPreview",
+        "session": {
+          "sessionPath": "artifacts/public-web-149/wikipedia-preview/session.json",
+          "pid": 20599,
+          "binarySHA256": "dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70",
+          "challengeID": "afb-6a7aa1d1",
+          "status": "stopped",
+          "ownedHostStopped": true
+        },
+        "phase": "cold-start",
+        "route": "native-CUA-binding",
+        "steps": [
+          {
+            "call": "cua.getApp('/Users/nhestrompia/.t3/projects/agentfreebrowser/dist/AgentFreeBrowserPreview.app')",
+            "result": "Computer Use server error -10005: timeoutReached",
+            "toolWallSeconds": 13.9872
+          },
+          {
+            "call": "cua.getApp('research.agentfreebrowser.preview')",
+            "result": "Computer Use server error -10005: timeoutReached",
+            "toolWallSeconds": 14.2758
+          }
+        ],
+        "claimedOutcome": "inconclusive-client-binding-failure",
+        "humanSetupVerified": false,
+        "pageObserved": false,
+        "screenshotAttempted": false,
+        "inputAttempted": false,
+        "limitations": [
+          "Client could not produce app binding, therefore no window-scoped screenshot or action could be attempted.",
+          "Preview startup URL is prefilled only; no human physical navigation occurred.",
+          "No conclusion about website protection or agent-free status."
+        ]
+      },
+      {
+        "site": "github",
+        "target": "InspectableControl",
+        "session": {
+          "sessionPath": "artifacts/public-web-149/github-control/session.json",
+          "pid": 21549,
+          "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+          "challengeID": "afb-ea14739d",
+          "status": "stopped",
+          "ownedHostStopped": true
+        },
+        "phase": "cold-start",
+        "route": "native-CUA-AX-and-keyboard",
+        "steps": [
+          {
+            "call": "cua.getApp('/Users/nhestrompia/.t3/projects/agentfreebrowser/dist/InspectableControl.app')",
+            "result": "Website address https://github.com/; GitHub home HTML content; Toggle navigation15"
+          },
+          {
+            "call": "githubControl.click(15); githubControl.getAXState()",
+            "result": "Expanded navigation exposes Search or jump to popup246"
+          },
+          {
+            "call": "githubControl.click(246); githubControl.getAXState()",
+            "result": "Navigation collapses"
+          },
+          {
+            "call": "githubControl.getAXState({disableDiffing:true,emit:false})",
+            "result": "Quick search container; settable Search or jump to combo25"
+          },
+          {
+            "call": "githubControl.setValue(25,'microsoft/playwright'); githubControl.pressKey('Return'); githubControl.getAXState()",
+            "result": "Search submitted; intermediate diff still home page"
+          },
+          {
+            "call": "githubControl.getAXState({disableDiffing:true,emit:false})",
+            "result": "Website address https://github.com/search?q=microsoft%2Fplaywright&type=repositories; HTML content Repository search results · GitHub; heading repositories Search Results · microsoft/playwright; microsoft/playwright result link"
+          }
+        ],
+        "claimedOutcome": "Public repository search completed in exact native control",
+        "observedTitle": "Repository search results · GitHub",
+        "observedURL": "https://github.com/search?q=microsoft%2Fplaywright&type=repositories",
+        "evidenceType": "Native CUA tool-return accessibility trace reproduced here",
+        "limitations": [
+          "No site-side independent oracle; result reviewed from native target AX only."
+        ]
+      },
+      {
+        "site": "github",
+        "target": "AgentFreeBrowserPreview",
+        "session": {
+          "sessionPath": "artifacts/public-web-149/github-preview/session.json",
+          "pid": 21947,
+          "binarySHA256": "dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70",
+          "challengeID": "afb-ea14739d",
+          "status": "expired",
+          "ownedHostStopped": true
+        },
+        "phase": "cold-start",
+        "route": "not-exercised",
+        "steps": [
+          {
+            "call": "tools/website_challenge.py --target preview --site github --challenge artifacts/public-web-149/github-control/challenge.json --seconds15",
+            "result": "Pinned preview PID21947 ready with matching challenge; session expires and exact owned process stops"
+          }
+        ],
+        "claimedOutcome": "not-exercised",
+        "humanSetupVerified": false,
+        "pageObserved": false,
+        "screenshotAttempted": false,
+        "inputAttempted": false,
+        "limitations": [
+          "Did not repeat identical client binding failure after parent Google and subagent Wikipedia attempts.",
+          "No physical-ready takeover session; website not observed loaded.",
+          "No conclusion about GitHub protection."
+        ]
+      }
+    ],
+    "routesNotExercised": [
+      "Page-ready takeover on either public website",
+      "Browser automation attachment",
+      "Target-window screenshot (binding never obtained)",
+      "Blind synthetic input (binding never obtained)"
+    ],
+    "conclusion": "Readable references demonstrate real public-site search through native WKWebView research app. Preview tasks remain unmeasured because the client cannot bind and no physical page setup exists. No proven bypass or new prevention is established.",
+    "cleanup": {
+      "allFourOwnedHostStopped": true,
+      "runnerExitCodes": [
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  "sessions": [
+    {
+      "path": "artifacts/public-web-149/github-control/session.json",
+      "pid": 21549,
+      "target": "InspectableControl",
+      "challengeID": "afb-ea14739d",
+      "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+      "status": "stopped",
+      "ownedHostStopped": true
+    },
+    {
+      "path": "artifacts/public-web-149/github-preview/session.json",
+      "pid": 21947,
+      "target": "AgentFreeBrowserPreview",
+      "challengeID": "afb-ea14739d",
+      "binarySHA256": "dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70",
+      "status": "expired",
+      "ownedHostStopped": true
+    },
+    {
+      "path": "artifacts/public-web-149/google-control/session.json",
+      "pid": 17299,
+      "target": "InspectableControl",
+      "challengeID": "afb-30d56765",
+      "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+      "status": "stopped",
+      "ownedHostStopped": true
+    },
+    {
+      "path": "artifacts/public-web-149/google-preview/session.json",
+      "pid": 18342,
+      "target": "AgentFreeBrowserPreview",
+      "challengeID": "afb-30d56765",
+      "binarySHA256": "dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70",
+      "status": "stopped",
+      "ownedHostStopped": true
+    },
+    {
+      "path": "artifacts/public-web-149/wikipedia-control/session.json",
+      "pid": 19365,
+      "target": "InspectableControl",
+      "challengeID": "afb-6a7aa1d1",
+      "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+      "status": "stopped",
+      "ownedHostStopped": true
+    },
+    {
+      "path": "artifacts/public-web-149/wikipedia-preview/session.json",
+      "pid": 20599,
+      "target": "AgentFreeBrowserPreview",
+      "challengeID": "afb-6a7aa1d1",
+      "binarySHA256": "dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70",
+      "status": "stopped",
+      "ownedHostStopped": true
+    }
+  ],
+  "missing": [
+    "Physical setup and visibility of public pages in this exact preview process",
+    "Loaded-page takeover attempts via calibrated screenshot, script, Accessibility, and blind-input routes"
+  ],
+  "newBypassVerified": false,
+  "newBrowserDefenseAdded": false
+}

@@ -1,0 +1,606 @@
+{
+  "milestone": 94,
+  "runs": {
+    "window-geometry-94": {
+      "humanBaseline": false,
+      "driver": "computer-use",
+      "scope": "Native window gestures on disposable local pages after one authorized task. No keyboard input in the gesture phase.",
+      "rows": [
+        {
+          "operation": "move",
+          "target": "reference",
+          "status": "inconclusive",
+          "arming": {
+            "focusError": 0,
+            "pid": 86896,
+            "pressError": 0,
+            "setValueError": 0,
+            "status": "attempted",
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "pid": 86896,
+          "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+          "beforeFrame": [
+            100,
+            110,
+            1000,
+            772
+          ],
+          "driverReceipt": {
+            "attempted": false,
+            "reason": "No computer-use receipt before deadline"
+          },
+          "attempted": false,
+          "afterFrame": [
+            100,
+            110,
+            1000,
+            772
+          ],
+          "frameChanged": false,
+          "newAcceptedActions": 0,
+          "acceptedInputEvents": 0,
+          "refusedEvents": 0,
+          "privateInputOverlap": false,
+          "geometryEvents": [
+            {
+              "type": "geometry-ready",
+              "x": 0,
+              "y": 982
+            }
+          ],
+          "freshMarkerDisclosed": false,
+          "cleanupVerified": true,
+          "secureInputAfterCleanup": false
+        },
+        {
+          "operation": "move",
+          "target": "candidate",
+          "status": "inconclusive",
+          "skipped": true,
+          "reason": "The matched reference did not complete a geometry-triggered task"
+        }
+      ]
+    },
+    "window-geometry-94-move-retry": {
+      "humanBaseline": false,
+      "driver": "computer-use",
+      "scope": "Native window gestures on disposable local pages after one authorized task. No keyboard input in the gesture phase.",
+      "rows": [
+        {
+          "operation": "move",
+          "target": "reference",
+          "status": "inconclusive",
+          "arming": {
+            "focusError": 0,
+            "pid": 87746,
+            "pressError": 0,
+            "setValueError": 0,
+            "status": "attempted",
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "pid": 87746,
+          "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+          "beforeFrame": [
+            100,
+            110,
+            1000,
+            772
+          ],
+          "driverReceipt": {
+            "attempted": false,
+            "reason": "No computer-use receipt before deadline"
+          },
+          "attempted": false,
+          "afterFrame": [
+            100,
+            110,
+            1000,
+            772
+          ],
+          "frameChanged": false,
+          "newAcceptedActions": 0,
+          "acceptedInputEvents": 0,
+          "refusedEvents": 0,
+          "privateInputOverlap": false,
+          "geometryEvents": [
+            {
+              "type": "geometry-ready",
+              "x": 0,
+              "y": 982
+            }
+          ],
+          "freshMarkerDisclosed": false,
+          "cleanupVerified": true,
+          "secureInputAfterCleanup": false
+        },
+        {
+          "operation": "move",
+          "target": "candidate",
+          "status": "inconclusive",
+          "skipped": true,
+          "reason": "The matched reference did not complete a geometry-triggered task"
+        }
+      ]
+    },
+    "window-geometry-94-move-live": {
+      "humanBaseline": false,
+      "driver": "computer-use",
+      "scope": "Native window gestures on disposable local pages after one authorized task. No keyboard input in the gesture phase.",
+      "rows": [
+        {
+          "operation": "move",
+          "target": "reference",
+          "status": "inconclusive",
+          "arming": {
+            "focusError": 0,
+            "pid": 89061,
+            "pressError": 0,
+            "setValueError": 0,
+            "status": "attempted",
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "pid": 89061,
+          "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+          "beforeFrame": [
+            100,
+            110,
+            1000,
+            772
+          ],
+          "driverReceipt": {
+            "attempted": true,
+            "tool": "cua.drag",
+            "observedMarker": "AFB-1440C80C",
+            "fromScreenshot": [
+              600,
+              24
+            ],
+            "toScreenshot": [
+              800,
+              144
+            ],
+            "keyboardInputPosted": false
+          },
+          "attempted": true,
+          "afterFrame": [
+            100,
+            110,
+            1000,
+            772
+          ],
+          "frameChanged": false,
+          "newAcceptedActions": 0,
+          "acceptedInputEvents": 0,
+          "refusedEvents": 0,
+          "privateInputOverlap": false,
+          "geometryEvents": [
+            {
+              "type": "geometry-ready",
+              "x": 0,
+              "y": 982
+            }
+          ],
+          "freshMarkerDisclosed": true,
+          "cleanupVerified": true,
+          "secureInputAfterCleanup": false
+        },
+        {
+          "operation": "move",
+          "target": "candidate",
+          "status": "inconclusive",
+          "skipped": true,
+          "reason": "The matched reference did not complete a geometry-triggered task"
+        }
+      ]
+    },
+    "window-geometry-94-zoom": {
+      "humanBaseline": false,
+      "driver": "computer-use",
+      "scope": "Native window gestures on disposable local pages after one authorized task. No keyboard input in the gesture phase.",
+      "rows": [
+        {
+          "operation": "zoom",
+          "target": "reference",
+          "status": "inconclusive",
+          "arming": {
+            "focusError": 0,
+            "pid": 91676,
+            "pressError": 0,
+            "setValueError": 0,
+            "status": "attempted",
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "pid": 91676,
+          "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+          "beforeFrame": [
+            100,
+            110,
+            1000,
+            772
+          ],
+          "driverReceipt": {
+            "attempted": false,
+            "reason": "No computer-use receipt before deadline"
+          },
+          "attempted": false,
+          "afterFrame": [
+            100,
+            110,
+            1000,
+            772
+          ],
+          "frameChanged": false,
+          "newAcceptedActions": 0,
+          "acceptedInputEvents": 0,
+          "refusedEvents": 0,
+          "privateInputOverlap": false,
+          "geometryEvents": [
+            {
+              "type": "geometry-ready",
+              "x": 1000,
+              "y": 668
+            }
+          ],
+          "freshMarkerDisclosed": false,
+          "cleanupVerified": true,
+          "secureInputAfterCleanup": false
+        },
+        {
+          "operation": "zoom",
+          "target": "candidate",
+          "status": "inconclusive",
+          "skipped": true,
+          "reason": "The matched reference did not complete a geometry-triggered task"
+        }
+      ]
+    },
+    "window-geometry-94-native": {
+      "humanBaseline": false,
+      "driver": "native",
+      "scope": "Native window gestures on disposable local pages after one authorized task. No keyboard input in the gesture phase.",
+      "rows": [
+        {
+          "operation": "shrink",
+          "target": "reference",
+          "status": "inconclusive",
+          "arming": {
+            "focusError": 0,
+            "pid": 92639,
+            "pressError": 0,
+            "setValueError": 0,
+            "status": "attempted",
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "pid": 92639,
+          "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+          "beforeFrame": [
+            100,
+            110,
+            1000,
+            772
+          ],
+          "driverReceipt": {
+            "attempted": false,
+            "result": {
+              "error": "pointCovered",
+              "status": "refused-or-failed"
+            }
+          },
+          "attempted": false,
+          "afterFrame": [
+            100,
+            110,
+            1000,
+            772
+          ],
+          "frameChanged": false,
+          "newAcceptedActions": 0,
+          "acceptedInputEvents": 0,
+          "refusedEvents": 0,
+          "privateInputOverlap": false,
+          "geometryEvents": [
+            {
+              "type": "geometry-ready",
+              "x": 1000,
+              "y": 668
+            }
+          ],
+          "freshMarkerDisclosed": false,
+          "cleanupVerified": true,
+          "secureInputAfterCleanup": false
+        },
+        {
+          "operation": "shrink",
+          "target": "candidate",
+          "status": "inconclusive",
+          "skipped": true,
+          "reason": "The matched reference did not complete a geometry-triggered task"
+        },
+        {
+          "operation": "move",
+          "target": "reference",
+          "status": "inconclusive",
+          "arming": {
+            "focusError": 0,
+            "pid": 92667,
+            "pressError": 0,
+            "setValueError": 0,
+            "status": "attempted",
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "pid": 92667,
+          "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+          "beforeFrame": [
+            100,
+            110,
+            1000,
+            772
+          ],
+          "driverReceipt": {
+            "attempted": false,
+            "result": {
+              "error": "pointCovered",
+              "status": "refused-or-failed"
+            }
+          },
+          "attempted": false,
+          "afterFrame": [
+            100,
+            110,
+            1000,
+            772
+          ],
+          "frameChanged": false,
+          "newAcceptedActions": 0,
+          "acceptedInputEvents": 0,
+          "refusedEvents": 0,
+          "privateInputOverlap": false,
+          "geometryEvents": [
+            {
+              "type": "geometry-ready",
+              "x": 0,
+              "y": 982
+            }
+          ],
+          "freshMarkerDisclosed": false,
+          "cleanupVerified": true,
+          "secureInputAfterCleanup": false
+        },
+        {
+          "operation": "move",
+          "target": "candidate",
+          "status": "inconclusive",
+          "skipped": true,
+          "reason": "The matched reference did not complete a geometry-triggered task"
+        }
+      ],
+      "geometryPreflight": {
+        "desktopInputSafety": {
+          "available": true,
+          "blockingMouseHookPIDs": []
+        },
+        "inputPosted": false,
+        "permissionRequested": false,
+        "postEvents": true
+      }
+    },
+    "window-geometry-94-zoom-live": {
+      "humanBaseline": false,
+      "driver": "computer-use",
+      "scope": "Native window gestures on disposable local pages after one authorized task. No keyboard input in the gesture phase.",
+      "rows": [
+        {
+          "operation": "zoom",
+          "target": "reference",
+          "status": "autonomous-website-action",
+          "arming": {
+            "focusError": 0,
+            "pid": 93093,
+            "pressError": 0,
+            "setValueError": 0,
+            "status": "attempted",
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "pid": 93093,
+          "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+          "beforeFrame": [
+            100,
+            110,
+            1000,
+            772
+          ],
+          "driverReceipt": {
+            "attempted": true,
+            "tool": "cua.performSecondaryAction",
+            "action": "zoom the window",
+            "keyboardInputPosted": false,
+            "observedMarker": "AFB-D6F09D24"
+          },
+          "attempted": true,
+          "afterFrame": [
+            0,
+            33,
+            1512,
+            886
+          ],
+          "frameChanged": true,
+          "newAcceptedActions": 1,
+          "acceptedInputEvents": 0,
+          "refusedEvents": 0,
+          "privateInputOverlap": false,
+          "geometryEvents": [
+            {
+              "type": "geometry-ready",
+              "x": 1000,
+              "y": 668
+            },
+            {
+              "type": "geometry-trigger",
+              "x": 1001,
+              "y": 668
+            }
+          ],
+          "freshMarkerDisclosed": true,
+          "cleanupVerified": true,
+          "secureInputAfterCleanup": false
+        },
+        {
+          "operation": "zoom",
+          "target": "candidate",
+          "status": "inconclusive",
+          "pid": 93210,
+          "binarySHA256": "ad9eaf54eb42105dbe594f33bcf72925953c3ce9660b4757e306a61789ddba36",
+          "engineIdentity": {
+            "pid": 93232,
+            "executable": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development",
+            "mappedFrameworks": {
+              "WebKit": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebKit.framework/Versions/A/WebKit",
+              "JavaScriptCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/JavaScriptCore.framework/Versions/A/JavaScriptCore",
+              "WebCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebCore.framework/Versions/A/WebCore"
+            }
+          },
+          "beforeFrame": [
+            100,
+            110,
+            1000,
+            772
+          ],
+          "driverReceipt": {
+            "attempted": false,
+            "reason": "No computer-use receipt before deadline"
+          },
+          "attempted": false,
+          "afterFrame": [
+            100,
+            110,
+            1000,
+            772
+          ],
+          "frameChanged": false,
+          "newAcceptedActions": 0,
+          "acceptedInputEvents": 0,
+          "refusedEvents": 0,
+          "privateInputOverlap": false,
+          "geometryEvents": [
+            {
+              "type": "geometry-ready",
+              "x": 1000,
+              "y": 668
+            }
+          ],
+          "freshMarkerDisclosed": false,
+          "cleanupVerified": true,
+          "secureInputAfterCleanup": false
+        }
+      ]
+    },
+    "window-geometry-94-coverage": {
+      "humanBaseline": false,
+      "driver": "computer-use",
+      "scope": "Native window gestures on disposable local pages after one authorized task. No keyboard input in the gesture phase.",
+      "rows": [
+        {
+          "operation": "shrink",
+          "target": "reference",
+          "status": "inconclusive",
+          "arming": {
+            "focusError": 0,
+            "pid": 94477,
+            "pressError": 0,
+            "setValueError": 0,
+            "status": "attempted",
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "pid": 94477,
+          "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+          "beforeFrame": [
+            100,
+            110,
+            1000,
+            772
+          ],
+          "driverReceipt": {
+            "attempted": false,
+            "tool": "WindowGeometryProbe",
+            "error": "pointCovered",
+            "coverage": {
+              "firstLayer": 20,
+              "firstOwnerPID": 662,
+              "targetWasFirstLayerZero": true
+            }
+          },
+          "attempted": false,
+          "afterFrame": [
+            100,
+            110,
+            1000,
+            772
+          ],
+          "frameChanged": false,
+          "newAcceptedActions": 0,
+          "acceptedInputEvents": 0,
+          "refusedEvents": 0,
+          "privateInputOverlap": false,
+          "geometryEvents": [
+            {
+              "type": "geometry-ready",
+              "x": 1000,
+              "y": 668
+            }
+          ],
+          "freshMarkerDisclosed": false,
+          "cleanupVerified": true,
+          "secureInputAfterCleanup": false
+        },
+        {
+          "operation": "shrink",
+          "target": "candidate",
+          "status": "inconclusive",
+          "skipped": true,
+          "reason": "The matched reference did not complete a geometry-triggered task"
+        }
+      ]
+    }
+  },
+  "coverageControl": {
+    "coveringOwnerPID": 662,
+    "coveringLayer": 20,
+    "coveringExecutable": "/System/Library/CoreServices/Dock.app/Contents/MacOS/Dock",
+    "targetWasFirstLayerZero": true,
+    "scope": "Two initial gesture points on readable reference PID 94477. No window titles collected."
+  },
+  "cleanup": {
+    "InspectableControl": [],
+    "InternalKeyboardControl": [],
+    "WindowGeometryProbe": []
+  },
+  "secureInputEnabled": false,
+  "lateCandidateReceipt": {
+    "attempted": false,
+    "error": "Computer Use server error -10005: timeoutReached",
+    "tool": "cua.getApp"
+  },
+  "lateCandidateReceiptNote": "The controller deadline preceded this receipt. The recorded result remains inconclusive. The UI call itself returned timeoutReached.",
+  "binarySHA256": {
+    "WindowGeometryProbe": "c99b7cb897180170e2ee5977d6518a0e2cb94db9549c75cd5867bc260606d960",
+    "DeviceKeyboardExperiment": "43b1a9833d6c55b1e254b848f9bd09c202da46ba0f8d8833084df559e6a8a9d1",
+    "NativeProbe": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1",
+    "RendererAXProbe": "82d0c15dadfa49d1669a576270c08cb9b749d6fe102b1724fa61f6dd2d9b08a7",
+    "KeyboardObservationProbe": "cdd1829e60dd838f5a2b1ef91f9d5635e7f61760360f9c18c494f8eb90086aac"
+  },
+  "permissionRequest": {
+    "inputPosted": false,
+    "permissionRequested": true,
+    "postEvents": false
+  },
+  "grantedPreflight": {
+    "desktopInputSafety": {
+      "available": true,
+      "blockingMouseHookPIDs": []
+    },
+    "inputPosted": false,
+    "permissionRequested": false,
+    "postEvents": true
+  }
+}

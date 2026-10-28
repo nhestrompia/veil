@@ -1,0 +1,225 @@
+{
+  "generatedControl": {
+    "physicalControl": false,
+    "mode": "pid",
+    "referencePID": 56330,
+    "observerSHA256": "c07772a5b88d9987a5e37ed649856bdcba0a72486b4b7e2150fb5ea7648619d1",
+    "input": {
+      "curvedTrajectory": true,
+      "directToPID": false,
+      "explicitWindowRouting": false,
+      "keyboardDirectToPID": false,
+      "pid": 56330,
+      "postTap": 0,
+      "source": "hid",
+      "status": "attempted",
+      "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+    },
+    "observation": {
+      "accessibility": true,
+      "eventCount": 13,
+      "eventsWithUnicode": 13,
+      "expectedFakeKeycodeSequenceMatched": true,
+      "expectedFakePhraseMatched": true,
+      "keyCodesSaved": false,
+      "listenEvents": true,
+      "method": "CGEvent tapCreateForPid; listenOnly; keyDown only; exact foreground research PID; 15-second maximum",
+      "monitorRemoved": true,
+      "rawTextSaved": false,
+      "reason": "Focus loss or timeout",
+      "status": "observation-finished",
+      "targetPID": 56330,
+      "unownedEventCount": 0
+    },
+    "acceptedSubmissions": 1,
+    "observerCleanupVerified": true,
+    "referenceCleanupVerified": true,
+    "generatedControlWorked": true
+  },
+  "preflightBeforeRefresh": {
+    "accessibility": false,
+    "eventCount": 0,
+    "eventsWithUnicode": 0,
+    "expectedFakeKeycodeSequenceMatched": false,
+    "expectedFakePhraseMatched": false,
+    "keyCodesSaved": false,
+    "listenEvents": false,
+    "method": "Passive NSEvent global monitor; exact foreground research PID; 15-second maximum",
+    "monitorRemoved": true,
+    "rawTextSaved": false,
+    "reason": "No monitor installed or permission requested",
+    "status": "preflight-only",
+    "targetPID": 43980,
+    "unownedEventCount": 0
+  },
+  "preflightAfterApprovedRefresh": {
+    "accessibility": true,
+    "eventCount": 0,
+    "eventsWithUnicode": 0,
+    "expectedFakeKeycodeSequenceMatched": false,
+    "expectedFakePhraseMatched": false,
+    "keyCodesSaved": false,
+    "listenEvents": true,
+    "method": "Passive NSEvent global monitor; exact foreground research PID; 15-second maximum",
+    "monitorRemoved": true,
+    "rawTextSaved": false,
+    "reason": "No monitor installed or permission requested",
+    "status": "preflight-only",
+    "targetPID": 43980,
+    "unownedEventCount": 0
+  },
+  "physicalAttempts": [
+    {
+      "candidatePID": 43980,
+      "binarySHA256": "43b1a9833d6c55b1e254b848f9bd09c202da46ba0f8d8833084df559e6a8a9d1",
+      "observerSHA256": "c07772a5b88d9987a5e37ed649856bdcba0a72486b4b7e2150fb5ea7648619d1",
+      "physicalSampleRequested": true,
+      "inputGeneratedByController": false,
+      "samples": [
+        {
+          "sample": "reference",
+          "pid": 56649,
+          "inputGeneratedByController": false,
+          "frontmostBeforeLaunch": 56649,
+          "observation": {
+            "accessibility": true,
+            "eventCount": 50,
+            "eventsWithUnicode": 50,
+            "expectedFakeKeycodeSequenceMatched": false,
+            "expectedFakePhraseMatched": false,
+            "keyCodesSaved": false,
+            "listenEvents": true,
+            "method": "CGEvent tapCreateForPid; listenOnly; keyDown only; exact foreground research PID; 15-second maximum",
+            "monitorRemoved": true,
+            "rawTextSaved": false,
+            "reason": "Focus loss or timeout",
+            "status": "observation-finished",
+            "targetPID": 56649,
+            "unownedEventCount": 0
+          },
+          "newAcceptedSubmissions": 0,
+          "observerCleanupVerified": true
+        }
+      ],
+      "referencePID": 56649,
+      "referenceBinarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+      "referenceCleanupVerified": true
+    },
+    {
+      "candidatePID": 43980,
+      "binarySHA256": "43b1a9833d6c55b1e254b848f9bd09c202da46ba0f8d8833084df559e6a8a9d1",
+      "observerSHA256": "c07772a5b88d9987a5e37ed649856bdcba0a72486b4b7e2150fb5ea7648619d1",
+      "physicalSampleRequested": true,
+      "inputGeneratedByController": false,
+      "samples": [
+        {
+          "sample": "reference",
+          "pid": 57451,
+          "inputGeneratedByController": false,
+          "frontmostBeforeLaunch": 57451,
+          "observation": {
+            "accessibility": true,
+            "eventCount": 14,
+            "eventsWithUnicode": 14,
+            "expectedFakeKeycodeSequenceMatched": false,
+            "expectedFakePhraseMatched": false,
+            "keyCodesSaved": false,
+            "listenEvents": true,
+            "method": "CGEvent tapCreateForPid; listenOnly; keyDown only; exact foreground research PID; 15-second maximum",
+            "monitorRemoved": true,
+            "rawTextSaved": false,
+            "reason": "Focus loss or timeout",
+            "status": "observation-finished",
+            "targetPID": 57451,
+            "unownedEventCount": 0
+          },
+          "newAcceptedSubmissions": 1,
+          "observerCleanupVerified": true
+        }
+      ],
+      "referencePID": 57451,
+      "referenceBinarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+      "referenceCleanupVerified": true
+    },
+    {
+      "candidatePID": 58504,
+      "binarySHA256": "43b1a9833d6c55b1e254b848f9bd09c202da46ba0f8d8833084df559e6a8a9d1",
+      "observerSHA256": "c07772a5b88d9987a5e37ed649856bdcba0a72486b4b7e2150fb5ea7648619d1",
+      "physicalSampleRequested": true,
+      "inputGeneratedByController": false,
+      "samples": [
+        {
+          "sample": "reference",
+          "pid": 57451,
+          "inputGeneratedByController": false,
+          "frontmostBeforeLaunch": 57451,
+          "observation": {
+            "accessibility": true,
+            "eventCount": 14,
+            "eventsWithUnicode": 14,
+            "expectedFakeKeycodeSequenceMatched": false,
+            "expectedFakePhraseMatched": false,
+            "keyCodesSaved": false,
+            "listenEvents": true,
+            "method": "CGEvent tapCreateForPid; listenOnly; keyDown only; exact foreground research PID; 15-second maximum",
+            "monitorRemoved": true,
+            "rawTextSaved": false,
+            "reason": "Focus loss or timeout",
+            "status": "observation-finished",
+            "targetPID": 57451,
+            "unownedEventCount": 0
+          },
+          "newAcceptedSubmissions": 1,
+          "observerCleanupVerified": true
+        },
+        {
+          "sample": "candidate",
+          "pid": 58504,
+          "inputGeneratedByController": false,
+          "frontmostBeforeLaunch": 58504,
+          "observation": {
+            "accessibility": true,
+            "eventCount": 0,
+            "eventsWithUnicode": 0,
+            "expectedFakeKeycodeSequenceMatched": false,
+            "expectedFakePhraseMatched": false,
+            "keyCodesSaved": false,
+            "listenEvents": true,
+            "method": "CGEvent tapCreateForPid; listenOnly; keyDown only; exact foreground research PID; 15-second maximum",
+            "monitorRemoved": true,
+            "rawTextSaved": false,
+            "reason": "Focus loss or timeout",
+            "status": "observation-finished",
+            "targetPID": 58504,
+            "unownedEventCount": 0
+          },
+          "newSubmissions": [],
+          "newAcceptedSubmissions": 0,
+          "candidateStillRunningUnchanged": true,
+          "deviceBindingObserved": false,
+          "observerCleanupVerified": true,
+          "observationOutcome": "inconclusive",
+          "referenceDecoderCalibrated": false
+        }
+      ],
+      "candidateNeedsPhysicalStartup": true,
+      "resumedReferenceFrom": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/keyboard-observation/interactive-keycodes-no-correction/results.json",
+      "referencePID": 58632,
+      "referenceBinarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10"
+    }
+  ],
+  "operatorReports": [
+    "Typed each character without corrections",
+    "Completed recreated browser task"
+  ],
+  "postListenerTaskCheck": {
+    "pid": 58504,
+    "acceptedSubmissions": 1,
+    "bound": true,
+    "acceptedEvents": 50
+  },
+  "oldProcessStopped": 43980,
+  "oldProcessCrashReportFound": false,
+  "oldProcessExitCauseKnown": false,
+  "hardwareOriginAttested": false
+}

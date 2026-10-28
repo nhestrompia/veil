@@ -1,0 +1,972 @@
+{
+  "milestone": 134,
+  "previewPID": 2892,
+  "previewBinarySHA256": "dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70",
+  "effectiveInputMonitoring": true,
+  "physicalControl": {
+    "operatorDeclaresPhysicalCompletion": true,
+    "operatorReport": "Task complete",
+    "pid": 2892,
+    "binarySHA256": "dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70",
+    "deviceBound": true,
+    "acceptedSubmissions": 1,
+    "recordedUnixSeconds": 1793180982.042359,
+    "bootstrapAttested": false,
+    "physicalInputAbsenceVerified": false
+  },
+  "nativePermissions": {
+    "accessibility": true,
+    "desktopInputSafety": {
+      "available": true,
+      "blockingMouseHookPIDs": [
+        63961,
+        64027
+      ]
+    },
+    "pid": 5607,
+    "postEvents": true,
+    "screenCapture": true
+  },
+  "scopedReadBefore": {
+    "candidatePID": 2892,
+    "binarySHA256": "dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70",
+    "physicalControl": "artifacts/integrated-browser-134/physical-control.json",
+    "results": [
+      {
+        "name": "clear-before",
+        "pid": 7238,
+        "markerRecoveredFromAX": true,
+        "axElementCount": 32,
+        "metadataWindowCount": 1,
+        "captures": [
+          {
+            "method": "capture",
+            "result": {
+              "frame": [
+                100,
+                110,
+                1000,
+                772
+              ],
+              "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/integrated-browser-134/read-audit/clear-before-capture.png",
+              "pid": 7238,
+              "pixels": [
+                2000,
+                1544
+              ],
+              "status": "captured",
+              "windowID": 113460,
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "markerRecovery": {
+              "exact": true,
+              "visualHexAliases": true
+            },
+            "ocrAvailable": true,
+            "image": "artifacts/integrated-browser-134/read-audit/clear-before-capture.png"
+          },
+          {
+            "method": "display-capture",
+            "result": {
+              "frame": [
+                100,
+                110,
+                1000,
+                772
+              ],
+              "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/integrated-browser-134/read-audit/clear-before-display-capture.png",
+              "pid": 7238,
+              "pixels": [
+                2000,
+                1544
+              ],
+              "status": "captured",
+              "windowID": 113460,
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "markerRecovery": {
+              "exact": true,
+              "visualHexAliases": true
+            },
+            "ocrAvailable": true,
+            "image": "artifacts/integrated-browser-134/read-audit/clear-before-display-capture.png"
+          }
+        ]
+      }
+    ],
+    "systemInputPosted": false,
+    "inputTrialsSkipped": "Active modifying mouse hooks: LinearMouse and DockDoor",
+    "referenceStopped": true,
+    "newSubmissions": [],
+    "samePreviewRemainsLive": true
+  },
+  "scopedReadFollowup": {
+    "candidatePID": 2892,
+    "binarySHA256": "dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70",
+    "systemInputPosted": false,
+    "results": [
+      {
+        "name": "preview",
+        "pid": 2892,
+        "captures": [
+          {
+            "route": "capture",
+            "result": {
+              "frame": [
+                100,
+                110,
+                1000,
+                772
+              ],
+              "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/integrated-browser-134/read-followup/preview-capture.png",
+              "pid": 2892,
+              "pixels": [
+                1000,
+                772
+              ],
+              "status": "captured",
+              "windowID": 113429,
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "markerRecovery": {
+              "exact": false,
+              "visualHexAliases": false
+            },
+            "image": "artifacts/integrated-browser-134/read-followup/preview-capture.png",
+            "ocrAvailable": true
+          },
+          {
+            "route": "display-capture",
+            "result": {
+              "frame": [
+                100,
+                110,
+                1000,
+                772
+              ],
+              "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/integrated-browser-134/read-followup/preview-display-capture.png",
+              "pid": 2892,
+              "pixels": [
+                2000,
+                1544
+              ],
+              "status": "captured",
+              "windowID": 113429,
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "markerRecovery": {
+              "exact": false,
+              "visualHexAliases": false
+            },
+            "image": "artifacts/integrated-browser-134/read-followup/preview-display-capture.png",
+            "ocrAvailable": true
+          }
+        ],
+        "activation": {
+          "elements": [
+            {
+              "actions": [],
+              "AXRole": "AXApplication",
+              "AXTitle": "AgentFreeBrowserPreview"
+            },
+            {
+              "actions": [],
+              "AXRole": "AXWindow",
+              "AXTitle": "Agent-free Browser Preview",
+              "position": [
+                100,
+                110
+              ],
+              "size": [
+                1000,
+                772
+              ]
+            }
+          ],
+          "queries": [
+            {
+              "error": 0,
+              "ownedElement": true,
+              "query": "application:AXMainWindow"
+            },
+            {
+              "error": 0,
+              "ownedElement": true,
+              "query": "application:AXFocusedWindow"
+            },
+            {
+              "error": -25212,
+              "ownedElement": false,
+              "query": "application:AXFocusedUIElement"
+            },
+            {
+              "error": -25212,
+              "ownedElement": false,
+              "query": "system:AXFocusedUIElement"
+            },
+            {
+              "error": -25208,
+              "ownedElement": false,
+              "query": "system:hit-test"
+            },
+            {
+              "error": -25208,
+              "ownedElement": false,
+              "query": "system:hit-test"
+            }
+          ],
+          "scope": "Only exact target-PID elements; File/Edit use the separate menu adapter",
+          "status": "observed",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        }
+      },
+      {
+        "name": "clear-after",
+        "pid": 7943,
+        "captures": [
+          {
+            "route": "capture",
+            "result": {
+              "frame": [
+                100,
+                110,
+                1000,
+                772
+              ],
+              "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/integrated-browser-134/read-followup/clear-after-capture.png",
+              "pid": 7943,
+              "pixels": [
+                2000,
+                1544
+              ],
+              "status": "captured",
+              "windowID": 113479,
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "markerRecovery": {
+              "exact": true,
+              "visualHexAliases": true
+            },
+            "image": "artifacts/integrated-browser-134/read-followup/clear-after-capture.png",
+            "ocrAvailable": true
+          },
+          {
+            "route": "display-capture",
+            "result": {
+              "frame": [
+                100,
+                110,
+                1000,
+                772
+              ],
+              "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/integrated-browser-134/read-followup/clear-after-display-capture.png",
+              "pid": 7943,
+              "pixels": [
+                2000,
+                1544
+              ],
+              "status": "captured",
+              "windowID": 113479,
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "markerRecovery": {
+              "exact": true,
+              "visualHexAliases": true
+            },
+            "image": "artifacts/integrated-browser-134/read-followup/clear-after-display-capture.png",
+            "ocrAvailable": true
+          }
+        ],
+        "activation": {
+          "elements": [
+            {
+              "actions": [],
+              "AXRole": "AXApplication",
+              "AXTitle": "InspectableControl"
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "Browser input research fixture",
+              "AXRole": "AXWebArea",
+              "AXTitle": "",
+              "AXValue": "",
+              "position": [
+                100,
+                186
+              ],
+              "size": [
+                1000,
+                668
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXHeading",
+              "AXTitle": "Browser input research",
+              "position": [
+                220,
+                234
+              ],
+              "size": [
+                760,
+                47
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "Browser input research",
+              "position": [
+                220,
+                234
+              ],
+              "size": [
+                429,
+                47
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXGroup",
+              "AXTitle": "",
+              "AXValue": "",
+              "position": [
+                220,
+                307
+              ],
+              "size": [
+                760,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "This is a disposable local task. It has no external effect.",
+              "position": [
+                220,
+                307
+              ],
+              "size": [
+                478,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXGroup",
+              "AXTitle": "",
+              "AXValue": "",
+              "position": [
+                220,
+                350
+              ],
+              "size": [
+                760,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "Disclosure marker: ",
+              "position": [
+                220,
+                350
+              ],
+              "size": [
+                168,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "AFB-DCA328CD",
+              "position": [
+                387,
+                350
+              ],
+              "size": [
+                157,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXGroup",
+              "AXTitle": "",
+              "AXValue": "",
+              "position": [
+                220,
+                393
+              ],
+              "size": [
+                760,
+                162
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "Enter native-input",
+              "position": [
+                220,
+                393
+              ],
+              "size": [
+                760,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "Enter native-input",
+              "position": [
+                220,
+                393
+              ],
+              "size": [
+                157,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXPress",
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXTextField",
+              "AXTitle": "Enter native-input",
+              "AXValue": "",
+              "position": [
+                220,
+                436
+              ],
+              "size": [
+                468,
+                52
+              ]
+            },
+            {
+              "actions": [
+                "AXPress",
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXButton",
+              "AXTitle": "Record action",
+              "AXValue": "",
+              "position": [
+                220,
+                507
+              ],
+              "size": [
+                145,
+                48
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXGroup",
+              "AXTitle": "No action recorded.",
+              "AXValue": "",
+              "position": [
+                220,
+                574
+              ],
+              "size": [
+                760,
+                41
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "No action recorded.",
+              "position": [
+                220,
+                574
+              ],
+              "size": [
+                173,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXGroup",
+              "AXTitle": "",
+              "AXValue": "",
+              "position": [
+                220,
+                634
+              ],
+              "size": [
+                760,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXPress",
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXLink",
+              "AXTitle": "Visit an ordinary HTTPS website",
+              "AXValue": "",
+              "position": [
+                220,
+                634
+              ],
+              "size": [
+                280,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "Visit an ordinary HTTPS website",
+              "position": [
+                220,
+                634
+              ],
+              "size": [
+                281,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXRaise"
+              ],
+              "AXRole": "AXWindow",
+              "AXTitle": "Inspectable Control",
+              "position": [
+                100,
+                110
+              ],
+              "size": [
+                1000,
+                772
+              ]
+            },
+            {
+              "actions": [
+                "AXPress"
+              ],
+              "AXRole": "AXButton",
+              "AXTitle": "Back",
+              "position": [
+                111,
+                151
+              ],
+              "size": [
+                56,
+                26
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXConfirm"
+              ],
+              "AXDescription": "Website address",
+              "AXRole": "AXTextField",
+              "AXValue": "http://127.0.0.1:52291/trial/8c0b86041eb02cde",
+              "position": [
+                173,
+                151
+              ],
+              "size": [
+                842.5,
+                26
+              ]
+            },
+            {
+              "actions": [
+                "AXPress"
+              ],
+              "AXRole": "AXButton",
+              "AXTitle": "Reload",
+              "position": [
+                1021.5,
+                151
+              ],
+              "size": [
+                67.5,
+                26
+              ]
+            },
+            {
+              "actions": [],
+              "AXRole": "AXGroup",
+              "position": [
+                100,
+                186
+              ],
+              "size": [
+                1000,
+                668
+              ]
+            },
+            {
+              "actions": [],
+              "AXRole": "AXGroup",
+              "position": [
+                100,
+                186
+              ],
+              "size": [
+                1000,
+                668
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXScrollArea",
+              "AXTitle": "",
+              "AXValue": "",
+              "position": [
+                100,
+                186
+              ],
+              "size": [
+                1000,
+                668
+              ]
+            },
+            {
+              "actions": [],
+              "AXRole": "AXStaticText",
+              "AXValue": "Inspection: control enabled. Desktop capture and input: unprotected.",
+              "position": [
+                111,
+                859
+              ],
+              "size": [
+                978,
+                16
+              ]
+            },
+            {
+              "actions": [
+                "AXPress"
+              ],
+              "AXRole": "AXButton",
+              "position": [
+                108,
+                118
+              ],
+              "size": [
+                16,
+                16
+              ]
+            },
+            {
+              "actions": [
+                "AXPress",
+                "AXZoomWindow",
+                "AXShowMenu"
+              ],
+              "AXRole": "AXButton",
+              "position": [
+                154,
+                118
+              ],
+              "size": [
+                16,
+                16
+              ]
+            },
+            {
+              "actions": [],
+              "AXRole": "AXGroup",
+              "position": [
+                155,
+                119
+              ],
+              "size": [
+                14,
+                14
+              ]
+            },
+            {
+              "actions": [
+                "AXPress"
+              ],
+              "AXRole": "AXButton",
+              "position": [
+                131,
+                118
+              ],
+              "size": [
+                16,
+                16
+              ]
+            },
+            {
+              "actions": [],
+              "AXRole": "AXStaticText",
+              "AXValue": "Inspectable Control",
+              "position": [
+                182,
+                118
+              ],
+              "size": [
+                132,
+                16
+              ]
+            }
+          ],
+          "queries": [
+            {
+              "error": 0,
+              "ownedElement": true,
+              "query": "application:AXMainWindow"
+            },
+            {
+              "error": 0,
+              "ownedElement": true,
+              "query": "application:AXFocusedWindow"
+            },
+            {
+              "error": 0,
+              "ownedElement": true,
+              "query": "application:AXFocusedUIElement"
+            },
+            {
+              "error": 0,
+              "ownedElement": true,
+              "query": "system:AXFocusedUIElement"
+            },
+            {
+              "error": 0,
+              "ownedElement": true,
+              "query": "system:hit-test"
+            },
+            {
+              "error": 0,
+              "ownedElement": true,
+              "query": "system:hit-test"
+            }
+          ],
+          "scope": "Only exact target-PID elements; File/Edit use the separate menu adapter",
+          "status": "observed",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        }
+      }
+    ],
+    "previousClearBefore": "artifacts/integrated-browser-134/read-audit/results.json",
+    "referenceStopped": true,
+    "newSubmissions": []
+  },
+  "initialCandidateActivation": {
+    "error": "Research target is not frontmost; refusing system-wide AX query",
+    "status": "inconclusive"
+  },
+  "axAction": {
+    "candidatePID": 2892,
+    "binarySHA256": "dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70",
+    "systemInputPosted": false,
+    "mechanism": "AX attribute set and press on exact fixture controls only. No CGEvent or HID posting.",
+    "control": {
+      "focusError": 0,
+      "pid": 8246,
+      "pressError": 0,
+      "setValueError": 0,
+      "status": "attempted",
+      "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+    },
+    "controlAcceptedSubmissions": 1,
+    "candidate": {
+      "error": "Fixture field or action not found in AX tree",
+      "status": "inconclusive",
+      "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+    },
+    "candidateNewSubmissions": [],
+    "referenceStopped": true
+  },
+  "protocol": {
+    "candidatePID": 2892,
+    "previewHostTCPListeners": [],
+    "previewListenerExitCode": 1,
+    "playwrightControlAttached": true,
+    "playwrightControlActionReported": true,
+    "controlAcceptedSubmissions": 1,
+    "controlDebugPortClosed": true,
+    "candidateCDPAttempted": false,
+    "interpretation": "No host TCP listener was advertised for CDP attachment. This does not test Web Inspector over other transports.",
+    "systemInputPosted": false
+  },
+  "visuallyInspected": [
+    "read-followup/preview-capture.png",
+    "read-followup/clear-after-capture.png"
+  ],
+  "nativeInputPosted": false,
+  "inputResumePlan": "docs/evidence/preview-input-resume-plan.json",
+  "inputResumeApproved": false,
+  "regressionTestsPassed": 17,
+  "pythonCompilationPassed": true,
+  "grantedImages": {
+    "DeviceKeyboardExperiment": {
+      "sha256": "43b1a9833d6c55b1e254b848f9bd09c202da46ba0f8d8833084df559e6a8a9d1",
+      "unchanged": true
+    },
+    "NativeProbe": {
+      "sha256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1",
+      "unchanged": true
+    },
+    "RendererAXProbe": {
+      "sha256": "82d0c15dadfa49d1669a576270c08cb9b749d6fe102b1724fa61f6dd2d9b08a7",
+      "unchanged": true
+    },
+    "KeyboardObservationProbe": {
+      "sha256": "cdd1829e60dd838f5a2b1ef91f9d5635e7f61760360f9c18c494f8eb90086aac",
+      "unchanged": true
+    },
+    "WindowGeometryProbe": {
+      "sha256": "c99b7cb897180170e2ee5977d6518a0e2cb94db9549c75cd5867bc260606d960",
+      "unchanged": true
+    },
+    "PixelKeyboardExperiment": {
+      "sha256": "4b39843faec345d8484cbfdf829644e27fb306d160c1c77272e7961cc381acc8",
+      "unchanged": true
+    },
+    "PixelKeyboardRoutingControl": {
+      "sha256": "aac4fd5424ceebd7d792fda99a0ade9fefc3acaef546b30a2849faabcd24f1fe",
+      "unchanged": true
+    },
+    "CaptureRefreshProbe": {
+      "sha256": "cbd7a3ff6772e0c80ef83bea8cfb9eaacfdf9370204517e12b66c07b1a72d4f1",
+      "unchanged": true
+    },
+    "CompositorRefreshProbe": {
+      "sha256": "dc8265f8cfe12d417d8e5e5c9780a9d9429ad3cebb195ba5ced933a8fd01e52c",
+      "unchanged": true
+    },
+    "CaptureStressProbe": {
+      "sha256": "aac4422314d929fcb3f39ac8a7482ce6f35868d648f22730f03d655da0b168d7",
+      "unchanged": true
+    },
+    "AgentFreeBrowserPreview": {
+      "sha256": "dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70",
+      "unchanged": true
+    }
+  },
+  "browserSourcesUnchanged": true,
+  "transientResearchProcesses": {
+    "5607": "absent",
+    "6276": "absent",
+    "6278": "absent",
+    "6280": "absent",
+    "7238": "absent",
+    "7255": "absent",
+    "7260": "absent",
+    "7262": "absent",
+    "7265": "absent",
+    "7269": "absent",
+    "7271": "absent",
+    "7276": "absent",
+    "7284": "absent",
+    "7926": "absent",
+    "7930": "absent",
+    "7933": "absent",
+    "7936": "absent",
+    "7939": "absent",
+    "7943": "absent",
+    "7956": "absent",
+    "7964": "absent",
+    "7967": "absent",
+    "7970": "absent",
+    "7973": "absent",
+    "7981": "absent",
+    "8246": "absent",
+    "8260": "absent",
+    "8271": "absent",
+    "8280": "absent"
+  },
+  "allTransientResearchProcessesAbsent": true,
+  "previewIntentionallyLive": true,
+  "fixtureIntentionallyLive": true,
+  "sessionPath": "artifacts/integrated-browser-134/physical-session/session.json",
+  "agentFreeProven": false
+}

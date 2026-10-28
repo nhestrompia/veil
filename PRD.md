@@ -1,8 +1,14 @@
 # Agent-resistant browser: proof-of-concept PRD
 
-Status: proposed research specification. Implementation has not started.
+Status: minimal research MVP. The combined native browser and independent fixture work. Agent-free acceptance remains unproven.
+
+Scope clarification, October 28, 2026: keep the single-window browser and focus on protection. Tabs, bookmarks, browsing-history UI, and browser feature parity are outside this milestone. See [MVP scope](docs/mvp-scope.md).
 
 Date: October 23, 2026. Platform: macOS only.
+
+Historical feasibility result, October 27, 2026: no integrated agent-free build meets the declared threat model. Earlier same-user candidates completed sixteen calibrated timing attacks. The physical keyboard browser does not incorporate the later isolated renderer. Human input, private visible output, and final browser-wide acceptance remain incomplete. See [remaining gaps](docs/agent-free-gap-audit.md).
+
+Milestone 116 runs one cross-user channel comparison. macOS denies four renderer pauses and resumes, while an ordinary-user display pause allows eleven new page-and-image samples. The helper exits successfully and measured cleanup passes. This hidden, fixed-fixture pair has no physical input route. It validates process isolation and transport, not agent-free website use. See [live findings](docs/renderer-channel-live-findings.md).
 
 ## Product decision
 
@@ -57,6 +63,8 @@ The MVP excludes extensions, account sync, imported browser profiles, a password
 
 There is no Windows or Linux build, website SDK, enterprise administration service, server-side browser attestation, or CAPTCHA. Private macOS APIs and changes to system security settings are outside the proposed MVP.
 
+Milestones 58 through 61 found OS lifecycle actions and a native ownership conflict in host-only mitigations. The continued research now includes one isolated WebKit activity-projection experiment. It keeps the original MVP exclusions for production scope. A custom engine, private API, or changed setting is not a passing result by itself. See [the activity boundary design](docs/research/activity-boundary-plan.md).
+
 ## Threat model and success contract
 
 An agent is an external program that observes or controls this browser to complete a web task. The browser does not need to identify whether an LLM produced the program's instructions. It must restrict the program's access.
@@ -74,7 +82,10 @@ Code injection into the browser process, a modified app binary, root access, ker
 | Blind input | Use known coordinates or keyboard sequences without reading current pixels. | Hiding content alone is insufficient. Test known layouts and repeated attempts. |
 | Exports and integrations | Use clipboard, drag, print, downloads, browser scripting, or external handoff. | No undocumented route exposes protected page content or commands. |
 | Session reuse | Inspect browser-created files or reuse credentials exposed by this browser. | No deliberate credential export or content logging. Test accessible residue and document remaining same-user limits. |
+| Process signals | Pause and resume a same-user content process without input or code injection. | A page must not complete a protected action from the interruption. Milestone 96 reproduces this route across four clocks in sixteen custom-engine trials. Release-browser signing remains unmeasured. |
 | Another browser or direct API | Open a public URL elsewhere or use independently obtained credentials. | Outside the browser claim. This browser cannot revoke those capabilities. |
+
+The current prototype prioritizes independent agent operation. A person completing a task while a listener recognizes a known test phrase is not an agent-input bypass. That sample also does not demonstrate recovery of a fresh page-only secret. Keep keyboard privacy evidence separate from autonomous action and fresh-marker results.
 
 For acceptance, measure disclosure and action prevention separately. Disclosure means recovery of a fresh secret shown only in the current page. Action success means completion of a task, even if the agent cannot read the page. Either result defeats the broad claim that agents cannot use this browser.
 
@@ -181,6 +192,8 @@ Behavioral acceptance targets no more than 1% false blocks per legitimate sessio
 Human targets: three testers complete at least 90% of 15 total core-task sessions. Median task time must stay within 1.5 times the same fixture in Safari. There must be zero unexpected protection lockouts in a 30-minute session per tester. Also test complete keyboard navigation, visible focus, zoom, Unicode input, and VoiceOver. A VoiceOver regression prevents a general-usage claim.
 
 Performance targets on the recorded reference Mac: a usable window within three seconds in four of five cold launches. Added navigation overhead stays below 20% against an unmodified WKWebView shell. Idle overhead stays below five CPU percentage points. These targets require measurement and do not replace protection gates.
+
+Include window activation, deactivation, first-responder changes, visibility, and frame lifecycle as action routes. Measure authoritative outcomes throughout reference preparation, candidate activation, attack calls, and cleanup. An action before the planned input call still counts as a bypass. Milestone 58 confirms a focus-only bypass in three diagnostic processes without posted input. This remains a failed gate until a usable mitigation passes matched controls. See [page findings](docs/page-feature-findings.md).
 
 Published results must name the OS build, app build, tested routes, known bypasses, human-access limits, and sample sizes. Never label an incomplete test matrix "agent-proof."
 

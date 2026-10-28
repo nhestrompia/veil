@@ -1,0 +1,3829 @@
+{
+  "controls": [
+    {
+      "repetition": 0,
+      "pid": 48956,
+      "queries": {
+        "tree": {
+          "elements": [
+            {
+              "actions": [],
+              "AXRole": "AXApplication",
+              "AXTitle": "InspectableControl"
+            },
+            {
+              "actions": [
+                "AXRaise"
+              ],
+              "AXRole": "AXWindow",
+              "AXTitle": "Inspectable Control",
+              "position": [
+                100,
+                110
+              ],
+              "size": [
+                1000,
+                772
+              ]
+            },
+            {
+              "actions": [
+                "AXPress"
+              ],
+              "AXRole": "AXButton",
+              "AXTitle": "Back",
+              "position": [
+                111,
+                151
+              ],
+              "size": [
+                56,
+                26
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXConfirm"
+              ],
+              "AXDescription": "Website address",
+              "AXRole": "AXTextField",
+              "AXValue": "http://127.0.0.1:8765/trial/dba3bfd15beca558",
+              "position": [
+                173,
+                151
+              ],
+              "size": [
+                842.5,
+                26
+              ]
+            },
+            {
+              "actions": [
+                "AXPress"
+              ],
+              "AXRole": "AXButton",
+              "AXTitle": "Reload",
+              "position": [
+                1021.5,
+                151
+              ],
+              "size": [
+                67.5,
+                26
+              ]
+            },
+            {
+              "actions": [],
+              "AXRole": "AXGroup",
+              "position": [
+                100,
+                186
+              ],
+              "size": [
+                1000,
+                668
+              ]
+            },
+            {
+              "actions": [],
+              "AXRole": "AXGroup",
+              "position": [
+                100,
+                186
+              ],
+              "size": [
+                1000,
+                668
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXScrollArea",
+              "AXTitle": "",
+              "AXValue": "",
+              "position": [
+                100,
+                186
+              ],
+              "size": [
+                1000,
+                668
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "Browser input research fixture",
+              "AXRole": "AXWebArea",
+              "AXTitle": "",
+              "AXValue": "",
+              "position": [
+                100,
+                186
+              ],
+              "size": [
+                1000,
+                668
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXHeading",
+              "AXTitle": "Browser input research",
+              "position": [
+                220,
+                234
+              ],
+              "size": [
+                760,
+                47
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "Browser input research",
+              "position": [
+                220,
+                234
+              ],
+              "size": [
+                429,
+                47
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXGroup",
+              "AXTitle": "",
+              "AXValue": "",
+              "position": [
+                220,
+                307
+              ],
+              "size": [
+                760,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "This is a disposable local task. It has no external effect.",
+              "position": [
+                220,
+                307
+              ],
+              "size": [
+                478,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXGroup",
+              "AXTitle": "",
+              "AXValue": "",
+              "position": [
+                220,
+                350
+              ],
+              "size": [
+                760,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "Disclosure marker: ",
+              "position": [
+                220,
+                350
+              ],
+              "size": [
+                168,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "AFB-D4E9D385",
+              "position": [
+                387,
+                350
+              ],
+              "size": [
+                153,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXGroup",
+              "AXTitle": "",
+              "AXValue": "",
+              "position": [
+                220,
+                393
+              ],
+              "size": [
+                760,
+                162
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "Enter native-input",
+              "position": [
+                220,
+                393
+              ],
+              "size": [
+                760,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "Enter native-input",
+              "position": [
+                220,
+                393
+              ],
+              "size": [
+                157,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXPress",
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXTextField",
+              "AXTitle": "Enter native-input",
+              "AXValue": "",
+              "position": [
+                220,
+                436
+              ],
+              "size": [
+                468,
+                52
+              ]
+            },
+            {
+              "actions": [
+                "AXPress",
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXButton",
+              "AXTitle": "Record action",
+              "AXValue": "",
+              "position": [
+                220,
+                507
+              ],
+              "size": [
+                145,
+                48
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXGroup",
+              "AXTitle": "No action recorded.",
+              "AXValue": "",
+              "position": [
+                220,
+                574
+              ],
+              "size": [
+                760,
+                41
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "No action recorded.",
+              "position": [
+                220,
+                574
+              ],
+              "size": [
+                173,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXGroup",
+              "AXTitle": "",
+              "AXValue": "",
+              "position": [
+                220,
+                634
+              ],
+              "size": [
+                760,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXPress",
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXLink",
+              "AXTitle": "Visit an ordinary HTTPS website",
+              "AXValue": "",
+              "position": [
+                220,
+                634
+              ],
+              "size": [
+                280,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "Visit an ordinary HTTPS website",
+              "position": [
+                220,
+                634
+              ],
+              "size": [
+                281,
+                24
+              ]
+            },
+            {
+              "actions": [],
+              "AXRole": "AXStaticText",
+              "AXValue": "Inspection: control enabled. Desktop capture and input: unprotected.",
+              "position": [
+                111,
+                859
+              ],
+              "size": [
+                978,
+                16
+              ]
+            },
+            {
+              "actions": [
+                "AXPress"
+              ],
+              "AXRole": "AXButton",
+              "position": [
+                108,
+                118
+              ],
+              "size": [
+                16,
+                16
+              ]
+            },
+            {
+              "actions": [
+                "AXPress",
+                "AXZoomWindow",
+                "AXShowMenu"
+              ],
+              "AXRole": "AXButton",
+              "position": [
+                154,
+                118
+              ],
+              "size": [
+                16,
+                16
+              ]
+            },
+            {
+              "actions": [],
+              "AXRole": "AXGroup",
+              "position": [
+                155,
+                119
+              ],
+              "size": [
+                14,
+                14
+              ]
+            },
+            {
+              "actions": [
+                "AXPress"
+              ],
+              "AXRole": "AXButton",
+              "position": [
+                131,
+                118
+              ],
+              "size": [
+                16,
+                16
+              ]
+            },
+            {
+              "actions": [],
+              "AXRole": "AXStaticText",
+              "AXValue": "Inspectable Control",
+              "position": [
+                182,
+                118
+              ],
+              "size": [
+                132,
+                16
+              ]
+            }
+          ],
+          "pid": 48956,
+          "status": "observed",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "direct": {
+          "elements": [
+            {
+              "actions": [],
+              "AXRole": "AXApplication",
+              "AXTitle": "InspectableControl"
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "Browser input research fixture",
+              "AXRole": "AXWebArea",
+              "AXTitle": "",
+              "AXValue": "",
+              "position": [
+                100,
+                186
+              ],
+              "size": [
+                1000,
+                668
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXHeading",
+              "AXTitle": "Browser input research",
+              "position": [
+                220,
+                234
+              ],
+              "size": [
+                760,
+                47
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "Browser input research",
+              "position": [
+                220,
+                234
+              ],
+              "size": [
+                429,
+                47
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXGroup",
+              "AXTitle": "",
+              "AXValue": "",
+              "position": [
+                220,
+                307
+              ],
+              "size": [
+                760,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "This is a disposable local task. It has no external effect.",
+              "position": [
+                220,
+                307
+              ],
+              "size": [
+                478,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXGroup",
+              "AXTitle": "",
+              "AXValue": "",
+              "position": [
+                220,
+                350
+              ],
+              "size": [
+                760,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "Disclosure marker: ",
+              "position": [
+                220,
+                350
+              ],
+              "size": [
+                168,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "AFB-D4E9D385",
+              "position": [
+                387,
+                350
+              ],
+              "size": [
+                153,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXGroup",
+              "AXTitle": "",
+              "AXValue": "",
+              "position": [
+                220,
+                393
+              ],
+              "size": [
+                760,
+                162
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "Enter native-input",
+              "position": [
+                220,
+                393
+              ],
+              "size": [
+                760,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "Enter native-input",
+              "position": [
+                220,
+                393
+              ],
+              "size": [
+                157,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXPress",
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXTextField",
+              "AXTitle": "Enter native-input",
+              "AXValue": "",
+              "position": [
+                220,
+                436
+              ],
+              "size": [
+                468,
+                52
+              ]
+            },
+            {
+              "actions": [
+                "AXPress",
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXButton",
+              "AXTitle": "Record action",
+              "AXValue": "",
+              "position": [
+                220,
+                507
+              ],
+              "size": [
+                145,
+                48
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXGroup",
+              "AXTitle": "No action recorded.",
+              "AXValue": "",
+              "position": [
+                220,
+                574
+              ],
+              "size": [
+                760,
+                41
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "No action recorded.",
+              "position": [
+                220,
+                574
+              ],
+              "size": [
+                173,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXGroup",
+              "AXTitle": "",
+              "AXValue": "",
+              "position": [
+                220,
+                634
+              ],
+              "size": [
+                760,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXPress",
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXLink",
+              "AXTitle": "Visit an ordinary HTTPS website",
+              "AXValue": "",
+              "position": [
+                220,
+                634
+              ],
+              "size": [
+                280,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "Visit an ordinary HTTPS website",
+              "position": [
+                220,
+                634
+              ],
+              "size": [
+                281,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXRaise"
+              ],
+              "AXRole": "AXWindow",
+              "AXTitle": "Inspectable Control",
+              "position": [
+                100,
+                110
+              ],
+              "size": [
+                1000,
+                772
+              ]
+            },
+            {
+              "actions": [
+                "AXPress"
+              ],
+              "AXRole": "AXButton",
+              "AXTitle": "Back",
+              "position": [
+                111,
+                151
+              ],
+              "size": [
+                56,
+                26
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXConfirm"
+              ],
+              "AXDescription": "Website address",
+              "AXRole": "AXTextField",
+              "AXValue": "http://127.0.0.1:8765/trial/dba3bfd15beca558",
+              "position": [
+                173,
+                151
+              ],
+              "size": [
+                842.5,
+                26
+              ]
+            },
+            {
+              "actions": [
+                "AXPress"
+              ],
+              "AXRole": "AXButton",
+              "AXTitle": "Reload",
+              "position": [
+                1021.5,
+                151
+              ],
+              "size": [
+                67.5,
+                26
+              ]
+            },
+            {
+              "actions": [],
+              "AXRole": "AXGroup",
+              "position": [
+                100,
+                186
+              ],
+              "size": [
+                1000,
+                668
+              ]
+            },
+            {
+              "actions": [],
+              "AXRole": "AXGroup",
+              "position": [
+                100,
+                186
+              ],
+              "size": [
+                1000,
+                668
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXScrollArea",
+              "AXTitle": "",
+              "AXValue": "",
+              "position": [
+                100,
+                186
+              ],
+              "size": [
+                1000,
+                668
+              ]
+            },
+            {
+              "actions": [],
+              "AXRole": "AXStaticText",
+              "AXValue": "Inspection: control enabled. Desktop capture and input: unprotected.",
+              "position": [
+                111,
+                859
+              ],
+              "size": [
+                978,
+                16
+              ]
+            },
+            {
+              "actions": [
+                "AXPress"
+              ],
+              "AXRole": "AXButton",
+              "position": [
+                108,
+                118
+              ],
+              "size": [
+                16,
+                16
+              ]
+            },
+            {
+              "actions": [
+                "AXPress",
+                "AXZoomWindow",
+                "AXShowMenu"
+              ],
+              "AXRole": "AXButton",
+              "position": [
+                154,
+                118
+              ],
+              "size": [
+                16,
+                16
+              ]
+            },
+            {
+              "actions": [],
+              "AXRole": "AXGroup",
+              "position": [
+                155,
+                119
+              ],
+              "size": [
+                14,
+                14
+              ]
+            },
+            {
+              "actions": [],
+              "AXRole": "AXGroup",
+              "position": [
+                155,
+                119
+              ],
+              "size": [
+                14,
+                14
+              ]
+            },
+            {
+              "actions": [
+                "AXPress"
+              ],
+              "AXRole": "AXButton",
+              "position": [
+                131,
+                118
+              ],
+              "size": [
+                16,
+                16
+              ]
+            },
+            {
+              "actions": [],
+              "AXRole": "AXStaticText",
+              "AXValue": "Inspectable Control",
+              "position": [
+                182,
+                118
+              ],
+              "size": [
+                132,
+                16
+              ]
+            }
+          ],
+          "queries": [
+            {
+              "error": 0,
+              "ownedElement": true,
+              "query": "application:AXMainWindow"
+            },
+            {
+              "error": 0,
+              "ownedElement": true,
+              "query": "application:AXFocusedWindow"
+            },
+            {
+              "error": 0,
+              "ownedElement": true,
+              "query": "application:AXFocusedUIElement"
+            },
+            {
+              "error": 0,
+              "ownedElement": true,
+              "query": "system:AXFocusedUIElement"
+            },
+            {
+              "error": 0,
+              "ownedElement": true,
+              "query": "system:hit-test"
+            },
+            {
+              "error": 0,
+              "ownedElement": true,
+              "query": "system:hit-test"
+            }
+          ],
+          "scope": "Only exact target-PID elements; File/Edit use the separate menu adapter",
+          "status": "observed",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "menu": {
+          "items": [
+            {
+              "enabled": false,
+              "title": "Cut"
+            },
+            {
+              "enabled": true,
+              "title": "Copy"
+            },
+            {
+              "enabled": false,
+              "title": "Paste"
+            },
+            {
+              "enabled": true,
+              "title": "Select All"
+            },
+            {
+              "enabled": false,
+              "title": ""
+            },
+            {
+              "enabled": true,
+              "title": "Writing Tools"
+            },
+            {
+              "enabled": true,
+              "title": "AutoFill"
+            },
+            {
+              "enabled": true,
+              "title": "Start Dictation\u2026"
+            },
+            {
+              "enabled": true,
+              "title": "Emoji & Symbols"
+            }
+          ],
+          "menuError": 0,
+          "menuFound": true,
+          "status": "observed",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "action": {
+          "focusError": 0,
+          "pid": 48956,
+          "pressError": 0,
+          "setValueError": 0,
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        }
+      },
+      "markerRecovered": true,
+      "readDisclosure": {
+        "tree": true,
+        "direct": true
+      },
+      "newSubmissions": [
+        {
+          "accepted": true
+        }
+      ],
+      "controlWorked": true,
+      "cleanupVerified": true
+    },
+    {
+      "repetition": 1,
+      "pid": 48986,
+      "queries": {
+        "tree": {
+          "elements": [
+            {
+              "actions": [],
+              "AXRole": "AXApplication",
+              "AXTitle": "InspectableControl"
+            },
+            {
+              "actions": [
+                "AXRaise"
+              ],
+              "AXRole": "AXWindow",
+              "AXTitle": "Inspectable Control",
+              "position": [
+                100,
+                110
+              ],
+              "size": [
+                1000,
+                772
+              ]
+            },
+            {
+              "actions": [
+                "AXPress"
+              ],
+              "AXRole": "AXButton",
+              "AXTitle": "Back",
+              "position": [
+                111,
+                151
+              ],
+              "size": [
+                56,
+                26
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXConfirm"
+              ],
+              "AXDescription": "Website address",
+              "AXRole": "AXTextField",
+              "AXValue": "http://127.0.0.1:8765/trial/610a76aab9558a08",
+              "position": [
+                173,
+                151
+              ],
+              "size": [
+                842.5,
+                26
+              ]
+            },
+            {
+              "actions": [
+                "AXPress"
+              ],
+              "AXRole": "AXButton",
+              "AXTitle": "Reload",
+              "position": [
+                1021.5,
+                151
+              ],
+              "size": [
+                67.5,
+                26
+              ]
+            },
+            {
+              "actions": [],
+              "AXRole": "AXGroup",
+              "position": [
+                100,
+                186
+              ],
+              "size": [
+                1000,
+                668
+              ]
+            },
+            {
+              "actions": [],
+              "AXRole": "AXGroup",
+              "position": [
+                100,
+                186
+              ],
+              "size": [
+                1000,
+                668
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXScrollArea",
+              "AXTitle": "",
+              "AXValue": "",
+              "position": [
+                100,
+                186
+              ],
+              "size": [
+                1000,
+                668
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "Browser input research fixture",
+              "AXRole": "AXWebArea",
+              "AXTitle": "",
+              "AXValue": "",
+              "position": [
+                100,
+                186
+              ],
+              "size": [
+                1000,
+                668
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXHeading",
+              "AXTitle": "Browser input research",
+              "position": [
+                220,
+                234
+              ],
+              "size": [
+                760,
+                47
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "Browser input research",
+              "position": [
+                220,
+                234
+              ],
+              "size": [
+                429,
+                47
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXGroup",
+              "AXTitle": "",
+              "AXValue": "",
+              "position": [
+                220,
+                307
+              ],
+              "size": [
+                760,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "This is a disposable local task. It has no external effect.",
+              "position": [
+                220,
+                307
+              ],
+              "size": [
+                478,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXGroup",
+              "AXTitle": "",
+              "AXValue": "",
+              "position": [
+                220,
+                350
+              ],
+              "size": [
+                760,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "Disclosure marker: ",
+              "position": [
+                220,
+                350
+              ],
+              "size": [
+                168,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "AFB-7858B155",
+              "position": [
+                387,
+                350
+              ],
+              "size": [
+                147,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXGroup",
+              "AXTitle": "",
+              "AXValue": "",
+              "position": [
+                220,
+                393
+              ],
+              "size": [
+                760,
+                162
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "Enter native-input",
+              "position": [
+                220,
+                393
+              ],
+              "size": [
+                760,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "Enter native-input",
+              "position": [
+                220,
+                393
+              ],
+              "size": [
+                157,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXPress",
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXTextField",
+              "AXTitle": "Enter native-input",
+              "AXValue": "",
+              "position": [
+                220,
+                436
+              ],
+              "size": [
+                468,
+                52
+              ]
+            },
+            {
+              "actions": [
+                "AXPress",
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXButton",
+              "AXTitle": "Record action",
+              "AXValue": "",
+              "position": [
+                220,
+                507
+              ],
+              "size": [
+                145,
+                48
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXGroup",
+              "AXTitle": "No action recorded.",
+              "AXValue": "",
+              "position": [
+                220,
+                574
+              ],
+              "size": [
+                760,
+                41
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "No action recorded.",
+              "position": [
+                220,
+                574
+              ],
+              "size": [
+                173,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXGroup",
+              "AXTitle": "",
+              "AXValue": "",
+              "position": [
+                220,
+                634
+              ],
+              "size": [
+                760,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXPress",
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXLink",
+              "AXTitle": "Visit an ordinary HTTPS website",
+              "AXValue": "",
+              "position": [
+                220,
+                634
+              ],
+              "size": [
+                280,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "Visit an ordinary HTTPS website",
+              "position": [
+                220,
+                634
+              ],
+              "size": [
+                281,
+                24
+              ]
+            },
+            {
+              "actions": [],
+              "AXRole": "AXStaticText",
+              "AXValue": "Inspection: control enabled. Desktop capture and input: unprotected.",
+              "position": [
+                111,
+                859
+              ],
+              "size": [
+                978,
+                16
+              ]
+            },
+            {
+              "actions": [
+                "AXPress"
+              ],
+              "AXRole": "AXButton",
+              "position": [
+                108,
+                118
+              ],
+              "size": [
+                16,
+                16
+              ]
+            },
+            {
+              "actions": [
+                "AXPress",
+                "AXZoomWindow",
+                "AXShowMenu"
+              ],
+              "AXRole": "AXButton",
+              "position": [
+                154,
+                118
+              ],
+              "size": [
+                16,
+                16
+              ]
+            },
+            {
+              "actions": [],
+              "AXRole": "AXGroup",
+              "position": [
+                155,
+                119
+              ],
+              "size": [
+                14,
+                14
+              ]
+            },
+            {
+              "actions": [
+                "AXPress"
+              ],
+              "AXRole": "AXButton",
+              "position": [
+                131,
+                118
+              ],
+              "size": [
+                16,
+                16
+              ]
+            },
+            {
+              "actions": [],
+              "AXRole": "AXStaticText",
+              "AXValue": "Inspectable Control",
+              "position": [
+                182,
+                118
+              ],
+              "size": [
+                132,
+                16
+              ]
+            }
+          ],
+          "pid": 48986,
+          "status": "observed",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "direct": {
+          "elements": [
+            {
+              "actions": [],
+              "AXRole": "AXApplication",
+              "AXTitle": "InspectableControl"
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "Browser input research fixture",
+              "AXRole": "AXWebArea",
+              "AXTitle": "",
+              "AXValue": "",
+              "position": [
+                100,
+                186
+              ],
+              "size": [
+                1000,
+                668
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXHeading",
+              "AXTitle": "Browser input research",
+              "position": [
+                220,
+                234
+              ],
+              "size": [
+                760,
+                47
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "Browser input research",
+              "position": [
+                220,
+                234
+              ],
+              "size": [
+                429,
+                47
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXGroup",
+              "AXTitle": "",
+              "AXValue": "",
+              "position": [
+                220,
+                307
+              ],
+              "size": [
+                760,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "This is a disposable local task. It has no external effect.",
+              "position": [
+                220,
+                307
+              ],
+              "size": [
+                478,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXGroup",
+              "AXTitle": "",
+              "AXValue": "",
+              "position": [
+                220,
+                350
+              ],
+              "size": [
+                760,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "Disclosure marker: ",
+              "position": [
+                220,
+                350
+              ],
+              "size": [
+                168,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "AFB-7858B155",
+              "position": [
+                387,
+                350
+              ],
+              "size": [
+                147,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXGroup",
+              "AXTitle": "",
+              "AXValue": "",
+              "position": [
+                220,
+                393
+              ],
+              "size": [
+                760,
+                162
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "Enter native-input",
+              "position": [
+                220,
+                393
+              ],
+              "size": [
+                760,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "Enter native-input",
+              "position": [
+                220,
+                393
+              ],
+              "size": [
+                157,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXPress",
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXTextField",
+              "AXTitle": "Enter native-input",
+              "AXValue": "",
+              "position": [
+                220,
+                436
+              ],
+              "size": [
+                468,
+                52
+              ]
+            },
+            {
+              "actions": [
+                "AXPress",
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXButton",
+              "AXTitle": "Record action",
+              "AXValue": "",
+              "position": [
+                220,
+                507
+              ],
+              "size": [
+                145,
+                48
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXGroup",
+              "AXTitle": "No action recorded.",
+              "AXValue": "",
+              "position": [
+                220,
+                574
+              ],
+              "size": [
+                760,
+                41
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "No action recorded.",
+              "position": [
+                220,
+                574
+              ],
+              "size": [
+                173,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXGroup",
+              "AXTitle": "",
+              "AXValue": "",
+              "position": [
+                220,
+                634
+              ],
+              "size": [
+                760,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXPress",
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXLink",
+              "AXTitle": "Visit an ordinary HTTPS website",
+              "AXValue": "",
+              "position": [
+                220,
+                634
+              ],
+              "size": [
+                280,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "Visit an ordinary HTTPS website",
+              "position": [
+                220,
+                634
+              ],
+              "size": [
+                281,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXRaise"
+              ],
+              "AXRole": "AXWindow",
+              "AXTitle": "Inspectable Control",
+              "position": [
+                100,
+                110
+              ],
+              "size": [
+                1000,
+                772
+              ]
+            },
+            {
+              "actions": [
+                "AXPress"
+              ],
+              "AXRole": "AXButton",
+              "AXTitle": "Back",
+              "position": [
+                111,
+                151
+              ],
+              "size": [
+                56,
+                26
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXConfirm"
+              ],
+              "AXDescription": "Website address",
+              "AXRole": "AXTextField",
+              "AXValue": "http://127.0.0.1:8765/trial/610a76aab9558a08",
+              "position": [
+                173,
+                151
+              ],
+              "size": [
+                842.5,
+                26
+              ]
+            },
+            {
+              "actions": [
+                "AXPress"
+              ],
+              "AXRole": "AXButton",
+              "AXTitle": "Reload",
+              "position": [
+                1021.5,
+                151
+              ],
+              "size": [
+                67.5,
+                26
+              ]
+            },
+            {
+              "actions": [],
+              "AXRole": "AXGroup",
+              "position": [
+                100,
+                186
+              ],
+              "size": [
+                1000,
+                668
+              ]
+            },
+            {
+              "actions": [],
+              "AXRole": "AXGroup",
+              "position": [
+                100,
+                186
+              ],
+              "size": [
+                1000,
+                668
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXScrollArea",
+              "AXTitle": "",
+              "AXValue": "",
+              "position": [
+                100,
+                186
+              ],
+              "size": [
+                1000,
+                668
+              ]
+            },
+            {
+              "actions": [],
+              "AXRole": "AXStaticText",
+              "AXValue": "Inspection: control enabled. Desktop capture and input: unprotected.",
+              "position": [
+                111,
+                859
+              ],
+              "size": [
+                978,
+                16
+              ]
+            },
+            {
+              "actions": [
+                "AXPress"
+              ],
+              "AXRole": "AXButton",
+              "position": [
+                108,
+                118
+              ],
+              "size": [
+                16,
+                16
+              ]
+            },
+            {
+              "actions": [
+                "AXPress",
+                "AXZoomWindow",
+                "AXShowMenu"
+              ],
+              "AXRole": "AXButton",
+              "position": [
+                154,
+                118
+              ],
+              "size": [
+                16,
+                16
+              ]
+            },
+            {
+              "actions": [],
+              "AXRole": "AXGroup",
+              "position": [
+                155,
+                119
+              ],
+              "size": [
+                14,
+                14
+              ]
+            },
+            {
+              "actions": [],
+              "AXRole": "AXGroup",
+              "position": [
+                155,
+                119
+              ],
+              "size": [
+                14,
+                14
+              ]
+            },
+            {
+              "actions": [
+                "AXPress"
+              ],
+              "AXRole": "AXButton",
+              "position": [
+                131,
+                118
+              ],
+              "size": [
+                16,
+                16
+              ]
+            },
+            {
+              "actions": [],
+              "AXRole": "AXStaticText",
+              "AXValue": "Inspectable Control",
+              "position": [
+                182,
+                118
+              ],
+              "size": [
+                132,
+                16
+              ]
+            }
+          ],
+          "queries": [
+            {
+              "error": 0,
+              "ownedElement": true,
+              "query": "application:AXMainWindow"
+            },
+            {
+              "error": 0,
+              "ownedElement": true,
+              "query": "application:AXFocusedWindow"
+            },
+            {
+              "error": 0,
+              "ownedElement": true,
+              "query": "application:AXFocusedUIElement"
+            },
+            {
+              "error": 0,
+              "ownedElement": true,
+              "query": "system:AXFocusedUIElement"
+            },
+            {
+              "error": 0,
+              "ownedElement": true,
+              "query": "system:hit-test"
+            },
+            {
+              "error": 0,
+              "ownedElement": true,
+              "query": "system:hit-test"
+            }
+          ],
+          "scope": "Only exact target-PID elements; File/Edit use the separate menu adapter",
+          "status": "observed",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "menu": {
+          "items": [
+            {
+              "enabled": false,
+              "title": "Cut"
+            },
+            {
+              "enabled": true,
+              "title": "Copy"
+            },
+            {
+              "enabled": false,
+              "title": "Paste"
+            },
+            {
+              "enabled": true,
+              "title": "Select All"
+            },
+            {
+              "enabled": false,
+              "title": ""
+            },
+            {
+              "enabled": true,
+              "title": "Writing Tools"
+            },
+            {
+              "enabled": true,
+              "title": "AutoFill"
+            },
+            {
+              "enabled": true,
+              "title": "Start Dictation\u2026"
+            },
+            {
+              "enabled": true,
+              "title": "Emoji & Symbols"
+            }
+          ],
+          "menuError": 0,
+          "menuFound": true,
+          "status": "observed",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "action": {
+          "focusError": 0,
+          "pid": 48986,
+          "pressError": 0,
+          "setValueError": 0,
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        }
+      },
+      "markerRecovered": true,
+      "readDisclosure": {
+        "tree": true,
+        "direct": true
+      },
+      "newSubmissions": [
+        {
+          "accepted": true
+        }
+      ],
+      "controlWorked": true,
+      "cleanupVerified": true
+    },
+    {
+      "repetition": 2,
+      "pid": 49020,
+      "queries": {
+        "tree": {
+          "elements": [
+            {
+              "actions": [],
+              "AXRole": "AXApplication",
+              "AXTitle": "InspectableControl"
+            },
+            {
+              "actions": [
+                "AXRaise"
+              ],
+              "AXRole": "AXWindow",
+              "AXTitle": "Inspectable Control",
+              "position": [
+                100,
+                110
+              ],
+              "size": [
+                1000,
+                772
+              ]
+            },
+            {
+              "actions": [
+                "AXPress"
+              ],
+              "AXRole": "AXButton",
+              "AXTitle": "Back",
+              "position": [
+                111,
+                151
+              ],
+              "size": [
+                56,
+                26
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXConfirm"
+              ],
+              "AXDescription": "Website address",
+              "AXRole": "AXTextField",
+              "AXValue": "http://127.0.0.1:8765/trial/98e953a42704143c",
+              "position": [
+                173,
+                151
+              ],
+              "size": [
+                842.5,
+                26
+              ]
+            },
+            {
+              "actions": [
+                "AXPress"
+              ],
+              "AXRole": "AXButton",
+              "AXTitle": "Reload",
+              "position": [
+                1021.5,
+                151
+              ],
+              "size": [
+                67.5,
+                26
+              ]
+            },
+            {
+              "actions": [],
+              "AXRole": "AXGroup",
+              "position": [
+                100,
+                186
+              ],
+              "size": [
+                1000,
+                668
+              ]
+            },
+            {
+              "actions": [],
+              "AXRole": "AXGroup",
+              "position": [
+                100,
+                186
+              ],
+              "size": [
+                1000,
+                668
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXScrollArea",
+              "AXTitle": "",
+              "AXValue": "",
+              "position": [
+                100,
+                186
+              ],
+              "size": [
+                1000,
+                668
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "Browser input research fixture",
+              "AXRole": "AXWebArea",
+              "AXTitle": "",
+              "AXValue": "",
+              "position": [
+                100,
+                186
+              ],
+              "size": [
+                1000,
+                668
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXHeading",
+              "AXTitle": "Browser input research",
+              "position": [
+                220,
+                234
+              ],
+              "size": [
+                760,
+                47
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "Browser input research",
+              "position": [
+                220,
+                234
+              ],
+              "size": [
+                429,
+                47
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXGroup",
+              "AXTitle": "",
+              "AXValue": "",
+              "position": [
+                220,
+                307
+              ],
+              "size": [
+                760,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "This is a disposable local task. It has no external effect.",
+              "position": [
+                220,
+                307
+              ],
+              "size": [
+                478,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXGroup",
+              "AXTitle": "",
+              "AXValue": "",
+              "position": [
+                220,
+                350
+              ],
+              "size": [
+                760,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "Disclosure marker: ",
+              "position": [
+                220,
+                350
+              ],
+              "size": [
+                168,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "AFB-6E17C0BC",
+              "position": [
+                387,
+                350
+              ],
+              "size": [
+                149,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXGroup",
+              "AXTitle": "",
+              "AXValue": "",
+              "position": [
+                220,
+                393
+              ],
+              "size": [
+                760,
+                162
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "Enter native-input",
+              "position": [
+                220,
+                393
+              ],
+              "size": [
+                760,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "Enter native-input",
+              "position": [
+                220,
+                393
+              ],
+              "size": [
+                157,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXPress",
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXTextField",
+              "AXTitle": "Enter native-input",
+              "AXValue": "",
+              "position": [
+                220,
+                436
+              ],
+              "size": [
+                468,
+                52
+              ]
+            },
+            {
+              "actions": [
+                "AXPress",
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXButton",
+              "AXTitle": "Record action",
+              "AXValue": "",
+              "position": [
+                220,
+                507
+              ],
+              "size": [
+                145,
+                48
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXGroup",
+              "AXTitle": "No action recorded.",
+              "AXValue": "",
+              "position": [
+                220,
+                574
+              ],
+              "size": [
+                760,
+                41
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "No action recorded.",
+              "position": [
+                220,
+                574
+              ],
+              "size": [
+                173,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXGroup",
+              "AXTitle": "",
+              "AXValue": "",
+              "position": [
+                220,
+                634
+              ],
+              "size": [
+                760,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXPress",
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXLink",
+              "AXTitle": "Visit an ordinary HTTPS website",
+              "AXValue": "",
+              "position": [
+                220,
+                634
+              ],
+              "size": [
+                280,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "Visit an ordinary HTTPS website",
+              "position": [
+                220,
+                634
+              ],
+              "size": [
+                281,
+                24
+              ]
+            },
+            {
+              "actions": [],
+              "AXRole": "AXStaticText",
+              "AXValue": "Inspection: control enabled. Desktop capture and input: unprotected.",
+              "position": [
+                111,
+                859
+              ],
+              "size": [
+                978,
+                16
+              ]
+            },
+            {
+              "actions": [
+                "AXPress"
+              ],
+              "AXRole": "AXButton",
+              "position": [
+                108,
+                118
+              ],
+              "size": [
+                16,
+                16
+              ]
+            },
+            {
+              "actions": [
+                "AXPress",
+                "AXZoomWindow",
+                "AXShowMenu"
+              ],
+              "AXRole": "AXButton",
+              "position": [
+                154,
+                118
+              ],
+              "size": [
+                16,
+                16
+              ]
+            },
+            {
+              "actions": [],
+              "AXRole": "AXGroup",
+              "position": [
+                155,
+                119
+              ],
+              "size": [
+                14,
+                14
+              ]
+            },
+            {
+              "actions": [
+                "AXPress"
+              ],
+              "AXRole": "AXButton",
+              "position": [
+                131,
+                118
+              ],
+              "size": [
+                16,
+                16
+              ]
+            },
+            {
+              "actions": [],
+              "AXRole": "AXStaticText",
+              "AXValue": "Inspectable Control",
+              "position": [
+                182,
+                118
+              ],
+              "size": [
+                132,
+                16
+              ]
+            }
+          ],
+          "pid": 49020,
+          "status": "observed",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "direct": {
+          "elements": [
+            {
+              "actions": [],
+              "AXRole": "AXApplication",
+              "AXTitle": "InspectableControl"
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "Browser input research fixture",
+              "AXRole": "AXWebArea",
+              "AXTitle": "",
+              "AXValue": "",
+              "position": [
+                100,
+                186
+              ],
+              "size": [
+                1000,
+                668
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXHeading",
+              "AXTitle": "Browser input research",
+              "position": [
+                220,
+                234
+              ],
+              "size": [
+                760,
+                47
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "Browser input research",
+              "position": [
+                220,
+                234
+              ],
+              "size": [
+                429,
+                47
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXGroup",
+              "AXTitle": "",
+              "AXValue": "",
+              "position": [
+                220,
+                307
+              ],
+              "size": [
+                760,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "This is a disposable local task. It has no external effect.",
+              "position": [
+                220,
+                307
+              ],
+              "size": [
+                478,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXGroup",
+              "AXTitle": "",
+              "AXValue": "",
+              "position": [
+                220,
+                350
+              ],
+              "size": [
+                760,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "Disclosure marker: ",
+              "position": [
+                220,
+                350
+              ],
+              "size": [
+                168,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "AFB-6E17C0BC",
+              "position": [
+                387,
+                350
+              ],
+              "size": [
+                149,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXGroup",
+              "AXTitle": "",
+              "AXValue": "",
+              "position": [
+                220,
+                393
+              ],
+              "size": [
+                760,
+                162
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "Enter native-input",
+              "position": [
+                220,
+                393
+              ],
+              "size": [
+                760,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "Enter native-input",
+              "position": [
+                220,
+                393
+              ],
+              "size": [
+                157,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXPress",
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXTextField",
+              "AXTitle": "Enter native-input",
+              "AXValue": "",
+              "position": [
+                220,
+                436
+              ],
+              "size": [
+                468,
+                52
+              ]
+            },
+            {
+              "actions": [
+                "AXPress",
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXButton",
+              "AXTitle": "Record action",
+              "AXValue": "",
+              "position": [
+                220,
+                507
+              ],
+              "size": [
+                145,
+                48
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXGroup",
+              "AXTitle": "No action recorded.",
+              "AXValue": "",
+              "position": [
+                220,
+                574
+              ],
+              "size": [
+                760,
+                41
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "No action recorded.",
+              "position": [
+                220,
+                574
+              ],
+              "size": [
+                173,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXGroup",
+              "AXTitle": "",
+              "AXValue": "",
+              "position": [
+                220,
+                634
+              ],
+              "size": [
+                760,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXPress",
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXLink",
+              "AXTitle": "Visit an ordinary HTTPS website",
+              "AXValue": "",
+              "position": [
+                220,
+                634
+              ],
+              "size": [
+                280,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXStaticText",
+              "AXTitle": "",
+              "AXValue": "Visit an ordinary HTTPS website",
+              "position": [
+                220,
+                634
+              ],
+              "size": [
+                281,
+                24
+              ]
+            },
+            {
+              "actions": [
+                "AXRaise"
+              ],
+              "AXRole": "AXWindow",
+              "AXTitle": "Inspectable Control",
+              "position": [
+                100,
+                110
+              ],
+              "size": [
+                1000,
+                772
+              ]
+            },
+            {
+              "actions": [
+                "AXPress"
+              ],
+              "AXRole": "AXButton",
+              "AXTitle": "Back",
+              "position": [
+                111,
+                151
+              ],
+              "size": [
+                56,
+                26
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXConfirm"
+              ],
+              "AXDescription": "Website address",
+              "AXRole": "AXTextField",
+              "AXValue": "http://127.0.0.1:8765/trial/98e953a42704143c",
+              "position": [
+                173,
+                151
+              ],
+              "size": [
+                842.5,
+                26
+              ]
+            },
+            {
+              "actions": [
+                "AXPress"
+              ],
+              "AXRole": "AXButton",
+              "AXTitle": "Reload",
+              "position": [
+                1021.5,
+                151
+              ],
+              "size": [
+                67.5,
+                26
+              ]
+            },
+            {
+              "actions": [],
+              "AXRole": "AXGroup",
+              "position": [
+                100,
+                186
+              ],
+              "size": [
+                1000,
+                668
+              ]
+            },
+            {
+              "actions": [],
+              "AXRole": "AXGroup",
+              "position": [
+                100,
+                186
+              ],
+              "size": [
+                1000,
+                668
+              ]
+            },
+            {
+              "actions": [
+                "AXShowMenu",
+                "AXScrollToVisible"
+              ],
+              "AXDescription": "",
+              "AXRole": "AXScrollArea",
+              "AXTitle": "",
+              "AXValue": "",
+              "position": [
+                100,
+                186
+              ],
+              "size": [
+                1000,
+                668
+              ]
+            },
+            {
+              "actions": [],
+              "AXRole": "AXStaticText",
+              "AXValue": "Inspection: control enabled. Desktop capture and input: unprotected.",
+              "position": [
+                111,
+                859
+              ],
+              "size": [
+                978,
+                16
+              ]
+            },
+            {
+              "actions": [
+                "AXPress"
+              ],
+              "AXRole": "AXButton",
+              "position": [
+                108,
+                118
+              ],
+              "size": [
+                16,
+                16
+              ]
+            },
+            {
+              "actions": [
+                "AXPress",
+                "AXZoomWindow",
+                "AXShowMenu"
+              ],
+              "AXRole": "AXButton",
+              "position": [
+                154,
+                118
+              ],
+              "size": [
+                16,
+                16
+              ]
+            },
+            {
+              "actions": [],
+              "AXRole": "AXGroup",
+              "position": [
+                155,
+                119
+              ],
+              "size": [
+                14,
+                14
+              ]
+            },
+            {
+              "actions": [],
+              "AXRole": "AXGroup",
+              "position": [
+                155,
+                119
+              ],
+              "size": [
+                14,
+                14
+              ]
+            },
+            {
+              "actions": [
+                "AXPress"
+              ],
+              "AXRole": "AXButton",
+              "position": [
+                131,
+                118
+              ],
+              "size": [
+                16,
+                16
+              ]
+            },
+            {
+              "actions": [],
+              "AXRole": "AXStaticText",
+              "AXValue": "Inspectable Control",
+              "position": [
+                182,
+                118
+              ],
+              "size": [
+                132,
+                16
+              ]
+            }
+          ],
+          "queries": [
+            {
+              "error": 0,
+              "ownedElement": true,
+              "query": "application:AXMainWindow"
+            },
+            {
+              "error": 0,
+              "ownedElement": true,
+              "query": "application:AXFocusedWindow"
+            },
+            {
+              "error": 0,
+              "ownedElement": true,
+              "query": "application:AXFocusedUIElement"
+            },
+            {
+              "error": 0,
+              "ownedElement": true,
+              "query": "system:AXFocusedUIElement"
+            },
+            {
+              "error": 0,
+              "ownedElement": true,
+              "query": "system:hit-test"
+            },
+            {
+              "error": 0,
+              "ownedElement": true,
+              "query": "system:hit-test"
+            }
+          ],
+          "scope": "Only exact target-PID elements; File/Edit use the separate menu adapter",
+          "status": "observed",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "menu": {
+          "items": [
+            {
+              "enabled": false,
+              "title": "Cut"
+            },
+            {
+              "enabled": true,
+              "title": "Copy"
+            },
+            {
+              "enabled": false,
+              "title": "Paste"
+            },
+            {
+              "enabled": true,
+              "title": "Select All"
+            },
+            {
+              "enabled": false,
+              "title": ""
+            },
+            {
+              "enabled": true,
+              "title": "Writing Tools"
+            },
+            {
+              "enabled": true,
+              "title": "AutoFill"
+            },
+            {
+              "enabled": true,
+              "title": "Start Dictation\u2026"
+            },
+            {
+              "enabled": true,
+              "title": "Emoji & Symbols"
+            }
+          ],
+          "menuError": 0,
+          "menuFound": true,
+          "status": "observed",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "action": {
+          "focusError": 0,
+          "pid": 49020,
+          "pressError": 0,
+          "setValueError": 0,
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        }
+      },
+      "markerRecovered": true,
+      "readDisclosure": {
+        "tree": true,
+        "direct": true
+      },
+      "newSubmissions": [
+        {
+          "accepted": true
+        }
+      ],
+      "controlWorked": true,
+      "cleanupVerified": true
+    }
+  ],
+  "results": [
+    {
+      "pid": 43980,
+      "queries": {
+        "tree": {
+          "elements": [
+            {
+              "actions": [],
+              "AXRole": "AXApplication",
+              "AXTitle": "DeviceKeyboardExperiment"
+            },
+            {
+              "actions": [],
+              "AXRole": "AXWindow",
+              "AXTitle": "Device Keyboard Experiment",
+              "position": [
+                100,
+                110
+              ],
+              "size": [
+                1000,
+                772
+              ]
+            }
+          ],
+          "pid": 43980,
+          "status": "observed",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "direct": {
+          "elements": [
+            {
+              "actions": [],
+              "AXRole": "AXApplication",
+              "AXTitle": "DeviceKeyboardExperiment"
+            },
+            {
+              "actions": [],
+              "AXRole": "AXWindow",
+              "AXTitle": "Device Keyboard Experiment",
+              "position": [
+                100,
+                110
+              ],
+              "size": [
+                1000,
+                772
+              ]
+            }
+          ],
+          "queries": [
+            {
+              "error": 0,
+              "ownedElement": true,
+              "query": "application:AXMainWindow"
+            },
+            {
+              "error": 0,
+              "ownedElement": true,
+              "query": "application:AXFocusedWindow"
+            },
+            {
+              "error": -25212,
+              "ownedElement": false,
+              "query": "application:AXFocusedUIElement"
+            },
+            {
+              "error": -25212,
+              "ownedElement": false,
+              "query": "system:AXFocusedUIElement"
+            },
+            {
+              "error": -25208,
+              "ownedElement": false,
+              "query": "system:hit-test"
+            },
+            {
+              "error": -25208,
+              "ownedElement": false,
+              "query": "system:hit-test"
+            }
+          ],
+          "scope": "Only exact target-PID elements; File/Edit use the separate menu adapter",
+          "status": "observed",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "menu": {
+          "items": [],
+          "menuError": 0,
+          "menuFound": true,
+          "status": "observed",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "action": {
+          "error": "Fixture field or action not found in AX tree",
+          "status": "inconclusive",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        }
+      },
+      "markerRecovered": false,
+      "readDisclosure": {
+        "tree": false,
+        "direct": false
+      },
+      "newSubmissions": [],
+      "repetition": 0,
+      "controlWorked": true
+    },
+    {
+      "pid": 43980,
+      "queries": {
+        "tree": {
+          "elements": [
+            {
+              "actions": [],
+              "AXRole": "AXApplication",
+              "AXTitle": "DeviceKeyboardExperiment"
+            },
+            {
+              "actions": [],
+              "AXRole": "AXWindow",
+              "AXTitle": "Device Keyboard Experiment",
+              "position": [
+                100,
+                110
+              ],
+              "size": [
+                1000,
+                772
+              ]
+            }
+          ],
+          "pid": 43980,
+          "status": "observed",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "direct": {
+          "elements": [
+            {
+              "actions": [],
+              "AXRole": "AXApplication",
+              "AXTitle": "DeviceKeyboardExperiment"
+            },
+            {
+              "actions": [],
+              "AXRole": "AXWindow",
+              "AXTitle": "Device Keyboard Experiment",
+              "position": [
+                100,
+                110
+              ],
+              "size": [
+                1000,
+                772
+              ]
+            }
+          ],
+          "queries": [
+            {
+              "error": 0,
+              "ownedElement": true,
+              "query": "application:AXMainWindow"
+            },
+            {
+              "error": 0,
+              "ownedElement": true,
+              "query": "application:AXFocusedWindow"
+            },
+            {
+              "error": -25212,
+              "ownedElement": false,
+              "query": "application:AXFocusedUIElement"
+            },
+            {
+              "error": -25212,
+              "ownedElement": false,
+              "query": "system:AXFocusedUIElement"
+            },
+            {
+              "error": -25208,
+              "ownedElement": false,
+              "query": "system:hit-test"
+            },
+            {
+              "error": -25208,
+              "ownedElement": false,
+              "query": "system:hit-test"
+            }
+          ],
+          "scope": "Only exact target-PID elements; File/Edit use the separate menu adapter",
+          "status": "observed",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "menu": {
+          "items": [],
+          "menuError": 0,
+          "menuFound": true,
+          "status": "observed",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "action": {
+          "error": "Fixture field or action not found in AX tree",
+          "status": "inconclusive",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        }
+      },
+      "markerRecovered": false,
+      "readDisclosure": {
+        "tree": false,
+        "direct": false
+      },
+      "newSubmissions": [],
+      "repetition": 1,
+      "controlWorked": true
+    },
+    {
+      "pid": 43980,
+      "queries": {
+        "tree": {
+          "elements": [
+            {
+              "actions": [],
+              "AXRole": "AXApplication",
+              "AXTitle": "DeviceKeyboardExperiment"
+            },
+            {
+              "actions": [],
+              "AXRole": "AXWindow",
+              "AXTitle": "Device Keyboard Experiment",
+              "position": [
+                100,
+                110
+              ],
+              "size": [
+                1000,
+                772
+              ]
+            }
+          ],
+          "pid": 43980,
+          "status": "observed",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "direct": {
+          "elements": [
+            {
+              "actions": [],
+              "AXRole": "AXApplication",
+              "AXTitle": "DeviceKeyboardExperiment"
+            },
+            {
+              "actions": [],
+              "AXRole": "AXWindow",
+              "AXTitle": "Device Keyboard Experiment",
+              "position": [
+                100,
+                110
+              ],
+              "size": [
+                1000,
+                772
+              ]
+            }
+          ],
+          "queries": [
+            {
+              "error": 0,
+              "ownedElement": true,
+              "query": "application:AXMainWindow"
+            },
+            {
+              "error": 0,
+              "ownedElement": true,
+              "query": "application:AXFocusedWindow"
+            },
+            {
+              "error": -25212,
+              "ownedElement": false,
+              "query": "application:AXFocusedUIElement"
+            },
+            {
+              "error": -25212,
+              "ownedElement": false,
+              "query": "system:AXFocusedUIElement"
+            },
+            {
+              "error": -25208,
+              "ownedElement": false,
+              "query": "system:hit-test"
+            },
+            {
+              "error": -25208,
+              "ownedElement": false,
+              "query": "system:hit-test"
+            }
+          ],
+          "scope": "Only exact target-PID elements; File/Edit use the separate menu adapter",
+          "status": "observed",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "menu": {
+          "items": [],
+          "menuError": 0,
+          "menuFound": true,
+          "status": "observed",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "action": {
+          "error": "Fixture field or action not found in AX tree",
+          "status": "inconclusive",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        }
+      },
+      "markerRecovered": false,
+      "readDisclosure": {
+        "tree": false,
+        "direct": false
+      },
+      "newSubmissions": [],
+      "repetition": 2,
+      "controlWorked": true
+    }
+  ],
+  "sessionPID": 43980,
+  "binarySHA256": "43b1a9833d6c55b1e254b848f9bd09c202da46ba0f8d8833084df559e6a8a9d1",
+  "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1",
+  "permissions": {
+    "accessibility": true,
+    "desktopInputSafety": {
+      "available": true,
+      "blockingMouseHookPIDs": []
+    },
+    "pid": 48953,
+    "postEvents": true,
+    "screenCapture": true,
+    "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+  },
+  "operatorDeclaresPhysicalCompletion": true,
+  "routeContract": "Exact research-PID AX tree, focused and hit-test queries, File/Edit menus, setValue and press. No clipboard or nonresearch content."
+}

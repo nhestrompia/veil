@@ -1,0 +1,10 @@
+{
+  "operatorReport": "Task complete",
+  "sourceDeclaration": "User reports use of the physical keyboard in this browser",
+  "pid": 33813,
+  "binarySHA256": "89f0287993f4ea8e3412e6d4f8137a51c25784d7513515bb3808153cb4dcc0fa",
+  "trial": "528de0a6385113e2",
+  "acceptedActions": 1,
+  "typedTextSaved": false,
+  "bootstrapAttested": false
+}

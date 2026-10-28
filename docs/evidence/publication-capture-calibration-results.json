@@ -1,0 +1,270 @@
+{
+  "milestone": 151,
+  "verdict": "inconclusive-for-preview",
+  "ordinaryReferenceCoverage": {
+    "status": "inconclusive",
+    "inputPosted": false,
+    "candidateLaunched": false,
+    "coverageOnly": true,
+    "waitForSetup": false,
+    "permissions": {
+      "audioCaptured": false,
+      "hooksInstalled": false,
+      "inputPosted": false,
+      "permissionRequested": false,
+      "probePID": 58620,
+      "screenRecordingGranted": true,
+      "status": "preflight",
+      "cleanupVerified": true,
+      "probeSHA256": "2ce201a2876e295fe6695fbda6506b72e1d9ac706f6051226377f5a8fa3f4a2b"
+    },
+    "referencePID": 58791,
+    "reference": {
+      "audioCaptured": false,
+      "backdropClosed": true,
+      "error": "Another window intersects the research region",
+      "hooksInstalled": false,
+      "inputPosted": false,
+      "permissionRequested": false,
+      "probePID": 58895,
+      "status": "refused",
+      "cleanupVerified": true,
+      "probeSHA256": "2ce201a2876e295fe6695fbda6506b72e1d9ac706f6051226377f5a8fa3f4a2b"
+    },
+    "submissions": [],
+    "referenceCleanupVerified": true,
+    "fixtureStopped": true
+  },
+  "fullscreenReferenceCoverage": {
+    "status": "coverage-verified",
+    "inputPosted": false,
+    "candidateLaunched": false,
+    "coverageOnly": true,
+    "waitForSetup": true,
+    "permissions": {
+      "audioCaptured": false,
+      "hooksInstalled": false,
+      "inputPosted": false,
+      "permissionRequested": false,
+      "probePID": 60136,
+      "screenRecordingGranted": true,
+      "status": "preflight",
+      "cleanupVerified": true,
+      "probeSHA256": "2ce201a2876e295fe6695fbda6506b72e1d9ac706f6051226377f5a8fa3f4a2b"
+    },
+    "referencePID": 60141,
+    "reference": {
+      "audioCaptured": false,
+      "backdropClosed": true,
+      "captureAttempted": false,
+      "coverageChecksAreAtomic": false,
+      "crop": [
+        24,
+        113,
+        1464,
+        789
+      ],
+      "hooksInstalled": false,
+      "inputPosted": false,
+      "permissionRequested": false,
+      "probePID": 60269,
+      "status": "coverage-verified",
+      "targetPID": 60141,
+      "targetSHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+      "windowID": 116311,
+      "cleanupVerified": true,
+      "probeSHA256": "2ce201a2876e295fe6695fbda6506b72e1d9ac706f6051226377f5a8fa3f4a2b"
+    },
+    "submissions": [],
+    "referenceCleanupVerified": true,
+    "fixtureStopped": true
+  },
+  "fullscreenReferenceSequence": {
+    "status": "calibrated",
+    "inputPosted": false,
+    "candidateLaunched": false,
+    "coverageOnly": false,
+    "waitForSetup": true,
+    "permissions": {
+      "audioCaptured": false,
+      "hooksInstalled": false,
+      "inputPosted": false,
+      "permissionRequested": false,
+      "probePID": 61265,
+      "screenRecordingGranted": true,
+      "status": "preflight",
+      "cleanupVerified": true,
+      "probeSHA256": "2ce201a2876e295fe6695fbda6506b72e1d9ac706f6051226377f5a8fa3f4a2b"
+    },
+    "referencePID": 61270,
+    "reference": {
+      "audioCaptured": false,
+      "auditedFrames": 3,
+      "backdropClosed": true,
+      "completeFrames": 3,
+      "coverageChecksAreAtomic": false,
+      "crop": [
+        24,
+        113,
+        1464,
+        789
+      ],
+      "firstNonuniformImage": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/publication-151/compositor-fullscreen-stream/reference.first-nonuniform.png",
+      "hooksInstalled": false,
+      "images": [
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/publication-151/compositor-fullscreen-stream/reference.stage-0-sample-0.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/publication-151/compositor-fullscreen-stream/reference.stage-0-sample-1.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/publication-151/compositor-fullscreen-stream/reference.stage-0-sample-2.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/publication-151/compositor-fullscreen-stream/reference.stage-1-sample-0.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/publication-151/compositor-fullscreen-stream/reference.stage-1-sample-1.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/publication-151/compositor-fullscreen-stream/reference.stage-1-sample-2.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/publication-151/compositor-fullscreen-stream/reference.stage-2-sample-0.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/publication-151/compositor-fullscreen-stream/reference.stage-2-sample-1.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/publication-151/compositor-fullscreen-stream/reference.stage-2-sample-2.png"
+      ],
+      "inputPosted": false,
+      "nonuniformFrames": 3,
+      "permissionRequested": false,
+      "probePID": 61408,
+      "stages": [
+        {
+          "auditedFrames": 1,
+          "completeFrames": 1,
+          "elapsedSeconds": 3.317369958385825,
+          "filter": "unfiltered-display",
+          "nonuniformFrames": 1,
+          "stage": 0
+        },
+        {
+          "auditedFrames": 1,
+          "completeFrames": 1,
+          "elapsedSeconds": 3.3372562082950026,
+          "filter": "owned-apps",
+          "nonuniformFrames": 1,
+          "stage": 1
+        },
+        {
+          "auditedFrames": 1,
+          "completeFrames": 1,
+          "elapsedSeconds": 3.321918458212167,
+          "filter": "unfiltered-display",
+          "nonuniformFrames": 1,
+          "stage": 2
+        }
+      ],
+      "status": "audited",
+      "streamStopped": true,
+      "targetPID": 61270,
+      "targetSHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+      "uniformBGRAColors": [],
+      "windowID": 116403,
+      "cleanupVerified": true,
+      "probeSHA256": "2ce201a2876e295fe6695fbda6506b72e1d9ac706f6051226377f5a8fa3f4a2b",
+      "markerRecovered": true,
+      "markerChecks": [
+        {
+          "image": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/publication-151/compositor-fullscreen-stream/reference.stage-0-sample-0.png",
+          "markerRecovery": {
+            "exact": true,
+            "visualHexAliases": true
+          }
+        },
+        {
+          "image": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/publication-151/compositor-fullscreen-stream/reference.stage-0-sample-1.png",
+          "markerRecovery": {
+            "exact": true,
+            "visualHexAliases": true
+          }
+        },
+        {
+          "image": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/publication-151/compositor-fullscreen-stream/reference.stage-0-sample-2.png",
+          "markerRecovery": {
+            "exact": true,
+            "visualHexAliases": true
+          }
+        },
+        {
+          "image": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/publication-151/compositor-fullscreen-stream/reference.stage-1-sample-0.png",
+          "markerRecovery": {
+            "exact": true,
+            "visualHexAliases": true
+          }
+        },
+        {
+          "image": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/publication-151/compositor-fullscreen-stream/reference.stage-1-sample-1.png",
+          "markerRecovery": {
+            "exact": true,
+            "visualHexAliases": true
+          }
+        },
+        {
+          "image": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/publication-151/compositor-fullscreen-stream/reference.stage-1-sample-2.png",
+          "markerRecovery": {
+            "exact": true,
+            "visualHexAliases": true
+          }
+        },
+        {
+          "image": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/publication-151/compositor-fullscreen-stream/reference.stage-2-sample-0.png",
+          "markerRecovery": {
+            "exact": true,
+            "visualHexAliases": true
+          }
+        },
+        {
+          "image": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/publication-151/compositor-fullscreen-stream/reference.stage-2-sample-1.png",
+          "markerRecovery": {
+            "exact": true,
+            "visualHexAliases": true
+          }
+        },
+        {
+          "image": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/publication-151/compositor-fullscreen-stream/reference.stage-2-sample-2.png",
+          "markerRecovery": {
+            "exact": true,
+            "visualHexAliases": true
+          }
+        },
+        {
+          "image": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/publication-151/compositor-fullscreen-stream/reference.first-nonuniform.png",
+          "markerRecovery": {
+            "exact": true,
+            "visualHexAliases": true
+          }
+        }
+      ],
+      "stageMarkers": [
+        true,
+        true,
+        true
+      ]
+    },
+    "submissions": [],
+    "referenceCleanupVerified": true,
+    "fixtureStopped": true
+  },
+  "candidateMetadataOnlyCoverage": {
+    "audioCaptured": false,
+    "backdropClosed": true,
+    "error": "Another window intersects the research region",
+    "hooksInstalled": false,
+    "inputPosted": false,
+    "permissionRequested": false,
+    "probePID": 66319,
+    "status": "refused",
+    "cleanupVerified": true,
+    "probeSHA256": "2ce201a2876e295fe6695fbda6506b72e1d9ac706f6051226377f5a8fa3f4a2b"
+  },
+  "rawArtifactSHA256": {
+    "compositor-coverage/results.json": "d5a8f8024931a6e77310521bca20717b6381c19d179b2b5b01e2076b6917283d",
+    "compositor-fullscreen-coverage/results.json": "9930d646e799039713ee42da89ac4559f824c69915ed89f0184390b8e721b796",
+    "compositor-fullscreen-stream/results.json": "ef21fc5c7150d8bdc6682bbfe8ff7ca4be01c19f4970abe0ff09fd78ba7890f1",
+    "compositor-candidate-coverage/results.json": "4542a358144cd7e78566a3459fcb3d1948075e44fc8109e1698e7a91b0a8e764"
+  },
+  "limits": [
+    "Fullscreen reference calibration is not a candidate capture result.",
+    "Candidate coverage refuses overlap before any stream or pixel capture.",
+    "No unrelated overlapping window is inspected or dismissed.",
+    "Coverage checks are not atomic. Only delivered complete frames are audited."
+  ]
+}

@@ -1,0 +1,372 @@
+{
+  "results": [
+    {
+      "route": "session",
+      "repetition": 0,
+      "verdict": "observed",
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 14722,
+        "source": "session",
+        "status": "attempted"
+      },
+      "acceptedFakeActions": 1,
+      "recordLimitReached": false,
+      "deviceCategories": {
+        "wheel": 228,
+        "y": 228,
+        "x": 228,
+        "button": 4
+      },
+      "appEventTypes": {
+        "5": 89,
+        "1": 1,
+        "10": 13,
+        "11": 13
+      }
+    },
+    {
+      "route": "session",
+      "repetition": 1,
+      "verdict": "observed",
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 14735,
+        "source": "session",
+        "status": "attempted"
+      },
+      "acceptedFakeActions": 1,
+      "recordLimitReached": false,
+      "deviceCategories": {
+        "wheel": 174,
+        "y": 174,
+        "x": 174,
+        "button": 4
+      },
+      "appEventTypes": {
+        "5": 77,
+        "1": 1,
+        "10": 13,
+        "11": 13,
+        "22": 4
+      }
+    },
+    {
+      "route": "session",
+      "repetition": 2,
+      "verdict": "observed",
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 14749,
+        "source": "session",
+        "status": "attempted"
+      },
+      "acceptedFakeActions": 1,
+      "recordLimitReached": false,
+      "deviceCategories": {
+        "wheel": 306,
+        "y": 306,
+        "x": 306,
+        "button": 8
+      },
+      "appEventTypes": {
+        "5": 143,
+        "1": 1,
+        "6": 1,
+        "10": 13,
+        "11": 13
+      }
+    },
+    {
+      "route": "hid",
+      "repetition": 0,
+      "verdict": "observed",
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 14762,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "acceptedFakeActions": 1,
+      "recordLimitReached": false,
+      "deviceCategories": {
+        "wheel": 227,
+        "y": 227,
+        "x": 227,
+        "button": 4
+      },
+      "appEventTypes": {
+        "5": 98,
+        "1": 1,
+        "10": 13,
+        "11": 13
+      }
+    },
+    {
+      "route": "hid",
+      "repetition": 1,
+      "verdict": "observed",
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 14777,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "acceptedFakeActions": 1,
+      "recordLimitReached": false,
+      "deviceCategories": {
+        "wheel": 320,
+        "y": 320,
+        "x": 320,
+        "button": 8
+      },
+      "appEventTypes": {
+        "5": 140,
+        "1": 1,
+        "2": 1,
+        "10": 13,
+        "11": 13
+      }
+    },
+    {
+      "route": "hid",
+      "repetition": 2,
+      "verdict": "observed",
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 14804,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "acceptedFakeActions": 1,
+      "recordLimitReached": false,
+      "deviceCategories": {
+        "wheel": 218,
+        "y": 218,
+        "x": 218,
+        "button": 4
+      },
+      "appEventTypes": {
+        "5": 104,
+        "1": 1,
+        "10": 13,
+        "11": 13,
+        "22": 2
+      }
+    },
+    {
+      "route": "private",
+      "repetition": 0,
+      "verdict": "observed",
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 14818,
+        "source": "private",
+        "status": "attempted"
+      },
+      "acceptedFakeActions": 1,
+      "recordLimitReached": false,
+      "deviceCategories": {
+        "wheel": 350,
+        "y": 350,
+        "x": 350,
+        "button": 6
+      },
+      "appEventTypes": {
+        "5": 136,
+        "1": 1,
+        "10": 13,
+        "11": 13
+      }
+    },
+    {
+      "route": "private",
+      "repetition": 1,
+      "verdict": "observed",
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 14941,
+        "source": "private",
+        "status": "attempted"
+      },
+      "acceptedFakeActions": 1,
+      "recordLimitReached": false,
+      "deviceCategories": {
+        "wheel": 48,
+        "y": 48,
+        "x": 48
+      },
+      "appEventTypes": {
+        "5": 20,
+        "1": 1,
+        "10": 13,
+        "11": 13,
+        "22": 2
+      }
+    },
+    {
+      "route": "private",
+      "repetition": 2,
+      "verdict": "observed",
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 15046,
+        "source": "private",
+        "status": "attempted"
+      },
+      "acceptedFakeActions": 1,
+      "recordLimitReached": false,
+      "deviceCategories": {},
+      "appEventTypes": {
+        "5": 1,
+        "1": 1,
+        "10": 13,
+        "11": 13
+      }
+    },
+    {
+      "route": "curve-hid",
+      "repetition": 0,
+      "verdict": "observed",
+      "attempt": {
+        "curvedTrajectory": true,
+        "directToPID": false,
+        "pid": 15253,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "acceptedFakeActions": 1,
+      "recordLimitReached": false,
+      "deviceCategories": {},
+      "appEventTypes": {
+        "5": 62,
+        "1": 1,
+        "10": 13,
+        "11": 13
+      }
+    },
+    {
+      "route": "curve-hid",
+      "repetition": 1,
+      "verdict": "observed",
+      "attempt": {
+        "curvedTrajectory": true,
+        "directToPID": false,
+        "pid": 15559,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "acceptedFakeActions": 1,
+      "recordLimitReached": false,
+      "deviceCategories": {},
+      "appEventTypes": {
+        "5": 62,
+        "1": 1,
+        "10": 13,
+        "11": 13
+      }
+    },
+    {
+      "route": "curve-hid",
+      "repetition": 2,
+      "verdict": "observed",
+      "attempt": {
+        "curvedTrajectory": true,
+        "directToPID": false,
+        "pid": 15785,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "acceptedFakeActions": 1,
+      "recordLimitReached": false,
+      "deviceCategories": {},
+      "appEventTypes": {
+        "5": 62,
+        "1": 1,
+        "10": 13,
+        "11": 13
+      }
+    },
+    {
+      "route": "keycodes-hid",
+      "repetition": 0,
+      "verdict": "observed",
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 15983,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "acceptedFakeActions": 1,
+      "recordLimitReached": false,
+      "deviceCategories": {},
+      "appEventTypes": {
+        "5": 1,
+        "1": 1,
+        "10": 13,
+        "11": 13
+      }
+    },
+    {
+      "route": "keycodes-hid",
+      "repetition": 1,
+      "verdict": "observed",
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 16168,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "acceptedFakeActions": 1,
+      "recordLimitReached": false,
+      "deviceCategories": {},
+      "appEventTypes": {
+        "5": 1,
+        "1": 1,
+        "10": 13,
+        "11": 13
+      }
+    },
+    {
+      "route": "keycodes-hid",
+      "repetition": 2,
+      "verdict": "observed",
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 16406,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "acceptedFakeActions": 1,
+      "recordLimitReached": false,
+      "deviceCategories": {},
+      "appEventTypes": {
+        "5": 1,
+        "1": 1,
+        "10": 13,
+        "11": 13
+      }
+    }
+  ],
+  "humanBaselineVerified": false,
+  "isInputDefense": false,
+  "physicalInputAbsenceVerified": false,
+  "routeContract": "Own native form. External AX locates the field; CGEvent types the fake value and Return. Device values and app events are separate observations.",
+  "environment": {
+    "locked": null,
+    "reason": "Console lock flag unavailable",
+    "advisory": true
+  }
+}

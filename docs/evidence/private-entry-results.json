@@ -1,0 +1,505 @@
+{
+  "milestone": 92,
+  "humanBaseline": false,
+  "externalAttackAgainstCandidate": false,
+  "scope": "Explicit private diagnostic sessions. Own Enable/Disable ownership and aggregate snapshots, not keyboard confidentiality proof.",
+  "runs": [
+    {
+      "rawEvidence": "artifacts/private-entry-session-92/results.json",
+      "privateEntryAcquisitions": 4,
+      "privateEntryReleases": [
+        "PRIVATE_ENTRY ended=true reason=startup-finished releaseStatus=0 secureInput=false",
+        "PRIVATE_ENTRY ended=true reason=transitions-finished releaseStatus=0 secureInput=false",
+        "PRIVATE_ENTRY ended=true reason=native-focus-loss releaseStatus=0 secureInput=false",
+        "PRIVATE_ENTRY ended=true reason=resume-finished releaseStatus=0 secureInput=false"
+      ],
+      "humanBaseline": false,
+      "externalAttack": false,
+      "scope": "Private generated typing and per-view native protection bookkeeping. No OS confidentiality claim.",
+      "privateEntrySession": true,
+      "modes": [
+        {
+          "mode": "stable",
+          "status": "private-entry-controls-passed",
+          "binarySHA256": "ab7515327bf04a30ec7cbe630abd4c140f121170f9567f6bda12d01a3af11f0a",
+          "engineIdentity": {
+            "pid": 64464,
+            "executable": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development",
+            "mappedFrameworks": {
+              "WebKit": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebKit.framework/Versions/A/WebKit",
+              "JavaScriptCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/JavaScriptCore.framework/Versions/A/JavaScriptCore",
+              "WebCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebCore.framework/Versions/A/WebCore"
+            }
+          },
+          "transitions": [
+            {
+              "phase": "password-settled",
+              "kind": "password",
+              "settleMS": 300,
+              "beforeOwner": "true",
+              "ownersBeforeKeys": [
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true"
+              ],
+              "secureInputBeforeKeys": [
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true"
+              ],
+              "afterOwner": "true",
+              "acceptedEvents": 26
+            },
+            {
+              "phase": "text-settled",
+              "kind": "text",
+              "settleMS": 300,
+              "beforeOwner": "false",
+              "ownersBeforeKeys": [
+                "false",
+                "false",
+                "false",
+                "false",
+                "false",
+                "false",
+                "false",
+                "false",
+                "false",
+                "false",
+                "false",
+                "false",
+                "false"
+              ],
+              "secureInputBeforeKeys": [
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true"
+              ],
+              "afterOwner": "false",
+              "acceptedEvents": 26
+            },
+            {
+              "phase": "password-immediate",
+              "kind": "password",
+              "settleMS": 0,
+              "beforeOwner": "false",
+              "ownersBeforeKeys": [
+                "false",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true"
+              ],
+              "secureInputBeforeKeys": [
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true"
+              ],
+              "afterOwner": "true",
+              "acceptedEvents": 26
+            },
+            {
+              "phase": "text-immediate",
+              "kind": "text",
+              "settleMS": 0,
+              "beforeOwner": "true",
+              "ownersBeforeKeys": [
+                "true",
+                "false",
+                "false",
+                "false",
+                "false",
+                "false",
+                "false",
+                "false",
+                "false",
+                "false",
+                "false",
+                "false",
+                "false"
+              ],
+              "secureInputBeforeKeys": [
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true"
+              ],
+              "afterOwner": "false",
+              "acceptedEvents": 26
+            }
+          ],
+          "acceptedActions": 5,
+          "fieldKindEvents": [
+            {
+              "type": "field-kind-password",
+              "t": 21973
+            },
+            {
+              "type": "field-kind-text",
+              "t": 23136
+            },
+            {
+              "type": "field-kind-password",
+              "t": 24306
+            },
+            {
+              "type": "field-kind-text",
+              "t": 25165
+            }
+          ],
+          "nativeViewOutcome": "protection-state-gap-observed",
+          "privateEntryCoverage": true,
+          "focusReleaseControl": {
+            "hideStatus": "observed",
+            "secureInputWhileHidden": false,
+            "nativeFocusLossReleased": true,
+            "readableAttempt": {
+              "focusError": 0,
+              "pid": 64505,
+              "pressError": 0,
+              "setValueError": 0,
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "readableActions": 1,
+            "readableCleanupVerified": true,
+            "unhideStatus": "observed",
+            "returnStatus": "observed",
+            "secureInputBeforeNewSession": false,
+            "resumeOwnershipEvents": [
+              "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=true",
+              "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=true",
+              "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=true",
+              "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=true",
+              "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=true",
+              "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=true",
+              "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=true",
+              "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=true",
+              "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=true",
+              "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=true",
+              "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=true",
+              "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=true",
+              "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=true"
+            ],
+            "acceptedActionsAfterResume": 6,
+            "secureInputAfterNewSession": false,
+            "passed": true
+          },
+          "cleanupVerified": true,
+          "secureInputAfterCleanup": false
+        }
+      ]
+    },
+    {
+      "rawEvidence": "artifacts/private-entry-session-92-final/results.json",
+      "privateEntryAcquisitions": 5,
+      "privateEntryReleases": [
+        "PRIVATE_ENTRY ended=true reason=startup-finished releaseStatus=0 secureInput=false",
+        "PRIVATE_ENTRY ended=true reason=expiry releaseStatus=0 secureInput=false",
+        "PRIVATE_ENTRY ended=true reason=transitions-finished releaseStatus=0 secureInput=false",
+        "PRIVATE_ENTRY ended=true reason=native-focus-loss releaseStatus=0 secureInput=false",
+        "PRIVATE_ENTRY ended=true reason=resume-finished releaseStatus=0 secureInput=false"
+      ],
+      "humanBaseline": false,
+      "externalAttack": false,
+      "scope": "Private generated typing and per-view native protection bookkeeping. No OS confidentiality claim.",
+      "privateEntrySession": true,
+      "privateEntryExpiryControl": true,
+      "modes": [
+        {
+          "mode": "stable",
+          "status": "private-entry-controls-passed",
+          "binarySHA256": "a0e38e6399a3ce2596c9cc1fee2c01eb2ffe028846d214051bedb7ec4998c054",
+          "engineIdentity": {
+            "pid": 65528,
+            "executable": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development",
+            "mappedFrameworks": {
+              "WebKit": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebKit.framework/Versions/A/WebKit",
+              "JavaScriptCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/JavaScriptCore.framework/Versions/A/JavaScriptCore",
+              "WebCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebCore.framework/Versions/A/WebCore"
+            }
+          },
+          "expirySecureInput": false,
+          "transitions": [
+            {
+              "phase": "password-settled",
+              "kind": "password",
+              "settleMS": 300,
+              "beforeOwner": "true",
+              "ownersBeforeKeys": [
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true"
+              ],
+              "secureInputBeforeKeys": [
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true"
+              ],
+              "afterOwner": "true",
+              "acceptedEvents": 26
+            },
+            {
+              "phase": "text-settled",
+              "kind": "text",
+              "settleMS": 300,
+              "beforeOwner": "false",
+              "ownersBeforeKeys": [
+                "false",
+                "false",
+                "false",
+                "false",
+                "false",
+                "false",
+                "false",
+                "false",
+                "false",
+                "false",
+                "false",
+                "false",
+                "false"
+              ],
+              "secureInputBeforeKeys": [
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true"
+              ],
+              "afterOwner": "false",
+              "acceptedEvents": 26
+            },
+            {
+              "phase": "password-immediate",
+              "kind": "password",
+              "settleMS": 0,
+              "beforeOwner": "false",
+              "ownersBeforeKeys": [
+                "false",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true"
+              ],
+              "secureInputBeforeKeys": [
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true"
+              ],
+              "afterOwner": "true",
+              "acceptedEvents": 26
+            },
+            {
+              "phase": "text-immediate",
+              "kind": "text",
+              "settleMS": 0,
+              "beforeOwner": "true",
+              "ownersBeforeKeys": [
+                "true",
+                "false",
+                "false",
+                "false",
+                "false",
+                "false",
+                "false",
+                "false",
+                "false",
+                "false",
+                "false",
+                "false",
+                "false"
+              ],
+              "secureInputBeforeKeys": [
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true",
+                "true"
+              ],
+              "afterOwner": "false",
+              "acceptedEvents": 26
+            }
+          ],
+          "acceptedActions": 5,
+          "fieldKindEvents": [
+            {
+              "type": "field-kind-password",
+              "t": 22435
+            },
+            {
+              "type": "field-kind-text",
+              "t": 23599
+            },
+            {
+              "type": "field-kind-password",
+              "t": 24772
+            },
+            {
+              "type": "field-kind-text",
+              "t": 25631
+            }
+          ],
+          "nativeViewOutcome": "protection-state-gap-observed",
+          "privateEntryCoverage": true,
+          "focusReleaseControl": {
+            "hideStatus": "observed",
+            "secureInputWhileHidden": false,
+            "nativeFocusLossReleased": true,
+            "readableAttempt": {
+              "focusError": 0,
+              "pid": 65583,
+              "pressError": 0,
+              "setValueError": 0,
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "readableActions": 1,
+            "readableCleanupVerified": true,
+            "unhideStatus": "observed",
+            "returnStatus": "observed",
+            "secureInputBeforeNewSession": false,
+            "resumeOwnershipEvents": [
+              "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=true",
+              "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=true",
+              "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=true",
+              "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=true",
+              "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=true",
+              "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=true",
+              "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=true",
+              "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=true",
+              "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=true",
+              "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=true",
+              "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=true",
+              "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=true",
+              "FOCUS_DIAGNOSTIC phase=before-private-key viewSecureOwner=false secureInput=true"
+            ],
+            "acceptedActionsAfterResume": 6,
+            "secureInputAfterNewSession": false,
+            "passed": true
+          },
+          "cleanupVerified": true,
+          "secureInputAfterCleanup": false
+        }
+      ]
+    }
+  ],
+  "purePolicyChecksPassed": 56,
+  "pythonChecksPassed": 124,
+  "analysisSourceSHA256": {
+    "Sources/Diagnostics/PrivateEntryPolicy.swift": "a1115575c9dca92d8fc0b9e05f76ff8f6083bfddb3beb401d8b70089afd130fb",
+    "Sources/Diagnostics/DiagnosticPrivateEntry.swift": "40c251e3c90aa97ce570c46be72dbc76c2ce3918d3f62dc73fd302cbe410769e",
+    "scripts/diagnose-browser-keyboard.sh": "5193b8f33407350f78168b75c49745005c0b91c1a27bc1e60f776096e6c24347",
+    "tools/run_password_transitions.py": "7e36e59d81a57d79e0b4e4cd719ca17547174c46b1fb546b5e930dcff8fd58e8"
+  }
+}

@@ -1,0 +1,124 @@
+import hashlib
+import json
+import os
+from pathlib import Path
+import subprocess
+import tempfile
+import unittest
+from unittest.mock import patch
+
+import build_research_webkit as build
+
+
+class ResearchEngineBuildTests(unittest.TestCase):
+    def run_fake_build(self, directory, exit_code):
+        base = Path(directory)
+        source = base / 'source'
+        (source / 'Configurations').mkdir(parents=True)
+        (source / 'Configurations/CommonBase.xcconfig').write_text('')
+        script = source / 'Tools/Scripts/build-webkit'
+        script.parent.mkdir(parents=True)
+        script.write_text('#!/bin/sh\necho "error: command exited zero but produced no further output"\n'
+                          f'exit {exit_code}\n')
+        script.chmod(0o700)
+        compiler = subprocess.CompletedProcess(['metal'], 0, stdout='test compiler', stderr='')
+        with patch.object(build, 'BASE', base), patch.object(build.subprocess, 'run', return_value=compiler), \
+             patch.object(build, 'engine_command', return_value=[str(script)]):
+            build.build(source, 5)
+
+    def test_error_word_in_log_does_not_override_successful_exit(self):
+        with tempfile.TemporaryDirectory() as directory:
+            self.run_fake_build(directory, 0)
+            report = json.loads((Path(directory) / 'build-results.json').read_text())
+            self.assertEqual(report['status'], 'succeeded')
+            self.assertEqual(report['exitCode'], 0)
+            self.assertTrue(report['engineCompiled'])
+            self.assertFalse(report['engineRuntimeTested'])
+
+    def test_nonzero_exit_records_failure(self):
+        with tempfile.TemporaryDirectory() as directory:
+            with self.assertRaisesRegex(RuntimeError, 'exit 7'):
+                self.run_fake_build(directory, 7)
+            report = json.loads((Path(directory) / 'build-results.json').read_text())
+            self.assertEqual(report['status'], 'failed')
+            self.assertEqual(report['exitCode'], 7)
+            self.assertFalse(report['engineCompiled'])
+
+    def test_output_environment_bypasses_user_xcode_preferences(self):
+        output = Path('/workspace/output')
+        with patch.dict('os.environ', {'BUILD_WEBKIT_PRE_SCRIPT': '/unexpected/script'}):
+            environment = build.build_environment(output)
+        self.assertEqual(environment['WEBKIT_OUTPUTDIR'], str(output))
+        self.assertEqual(environment['TMPDIR'], str(output / 'Temporary'))
+        self.assertNotIn('BUILD_WEBKIT_PRE_SCRIPT', environment)
+
+    def test_changed_source_is_refused_before_any_file_is_written(self):
+        with tempfile.TemporaryDirectory() as directory:
+            source = Path(directory)
+            (source / 'first').write_text('old')
+            (source / 'second').write_text('unexpected')
+            with patch.object(build, 'read_sources', return_value=({'revision': 'pinned'}, {'first': 'old', 'second': 'old'})), \
+                 patch.object(build, 'revision_of', return_value='pinned'), \
+                 patch.object(build, 'generate'), \
+                 patch.object(build, 'changed_sources', return_value={'first': 'new', 'second': 'new'}):
+                with self.assertRaisesRegex(RuntimeError, 'Refusing changed research source'):
+                    build.stage(source)
+            self.assertEqual((source / 'first').read_text(), 'old')
+
+    def test_interrupted_old_and_new_mix_converges_to_exact_patch(self):
+        with tempfile.TemporaryDirectory() as directory:
+            source = Path(directory)
+            (source / 'first').write_text('new')
+            (source / 'second').write_text('old')
+            patch_file = source / 'patch'
+            patch_file.write_text('exact patch')
+            with patch.object(build, 'read_sources', return_value=({'revision': 'pinned'}, {'first': 'old', 'second': 'old'})), \
+                 patch.object(build, 'revision_of', return_value='pinned'), \
+                 patch.object(build, 'generate'), \
+                 patch.object(build, 'changed_sources', return_value={'first': 'new', 'second': 'new', 'header': 'new header'}), \
+                 patch.object(build, 'BASE', source), patch.object(build, 'PATCH', patch_file):
+                build.stage(source)
+                for name in ['first', 'second', 'header']:
+                    os.utime(source / name, ns=(1_000_000_000, 1_000_000_000))
+                build.stage(source)
+            self.assertEqual((source / 'second').read_text(), 'new')
+            self.assertEqual((source / 'header').read_text(), 'new header')
+            self.assertFalse(json.loads((source / 'applied-source.json').read_text())['engineCompiled'])
+            for name in ['first', 'second', 'header']:
+                self.assertEqual((source / name).stat().st_mtime_ns, 1_000_000_000)
+
+    def test_line_ending_changes_are_refused_before_other_writes(self):
+        with tempfile.TemporaryDirectory() as directory:
+            source = Path(directory)
+            (source / 'first').write_bytes(b'old\n')
+            (source / 'second').write_bytes(b'old\r\n')
+            with patch.object(build, 'read_sources', return_value=({'revision': 'pinned'}, {'first': 'old\n', 'second': 'old\n'})), \
+                 patch.object(build, 'revision_of', return_value='pinned'), \
+                 patch.object(build, 'generate'), \
+                 patch.object(build, 'changed_sources', return_value={'first': 'new\n'}):
+                with self.assertRaisesRegex(RuntimeError, 'Refusing changed research source'):
+                    build.stage(source)
+            self.assertEqual((source / 'first').read_bytes(), b'old\n')
+
+    def test_projection_upgrade_accepts_only_exact_predecessor_bytes(self):
+        for previous, accepted in [('measured header', True), ('measured header\n', False)]:
+            with self.subTest(previous=previous), tempfile.TemporaryDirectory() as directory:
+                source = Path(directory)
+                (source / 'first').write_text('old')
+                (source / 'header').write_text(previous)
+                patch_file = source / 'patch'
+                patch_file.write_text('exact patch')
+                with patch.object(build, 'read_sources', return_value=({'revision': 'pinned'}, {'first': 'old'})), \
+                     patch.object(build, 'revision_of', return_value='pinned'), patch.object(build, 'generate'), \
+                     patch.object(build, 'changed_sources', return_value={'first': 'new', 'header': 'new header'}), \
+                     patch.object(build, 'HEADER', 'header'), \
+                     patch.object(build, 'PRIOR_PROJECTION_SHA256', hashlib.sha256(b'measured header').hexdigest()), \
+                     patch.object(build, 'BASE', source), patch.object(build, 'PATCH', patch_file):
+                    if accepted:
+                        build.stage(source)
+                        self.assertEqual((source / 'header').read_text(), 'new header')
+                        self.assertEqual((source / 'first').read_text(), 'new')
+                    else:
+                        with self.assertRaisesRegex(RuntimeError, 'Refusing changed research source'):
+                            build.stage(source)
+                        self.assertEqual((source / 'first').read_text(), 'old')

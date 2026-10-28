@@ -1,0 +1,231 @@
+{
+  "milestone": 146,
+  "status": "inconclusive",
+  "controls": {
+    "connection-state": {
+      "status": "inconclusive",
+      "candidateLaunched": false,
+      "inputPosted": false,
+      "helperSHA256": "cf14d29f3f9a58d075733ffab699843d4d7bdd6142e952fd926c9420a3c7e534",
+      "referencePID": 87453,
+      "helperStderrCharacters": 0,
+      "helperExitCode": 0,
+      "discovery": {
+        "applicationObjectPresent": false,
+        "channelOpened": false,
+        "connectionConnectedSeen": true,
+        "connectionObjectSeen": true,
+        "connectionTransitions": [
+          {
+            "connection": "connected",
+            "machineReady": true,
+            "milliseconds": 0
+          }
+        ],
+        "currentMachineSeen": true,
+        "discoveryMaximumSeconds": 8,
+        "inputPosted": false,
+        "localTargetAbsentAfterRemoval": true,
+        "localTargetCreationRequested": true,
+        "localTargetRemovalRequested": true,
+        "machineReadySeen": true,
+        "managerFactory": "sharedManager",
+        "managerInstantiated": true,
+        "matchingFixturePages": 0,
+        "ownedApplicationsSeen": 0,
+        "permissionRequested": false,
+        "referenceOnly": true,
+        "scriptSent": false,
+        "status": "inconclusive",
+        "targetPID": 87453,
+        "targetSHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+        "unrelatedPageMetadataSaved": false
+      },
+      "submissions": [],
+      "referenceCleanupVerified": true,
+      "fixtureStopped": true
+    },
+    "fetch-listing": {
+      "status": "inconclusive",
+      "candidateLaunched": false,
+      "inputPosted": false,
+      "helperSHA256": "e10f3e697c9b1cbb8293c0171632d0fe1bab2c9829df44e450e23ce8ef545354",
+      "referencePID": 88078,
+      "helperStderrCharacters": 0,
+      "helperExitCode": 0,
+      "discovery": {
+        "applicationObjectPresent": false,
+        "channelOpened": false,
+        "error": "unavailableInterface",
+        "inputPosted": false,
+        "localTargetAbsentAfterRemoval": true,
+        "localTargetCreationRequested": true,
+        "localTargetRemovalRequested": true,
+        "managerFactory": "sharedManager",
+        "managerInstantiated": true,
+        "permissionRequested": false,
+        "referenceOnly": true,
+        "scriptSent": false,
+        "status": "inconclusive",
+        "unrelatedPageMetadataSaved": false
+      },
+      "submissions": [],
+      "referenceCleanupVerified": true,
+      "fixtureStopped": true
+    },
+    "receiver-listing": {
+      "status": "inconclusive",
+      "candidateLaunched": false,
+      "inputPosted": false,
+      "helperSHA256": "951e63d2098dad13ef7bc8df12c1da454737585cdde7c4864354d086a0fa4b7a",
+      "referencePID": 88308,
+      "helperStderrCharacters": 0,
+      "helperExitCode": 0,
+      "discovery": {
+        "applicationListingRequested": true,
+        "applicationObjectPresent": false,
+        "channelOpened": false,
+        "connectionConnectedSeen": true,
+        "connectionObjectSeen": true,
+        "connectionTransitions": [
+          {
+            "connection": "connected",
+            "machineReady": true,
+            "milliseconds": 0
+          }
+        ],
+        "currentMachineSeen": true,
+        "discoveryMaximumSeconds": 8,
+        "initialApplicationCount": 0,
+        "inputPosted": false,
+        "localTargetAbsentAfterRemoval": true,
+        "localTargetCreationRequested": true,
+        "localTargetRemovalRequested": true,
+        "machineReadySeen": true,
+        "managerFactory": "sharedManager",
+        "managerInstantiated": true,
+        "matchingFixturePages": 0,
+        "maximumApplicationCount": 0,
+        "ownedApplicationsSeen": 0,
+        "permissionRequested": false,
+        "referenceOnly": true,
+        "scriptSent": false,
+        "status": "inconclusive",
+        "targetPID": 88308,
+        "targetSHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+        "unrelatedPageMetadataSaved": false
+      },
+      "submissions": [],
+      "referenceCleanupVerified": true,
+      "fixtureStopped": true
+    },
+    "identifier-handshake": {
+      "status": "inconclusive",
+      "candidateLaunched": false,
+      "inputPosted": false,
+      "helperSHA256": "10f2bfff0de9d88f8aed0153386507ceb74694e0e02ca976a85cdb49c647ab7d",
+      "referencePID": 88983,
+      "helperStderrCharacters": 0,
+      "helperExitCode": 0,
+      "discovery": {
+        "applicationListingRequested": true,
+        "applicationObjectPresent": false,
+        "channelOpened": false,
+        "connectionConnectedSeen": true,
+        "connectionObjectSeen": true,
+        "connectionTransitions": [
+          {
+            "connection": "connected",
+            "machineReady": true,
+            "milliseconds": 0
+          }
+        ],
+        "currentMachineSeen": true,
+        "discoveryMaximumSeconds": 8,
+        "identifierHandshakeRequested": true,
+        "initialApplicationCount": 0,
+        "inputPosted": false,
+        "localTargetAbsentAfterRemoval": true,
+        "localTargetCreationRequested": true,
+        "localTargetRemovalRequested": true,
+        "machineReadySeen": true,
+        "managerFactory": "sharedManager",
+        "managerInstantiated": true,
+        "matchingFixturePages": 0,
+        "maximumApplicationCount": 0,
+        "ownedApplicationsSeen": 0,
+        "permissionRequested": false,
+        "referenceOnly": true,
+        "scriptSent": false,
+        "status": "inconclusive",
+        "targetPID": 88983,
+        "targetSHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+        "unrelatedPageMetadataSaved": false
+      },
+      "submissions": [],
+      "referenceCleanupVerified": true,
+      "fixtureStopped": true
+    }
+  },
+  "nativeBoundaryControls": [
+    {
+      "arguments": [],
+      "passed": true
+    },
+    {
+      "arguments": [
+        "1",
+        "https://example.org/trial/0123456789abcdef"
+      ],
+      "passed": true
+    },
+    {
+      "arguments": [
+        "1",
+        "http://127.0.0.1:8765/trial/0123456789abcdef"
+      ],
+      "passed": true
+    },
+    {
+      "arguments": [
+        "1",
+        "http://127.0.0.1:99999/trial/0123456789abcdef"
+      ],
+      "passed": true
+    },
+    {
+      "arguments": [
+        "1",
+        "http://127.0.0.1:8765/trial/0123456789abcdef",
+        "--unknown"
+      ],
+      "passed": true
+    }
+  ],
+  "pythonTestsPassed": 13,
+  "regressionsFailedBeforeFix": 2,
+  "regressionsPassedAfterFix": 3,
+  "cleanupFailuresCannotRetainSuccess": true,
+  "unexpectedActionsCannotRetainSuccess": true,
+  "matchingFixturePages": 0,
+  "candidateLaunched": false,
+  "channelOpened": false,
+  "scriptSent": false,
+  "explicitPermissionRequestIssued": false,
+  "administratorAccessUsed": false,
+  "agentFreeEstablished": false,
+  "remainingTransientPIDs": {
+    "reference": [],
+    "client": []
+  },
+  "preservedImages": {
+    "AgentFreeBrowserPreview": "dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70",
+    "PreviewCompositorProbe": "2ce201a2876e295fe6695fbda6506b72e1d9ac706f6051226377f5a8fa3f4a2b"
+  },
+  "sourceHashes": {
+    "Sources/Diagnostics/InspectorDiscoveryControl.swift": "5f2e3067cfe835b53b6dc97ab38e205c4a246cced9792316f4a91586d0cbdf16",
+    "tools/run_inspector_discovery_control.py": "c049279ad2636a5a50c836f8f7cbbdc5317e021a3b8b05225cdfa792ea3d67ca",
+    "tools/test_inspector_discovery_control.py": "5f9b49367163cf7ffe97b514dac9254d95bab0b68c48d29050d30e05ae436f99"
+  },
+  "connectionFlagsAreNotDaemonAcknowledgments": true
+}

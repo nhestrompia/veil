@@ -1,0 +1,662 @@
+{
+  "adaptiveKnownLayout": {
+    "results": [
+      {
+        "pid": 43980,
+        "verdict": "blocked-action",
+        "route": "window-image-ocr-curved-hid",
+        "capture": {
+          "frame": [
+            100,
+            110,
+            1000,
+            772
+          ],
+          "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/source-policy-live/vision-adaptive/candidate-0.png",
+          "pid": 43980,
+          "pixels": [
+            1000,
+            772
+          ],
+          "status": "captured",
+          "windowID": 96404,
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "disclosure": false,
+        "coordinateSource": "Matched reference geometry after target OCR failed",
+        "fieldCenter": [
+          299.12790777616283,
+          465.0414310073446
+        ],
+        "input": {
+          "curvedTrajectory": true,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 43980,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 90,
+        "controlWorked": true,
+        "repetition": 0
+      },
+      {
+        "pid": 43980,
+        "verdict": "blocked-action",
+        "route": "window-image-ocr-curved-hid",
+        "capture": {
+          "frame": [
+            100,
+            110,
+            1000,
+            772
+          ],
+          "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/source-policy-live/vision-adaptive/candidate-1.png",
+          "pid": 43980,
+          "pixels": [
+            1000,
+            772
+          ],
+          "status": "captured",
+          "windowID": 96404,
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "disclosure": false,
+        "coordinateSource": "Matched reference geometry after target OCR failed",
+        "fieldCenter": [
+          299.12790777616283,
+          465.0414310073446
+        ],
+        "input": {
+          "curvedTrajectory": true,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 43980,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 91,
+        "controlWorked": true,
+        "repetition": 1
+      },
+      {
+        "pid": 43980,
+        "verdict": "blocked-action",
+        "route": "window-image-ocr-curved-hid",
+        "capture": {
+          "frame": [
+            100,
+            110,
+            1000,
+            772
+          ],
+          "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/source-policy-live/vision-adaptive/candidate-2.png",
+          "pid": 43980,
+          "pixels": [
+            1000,
+            772
+          ],
+          "status": "captured",
+          "windowID": 96404,
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "disclosure": false,
+        "coordinateSource": "Matched reference geometry after target OCR failed",
+        "fieldCenter": [
+          299.12790777616283,
+          465.0414310073446
+        ],
+        "input": {
+          "curvedTrajectory": true,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 43980,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 91,
+        "controlWorked": true,
+        "repetition": 2
+      }
+    ],
+    "controls": [
+      {
+        "pid": 47218,
+        "verdict": "bypass",
+        "route": "window-image-ocr-curved-hid",
+        "capture": {
+          "frame": [
+            100,
+            110,
+            1000,
+            772
+          ],
+          "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/source-policy-live/vision-adaptive/control-0.png",
+          "pid": 47218,
+          "pixels": [
+            2000,
+            1544
+          ],
+          "status": "captured",
+          "windowID": 96499,
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "disclosure": true,
+        "coordinateSource": "Target image OCR and public fixture layout",
+        "fieldCenter": [
+          299.12790777616283,
+          465.0414310073446
+        ],
+        "input": {
+          "curvedTrajectory": true,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 47218,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+        "repetition": 0,
+        "cleanupVerified": true
+      },
+      {
+        "pid": 47249,
+        "verdict": "bypass",
+        "route": "window-image-ocr-curved-hid",
+        "capture": {
+          "frame": [
+            100,
+            110,
+            1000,
+            772
+          ],
+          "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/source-policy-live/vision-adaptive/control-1.png",
+          "pid": 47249,
+          "pixels": [
+            2000,
+            1544
+          ],
+          "status": "captured",
+          "windowID": 96511,
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "disclosure": true,
+        "coordinateSource": "Target image OCR and public fixture layout",
+        "fieldCenter": [
+          299.12790777616283,
+          465.0414310073446
+        ],
+        "input": {
+          "curvedTrajectory": true,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 47249,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+        "repetition": 1,
+        "cleanupVerified": true
+      },
+      {
+        "pid": 47285,
+        "verdict": "bypass",
+        "route": "window-image-ocr-curved-hid",
+        "capture": {
+          "frame": [
+            100,
+            110,
+            1000,
+            772
+          ],
+          "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/source-policy-live/vision-adaptive/control-2.png",
+          "pid": 47285,
+          "pixels": [
+            2000,
+            1544
+          ],
+          "status": "captured",
+          "windowID": 96523,
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "disclosure": true,
+        "coordinateSource": "Target image OCR and public fixture layout",
+        "fieldCenter": [
+          299.12790777616283,
+          465.0414310073446
+        ],
+        "input": {
+          "curvedTrajectory": true,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 47285,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+        "repetition": 2,
+        "cleanupVerified": true
+      }
+    ],
+    "sessionPID": 43980,
+    "binarySHA256": "43b1a9833d6c55b1e254b848f9bd09c202da46ba0f8d8833084df559e6a8a9d1",
+    "operatorDeclaresPhysicalCompletion": true,
+    "bootstrapAttested": false,
+    "physicalInputAbsenceVerified": false,
+    "routeContract": "Window-scoped ScreenCaptureKit image, Vision OCR, curved CGEvent typing. Count only new submissions in the physically calibrated process.",
+    "candidateImageSHA256": [
+      "852f8098f4b5f2273df2d618f2fcc6133c962a8cd36ad325dfa230092917276b",
+      "852f8098f4b5f2273df2d618f2fcc6133c962a8cd36ad325dfa230092917276b",
+      "852f8098f4b5f2273df2d618f2fcc6133c962a8cd36ad325dfa230092917276b"
+    ],
+    "candidateImagesByteIdentical": true
+  },
+  "imageOnlyBeforeAdaptation": {
+    "results": [
+      {
+        "pid": 43980,
+        "verdict": "inconclusive",
+        "route": "window-image-ocr-curved-hid",
+        "capture": {
+          "frame": [
+            100,
+            110,
+            1000,
+            772
+          ],
+          "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/source-policy-live/vision-fixed/candidate-0.png",
+          "pid": 43980,
+          "pixels": [
+            1000,
+            772
+          ],
+          "status": "captured",
+          "windowID": 96404,
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "disclosure": false,
+        "error": "No OCR field label; no action-prevention inference",
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 1,
+        "controlWorked": true,
+        "repetition": 0
+      },
+      {
+        "pid": 43980,
+        "verdict": "inconclusive",
+        "route": "window-image-ocr-curved-hid",
+        "capture": {
+          "frame": [
+            100,
+            110,
+            1000,
+            772
+          ],
+          "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/source-policy-live/vision-fixed/candidate-1.png",
+          "pid": 43980,
+          "pixels": [
+            1000,
+            772
+          ],
+          "status": "captured",
+          "windowID": 96404,
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "disclosure": false,
+        "error": "No OCR field label; no action-prevention inference",
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "controlWorked": true,
+        "repetition": 1
+      },
+      {
+        "pid": 43980,
+        "verdict": "inconclusive",
+        "route": "window-image-ocr-curved-hid",
+        "capture": {
+          "frame": [
+            100,
+            110,
+            1000,
+            772
+          ],
+          "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/source-policy-live/vision-fixed/candidate-2.png",
+          "pid": 43980,
+          "pixels": [
+            1000,
+            772
+          ],
+          "status": "captured",
+          "windowID": 96404,
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "disclosure": false,
+        "error": "No OCR field label; no action-prevention inference",
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 1,
+        "controlWorked": true,
+        "repetition": 2
+      }
+    ],
+    "controls": [
+      {
+        "pid": 45722,
+        "verdict": "bypass",
+        "route": "window-image-ocr-curved-hid",
+        "capture": {
+          "frame": [
+            100,
+            110,
+            1000,
+            772
+          ],
+          "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/source-policy-live/vision-fixed/control-0.png",
+          "pid": 45722,
+          "pixels": [
+            2000,
+            1544
+          ],
+          "status": "captured",
+          "windowID": 96463,
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "disclosure": true,
+        "fieldCenter": [
+          299.12790777616283,
+          465.0414310073446
+        ],
+        "coordinateSource": "OCR label and public fixture's 57-point offset; no AX tree",
+        "input": {
+          "curvedTrajectory": true,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 45722,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+        "repetition": 0,
+        "cleanupVerified": true
+      },
+      {
+        "pid": 45749,
+        "verdict": "bypass",
+        "route": "window-image-ocr-curved-hid",
+        "capture": {
+          "frame": [
+            100,
+            110,
+            1000,
+            772
+          ],
+          "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/source-policy-live/vision-fixed/control-1.png",
+          "pid": 45749,
+          "pixels": [
+            2000,
+            1544
+          ],
+          "status": "captured",
+          "windowID": 96475,
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "disclosure": true,
+        "fieldCenter": [
+          299.12790777616283,
+          465.0414310073446
+        ],
+        "coordinateSource": "OCR label and public fixture's 57-point offset; no AX tree",
+        "input": {
+          "curvedTrajectory": true,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 45749,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+        "repetition": 1,
+        "cleanupVerified": true
+      },
+      {
+        "pid": 45776,
+        "verdict": "bypass",
+        "route": "window-image-ocr-curved-hid",
+        "capture": {
+          "frame": [
+            100,
+            110,
+            1000,
+            772
+          ],
+          "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/source-policy-live/vision-fixed/control-2.png",
+          "pid": 45776,
+          "pixels": [
+            2000,
+            1544
+          ],
+          "status": "captured",
+          "windowID": 96487,
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "disclosure": false,
+        "fieldCenter": [
+          299.12790777616283,
+          465.0414310073446
+        ],
+        "coordinateSource": "OCR label and public fixture's 57-point offset; no AX tree",
+        "input": {
+          "curvedTrajectory": true,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 45776,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+        "repetition": 2,
+        "cleanupVerified": true,
+        "directVisionMarkerMatchesOracle": true,
+        "directVisionMethod": "Assistant inspected the saved owned-window image. Native OCR had a character error."
+      }
+    ],
+    "sessionPID": 43980,
+    "binarySHA256": "43b1a9833d6c55b1e254b848f9bd09c202da46ba0f8d8833084df559e6a8a9d1",
+    "operatorDeclaresPhysicalCompletion": true,
+    "bootstrapAttested": false,
+    "physicalInputAbsenceVerified": false,
+    "routeContract": "Window-scoped ScreenCaptureKit image, Vision OCR, curved CGEvent typing. Count only new submissions in the physically calibrated process.",
+    "candidateImageSHA256": [
+      "852f8098f4b5f2273df2d618f2fcc6133c962a8cd36ad325dfa230092917276b",
+      "852f8098f4b5f2273df2d618f2fcc6133c962a8cd36ad325dfa230092917276b",
+      "852f8098f4b5f2273df2d618f2fcc6133c962a8cd36ad325dfa230092917276b"
+    ],
+    "candidateImagesByteIdentical": true,
+    "firstCandidateDirectVision": "Blank black image, no page content recovered",
+    "failedRelativePathPilot": {
+      "results": [
+        {
+          "pid": 43980,
+          "verdict": "inconclusive",
+          "route": "window-image-ocr-curved-hid",
+          "capture": {
+            "error": "Cannot create PNG output",
+            "status": "inconclusive",
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "error": "Window capture failed; no action-prevention inference",
+          "newSubmissions": [],
+          "acceptedEvents": 0,
+          "refusedEvents": 1,
+          "controlWorked": false,
+          "repetition": 0
+        },
+        {
+          "pid": 43980,
+          "verdict": "inconclusive",
+          "route": "window-image-ocr-curved-hid",
+          "capture": {
+            "error": "Cannot create PNG output",
+            "status": "inconclusive",
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "error": "Window capture failed; no action-prevention inference",
+          "newSubmissions": [],
+          "acceptedEvents": 0,
+          "refusedEvents": 1,
+          "controlWorked": false,
+          "repetition": 1
+        },
+        {
+          "pid": 43980,
+          "verdict": "inconclusive",
+          "route": "window-image-ocr-curved-hid",
+          "capture": {
+            "error": "Cannot create PNG output",
+            "status": "inconclusive",
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "error": "Window capture failed; no action-prevention inference",
+          "newSubmissions": [],
+          "acceptedEvents": 0,
+          "refusedEvents": 1,
+          "controlWorked": false,
+          "repetition": 2
+        }
+      ],
+      "controls": [
+        {
+          "pid": 44892,
+          "verdict": "inconclusive",
+          "route": "window-image-ocr-curved-hid",
+          "capture": {
+            "error": "Cannot create PNG output",
+            "status": "inconclusive",
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "error": "Window capture failed; no action-prevention inference",
+          "newSubmissions": [],
+          "acceptedEvents": 0,
+          "refusedEvents": 0,
+          "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+          "repetition": 0
+        },
+        {
+          "pid": 44908,
+          "verdict": "inconclusive",
+          "route": "window-image-ocr-curved-hid",
+          "capture": {
+            "error": "Cannot create PNG output",
+            "status": "inconclusive",
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "error": "Window capture failed; no action-prevention inference",
+          "newSubmissions": [],
+          "acceptedEvents": 0,
+          "refusedEvents": 0,
+          "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+          "repetition": 1
+        },
+        {
+          "pid": 44925,
+          "verdict": "inconclusive",
+          "route": "window-image-ocr-curved-hid",
+          "capture": {
+            "error": "Cannot create PNG output",
+            "status": "inconclusive",
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "error": "Window capture failed; no action-prevention inference",
+          "newSubmissions": [],
+          "acceptedEvents": 0,
+          "refusedEvents": 0,
+          "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+          "repetition": 2
+        }
+      ],
+      "sessionPID": 43980,
+      "binarySHA256": "43b1a9833d6c55b1e254b848f9bd09c202da46ba0f8d8833084df559e6a8a9d1",
+      "operatorDeclaresPhysicalCompletion": true,
+      "bootstrapAttested": false,
+      "physicalInputAbsenceVerified": false,
+      "routeContract": "Window-scoped ScreenCaptureKit image, Vision OCR, curved CGEvent typing. Count only new submissions in the physically calibrated process."
+    }
+  }
+}

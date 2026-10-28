@@ -1,0 +1,67 @@
+{
+  "results": [
+    {
+      "target": "InspectableControl",
+      "binarySHA256": "cd54cc2a2ba654d4e0c323cd661c2dea959d1bec001ce2f18f8030f273c94ec0",
+      "attempt": {
+        "items": [
+          {
+            "enabled": false,
+            "title": "Cut"
+          },
+          {
+            "enabled": true,
+            "title": "Copy"
+          },
+          {
+            "enabled": false,
+            "title": "Paste"
+          },
+          {
+            "enabled": true,
+            "title": "Select All"
+          },
+          {
+            "enabled": false,
+            "title": ""
+          },
+          {
+            "enabled": true,
+            "title": "Writing Tools"
+          },
+          {
+            "enabled": true,
+            "title": "AutoFill"
+          },
+          {
+            "enabled": true,
+            "title": "Start Dictation\u2026"
+          },
+          {
+            "enabled": true,
+            "title": "Emoji & Symbols"
+          }
+        ],
+        "menuError": 0,
+        "menuFound": true,
+        "status": "observed",
+        "probeBinarySHA256": "c7df98980a563585c3a28e35bd3b5280429131e7c0c876610f5e3c64231975e9"
+      },
+      "verdict": "content-menu-exposed"
+    },
+    {
+      "target": "DeviceKeyboardExperiment",
+      "binarySHA256": "abd2c382c5533fe4d36d5f6941d3aad4d23dcd48b22552716726621205ac4690",
+      "attempt": {
+        "items": [],
+        "menuError": 0,
+        "menuFound": true,
+        "status": "observed",
+        "probeBinarySHA256": "c7df98980a563585c3a28e35bd3b5280429131e7c0c876610f5e3c64231975e9"
+      },
+      "verdict": "content-menus-absent"
+    }
+  ],
+  "clipboardAccessed": false,
+  "scope": "Direct File/Edit menu queries only. No physical task, device-origin, capture, or general action-prevention claim."
+}

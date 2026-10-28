@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Physical keyboard observation</title>
+<style>
+body{font:20px system-ui;max-width:720px;margin:48px auto;padding:0 28px;color:#172b35;background:#fff}[hidden]{display:none!important}
+button,input{font:inherit;padding:12px;display:block;margin:20px 0}button{background:#116456;color:white;border:0;border-radius:6px}button:disabled{opacity:.45}input{width:440px}#status{padding:20px;background:#edf2f3;border-radius:8px}#status[data-phase="listening-reference"]{background:#d9f4e7}
+</style>
+<h1>Physical keyboard observation</h1>
+<p>This page starts each sample when you choose. The listener sends no input and saves no raw text or key codes.</p>
+<div id="status" role="status" aria-live="polite">Preparing the research window.</div>
+<button id="first" disabled>Start sample 1</button>
+<form id="sample">
+<label for="phrase">Type only native-input when the field becomes ready.</label>
+<input id="phrase" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" disabled>
+<button id="record" disabled>Record sample</button>
+</form>
+<p>Sample 2 opens Device Keyboard Experiment. Its mouse input is disabled. Tab to its page field if needed, type native-input, then Return. Stay in that window until the listener ends.</p>
+<button id="second" disabled>Start sample 2</button>
+<button id="finish" hidden>Finish</button>
+<script>
+let previous='';
+let submitted=false;
+const base=location.pathname.replace(/\/$/,'');
+async function request(action,body={}){
+  const response=await fetch(base+'/'+action,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+  if(!response.ok)throw Error('The controller refused this step.');
+  return response.json();
+}
+document.querySelector('#first').onclick=()=>request('start-reference');
+document.querySelector('#second').onclick=()=>request('start-candidate');
+document.querySelector('#finish').onclick=()=>request('finish');
+document.querySelector('#sample').onsubmit=async event=>{
+  event.preventDefault();
+  const result=await request('reference-action',{note:document.querySelector('#phrase').value});
+  submitted=result.accepted;
+  document.querySelector('#phrase').value='';
+  if(!submitted)document.querySelector('#status').textContent='Use lowercase native-input, then Return.';
+};
+setInterval(async()=>{
+  try{
+    const response=await fetch(base+'/state',{cache:'no-store'});
+    const state=await response.json();
+    const status=document.querySelector('#status');
+    status.textContent=state.hint;
+    status.dataset.phase=state.phase;
+    document.querySelector('#first').disabled=state.phase!=='ready-reference';
+    document.querySelector('#second').disabled=state.phase!=='ready-candidate';
+    const listening=state.phase==='listening-reference'&&!submitted;
+    document.querySelector('#phrase').disabled=!listening;
+    document.querySelector('#record').disabled=!listening;
+    if(listening&&previous!==state.phase)document.querySelector('#phrase').focus();
+    document.querySelector('#finish').hidden=!['complete','inconclusive'].includes(state.phase);
+    previous=state.phase;
+  }catch{document.querySelector('#status').textContent='The research controller stopped.';}
+},200);
+</script>
+</html>

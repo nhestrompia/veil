@@ -1,0 +1,167 @@
+{
+  "milestone": 129,
+  "executableSHA256": "dc8265f8cfe12d417d8e5e5c9780a9d9429ad3cebb195ba5ced933a8fd01e52c",
+  "sourceSHA256": "6e39767636b6f6df8242ff6e64b9bac21bf8bc3e97fb4fb3673a9ffdf62b8215",
+  "finalPreflight": {
+    "capturesAudio": false,
+    "probePID": 82380,
+    "screenRecordingGranted": false,
+    "status": "preflight",
+    "systemInputPosted": false
+  },
+  "checks": [
+    {
+      "name": "unknown",
+      "report": {
+        "capturesAudio": false,
+        "error": "Use sequence or coverage PID WINDOW_ID BACKDROP_ID RECORDED_SHA256 --out ARTIFACT.json",
+        "probePID": 81645,
+        "status": "refused",
+        "systemInputPosted": false
+      }
+    },
+    {
+      "name": "unrelated",
+      "report": {
+        "capturesAudio": false,
+        "error": "Target is not the exact owned InternalKeyboardControl app",
+        "probePID": 81646,
+        "status": "refused",
+        "systemInputPosted": false
+      }
+    },
+    {
+      "name": "invalid-hash",
+      "report": {
+        "capturesAudio": false,
+        "error": "Use sequence or coverage PID WINDOW_ID BACKDROP_ID RECORDED_SHA256 --out ARTIFACT.json",
+        "probePID": 81647,
+        "status": "refused",
+        "systemInputPosted": false
+      }
+    },
+    {
+      "name": "equal-window-ids",
+      "report": {
+        "capturesAudio": false,
+        "error": "Use sequence or coverage PID WINDOW_ID BACKDROP_ID RECORDED_SHA256 --out ARTIFACT.json",
+        "probePID": 81648,
+        "status": "refused",
+        "systemInputPosted": false
+      }
+    },
+    {
+      "name": "output-scope",
+      "refused": true
+    },
+    {
+      "name": "existing-output",
+      "unchanged": true
+    },
+    {
+      "name": "valid-backdrop-coverage",
+      "report": {
+        "backdropShareabilityChecked": false,
+        "captureAttempted": false,
+        "capturesAudio": false,
+        "crop": [
+          124,
+          158,
+          952,
+          676
+        ],
+        "probePID": 81677,
+        "status": "geometry-verified",
+        "systemInputPosted": false
+      }
+    },
+    {
+      "name": "wrong-owned-hash",
+      "report": {
+        "capturesAudio": false,
+        "error": "Target executable hash differs from the recorded session",
+        "probePID": 81679,
+        "status": "refused",
+        "systemInputPosted": false
+      }
+    },
+    {
+      "name": "unowned-backdrop",
+      "report": {
+        "capturesAudio": false,
+        "error": "Owned research window ordering is invalid",
+        "probePID": 81680,
+        "status": "refused",
+        "systemInputPosted": false
+      }
+    },
+    {
+      "name": "live-without-grant",
+      "report": {
+        "capturesAudio": false,
+        "error": "Screen Recording permission is absent",
+        "probePID": 81681,
+        "status": "refused",
+        "systemInputPosted": false
+      }
+    },
+    {
+      "name": "valid-backdrop-cleanup",
+      "hostStopped": true,
+      "fixtureStopped": true
+    },
+    {
+      "name": "undersized-backdrop-coverage",
+      "report": {
+        "capturesAudio": false,
+        "error": "Opaque shareable owned backdrop does not cover the stable capture region",
+        "probePID": 81899,
+        "status": "refused",
+        "systemInputPosted": false
+      }
+    },
+    {
+      "name": "undersized-backdrop-cleanup",
+      "hostStopped": true,
+      "fixtureStopped": true
+    }
+  ],
+  "checksPassed": 13,
+  "runnerRefusesAbsentGrantBeforeHostLaunch": true,
+  "buildPinGuardRefusesRebuild": true,
+  "cleanup": [
+    {
+      "artifact": "artifacts/compositor-refresh-129/valid-backdrop/session.json",
+      "pid": 81028,
+      "ownedHostStopped": true,
+      "ownedFixtureStopped": true
+    },
+    {
+      "artifact": "artifacts/compositor-refresh-129/final/undersized-backdrop/session.json",
+      "pid": 81887,
+      "ownedHostStopped": true,
+      "ownedFixtureStopped": true
+    },
+    {
+      "artifact": "artifacts/compositor-refresh-129/final/valid-backdrop/session.json",
+      "pid": 81655,
+      "ownedHostStopped": true,
+      "ownedFixtureStopped": true
+    }
+  ],
+  "recordedProcessCount": 21,
+  "allRecordedProcessesAbsent": true,
+  "existingGrantedImagesUnchanged": true,
+  "grantRequested": false,
+  "grantApproved": false,
+  "liveCaptureTested": false,
+  "streamFilterUpdatesTested": false,
+  "geometryOnlyModeChecksShareability": false,
+  "liveModeRequiresShareability": true,
+  "limits": [
+    "No live unfiltered refresh result.",
+    "Helper indicator and exclusion identity discovery remain untested in capture mode.",
+    "Non-atomic coverage checks and queued frames.",
+    "Up to eight sampled complete frames per two-second stage."
+  ]
+}

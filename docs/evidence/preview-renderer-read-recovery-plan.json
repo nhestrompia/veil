@@ -1,0 +1,51 @@
+{
+  "approvalRequired": true,
+  "approved": true,
+  "executed": true,
+  "scope": "Reset only this stale Accessibility entry, then request/re-add the same pinned research helper.",
+  "bundleIdentifier": "research.agentfreebrowser.previewrendererread",
+  "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/dist/PreviewRendererReadProbe.app",
+  "executableSHA256": "18c7df1aba7af587ba002f52f38b4e07c6a0fd06be275493ce2d220fe4db8f8f",
+  "maximumAttempts": 1,
+  "commands": [
+    [
+      "tccutil",
+      "reset",
+      "Accessibility",
+      "research.agentfreebrowser.previewrendererread"
+    ],
+    [
+      "open",
+      "-g",
+      "-n",
+      "-W",
+      "/Users/nhestrompia/.t3/projects/agentfreebrowser/dist/PreviewRendererReadProbe.app",
+      "--args",
+      "request-accessibility",
+      "--out",
+      "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-renderer-137/approved-accessibility-request-after-reset.json"
+    ]
+  ],
+  "rootAllowed": false,
+  "otherAppsMayBeReset": false,
+  "otherServicesMayBeReset": false,
+  "mayRebuildOrResign": false,
+  "userAuthentication": "Only directly in macOS if requested.",
+  "approvalResponse": "yes",
+  "approvalRecordedUnixSeconds": 1793184508.835113,
+  "resetExitCode": 0,
+  "resetOutput": "Successfully reset Accessibility approval status for research.agentfreebrowser.previewrendererread",
+  "resetError": "",
+  "requestExitCode": 0,
+  "requestResult": {
+    "accessibility": false,
+    "accessibilityQueried": false,
+    "actionsSent": false,
+    "hooksInstalled": false,
+    "inputPosted": false,
+    "permissionRequested": true,
+    "probePID": 34308,
+    "rawTextSaved": false,
+    "status": "requested"
+  }
+}

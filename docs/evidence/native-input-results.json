@@ -1,0 +1,1087 @@
+{
+  "permissions": {
+    "accessibility": true,
+    "pid": 63030,
+    "postEvents": true,
+    "screenCapture": true
+  },
+  "system": "ProductName:\t\tmacOS\nProductVersion:\t\t26.6\nBuildVersion:\t\t25G72\n",
+  "results": [
+    {
+      "target": "AgentFreeBrowser",
+      "route": "ax",
+      "repetition": 0,
+      "trial": "e8ab0137f7fcf1ec",
+      "binarySHA256": "81b869fb7faaf69de0fdd31af7c1e4aed786e7dd71aa115865242bbdc0bd8c47",
+      "verdict": "inconclusive",
+      "disclosure": true,
+      "attempt": {
+        "first": {
+          "pid": 63031,
+          "pressError": 0,
+          "setValueError": 0,
+          "status": "attempted"
+        },
+        "retry": {
+          "pid": 63031,
+          "pressError": 0,
+          "setValueError": 0,
+          "status": "attempted"
+        }
+      },
+      "submissions": [
+        {
+          "note": "",
+          "accepted": false
+        },
+        {
+          "note": "",
+          "accepted": false
+        }
+      ],
+      "inputTrustedValues": [],
+      "reason": "No task completion; no explicit defensive refusal established"
+    },
+    {
+      "target": "AgentFreeBrowser",
+      "route": "ax",
+      "repetition": 1,
+      "trial": "57a59c6299ca68a7",
+      "binarySHA256": "81b869fb7faaf69de0fdd31af7c1e4aed786e7dd71aa115865242bbdc0bd8c47",
+      "verdict": "inconclusive",
+      "disclosure": true,
+      "attempt": {
+        "first": {
+          "pid": 63052,
+          "pressError": 0,
+          "setValueError": 0,
+          "status": "attempted"
+        },
+        "retry": {
+          "pid": 63052,
+          "pressError": 0,
+          "setValueError": 0,
+          "status": "attempted"
+        }
+      },
+      "submissions": [
+        {
+          "note": "",
+          "accepted": false
+        },
+        {
+          "note": "",
+          "accepted": false
+        }
+      ],
+      "inputTrustedValues": [],
+      "reason": "No task completion; no explicit defensive refusal established"
+    },
+    {
+      "target": "AgentFreeBrowser",
+      "route": "ax",
+      "repetition": 2,
+      "trial": "bcbdc2a045a1e3a4",
+      "binarySHA256": "81b869fb7faaf69de0fdd31af7c1e4aed786e7dd71aa115865242bbdc0bd8c47",
+      "verdict": "inconclusive",
+      "disclosure": true,
+      "attempt": {
+        "first": {
+          "pid": 63074,
+          "pressError": 0,
+          "setValueError": 0,
+          "status": "attempted"
+        },
+        "retry": {
+          "pid": 63074,
+          "pressError": 0,
+          "setValueError": 0,
+          "status": "attempted"
+        }
+      },
+      "submissions": [
+        {
+          "note": "",
+          "accepted": false
+        },
+        {
+          "note": "",
+          "accepted": false
+        }
+      ],
+      "inputTrustedValues": [],
+      "reason": "No task completion; no explicit defensive refusal established"
+    },
+    {
+      "target": "AgentFreeBrowser",
+      "route": "session",
+      "repetition": 0,
+      "trial": "06623ef4c8471a5c",
+      "binarySHA256": "81b869fb7faaf69de0fdd31af7c1e4aed786e7dd71aa115865242bbdc0bd8c47",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 63099,
+        "source": "session",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ]
+    },
+    {
+      "target": "AgentFreeBrowser",
+      "route": "session",
+      "repetition": 1,
+      "trial": "be43643de95a400f",
+      "binarySHA256": "81b869fb7faaf69de0fdd31af7c1e4aed786e7dd71aa115865242bbdc0bd8c47",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 63122,
+        "source": "session",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ]
+    },
+    {
+      "target": "AgentFreeBrowser",
+      "route": "session",
+      "repetition": 2,
+      "trial": "474de5fdbb874ae6",
+      "binarySHA256": "81b869fb7faaf69de0fdd31af7c1e4aed786e7dd71aa115865242bbdc0bd8c47",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 63146,
+        "source": "session",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ]
+    },
+    {
+      "target": "AgentFreeBrowser",
+      "route": "hid",
+      "repetition": 0,
+      "trial": "1709a49bc10c009f",
+      "binarySHA256": "81b869fb7faaf69de0fdd31af7c1e4aed786e7dd71aa115865242bbdc0bd8c47",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 63172,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ]
+    },
+    {
+      "target": "AgentFreeBrowser",
+      "route": "hid",
+      "repetition": 1,
+      "trial": "1d4a274daa0825a4",
+      "binarySHA256": "81b869fb7faaf69de0fdd31af7c1e4aed786e7dd71aa115865242bbdc0bd8c47",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 63195,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ]
+    },
+    {
+      "target": "AgentFreeBrowser",
+      "route": "hid",
+      "repetition": 2,
+      "trial": "ffb4d3540dbb7698",
+      "binarySHA256": "81b869fb7faaf69de0fdd31af7c1e4aed786e7dd71aa115865242bbdc0bd8c47",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 63224,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ]
+    },
+    {
+      "target": "AgentFreeBrowser",
+      "route": "private",
+      "repetition": 0,
+      "trial": "b682a5f2a576d22d",
+      "binarySHA256": "81b869fb7faaf69de0fdd31af7c1e4aed786e7dd71aa115865242bbdc0bd8c47",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 63246,
+        "source": "private",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ]
+    },
+    {
+      "target": "AgentFreeBrowser",
+      "route": "private",
+      "repetition": 1,
+      "trial": "37deaf5e51908047",
+      "binarySHA256": "81b869fb7faaf69de0fdd31af7c1e4aed786e7dd71aa115865242bbdc0bd8c47",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 63272,
+        "source": "private",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ]
+    },
+    {
+      "target": "AgentFreeBrowser",
+      "route": "private",
+      "repetition": 2,
+      "trial": "3fad442edf760688",
+      "binarySHA256": "81b869fb7faaf69de0fdd31af7c1e4aed786e7dd71aa115865242bbdc0bd8c47",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 63296,
+        "source": "private",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ]
+    },
+    {
+      "target": "AgentFreeBrowser",
+      "route": "pid-hid",
+      "repetition": 0,
+      "trial": "b09f4edf2d3d7450",
+      "binarySHA256": "81b869fb7faaf69de0fdd31af7c1e4aed786e7dd71aa115865242bbdc0bd8c47",
+      "verdict": "inconclusive",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": true,
+        "pid": 63337,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [],
+      "inputTrustedValues": [],
+      "reason": "No task completion; no explicit defensive refusal established"
+    },
+    {
+      "target": "AgentFreeBrowser",
+      "route": "pid-hid",
+      "repetition": 1,
+      "trial": "9a67bc19a85043d9",
+      "binarySHA256": "81b869fb7faaf69de0fdd31af7c1e4aed786e7dd71aa115865242bbdc0bd8c47",
+      "verdict": "inconclusive",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": true,
+        "pid": 63360,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [],
+      "inputTrustedValues": [],
+      "reason": "No task completion; no explicit defensive refusal established"
+    },
+    {
+      "target": "AgentFreeBrowser",
+      "route": "pid-hid",
+      "repetition": 2,
+      "trial": "89936635a5459ebf",
+      "binarySHA256": "81b869fb7faaf69de0fdd31af7c1e4aed786e7dd71aa115865242bbdc0bd8c47",
+      "verdict": "inconclusive",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": true,
+        "pid": 63384,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [],
+      "inputTrustedValues": [],
+      "reason": "No task completion; no explicit defensive refusal established"
+    },
+    {
+      "target": "AgentFreeBrowser",
+      "route": "curve-hid",
+      "repetition": 0,
+      "trial": "d12d55faa1e0bebf",
+      "binarySHA256": "81b869fb7faaf69de0fdd31af7c1e4aed786e7dd71aa115865242bbdc0bd8c47",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": true,
+        "directToPID": false,
+        "pid": 63410,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ]
+    },
+    {
+      "target": "AgentFreeBrowser",
+      "route": "curve-hid",
+      "repetition": 1,
+      "trial": "9ccae985427e7e15",
+      "binarySHA256": "81b869fb7faaf69de0fdd31af7c1e4aed786e7dd71aa115865242bbdc0bd8c47",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": true,
+        "directToPID": false,
+        "pid": 63439,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ]
+    },
+    {
+      "target": "AgentFreeBrowser",
+      "route": "curve-hid",
+      "repetition": 2,
+      "trial": "5239e7384b2e2a4d",
+      "binarySHA256": "81b869fb7faaf69de0fdd31af7c1e4aed786e7dd71aa115865242bbdc0bd8c47",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": true,
+        "directToPID": false,
+        "pid": 63466,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ]
+    },
+    {
+      "target": "AgentFreeBrowser",
+      "route": "keycodes-hid",
+      "repetition": 0,
+      "trial": "4ba5579a594c3db9",
+      "binarySHA256": "81b869fb7faaf69de0fdd31af7c1e4aed786e7dd71aa115865242bbdc0bd8c47",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 63495,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ]
+    },
+    {
+      "target": "AgentFreeBrowser",
+      "route": "keycodes-hid",
+      "repetition": 1,
+      "trial": "0b98eb5bf5cb2efe",
+      "binarySHA256": "81b869fb7faaf69de0fdd31af7c1e4aed786e7dd71aa115865242bbdc0bd8c47",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 63519,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ]
+    },
+    {
+      "target": "AgentFreeBrowser",
+      "route": "keycodes-hid",
+      "repetition": 2,
+      "trial": "56aa081ee7740807",
+      "binarySHA256": "81b869fb7faaf69de0fdd31af7c1e4aed786e7dd71aa115865242bbdc0bd8c47",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 63546,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ]
+    },
+    {
+      "target": "InspectableControl",
+      "route": "ax",
+      "repetition": 0,
+      "trial": "9347cf4efe753223",
+      "binarySHA256": "93f6a59721ae61dce13d8ea93ca58026090b907a343af67a5b27d575033c20fc",
+      "verdict": "inconclusive",
+      "disclosure": true,
+      "attempt": {
+        "first": {
+          "pid": 63569,
+          "pressError": 0,
+          "setValueError": 0,
+          "status": "attempted"
+        },
+        "retry": {
+          "pid": 63569,
+          "pressError": 0,
+          "setValueError": 0,
+          "status": "attempted"
+        }
+      },
+      "submissions": [
+        {
+          "note": "",
+          "accepted": false
+        },
+        {
+          "note": "",
+          "accepted": false
+        }
+      ],
+      "inputTrustedValues": [],
+      "reason": "No task completion; no explicit defensive refusal established"
+    },
+    {
+      "target": "InspectableControl",
+      "route": "ax",
+      "repetition": 1,
+      "trial": "1b4b773301eca07a",
+      "binarySHA256": "93f6a59721ae61dce13d8ea93ca58026090b907a343af67a5b27d575033c20fc",
+      "verdict": "inconclusive",
+      "disclosure": true,
+      "attempt": {
+        "first": {
+          "pid": 63594,
+          "pressError": 0,
+          "setValueError": 0,
+          "status": "attempted"
+        },
+        "retry": {
+          "pid": 63594,
+          "pressError": 0,
+          "setValueError": 0,
+          "status": "attempted"
+        }
+      },
+      "submissions": [
+        {
+          "note": "",
+          "accepted": false
+        },
+        {
+          "note": "",
+          "accepted": false
+        }
+      ],
+      "inputTrustedValues": [],
+      "reason": "No task completion; no explicit defensive refusal established"
+    },
+    {
+      "target": "InspectableControl",
+      "route": "ax",
+      "repetition": 2,
+      "trial": "1f9bb9d6f12a79de",
+      "binarySHA256": "93f6a59721ae61dce13d8ea93ca58026090b907a343af67a5b27d575033c20fc",
+      "verdict": "inconclusive",
+      "disclosure": true,
+      "attempt": {
+        "first": {
+          "pid": 63616,
+          "pressError": 0,
+          "setValueError": 0,
+          "status": "attempted"
+        },
+        "retry": {
+          "pid": 63616,
+          "pressError": 0,
+          "setValueError": 0,
+          "status": "attempted"
+        }
+      },
+      "submissions": [
+        {
+          "note": "",
+          "accepted": false
+        },
+        {
+          "note": "",
+          "accepted": false
+        }
+      ],
+      "inputTrustedValues": [],
+      "reason": "No task completion; no explicit defensive refusal established"
+    },
+    {
+      "target": "InspectableControl",
+      "route": "session",
+      "repetition": 0,
+      "trial": "cd32b8959e254438",
+      "binarySHA256": "93f6a59721ae61dce13d8ea93ca58026090b907a343af67a5b27d575033c20fc",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 63639,
+        "source": "session",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ]
+    },
+    {
+      "target": "InspectableControl",
+      "route": "session",
+      "repetition": 1,
+      "trial": "7a0be870f8991b0f",
+      "binarySHA256": "93f6a59721ae61dce13d8ea93ca58026090b907a343af67a5b27d575033c20fc",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 63665,
+        "source": "session",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ]
+    },
+    {
+      "target": "InspectableControl",
+      "route": "session",
+      "repetition": 2,
+      "trial": "533dfa6e8c5729d9",
+      "binarySHA256": "93f6a59721ae61dce13d8ea93ca58026090b907a343af67a5b27d575033c20fc",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 63688,
+        "source": "session",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ]
+    },
+    {
+      "target": "InspectableControl",
+      "route": "hid",
+      "repetition": 0,
+      "trial": "645e1d05da6c9b66",
+      "binarySHA256": "93f6a59721ae61dce13d8ea93ca58026090b907a343af67a5b27d575033c20fc",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 63713,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ]
+    },
+    {
+      "target": "InspectableControl",
+      "route": "hid",
+      "repetition": 1,
+      "trial": "ff3ca5fe1c76c678",
+      "binarySHA256": "93f6a59721ae61dce13d8ea93ca58026090b907a343af67a5b27d575033c20fc",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 63736,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ]
+    },
+    {
+      "target": "InspectableControl",
+      "route": "hid",
+      "repetition": 2,
+      "trial": "d4e24869fc93f3c4",
+      "binarySHA256": "93f6a59721ae61dce13d8ea93ca58026090b907a343af67a5b27d575033c20fc",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 63759,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ]
+    },
+    {
+      "target": "InspectableControl",
+      "route": "private",
+      "repetition": 0,
+      "trial": "8538d3f0a98a8779",
+      "binarySHA256": "93f6a59721ae61dce13d8ea93ca58026090b907a343af67a5b27d575033c20fc",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 63787,
+        "source": "private",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ]
+    },
+    {
+      "target": "InspectableControl",
+      "route": "private",
+      "repetition": 1,
+      "trial": "29f8c751d0b5de57",
+      "binarySHA256": "93f6a59721ae61dce13d8ea93ca58026090b907a343af67a5b27d575033c20fc",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 63812,
+        "source": "private",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ]
+    },
+    {
+      "target": "InspectableControl",
+      "route": "private",
+      "repetition": 2,
+      "trial": "40d30276d81f33be",
+      "binarySHA256": "93f6a59721ae61dce13d8ea93ca58026090b907a343af67a5b27d575033c20fc",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 63921,
+        "source": "private",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ]
+    },
+    {
+      "target": "InspectableControl",
+      "route": "pid-hid",
+      "repetition": 0,
+      "trial": "b613af6a2fe74015",
+      "binarySHA256": "93f6a59721ae61dce13d8ea93ca58026090b907a343af67a5b27d575033c20fc",
+      "verdict": "inconclusive",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": true,
+        "pid": 63960,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [],
+      "inputTrustedValues": [],
+      "reason": "No task completion; no explicit defensive refusal established"
+    },
+    {
+      "target": "InspectableControl",
+      "route": "pid-hid",
+      "repetition": 1,
+      "trial": "f2dc8ab8f6bb0186",
+      "binarySHA256": "93f6a59721ae61dce13d8ea93ca58026090b907a343af67a5b27d575033c20fc",
+      "verdict": "inconclusive",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": true,
+        "pid": 63987,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [],
+      "inputTrustedValues": [],
+      "reason": "No task completion; no explicit defensive refusal established"
+    },
+    {
+      "target": "InspectableControl",
+      "route": "pid-hid",
+      "repetition": 2,
+      "trial": "7279437aeeeff4d9",
+      "binarySHA256": "93f6a59721ae61dce13d8ea93ca58026090b907a343af67a5b27d575033c20fc",
+      "verdict": "inconclusive",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": true,
+        "pid": 64010,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [],
+      "inputTrustedValues": [],
+      "reason": "No task completion; no explicit defensive refusal established"
+    },
+    {
+      "target": "InspectableControl",
+      "route": "curve-hid",
+      "repetition": 0,
+      "trial": "de173fa0d4aa9243",
+      "binarySHA256": "93f6a59721ae61dce13d8ea93ca58026090b907a343af67a5b27d575033c20fc",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": true,
+        "directToPID": false,
+        "pid": 64036,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ]
+    },
+    {
+      "target": "InspectableControl",
+      "route": "curve-hid",
+      "repetition": 1,
+      "trial": "414c7b96fc93b457",
+      "binarySHA256": "93f6a59721ae61dce13d8ea93ca58026090b907a343af67a5b27d575033c20fc",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": true,
+        "directToPID": false,
+        "pid": 64061,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ]
+    },
+    {
+      "target": "InspectableControl",
+      "route": "curve-hid",
+      "repetition": 2,
+      "trial": "ff627e391b31e174",
+      "binarySHA256": "93f6a59721ae61dce13d8ea93ca58026090b907a343af67a5b27d575033c20fc",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": true,
+        "directToPID": false,
+        "pid": 64091,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ]
+    },
+    {
+      "target": "InspectableControl",
+      "route": "keycodes-hid",
+      "repetition": 0,
+      "trial": "bc799434da8edd8c",
+      "binarySHA256": "93f6a59721ae61dce13d8ea93ca58026090b907a343af67a5b27d575033c20fc",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 64121,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ]
+    },
+    {
+      "target": "InspectableControl",
+      "route": "keycodes-hid",
+      "repetition": 1,
+      "trial": "ce295657dbfdbdec",
+      "binarySHA256": "93f6a59721ae61dce13d8ea93ca58026090b907a343af67a5b27d575033c20fc",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 64146,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ]
+    },
+    {
+      "target": "InspectableControl",
+      "route": "keycodes-hid",
+      "repetition": 2,
+      "trial": "765d19f2e7af226c",
+      "binarySHA256": "93f6a59721ae61dce13d8ea93ca58026090b907a343af67a5b27d575033c20fc",
+      "verdict": "bypass",
+      "disclosure": true,
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 64173,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ]
+    }
+  ],
+  "humanBaseline": false,
+  "routeContract": "Probe uses native APIs only. Controller alone queries the oracle. Input coordinates come from AX."
+}

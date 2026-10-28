@@ -1,0 +1,129 @@
+{
+  "live": {
+    "candidatePID": 61893,
+    "candidateBinarySHA256": "43b1a9833d6c55b1e254b848f9bd09c202da46ba0f8d8833084df559e6a8a9d1",
+    "rendererProbeSHA256": "59600752f1b5672b0080cda4c5975c8bbfdbf80d47ed5f9e0819d88d8d871aa8",
+    "controls": [
+      {
+        "repetition": 0,
+        "pid": 78308,
+        "observation": {
+          "accessibility": true,
+          "accessibilityQueried": true,
+          "hostPID": 78308,
+          "inputTapInstalled": false,
+          "ownershipMethod": "Exact research executable, process start time, OS responsibility PID. Private metadata API.",
+          "permissionRequested": false,
+          "queries": [
+            {
+              "actionAttempted": false,
+              "buttonAvailable": false,
+              "discardedUnownedElements": 0,
+              "fieldAvailable": false,
+              "fixtureURLVerified": false,
+              "rawTextSaved": false,
+              "rendererPID": 78311,
+              "researchMarkers": [],
+              "roles": {
+                "unavailable": 1
+              },
+              "visitedCount": 1
+            }
+          ],
+          "renderers": [
+            {
+              "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+              "pid": 78311
+            }
+          ],
+          "status": "observed",
+          "cleanupVerified": true
+        },
+        "markerRecovered": false,
+        "acceptedActions": 0,
+        "newSubmissions": [],
+        "controlWorked": false,
+        "referenceCleanupVerified": true
+      }
+    ],
+    "results": [
+      {
+        "repetition": 0,
+        "skipped": true,
+        "reason": "Direct renderer AX reference did not recover a marker and complete its action"
+      }
+    ],
+    "route": "Direct renderer AX root, exact ownership, fixed loopback fixture actions. No input tap.",
+    "permissions": {
+      "accessibility": true,
+      "inputTapInstalled": false,
+      "permissionRequested": false,
+      "status": "observed",
+      "cleanupVerified": true
+    }
+  },
+  "host-initialized": {
+    "candidatePID": 61893,
+    "candidateBinarySHA256": "43b1a9833d6c55b1e254b848f9bd09c202da46ba0f8d8833084df559e6a8a9d1",
+    "rendererProbeSHA256": "59600752f1b5672b0080cda4c5975c8bbfdbf80d47ed5f9e0819d88d8d871aa8",
+    "controls": [
+      {
+        "repetition": 0,
+        "pid": 79029,
+        "hostInitializationStatus": "observed",
+        "observation": {
+          "accessibility": true,
+          "accessibilityQueried": true,
+          "hostPID": 79029,
+          "inputTapInstalled": false,
+          "ownershipMethod": "Exact research executable, process start time, OS responsibility PID. Private metadata API.",
+          "permissionRequested": false,
+          "queries": [
+            {
+              "actionAttempted": false,
+              "buttonAvailable": false,
+              "discardedUnownedElements": 0,
+              "fieldAvailable": false,
+              "fixtureURLVerified": false,
+              "rawTextSaved": false,
+              "rendererPID": 79033,
+              "researchMarkers": [],
+              "roles": {
+                "AXApplication": 1
+              },
+              "visitedCount": 1
+            }
+          ],
+          "renderers": [
+            {
+              "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+              "pid": 79033
+            }
+          ],
+          "status": "observed",
+          "cleanupVerified": true
+        },
+        "markerRecovered": false,
+        "acceptedActions": 0,
+        "newSubmissions": [],
+        "controlWorked": false,
+        "referenceCleanupVerified": true
+      }
+    ],
+    "results": [
+      {
+        "repetition": 0,
+        "skipped": true,
+        "reason": "Direct renderer AX reference did not recover a marker and complete its action"
+      }
+    ],
+    "route": "Direct renderer AX root, exact ownership, fixed loopback fixture actions. No input tap.",
+    "permissions": {
+      "accessibility": true,
+      "inputTapInstalled": false,
+      "permissionRequested": false,
+      "status": "observed",
+      "cleanupVerified": true
+    }
+  }
+}

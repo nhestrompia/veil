@@ -1,0 +1,511 @@
+{
+  "milestone": 116,
+  "approvedInvocations": 1,
+  "attemptsConsumed": 1,
+  "liveResult": {
+    "passed": true,
+    "attemptsConsumed": 1,
+    "ordinaryUIDBefore": 501,
+    "administratorCommandSHA256": "cf036154143bcef942203c0cf890c034f4f5cebb38f98439cbaec0fd359c6494",
+    "administratorExitCode": 0,
+    "observer": {
+      "attempted": true,
+      "rootRun": false,
+      "supervisorHashScope": "root-staging-verification-only",
+      "stage": "/private/tmp/agentfreebrowser-renderer.RS2B7a",
+      "ready": {
+        "native": {
+          "host": {
+            "effectiveGID": 4294967294,
+            "effectiveUID": 4294967294,
+            "path": "/private/tmp/agentfreebrowser-renderer.RS2B7a/ChannelIsolatedRendererProbe.app/Contents/MacOS/ChannelIsolatedRendererProbe",
+            "pid": 61038,
+            "realGID": 4294967294,
+            "realUID": 4294967294,
+            "savedGID": 4294967294,
+            "savedUID": 4294967294,
+            "startedMicroseconds": 10706,
+            "startedSeconds": 1793092602
+          },
+          "readyNanoseconds": 1844175658863000,
+          "sample": {
+            "nonce": "70b5e5fbdd0b7253",
+            "ticks": 0
+          },
+          "services": {
+            "content": {
+              "effectiveGID": 4294967294,
+              "effectiveUID": 4294967294,
+              "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+              "pid": 61045,
+              "realGID": 4294967294,
+              "realUID": 4294967294,
+              "savedGID": 4294967294,
+              "savedUID": 4294967294,
+              "startedMicroseconds": 822010,
+              "startedSeconds": 1793092602
+            },
+            "gpu": {
+              "effectiveGID": 4294967294,
+              "effectiveUID": 4294967294,
+              "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.GPU.xpc/Contents/MacOS/com.apple.WebKit.GPU",
+              "pid": 61041,
+              "realGID": 4294967294,
+              "realUID": 4294967294,
+              "savedGID": 4294967294,
+              "savedUID": 4294967294,
+              "startedMicroseconds": 352459,
+              "startedSeconds": 1793092602
+            },
+            "network": {
+              "effectiveGID": 4294967294,
+              "effectiveUID": 4294967294,
+              "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking",
+              "pid": 61043,
+              "realGID": 4294967294,
+              "realUID": 4294967294,
+              "savedGID": 4294967294,
+              "savedUID": 4294967294,
+              "startedMicroseconds": 374321,
+              "startedSeconds": 1793092602
+            }
+          }
+        },
+        "display": {
+          "host": {
+            "effectiveGID": 20,
+            "effectiveUID": 501,
+            "path": "/private/tmp/agentfreebrowser-renderer.RS2B7a/ChannelIsolatedDisplayProbe.app/Contents/MacOS/ChannelIsolatedDisplayProbe",
+            "pid": 61039,
+            "realGID": 20,
+            "realUID": 501,
+            "savedGID": 20,
+            "savedUID": 501,
+            "startedMicroseconds": 11861,
+            "startedSeconds": 1793092602
+          },
+          "rootRun": false
+        },
+        "launch": {
+          "rendererPID": 61038,
+          "displayPID": 61039,
+          "watchdogPID": 61040,
+          "ordinaryUID": 501,
+          "rendererUID": 4294967294,
+          "displayUID": 501,
+          "permanentDropChecked": true,
+          "rootRun": true
+        }
+      },
+      "attacks": {
+        "renderer": {
+          "exitCode": 0,
+          "signals": [
+            {
+              "metadataAPI": "sysctl-kern-proc-pid-and-proc-pidpath",
+              "role": "host",
+              "pid": 61038,
+              "actorUID": 501,
+              "targetUID": 4294967294,
+              "stopReturn": -1,
+              "stopErrno": 1,
+              "observedStopped": false,
+              "continueReturn": -1,
+              "continueErrno": 1,
+              "actorPOSIXSession": 60962,
+              "targetPOSIXSession": 60973,
+              "sameSessionContinue": false,
+              "identityStable": true,
+              "notStoppedAfter": true,
+              "expectedOutcome": true
+            },
+            {
+              "metadataAPI": "sysctl-kern-proc-pid-and-proc-pidpath",
+              "role": "content",
+              "pid": 61045,
+              "actorUID": 501,
+              "targetUID": 4294967294,
+              "stopReturn": -1,
+              "stopErrno": 1,
+              "observedStopped": false,
+              "continueReturn": -1,
+              "continueErrno": 1,
+              "actorPOSIXSession": 60962,
+              "targetPOSIXSession": 61045,
+              "sameSessionContinue": false,
+              "identityStable": true,
+              "notStoppedAfter": true,
+              "expectedOutcome": true
+            },
+            {
+              "metadataAPI": "sysctl-kern-proc-pid-and-proc-pidpath",
+              "role": "gpu",
+              "pid": 61041,
+              "actorUID": 501,
+              "targetUID": 4294967294,
+              "stopReturn": -1,
+              "stopErrno": 1,
+              "observedStopped": false,
+              "continueReturn": -1,
+              "continueErrno": 1,
+              "actorPOSIXSession": 60962,
+              "targetPOSIXSession": 61041,
+              "sameSessionContinue": false,
+              "identityStable": true,
+              "notStoppedAfter": true,
+              "expectedOutcome": true
+            },
+            {
+              "metadataAPI": "sysctl-kern-proc-pid-and-proc-pidpath",
+              "role": "network",
+              "pid": 61043,
+              "actorUID": 501,
+              "targetUID": 4294967294,
+              "stopReturn": -1,
+              "stopErrno": 1,
+              "observedStopped": false,
+              "continueReturn": -1,
+              "continueErrno": 1,
+              "actorPOSIXSession": 60962,
+              "targetPOSIXSession": 61043,
+              "sameSessionContinue": false,
+              "identityStable": true,
+              "notStoppedAfter": true,
+              "expectedOutcome": true
+            }
+          ],
+          "footer": [
+            {
+              "crossUser": true,
+              "recoveryComplete": true,
+              "watchdogReaped": true,
+              "passed": true
+            }
+          ],
+          "stopped": [],
+          "intervals": [],
+          "finishedNanoseconds": 1844175777089000
+        },
+        "display": {
+          "exitCode": 0,
+          "signals": [
+            {
+              "metadataAPI": "sysctl-kern-proc-pid-and-proc-pidpath",
+              "role": "host",
+              "pid": 61039,
+              "actorUID": 501,
+              "targetUID": 501,
+              "stopReturn": 0,
+              "stopErrno": 0,
+              "observedStopped": true,
+              "continueReturn": 0,
+              "continueErrno": 0,
+              "actorPOSIXSession": 60962,
+              "targetPOSIXSession": 60973,
+              "sameSessionContinue": false,
+              "identityStable": true,
+              "notStoppedAfter": true,
+              "expectedOutcome": true
+            }
+          ],
+          "footer": [
+            {
+              "crossUser": false,
+              "recoveryComplete": true,
+              "watchdogReaped": true,
+              "passed": true
+            }
+          ],
+          "stopped": [
+            {
+              "role": "host",
+              "pid": 61039,
+              "watchdogPID": 61052,
+              "observed": true
+            }
+          ],
+          "intervals": [
+            {
+              "beganNanoseconds": 1844175794715000,
+              "endedNanoseconds": 1844176995099000
+            }
+          ],
+          "finishedNanoseconds": 1844176995883000
+        }
+      }
+    },
+    "verification": {
+      "passed": true,
+      "checks": {
+        "nativeCompleted": true,
+        "allChildrenReaped": true,
+        "cleanup": true,
+        "noVisibleWindows": true,
+        "identityChecks": true,
+        "rendererCredentials": true,
+        "displayCredentials": true,
+        "launcherIdentityBinding": true,
+        "stableIdentities": true,
+        "fixture": true,
+        "pixelPresentation": true,
+        "boundedQueue": true,
+        "rendererActorBound": true,
+        "rendererSignals": true,
+        "displayActorBound": true,
+        "displaySignals": true,
+        "pageProgressDuringDisplayPause": true,
+        "pageProgressAfterRendererActor": true,
+        "freshPixelsAfterResume": true,
+        "realBackpressure": true,
+        "progressAfterDisplayExit": true
+      },
+      "framesDuringDisplayPause": 11,
+      "measuredPIDs": [
+        61038,
+        61039,
+        61040,
+        61041,
+        61043,
+        61045,
+        61052
+      ],
+      "ready": {
+        "host": {
+          "effectiveGID": 4294967294,
+          "effectiveUID": 4294967294,
+          "path": "/private/tmp/agentfreebrowser-renderer.RS2B7a/ChannelIsolatedRendererProbe.app/Contents/MacOS/ChannelIsolatedRendererProbe",
+          "pid": 61038,
+          "realGID": 4294967294,
+          "realUID": 4294967294,
+          "savedGID": 4294967294,
+          "savedUID": 4294967294,
+          "startedMicroseconds": 10706,
+          "startedSeconds": 1793092602
+        },
+        "readyNanoseconds": 1844175658863000,
+        "sample": {
+          "nonce": "70b5e5fbdd0b7253",
+          "ticks": 0
+        },
+        "services": {
+          "content": {
+            "effectiveGID": 4294967294,
+            "effectiveUID": 4294967294,
+            "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+            "pid": 61045,
+            "realGID": 4294967294,
+            "realUID": 4294967294,
+            "savedGID": 4294967294,
+            "savedUID": 4294967294,
+            "startedMicroseconds": 822010,
+            "startedSeconds": 1793092602
+          },
+          "gpu": {
+            "effectiveGID": 4294967294,
+            "effectiveUID": 4294967294,
+            "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.GPU.xpc/Contents/MacOS/com.apple.WebKit.GPU",
+            "pid": 61041,
+            "realGID": 4294967294,
+            "realUID": 4294967294,
+            "savedGID": 4294967294,
+            "savedUID": 4294967294,
+            "startedMicroseconds": 352459,
+            "startedSeconds": 1793092602
+          },
+          "network": {
+            "effectiveGID": 4294967294,
+            "effectiveUID": 4294967294,
+            "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking",
+            "pid": 61043,
+            "realGID": 4294967294,
+            "realUID": 4294967294,
+            "savedGID": 4294967294,
+            "savedUID": 4294967294,
+            "startedMicroseconds": 374321,
+            "startedSeconds": 1793092602
+          }
+        }
+      },
+      "displayReady": {
+        "host": {
+          "effectiveGID": 20,
+          "effectiveUID": 501,
+          "path": "/private/tmp/agentfreebrowser-renderer.RS2B7a/ChannelIsolatedDisplayProbe.app/Contents/MacOS/ChannelIsolatedDisplayProbe",
+          "pid": 61039,
+          "realGID": 20,
+          "realUID": 501,
+          "savedGID": 20,
+          "savedUID": 501,
+          "startedMicroseconds": 11861,
+          "startedSeconds": 1793092602
+        },
+        "rootRun": false
+      },
+      "renderer": {
+        "acceptedCommands": 1,
+        "channelClosed": true,
+        "completed": true,
+        "frames": 98,
+        "host": {
+          "effectiveGID": 4294967294,
+          "effectiveUID": 4294967294,
+          "path": "/private/tmp/agentfreebrowser-renderer.RS2B7a/ChannelIsolatedRendererProbe.app/Contents/MacOS/ChannelIsolatedRendererProbe",
+          "pid": 61038,
+          "realGID": 4294967294,
+          "realUID": 4294967294,
+          "savedGID": 4294967294,
+          "savedUID": 4294967294,
+          "startedMicroseconds": 10706,
+          "startedSeconds": 1793092602
+        },
+        "peakBufferedBytes": 1726052,
+        "refusedCommands": 0,
+        "replacedFrames": 11,
+        "rolePIDs": {
+          "content": 61045,
+          "gpu": 61041,
+          "network": 61043
+        },
+        "rootRun": false,
+        "serviceIdentitiesStable": true,
+        "services": {
+          "content": {
+            "effectiveGID": 4294967294,
+            "effectiveUID": 4294967294,
+            "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+            "pid": 61045,
+            "realGID": 4294967294,
+            "realUID": 4294967294,
+            "savedGID": 4294967294,
+            "savedUID": 4294967294,
+            "startedMicroseconds": 822010,
+            "startedSeconds": 1793092602
+          },
+          "gpu": {
+            "effectiveGID": 4294967294,
+            "effectiveUID": 4294967294,
+            "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.GPU.xpc/Contents/MacOS/com.apple.WebKit.GPU",
+            "pid": 61041,
+            "realGID": 4294967294,
+            "realUID": 4294967294,
+            "savedGID": 4294967294,
+            "savedUID": 4294967294,
+            "startedMicroseconds": 352459,
+            "startedSeconds": 1793092602
+          },
+          "network": {
+            "effectiveGID": 4294967294,
+            "effectiveUID": 4294967294,
+            "path": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking",
+            "pid": 61043,
+            "realGID": 4294967294,
+            "realUID": 4294967294,
+            "savedGID": 4294967294,
+            "savedUID": 4294967294,
+            "startedMicroseconds": 374321,
+            "startedSeconds": 1793092602
+          }
+        },
+        "visibleWindows": 0,
+        "wouldBlock": 254
+      },
+      "display": {
+        "completed": true,
+        "presented": 61,
+        "rootRun": false,
+        "staleFrames": 1,
+        "visibleWindows": 0
+      },
+      "launcher": {
+        "passed": true,
+        "cleanupVerified": true,
+        "rendererReaped": true,
+        "displayReaped": true,
+        "watchdogReaped": true,
+        "watchdogNormalExit": true,
+        "displayStartedAfterRendererReady": true,
+        "outputLimitExceeded": false,
+        "deadlineReached": false,
+        "outputFailed": false,
+        "bytesRelayed": 38580,
+        "rootRun": true
+      },
+      "identities": {
+        "initialKernelChecks": true,
+        "rendererPostExec": true,
+        "displayPostExec": true,
+        "identityViolation": false,
+        "rootRun": true
+      }
+    },
+    "staging": {
+      "helperExitCode": 0,
+      "temporaryDirectory": "/private/tmp/agentfreebrowser-renderer.RS2B7a",
+      "stagingRemoved": true
+    },
+    "remainingMeasuredPIDs": [],
+    "stagingRemoved": true,
+    "fixtureReceipts": [
+      {
+        "route": "fixture",
+        "receivedNanoseconds": 1844175464047000
+      }
+    ],
+    "ordinaryUIDAfter": 501
+  },
+  "pageProgressSummary": {
+    "duringDisplayPause": {
+      "count": 11,
+      "firstTicks": 6,
+      "lastTicks": 7
+    },
+    "afterDisplayExit": {
+      "count": 25,
+      "firstTicks": 13,
+      "lastTicks": 16
+    }
+  },
+  "independentCleanup": {
+    "remainingMeasuredPIDs": [],
+    "measuredProcessCount": 7,
+    "stagingRemoved": true
+  },
+  "frozenBinariesMatch": {
+    "DeviceKeyboardExperiment": true,
+    "NativeProbe": true,
+    "RendererAXProbe": true,
+    "KeyboardObservationProbe": true,
+    "WindowGeometryProbe": true
+  },
+  "reviewedInputsStillMatch": true,
+  "reviewedCommandSHA256": "cf036154143bcef942203c0cf890c034f4f5cebb38f98439cbaec0fd359c6494",
+  "reviewedPlanSHA256": "9dbe42e583dc813b63f6ea04c46fdf98b31c94bb5ae5549c11edeaedf34e563c",
+  "administratorStdoutSHA256": "6416aed504fdcb2ab37f1a7d7a3f48d76568a0ba2a80f35246a1ad580ffbd5f6",
+  "environment": {
+    "macOS": "26.6",
+    "build": "25G72"
+  },
+  "limits": [
+    "Inherited GUI and audit capabilities, shared nobody state, and OS-managed caches remain unconfined.",
+    "The native alarms do not bound authentication or the whole staging command.",
+    "SIGKILL of the outer staging shell can leave its fixed staging files.",
+    "Auxiliary WebKit cleanup after interrupted runs remains incomplete.",
+    "Fault controls begin after watchdog acknowledgement. Earlier startup interruption is not fully measured.",
+    "No physical input, visible display, capture, or general website acceptance claim.",
+    "The two diagnostic windows remain hidden and accept only the fixed local fixture.",
+    "No physical input is routed across the private channel. No human browser-use control runs.",
+    "This measures signal permission, page progress, and private image transfer. It does not measure end-to-end agent task prevention.",
+    "The regular physical-keyboard browser does not integrate this separate architecture."
+  ],
+  "proseLint": {
+    "maximumPer100Words": 2.5,
+    "audit": 0.14,
+    "findings": 0.41,
+    "handoffAddition": 1.55,
+    "implementationAddition": 1.18,
+    "prdReplacement": 0.94,
+    "readmeAddition": 0.0,
+    "commit": 0.0,
+    "finalReply": 1.47
+  }
+}

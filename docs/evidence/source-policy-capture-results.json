@@ -1,0 +1,274 @@
+{
+  "controls": [
+    {
+      "route": "display-capture",
+      "repetition": 0,
+      "observation": "marker-recovered",
+      "pid": 48489,
+      "capture": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/source-policy-live/capture-routes/display-capture-0-control.png",
+        "pid": 48489,
+        "pixels": [
+          2000,
+          1544
+        ],
+        "status": "captured",
+        "windowID": 96535,
+        "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+      },
+      "imageSHA256": "bb1a4fb5b6d6b4f19c3fa2f41e9e22cb07ebc4f2f7a25f1a2ca34410614ab18d",
+      "markerRecovered": true,
+      "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+      "cleanupVerified": true
+    },
+    {
+      "route": "display-capture",
+      "repetition": 1,
+      "observation": "marker-recovered",
+      "pid": 48510,
+      "capture": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/source-policy-live/capture-routes/display-capture-1-control.png",
+        "pid": 48510,
+        "pixels": [
+          2000,
+          1544
+        ],
+        "status": "captured",
+        "windowID": 96546,
+        "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+      },
+      "imageSHA256": "4b55ced304bcecad05d2aec5df937619d7257de907c289bb4f2d8dff1761bcbf",
+      "markerRecovered": true,
+      "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+      "cleanupVerified": true
+    },
+    {
+      "route": "display-capture",
+      "repetition": 2,
+      "observation": "marker-recovered",
+      "pid": 48562,
+      "capture": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/source-policy-live/capture-routes/display-capture-2-control.png",
+        "pid": 48562,
+        "pixels": [
+          2000,
+          1544
+        ],
+        "status": "captured",
+        "windowID": 96557,
+        "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+      },
+      "imageSHA256": "d344a816bdd2efef2852e97a882c6fd634cfb0c0de009cbb86e1785aea81fa4d",
+      "markerRecovered": true,
+      "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+      "cleanupVerified": true
+    },
+    {
+      "route": "system-capture",
+      "repetition": 0,
+      "observation": "marker-recovered",
+      "pid": 48591,
+      "capture": {
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/source-policy-live/capture-routes/system-capture-0-control.png",
+        "pid": 48591,
+        "status": "captured",
+        "windowID": 96568,
+        "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+      },
+      "imageSHA256": "72d4dd0fe49db227338924d132d7501751c41eff7f4a0d02e569981a08d8e30e",
+      "markerRecovered": true,
+      "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+      "cleanupVerified": true
+    },
+    {
+      "route": "system-capture",
+      "repetition": 1,
+      "observation": "marker-recovered",
+      "pid": 48614,
+      "capture": {
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/source-policy-live/capture-routes/system-capture-1-control.png",
+        "pid": 48614,
+        "status": "captured",
+        "windowID": 96579,
+        "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+      },
+      "imageSHA256": "c6eadb07d86650e4ee84a832225d4f188f51a158e6100732e76f965b6d37b6d5",
+      "markerRecovered": true,
+      "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+      "cleanupVerified": true
+    },
+    {
+      "route": "system-capture",
+      "repetition": 2,
+      "observation": "marker-recovered",
+      "pid": 48644,
+      "capture": {
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/source-policy-live/capture-routes/system-capture-2-control.png",
+        "pid": 48644,
+        "status": "captured",
+        "windowID": 96590,
+        "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+      },
+      "imageSHA256": "c7729e6b663361add98af8264e924c14860df77c5f20bd723214354c165b22cc",
+      "markerRecovered": true,
+      "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+      "cleanupVerified": true
+    }
+  ],
+  "results": [
+    {
+      "pid": 43980,
+      "route": "display-capture",
+      "observation": "marker-not-recovered",
+      "capture": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/source-policy-live/capture-routes/display-capture-0-candidate.png",
+        "pid": 43980,
+        "pixels": [
+          2000,
+          1544
+        ],
+        "status": "captured",
+        "windowID": 96404,
+        "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+      },
+      "imageSHA256": "b7af63cc95e8f3f90ea885aa155ccc55fc310ec6827ed03eb5cf3bcd4d57a178",
+      "markerRecovered": false,
+      "repetition": 0,
+      "controlWorked": true
+    },
+    {
+      "pid": 43980,
+      "route": "display-capture",
+      "observation": "marker-not-recovered",
+      "capture": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/source-policy-live/capture-routes/display-capture-1-candidate.png",
+        "pid": 43980,
+        "pixels": [
+          2000,
+          1544
+        ],
+        "status": "captured",
+        "windowID": 96404,
+        "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+      },
+      "imageSHA256": "b7af63cc95e8f3f90ea885aa155ccc55fc310ec6827ed03eb5cf3bcd4d57a178",
+      "markerRecovered": false,
+      "repetition": 1,
+      "controlWorked": true
+    },
+    {
+      "pid": 43980,
+      "route": "display-capture",
+      "observation": "marker-not-recovered",
+      "capture": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/source-policy-live/capture-routes/display-capture-2-candidate.png",
+        "pid": 43980,
+        "pixels": [
+          2000,
+          1544
+        ],
+        "status": "captured",
+        "windowID": 96404,
+        "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+      },
+      "imageSHA256": "b7af63cc95e8f3f90ea885aa155ccc55fc310ec6827ed03eb5cf3bcd4d57a178",
+      "markerRecovered": false,
+      "repetition": 2,
+      "controlWorked": true
+    },
+    {
+      "pid": 43980,
+      "route": "system-capture",
+      "observation": "inconclusive",
+      "capture": {
+        "error": "System capture failed",
+        "status": "inconclusive",
+        "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+      },
+      "error": "Capture did not produce a target image",
+      "repetition": 0,
+      "controlWorked": true
+    },
+    {
+      "pid": 43980,
+      "route": "system-capture",
+      "observation": "inconclusive",
+      "capture": {
+        "error": "System capture failed",
+        "status": "inconclusive",
+        "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+      },
+      "error": "Capture did not produce a target image",
+      "repetition": 1,
+      "controlWorked": true
+    },
+    {
+      "pid": 43980,
+      "route": "system-capture",
+      "observation": "inconclusive",
+      "capture": {
+        "error": "System capture failed",
+        "status": "inconclusive",
+        "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+      },
+      "error": "Capture did not produce a target image",
+      "repetition": 2,
+      "controlWorked": true
+    }
+  ],
+  "permissions": {
+    "accessibility": true,
+    "desktopInputSafety": {
+      "available": true,
+      "blockingMouseHookPIDs": []
+    },
+    "pid": 48486,
+    "postEvents": true,
+    "screenCapture": true,
+    "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+  },
+  "sessionPID": 43980,
+  "binarySHA256": "43b1a9833d6c55b1e254b848f9bd09c202da46ba0f8d8833084df559e6a8a9d1",
+  "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1",
+  "operatorDeclaresPhysicalCompletion": true,
+  "routeContract": "Read-only target-window captures. Display filter includes only that window. No input, no unfiltered display capture.",
+  "newSubmissions": [],
+  "firstDisplayImageDirectInspection": "Blank black image, no page content recovered",
+  "displayCandidateImagesByteIdentical": true
+}

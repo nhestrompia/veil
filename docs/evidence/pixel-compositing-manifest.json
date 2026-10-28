@@ -1,0 +1,19 @@
+{
+  "apps": {
+    "PixelCompositingExperiment": {
+      "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/dist/PixelCompositingExperiment.app",
+      "executableSHA256": "06a2674fcf0d0621900f99f8feddf211fc390083e1d7f9a5dbc74a6335cb8cdf"
+    },
+    "PixelH264ProtectedExperiment": {
+      "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/dist/PixelH264ProtectedExperiment.app",
+      "executableSHA256": "c7c4e8464b296343dc2486c1edf95c75eb5da45f377f15f97cd04e651a5dc40c"
+    }
+  },
+  "purpose": "Isolated root-versus-source clipping comparison. Internal calibration only. No new permission request.",
+  "sources": {
+    "Sources/Rendering/PixelKeyboardApp.swift": "a4653ede9f1ecf0e635fb1361a5c52ed947b2c77cbaa9812bac8748aa3dc922a",
+    "Sources/Rendering/RenderApp.swift": "d84515686ba81a1b6bcd56022af047e33f6ecdc2cbb944253e053d7e5b47498c",
+    "Sources/Rendering/H264Frames.swift": "227eee27c2c75f4ed24585143e04e8fbe6daaf5889cf8638be66866e0e4e6966",
+    "scripts/build-pixel-compositing.sh": "937c5bdcecc55ea2cf9a1f790ffa682386a26b8f703b1dce7f7b9d6fe2819a80"
+  }
+}

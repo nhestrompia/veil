@@ -1,0 +1,749 @@
+{
+  "milestone": 143,
+  "recorderUpdate": {
+    "status": "staged",
+    "installed": true,
+    "permissionRequested": false,
+    "app": "/Users/nhestrompia/.t3/projects/agentfreebrowser/dist/PreviewCompositorProbe.app",
+    "candidate": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-compositor-143/recorder-update/candidate/PreviewCompositorProbe.app",
+    "backup": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-compositor-143/recorder-update/original/PreviewCompositorProbe.app",
+    "oldSHA256": "78a3fba76544384970a008b1e32b7da9ca13a1178f5acf05861500c09a236642",
+    "newSHA256": "2ce201a2876e295fe6695fbda6506b72e1d9ac706f6051226377f5a8fa3f4a2b",
+    "sourceHashes": {
+      "Sources/Diagnostics/RendererProcessScope.swift": "4e7f0bd22ced093ec33c598a9d255162bb03b2989d62b0792338f5ccc2046e95",
+      "Sources/Diagnostics/PreviewAXScope.swift": "85e30c933226e50f386a1de62565c71884a1d0f55ae01b7ae0e5160f36ede40d",
+      "Sources/Diagnostics/PreviewCompositorPixels.swift": "f3bf7fbb071de62f9d18565b252585eadcf52d814c7092886a0c02005275510a",
+      "Sources/Diagnostics/PreviewCompositorBackdrop.swift": "e6824527560e42a458d616c144b084ac43aaa6a03d8c570e8917829724ff9c91",
+      ".build/diagnostics/PreviewCompositorPanelProbe.swift": "5e6f0f63d310947df291ca578e4e00cfe64ae1e5d3e65d566c1830da1404f070",
+      "tools/build_preview_compositor_update.py": "bbe833493543beb3c29e7ee1e5e16af830667ea223effffa7af26e38ca8de7b2"
+    },
+    "scopeChanged": false,
+    "targetsChanged": false,
+    "cropChanged": false,
+    "durationChanged": false,
+    "change": "Use a nonactivating panel one level below the target, with its exact level checked by the coverage guard.",
+    "guardChanges": "Only the expected level of the helper's own backdrop changes from zero to minus one. Other ownership, geometry, foreground, opacity, overlap, and cleanup checks remain intact.",
+    "installedUnixSeconds": 1793191573.472814,
+    "userApproved": true
+  },
+  "effectivePreflight": {
+    "audioCaptured": false,
+    "hooksInstalled": false,
+    "inputPosted": false,
+    "permissionRequested": false,
+    "probePID": 81374,
+    "screenRecordingGranted": true,
+    "status": "preflight",
+    "cleanupVerified": true,
+    "probeSHA256": "2ce201a2876e295fe6695fbda6506b72e1d9ac706f6051226377f5a8fa3f4a2b"
+  },
+  "layoutTrials": {
+    "panel-fullscreen": {
+      "inputPosted": false,
+      "candidateLaunched": false,
+      "maximumWaitSeconds": 60,
+      "referencePID": 77877,
+      "panel-fullscreen": {
+        "backdropClosed": true,
+        "backdropIndex": 4,
+        "backdropVisible": true,
+        "backdropWindowNumber": 114397,
+        "captureAttempted": false,
+        "error": "The research window ordering changed",
+        "foregroundPreserved": true,
+        "inputPosted": false,
+        "ownWindows": [
+          {
+            "kCGWindowAlpha": 1,
+            "kCGWindowBounds": {
+              "Height": 949,
+              "Width": 1512,
+              "X": 0,
+              "Y": 33
+            },
+            "kCGWindowLayer": 0,
+            "kCGWindowNumber": 114397
+          }
+        ],
+        "passed": false,
+        "permissionRequested": false,
+        "targetIndex": 7
+      },
+      "referenceCleanupVerified": true,
+      "fixtureStopped": true
+    },
+    "panel-back": {
+      "inputPosted": false,
+      "candidateLaunched": false,
+      "maximumWaitSeconds": 60,
+      "referencePID": 78061,
+      "panel-back": {
+        "backdropClosed": true,
+        "backdropIndex": 4,
+        "backdropVisible": true,
+        "backdropWindowNumber": 114482,
+        "captureAttempted": false,
+        "error": "The research window ordering changed",
+        "foregroundPreserved": true,
+        "inputPosted": false,
+        "intersectingBeforeBackdrop": [],
+        "ownWindows": [
+          {
+            "kCGWindowAlpha": 1,
+            "kCGWindowBounds": {
+              "Height": 949,
+              "Width": 1512,
+              "X": 0,
+              "Y": 33
+            },
+            "kCGWindowLayer": 0,
+            "kCGWindowNumber": 114482
+          }
+        ],
+        "passed": false,
+        "permissionRequested": false,
+        "targetIndex": 7
+      },
+      "referenceCleanupVerified": true,
+      "fixtureStopped": true
+    },
+    "panel-below": {
+      "inputPosted": false,
+      "candidateLaunched": false,
+      "maximumWaitSeconds": 60,
+      "referencePID": 78264,
+      "panel-below": {
+        "backdropClosed": true,
+        "backdropIndex": 7,
+        "backdropVisible": true,
+        "backdropWindowNumber": 114568,
+        "captureAttempted": false,
+        "diagnosticExpectedBackdropLayer": -1,
+        "foregroundPreserved": true,
+        "inputPosted": false,
+        "intersectingBeforeBackdrop": [
+          {
+            "kCGWindowAlpha": 1,
+            "kCGWindowBounds": {
+              "Height": 949,
+              "Width": 1512,
+              "X": 0,
+              "Y": 33
+            },
+            "kCGWindowLayer": 0,
+            "kCGWindowNumber": 114508,
+            "kCGWindowOwnerPID": 78264
+          }
+        ],
+        "ownWindows": [
+          {
+            "kCGWindowAlpha": 1,
+            "kCGWindowBounds": {
+              "Height": 949,
+              "Width": 1512,
+              "X": 0,
+              "Y": 33
+            },
+            "kCGWindowLayer": -1,
+            "kCGWindowNumber": 114568
+          }
+        ],
+        "passed": true,
+        "permissionRequested": false,
+        "targetIndex": 6
+      },
+      "referenceCleanupVerified": true,
+      "fixtureStopped": true
+    },
+    "layout-timing": {
+      "inputPosted": false,
+      "candidateLaunched": false,
+      "maximumWaitSeconds": 60,
+      "referencePID": 82276,
+      "panel-below": {
+        "backdropClosed": true,
+        "backdropIndex": 8,
+        "backdropVisible": true,
+        "backdropWindowNumber": 114915,
+        "captureAttempted": false,
+        "diagnosticExpectedBackdropLayer": -1,
+        "error": "Another window intersects the research region",
+        "foregroundPreserved": true,
+        "inputPosted": false,
+        "intersectingBeforeBackdrop": [
+          {
+            "kCGWindowAlpha": 1,
+            "kCGWindowBounds": {
+              "Height": 380,
+              "Width": 260,
+              "X": 626,
+              "Y": 173
+            },
+            "kCGWindowLayer": 8,
+            "kCGWindowNumber": 114719,
+            "kCGWindowOwnerPID": 4251
+          },
+          {
+            "kCGWindowAlpha": 1,
+            "kCGWindowBounds": {
+              "Height": 949,
+              "Width": 1512,
+              "X": 0,
+              "Y": 33
+            },
+            "kCGWindowLayer": 0,
+            "kCGWindowNumber": 114854,
+            "kCGWindowOwnerPID": 82276
+          }
+        ],
+        "ownWindows": [
+          {
+            "kCGWindowAlpha": 1,
+            "kCGWindowBounds": {
+              "Height": 949,
+              "Width": 1512,
+              "X": 0,
+              "Y": 33
+            },
+            "kCGWindowLayer": -1,
+            "kCGWindowNumber": 114915
+          }
+        ],
+        "passed": false,
+        "permissionRequested": false,
+        "targetIndex": 7,
+        "timeline": [
+          {
+            "backdropIndex": -1,
+            "foregroundPreserved": true,
+            "intersections": [
+              {
+                "kCGWindowAlpha": 1,
+                "kCGWindowBounds": {
+                  "Height": 380,
+                  "Width": 260,
+                  "X": 626,
+                  "Y": 173
+                },
+                "kCGWindowLayer": 8,
+                "kCGWindowNumber": 114719,
+                "kCGWindowOwnerPID": 4251
+              },
+              {
+                "kCGWindowAlpha": 1,
+                "kCGWindowBounds": {
+                  "Height": 949,
+                  "Width": 1512,
+                  "X": 0,
+                  "Y": 33
+                },
+                "kCGWindowLayer": 0,
+                "kCGWindowNumber": 114854,
+                "kCGWindowOwnerPID": 82276
+              }
+            ],
+            "tick": 0
+          },
+          {
+            "backdropIndex": 8,
+            "foregroundPreserved": true,
+            "intersections": [
+              {
+                "kCGWindowAlpha": 1,
+                "kCGWindowBounds": {
+                  "Height": 380,
+                  "Width": 260,
+                  "X": 626,
+                  "Y": 173
+                },
+                "kCGWindowLayer": 8,
+                "kCGWindowNumber": 114719,
+                "kCGWindowOwnerPID": 4251
+              },
+              {
+                "kCGWindowAlpha": 1,
+                "kCGWindowBounds": {
+                  "Height": 949,
+                  "Width": 1512,
+                  "X": 0,
+                  "Y": 33
+                },
+                "kCGWindowLayer": 0,
+                "kCGWindowNumber": 114854,
+                "kCGWindowOwnerPID": 82276
+              }
+            ],
+            "tick": 1
+          },
+          {
+            "backdropIndex": 8,
+            "foregroundPreserved": true,
+            "intersections": [
+              {
+                "kCGWindowAlpha": 1,
+                "kCGWindowBounds": {
+                  "Height": 380,
+                  "Width": 260,
+                  "X": 626,
+                  "Y": 173
+                },
+                "kCGWindowLayer": 8,
+                "kCGWindowNumber": 114719,
+                "kCGWindowOwnerPID": 4251
+              },
+              {
+                "kCGWindowAlpha": 1,
+                "kCGWindowBounds": {
+                  "Height": 949,
+                  "Width": 1512,
+                  "X": 0,
+                  "Y": 33
+                },
+                "kCGWindowLayer": 0,
+                "kCGWindowNumber": 114854,
+                "kCGWindowOwnerPID": 82276
+              }
+            ],
+            "tick": 2
+          },
+          {
+            "backdropIndex": 8,
+            "foregroundPreserved": true,
+            "intersections": [
+              {
+                "kCGWindowAlpha": 1,
+                "kCGWindowBounds": {
+                  "Height": 380,
+                  "Width": 260,
+                  "X": 626,
+                  "Y": 173
+                },
+                "kCGWindowLayer": 8,
+                "kCGWindowNumber": 114719,
+                "kCGWindowOwnerPID": 4251
+              },
+              {
+                "kCGWindowAlpha": 1,
+                "kCGWindowBounds": {
+                  "Height": 949,
+                  "Width": 1512,
+                  "X": 0,
+                  "Y": 33
+                },
+                "kCGWindowLayer": 0,
+                "kCGWindowNumber": 114854,
+                "kCGWindowOwnerPID": 82276
+              }
+            ],
+            "tick": 3
+          },
+          {
+            "backdropIndex": 8,
+            "foregroundPreserved": true,
+            "intersections": [
+              {
+                "kCGWindowAlpha": 1,
+                "kCGWindowBounds": {
+                  "Height": 380,
+                  "Width": 260,
+                  "X": 626,
+                  "Y": 173
+                },
+                "kCGWindowLayer": 8,
+                "kCGWindowNumber": 114719,
+                "kCGWindowOwnerPID": 4251
+              },
+              {
+                "kCGWindowAlpha": 1,
+                "kCGWindowBounds": {
+                  "Height": 949,
+                  "Width": 1512,
+                  "X": 0,
+                  "Y": 33
+                },
+                "kCGWindowLayer": 0,
+                "kCGWindowNumber": 114854,
+                "kCGWindowOwnerPID": 82276
+              }
+            ],
+            "tick": 4
+          },
+          {
+            "backdropIndex": 8,
+            "foregroundPreserved": true,
+            "intersections": [
+              {
+                "kCGWindowAlpha": 1,
+                "kCGWindowBounds": {
+                  "Height": 380,
+                  "Width": 260,
+                  "X": 626,
+                  "Y": 173
+                },
+                "kCGWindowLayer": 8,
+                "kCGWindowNumber": 114719,
+                "kCGWindowOwnerPID": 4251
+              },
+              {
+                "kCGWindowAlpha": 1,
+                "kCGWindowBounds": {
+                  "Height": 949,
+                  "Width": 1512,
+                  "X": 0,
+                  "Y": 33
+                },
+                "kCGWindowLayer": 0,
+                "kCGWindowNumber": 114854,
+                "kCGWindowOwnerPID": 82276
+              }
+            ],
+            "tick": 5
+          },
+          {
+            "backdropIndex": 8,
+            "foregroundPreserved": true,
+            "intersections": [
+              {
+                "kCGWindowAlpha": 1,
+                "kCGWindowBounds": {
+                  "Height": 380,
+                  "Width": 260,
+                  "X": 626,
+                  "Y": 173
+                },
+                "kCGWindowLayer": 8,
+                "kCGWindowNumber": 114719,
+                "kCGWindowOwnerPID": 4251
+              },
+              {
+                "kCGWindowAlpha": 1,
+                "kCGWindowBounds": {
+                  "Height": 949,
+                  "Width": 1512,
+                  "X": 0,
+                  "Y": 33
+                },
+                "kCGWindowLayer": 0,
+                "kCGWindowNumber": 114854,
+                "kCGWindowOwnerPID": 82276
+              }
+            ],
+            "tick": 6
+          },
+          {
+            "backdropIndex": 8,
+            "foregroundPreserved": true,
+            "intersections": [
+              {
+                "kCGWindowAlpha": 1,
+                "kCGWindowBounds": {
+                  "Height": 380,
+                  "Width": 260,
+                  "X": 626,
+                  "Y": 173
+                },
+                "kCGWindowLayer": 8,
+                "kCGWindowNumber": 114719,
+                "kCGWindowOwnerPID": 4251
+              },
+              {
+                "kCGWindowAlpha": 1,
+                "kCGWindowBounds": {
+                  "Height": 949,
+                  "Width": 1512,
+                  "X": 0,
+                  "Y": 33
+                },
+                "kCGWindowLayer": 0,
+                "kCGWindowNumber": 114854,
+                "kCGWindowOwnerPID": 82276
+              }
+            ],
+            "tick": 7
+          },
+          {
+            "backdropIndex": 8,
+            "foregroundPreserved": true,
+            "intersections": [
+              {
+                "kCGWindowAlpha": 1,
+                "kCGWindowBounds": {
+                  "Height": 380,
+                  "Width": 260,
+                  "X": 626,
+                  "Y": 173
+                },
+                "kCGWindowLayer": 8,
+                "kCGWindowNumber": 114719,
+                "kCGWindowOwnerPID": 4251
+              },
+              {
+                "kCGWindowAlpha": 1,
+                "kCGWindowBounds": {
+                  "Height": 949,
+                  "Width": 1512,
+                  "X": 0,
+                  "Y": 33
+                },
+                "kCGWindowLayer": 0,
+                "kCGWindowNumber": 114854,
+                "kCGWindowOwnerPID": 82276
+              }
+            ],
+            "tick": 8
+          },
+          {
+            "backdropIndex": 8,
+            "foregroundPreserved": true,
+            "intersections": [
+              {
+                "kCGWindowAlpha": 1,
+                "kCGWindowBounds": {
+                  "Height": 380,
+                  "Width": 260,
+                  "X": 626,
+                  "Y": 173
+                },
+                "kCGWindowLayer": 8,
+                "kCGWindowNumber": 114719,
+                "kCGWindowOwnerPID": 4251
+              },
+              {
+                "kCGWindowAlpha": 1,
+                "kCGWindowBounds": {
+                  "Height": 949,
+                  "Width": 1512,
+                  "X": 0,
+                  "Y": 33
+                },
+                "kCGWindowLayer": 0,
+                "kCGWindowNumber": 114854,
+                "kCGWindowOwnerPID": 82276
+              }
+            ],
+            "tick": 9
+          },
+          {
+            "backdropIndex": 8,
+            "foregroundPreserved": true,
+            "intersections": [
+              {
+                "kCGWindowAlpha": 1,
+                "kCGWindowBounds": {
+                  "Height": 380,
+                  "Width": 260,
+                  "X": 626,
+                  "Y": 173
+                },
+                "kCGWindowLayer": 8,
+                "kCGWindowNumber": 114719,
+                "kCGWindowOwnerPID": 4251
+              },
+              {
+                "kCGWindowAlpha": 1,
+                "kCGWindowBounds": {
+                  "Height": 949,
+                  "Width": 1512,
+                  "X": 0,
+                  "Y": 33
+                },
+                "kCGWindowLayer": 0,
+                "kCGWindowNumber": 114854,
+                "kCGWindowOwnerPID": 82276
+              }
+            ],
+            "tick": 10
+          }
+        ]
+      },
+      "referenceCleanupVerified": true,
+      "fixtureStopped": true
+    }
+  },
+  "calibrations": {
+    "fullscreen-calibration": {
+      "status": "inconclusive",
+      "inputPosted": false,
+      "candidateLaunched": false,
+      "coverageOnly": false,
+      "waitForSetup": true,
+      "permissions": {
+        "audioCaptured": false,
+        "hooksInstalled": false,
+        "inputPosted": false,
+        "permissionRequested": false,
+        "probePID": 81429,
+        "screenRecordingGranted": true,
+        "status": "preflight",
+        "cleanupVerified": true,
+        "probeSHA256": "2ce201a2876e295fe6695fbda6506b72e1d9ac706f6051226377f5a8fa3f4a2b"
+      },
+      "referencePID": 81433,
+      "reference": {
+        "audioCaptured": false,
+        "backdropClosed": true,
+        "coverageChecksAreAtomic": false,
+        "crop": [
+          24,
+          113,
+          1464,
+          789
+        ],
+        "error": "The research target lost foreground focus",
+        "hooksInstalled": false,
+        "images": [],
+        "inputPosted": false,
+        "permissionRequested": false,
+        "probePID": 81499,
+        "status": "refused",
+        "streamStopped": true,
+        "targetPID": 81433,
+        "targetSHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+        "windowID": 114657,
+        "cleanupVerified": true,
+        "probeSHA256": "2ce201a2876e295fe6695fbda6506b72e1d9ac706f6051226377f5a8fa3f4a2b",
+        "markerRecovered": false,
+        "markerChecks": [],
+        "stageMarkers": [
+          false,
+          false,
+          false
+        ]
+      },
+      "submissions": [],
+      "reason": "Readable control failed; no candidate ran",
+      "referenceCleanupVerified": true,
+      "fixtureStopped": true
+    },
+    "fullscreen-focus-calibration": {
+      "status": "inconclusive",
+      "inputPosted": false,
+      "candidateLaunched": false,
+      "coverageOnly": false,
+      "waitForSetup": true,
+      "permissions": {
+        "audioCaptured": false,
+        "hooksInstalled": false,
+        "inputPosted": false,
+        "permissionRequested": false,
+        "probePID": 82088,
+        "screenRecordingGranted": true,
+        "status": "preflight",
+        "cleanupVerified": true,
+        "probeSHA256": "2ce201a2876e295fe6695fbda6506b72e1d9ac706f6051226377f5a8fa3f4a2b"
+      },
+      "referencePID": 82092,
+      "reference": {
+        "audioCaptured": false,
+        "backdropClosed": true,
+        "error": "Another window intersects the research region",
+        "hooksInstalled": false,
+        "inputPosted": false,
+        "permissionRequested": false,
+        "probePID": 82143,
+        "status": "refused",
+        "cleanupVerified": true,
+        "probeSHA256": "2ce201a2876e295fe6695fbda6506b72e1d9ac706f6051226377f5a8fa3f4a2b",
+        "markerRecovered": false,
+        "markerChecks": [],
+        "stageMarkers": [
+          false,
+          false,
+          false
+        ]
+      },
+      "submissions": [],
+      "reason": "Readable control failed; no candidate ran",
+      "referenceCleanupVerified": true,
+      "fixtureStopped": true
+    }
+  },
+  "focusTrace": {
+    "activationRequested": false,
+    "captureHelperSeen": true,
+    "events": [
+      {
+        "captureHelperSeen": false,
+        "foregroundRole": "research-target",
+        "seconds": 0.000463124830275774
+      }
+    ],
+    "inputPosted": false,
+    "permissionRequested": false,
+    "status": "observed",
+    "targetPID": 82092,
+    "uiContentRead": false
+  },
+  "overlapOwner": {
+    "pid": 4251,
+    "path": "/System/Library/CoreServices/UserNotificationCenter.app/Contents/MacOS/UserNotificationCenter",
+    "windowID": 114719,
+    "layer": 8,
+    "uiContentRead": false
+  },
+  "approvalReview": {
+    "notificationUIInspectionRejected": true,
+    "reason": "It may expose unrelated private notification content.",
+    "workaroundAttempted": false,
+    "userAway": true
+  },
+  "currentPhysicalSessionExists": false,
+  "candidateLaunched": false,
+  "agentFreeEstablished": false,
+  "checks": {
+    "pythonTestsPassed": 29,
+    "swift6WarningsAsErrors": true,
+    "strictRecorderSignature": true
+  },
+  "imageManifestChecks": {
+    "PreviewRendererReadProbe": {
+      "sha256": "18c7df1aba7af587ba002f52f38b4e07c6a0fd06be275493ce2d220fe4db8f8f",
+      "matchesManifest": true
+    },
+    "PreviewStreamCaptureProbe": {
+      "sha256": "c5dcf53813d87b6fecd6d2e042f96803ea947f4d13d402b02b0273c02cbcc79a",
+      "matchesManifest": true
+    },
+    "CaptureRefreshProbe": {
+      "sha256": "cbd7a3ff6772e0c80ef83bea8cfb9eaacfdf9370204517e12b66c07b1a72d4f1",
+      "matchesManifest": true
+    },
+    "CompositorRefreshProbe": {
+      "sha256": "dc8265f8cfe12d417d8e5e5c9780a9d9429ad3cebb195ba5ced933a8fd01e52c",
+      "matchesManifest": true
+    },
+    "PreviewCompositorProbe": {
+      "sha256": "2ce201a2876e295fe6695fbda6506b72e1d9ac706f6051226377f5a8fa3f4a2b",
+      "matchesManifest": true
+    },
+    "CaptureStressProbe": {
+      "sha256": "aac4422314d929fcb3f39ac8a7482ce6f35868d648f22730f03d655da0b168d7",
+      "matchesManifest": true
+    },
+    "AgentFreeBrowserPreview": {
+      "sha256": "dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70",
+      "matchesManifest": true
+    }
+  },
+  "browserSourcesUnchanged": {
+    "Sources/Browser/AXBoundary.swift": true,
+    "Sources/Browser/BrowserApp.swift": true,
+    "Sources/Browser/BrowserPolicy.swift": true,
+    "Sources/Browser/BrowserRuntimePolicy.swift": true,
+    "Sources/Browser/DeviceKeyboard.swift": true,
+    "Sources/Browser/HIDSourcePolicy.swift": true,
+    "Sources/Browser/InputSourceWindow.swift": true,
+    "Sources/Browser/RestrictedWebView.swift": true,
+    "Sources/Browser/SecureInputWindow.swift": true
+  },
+  "recordedUnixSeconds": 1793192376.602852,
+  "remainingTransientPIDs": {
+    "NativeProbe": [],
+    "InspectableControl": [],
+    "PreviewCompositorProbe": [],
+    "AgentFreeBrowserPreview": [],
+    ".build/preview-coverage-panel": [],
+    ".build/preview-coverage-timing": [],
+    ".build/preview-compositor-focus-trace": []
+  }
+}

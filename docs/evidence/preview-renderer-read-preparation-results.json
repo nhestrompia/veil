@@ -1,0 +1,165 @@
+{
+  "milestone": 136,
+  "helperSHA256": "18c7df1aba7af587ba002f52f38b4e07c6a0fd06be275493ce2d220fe4db8f8f",
+  "permissionApproved": false,
+  "permissionRequested": false,
+  "accessibilityEffective": false,
+  "previewOwnership": {
+    "accessibility": false,
+    "accessibilityQueried": false,
+    "actionsSent": false,
+    "hooksInstalled": false,
+    "hostName": "AgentFreeBrowserPreview",
+    "hostPID": 2892,
+    "hostSHA256": "dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70",
+    "inputPosted": false,
+    "permissionRequested": false,
+    "probePID": 27173,
+    "rawTextSaved": false,
+    "rendererPIDs": [
+      3422
+    ],
+    "status": "discovered",
+    "cleanupVerified": true,
+    "probeSHA256": "18c7df1aba7af587ba002f52f38b4e07c6a0fd06be275493ce2d220fe4db8f8f"
+  },
+  "referenceOwnership": [
+    {
+      "accessibility": false,
+      "accessibilityQueried": false,
+      "actionsSent": false,
+      "hooksInstalled": false,
+      "hostName": "InspectableControl",
+      "hostPID": 27183,
+      "hostSHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+      "inputPosted": false,
+      "permissionRequested": false,
+      "probePID": 27241,
+      "rawTextSaved": false,
+      "rendererPIDs": [
+        27187
+      ],
+      "status": "discovered",
+      "cleanupVerified": true,
+      "probeSHA256": "18c7df1aba7af587ba002f52f38b4e07c6a0fd06be275493ce2d220fe4db8f8f",
+      "markerRecoveredFromRenderer": false,
+      "referenceCleanupVerified": true
+    }
+  ],
+  "unrelatedTarget": {
+    "accessibility": false,
+    "accessibilityQueried": false,
+    "actionsSent": false,
+    "error": "unrelatedHost",
+    "hooksInstalled": false,
+    "inputPosted": false,
+    "permissionRequested": false,
+    "probePID": 27177,
+    "rawTextSaved": false,
+    "status": "refused",
+    "cleanupVerified": true,
+    "probeSHA256": "18c7df1aba7af587ba002f52f38b4e07c6a0fd06be275493ce2d220fe4db8f8f"
+  },
+  "noGrantRunnerStop": "New helper needs its separately approved Accessibility grant. No AX reads ran.",
+  "newPreviewSubmissions": [],
+  "inputPosted": false,
+  "actionsSent": false,
+  "frozenImagesUnchanged": {
+    "DeviceKeyboardExperiment": true,
+    "NativeProbe": true,
+    "RendererAXProbe": true,
+    "KeyboardObservationProbe": true,
+    "WindowGeometryProbe": true,
+    "PixelKeyboardExperiment": true,
+    "PixelKeyboardRoutingControl": true,
+    "CaptureRefreshProbe": true,
+    "CompositorRefreshProbe": true,
+    "CaptureStressProbe": true,
+    "AgentFreeBrowserPreview": true
+  },
+  "previewSourcesUnchanged": {
+    "Sources/Browser/AXBoundary.swift": true,
+    "Sources/Browser/BrowserApp.swift": true,
+    "Sources/Browser/BrowserPolicy.swift": true,
+    "Sources/Browser/BrowserRuntimePolicy.swift": true,
+    "Sources/Browser/DeviceKeyboard.swift": true,
+    "Sources/Browser/HIDSourcePolicy.swift": true,
+    "Sources/Browser/InputSourceWindow.swift": true,
+    "Sources/Browser/RestrictedWebView.swift": true,
+    "Sources/Browser/SecureInputWindow.swift": true
+  },
+  "swiftPolicyChecks": 17,
+  "pythonTestsPassed": 7,
+  "signatureVerified": true,
+  "pythonCompilation": true,
+  "inspectorMetadata": {
+    "attachmentAttempted": false,
+    "browserQueried": false,
+    "classes": {
+      "_WKInspectorConfiguration": {
+        "available": true,
+        "methods": {
+          "init": {
+            "available": true,
+            "typeEncoding": "@16@0:8"
+          }
+        }
+      },
+      "_WKInspectorDebuggableInfo": {
+        "available": true,
+        "methods": {
+          "init": {
+            "available": true,
+            "typeEncoding": "@16@0:8"
+          }
+        }
+      },
+      "_WKRemoteWebInspectorViewController": {
+        "available": true,
+        "methods": {
+          "initWithConfiguration:": {
+            "available": true,
+            "typeEncoding": "@24@0:8@16"
+          },
+          "loadForDebuggable:backendCommandsURL:": {
+            "available": true,
+            "typeEncoding": "v32@0:8@16@24"
+          },
+          "sendMessageToFrontend:": {
+            "available": true,
+            "typeEncoding": "v24@0:8@16"
+          },
+          "setDelegate:": {
+            "available": true,
+            "typeEncoding": "v24@0:8@16"
+          }
+        }
+      },
+      "WKWebView": {
+        "available": true,
+        "methods": {
+          "isInspectable": {
+            "available": true,
+            "typeEncoding": "B16@0:8"
+          },
+          "setInspectable:": {
+            "available": true,
+            "typeEncoding": "v20@0:8B16"
+          }
+        }
+      }
+    },
+    "inputPosted": false,
+    "inspectorInstantiated": false,
+    "permissionRequested": false,
+    "relayContacted": false,
+    "status": "metadata-only",
+    "system": "Version 26.6 (Build 25G72)"
+  },
+  "preparationOnly": true,
+  "inspectorAttachmentAttempted": false,
+  "earlierCandidateNote": "A request-mode compile failure left the earlier helper image in place. The unapproved pin and app were archived. The corrected final image passed compilation and repeated discovery checks. No permission request occurred.",
+  "rawDiscovery": "artifacts/preview-renderer-136/final-request-capable-discovery/results.json",
+  "rawNoGrantGate": "artifacts/preview-renderer-136/final-permission-gate/results.json",
+  "rendererAXQueryRan": false
+}

@@ -1,0 +1,19 @@
+{
+  "direct": {
+    "focusRequest": true,
+    "hasEditor": true,
+    "mode": "direct",
+    "noDeviceReader": true,
+    "submittedActions": 1,
+    "windowIsKey": true
+  },
+  "queued": {
+    "focusRequest": true,
+    "hasEditor": true,
+    "mode": "queued",
+    "noDeviceReader": true,
+    "submittedActions": 1,
+    "windowIsKey": true
+  },
+  "scope": "Isolated native field. No device reader. These results do not establish physical browser visibility."
+}

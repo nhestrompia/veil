@@ -1,0 +1,105 @@
+{
+  "playwright": "1.64.0",
+  "binaryHashes": {
+    "AgentFreeBrowser": "a374398c5a302bb88d27895eb62a202213ea5a8feb32f1b005ead92b7c8f06ee",
+    "InspectableControl": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+    "DeviceKeyboardExperiment": "61101718609f4c45d41427e1ea7e23862db0d4817f7979c727783c50031b0430"
+  },
+  "results": [
+    {
+      "route": "playwright-cdp",
+      "target": "isolated-chrome-control",
+      "repetition": 0,
+      "version": "156.0.8078.47",
+      "disclosure": true,
+      "verdict": "bypass"
+    },
+    {
+      "route": "playwright-cdp",
+      "target": "isolated-chrome-control",
+      "repetition": 1,
+      "version": "156.0.8078.47",
+      "disclosure": true,
+      "verdict": "bypass"
+    },
+    {
+      "route": "playwright-cdp",
+      "target": "isolated-chrome-control",
+      "repetition": 2,
+      "version": "156.0.8078.47",
+      "disclosure": true,
+      "verdict": "bypass"
+    },
+    {
+      "route": "playwright-cdp-attachment",
+      "target": "AgentFreeBrowser",
+      "verdict": "unsupported-transport",
+      "error": "browserType.connectOverCDP: connect ECONNREFUSED 127.0.0.1:58670\nCall log:\n\u001b[2m  - <ws preparing> retrieving websocket url from http://127.0.0.1:58670\u001b[22m\n",
+      "interpretation": "No CDP endpoint observed. Both WKWebView builds lack this transport. This is not an inspection-prevention result."
+    },
+    {
+      "route": "playwright-webkit-custom-launch",
+      "target": "AgentFreeBrowser",
+      "verdict": "unsupported-transport",
+      "error": "browserType.launch: Timeout 3000ms exceeded.\nCall log:\n\u001b[2m  - <launching> /Users/nhestrompia/.t3/projects/agentfreebrowser/dist/AgentFreeBrowser.app/Contents/MacOS/AgentFreeBrowser --inspector-pipe --no-startup-window\u001b[22m\n\u001b[2m  - <launched> pid=38584\u001b[22m\n\u001b[2m  - [pid=38584][out] Browser ready: pid=38584 inspectable=false\u001b[22m\n",
+      "interpretation": "A native WKWebView host is not the Playwright-patched WebKit browser executable."
+    },
+    {
+      "route": "playwright-cdp-attachment",
+      "target": "InspectableControl",
+      "verdict": "unsupported-transport",
+      "error": "browserType.connectOverCDP: connect ECONNREFUSED 127.0.0.1:58674\nCall log:\n\u001b[2m  - <ws preparing> retrieving websocket url from http://127.0.0.1:58674\u001b[22m\n",
+      "interpretation": "No CDP endpoint observed. Both WKWebView builds lack this transport. This is not an inspection-prevention result."
+    },
+    {
+      "route": "playwright-webkit-custom-launch",
+      "target": "InspectableControl",
+      "verdict": "unsupported-transport",
+      "error": "browserType.launch: Timeout 3000ms exceeded.\nCall log:\n\u001b[2m  - <launching> /Users/nhestrompia/.t3/projects/agentfreebrowser/dist/InspectableControl.app/Contents/MacOS/InspectableControl --inspector-pipe --no-startup-window\u001b[22m\n\u001b[2m  - <launched> pid=38626\u001b[22m\n\u001b[2m  - [pid=38626][out] Browser ready: pid=38626 inspectable=true\u001b[22m\n",
+      "interpretation": "A native WKWebView host is not the Playwright-patched WebKit browser executable."
+    },
+    {
+      "route": "playwright-cdp-attachment",
+      "target": "DeviceKeyboardExperiment",
+      "verdict": "unsupported-transport",
+      "error": "browserType.connectOverCDP: connect ECONNREFUSED 127.0.0.1:58678\nCall log:\n\u001b[2m  - <ws preparing> retrieving websocket url from http://127.0.0.1:58678\u001b[22m\n",
+      "interpretation": "No CDP endpoint observed. Both WKWebView builds lack this transport. This is not an inspection-prevention result."
+    },
+    {
+      "route": "playwright-webkit-custom-launch",
+      "target": "DeviceKeyboardExperiment",
+      "verdict": "unsupported-transport",
+      "error": "browserType.launch: Timeout 3000ms exceeded.\nCall log:\n\u001b[2m  - <launching> /Users/nhestrompia/.t3/projects/agentfreebrowser/dist/DeviceKeyboardExperiment.app/Contents/MacOS/DeviceKeyboardExperiment --inspector-pipe --no-startup-window\u001b[22m\n\u001b[2m  - <launched> pid=38671\u001b[22m\n\u001b[2m  - [pid=38671][out] Browser ready: pid=38671 inspectable=false\u001b[22m\n\u001b[2m  - [pid=38671][out] DEVICE_KEYBOARD permission=false; no automatic request\u001b[22m\n",
+      "interpretation": "A native WKWebView host is not the Playwright-patched WebKit browser executable."
+    }
+  ],
+  "cleanup": [
+    {
+      "target": "AgentFreeBrowser",
+      "stopped": 1,
+      "verified": true
+    },
+    {
+      "target": "InspectableControl",
+      "stopped": 1,
+      "verified": true
+    },
+    {
+      "target": "DeviceKeyboardExperiment",
+      "stopped": 1,
+      "verified": true
+    }
+  ],
+  "nativeInputTested": false,
+  "captureProtectionTested": false,
+  "inspectionComparison": "Safari Web Inspector still requires its own paired test.",
+  "researchProcessesRemaining": [],
+  "environment": {
+    "consoleLocked": true,
+    "nativeUIErrors": [
+      "cgWindowNotFound",
+      "timeoutReached"
+    ],
+    "effectiveProbeGrants": false
+  }
+}

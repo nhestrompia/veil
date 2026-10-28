@@ -1,0 +1,22 @@
+{
+  "purpose": "Physical keyboard routing and protected-pixel browser research",
+  "apps": {
+    "PixelKeyboardExperiment": {
+      "bundleIdentifier": "research.agentfreebrowser.PixelKeyboardExperiment",
+      "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/dist/PixelKeyboardExperiment.app",
+      "executableSHA256": "4b39843faec345d8484cbfdf829644e27fb306d160c1c77272e7961cc381acc8"
+    },
+    "PixelKeyboardRoutingControl": {
+      "bundleIdentifier": "research.agentfreebrowser.PixelKeyboardRoutingControl",
+      "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/dist/PixelKeyboardRoutingControl.app",
+      "executableSHA256": "aac4fd5424ceebd7d792fda99a0ade9fefc3acaef546b30a2849faabcd24f1fe"
+    }
+  },
+  "requestTarget": "PixelKeyboardExperiment",
+  "permission": "macOS Input Monitoring / ListenEvent",
+  "automaticRequestAtLaunch": false,
+  "globalInputHooksInstalled": false,
+  "deviceSeizureUsed": false,
+  "rawTypedTextSaved": false,
+  "rawKeyCodesSaved": false
+}

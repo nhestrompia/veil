@@ -1,0 +1,24 @@
+{
+  "before": {
+    "focusRequest": true,
+    "hasEditor": true,
+    "mode": "startup",
+    "noDeviceReader": true,
+    "startupAddressPreserved": false,
+    "submittedActions": 1,
+    "windowIsKey": true
+  },
+  "after": {
+    "focusRequest": true,
+    "hasEditor": true,
+    "mode": "startup",
+    "noDeviceReader": true,
+    "normalSpaceWorks": true,
+    "startupAddressPreserved": true,
+    "submittedActions": 1,
+    "windowIsKey": true
+  },
+  "operatorReportedAddressReplacement": true,
+  "physicalNavigationConfirmed": false,
+  "noDeviceReader": true
+}

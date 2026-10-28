@@ -1,0 +1,40 @@
+{
+  "milestone": 74,
+  "pythonChecksPassed": 102,
+  "quietPAL": {
+    "exitCode": 0,
+    "zeroExitWithoutOutputErrors": 1,
+    "objectRegenerated": true
+  },
+  "verbosePALSuccess": true,
+  "cacheAttribution": "unsupported; full attempts were manually interrupted before final exit",
+  "currentBuildAtRecord": {
+    "command": [
+      "/usr/bin/nice",
+      "-n",
+      "10",
+      "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/WebKit-94f9b7905e3ce9a3d7497f26b563adcad6b7525f/Tools/Scripts/build-webkit",
+      "--release",
+      "--only=Everything up to WebKit",
+      "-jobs",
+      "4",
+      "ARCHS=arm64",
+      "ONLY_ACTIVE_ARCH=YES",
+      "MACOSX_DEPLOYMENT_TARGET=26.0",
+      "TMPDIR=$(TARGET_TEMP_DIR)/",
+      "-derivedDataPath",
+      "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/DerivedData",
+      "SHARED_PRECOMPS_DIR=/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/PrecompiledHeaders"
+    ],
+    "output": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output",
+    "source": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/WebKit-94f9b7905e3ce9a3d7497f26b563adcad6b7525f",
+    "minimumFreeBytes": 64424509440,
+    "timeoutSeconds": 7200,
+    "metalCompiler": "Apple metal version 32023.921 (metalfe-32023.921.6)\nTarget: air64-apple-darwin25.6.0\nThread model: posix\nInstalledDir: /private/var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v27.1.266.1.KRj5MS/Metal.xctoolchain/usr/metal/current/bin",
+    "monitorPID": 53867,
+    "engineCompiled": false,
+    "engineRuntimeTested": false,
+    "processGroupPID": 53871
+  },
+  "engineRuntimeTested": false
+}

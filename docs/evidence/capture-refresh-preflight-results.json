@@ -1,0 +1,103 @@
+{
+  "milestone": 126,
+  "executableSHA256": "cbd7a3ff6772e0c80ef83bea8cfb9eaacfdf9370204517e12b66c07b1a72d4f1",
+  "sourceSHA256": "2b59fbf7d1975bb7435f5691f2fa8e0a37bd473d5c235f61ec92c2f0e9833d93",
+  "finalPreflight": {
+    "capturesAudio": false,
+    "probePID": 61305,
+    "screenRecordingGranted": false,
+    "status": "preflight",
+    "systemInputPosted": false
+  },
+  "checks": [
+    {
+      "name": "unknown",
+      "report": {
+        "capturesAudio": false,
+        "error": "Use sequence PID WINDOW_ID RECORDED_SHA256 --out ARTIFACT.json",
+        "probePID": 61589,
+        "status": "refused",
+        "systemInputPosted": false
+      }
+    },
+    {
+      "name": "unrelated",
+      "report": {
+        "capturesAudio": false,
+        "error": "Target is not the exact owned InternalKeyboardControl app",
+        "probePID": 61594,
+        "status": "refused",
+        "systemInputPosted": false
+      }
+    },
+    {
+      "name": "invalid-window",
+      "report": {
+        "capturesAudio": false,
+        "error": "Use sequence PID WINDOW_ID RECORDED_SHA256 --out ARTIFACT.json",
+        "probePID": 61595,
+        "status": "refused",
+        "systemInputPosted": false
+      }
+    },
+    {
+      "name": "invalid-hash",
+      "report": {
+        "capturesAudio": false,
+        "error": "Use sequence PID WINDOW_ID RECORDED_SHA256 --out ARTIFACT.json",
+        "probePID": 61596,
+        "status": "refused",
+        "systemInputPosted": false
+      }
+    },
+    {
+      "name": "output-scope",
+      "report": {
+        "capturesAudio": false,
+        "error": "Output must be a new JSON file within project artifacts",
+        "probePID": 61597,
+        "status": "refused",
+        "systemInputPosted": false
+      }
+    },
+    {
+      "name": "existing-output",
+      "unchanged": true
+    },
+    {
+      "name": "real-owned-target-without-grant",
+      "report": {
+        "capturesAudio": false,
+        "error": "Screen Recording permission is absent",
+        "probePID": 61621,
+        "status": "refused",
+        "systemInputPosted": false
+      },
+      "captureStarted": false
+    },
+    {
+      "name": "owned-target-cleanup",
+      "hostStopped": true,
+      "fixtureStopped": true
+    }
+  ],
+  "checksPassed": 8,
+  "allRecordedHostsAbsent": true,
+  "frozenImagesUnchanged": true,
+  "buildPinGuardRefusesRebuild": true,
+  "permissionRequested": false,
+  "captureAttempted": false,
+  "streamUpdatesTested": false,
+  "validation": [
+    "Swift 6 warnings-as-errors build",
+    "Strict code signature validation",
+    "Shell syntax",
+    "Python compilation"
+  ],
+  "limits": [
+    "No live stream or filter update ran.",
+    "Includes only the owned window/app, not an unfiltered display.",
+    "At most eight sampled complete frames per two-second stage.",
+    "Queued frames can cross update boundaries."
+  ]
+}

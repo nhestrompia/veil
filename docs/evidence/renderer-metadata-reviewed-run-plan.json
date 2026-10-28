@@ -1,0 +1,120 @@
+{
+  "manifest": [
+    {
+      "source": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/renderer-identity-supervisor",
+      "staged": "renderer-identity-supervisor",
+      "size": 54128,
+      "sha256": "2df55fbd543585bcfd2bfe36e9677eeed37dcba36494e2cd67720919a2fc7c7b"
+    },
+    {
+      "source": "/Users/nhestrompia/.t3/projects/agentfreebrowser/dist/RendererIdentityProbe.app/Contents/Info.plist",
+      "staged": "RendererIdentityProbe.app/Contents/Info.plist",
+      "size": 509,
+      "sha256": "018eae997d427a6f28353626f04be23fcf6a5efaf55d37ffd3f670311d4ec12e"
+    },
+    {
+      "source": "/Users/nhestrompia/.t3/projects/agentfreebrowser/dist/RendererIdentityProbe.app/Contents/MacOS/RendererIdentityProbe",
+      "staged": "RendererIdentityProbe.app/Contents/MacOS/RendererIdentityProbe",
+      "size": 202576,
+      "sha256": "408816a98be06fc5d68ac95514b795fb94a7777a60228d1c5c52feae5e412142"
+    },
+    {
+      "source": "/Users/nhestrompia/.t3/projects/agentfreebrowser/dist/RendererIdentityProbe.app/Contents/_CodeSignature/CodeResources",
+      "staged": "RendererIdentityProbe.app/Contents/_CodeSignature/CodeResources",
+      "size": 2200,
+      "sha256": "6686de10a28a2fe11b36cbb86dcbacc827cfc4ea116b4dabf1845e5aee629e9b"
+    }
+  ],
+  "libraries": {
+    "renderer-identity-supervisor": [
+      "/usr/lib/libSystem.B.dylib"
+    ],
+    "RendererIdentityProbe.app/Contents/MacOS/RendererIdentityProbe": [
+      "/usr/lib/libSystem.B.dylib",
+      "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+      "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+      "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+      "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+      "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+      "/System/Library/Frameworks/WebKit.framework/Versions/A/WebKit",
+      "/usr/lib/libobjc.A.dylib",
+      "/usr/lib/swift/libswiftCore.dylib",
+      "/usr/lib/swift/libswiftCoreFoundation.dylib",
+      "/usr/lib/swift/libswiftCoreImage.dylib",
+      "/usr/lib/swift/libswiftDispatch.dylib",
+      "/usr/lib/swift/libswiftIOKit.dylib",
+      "/usr/lib/swift/libswiftMetal.dylib",
+      "/usr/lib/swift/libswiftOSLog.dylib",
+      "/usr/lib/swift/libswiftObjectiveC.dylib",
+      "/usr/lib/swift/libswiftQuartzCore.dylib",
+      "/usr/lib/swift/libswiftSpatial.dylib",
+      "/usr/lib/swift/libswiftUniformTypeIdentifiers.dylib",
+      "/usr/lib/swift/libswiftXPC.dylib",
+      "/usr/lib/swift/libswift_Builtin_float.dylib",
+      "/usr/lib/swift/libswift_Concurrency.dylib",
+      "/usr/lib/swift/libswift_DarwinFoundation2.dylib",
+      "/usr/lib/swift/libswiftos.dylib",
+      "/usr/lib/swift/libswiftsimd.dylib"
+    ]
+  },
+  "preflight": {
+    "compiledUID": 501,
+    "compiledGID": 20,
+    "isolatedUID": 4294967294,
+    "isolatedGID": 4294967294,
+    "isolatedHome": "/var/empty",
+    "effectiveUID": 501,
+    "accountValid": true,
+    "rootRun": false
+  },
+  "administratorCommand": "/usr/bin/env -i PATH=/usr/bin:/bin:/usr/sbin:/sbin LC_ALL=C /bin/sh -c 'set -eu\numask 077\nstage=$(/usr/bin/mktemp -d /private/tmp/agentfreebrowser-renderer.XXXXXX)\ncleanup() {\n    cleanup_status=0\n    for directory in \"$stage\" \"$stage/RendererIdentityProbe.app\" \"$stage/RendererIdentityProbe.app/Contents\" \"$stage/RendererIdentityProbe.app/Contents/MacOS\" \"$stage/RendererIdentityProbe.app/Contents/_CodeSignature\"; do\n        if [ -d \"$directory\" ]; then /bin/chmod 0700 \"$directory\" || cleanup_status=1; fi\n    done\n    /bin/rm -f -- \"$stage/renderer-identity-supervisor\" \"$stage/RendererIdentityProbe.app/Contents/Info.plist\" \"$stage/RendererIdentityProbe.app/Contents/MacOS/RendererIdentityProbe\" \"$stage/RendererIdentityProbe.app/Contents/_CodeSignature/CodeResources\" \"$stage/observation.log\" || cleanup_status=1\n    cd /private/tmp || return 1\n    for directory in \"$stage/RendererIdentityProbe.app/Contents/_CodeSignature\" \"$stage/RendererIdentityProbe.app/Contents/MacOS\" \"$stage/RendererIdentityProbe.app/Contents\" \"$stage/RendererIdentityProbe.app\" \"$stage\"; do\n        if [ -d \"$directory\" ]; then /bin/rmdir -- \"$directory\" || cleanup_status=1; fi\n    done\n    return \"$cleanup_status\"\n}\ntrap cleanup EXIT\ntrap '\"'\"'exit 130'\"'\"' INT\ntrap '\"'\"'exit 143'\"'\"' TERM\n/bin/chmod -N \"$stage\"\n/bin/chmod 0700 \"$stage\"\n/bin/mkdir -p -- \"$stage/RendererIdentityProbe.app\" \"$stage/RendererIdentityProbe.app/Contents\" \"$stage/RendererIdentityProbe.app/Contents/MacOS\" \"$stage/RendererIdentityProbe.app/Contents/_CodeSignature\"\ncd \"$stage\"\n/usr/bin/perl -T -e '\"'\"'use strict;\nuse warnings;\nuse Fcntl qw(:DEFAULT :mode);\nuse POSIX qw(SIG_SETMASK sigprocmask);\nuse Errno qw(EINTR);\nsigprocmask(SIG_SETMASK, POSIX::SigSet->new()) or die \"signal mask\";\n$SIG{ALRM} = '\"'\"'\"'\"'\"'\"'\"'\"'DEFAULT'\"'\"'\"'\"'\"'\"'\"'\"';\nalarm(10);\numask(077);\n@ARGV == 1 or die \"stage argument\";\nmy ($stage) = $ARGV[0] =~ m{\\A(/private/tmp/agentfreebrowser-renderer\\.[A-Za-z0-9]{6})\\z};\ndefined($stage) or die \"stage path\";\nmy @directory = lstat($stage);\nS_ISDIR($directory[2]) && $directory[4] == 0 && ($directory[2] & 07777) == 0700 or die \"stage metadata\";\nmy @files = (['\"'\"'\"'\"'\"'\"'\"'\"'/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/renderer-identity-supervisor'\"'\"'\"'\"'\"'\"'\"'\"','\"'\"'\"'\"'\"'\"'\"'\"'renderer-identity-supervisor'\"'\"'\"'\"'\"'\"'\"'\"',54128],\n['\"'\"'\"'\"'\"'\"'\"'\"'/Users/nhestrompia/.t3/projects/agentfreebrowser/dist/RendererIdentityProbe.app/Contents/Info.plist'\"'\"'\"'\"'\"'\"'\"'\"','\"'\"'\"'\"'\"'\"'\"'\"'RendererIdentityProbe.app/Contents/Info.plist'\"'\"'\"'\"'\"'\"'\"'\"',509],\n['\"'\"'\"'\"'\"'\"'\"'\"'/Users/nhestrompia/.t3/projects/agentfreebrowser/dist/RendererIdentityProbe.app/Contents/MacOS/RendererIdentityProbe'\"'\"'\"'\"'\"'\"'\"'\"','\"'\"'\"'\"'\"'\"'\"'\"'RendererIdentityProbe.app/Contents/MacOS/RendererIdentityProbe'\"'\"'\"'\"'\"'\"'\"'\"',202576],\n['\"'\"'\"'\"'\"'\"'\"'\"'/Users/nhestrompia/.t3/projects/agentfreebrowser/dist/RendererIdentityProbe.app/Contents/_CodeSignature/CodeResources'\"'\"'\"'\"'\"'\"'\"'\"','\"'\"'\"'\"'\"'\"'\"'\"'RendererIdentityProbe.app/Contents/_CodeSignature/CodeResources'\"'\"'\"'\"'\"'\"'\"'\"',2200]);\nfor my $item (@files) {\n    my ($source, $relative, $size) = @$item;\n    sysopen(my $input, $source, O_RDONLY | O_NOFOLLOW | O_NONBLOCK) or die \"source open\";\n    my @info = stat($input);\n    S_ISREG($info[2]) && $info[4] == 501 && $info[3] == 1\n        && ($info[2] & 0022) == 0 && $info[7] == $size or die \"source metadata\";\n    sysopen(my $output, \"$stage/$relative\", O_WRONLY | O_CREAT | O_EXCL | O_NOFOLLOW, 0600) or die \"destination open\";\n    binmode($input); binmode($output);\n    my $total = 0;\n    while ($total < $size) {\n        my $length = $size - $total > 65536 ? 65536 : $size - $total;\n        my $buffer;\n        my $count = sysread($input, $buffer, $length);\n        if (!defined($count)) { next if $! == EINTR; die \"source read\"; }\n        $count > 0 or die \"source shortened\";\n        my $offset = 0;\n        while ($offset < $count) {\n            my $written = syswrite($output, $buffer, $count - $offset, $offset);\n            if (!defined($written)) { next if $! == EINTR; die \"destination write\"; }\n            $written > 0 or die \"destination stalled\";\n            $offset += $written;\n        }\n        $total += $count;\n    }\n    my $extra;\n    my $end = sysread($input, $extra, 1);\n    defined($end) && $end == 0 or die \"source length changed\";\n    close($input) or die \"source close\";\n    close($output) or die \"destination close\";\n}\nalarm(0);\n'\"'\"' \"$stage\"\nactual=$(/usr/bin/shasum -a 256 \"$stage/renderer-identity-supervisor\")\ntest \"$actual\" = \"2df55fbd543585bcfd2bfe36e9677eeed37dcba36494e2cd67720919a2fc7c7b  $stage/renderer-identity-supervisor\"\nactual=$(/usr/bin/shasum -a 256 \"$stage/RendererIdentityProbe.app/Contents/Info.plist\")\ntest \"$actual\" = \"018eae997d427a6f28353626f04be23fcf6a5efaf55d37ffd3f670311d4ec12e  $stage/RendererIdentityProbe.app/Contents/Info.plist\"\nactual=$(/usr/bin/shasum -a 256 \"$stage/RendererIdentityProbe.app/Contents/MacOS/RendererIdentityProbe\")\ntest \"$actual\" = \"408816a98be06fc5d68ac95514b795fb94a7777a60228d1c5c52feae5e412142  $stage/RendererIdentityProbe.app/Contents/MacOS/RendererIdentityProbe\"\nactual=$(/usr/bin/shasum -a 256 \"$stage/RendererIdentityProbe.app/Contents/_CodeSignature/CodeResources\")\ntest \"$actual\" = \"6686de10a28a2fe11b36cbb86dcbacc827cfc4ea116b4dabf1845e5aee629e9b  $stage/RendererIdentityProbe.app/Contents/_CodeSignature/CodeResources\"\n/bin/chmod 0700 \"$stage/renderer-identity-supervisor\" \"$stage/RendererIdentityProbe.app/Contents/MacOS/RendererIdentityProbe\"\n/usr/bin/perl -T -e '\"'\"'use strict; use warnings; use POSIX qw(SIG_SETMASK sigprocmask);\nsigprocmask(SIG_SETMASK, POSIX::SigSet->new()) or die \"signal mask\";\n$SIG{ALRM} = '\"'\"'\"'\"'\"'\"'\"'\"'DEFAULT'\"'\"'\"'\"'\"'\"'\"'\"'; alarm(8);\n$ENV{PATH} = '\"'\"'\"'\"'\"'\"'\"'\"'/usr/bin:/bin:/usr/sbin:/sbin'\"'\"'\"'\"'\"'\"'\"'\"';\ndelete @ENV{qw(IFS CDPATH ENV BASH_ENV PERL5LIB PERL5OPT)};\nmy ($stage) = $ARGV[0] =~ m{\\A(/private/tmp/agentfreebrowser-renderer\\.[A-Za-z0-9]{6})\\z};\ndefined($stage) or die \"stage path\";\nexec('\"'\"'\"'\"'\"'\"'\"'\"'/usr/bin/codesign'\"'\"'\"'\"'\"'\"'\"'\"','\"'\"'\"'\"'\"'\"'\"'\"'--verify'\"'\"'\"'\"'\"'\"'\"'\"','\"'\"'\"'\"'\"'\"'\"'\"'--strict'\"'\"'\"'\"'\"'\"'\"'\"',\"$stage/renderer-identity-supervisor\") or die \"fixed tool exec\";'\"'\"' \"$stage\"\nsignature=$(/usr/bin/perl -T -e '\"'\"'use strict; use warnings; use POSIX qw(SIG_SETMASK sigprocmask);\nsigprocmask(SIG_SETMASK, POSIX::SigSet->new()) or die \"signal mask\";\n$SIG{ALRM} = '\"'\"'\"'\"'\"'\"'\"'\"'DEFAULT'\"'\"'\"'\"'\"'\"'\"'\"'; alarm(8);\n$ENV{PATH} = '\"'\"'\"'\"'\"'\"'\"'\"'/usr/bin:/bin:/usr/sbin:/sbin'\"'\"'\"'\"'\"'\"'\"'\"';\ndelete @ENV{qw(IFS CDPATH ENV BASH_ENV PERL5LIB PERL5OPT)};\nmy ($stage) = $ARGV[0] =~ m{\\A(/private/tmp/agentfreebrowser-renderer\\.[A-Za-z0-9]{6})\\z};\ndefined($stage) or die \"stage path\";\nexec('\"'\"'\"'\"'\"'\"'\"'\"'/usr/bin/codesign'\"'\"'\"'\"'\"'\"'\"'\"','\"'\"'\"'\"'\"'\"'\"'\"'-d'\"'\"'\"'\"'\"'\"'\"'\"','\"'\"'\"'\"'\"'\"'\"'\"'--verbose=2'\"'\"'\"'\"'\"'\"'\"'\"',\"$stage/renderer-identity-supervisor\") or die \"fixed tool exec\";'\"'\"' \"$stage\" 2>&1)\ncase \"$signature\" in *'\"'\"'runtime)'\"'\"'*) ;; *) exit 2 ;; esac\n/usr/bin/perl -T -e '\"'\"'use strict; use warnings; use POSIX qw(SIG_SETMASK sigprocmask);\nsigprocmask(SIG_SETMASK, POSIX::SigSet->new()) or die \"signal mask\";\n$SIG{ALRM} = '\"'\"'\"'\"'\"'\"'\"'\"'DEFAULT'\"'\"'\"'\"'\"'\"'\"'\"'; alarm(8);\n$ENV{PATH} = '\"'\"'\"'\"'\"'\"'\"'\"'/usr/bin:/bin:/usr/sbin:/sbin'\"'\"'\"'\"'\"'\"'\"'\"';\ndelete @ENV{qw(IFS CDPATH ENV BASH_ENV PERL5LIB PERL5OPT)};\nmy ($stage) = $ARGV[0] =~ m{\\A(/private/tmp/agentfreebrowser-renderer\\.[A-Za-z0-9]{6})\\z};\ndefined($stage) or die \"stage path\";\nexec('\"'\"'\"'\"'\"'\"'\"'\"'/usr/bin/codesign'\"'\"'\"'\"'\"'\"'\"'\"','\"'\"'\"'\"'\"'\"'\"'\"'--verify'\"'\"'\"'\"'\"'\"'\"'\"','\"'\"'\"'\"'\"'\"'\"'\"'--strict'\"'\"'\"'\"'\"'\"'\"'\"',\"$stage/RendererIdentityProbe.app\") or die \"fixed tool exec\";'\"'\"' \"$stage\"\nsignature=$(/usr/bin/perl -T -e '\"'\"'use strict; use warnings; use POSIX qw(SIG_SETMASK sigprocmask);\nsigprocmask(SIG_SETMASK, POSIX::SigSet->new()) or die \"signal mask\";\n$SIG{ALRM} = '\"'\"'\"'\"'\"'\"'\"'\"'DEFAULT'\"'\"'\"'\"'\"'\"'\"'\"'; alarm(8);\n$ENV{PATH} = '\"'\"'\"'\"'\"'\"'\"'\"'/usr/bin:/bin:/usr/sbin:/sbin'\"'\"'\"'\"'\"'\"'\"'\"';\ndelete @ENV{qw(IFS CDPATH ENV BASH_ENV PERL5LIB PERL5OPT)};\nmy ($stage) = $ARGV[0] =~ m{\\A(/private/tmp/agentfreebrowser-renderer\\.[A-Za-z0-9]{6})\\z};\ndefined($stage) or die \"stage path\";\nexec('\"'\"'\"'\"'\"'\"'\"'\"'/usr/bin/codesign'\"'\"'\"'\"'\"'\"'\"'\"','\"'\"'\"'\"'\"'\"'\"'\"'-d'\"'\"'\"'\"'\"'\"'\"'\"','\"'\"'\"'\"'\"'\"'\"'\"'--verbose=2'\"'\"'\"'\"'\"'\"'\"'\"',\"$stage/RendererIdentityProbe.app\") or die \"fixed tool exec\";'\"'\"' \"$stage\" 2>&1)\ncase \"$signature\" in *'\"'\"'runtime)'\"'\"'*) ;; *) exit 2 ;; esac\nlibrary_output=$(/usr/bin/perl -T -e '\"'\"'use strict; use warnings; use POSIX qw(SIG_SETMASK sigprocmask);\nsigprocmask(SIG_SETMASK, POSIX::SigSet->new()) or die \"signal mask\";\n$SIG{ALRM} = '\"'\"'\"'\"'\"'\"'\"'\"'DEFAULT'\"'\"'\"'\"'\"'\"'\"'\"'; alarm(8);\n$ENV{PATH} = '\"'\"'\"'\"'\"'\"'\"'\"'/usr/bin:/bin:/usr/sbin:/sbin'\"'\"'\"'\"'\"'\"'\"'\"';\ndelete @ENV{qw(IFS CDPATH ENV BASH_ENV PERL5LIB PERL5OPT)};\nmy ($stage) = $ARGV[0] =~ m{\\A(/private/tmp/agentfreebrowser-renderer\\.[A-Za-z0-9]{6})\\z};\ndefined($stage) or die \"stage path\";\nexec('\"'\"'\"'\"'\"'\"'\"'\"'/usr/bin/otool'\"'\"'\"'\"'\"'\"'\"'\"','\"'\"'\"'\"'\"'\"'\"'\"'-L'\"'\"'\"'\"'\"'\"'\"'\"',\"$stage/renderer-identity-supervisor\") or die \"fixed tool exec\";'\"'\"' \"$stage\")\ndependencies=$(printf '\"'\"'%s\\n'\"'\"' \"$library_output\" | /usr/bin/awk '\"'\"'NR>1 {print $1}'\"'\"')\ntest \"$dependencies\" = /usr/lib/libSystem.B.dylib\ncommands=$(/usr/bin/perl -T -e '\"'\"'use strict; use warnings; use POSIX qw(SIG_SETMASK sigprocmask);\nsigprocmask(SIG_SETMASK, POSIX::SigSet->new()) or die \"signal mask\";\n$SIG{ALRM} = '\"'\"'\"'\"'\"'\"'\"'\"'DEFAULT'\"'\"'\"'\"'\"'\"'\"'\"'; alarm(8);\n$ENV{PATH} = '\"'\"'\"'\"'\"'\"'\"'\"'/usr/bin:/bin:/usr/sbin:/sbin'\"'\"'\"'\"'\"'\"'\"'\"';\ndelete @ENV{qw(IFS CDPATH ENV BASH_ENV PERL5LIB PERL5OPT)};\nmy ($stage) = $ARGV[0] =~ m{\\A(/private/tmp/agentfreebrowser-renderer\\.[A-Za-z0-9]{6})\\z};\ndefined($stage) or die \"stage path\";\nexec('\"'\"'\"'\"'\"'\"'\"'\"'/usr/bin/otool'\"'\"'\"'\"'\"'\"'\"'\"','\"'\"'\"'\"'\"'\"'\"'\"'-l'\"'\"'\"'\"'\"'\"'\"'\"',\"$stage/renderer-identity-supervisor\") or die \"fixed tool exec\";'\"'\"' \"$stage\")\ncase \"$commands\" in *LC_RPATH*|*LC_DYLD_ENVIRONMENT*) exit 2 ;; esac\nlibrary_output=$(/usr/bin/perl -T -e '\"'\"'use strict; use warnings; use POSIX qw(SIG_SETMASK sigprocmask);\nsigprocmask(SIG_SETMASK, POSIX::SigSet->new()) or die \"signal mask\";\n$SIG{ALRM} = '\"'\"'\"'\"'\"'\"'\"'\"'DEFAULT'\"'\"'\"'\"'\"'\"'\"'\"'; alarm(8);\n$ENV{PATH} = '\"'\"'\"'\"'\"'\"'\"'\"'/usr/bin:/bin:/usr/sbin:/sbin'\"'\"'\"'\"'\"'\"'\"'\"';\ndelete @ENV{qw(IFS CDPATH ENV BASH_ENV PERL5LIB PERL5OPT)};\nmy ($stage) = $ARGV[0] =~ m{\\A(/private/tmp/agentfreebrowser-renderer\\.[A-Za-z0-9]{6})\\z};\ndefined($stage) or die \"stage path\";\nexec('\"'\"'\"'\"'\"'\"'\"'\"'/usr/bin/otool'\"'\"'\"'\"'\"'\"'\"'\"','\"'\"'\"'\"'\"'\"'\"'\"'-L'\"'\"'\"'\"'\"'\"'\"'\"',\"$stage/RendererIdentityProbe.app/Contents/MacOS/RendererIdentityProbe\") or die \"fixed tool exec\";'\"'\"' \"$stage\")\ndependencies=$(printf '\"'\"'%s\\n'\"'\"' \"$library_output\" | /usr/bin/awk '\"'\"'NR>1 {print $1}'\"'\"')\ntest \"$dependencies\" = '\"'\"'/usr/lib/libSystem.B.dylib\n/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit\n/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation\n/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics\n/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation\n/System/Library/Frameworks/Security.framework/Versions/A/Security\n/System/Library/Frameworks/WebKit.framework/Versions/A/WebKit\n/usr/lib/libobjc.A.dylib\n/usr/lib/swift/libswiftCore.dylib\n/usr/lib/swift/libswiftCoreFoundation.dylib\n/usr/lib/swift/libswiftCoreImage.dylib\n/usr/lib/swift/libswiftDispatch.dylib\n/usr/lib/swift/libswiftIOKit.dylib\n/usr/lib/swift/libswiftMetal.dylib\n/usr/lib/swift/libswiftOSLog.dylib\n/usr/lib/swift/libswiftObjectiveC.dylib\n/usr/lib/swift/libswiftQuartzCore.dylib\n/usr/lib/swift/libswiftSpatial.dylib\n/usr/lib/swift/libswiftUniformTypeIdentifiers.dylib\n/usr/lib/swift/libswiftXPC.dylib\n/usr/lib/swift/libswift_Builtin_float.dylib\n/usr/lib/swift/libswift_Concurrency.dylib\n/usr/lib/swift/libswift_DarwinFoundation2.dylib\n/usr/lib/swift/libswiftos.dylib\n/usr/lib/swift/libswiftsimd.dylib'\"'\"'\ncommands=$(/usr/bin/perl -T -e '\"'\"'use strict; use warnings; use POSIX qw(SIG_SETMASK sigprocmask);\nsigprocmask(SIG_SETMASK, POSIX::SigSet->new()) or die \"signal mask\";\n$SIG{ALRM} = '\"'\"'\"'\"'\"'\"'\"'\"'DEFAULT'\"'\"'\"'\"'\"'\"'\"'\"'; alarm(8);\n$ENV{PATH} = '\"'\"'\"'\"'\"'\"'\"'\"'/usr/bin:/bin:/usr/sbin:/sbin'\"'\"'\"'\"'\"'\"'\"'\"';\ndelete @ENV{qw(IFS CDPATH ENV BASH_ENV PERL5LIB PERL5OPT)};\nmy ($stage) = $ARGV[0] =~ m{\\A(/private/tmp/agentfreebrowser-renderer\\.[A-Za-z0-9]{6})\\z};\ndefined($stage) or die \"stage path\";\nexec('\"'\"'\"'\"'\"'\"'\"'\"'/usr/bin/otool'\"'\"'\"'\"'\"'\"'\"'\"','\"'\"'\"'\"'\"'\"'\"'\"'-l'\"'\"'\"'\"'\"'\"'\"'\"',\"$stage/RendererIdentityProbe.app/Contents/MacOS/RendererIdentityProbe\") or die \"fixed tool exec\";'\"'\"' \"$stage\")\ncase \"$commands\" in *LC_RPATH*|*LC_DYLD_ENVIRONMENT*) exit 2 ;; esac\nset -C\nexec 3> \"$stage/observation.log\"\nset +C\n/bin/chmod 0444 \"$stage/observation.log\"\n\n/bin/chmod -N \"$stage/renderer-identity-supervisor\" \"$stage/RendererIdentityProbe.app/Contents/Info.plist\" \"$stage/RendererIdentityProbe.app/Contents/MacOS/RendererIdentityProbe\" \"$stage/RendererIdentityProbe.app/Contents/_CodeSignature/CodeResources\" \"$stage/observation.log\" \"$stage/RendererIdentityProbe.app\" \"$stage/RendererIdentityProbe.app/Contents\" \"$stage/RendererIdentityProbe.app/Contents/MacOS\" \"$stage/RendererIdentityProbe.app/Contents/_CodeSignature\"\n/bin/chmod 0444 \"$stage/renderer-identity-supervisor\" \"$stage/RendererIdentityProbe.app/Contents/Info.plist\" \"$stage/RendererIdentityProbe.app/Contents/MacOS/RendererIdentityProbe\" \"$stage/RendererIdentityProbe.app/Contents/_CodeSignature/CodeResources\" \"$stage/observation.log\"\n/bin/chmod 0700 \"$stage/renderer-identity-supervisor\"\n/bin/chmod 0555 \"$stage/RendererIdentityProbe.app/Contents/MacOS/RendererIdentityProbe\" \"$stage/RendererIdentityProbe.app\" \"$stage/RendererIdentityProbe.app/Contents\" \"$stage/RendererIdentityProbe.app/Contents/MacOS\" \"$stage/RendererIdentityProbe.app/Contents/_CodeSignature\"\n/bin/chmod 0711 \"$stage\"\nset +e\n/usr/bin/env -i PATH=/usr/bin:/bin:/usr/sbin:/sbin LC_ALL=C \"$stage/renderer-identity-supervisor\" --root-smoke >&3 2>&1\nhelper_status=$?\nset -e\nexec 3>&-\n/bin/cat \"$stage/observation.log\"\ncleanup\ntrap - EXIT\ntest ! -e \"$stage\"\nprintf '\"'\"'\\nSTAGING_RESULT {\"helperExitCode\":%s,\"temporaryDirectory\":\"%s\",\"stagingRemoved\":true}\\n'\"'\"' \"$helper_status\" \"$stage\"\n'",
+  "administratorCommandSHA256": "22f91657b4576912489eee95c9831c68e6b24842c9d738efe81c16d51cdd3d06",
+  "rootRun": false,
+  "elevationRequested": false,
+  "approvedRunCount": 0,
+  "supervisorDeadlineSeconds": 32,
+  "childOutputLimitBytes": 3145728,
+  "wholeCommandDeadlineSeconds": null,
+  "scope": "At most 3 fixed inline renderer launches as nobody, stopping after any failed or inconclusive trial. The ordinary-user actor attempts SIGSTOP and SIGCONT against exact host/content/GPU/network records. Root never acts on reported service PIDs.",
+  "uncertainties": [
+    "OS-managed per-user caches outside staging",
+    "shared nobody state",
+    "inherited GUI/security capabilities",
+    "auxiliary lifecycle and sampled identity coverage",
+    "The 32-second deadline covers only the supervisor phase",
+    "SIGKILL of the outer staging shell can leave its fixed staging files",
+    "The fixture report precedes signals. Post-attack website progress is not measured."
+  ],
+  "actorSHA256": "05b0351b6352779a14d3955052b47441fbb9e74060eb5c7ab03596c168daccd0",
+  "actorUID": 501,
+  "runCount": 3,
+  "maximumRuns": 3,
+  "serial": true,
+  "stopAfterFirstFailure": true,
+  "attemptConsumedAt": "Administrator-command invocation, including staging failure",
+  "requireBeforeNext": [
+    "helperExitCode zero",
+    "rendering control passes",
+    "all four actor outcomes pass",
+    "measured processes exited",
+    "staging removed"
+  ],
+  "observation": {
+    "file": "observation.log",
+    "ownerUID": 0,
+    "mode": "0444",
+    "maximumReadBytes": 3162112,
+    "purpose": "Publish only the fixed research fixture report during its two-second hold."
+  },
+  "repeatOnFailure": false,
+  "ordinarySourceSHA256": {
+    "Sources/Diagnostics/RendererSignalActor.c": "83f6611a7a9d7e0809ee10e160e29ce1e1575296988ea240697589bdd09be752",
+    "scripts/build-renderer-signal-actor.sh": "51e215433a00b8e87a7bf394eb25b5628c8d56673719eae9f1abcb2b500723c2",
+    "Sources/Diagnostics/RendererMetadataCapabilities.c": "4405b3e654d52e404fc1c704c468abbe38c1bab83bdefe154c92fe235a559f47",
+    "Tests/RendererSignalMetadataTests.c": "09bcbe1b936f14b08f9a102611f44489d21fc02378f3d99d013e97f6bc44b405",
+    "tools/prepare_renderer_identity_run.py": "d595a7a4ae6fa8bc2d95749eb3db4f945f0490f011ed206515d56257f17c008c",
+    "tools/prepare_renderer_signal_run.py": "0a11e8d377c07da5a5d57e89a1263270bbe81c960b008b7f5228f11324c18acc",
+    "tools/run_renderer_signal_reference.py": "55c194cface7d048734b64e4a700b020f7d7a53c5669f8d2d6cef6d47d500abd",
+    "tools/observe_renderer_signals.py": "25ec3892a8d820ab154e09e9d0c12e702ca27b04d69f72b637535dc43c28c1da"
+  }
+}

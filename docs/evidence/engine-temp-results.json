@@ -1,0 +1,110 @@
+{
+  "milestone": 69,
+  "sandboxComparison": [
+    {
+      "case": "shared-output-temp",
+      "exitCode": 1,
+      "stderr": "mktemp: mkdtemp failed on /Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Temporary/mig-repro.qWwsyo: Operation not permitted",
+      "created": false
+    },
+    {
+      "case": "target-temp",
+      "exitCode": 0,
+      "stderr": "",
+      "created": true
+    }
+  ],
+  "standaloneGeneration": {
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": "",
+    "generatedFiles": [
+      "MachExceptionsServer.h",
+      "MachExceptions.h",
+      "MachExceptionsServer.c",
+      "MachExceptionsUser.c"
+    ],
+    "userSourceExists": true
+  },
+  "failedFullBuild": {
+    "command": [
+      "/usr/bin/nice",
+      "-n",
+      "10",
+      "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/WebKit-94f9b7905e3ce9a3d7497f26b563adcad6b7525f/Tools/Scripts/build-webkit",
+      "--release",
+      "--only=Everything up to WebKit",
+      "-quiet",
+      "-jobs",
+      "4",
+      "ARCHS=arm64",
+      "ONLY_ACTIVE_ARCH=YES",
+      "MACOSX_DEPLOYMENT_TARGET=26.0",
+      "-derivedDataPath",
+      "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/DerivedData",
+      "SHARED_PRECOMPS_DIR=/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/PrecompiledHeaders"
+    ],
+    "output": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output",
+    "source": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/WebKit-94f9b7905e3ce9a3d7497f26b563adcad6b7525f",
+    "minimumFreeBytes": 64424509440,
+    "timeoutSeconds": 7200,
+    "metalCompiler": "Apple metal version 32023.921 (metalfe-32023.921.6)\nTarget: air64-apple-darwin25.6.0\nThread model: posix\nInstalledDir: /private/var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v27.1.266.1.KRj5MS/Metal.xctoolchain/usr/metal/current/bin",
+    "monitorPID": 68420,
+    "engineCompiled": false,
+    "engineRuntimeTested": false,
+    "processGroupPID": 68430,
+    "exitCode": 65,
+    "error": "Research engine build failed with exit 65; see /Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/build.log",
+    "elapsedSeconds": 359.4
+  },
+  "narrowTargetBefore": true,
+  "narrowTargetAfter": true,
+  "generatedFiles": {
+    "MachExceptionsServer.h": {
+      "bytes": 10508,
+      "sha256": "05accaa10afeb26c1134708f8655509d52777ba566e1819f0bb423cfa99c7109"
+    },
+    "MachExceptions.h": {
+      "bytes": 10189,
+      "sha256": "be2124522219fab9dd848b21f630ae73717b45ec1069effc4b1ab6959473eb76"
+    },
+    "MachExceptionsServer.c": {
+      "bytes": 24653,
+      "sha256": "95c5cc97aa40ac9ace4e1404817790378d3954d65887870533dd7517d98e682c"
+    },
+    "MachExceptionsUser.c": {
+      "bytes": 28869,
+      "sha256": "c0f06e236546782f33a6aed0da93e34bc0eee8bfe518e531a742babdd6a0a028"
+    }
+  },
+  "fullBuildAtRecord": {
+    "command": [
+      "/usr/bin/nice",
+      "-n",
+      "10",
+      "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/WebKit-94f9b7905e3ce9a3d7497f26b563adcad6b7525f/Tools/Scripts/build-webkit",
+      "--release",
+      "--only=Everything up to WebKit",
+      "-quiet",
+      "-jobs",
+      "4",
+      "ARCHS=arm64",
+      "ONLY_ACTIVE_ARCH=YES",
+      "MACOSX_DEPLOYMENT_TARGET=26.0",
+      "TMPDIR=$(TARGET_TEMP_DIR)/",
+      "-derivedDataPath",
+      "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/DerivedData",
+      "SHARED_PRECOMPS_DIR=/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/PrecompiledHeaders"
+    ],
+    "output": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output",
+    "source": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/WebKit-94f9b7905e3ce9a3d7497f26b563adcad6b7525f",
+    "minimumFreeBytes": 64424509440,
+    "timeoutSeconds": 7200,
+    "metalCompiler": "Apple metal version 32023.921 (metalfe-32023.921.6)\nTarget: air64-apple-darwin25.6.0\nThread model: posix\nInstalledDir: /private/var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v27.1.266.1.KRj5MS/Metal.xctoolchain/usr/metal/current/bin",
+    "monitorPID": 9222,
+    "engineCompiled": false,
+    "engineRuntimeTested": false,
+    "processGroupPID": 9228
+  },
+  "engineRuntimeTested": false
+}

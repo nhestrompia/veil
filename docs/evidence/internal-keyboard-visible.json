@@ -1,0 +1,34 @@
+{
+  "binarySHA256": "9d2b64a32f89fbd6bd98b7f2e83c0bb6fcfd42c019dea89b377eb0a98b8abef3",
+  "pid": 69703,
+  "startupAddressPreserved": true,
+  "locationHasEditor": true,
+  "acceptedSubmissions": 1,
+  "noDeviceReader": true,
+  "humanBaseline": false,
+  "windowSharingEnabled": true,
+  "scope": "Diagnostic-only private authorized events through the normal application and WebKit path. Not an external bypass, physical control, or HID attestation.",
+  "directAX": {
+    "status": "observed",
+    "elements": 2,
+    "markerDisclosed": false
+  },
+  "capture": {
+    "frame": [
+      100,
+      110,
+      1000,
+      772
+    ],
+    "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/internal-keyboard-visible/window.png",
+    "pid": 69703,
+    "pixels": [
+      2000,
+      1544
+    ],
+    "status": "captured",
+    "windowID": 85371,
+    "probeBinarySHA256": "7a715be23ec66608573ec9275babb3dcf050e136edc7acc36adb4c95d7709b7a"
+  },
+  "captureMarkerDisclosed": true
+}

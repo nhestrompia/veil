@@ -1,0 +1,15 @@
+{
+  "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/dist/InspectorDiscoveryControl.app",
+  "bundleIdentifier": "research.agentfreebrowser.inspectordiscovery",
+  "executableSHA256": "68ca39c83c6fff85153bdbeabc527116e9ac1719dba7e08aeacc348a5d0bb7b0",
+  "permissionRequested": false,
+  "grantRefreshAuthorized": false,
+  "signedAdHoc": true,
+  "purpose": "Compare app-bundle and standalone external inspector discovery on the disposable readable reference only.",
+  "sourceHashes": {
+    "Sources/Diagnostics/InspectorDiscoveryControl.swift": "da449f697958eea89ef080a3e93b97fbf2c3d2ff337bfd63d464b69159c46ac8",
+    "Sources/Diagnostics/RendererProcessScope.swift": "4e7f0bd22ced093ec33c598a9d255162bb03b2989d62b0792338f5ccc2046e95",
+    "Sources/Diagnostics/PreviewAXScope.swift": "85e30c933226e50f386a1de62565c71884a1d0f55ae01b7ae0e5160f36ede40d",
+    "scripts/build-inspector-discovery-app.sh": "4247ab963c81097bedfc1bda69dfc7506ed0273a136c8244076d21180e3cac07"
+  }
+}

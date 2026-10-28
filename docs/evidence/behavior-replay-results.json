@@ -1,0 +1,268 @@
+{
+  "declaredPhysicalSample": {
+    "inputSHA256": "d8ed70a68f85fe0a04661fc933105be1b7a76b4dcf2386c2e38567ba6f1273d7",
+    "humanBaselineVerified": false,
+    "acceptedFakeActions": 0,
+    "motionAvailable": true,
+    "features": {
+      "sampleCount": 490,
+      "durationSeconds": 13.418255290947855,
+      "pathPixels": 2789.8386534030155,
+      "displacementPixels": 66.16220286547822,
+      "pathRatio": 42.166653052277425,
+      "meanSpeedPixelsPerSecond": 1680.065988999595,
+      "speedDeviation": 10756.37880723489,
+      "meanTurnRadians": 0.5793641367407296,
+      "maximumGapSeconds": 5.857313042040914
+    },
+    "offlineReplayFeaturesEqual": true
+  },
+  "syntheticSamples": [
+    {
+      "sample": "curve-hid-0.observations",
+      "inputSHA256": "041bcd32ad9ccfc8359fa5f301c59b94af4601f175ea8ff0206cc44db555805d",
+      "humanBaselineVerified": false,
+      "acceptedFakeActions": 1,
+      "motionAvailable": true,
+      "features": {
+        "sampleCount": 63,
+        "durationSeconds": 1.0269398340024054,
+        "pathPixels": 588.366467518772,
+        "displacementPixels": 211.8962010041709,
+        "pathRatio": 2.7766730348657394,
+        "meanSpeedPixelsPerSecond": 681.2657246679865,
+        "speedDeviation": 2168.2045735171105,
+        "meanTurnRadians": 0.13055384684872773,
+        "maximumGapSeconds": 0.0810742920730263
+      },
+      "offlineReplayFeaturesEqual": true
+    },
+    {
+      "sample": "curve-hid-1.observations",
+      "inputSHA256": "e6f8a519087433eb52bd65c8ca6df4092b38687f8a5bbdebd9e0f85c49017d14",
+      "humanBaselineVerified": false,
+      "acceptedFakeActions": 1,
+      "motionAvailable": true,
+      "features": {
+        "sampleCount": 63,
+        "durationSeconds": 1.043280707905069,
+        "pathPixels": 219.96718555762342,
+        "displacementPixels": 219.5449840010015,
+        "pathRatio": 1.0019230753940613,
+        "meanSpeedPixelsPerSecond": 238.9644757044505,
+        "speedDeviation": 139.3331370290839,
+        "meanTurnRadians": 0.029347054607685136,
+        "maximumGapSeconds": 0.0845415408257395
+      },
+      "offlineReplayFeaturesEqual": true
+    },
+    {
+      "sample": "curve-hid-2.observations",
+      "inputSHA256": "1dc98631874f5da8eaedea7aae6d91b9a35039aa0f79511856b4988c91901fd6",
+      "humanBaselineVerified": false,
+      "acceptedFakeActions": 1,
+      "motionAvailable": true,
+      "features": {
+        "sampleCount": 63,
+        "durationSeconds": 1.0202163751237094,
+        "pathPixels": 304.0682615797556,
+        "displacementPixels": 211.8962010041709,
+        "pathRatio": 1.4349868479887018,
+        "meanSpeedPixelsPerSecond": 313.9531914590187,
+        "speedDeviation": 181.6328414288976,
+        "meanTurnRadians": 0.09759129773390024,
+        "maximumGapSeconds": 0.0856611670460552
+      },
+      "offlineReplayFeaturesEqual": true
+    },
+    {
+      "sample": "hid-0.observations",
+      "inputSHA256": "0c8c274570d7b09a78f9ab6f59360a6aee02a67d23620a68ca6022ca9a79192b",
+      "humanBaselineVerified": false,
+      "acceptedFakeActions": 1,
+      "motionAvailable": true,
+      "features": {
+        "sampleCount": 99,
+        "durationSeconds": 2.7761169159784913,
+        "pathPixels": 1604.7078954075535,
+        "displacementPixels": 44.55284735317588,
+        "pathRatio": 36.018077199125734,
+        "meanSpeedPixelsPerSecond": 1123.3230966608699,
+        "speedDeviation": 2302.7322118277143,
+        "meanTurnRadians": 0.48804766316727927,
+        "maximumGapSeconds": 0.3373416669201106
+      },
+      "offlineReplayFeaturesEqual": true
+    },
+    {
+      "sample": "hid-1.observations",
+      "inputSHA256": "c5c8298150bd8b1a46e88476269f87b18c942ba4152cbf68fcb8a40cec993484",
+      "humanBaselineVerified": false,
+      "acceptedFakeActions": 1,
+      "motionAvailable": true,
+      "features": {
+        "sampleCount": 142,
+        "durationSeconds": 3.4645212918985635,
+        "pathPixels": 2138.0218259073763,
+        "displacementPixels": 419.2588382487685,
+        "pathRatio": 5.099527143751647,
+        "meanSpeedPixelsPerSecond": 1256.305982376276,
+        "speedDeviation": 2228.0015226359533,
+        "meanTurnRadians": 0.41321872246289154,
+        "maximumGapSeconds": 0.3401033750269562
+      },
+      "offlineReplayFeaturesEqual": true
+    },
+    {
+      "sample": "hid-2.observations",
+      "inputSHA256": "8247c3ceda607dbebe179d38e9ae97de0d6c5c37b1781e11544324d3753454ab",
+      "humanBaselineVerified": false,
+      "acceptedFakeActions": 1,
+      "motionAvailable": true,
+      "features": {
+        "sampleCount": 105,
+        "durationSeconds": 3.706493749981746,
+        "pathPixels": 1990.685667165233,
+        "displacementPixels": 356.7604615375755,
+        "pathRatio": 5.57989430382987,
+        "meanSpeedPixelsPerSecond": 2218.0739833645534,
+        "speedDeviation": 7954.815601872029,
+        "meanTurnRadians": 0.4124041985510311,
+        "maximumGapSeconds": 1.6611028341576457
+      },
+      "offlineReplayFeaturesEqual": true
+    },
+    {
+      "sample": "keycodes-hid-0.observations",
+      "inputSHA256": "8b8c0d3a10df721440d42ec3717a60d4c0f8f2eb3046b130b9066903e672277b",
+      "humanBaselineVerified": false,
+      "acceptedFakeActions": 1,
+      "motionAvailable": false,
+      "reason": "At least three pointer records are required"
+    },
+    {
+      "sample": "keycodes-hid-1.observations",
+      "inputSHA256": "3dcadfdbad86ff3946cb0341738a1f3a8910754030957e6ab35ad4264d81b95b",
+      "humanBaselineVerified": false,
+      "acceptedFakeActions": 1,
+      "motionAvailable": false,
+      "reason": "At least three pointer records are required"
+    },
+    {
+      "sample": "keycodes-hid-2.observations",
+      "inputSHA256": "a6852982d9199a21f1e2ee98fe4fbdbab6a1fd5994fb2ae01449e4ef5173e49c",
+      "humanBaselineVerified": false,
+      "acceptedFakeActions": 1,
+      "motionAvailable": false,
+      "reason": "At least three pointer records are required"
+    },
+    {
+      "sample": "private-0.observations",
+      "inputSHA256": "217d7824a4b21c405600aafb9e8d52c1372fcabd503e5135f270131d414351a2",
+      "humanBaselineVerified": false,
+      "acceptedFakeActions": 1,
+      "motionAvailable": true,
+      "features": {
+        "sampleCount": 137,
+        "durationSeconds": 6.969914124812931,
+        "pathPixels": 3775.6695133736175,
+        "displacementPixels": 533.3062190284251,
+        "pathRatio": 7.079740266768529,
+        "meanSpeedPixelsPerSecond": 1778.106270199984,
+        "speedDeviation": 2853.4072166256965,
+        "meanTurnRadians": 0.3472457145322314,
+        "maximumGapSeconds": 3.0800487909000367
+      },
+      "offlineReplayFeaturesEqual": true
+    },
+    {
+      "sample": "private-1.observations",
+      "inputSHA256": "1879233bb1424afef4c188e81313ea0e842fd5bc87e3e5baa014dab2875aaf1a",
+      "humanBaselineVerified": false,
+      "acceptedFakeActions": 1,
+      "motionAvailable": true,
+      "features": {
+        "sampleCount": 21,
+        "durationSeconds": 0.30670358310453594,
+        "pathPixels": 1874.2319880104822,
+        "displacementPixels": 523.2087671443624,
+        "pathRatio": 3.582187657595862,
+        "meanSpeedPixelsPerSecond": 6388.926474278353,
+        "speedDeviation": 5101.271712059261,
+        "meanTurnRadians": 0.5076744212254892,
+        "maximumGapSeconds": 0.07880683313123882
+      },
+      "offlineReplayFeaturesEqual": true
+    },
+    {
+      "sample": "private-2.observations",
+      "inputSHA256": "4d3026ef9bae7b4ccaf614baeb8a9e3729963f92beffd0c332e2f1b32bba698b",
+      "humanBaselineVerified": false,
+      "acceptedFakeActions": 1,
+      "motionAvailable": false,
+      "reason": "At least three pointer records are required"
+    },
+    {
+      "sample": "session-0.observations",
+      "inputSHA256": "b0cf6fe9e3c50f2c31897ae320af7e3fe44b9408f3e5cdc1aadb160a9b0e190e",
+      "humanBaselineVerified": false,
+      "acceptedFakeActions": 1,
+      "motionAvailable": true,
+      "features": {
+        "sampleCount": 90,
+        "durationSeconds": 2.0028987501282245,
+        "pathPixels": 2235.8419113230457,
+        "displacementPixels": 615.6179126188241,
+        "pathRatio": 3.6318662363345258,
+        "meanSpeedPixelsPerSecond": 1816.8580216475202,
+        "speedDeviation": 3284.4133540460525,
+        "meanTurnRadians": 0.47986574413338295,
+        "maximumGapSeconds": 0.41176329203881323
+      },
+      "offlineReplayFeaturesEqual": true
+    },
+    {
+      "sample": "session-1.observations",
+      "inputSHA256": "a454f0d7dbcd269c6cbbef600d450345c2b99ba9f3d2d6c010a2745ad4ece97e",
+      "humanBaselineVerified": false,
+      "acceptedFakeActions": 1,
+      "motionAvailable": true,
+      "features": {
+        "sampleCount": 78,
+        "durationSeconds": 3.159957292024046,
+        "pathPixels": 1775.518890009403,
+        "displacementPixels": 1097.295469741696,
+        "pathRatio": 1.6180864124294263,
+        "meanSpeedPixelsPerSecond": 2329.377005440102,
+        "speedDeviation": 3415.913118344537,
+        "meanTurnRadians": 0.4488998703526261,
+        "maximumGapSeconds": 0.7877291250042617
+      },
+      "offlineReplayFeaturesEqual": true
+    },
+    {
+      "sample": "session-2.observations",
+      "inputSHA256": "a87b5e6877333d6ffc2d42d78928ec0b47c937339bd4e0bae068b75324d710f7",
+      "humanBaselineVerified": false,
+      "acceptedFakeActions": 1,
+      "motionAvailable": true,
+      "features": {
+        "sampleCount": 145,
+        "durationSeconds": 2.5277607920579612,
+        "pathPixels": 2686.420180141025,
+        "displacementPixels": 467.70742041325275,
+        "pathRatio": 5.743804914977363,
+        "meanSpeedPixelsPerSecond": 2232.426127948842,
+        "speedDeviation": 6264.716312486691,
+        "meanTurnRadians": 0.5467211911043438,
+        "maximumGapSeconds": 0.26566483289934695
+      },
+      "offlineReplayFeaturesEqual": true
+    }
+  ],
+  "physicalSessionCount": 1,
+  "classifierTrained": false,
+  "inputReportsSent": 0,
+  "liveReplayAttempted": false,
+  "scope": "Offline feature comparison only. Replaying the observed behavior preserves these features. No live evasion, human false-block rate, or browser prevention result."
+}

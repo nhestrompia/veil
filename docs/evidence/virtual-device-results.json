@@ -1,0 +1,43 @@
+{
+  "system": "ProductName:\t\tmacOS\nProductVersion:\t\t26.6\nBuildVersion:\t\t25G72\n",
+  "binarySHA256": "a1111689a029f6bd51b71021e8a08501cb261cc3f80f5a4a81ec252dc1e1548f",
+  "entitlements": {},
+  "trials": [
+    {
+      "repetition": 0,
+      "exitCode": 0,
+      "result": {
+        "coreHIDVirtualDeviceCreated": false,
+        "inputReportsSent": 0,
+        "ioHIDUserDeviceCreated": false,
+        "scope": "Ad hoc signed same-user process without virtual-device entitlement. No activation or report dispatch."
+      },
+      "stderr": ""
+    },
+    {
+      "repetition": 1,
+      "exitCode": 0,
+      "result": {
+        "coreHIDVirtualDeviceCreated": false,
+        "inputReportsSent": 0,
+        "ioHIDUserDeviceCreated": false,
+        "scope": "Ad hoc signed same-user process without virtual-device entitlement. No activation or report dispatch."
+      },
+      "stderr": ""
+    },
+    {
+      "repetition": 2,
+      "exitCode": 0,
+      "result": {
+        "coreHIDVirtualDeviceCreated": false,
+        "inputReportsSent": 0,
+        "ioHIDUserDeviceCreated": false,
+        "scope": "Ad hoc signed same-user process without virtual-device entitlement. No activation or report dispatch."
+      },
+      "stderr": ""
+    }
+  ],
+  "entitledPositiveControl": false,
+  "humanBaseline": false,
+  "scope": "Creation-only API check; no activation, report dispatch, or prevention claim."
+}

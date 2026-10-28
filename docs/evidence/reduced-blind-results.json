@@ -1,0 +1,234 @@
+{
+  "permissions": {
+    "accessibility": true,
+    "pid": 10937,
+    "postEvents": true,
+    "screenCapture": true
+  },
+  "environment": {
+    "locked": null,
+    "reason": "Console lock flag unavailable",
+    "advisory": true
+  },
+  "positiveControlTarget": "InspectableControl",
+  "system": "ProductName:\t\tmacOS\nProductVersion:\t\t26.6\nBuildVersion:\t\t25G72\n",
+  "results": [
+    {
+      "target": "InspectableControl",
+      "route": "blind-fixture",
+      "repetition": 0,
+      "trial": "6ec7cbe7d43c0594",
+      "binarySHA256": "fdc78d4a76268b5cd78c1727f3931636c1714b8a4ef0442d26ecc66ec1046f96",
+      "verdict": "bypass",
+      "disclosure": true,
+      "fieldCenter": [
+        454.0,
+        462.0
+      ],
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 10938,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ],
+      "secureInputEvents": {
+        "enabled": 0,
+        "disabled": 0
+      },
+      "inputGate": {
+        "acceptedEvents": 0,
+        "refusedEvents": 0
+      },
+      "controlWorked": false
+    },
+    {
+      "target": "InspectableControl",
+      "route": "blind-fixture",
+      "repetition": 1,
+      "trial": "31515fbdece135a4",
+      "binarySHA256": "fdc78d4a76268b5cd78c1727f3931636c1714b8a4ef0442d26ecc66ec1046f96",
+      "verdict": "bypass",
+      "disclosure": true,
+      "fieldCenter": [
+        454.0,
+        462.0
+      ],
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 10954,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ],
+      "secureInputEvents": {
+        "enabled": 0,
+        "disabled": 0
+      },
+      "inputGate": {
+        "acceptedEvents": 0,
+        "refusedEvents": 0
+      },
+      "controlWorked": false
+    },
+    {
+      "target": "InspectableControl",
+      "route": "blind-fixture",
+      "repetition": 2,
+      "trial": "0ee400978b5b8d01",
+      "binarySHA256": "fdc78d4a76268b5cd78c1727f3931636c1714b8a4ef0442d26ecc66ec1046f96",
+      "verdict": "bypass",
+      "disclosure": true,
+      "fieldCenter": [
+        454.0,
+        462.0
+      ],
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 10967,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ],
+      "secureInputEvents": {
+        "enabled": 0,
+        "disabled": 0
+      },
+      "inputGate": {
+        "acceptedEvents": 0,
+        "refusedEvents": 0
+      },
+      "controlWorked": false
+    },
+    {
+      "target": "ReducedExposureExperiment",
+      "route": "blind-fixture",
+      "repetition": 0,
+      "trial": "1d8f4e0d5bf93056",
+      "binarySHA256": "5299bd6301d1eeea20014892dff98a8bfc6352edb34de31fd1927863f06b432a",
+      "verdict": "bypass",
+      "disclosure": true,
+      "coordinateSource": "Prior control of the public fixture; no target AX coordinates or screenshot",
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 10980,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ],
+      "secureInputEvents": {
+        "enabled": 14,
+        "disabled": 0
+      },
+      "inputGate": {
+        "acceptedEvents": 0,
+        "refusedEvents": 0
+      },
+      "controlWorked": true
+    },
+    {
+      "target": "ReducedExposureExperiment",
+      "route": "blind-fixture",
+      "repetition": 1,
+      "trial": "86741b1d54125387",
+      "binarySHA256": "5299bd6301d1eeea20014892dff98a8bfc6352edb34de31fd1927863f06b432a",
+      "verdict": "inconclusive",
+      "disclosure": true,
+      "coordinateSource": "Prior control of the public fixture; no target AX coordinates or screenshot",
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 10997,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [],
+      "inputTrustedValues": [
+        true
+      ],
+      "secureInputEvents": {
+        "enabled": 4,
+        "disabled": 0
+      },
+      "inputGate": {
+        "acceptedEvents": 0,
+        "refusedEvents": 0
+      },
+      "controlWorked": true,
+      "reason": "No task completion; no explicit defensive refusal established"
+    },
+    {
+      "target": "ReducedExposureExperiment",
+      "route": "blind-fixture",
+      "repetition": 2,
+      "trial": "4733fee16845e6cc",
+      "binarySHA256": "5299bd6301d1eeea20014892dff98a8bfc6352edb34de31fd1927863f06b432a",
+      "verdict": "bypass",
+      "disclosure": true,
+      "coordinateSource": "Prior control of the public fixture; no target AX coordinates or screenshot",
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": false,
+        "pid": 11011,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "inputTrustedValues": [
+        true
+      ],
+      "secureInputEvents": {
+        "enabled": 14,
+        "disabled": 0
+      },
+      "inputGate": {
+        "acceptedEvents": 0,
+        "refusedEvents": 0
+      },
+      "controlWorked": true
+    }
+  ],
+  "humanBaseline": false,
+  "routeContract": "Probe uses native APIs only. Controller alone queries the oracle. Input coordinates come from AX."
+}

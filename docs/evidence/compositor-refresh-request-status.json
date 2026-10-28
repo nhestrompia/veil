@@ -1,0 +1,57 @@
+{
+  "permissionApproved": true,
+  "requestIssued": true,
+  "requestResult": {
+    "capturesAudio": false,
+    "probePID": 84126,
+    "requestReturned": false,
+    "screenRecordingGranted": false,
+    "status": "requested",
+    "systemInputPosted": false
+  },
+  "latestPreflight": {
+    "capturesAudio": false,
+    "probePID": 83179,
+    "screenRecordingGranted": true,
+    "status": "preflight",
+    "systemInputPosted": false
+  },
+  "browserHostLaunched": true,
+  "captureAttempted": true,
+  "filterUpdatesExecuted": true,
+  "allRecordedHelperProcessesAbsent": true,
+  "helperExecutableUnchanged": true,
+  "helperSourceUnchanged": true,
+  "manualEnablePending": false,
+  "administratorAccessUsed": false,
+  "authorizedRetryResult": {
+    "capturesAudio": false,
+    "probePID": 81594,
+    "requestReturned": false,
+    "screenRecordingGranted": false,
+    "status": "requested",
+    "systemInputPosted": false
+  },
+  "userReportedMaybeAdded": true,
+  "manualGrantVerificationPending": false,
+  "tccDecision": {
+    "requestMessageID": "81594.2",
+    "service": "kTCCServiceScreenCapture",
+    "client": "research.agentfreebrowser.compositorrefresh",
+    "authValue": 0,
+    "authReason": 4,
+    "error": null,
+    "reasonCodeInterpreted": false
+  },
+  "attributionConfirmsExactAppPath": true,
+  "scopedDatabaseReadAvailable": false,
+  "initialComparisonGateResult": {
+    "status": "permission-required",
+    "rows": [],
+    "systemInputPosted": false
+  },
+  "effectiveGrantConfirmed": true,
+  "userConfirmedSwitchOn": true,
+  "liveComparisonStatus": "backdrop-only-in-sampled-frames",
+  "liveResults": "docs/evidence/compositor-refresh-live-results.json"
+}

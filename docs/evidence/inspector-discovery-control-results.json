@@ -1,0 +1,185 @@
+{
+  "milestone": 145,
+  "status": "inconclusive",
+  "referenceDiscoverySucceeded": false,
+  "attachmentAttempted": false,
+  "candidateLaunched": false,
+  "scriptSent": false,
+  "administratorAccessUsed": false,
+  "explicitPermissionRequestIssued": false,
+  "boundaryControls": [
+    {
+      "arguments": [],
+      "result": {
+        "channelOpened": false,
+        "error": "invalidFixture",
+        "inputPosted": false,
+        "managerInstantiated": false,
+        "permissionRequested": false,
+        "referenceOnly": true,
+        "scriptSent": false,
+        "status": "inconclusive",
+        "unrelatedPageMetadataSaved": false
+      },
+      "passed": true
+    },
+    {
+      "arguments": [
+        "1",
+        "https://example.org/trial/0123456789abcdef"
+      ],
+      "result": {
+        "channelOpened": false,
+        "error": "invalidFixture",
+        "inputPosted": false,
+        "managerInstantiated": false,
+        "permissionRequested": false,
+        "referenceOnly": true,
+        "scriptSent": false,
+        "status": "inconclusive",
+        "unrelatedPageMetadataSaved": false
+      },
+      "passed": true
+    },
+    {
+      "arguments": [
+        "1",
+        "http://127.0.0.1:8765/trial/0123456789abcdef"
+      ],
+      "result": {
+        "channelOpened": false,
+        "error": "unrelatedHost",
+        "inputPosted": false,
+        "managerInstantiated": false,
+        "permissionRequested": false,
+        "referenceOnly": true,
+        "scriptSent": false,
+        "status": "inconclusive",
+        "unrelatedPageMetadataSaved": false
+      },
+      "passed": true
+    },
+    {
+      "arguments": [
+        "1",
+        "http://127.0.0.1:99999/trial/0123456789abcdef"
+      ],
+      "result": {
+        "channelOpened": false,
+        "error": "invalidFixture",
+        "inputPosted": false,
+        "managerInstantiated": false,
+        "permissionRequested": false,
+        "referenceOnly": true,
+        "scriptSent": false,
+        "status": "inconclusive",
+        "unrelatedPageMetadataSaved": false
+      },
+      "passed": true
+    }
+  ],
+  "controls": {
+    "discovery-control": {
+      "status": "inconclusive",
+      "candidateLaunched": false,
+      "inputPosted": false,
+      "helperSHA256": "9ecb44a81108c054e8f764a686285313b120b585bf27b71e4b590c27b797a624",
+      "referencePID": 85577,
+      "helperStderrCharacters": 0,
+      "helperExitCode": 0,
+      "discovery": {
+        "channelOpened": false,
+        "currentMachineSeen": false,
+        "discoveryMaximumSeconds": 8,
+        "inputPosted": false,
+        "managerInstantiated": true,
+        "matchingFixturePages": 0,
+        "ownedApplicationsSeen": 0,
+        "permissionRequested": false,
+        "referenceOnly": true,
+        "scriptSent": false,
+        "status": "inconclusive",
+        "targetPID": 85577,
+        "targetSHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+        "unrelatedPageMetadataSaved": false
+      },
+      "submissions": [],
+      "referenceCleanupVerified": true,
+      "fixtureStopped": true
+    },
+    "shared-manager-control": {
+      "status": "inconclusive",
+      "candidateLaunched": false,
+      "inputPosted": false,
+      "helperSHA256": "40a91e23cc4e6e6e952b300af9d840edb902c57b0d4f147ac91f31a08c4e15de",
+      "referencePID": 85763,
+      "helperStderrCharacters": 0,
+      "helperExitCode": 0,
+      "discovery": {
+        "channelOpened": false,
+        "currentMachineSeen": false,
+        "discoveryMaximumSeconds": 8,
+        "inputPosted": false,
+        "managerFactory": "sharedManager",
+        "managerInstantiated": true,
+        "matchingFixturePages": 0,
+        "ownedApplicationsSeen": 0,
+        "permissionRequested": false,
+        "referenceOnly": true,
+        "scriptSent": false,
+        "status": "inconclusive",
+        "targetPID": 85763,
+        "targetSHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+        "unrelatedPageMetadataSaved": false
+      },
+      "submissions": [],
+      "referenceCleanupVerified": true,
+      "fixtureStopped": true
+    },
+    "local-target-control": {
+      "status": "inconclusive",
+      "candidateLaunched": false,
+      "inputPosted": false,
+      "helperSHA256": "83ca8665ab42272fdbf5744a286fbaa01a87cd169116250291f6d889e76e2843",
+      "referencePID": 85908,
+      "helperStderrCharacters": 0,
+      "helperExitCode": 0,
+      "discovery": {
+        "channelOpened": false,
+        "currentMachineSeen": true,
+        "discoveryMaximumSeconds": 8,
+        "inputPosted": false,
+        "localTargetCreationRequested": true,
+        "localTargetRemovalRequested": true,
+        "managerFactory": "sharedManager",
+        "managerInstantiated": true,
+        "matchingFixturePages": 0,
+        "ownedApplicationsSeen": 0,
+        "permissionRequested": false,
+        "referenceOnly": true,
+        "scriptSent": false,
+        "status": "inconclusive",
+        "targetPID": 85908,
+        "targetSHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+        "unrelatedPageMetadataSaved": false
+      },
+      "submissions": [],
+      "referenceCleanupVerified": true,
+      "fixtureStopped": true
+    }
+  },
+  "sourceHashes": {
+    "Sources/Diagnostics/InspectorDiscoveryControl.swift": "eba8d1095933807d311ea3aa6bb7ac54b6198ba001c4a8654ce2b020817a9177",
+    "scripts/build-inspector-discovery-control.sh": "a037567ccb3bfbbe241d29fa6407b12f9de055130bfbbf06c42e2dc740e94136",
+    "tools/run_inspector_discovery_control.py": "7df4d445898320b08c8305cf8dbd9f912ca09342ee5e8b23efb1b14889d588b4"
+  },
+  "preservedImages": {
+    "AgentFreeBrowserPreview": "dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70",
+    "PreviewCompositorProbe": "2ce201a2876e295fe6695fbda6506b72e1d9ac706f6051226377f5a8fa3f4a2b"
+  },
+  "remainingTransientPIDs": {
+    "InspectableControl": [],
+    "client": []
+  },
+  "agentFreeEstablished": false
+}

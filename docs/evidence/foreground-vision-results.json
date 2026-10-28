@@ -1,0 +1,435 @@
+{
+  "permissions": {
+    "accessibility": true,
+    "pid": 7795,
+    "postEvents": true,
+    "screenCapture": true
+  },
+  "results": [
+    {
+      "target": "InspectableControl",
+      "trial": "b7646dd563d033e4",
+      "repetition": 0,
+      "route": "screenkit-ocr-cgevent",
+      "verdict": "bypass",
+      "environment": {
+        "locked": null,
+        "reason": "Console lock flag unavailable",
+        "advisory": true
+      },
+      "binarySHA256": "fdc78d4a76268b5cd78c1727f3931636c1714b8a4ef0442d26ecc66ec1046f96",
+      "screenkit": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/foreground-vision-final/InspectableControl-0.screenkit.png",
+        "pid": 7796,
+        "pixels": [
+          2000,
+          1544
+        ],
+        "status": "captured",
+        "windowID": 81881
+      },
+      "systemCapture": {
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/foreground-vision-final/InspectableControl-0.system.png",
+        "pid": 7796,
+        "status": "captured",
+        "windowID": 81881
+      },
+      "screenkitDisclosure": true,
+      "systemDisclosure": true,
+      "input": {
+        "curvedTrajectory": true,
+        "directToPID": false,
+        "pid": 7796,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "coordinateDerivation": "OCR label center plus public fixture's 57-point field offset; no AX tree",
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "disclosure": true
+    },
+    {
+      "target": "InspectableControl",
+      "trial": "2508e943eb57a891",
+      "repetition": 1,
+      "route": "screenkit-ocr-cgevent",
+      "verdict": "bypass",
+      "environment": {
+        "locked": null,
+        "reason": "Console lock flag unavailable",
+        "advisory": true
+      },
+      "binarySHA256": "fdc78d4a76268b5cd78c1727f3931636c1714b8a4ef0442d26ecc66ec1046f96",
+      "screenkit": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/foreground-vision-final/InspectableControl-1.screenkit.png",
+        "pid": 7831,
+        "pixels": [
+          2000,
+          1544
+        ],
+        "status": "captured",
+        "windowID": 81910
+      },
+      "systemCapture": {
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/foreground-vision-final/InspectableControl-1.system.png",
+        "pid": 7831,
+        "status": "captured",
+        "windowID": 81910
+      },
+      "screenkitDisclosure": true,
+      "systemDisclosure": true,
+      "input": {
+        "curvedTrajectory": true,
+        "directToPID": false,
+        "pid": 7831,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "coordinateDerivation": "OCR label center plus public fixture's 57-point field offset; no AX tree",
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "disclosure": true
+    },
+    {
+      "target": "InspectableControl",
+      "trial": "de13de5f5f45d9c0",
+      "repetition": 2,
+      "route": "screenkit-ocr-cgevent",
+      "verdict": "bypass",
+      "environment": {
+        "locked": null,
+        "reason": "Console lock flag unavailable",
+        "advisory": true
+      },
+      "binarySHA256": "fdc78d4a76268b5cd78c1727f3931636c1714b8a4ef0442d26ecc66ec1046f96",
+      "screenkit": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/foreground-vision-final/InspectableControl-2.screenkit.png",
+        "pid": 8050,
+        "pixels": [
+          2000,
+          1544
+        ],
+        "status": "captured",
+        "windowID": 81919
+      },
+      "systemCapture": {
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/foreground-vision-final/InspectableControl-2.system.png",
+        "pid": 8050,
+        "status": "captured",
+        "windowID": 81919
+      },
+      "screenkitDisclosure": true,
+      "systemDisclosure": true,
+      "input": {
+        "curvedTrajectory": true,
+        "directToPID": false,
+        "pid": 8050,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "coordinateDerivation": "OCR label center plus public fixture's 57-point field offset; no AX tree",
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "disclosure": true
+    },
+    {
+      "target": "SecureInputExperiment",
+      "trial": "0555e90227c88683",
+      "repetition": 0,
+      "route": "screenkit-ocr-cgevent",
+      "verdict": "bypass",
+      "environment": {
+        "locked": null,
+        "reason": "Console lock flag unavailable",
+        "advisory": true
+      },
+      "binarySHA256": "f6b1805a69e6fdd623e32b70c91333f446133ff9327c101eaa949f8ff7ec8c1f",
+      "screenkit": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/foreground-vision-final/SecureInputExperiment-0.screenkit.png",
+        "pid": 8087,
+        "pixels": [
+          2000,
+          1544
+        ],
+        "status": "captured",
+        "windowID": 81928
+      },
+      "systemCapture": {
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/foreground-vision-final/SecureInputExperiment-0.system.png",
+        "pid": 8087,
+        "status": "captured",
+        "windowID": 81928
+      },
+      "screenkitDisclosure": true,
+      "systemDisclosure": true,
+      "input": {
+        "curvedTrajectory": true,
+        "directToPID": false,
+        "pid": 8087,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "coordinateDerivation": "OCR label center plus public fixture's 57-point field offset; no AX tree",
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "disclosure": true
+    },
+    {
+      "target": "SecureInputExperiment",
+      "trial": "3fde1693b3dcfe29",
+      "repetition": 1,
+      "route": "screenkit-ocr-cgevent",
+      "verdict": "bypass",
+      "environment": {
+        "locked": null,
+        "reason": "Console lock flag unavailable",
+        "advisory": true
+      },
+      "binarySHA256": "f6b1805a69e6fdd623e32b70c91333f446133ff9327c101eaa949f8ff7ec8c1f",
+      "screenkit": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/foreground-vision-final/SecureInputExperiment-1.screenkit.png",
+        "pid": 8134,
+        "pixels": [
+          2000,
+          1544
+        ],
+        "status": "captured",
+        "windowID": 81937
+      },
+      "systemCapture": {
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/foreground-vision-final/SecureInputExperiment-1.system.png",
+        "pid": 8134,
+        "status": "captured",
+        "windowID": 81937
+      },
+      "screenkitDisclosure": true,
+      "systemDisclosure": true,
+      "input": {
+        "curvedTrajectory": true,
+        "directToPID": false,
+        "pid": 8134,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "coordinateDerivation": "OCR label center plus public fixture's 57-point field offset; no AX tree",
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "disclosure": true
+    },
+    {
+      "target": "SecureInputExperiment",
+      "trial": "c2a42488dd624b91",
+      "repetition": 2,
+      "route": "screenkit-ocr-cgevent",
+      "verdict": "bypass",
+      "environment": {
+        "locked": null,
+        "reason": "Console lock flag unavailable",
+        "advisory": true
+      },
+      "binarySHA256": "f6b1805a69e6fdd623e32b70c91333f446133ff9327c101eaa949f8ff7ec8c1f",
+      "screenkit": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/foreground-vision-final/SecureInputExperiment-2.screenkit.png",
+        "pid": 8171,
+        "pixels": [
+          2000,
+          1544
+        ],
+        "status": "captured",
+        "windowID": 81946
+      },
+      "systemCapture": {
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/foreground-vision-final/SecureInputExperiment-2.system.png",
+        "pid": 8171,
+        "status": "captured",
+        "windowID": 81946
+      },
+      "screenkitDisclosure": true,
+      "systemDisclosure": true,
+      "input": {
+        "curvedTrajectory": true,
+        "directToPID": false,
+        "pid": 8171,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "coordinateDerivation": "OCR label center plus public fixture's 57-point field offset; no AX tree",
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "disclosure": true
+    },
+    {
+      "target": "ReducedExposureExperiment",
+      "trial": "f3b28d2f57716235",
+      "repetition": 0,
+      "route": "screenkit-ocr-cgevent",
+      "verdict": "inconclusive",
+      "environment": {
+        "locked": null,
+        "reason": "Console lock flag unavailable",
+        "advisory": true
+      },
+      "binarySHA256": "5299bd6301d1eeea20014892dff98a8bfc6352edb34de31fd1927863f06b432a",
+      "screenkit": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/foreground-vision-final/ReducedExposureExperiment-0.screenkit.png",
+        "pid": 8207,
+        "pixels": [
+          1000,
+          772
+        ],
+        "status": "captured",
+        "windowID": 81955
+      },
+      "systemCapture": {
+        "error": "System capture failed",
+        "status": "inconclusive"
+      },
+      "screenkitDisclosure": false,
+      "reason": "No OCR label or capture frame; no action-prevention inference",
+      "submissions": [],
+      "disclosure": false
+    },
+    {
+      "target": "ReducedExposureExperiment",
+      "trial": "ad50a6dfa9382ad5",
+      "repetition": 1,
+      "route": "screenkit-ocr-cgevent",
+      "verdict": "inconclusive",
+      "environment": {
+        "locked": null,
+        "reason": "Console lock flag unavailable",
+        "advisory": true
+      },
+      "binarySHA256": "5299bd6301d1eeea20014892dff98a8bfc6352edb34de31fd1927863f06b432a",
+      "screenkit": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/foreground-vision-final/ReducedExposureExperiment-1.screenkit.png",
+        "pid": 8226,
+        "pixels": [
+          1000,
+          772
+        ],
+        "status": "captured",
+        "windowID": 81963
+      },
+      "systemCapture": {
+        "error": "System capture failed",
+        "status": "inconclusive"
+      },
+      "screenkitDisclosure": false,
+      "reason": "No OCR label or capture frame; no action-prevention inference",
+      "submissions": [],
+      "disclosure": false
+    },
+    {
+      "target": "ReducedExposureExperiment",
+      "trial": "5cb0069f180d06e3",
+      "repetition": 2,
+      "route": "screenkit-ocr-cgevent",
+      "verdict": "inconclusive",
+      "environment": {
+        "locked": null,
+        "reason": "Console lock flag unavailable",
+        "advisory": true
+      },
+      "binarySHA256": "5299bd6301d1eeea20014892dff98a8bfc6352edb34de31fd1927863f06b432a",
+      "screenkit": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/foreground-vision-final/ReducedExposureExperiment-2.screenkit.png",
+        "pid": 8250,
+        "pixels": [
+          1000,
+          772
+        ],
+        "status": "captured",
+        "windowID": 81971
+      },
+      "systemCapture": {
+        "error": "System capture failed",
+        "status": "inconclusive"
+      },
+      "screenkitDisclosure": false,
+      "reason": "No OCR label or capture frame; no action-prevention inference",
+      "submissions": [],
+      "disclosure": false
+    }
+  ],
+  "humanBaseline": false,
+  "routeContract": "Agent uses ScreenCaptureKit images, Vision OCR, and CGEvent input. No AX or browser-content API."
+}

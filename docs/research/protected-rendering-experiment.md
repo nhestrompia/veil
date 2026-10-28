@@ -1,6 +1,6 @@
 # Protected-rendering experiment
 
-Status: conditional research track. No protected HTML renderer or Chromium modification exists in this project.
+Status: both uncompressed protected candidates failed direct-display visibility checks. The matched unprotected control remained visible. Interaction remains unimplemented. These results reject those configurations, not every DRM design. See the [candidate findings](../pixel-rendering-findings.md).
 
 ## Question and separation from the MVP
 

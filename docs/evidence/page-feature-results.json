@@ -1,0 +1,3211 @@
+{
+  "milestone": 58,
+  "initialFeatureMatrix": {
+    "binarySHA256": {
+      "InternalKeyboardControl": "648c3e2d270e5103932593be9c05ac1399007b54cba3292ef9962e8e417dba76",
+      "InspectableControl": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+      "NativeProbe": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+    },
+    "permissions": {
+      "accessibility": true,
+      "desktopInputSafety": {
+        "available": true,
+        "blockingMouseHookPIDs": []
+      },
+      "pid": 19660,
+      "postEvents": true,
+      "screenCapture": true,
+      "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+    },
+    "humanBaseline": false,
+    "scope": "Private authorized keyboard baseline with diagnostic focus assistance, then external attacks. No HID or human-attestation claim.",
+    "surfaces": [
+      {
+        "surface": "form",
+        "controls": [
+          {
+            "route": "hid",
+            "cleanupVerified": true,
+            "pid": 19701,
+            "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+            "initialAcceptedSubmissions": 0,
+            "controlWorked": false,
+            "verdict": "bypass",
+            "windowFrame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "coordinateSource": "Readable reference Accessibility field",
+            "fieldCenter": [
+              387.0,
+              418.5
+            ],
+            "attempt": {
+              "curvedTrajectory": false,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": false,
+              "pid": 19701,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedEvents": 0,
+            "refusedEvents": 0,
+            "newEventTypes": [
+              "click",
+              "input",
+              "keydown",
+              "pointerdown"
+            ]
+          },
+          {
+            "route": "curve-hid",
+            "cleanupVerified": true,
+            "pid": 19739,
+            "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+            "initialAcceptedSubmissions": 0,
+            "controlWorked": false,
+            "verdict": "bypass",
+            "windowFrame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "coordinateSource": "Readable reference Accessibility field",
+            "fieldCenter": [
+              387.0,
+              418.5
+            ],
+            "attempt": {
+              "curvedTrajectory": true,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": false,
+              "pid": 19739,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedEvents": 0,
+            "refusedEvents": 0,
+            "newEventTypes": [
+              "click",
+              "input",
+              "keydown",
+              "pointerdown"
+            ]
+          },
+          {
+            "route": "pid-keys-keycodes-hid",
+            "cleanupVerified": true,
+            "pid": 19773,
+            "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+            "initialAcceptedSubmissions": 0,
+            "controlWorked": false,
+            "verdict": "bypass",
+            "windowFrame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "coordinateSource": "Readable reference Accessibility field",
+            "fieldCenter": [
+              387.0,
+              418.5
+            ],
+            "attempt": {
+              "curvedTrajectory": false,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": true,
+              "pid": 19773,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedEvents": 0,
+            "refusedEvents": 0,
+            "newEventTypes": [
+              "click",
+              "input",
+              "keydown",
+              "pointerdown"
+            ]
+          },
+          {
+            "route": "vision-curve",
+            "cleanupVerified": true,
+            "pid": 19804,
+            "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+            "initialAcceptedSubmissions": 0,
+            "controlWorked": false,
+            "verdict": "bypass",
+            "capture": {
+              "frame": [
+                100,
+                110,
+                1000,
+                772
+              ],
+              "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/feature-matrix-initial/reference-form-vision-curve.png",
+              "pid": 19804,
+              "pixels": [
+                2000,
+                1544
+              ],
+              "status": "captured",
+              "windowID": 99379,
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "disclosure": true,
+            "coordinateSource": "Target image OCR and public fixture layout",
+            "fieldCenter": [
+              244.622091042878,
+              416.4435027038422
+            ],
+            "attempt": {
+              "curvedTrajectory": true,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": false,
+              "pid": 19804,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedEvents": 0,
+            "refusedEvents": 0,
+            "newEventTypes": [
+              "click",
+              "input",
+              "keydown",
+              "pointerdown"
+            ]
+          },
+          {
+            "route": "ax",
+            "cleanupVerified": true,
+            "pid": 19926,
+            "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+            "initialAcceptedSubmissions": 0,
+            "controlWorked": false,
+            "verdict": "bypass",
+            "fieldCenter": null,
+            "attempt": {
+              "focusError": 0,
+              "pid": 19926,
+              "pressError": 0,
+              "setValueError": 0,
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedEvents": 0,
+            "refusedEvents": 0,
+            "newEventTypes": [
+              "click",
+              "input"
+            ]
+          }
+        ],
+        "results": [
+          {
+            "pid": 19671,
+            "route": "hid",
+            "binarySHA256": "648c3e2d270e5103932593be9c05ac1399007b54cba3292ef9962e8e417dba76",
+            "initialAcceptedSubmissions": 1,
+            "controlWorked": true,
+            "verdict": "blocked",
+            "windowFrame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "coordinateSource": "Matched reference point translated by public window geometry",
+            "fieldCenter": [
+              387.0,
+              418.5
+            ],
+            "attempt": {
+              "curvedTrajectory": false,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": false,
+              "pid": 19671,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [],
+            "acceptedEvents": 0,
+            "refusedEvents": 29,
+            "newEventTypes": []
+          },
+          {
+            "pid": 19671,
+            "route": "curve-hid",
+            "binarySHA256": "648c3e2d270e5103932593be9c05ac1399007b54cba3292ef9962e8e417dba76",
+            "initialAcceptedSubmissions": 1,
+            "controlWorked": true,
+            "verdict": "blocked",
+            "windowFrame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "coordinateSource": "Matched reference point translated by public window geometry",
+            "fieldCenter": [
+              387.0,
+              418.5
+            ],
+            "attempt": {
+              "curvedTrajectory": true,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": false,
+              "pid": 19671,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [],
+            "acceptedEvents": 0,
+            "refusedEvents": 90,
+            "newEventTypes": []
+          },
+          {
+            "pid": 19671,
+            "route": "pid-keys-keycodes-hid",
+            "binarySHA256": "648c3e2d270e5103932593be9c05ac1399007b54cba3292ef9962e8e417dba76",
+            "initialAcceptedSubmissions": 1,
+            "controlWorked": true,
+            "verdict": "blocked",
+            "windowFrame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "coordinateSource": "Matched reference point translated by public window geometry",
+            "fieldCenter": [
+              387.0,
+              418.5
+            ],
+            "attempt": {
+              "curvedTrajectory": false,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": true,
+              "pid": 19671,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [],
+            "acceptedEvents": 0,
+            "refusedEvents": 29,
+            "newEventTypes": []
+          },
+          {
+            "pid": 19671,
+            "route": "vision-curve",
+            "binarySHA256": "648c3e2d270e5103932593be9c05ac1399007b54cba3292ef9962e8e417dba76",
+            "initialAcceptedSubmissions": 1,
+            "controlWorked": true,
+            "verdict": "inconclusive",
+            "capture": {
+              "frame": [
+                100,
+                110,
+                1000,
+                772
+              ],
+              "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/feature-matrix-initial/candidate-form-vision-curve.png",
+              "pid": 19671,
+              "pixels": [
+                1000,
+                772
+              ],
+              "status": "captured",
+              "windowID": 99322,
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "disclosure": false,
+            "error": "No field label in target image. No input was sent.",
+            "newSubmissions": [],
+            "acceptedEvents": 0,
+            "refusedEvents": 0,
+            "newEventTypes": []
+          },
+          {
+            "pid": 19671,
+            "route": "ax",
+            "binarySHA256": "648c3e2d270e5103932593be9c05ac1399007b54cba3292ef9962e8e417dba76",
+            "initialAcceptedSubmissions": 1,
+            "controlWorked": true,
+            "verdict": "inconclusive",
+            "fieldCenter": null,
+            "attempt": {
+              "error": "Fixture field or action not found in AX tree",
+              "status": "inconclusive",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [],
+            "acceptedEvents": 0,
+            "refusedEvents": 0,
+            "newEventTypes": []
+          }
+        ],
+        "baselineWorked": true,
+        "pid": 19671,
+        "focusAssistedByDiagnostic": true,
+        "cleanupVerified": true
+      },
+      {
+        "surface": "textarea",
+        "controls": [],
+        "results": [],
+        "baselineWorked": false,
+        "status": "inconclusive",
+        "baselineError": "Diagnostic startup did not complete"
+      },
+      {
+        "surface": "editable",
+        "controls": [
+          {
+            "route": "hid",
+            "cleanupVerified": true,
+            "pid": 20459,
+            "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+            "initialAcceptedSubmissions": 0,
+            "controlWorked": false,
+            "verdict": "bypass",
+            "windowFrame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "coordinateSource": "Readable reference Accessibility field",
+            "fieldCenter": [
+              387.0,
+              418.5
+            ],
+            "attempt": {
+              "curvedTrajectory": false,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": false,
+              "pid": 20459,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedEvents": 0,
+            "refusedEvents": 0,
+            "newEventTypes": [
+              "click",
+              "input",
+              "keydown",
+              "pointerdown"
+            ]
+          },
+          {
+            "route": "curve-hid",
+            "cleanupVerified": true,
+            "pid": 20496,
+            "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+            "initialAcceptedSubmissions": 0,
+            "controlWorked": false,
+            "verdict": "bypass",
+            "windowFrame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "coordinateSource": "Readable reference Accessibility field",
+            "fieldCenter": [
+              387.0,
+              418.5
+            ],
+            "attempt": {
+              "curvedTrajectory": true,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": false,
+              "pid": 20496,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedEvents": 0,
+            "refusedEvents": 0,
+            "newEventTypes": [
+              "click",
+              "input",
+              "keydown",
+              "pointerdown"
+            ]
+          },
+          {
+            "route": "pid-keys-keycodes-hid",
+            "cleanupVerified": true,
+            "pid": 20633,
+            "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+            "initialAcceptedSubmissions": 0,
+            "controlWorked": false,
+            "verdict": "bypass",
+            "windowFrame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "coordinateSource": "Readable reference Accessibility field",
+            "fieldCenter": [
+              387.0,
+              418.5
+            ],
+            "attempt": {
+              "curvedTrajectory": false,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": true,
+              "pid": 20633,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedEvents": 0,
+            "refusedEvents": 0,
+            "newEventTypes": [
+              "click",
+              "input",
+              "keydown",
+              "pointerdown"
+            ]
+          },
+          {
+            "route": "vision-curve",
+            "cleanupVerified": true,
+            "pid": 20666,
+            "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+            "initialAcceptedSubmissions": 0,
+            "controlWorked": false,
+            "verdict": "bypass",
+            "capture": {
+              "frame": [
+                100,
+                110,
+                1000,
+                772
+              ],
+              "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/feature-matrix-initial/reference-editable-vision-curve.png",
+              "pid": 20666,
+              "pixels": [
+                2000,
+                1544
+              ],
+              "status": "captured",
+              "windowID": 99479,
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "disclosure": true,
+            "coordinateSource": "Target image OCR and public fixture layout",
+            "fieldCenter": [
+              244.622091042878,
+              416.4435027038422
+            ],
+            "attempt": {
+              "curvedTrajectory": true,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": false,
+              "pid": 20666,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedEvents": 0,
+            "refusedEvents": 0,
+            "newEventTypes": [
+              "click",
+              "input",
+              "keydown",
+              "pointerdown"
+            ]
+          },
+          {
+            "route": "ax",
+            "cleanupVerified": true,
+            "pid": 20696,
+            "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+            "initialAcceptedSubmissions": 0,
+            "controlWorked": false,
+            "verdict": "inconclusive",
+            "fieldCenter": null,
+            "attempt": {
+              "error": "Fixture field or action not found in AX tree",
+              "status": "inconclusive",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [],
+            "acceptedEvents": 0,
+            "refusedEvents": 0,
+            "newEventTypes": []
+          }
+        ],
+        "results": [
+          {
+            "pid": 20198,
+            "route": "hid",
+            "binarySHA256": "648c3e2d270e5103932593be9c05ac1399007b54cba3292ef9962e8e417dba76",
+            "initialAcceptedSubmissions": 1,
+            "controlWorked": true,
+            "verdict": "blocked",
+            "windowFrame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "coordinateSource": "Matched reference point translated by public window geometry",
+            "fieldCenter": [
+              387.0,
+              418.5
+            ],
+            "attempt": {
+              "curvedTrajectory": false,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": false,
+              "pid": 20198,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [],
+            "acceptedEvents": 0,
+            "refusedEvents": 29,
+            "newEventTypes": []
+          },
+          {
+            "pid": 20198,
+            "route": "curve-hid",
+            "binarySHA256": "648c3e2d270e5103932593be9c05ac1399007b54cba3292ef9962e8e417dba76",
+            "initialAcceptedSubmissions": 1,
+            "controlWorked": true,
+            "verdict": "blocked",
+            "windowFrame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "coordinateSource": "Matched reference point translated by public window geometry",
+            "fieldCenter": [
+              387.0,
+              418.5
+            ],
+            "attempt": {
+              "curvedTrajectory": true,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": false,
+              "pid": 20198,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [],
+            "acceptedEvents": 0,
+            "refusedEvents": 90,
+            "newEventTypes": []
+          },
+          {
+            "pid": 20198,
+            "route": "pid-keys-keycodes-hid",
+            "binarySHA256": "648c3e2d270e5103932593be9c05ac1399007b54cba3292ef9962e8e417dba76",
+            "initialAcceptedSubmissions": 1,
+            "controlWorked": true,
+            "verdict": "blocked",
+            "windowFrame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "coordinateSource": "Matched reference point translated by public window geometry",
+            "fieldCenter": [
+              387.0,
+              418.5
+            ],
+            "attempt": {
+              "curvedTrajectory": false,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": true,
+              "pid": 20198,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [],
+            "acceptedEvents": 0,
+            "refusedEvents": 29,
+            "newEventTypes": []
+          },
+          {
+            "pid": 20198,
+            "route": "vision-curve",
+            "binarySHA256": "648c3e2d270e5103932593be9c05ac1399007b54cba3292ef9962e8e417dba76",
+            "initialAcceptedSubmissions": 1,
+            "controlWorked": true,
+            "verdict": "inconclusive",
+            "capture": {
+              "frame": [
+                100,
+                110,
+                1000,
+                772
+              ],
+              "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/feature-matrix-initial/candidate-editable-vision-curve.png",
+              "pid": 20198,
+              "pixels": [
+                1000,
+                772
+              ],
+              "status": "captured",
+              "windowID": 99424,
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "disclosure": false,
+            "error": "No field label in target image. No input was sent.",
+            "newSubmissions": [],
+            "acceptedEvents": 0,
+            "refusedEvents": 0,
+            "newEventTypes": []
+          },
+          {
+            "route": "ax",
+            "skipped": true,
+            "verdict": "inconclusive",
+            "reason": "The matched page-feature reference did not complete"
+          }
+        ],
+        "baselineWorked": true,
+        "pid": 20198,
+        "focusAssistedByDiagnostic": true,
+        "cleanupVerified": true
+      },
+      {
+        "surface": "shadow-open",
+        "controls": [
+          {
+            "route": "hid",
+            "cleanupVerified": true,
+            "pid": 20931,
+            "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+            "initialAcceptedSubmissions": 0,
+            "controlWorked": false,
+            "verdict": "bypass",
+            "windowFrame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "coordinateSource": "Readable reference Accessibility field",
+            "fieldCenter": [
+              387.0,
+              418.5
+            ],
+            "attempt": {
+              "curvedTrajectory": false,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": false,
+              "pid": 20931,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedEvents": 0,
+            "refusedEvents": 0,
+            "newEventTypes": [
+              "click",
+              "input",
+              "keydown",
+              "pointerdown"
+            ]
+          },
+          {
+            "route": "curve-hid",
+            "cleanupVerified": true,
+            "pid": 21026,
+            "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+            "initialAcceptedSubmissions": 0,
+            "controlWorked": false,
+            "verdict": "bypass",
+            "windowFrame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "coordinateSource": "Readable reference Accessibility field",
+            "fieldCenter": [
+              387.0,
+              418.5
+            ],
+            "attempt": {
+              "curvedTrajectory": true,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": false,
+              "pid": 21026,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedEvents": 0,
+            "refusedEvents": 0,
+            "newEventTypes": [
+              "click",
+              "input",
+              "keydown",
+              "pointerdown"
+            ]
+          },
+          {
+            "route": "pid-keys-keycodes-hid",
+            "cleanupVerified": true,
+            "pid": 21059,
+            "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+            "initialAcceptedSubmissions": 0,
+            "controlWorked": false,
+            "verdict": "bypass",
+            "windowFrame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "coordinateSource": "Readable reference Accessibility field",
+            "fieldCenter": [
+              387.0,
+              418.5
+            ],
+            "attempt": {
+              "curvedTrajectory": false,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": true,
+              "pid": 21059,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedEvents": 0,
+            "refusedEvents": 0,
+            "newEventTypes": [
+              "click",
+              "input",
+              "keydown",
+              "pointerdown"
+            ]
+          },
+          {
+            "route": "vision-curve",
+            "cleanupVerified": true,
+            "pid": 21092,
+            "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+            "initialAcceptedSubmissions": 0,
+            "controlWorked": false,
+            "verdict": "bypass",
+            "capture": {
+              "frame": [
+                100,
+                110,
+                1000,
+                772
+              ],
+              "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/feature-matrix-initial/reference-shadow-open-vision-curve.png",
+              "pid": 21092,
+              "pixels": [
+                2000,
+                1544
+              ],
+              "status": "captured",
+              "windowID": 99560,
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "disclosure": true,
+            "coordinateSource": "Target image OCR and public fixture layout",
+            "fieldCenter": [
+              244.622091042878,
+              416.4435027038422
+            ],
+            "attempt": {
+              "curvedTrajectory": true,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": false,
+              "pid": 21092,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedEvents": 0,
+            "refusedEvents": 0,
+            "newEventTypes": [
+              "click",
+              "input",
+              "keydown",
+              "pointerdown"
+            ]
+          },
+          {
+            "route": "ax",
+            "cleanupVerified": true,
+            "pid": 21199,
+            "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+            "initialAcceptedSubmissions": 0,
+            "controlWorked": false,
+            "verdict": "bypass",
+            "fieldCenter": null,
+            "attempt": {
+              "focusError": 0,
+              "pid": 21199,
+              "pressError": 0,
+              "setValueError": 0,
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedEvents": 0,
+            "refusedEvents": 0,
+            "newEventTypes": [
+              "click",
+              "input"
+            ]
+          }
+        ],
+        "results": [
+          {
+            "pid": 20719,
+            "route": "hid",
+            "binarySHA256": "648c3e2d270e5103932593be9c05ac1399007b54cba3292ef9962e8e417dba76",
+            "initialAcceptedSubmissions": 1,
+            "controlWorked": true,
+            "verdict": "blocked",
+            "windowFrame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "coordinateSource": "Matched reference point translated by public window geometry",
+            "fieldCenter": [
+              387.0,
+              418.5
+            ],
+            "attempt": {
+              "curvedTrajectory": false,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": false,
+              "pid": 20719,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [],
+            "acceptedEvents": 0,
+            "refusedEvents": 29,
+            "newEventTypes": []
+          },
+          {
+            "pid": 20719,
+            "route": "curve-hid",
+            "binarySHA256": "648c3e2d270e5103932593be9c05ac1399007b54cba3292ef9962e8e417dba76",
+            "initialAcceptedSubmissions": 1,
+            "controlWorked": true,
+            "verdict": "blocked",
+            "windowFrame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "coordinateSource": "Matched reference point translated by public window geometry",
+            "fieldCenter": [
+              387.0,
+              418.5
+            ],
+            "attempt": {
+              "curvedTrajectory": true,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": false,
+              "pid": 20719,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [],
+            "acceptedEvents": 0,
+            "refusedEvents": 90,
+            "newEventTypes": []
+          },
+          {
+            "pid": 20719,
+            "route": "pid-keys-keycodes-hid",
+            "binarySHA256": "648c3e2d270e5103932593be9c05ac1399007b54cba3292ef9962e8e417dba76",
+            "initialAcceptedSubmissions": 1,
+            "controlWorked": true,
+            "verdict": "blocked",
+            "windowFrame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "coordinateSource": "Matched reference point translated by public window geometry",
+            "fieldCenter": [
+              387.0,
+              418.5
+            ],
+            "attempt": {
+              "curvedTrajectory": false,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": true,
+              "pid": 20719,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [],
+            "acceptedEvents": 0,
+            "refusedEvents": 29,
+            "newEventTypes": []
+          },
+          {
+            "pid": 20719,
+            "route": "vision-curve",
+            "binarySHA256": "648c3e2d270e5103932593be9c05ac1399007b54cba3292ef9962e8e417dba76",
+            "initialAcceptedSubmissions": 1,
+            "controlWorked": true,
+            "verdict": "inconclusive",
+            "capture": {
+              "frame": [
+                100,
+                110,
+                1000,
+                772
+              ],
+              "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/feature-matrix-initial/candidate-shadow-open-vision-curve.png",
+              "pid": 20719,
+              "pixels": [
+                1000,
+                772
+              ],
+              "status": "captured",
+              "windowID": 99505,
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "disclosure": false,
+            "error": "No field label in target image. No input was sent.",
+            "newSubmissions": [],
+            "acceptedEvents": 0,
+            "refusedEvents": 0,
+            "newEventTypes": []
+          },
+          {
+            "pid": 20719,
+            "route": "ax",
+            "binarySHA256": "648c3e2d270e5103932593be9c05ac1399007b54cba3292ef9962e8e417dba76",
+            "initialAcceptedSubmissions": 1,
+            "controlWorked": true,
+            "verdict": "inconclusive",
+            "fieldCenter": null,
+            "attempt": {
+              "error": "Fixture field or action not found in AX tree",
+              "status": "inconclusive",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [],
+            "acceptedEvents": 0,
+            "refusedEvents": 11,
+            "newEventTypes": []
+          }
+        ],
+        "baselineWorked": true,
+        "pid": 20719,
+        "focusAssistedByDiagnostic": true,
+        "cleanupVerified": true
+      },
+      {
+        "surface": "shadow-closed",
+        "controls": [
+          {
+            "route": "hid",
+            "cleanupVerified": true,
+            "pid": 21461,
+            "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+            "initialAcceptedSubmissions": 0,
+            "controlWorked": false,
+            "verdict": "bypass",
+            "windowFrame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "coordinateSource": "Readable reference Accessibility field",
+            "fieldCenter": [
+              387.0,
+              418.5
+            ],
+            "attempt": {
+              "curvedTrajectory": false,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": false,
+              "pid": 21461,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedEvents": 0,
+            "refusedEvents": 0,
+            "newEventTypes": [
+              "click",
+              "input",
+              "keydown",
+              "pointerdown"
+            ]
+          },
+          {
+            "route": "curve-hid",
+            "cleanupVerified": true,
+            "pid": 21535,
+            "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+            "initialAcceptedSubmissions": 0,
+            "controlWorked": false,
+            "verdict": "bypass",
+            "windowFrame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "coordinateSource": "Readable reference Accessibility field",
+            "fieldCenter": [
+              387.0,
+              418.5
+            ],
+            "attempt": {
+              "curvedTrajectory": true,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": false,
+              "pid": 21535,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedEvents": 0,
+            "refusedEvents": 0,
+            "newEventTypes": [
+              "click",
+              "input",
+              "keydown",
+              "pointerdown"
+            ]
+          },
+          {
+            "route": "pid-keys-keycodes-hid",
+            "cleanupVerified": true,
+            "pid": 21571,
+            "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+            "initialAcceptedSubmissions": 0,
+            "controlWorked": false,
+            "verdict": "bypass",
+            "windowFrame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "coordinateSource": "Readable reference Accessibility field",
+            "fieldCenter": [
+              387.0,
+              418.5
+            ],
+            "attempt": {
+              "curvedTrajectory": false,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": true,
+              "pid": 21571,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedEvents": 0,
+            "refusedEvents": 0,
+            "newEventTypes": [
+              "click",
+              "input",
+              "keydown",
+              "pointerdown"
+            ]
+          },
+          {
+            "route": "vision-curve",
+            "cleanupVerified": true,
+            "pid": 21601,
+            "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+            "initialAcceptedSubmissions": 0,
+            "controlWorked": false,
+            "verdict": "bypass",
+            "capture": {
+              "frame": [
+                100,
+                110,
+                1000,
+                772
+              ],
+              "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/feature-matrix-initial/reference-shadow-closed-vision-curve.png",
+              "pid": 21601,
+              "pixels": [
+                2000,
+                1544
+              ],
+              "status": "captured",
+              "windowID": 99641,
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "disclosure": true,
+            "coordinateSource": "Target image OCR and public fixture layout",
+            "fieldCenter": [
+              244.622091042878,
+              416.4435027038422
+            ],
+            "attempt": {
+              "curvedTrajectory": true,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": false,
+              "pid": 21601,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedEvents": 0,
+            "refusedEvents": 0,
+            "newEventTypes": [
+              "click",
+              "input",
+              "keydown",
+              "pointerdown"
+            ]
+          },
+          {
+            "route": "ax",
+            "cleanupVerified": true,
+            "pid": 21742,
+            "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+            "initialAcceptedSubmissions": 0,
+            "controlWorked": false,
+            "verdict": "bypass",
+            "fieldCenter": null,
+            "attempt": {
+              "focusError": 0,
+              "pid": 21742,
+              "pressError": 0,
+              "setValueError": 0,
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedEvents": 0,
+            "refusedEvents": 0,
+            "newEventTypes": [
+              "click",
+              "input"
+            ]
+          }
+        ],
+        "results": [
+          {
+            "pid": 21233,
+            "route": "hid",
+            "binarySHA256": "648c3e2d270e5103932593be9c05ac1399007b54cba3292ef9962e8e417dba76",
+            "initialAcceptedSubmissions": 1,
+            "controlWorked": true,
+            "verdict": "blocked",
+            "windowFrame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "coordinateSource": "Matched reference point translated by public window geometry",
+            "fieldCenter": [
+              387.0,
+              418.5
+            ],
+            "attempt": {
+              "curvedTrajectory": false,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": false,
+              "pid": 21233,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [],
+            "acceptedEvents": 0,
+            "refusedEvents": 29,
+            "newEventTypes": []
+          },
+          {
+            "pid": 21233,
+            "route": "curve-hid",
+            "binarySHA256": "648c3e2d270e5103932593be9c05ac1399007b54cba3292ef9962e8e417dba76",
+            "initialAcceptedSubmissions": 1,
+            "controlWorked": true,
+            "verdict": "blocked",
+            "windowFrame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "coordinateSource": "Matched reference point translated by public window geometry",
+            "fieldCenter": [
+              387.0,
+              418.5
+            ],
+            "attempt": {
+              "curvedTrajectory": true,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": false,
+              "pid": 21233,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [],
+            "acceptedEvents": 0,
+            "refusedEvents": 90,
+            "newEventTypes": []
+          },
+          {
+            "pid": 21233,
+            "route": "pid-keys-keycodes-hid",
+            "binarySHA256": "648c3e2d270e5103932593be9c05ac1399007b54cba3292ef9962e8e417dba76",
+            "initialAcceptedSubmissions": 1,
+            "controlWorked": true,
+            "verdict": "blocked",
+            "windowFrame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "coordinateSource": "Matched reference point translated by public window geometry",
+            "fieldCenter": [
+              387.0,
+              418.5
+            ],
+            "attempt": {
+              "curvedTrajectory": false,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": true,
+              "pid": 21233,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [],
+            "acceptedEvents": 0,
+            "refusedEvents": 29,
+            "newEventTypes": []
+          },
+          {
+            "pid": 21233,
+            "route": "vision-curve",
+            "binarySHA256": "648c3e2d270e5103932593be9c05ac1399007b54cba3292ef9962e8e417dba76",
+            "initialAcceptedSubmissions": 1,
+            "controlWorked": true,
+            "verdict": "inconclusive",
+            "capture": {
+              "frame": [
+                100,
+                110,
+                1000,
+                772
+              ],
+              "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/feature-matrix-initial/candidate-shadow-closed-vision-curve.png",
+              "pid": 21233,
+              "pixels": [
+                1000,
+                772
+              ],
+              "status": "captured",
+              "windowID": 99586,
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "disclosure": false,
+            "error": "No field label in target image. No input was sent.",
+            "newSubmissions": [],
+            "acceptedEvents": 0,
+            "refusedEvents": 0,
+            "newEventTypes": []
+          },
+          {
+            "pid": 21233,
+            "route": "ax",
+            "binarySHA256": "648c3e2d270e5103932593be9c05ac1399007b54cba3292ef9962e8e417dba76",
+            "initialAcceptedSubmissions": 1,
+            "controlWorked": true,
+            "verdict": "inconclusive",
+            "fieldCenter": null,
+            "attempt": {
+              "error": "Fixture field or action not found in AX tree",
+              "status": "inconclusive",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [],
+            "acceptedEvents": 0,
+            "refusedEvents": 0,
+            "newEventTypes": []
+          }
+        ],
+        "baselineWorked": true,
+        "pid": 21233,
+        "focusAssistedByDiagnostic": true,
+        "cleanupVerified": true
+      },
+      {
+        "surface": "spa",
+        "controls": [
+          {
+            "route": "hid",
+            "cleanupVerified": true,
+            "pid": 21947,
+            "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+            "initialAcceptedSubmissions": 0,
+            "controlWorked": false,
+            "verdict": "bypass",
+            "windowFrame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "coordinateSource": "Readable reference Accessibility field",
+            "fieldCenter": [
+              387.0,
+              418.5
+            ],
+            "attempt": {
+              "curvedTrajectory": false,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": false,
+              "pid": 21947,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedEvents": 0,
+            "refusedEvents": 0,
+            "newEventTypes": [
+              "click",
+              "input",
+              "keydown",
+              "pointerdown"
+            ]
+          },
+          {
+            "route": "curve-hid",
+            "cleanupVerified": true,
+            "pid": 21978,
+            "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+            "initialAcceptedSubmissions": 0,
+            "controlWorked": false,
+            "verdict": "bypass",
+            "windowFrame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "coordinateSource": "Readable reference Accessibility field",
+            "fieldCenter": [
+              387.0,
+              418.5
+            ],
+            "attempt": {
+              "curvedTrajectory": true,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": false,
+              "pid": 21978,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedEvents": 0,
+            "refusedEvents": 0,
+            "newEventTypes": [
+              "click",
+              "input",
+              "keydown",
+              "pointerdown"
+            ]
+          },
+          {
+            "route": "pid-keys-keycodes-hid",
+            "cleanupVerified": true,
+            "pid": 22082,
+            "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+            "initialAcceptedSubmissions": 0,
+            "controlWorked": false,
+            "verdict": "bypass",
+            "windowFrame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "coordinateSource": "Readable reference Accessibility field",
+            "fieldCenter": [
+              387.0,
+              418.5
+            ],
+            "attempt": {
+              "curvedTrajectory": false,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": true,
+              "pid": 22082,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedEvents": 0,
+            "refusedEvents": 0,
+            "newEventTypes": [
+              "click",
+              "input",
+              "keydown",
+              "pointerdown"
+            ]
+          },
+          {
+            "route": "vision-curve",
+            "cleanupVerified": true,
+            "pid": 22145,
+            "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+            "initialAcceptedSubmissions": 0,
+            "controlWorked": false,
+            "verdict": "bypass",
+            "capture": {
+              "frame": [
+                100,
+                110,
+                1000,
+                772
+              ],
+              "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/feature-matrix-initial/reference-spa-vision-curve.png",
+              "pid": 22145,
+              "pixels": [
+                2000,
+                1544
+              ],
+              "status": "captured",
+              "windowID": 99722,
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "disclosure": true,
+            "coordinateSource": "Target image OCR and public fixture layout",
+            "fieldCenter": [
+              245.34883834302326,
+              416.4435028746709
+            ],
+            "attempt": {
+              "curvedTrajectory": true,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": false,
+              "pid": 22145,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedEvents": 0,
+            "refusedEvents": 0,
+            "newEventTypes": [
+              "click",
+              "input",
+              "keydown",
+              "pointerdown"
+            ]
+          },
+          {
+            "route": "ax",
+            "cleanupVerified": true,
+            "pid": 22257,
+            "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+            "initialAcceptedSubmissions": 0,
+            "controlWorked": false,
+            "verdict": "bypass",
+            "fieldCenter": null,
+            "attempt": {
+              "focusError": 0,
+              "pid": 22257,
+              "pressError": 0,
+              "setValueError": 0,
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedEvents": 0,
+            "refusedEvents": 0,
+            "newEventTypes": [
+              "click",
+              "input"
+            ]
+          }
+        ],
+        "results": [
+          {
+            "pid": 21770,
+            "route": "hid",
+            "binarySHA256": "648c3e2d270e5103932593be9c05ac1399007b54cba3292ef9962e8e417dba76",
+            "initialAcceptedSubmissions": 1,
+            "controlWorked": true,
+            "verdict": "blocked",
+            "windowFrame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "coordinateSource": "Matched reference point translated by public window geometry",
+            "fieldCenter": [
+              387.0,
+              418.5
+            ],
+            "attempt": {
+              "curvedTrajectory": false,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": false,
+              "pid": 21770,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [],
+            "acceptedEvents": 0,
+            "refusedEvents": 29,
+            "newEventTypes": []
+          },
+          {
+            "pid": 21770,
+            "route": "curve-hid",
+            "binarySHA256": "648c3e2d270e5103932593be9c05ac1399007b54cba3292ef9962e8e417dba76",
+            "initialAcceptedSubmissions": 1,
+            "controlWorked": true,
+            "verdict": "blocked",
+            "windowFrame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "coordinateSource": "Matched reference point translated by public window geometry",
+            "fieldCenter": [
+              387.0,
+              418.5
+            ],
+            "attempt": {
+              "curvedTrajectory": true,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": false,
+              "pid": 21770,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [],
+            "acceptedEvents": 0,
+            "refusedEvents": 96,
+            "newEventTypes": []
+          },
+          {
+            "pid": 21770,
+            "route": "pid-keys-keycodes-hid",
+            "binarySHA256": "648c3e2d270e5103932593be9c05ac1399007b54cba3292ef9962e8e417dba76",
+            "initialAcceptedSubmissions": 1,
+            "controlWorked": true,
+            "verdict": "blocked",
+            "windowFrame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "coordinateSource": "Matched reference point translated by public window geometry",
+            "fieldCenter": [
+              387.0,
+              418.5
+            ],
+            "attempt": {
+              "curvedTrajectory": false,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": true,
+              "pid": 21770,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [],
+            "acceptedEvents": 0,
+            "refusedEvents": 29,
+            "newEventTypes": []
+          },
+          {
+            "pid": 21770,
+            "route": "vision-curve",
+            "binarySHA256": "648c3e2d270e5103932593be9c05ac1399007b54cba3292ef9962e8e417dba76",
+            "initialAcceptedSubmissions": 1,
+            "controlWorked": true,
+            "verdict": "inconclusive",
+            "capture": {
+              "frame": [
+                100,
+                110,
+                1000,
+                772
+              ],
+              "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/feature-matrix-initial/candidate-spa-vision-curve.png",
+              "pid": 21770,
+              "pixels": [
+                1000,
+                772
+              ],
+              "status": "captured",
+              "windowID": 99667,
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "disclosure": false,
+            "error": "No field label in target image. No input was sent.",
+            "newSubmissions": [],
+            "acceptedEvents": 0,
+            "refusedEvents": 0,
+            "newEventTypes": []
+          },
+          {
+            "pid": 21770,
+            "route": "ax",
+            "binarySHA256": "648c3e2d270e5103932593be9c05ac1399007b54cba3292ef9962e8e417dba76",
+            "initialAcceptedSubmissions": 1,
+            "controlWorked": true,
+            "verdict": "inconclusive",
+            "fieldCenter": null,
+            "attempt": {
+              "error": "Fixture field or action not found in AX tree",
+              "status": "inconclusive",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [],
+            "acceptedEvents": 0,
+            "refusedEvents": 0,
+            "newEventTypes": []
+          }
+        ],
+        "baselineWorked": true,
+        "pid": 21770,
+        "focusAssistedByDiagnostic": true,
+        "cleanupVerified": true
+      },
+      {
+        "surface": "iframe",
+        "controls": [
+          {
+            "route": "hid",
+            "cleanupVerified": true,
+            "pid": 22482,
+            "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+            "initialAcceptedSubmissions": 0,
+            "controlWorked": false,
+            "verdict": "bypass",
+            "windowFrame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "coordinateSource": "Readable reference Accessibility field",
+            "fieldCenter": [
+              444.0,
+              568.5
+            ],
+            "attempt": {
+              "curvedTrajectory": false,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": false,
+              "pid": 22482,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedEvents": 0,
+            "refusedEvents": 0,
+            "newEventTypes": [
+              "click",
+              "input",
+              "keydown",
+              "pointerdown"
+            ]
+          },
+          {
+            "route": "curve-hid",
+            "cleanupVerified": true,
+            "pid": 22512,
+            "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+            "initialAcceptedSubmissions": 0,
+            "controlWorked": false,
+            "verdict": "bypass",
+            "windowFrame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "coordinateSource": "Readable reference Accessibility field",
+            "fieldCenter": [
+              444.0,
+              568.5
+            ],
+            "attempt": {
+              "curvedTrajectory": true,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": false,
+              "pid": 22512,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedEvents": 0,
+            "refusedEvents": 0,
+            "newEventTypes": [
+              "click",
+              "input",
+              "keydown",
+              "pointerdown"
+            ]
+          },
+          {
+            "route": "pid-keys-keycodes-hid",
+            "cleanupVerified": true,
+            "pid": 22543,
+            "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+            "initialAcceptedSubmissions": 0,
+            "controlWorked": false,
+            "verdict": "bypass",
+            "windowFrame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "coordinateSource": "Readable reference Accessibility field",
+            "fieldCenter": [
+              444.0,
+              568.5
+            ],
+            "attempt": {
+              "curvedTrajectory": false,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": true,
+              "pid": 22543,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedEvents": 0,
+            "refusedEvents": 0,
+            "newEventTypes": [
+              "click",
+              "input",
+              "keydown",
+              "pointerdown"
+            ]
+          },
+          {
+            "route": "vision-curve",
+            "cleanupVerified": true,
+            "pid": 22575,
+            "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+            "initialAcceptedSubmissions": 0,
+            "controlWorked": false,
+            "verdict": "bypass",
+            "capture": {
+              "frame": [
+                100,
+                110,
+                1000,
+                772
+              ],
+              "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/feature-matrix-initial/reference-iframe-vision-curve.png",
+              "pid": 22575,
+              "pixels": [
+                2000,
+                1544
+              ],
+              "status": "captured",
+              "windowID": 99803,
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "disclosure": false,
+            "coordinateSource": "Target image OCR and public fixture layout",
+            "fieldCenter": [
+              302.0348846899225,
+              566.0174198513353
+            ],
+            "attempt": {
+              "curvedTrajectory": true,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": false,
+              "pid": 22575,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedEvents": 0,
+            "refusedEvents": 0,
+            "newEventTypes": [
+              "click",
+              "input",
+              "keydown",
+              "pointerdown"
+            ]
+          },
+          {
+            "route": "ax",
+            "cleanupVerified": true,
+            "pid": 22624,
+            "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+            "initialAcceptedSubmissions": 0,
+            "controlWorked": false,
+            "verdict": "bypass",
+            "fieldCenter": null,
+            "attempt": {
+              "focusError": 0,
+              "pid": 22624,
+              "pressError": 0,
+              "setValueError": 0,
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedEvents": 0,
+            "refusedEvents": 0,
+            "newEventTypes": [
+              "click",
+              "input"
+            ]
+          }
+        ],
+        "results": [
+          {
+            "pid": 22284,
+            "route": "hid",
+            "binarySHA256": "648c3e2d270e5103932593be9c05ac1399007b54cba3292ef9962e8e417dba76",
+            "initialAcceptedSubmissions": 1,
+            "controlWorked": true,
+            "verdict": "blocked",
+            "windowFrame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "coordinateSource": "Matched reference point translated by public window geometry",
+            "fieldCenter": [
+              444.0,
+              568.5
+            ],
+            "attempt": {
+              "curvedTrajectory": false,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": false,
+              "pid": 22284,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [],
+            "acceptedEvents": 0,
+            "refusedEvents": 29,
+            "newEventTypes": []
+          },
+          {
+            "pid": 22284,
+            "route": "curve-hid",
+            "binarySHA256": "648c3e2d270e5103932593be9c05ac1399007b54cba3292ef9962e8e417dba76",
+            "initialAcceptedSubmissions": 1,
+            "controlWorked": true,
+            "verdict": "blocked",
+            "windowFrame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "coordinateSource": "Matched reference point translated by public window geometry",
+            "fieldCenter": [
+              444.0,
+              568.5
+            ],
+            "attempt": {
+              "curvedTrajectory": true,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": false,
+              "pid": 22284,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [],
+            "acceptedEvents": 0,
+            "refusedEvents": 90,
+            "newEventTypes": []
+          },
+          {
+            "pid": 22284,
+            "route": "pid-keys-keycodes-hid",
+            "binarySHA256": "648c3e2d270e5103932593be9c05ac1399007b54cba3292ef9962e8e417dba76",
+            "initialAcceptedSubmissions": 1,
+            "controlWorked": true,
+            "verdict": "blocked",
+            "windowFrame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "coordinateSource": "Matched reference point translated by public window geometry",
+            "fieldCenter": [
+              444.0,
+              568.5
+            ],
+            "attempt": {
+              "curvedTrajectory": false,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": true,
+              "pid": 22284,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [],
+            "acceptedEvents": 0,
+            "refusedEvents": 29,
+            "newEventTypes": []
+          },
+          {
+            "pid": 22284,
+            "route": "vision-curve",
+            "binarySHA256": "648c3e2d270e5103932593be9c05ac1399007b54cba3292ef9962e8e417dba76",
+            "initialAcceptedSubmissions": 1,
+            "controlWorked": true,
+            "verdict": "inconclusive",
+            "capture": {
+              "frame": [
+                100,
+                110,
+                1000,
+                772
+              ],
+              "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/feature-matrix-initial/candidate-iframe-vision-curve.png",
+              "pid": 22284,
+              "pixels": [
+                1000,
+                772
+              ],
+              "status": "captured",
+              "windowID": 99748,
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "disclosure": false,
+            "error": "No field label in target image. No input was sent.",
+            "newSubmissions": [],
+            "acceptedEvents": 0,
+            "refusedEvents": 0,
+            "newEventTypes": []
+          },
+          {
+            "pid": 22284,
+            "route": "ax",
+            "binarySHA256": "648c3e2d270e5103932593be9c05ac1399007b54cba3292ef9962e8e417dba76",
+            "initialAcceptedSubmissions": 1,
+            "controlWorked": true,
+            "verdict": "inconclusive",
+            "fieldCenter": null,
+            "attempt": {
+              "error": "Fixture field or action not found in AX tree",
+              "status": "inconclusive",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [],
+            "acceptedEvents": 0,
+            "refusedEvents": 0,
+            "newEventTypes": []
+          }
+        ],
+        "baselineWorked": true,
+        "pid": 22284,
+        "focusAssistedByDiagnostic": true,
+        "cleanupVerified": true
+      },
+      {
+        "surface": "cross-frame",
+        "controls": [
+          {
+            "route": "hid",
+            "cleanupVerified": true,
+            "pid": 22881,
+            "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+            "initialAcceptedSubmissions": 0,
+            "controlWorked": false,
+            "verdict": "bypass",
+            "windowFrame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "coordinateSource": "Readable reference Accessibility field",
+            "fieldCenter": [
+              444.0,
+              568.5
+            ],
+            "attempt": {
+              "curvedTrajectory": false,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": false,
+              "pid": 22881,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedEvents": 0,
+            "refusedEvents": 0,
+            "newEventTypes": [
+              "click",
+              "input",
+              "keydown",
+              "pointerdown"
+            ]
+          },
+          {
+            "route": "curve-hid",
+            "cleanupVerified": true,
+            "pid": 22990,
+            "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+            "initialAcceptedSubmissions": 0,
+            "controlWorked": false,
+            "verdict": "bypass",
+            "windowFrame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "coordinateSource": "Readable reference Accessibility field",
+            "fieldCenter": [
+              444.0,
+              568.5
+            ],
+            "attempt": {
+              "curvedTrajectory": true,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": false,
+              "pid": 22990,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedEvents": 0,
+            "refusedEvents": 0,
+            "newEventTypes": [
+              "click",
+              "input",
+              "keydown",
+              "pointerdown"
+            ]
+          },
+          {
+            "route": "pid-keys-keycodes-hid",
+            "cleanupVerified": true,
+            "pid": 23023,
+            "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+            "initialAcceptedSubmissions": 0,
+            "controlWorked": false,
+            "verdict": "bypass",
+            "windowFrame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "coordinateSource": "Readable reference Accessibility field",
+            "fieldCenter": [
+              444.0,
+              568.5
+            ],
+            "attempt": {
+              "curvedTrajectory": false,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": true,
+              "pid": 23023,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedEvents": 0,
+            "refusedEvents": 0,
+            "newEventTypes": [
+              "click",
+              "input",
+              "keydown",
+              "pointerdown"
+            ]
+          },
+          {
+            "route": "vision-curve",
+            "cleanupVerified": true,
+            "pid": 23121,
+            "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+            "initialAcceptedSubmissions": 0,
+            "controlWorked": false,
+            "verdict": "bypass",
+            "capture": {
+              "frame": [
+                100,
+                110,
+                1000,
+                772
+              ],
+              "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/feature-matrix-initial/reference-cross-frame-vision-curve.png",
+              "pid": 23121,
+              "pixels": [
+                2000,
+                1544
+              ],
+              "status": "captured",
+              "windowID": 99884,
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "disclosure": true,
+            "coordinateSource": "Target image OCR and public fixture layout",
+            "fieldCenter": [
+              302.0348846899225,
+              566.0174198513353
+            ],
+            "attempt": {
+              "curvedTrajectory": true,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": false,
+              "pid": 23121,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedEvents": 0,
+            "refusedEvents": 0,
+            "newEventTypes": [
+              "click",
+              "input",
+              "keydown",
+              "pointerdown"
+            ]
+          },
+          {
+            "route": "ax",
+            "cleanupVerified": true,
+            "pid": 23153,
+            "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+            "initialAcceptedSubmissions": 0,
+            "controlWorked": false,
+            "verdict": "bypass",
+            "fieldCenter": null,
+            "attempt": {
+              "focusError": 0,
+              "pid": 23153,
+              "pressError": 0,
+              "setValueError": 0,
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedEvents": 0,
+            "refusedEvents": 0,
+            "newEventTypes": [
+              "click",
+              "input"
+            ]
+          }
+        ],
+        "results": [
+          {
+            "pid": 22652,
+            "route": "hid",
+            "binarySHA256": "648c3e2d270e5103932593be9c05ac1399007b54cba3292ef9962e8e417dba76",
+            "initialAcceptedSubmissions": 1,
+            "controlWorked": true,
+            "verdict": "blocked",
+            "windowFrame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "coordinateSource": "Matched reference point translated by public window geometry",
+            "fieldCenter": [
+              444.0,
+              568.5
+            ],
+            "attempt": {
+              "curvedTrajectory": false,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": false,
+              "pid": 22652,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [],
+            "acceptedEvents": 0,
+            "refusedEvents": 29,
+            "newEventTypes": []
+          },
+          {
+            "pid": 22652,
+            "route": "curve-hid",
+            "binarySHA256": "648c3e2d270e5103932593be9c05ac1399007b54cba3292ef9962e8e417dba76",
+            "initialAcceptedSubmissions": 1,
+            "controlWorked": true,
+            "verdict": "blocked",
+            "windowFrame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "coordinateSource": "Matched reference point translated by public window geometry",
+            "fieldCenter": [
+              444.0,
+              568.5
+            ],
+            "attempt": {
+              "curvedTrajectory": true,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": false,
+              "pid": 22652,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [],
+            "acceptedEvents": 0,
+            "refusedEvents": 90,
+            "newEventTypes": []
+          },
+          {
+            "pid": 22652,
+            "route": "pid-keys-keycodes-hid",
+            "binarySHA256": "648c3e2d270e5103932593be9c05ac1399007b54cba3292ef9962e8e417dba76",
+            "initialAcceptedSubmissions": 1,
+            "controlWorked": true,
+            "verdict": "blocked",
+            "windowFrame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "coordinateSource": "Matched reference point translated by public window geometry",
+            "fieldCenter": [
+              444.0,
+              568.5
+            ],
+            "attempt": {
+              "curvedTrajectory": false,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": true,
+              "pid": 22652,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [],
+            "acceptedEvents": 0,
+            "refusedEvents": 29,
+            "newEventTypes": []
+          },
+          {
+            "pid": 22652,
+            "route": "vision-curve",
+            "binarySHA256": "648c3e2d270e5103932593be9c05ac1399007b54cba3292ef9962e8e417dba76",
+            "initialAcceptedSubmissions": 1,
+            "controlWorked": true,
+            "verdict": "inconclusive",
+            "capture": {
+              "frame": [
+                100,
+                110,
+                1000,
+                772
+              ],
+              "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/feature-matrix-initial/candidate-cross-frame-vision-curve.png",
+              "pid": 22652,
+              "pixels": [
+                1000,
+                772
+              ],
+              "status": "captured",
+              "windowID": 99829,
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "disclosure": false,
+            "error": "No field label in target image. No input was sent.",
+            "newSubmissions": [],
+            "acceptedEvents": 0,
+            "refusedEvents": 0,
+            "newEventTypes": []
+          },
+          {
+            "pid": 22652,
+            "route": "ax",
+            "binarySHA256": "648c3e2d270e5103932593be9c05ac1399007b54cba3292ef9962e8e417dba76",
+            "initialAcceptedSubmissions": 1,
+            "controlWorked": true,
+            "verdict": "inconclusive",
+            "fieldCenter": null,
+            "attempt": {
+              "error": "Fixture field or action not found in AX tree",
+              "status": "inconclusive",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [],
+            "acceptedEvents": 0,
+            "refusedEvents": 0,
+            "newEventTypes": []
+          }
+        ],
+        "baselineWorked": true,
+        "pid": 22652,
+        "focusAssistedByDiagnostic": true,
+        "cleanupVerified": true
+      },
+      {
+        "surface": "srcdoc",
+        "controls": [],
+        "results": [],
+        "baselineWorked": false,
+        "status": "inconclusive",
+        "baselineError": "Diagnostic startup did not complete"
+      }
+    ]
+  },
+  "textareaFollowup": {
+    "binarySHA256": {
+      "InternalKeyboardControl": "648c3e2d270e5103932593be9c05ac1399007b54cba3292ef9962e8e417dba76",
+      "InspectableControl": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+      "NativeProbe": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+    },
+    "permissions": {
+      "accessibility": true,
+      "desktopInputSafety": {
+        "available": true,
+        "blockingMouseHookPIDs": []
+      },
+      "pid": 23991,
+      "postEvents": true,
+      "screenCapture": true,
+      "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+    },
+    "humanBaseline": false,
+    "scope": "Private authorized keyboard baseline with diagnostic focus assistance, then external attacks. No HID or human-attestation claim.",
+    "surfaces": [
+      {
+        "surface": "textarea",
+        "controls": [
+          {
+            "route": "hid",
+            "cleanupVerified": true,
+            "pid": 24005,
+            "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+            "initialAcceptedSubmissions": 0,
+            "controlWorked": false,
+            "verdict": "bypass",
+            "windowFrame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "coordinateSource": "Readable reference Accessibility field",
+            "fieldCenter": [
+              387.0,
+              427.5
+            ],
+            "attempt": {
+              "curvedTrajectory": false,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": false,
+              "pid": 24005,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedEvents": 0,
+            "refusedEvents": 0,
+            "newEventTypes": [
+              "click",
+              "input",
+              "keydown",
+              "pointerdown"
+            ]
+          }
+        ],
+        "results": [
+          {
+            "pid": 23996,
+            "route": "hid",
+            "binarySHA256": "648c3e2d270e5103932593be9c05ac1399007b54cba3292ef9962e8e417dba76",
+            "initialAcceptedSubmissions": 1,
+            "controlWorked": true,
+            "verdict": "blocked",
+            "windowFrame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "coordinateSource": "Matched reference point translated by public window geometry",
+            "fieldCenter": [
+              387.0,
+              427.5
+            ],
+            "attempt": {
+              "curvedTrajectory": false,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": false,
+              "pid": 23996,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [],
+            "acceptedEvents": 0,
+            "refusedEvents": 29,
+            "newEventTypes": []
+          }
+        ],
+        "baselineWorked": true,
+        "pid": 23996,
+        "focusAssistedByDiagnostic": true,
+        "cleanupVerified": true
+      }
+    ]
+  },
+  "focusAttackWithAXReads": {
+    "binarySHA256": {
+      "NativeProbe": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1",
+      "InternalKeyboardControl": "648c3e2d270e5103932593be9c05ac1399007b54cba3292ef9962e8e417dba76",
+      "InspectableControl": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10"
+    },
+    "humanBaseline": false,
+    "scope": "Agent activates only research apps. Candidate baseline is private authorized keyboard input. Focus listener is ordinary page code.",
+    "runs": [
+      {
+        "repetition": 0,
+        "referenceArming": {
+          "focusError": 0,
+          "pid": 24512,
+          "pressError": 0,
+          "setValueError": 0,
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "control": {
+          "pid": 24512,
+          "beforeAccepted": 1,
+          "newActionsWhileDeactivating": 0,
+          "newActionsWhileActivating": 1,
+          "newSubmissions": [
+            {
+              "accepted": true
+            }
+          ],
+          "acceptedInputEvents": 0,
+          "awayStatus": "observed",
+          "backStatus": "observed",
+          "syntheticInputPosted": false,
+          "AXValueSet": false,
+          "AXPressSent": false
+        },
+        "referenceCleanupVerified": true,
+        "candidate": {
+          "pid": 24558,
+          "beforeAccepted": 1,
+          "newActionsWhileDeactivating": 0,
+          "newActionsWhileActivating": 1,
+          "newSubmissions": [
+            {
+              "accepted": true
+            }
+          ],
+          "acceptedInputEvents": 0,
+          "awayStatus": "observed",
+          "backStatus": "observed",
+          "syntheticInputPosted": false,
+          "AXValueSet": false,
+          "AXPressSent": false
+        },
+        "status": "autonomous-website-action",
+        "candidateCleanupVerified": true,
+        "sinkCleanupVerified": true
+      },
+      {
+        "repetition": 1,
+        "referenceArming": {
+          "focusError": 0,
+          "pid": 24615,
+          "pressError": 0,
+          "setValueError": 0,
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "control": {
+          "pid": 24615,
+          "beforeAccepted": 1,
+          "newActionsWhileDeactivating": 0,
+          "newActionsWhileActivating": 1,
+          "newSubmissions": [
+            {
+              "accepted": true
+            }
+          ],
+          "acceptedInputEvents": 0,
+          "awayStatus": "observed",
+          "backStatus": "observed",
+          "syntheticInputPosted": false,
+          "AXValueSet": false,
+          "AXPressSent": false
+        },
+        "referenceCleanupVerified": true,
+        "candidate": {
+          "pid": 24821,
+          "beforeAccepted": 1,
+          "newActionsWhileDeactivating": 0,
+          "newActionsWhileActivating": 1,
+          "newSubmissions": [
+            {
+              "accepted": true
+            }
+          ],
+          "acceptedInputEvents": 0,
+          "awayStatus": "observed",
+          "backStatus": "observed",
+          "syntheticInputPosted": false,
+          "AXValueSet": false,
+          "AXPressSent": false
+        },
+        "status": "autonomous-website-action",
+        "candidateCleanupVerified": true,
+        "sinkCleanupVerified": true
+      },
+      {
+        "repetition": 2,
+        "referenceArming": {
+          "focusError": 0,
+          "pid": 24958,
+          "pressError": 0,
+          "setValueError": 0,
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "control": {
+          "pid": 24958,
+          "beforeAccepted": 1,
+          "newActionsWhileDeactivating": 0,
+          "newActionsWhileActivating": 1,
+          "newSubmissions": [
+            {
+              "accepted": true
+            }
+          ],
+          "acceptedInputEvents": 0,
+          "awayStatus": "observed",
+          "backStatus": "observed",
+          "syntheticInputPosted": false,
+          "AXValueSet": false,
+          "AXPressSent": false
+        },
+        "referenceCleanupVerified": true,
+        "candidate": {
+          "pid": 25044,
+          "beforeAccepted": 1,
+          "newActionsWhileDeactivating": 0,
+          "newActionsWhileActivating": 1,
+          "newSubmissions": [
+            {
+              "accepted": true
+            }
+          ],
+          "acceptedInputEvents": 0,
+          "awayStatus": "observed",
+          "backStatus": "observed",
+          "syntheticInputPosted": false,
+          "AXValueSet": false,
+          "AXPressSent": false
+        },
+        "status": "autonomous-website-action",
+        "candidateCleanupVerified": true,
+        "sinkCleanupVerified": true
+      }
+    ]
+  },
+  "focusAttackWithoutAX": {
+    "binarySHA256": {
+      "NativeProbe": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1",
+      "InternalKeyboardControl": "648c3e2d270e5103932593be9c05ac1399007b54cba3292ef9962e8e417dba76",
+      "InspectableControl": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+      "ResearchFocus": "3aa438d647b3640437496068033b4cca460b30ffe1c97e63a7142d213e293431"
+    },
+    "humanBaseline": false,
+    "scope": "Agent activates only research apps. Candidate baseline is private authorized keyboard input. Focus listener is ordinary page code.",
+    "runs": [
+      {
+        "repetition": 0,
+        "referenceArming": {
+          "focusError": 0,
+          "pid": 28947,
+          "pressError": 0,
+          "setValueError": 0,
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "control": {
+          "pid": 28947,
+          "beforeAccepted": 1,
+          "newActionsWhileDeactivating": 0,
+          "newActionsWhileActivating": 1,
+          "newSubmissions": [
+            {
+              "accepted": true
+            }
+          ],
+          "acceptedInputEvents": 0,
+          "awayStatus": "observed",
+          "backStatus": "observed",
+          "activationMethod": "NSRunningApplication.activate; no Accessibility call",
+          "syntheticInputPosted": false,
+          "AXReadSent": false,
+          "AXValueSet": false,
+          "AXPressSent": false
+        },
+        "referenceCleanupVerified": true,
+        "candidate": {
+          "pid": 28966,
+          "beforeAccepted": 1,
+          "newActionsWhileDeactivating": 0,
+          "newActionsWhileActivating": 1,
+          "newSubmissions": [
+            {
+              "accepted": true
+            }
+          ],
+          "acceptedInputEvents": 0,
+          "awayStatus": "observed",
+          "backStatus": "observed",
+          "activationMethod": "NSRunningApplication.activate; no Accessibility call",
+          "syntheticInputPosted": false,
+          "AXReadSent": false,
+          "AXValueSet": false,
+          "AXPressSent": false
+        },
+        "status": "autonomous-website-action",
+        "candidateCleanupVerified": true,
+        "sinkCleanupVerified": true
+      },
+      {
+        "repetition": 1,
+        "referenceArming": {
+          "focusError": 0,
+          "pid": 29164,
+          "pressError": 0,
+          "setValueError": 0,
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "control": {
+          "pid": 29164,
+          "beforeAccepted": 1,
+          "newActionsWhileDeactivating": 0,
+          "newActionsWhileActivating": 1,
+          "newSubmissions": [
+            {
+              "accepted": true
+            }
+          ],
+          "acceptedInputEvents": 0,
+          "awayStatus": "observed",
+          "backStatus": "observed",
+          "activationMethod": "NSRunningApplication.activate; no Accessibility call",
+          "syntheticInputPosted": false,
+          "AXReadSent": false,
+          "AXValueSet": false,
+          "AXPressSent": false
+        },
+        "referenceCleanupVerified": true,
+        "candidate": {
+          "pid": 29300,
+          "beforeAccepted": 1,
+          "newActionsWhileDeactivating": 0,
+          "newActionsWhileActivating": 1,
+          "newSubmissions": [
+            {
+              "accepted": true
+            }
+          ],
+          "acceptedInputEvents": 0,
+          "awayStatus": "observed",
+          "backStatus": "observed",
+          "activationMethod": "NSRunningApplication.activate; no Accessibility call",
+          "syntheticInputPosted": false,
+          "AXReadSent": false,
+          "AXValueSet": false,
+          "AXPressSent": false
+        },
+        "status": "autonomous-website-action",
+        "candidateCleanupVerified": true,
+        "sinkCleanupVerified": true
+      },
+      {
+        "repetition": 2,
+        "referenceArming": {
+          "focusError": 0,
+          "pid": 29466,
+          "pressError": 0,
+          "setValueError": 0,
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "control": {
+          "pid": 29466,
+          "beforeAccepted": 1,
+          "newActionsWhileDeactivating": 0,
+          "newActionsWhileActivating": 1,
+          "newSubmissions": [
+            {
+              "accepted": true
+            }
+          ],
+          "acceptedInputEvents": 0,
+          "awayStatus": "observed",
+          "backStatus": "observed",
+          "activationMethod": "NSRunningApplication.activate; no Accessibility call",
+          "syntheticInputPosted": false,
+          "AXReadSent": false,
+          "AXValueSet": false,
+          "AXPressSent": false
+        },
+        "referenceCleanupVerified": true,
+        "candidate": {
+          "pid": 29542,
+          "beforeAccepted": 1,
+          "newActionsWhileDeactivating": 0,
+          "newActionsWhileActivating": 1,
+          "newSubmissions": [
+            {
+              "accepted": true
+            }
+          ],
+          "acceptedInputEvents": 0,
+          "awayStatus": "observed",
+          "backStatus": "observed",
+          "activationMethod": "NSRunningApplication.activate; no Accessibility call",
+          "syntheticInputPosted": false,
+          "AXReadSent": false,
+          "AXValueSet": false,
+          "AXPressSent": false
+        },
+        "status": "autonomous-website-action",
+        "candidateCleanupVerified": true,
+        "sinkCleanupVerified": true
+      }
+    ]
+  },
+  "matrixFocusRegression": {
+    "binarySHA256": {
+      "InternalKeyboardControl": "648c3e2d270e5103932593be9c05ac1399007b54cba3292ef9962e8e417dba76",
+      "InspectableControl": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+      "NativeProbe": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+    },
+    "permissions": {
+      "accessibility": true,
+      "desktopInputSafety": {
+        "available": true,
+        "blockingMouseHookPIDs": []
+      },
+      "pid": 27333,
+      "postEvents": true,
+      "screenCapture": true,
+      "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+    },
+    "humanBaseline": false,
+    "scope": "Private authorized keyboard baseline with diagnostic focus assistance, then external attacks. No HID or human-attestation claim.",
+    "surfaces": [
+      {
+        "surface": "focus-action",
+        "controls": [
+          {
+            "route": "hid",
+            "cleanupVerified": true,
+            "pid": 27365,
+            "binarySHA256": "421bc9c112794974170199b91f73d614ed913263a44abc1df96972c5988dbf10",
+            "initialAcceptedSubmissions": 0,
+            "controlWorked": false,
+            "verdict": "bypass",
+            "windowFrame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "coordinateSource": "Readable reference Accessibility field",
+            "fieldCenter": [
+              387.0,
+              418.5
+            ],
+            "attempt": {
+              "curvedTrajectory": false,
+              "directToPID": false,
+              "explicitWindowRouting": false,
+              "keyboardDirectToPID": false,
+              "pid": 27365,
+              "postTap": 0,
+              "source": "hid",
+              "status": "attempted",
+              "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+            },
+            "newSubmissions": [
+              {
+                "accepted": true
+              }
+            ],
+            "acceptedEvents": 0,
+            "refusedEvents": 0,
+            "newEventTypes": [
+              "click",
+              "input",
+              "keydown",
+              "pointerdown"
+            ]
+          }
+        ],
+        "results": [
+          {
+            "route": "hid",
+            "verdict": "bypass",
+            "operationPhase": "foreground-preparation",
+            "newSubmissions": [
+              {
+                "accepted": true
+              }
+            ],
+            "syntheticInputPosted": false
+          }
+        ],
+        "baselineWorked": true,
+        "pid": 27338,
+        "focusAssistedByDiagnostic": true,
+        "stopReason": "Candidate accepted input or completed a new action",
+        "cleanupVerified": true
+      }
+    ]
+  },
+  "finalReceipt": {
+    "livePhysicalPID": 61893,
+    "livePhysicalSHA256": "43b1a9833d6c55b1e254b848f9bd09c202da46ba0f8d8833084df559e6a8a9d1",
+    "newSourceAppliedToPhysicalBrowser": false,
+    "temporaryPIDs": {
+      "InternalKeyboardControl": [],
+      "InspectableControl": [],
+      "NativeProbe": []
+    }
+  }
+}

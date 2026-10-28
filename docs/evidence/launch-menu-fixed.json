@@ -1,0 +1,78 @@
+{
+  "results": [
+    {
+      "target": "InspectableControl",
+      "repetition": 0,
+      "binarySHA256": "cd54cc2a2ba654d4e0c323cd661c2dea959d1bec001ce2f18f8030f273c94ec0",
+      "route": "launch-url",
+      "verdict": "bypass",
+      "documentRequests": 1,
+      "deviceBoundDuringTest": false,
+      "deviceReaderReady": false,
+      "pendingAddressLogged": false,
+      "controlWorked": false
+    },
+    {
+      "target": "InspectableControl",
+      "repetition": 1,
+      "binarySHA256": "cd54cc2a2ba654d4e0c323cd661c2dea959d1bec001ce2f18f8030f273c94ec0",
+      "route": "launch-url",
+      "verdict": "bypass",
+      "documentRequests": 1,
+      "deviceBoundDuringTest": false,
+      "deviceReaderReady": false,
+      "pendingAddressLogged": false,
+      "controlWorked": false
+    },
+    {
+      "target": "InspectableControl",
+      "repetition": 2,
+      "binarySHA256": "cd54cc2a2ba654d4e0c323cd661c2dea959d1bec001ce2f18f8030f273c94ec0",
+      "route": "launch-url",
+      "verdict": "bypass",
+      "documentRequests": 1,
+      "deviceBoundDuringTest": false,
+      "deviceReaderReady": false,
+      "pendingAddressLogged": false,
+      "controlWorked": false
+    },
+    {
+      "target": "DeviceKeyboardExperiment",
+      "repetition": 0,
+      "binarySHA256": "abd2c382c5533fe4d36d5f6941d3aad4d23dcd48b22552716726621205ac4690",
+      "route": "launch-url",
+      "verdict": "blocked-launch-route",
+      "documentRequests": 0,
+      "deviceBoundDuringTest": false,
+      "deviceReaderReady": true,
+      "pendingAddressLogged": true,
+      "controlWorked": true
+    },
+    {
+      "target": "DeviceKeyboardExperiment",
+      "repetition": 1,
+      "binarySHA256": "abd2c382c5533fe4d36d5f6941d3aad4d23dcd48b22552716726621205ac4690",
+      "route": "launch-url",
+      "verdict": "blocked-launch-route",
+      "documentRequests": 0,
+      "deviceBoundDuringTest": false,
+      "deviceReaderReady": true,
+      "pendingAddressLogged": true,
+      "controlWorked": true
+    },
+    {
+      "target": "DeviceKeyboardExperiment",
+      "repetition": 2,
+      "binarySHA256": "abd2c382c5533fe4d36d5f6941d3aad4d23dcd48b22552716726621205ac4690",
+      "route": "launch-url",
+      "verdict": "blocked-launch-route",
+      "documentRequests": 0,
+      "deviceBoundDuringTest": false,
+      "deviceReaderReady": true,
+      "pendingAddressLogged": true,
+      "controlWorked": true
+    }
+  ],
+  "scope": "Only unattended --url navigation to a fresh disposable loopback endpoint. Not a human usability or general agent-prevention result.",
+  "physicalInputAbsenceVerified": false
+}

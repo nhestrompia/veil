@@ -1,0 +1,229 @@
+{
+  "binarySHA256": "d17b68caeeaf6a1240fe473652bb194e976809d3bb557d455a84f4883e9e9336",
+  "system": "ProductName:\t\tmacOS\nProductVersion:\t\t26.6\nBuildVersion:\t\t25G72\n",
+  "results": [
+    {
+      "kind": "direct",
+      "policy": "defaults",
+      "repetition": 0,
+      "verdict": "known-id-unavailable",
+      "surfaceID": 229,
+      "reader": {
+        "status": "lookup-unavailable",
+        "surfaceID": 229
+      },
+      "exactNonceRecovered": false
+    },
+    {
+      "kind": "direct",
+      "policy": "defaults",
+      "repetition": 1,
+      "verdict": "known-id-unavailable",
+      "surfaceID": 229,
+      "reader": {
+        "status": "lookup-unavailable",
+        "surfaceID": 229
+      },
+      "exactNonceRecovered": false
+    },
+    {
+      "kind": "direct",
+      "policy": "defaults",
+      "repetition": 2,
+      "verdict": "known-id-unavailable",
+      "surfaceID": 229,
+      "reader": {
+        "status": "lookup-unavailable",
+        "surfaceID": 229
+      },
+      "exactNonceRecovered": false
+    },
+    {
+      "kind": "direct",
+      "policy": "local",
+      "repetition": 0,
+      "verdict": "known-id-unavailable",
+      "surfaceID": 229,
+      "reader": {
+        "status": "lookup-unavailable",
+        "surfaceID": 229
+      },
+      "exactNonceRecovered": false
+    },
+    {
+      "kind": "direct",
+      "policy": "local",
+      "repetition": 1,
+      "verdict": "known-id-unavailable",
+      "surfaceID": 229,
+      "reader": {
+        "status": "lookup-unavailable",
+        "surfaceID": 229
+      },
+      "exactNonceRecovered": false
+    },
+    {
+      "kind": "direct",
+      "policy": "local",
+      "repetition": 2,
+      "verdict": "known-id-unavailable",
+      "surfaceID": 229,
+      "reader": {
+        "status": "lookup-unavailable",
+        "surfaceID": 229
+      },
+      "exactNonceRecovered": false
+    },
+    {
+      "kind": "direct",
+      "policy": "global",
+      "repetition": 0,
+      "verdict": "known-id-readable",
+      "surfaceID": 229,
+      "reader": {
+        "observedNonce": "f653da12cf9c1a7e",
+        "status": "read",
+        "surfaceID": 229
+      },
+      "exactNonceRecovered": true
+    },
+    {
+      "kind": "direct",
+      "policy": "global",
+      "repetition": 1,
+      "verdict": "known-id-readable",
+      "surfaceID": 283,
+      "reader": {
+        "observedNonce": "4f5a5a4271ef1837",
+        "status": "read",
+        "surfaceID": 283
+      },
+      "exactNonceRecovered": true
+    },
+    {
+      "kind": "direct",
+      "policy": "global",
+      "repetition": 2,
+      "verdict": "known-id-readable",
+      "surfaceID": 229,
+      "reader": {
+        "observedNonce": "fe4b7399722ad302",
+        "status": "read",
+        "surfaceID": 229
+      },
+      "exactNonceRecovered": true
+    },
+    {
+      "kind": "pixelBuffer",
+      "policy": "defaults",
+      "repetition": 0,
+      "verdict": "known-id-unavailable",
+      "surfaceID": 229,
+      "reader": {
+        "status": "lookup-unavailable",
+        "surfaceID": 229
+      },
+      "exactNonceRecovered": false
+    },
+    {
+      "kind": "pixelBuffer",
+      "policy": "defaults",
+      "repetition": 1,
+      "verdict": "known-id-unavailable",
+      "surfaceID": 229,
+      "reader": {
+        "status": "lookup-unavailable",
+        "surfaceID": 229
+      },
+      "exactNonceRecovered": false
+    },
+    {
+      "kind": "pixelBuffer",
+      "policy": "defaults",
+      "repetition": 2,
+      "verdict": "known-id-unavailable",
+      "surfaceID": 229,
+      "reader": {
+        "status": "lookup-unavailable",
+        "surfaceID": 229
+      },
+      "exactNonceRecovered": false
+    },
+    {
+      "kind": "pixelBuffer",
+      "policy": "local",
+      "repetition": 0,
+      "verdict": "known-id-unavailable",
+      "surfaceID": 229,
+      "reader": {
+        "status": "lookup-unavailable",
+        "surfaceID": 229
+      },
+      "exactNonceRecovered": false
+    },
+    {
+      "kind": "pixelBuffer",
+      "policy": "local",
+      "repetition": 1,
+      "verdict": "known-id-unavailable",
+      "surfaceID": 229,
+      "reader": {
+        "status": "lookup-unavailable",
+        "surfaceID": 229
+      },
+      "exactNonceRecovered": false
+    },
+    {
+      "kind": "pixelBuffer",
+      "policy": "local",
+      "repetition": 2,
+      "verdict": "known-id-unavailable",
+      "surfaceID": 229,
+      "reader": {
+        "status": "lookup-unavailable",
+        "surfaceID": 229
+      },
+      "exactNonceRecovered": false
+    },
+    {
+      "kind": "pixelBuffer",
+      "policy": "global",
+      "repetition": 0,
+      "verdict": "known-id-readable",
+      "surfaceID": 56,
+      "reader": {
+        "observedNonce": "d0cf56efabc1ed02",
+        "status": "read",
+        "surfaceID": 56
+      },
+      "exactNonceRecovered": true
+    },
+    {
+      "kind": "pixelBuffer",
+      "policy": "global",
+      "repetition": 1,
+      "verdict": "known-id-readable",
+      "surfaceID": 56,
+      "reader": {
+        "observedNonce": "16b26dc5b85dd582",
+        "status": "read",
+        "surfaceID": 56
+      },
+      "exactNonceRecovered": true
+    },
+    {
+      "kind": "pixelBuffer",
+      "policy": "global",
+      "repetition": 2,
+      "verdict": "known-id-readable",
+      "surfaceID": 55,
+      "reader": {
+        "observedNonce": "630698040f2d16e1",
+        "status": "read",
+        "surfaceID": 55
+      },
+      "exactNonceRecovered": true
+    }
+  ],
+  "scope": "Known-ID cooperating fake-buffer calibration. No Mach ports, browser pixels, ID discovery, or surface enumeration."
+}

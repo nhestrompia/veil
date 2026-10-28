@@ -1,0 +1,21 @@
+{
+  "displayTransport": "User reports direct Mac display",
+  "protectedBGRA": {
+    "trial": "4e23e3d0da762b96",
+    "operatorReport": "black",
+    "webpageVisible": false
+  },
+  "controlBGRA": {
+    "trial": "d7b665518f7edec7",
+    "operatorReport": "The webpage is visible",
+    "webpageVisible": true
+  },
+  "protectedNV12": {
+    "trial": "63c14ab546f6e942",
+    "operatorReport": "black",
+    "status": "failed-physical-visibility",
+    "webpageVisible": false
+  },
+  "usefulBGRACaptureProtection": "failed-physical-visibility",
+  "usefulNV12CaptureProtection": "failed-physical-visibility"
+}

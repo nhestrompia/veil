@@ -1,0 +1,294 @@
+{
+  "permissions": {
+    "accessibility": true,
+    "pid": 67095,
+    "postEvents": true,
+    "screenCapture": true
+  },
+  "results": [
+    {
+      "target": "AgentFreeBrowser",
+      "trial": "5fe120326b73b409",
+      "repetition": 0,
+      "route": "screenkit-ocr-cgevent",
+      "verdict": "bypass",
+      "binarySHA256": "81b869fb7faaf69de0fdd31af7c1e4aed786e7dd71aa115865242bbdc0bd8c47",
+      "screenkit": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/capture-final/AgentFreeBrowser-0.screenkit.png",
+        "pid": 67097,
+        "pixels": [
+          2000,
+          1544
+        ],
+        "status": "captured",
+        "windowID": 80832
+      },
+      "systemCapture": {
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/capture-final/AgentFreeBrowser-0.system.png",
+        "pid": 67097,
+        "status": "captured",
+        "windowID": 80832
+      },
+      "screenkitDisclosure": true,
+      "systemDisclosure": true,
+      "input": {
+        "curvedTrajectory": true,
+        "directToPID": false,
+        "pid": 67097,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "coordinateDerivation": "OCR label center plus public fixture's 57-point field offset; no AX tree",
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "disclosure": true
+    },
+    {
+      "target": "AgentFreeBrowser",
+      "trial": "b3ae14333453d913",
+      "repetition": 1,
+      "route": "screenkit-ocr-cgevent",
+      "verdict": "bypass",
+      "binarySHA256": "81b869fb7faaf69de0fdd31af7c1e4aed786e7dd71aa115865242bbdc0bd8c47",
+      "screenkit": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/capture-final/AgentFreeBrowser-1.screenkit.png",
+        "pid": 67137,
+        "pixels": [
+          2000,
+          1544
+        ],
+        "status": "captured",
+        "windowID": 80841
+      },
+      "systemCapture": {
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/capture-final/AgentFreeBrowser-1.system.png",
+        "pid": 67137,
+        "status": "captured",
+        "windowID": 80841
+      },
+      "screenkitDisclosure": false,
+      "systemDisclosure": false,
+      "input": {
+        "curvedTrajectory": true,
+        "directToPID": false,
+        "pid": 67137,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "coordinateDerivation": "OCR label center plus public fixture's 57-point field offset; no AX tree",
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "disclosure": false
+    },
+    {
+      "target": "AgentFreeBrowser",
+      "trial": "5751ff32e6b5967e",
+      "repetition": 2,
+      "route": "screenkit-ocr-cgevent",
+      "verdict": "bypass",
+      "binarySHA256": "81b869fb7faaf69de0fdd31af7c1e4aed786e7dd71aa115865242bbdc0bd8c47",
+      "screenkit": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/capture-final/AgentFreeBrowser-2.screenkit.png",
+        "pid": 67176,
+        "pixels": [
+          2000,
+          1544
+        ],
+        "status": "captured",
+        "windowID": 80850
+      },
+      "systemCapture": {
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/capture-final/AgentFreeBrowser-2.system.png",
+        "pid": 67176,
+        "status": "captured",
+        "windowID": 80850
+      },
+      "screenkitDisclosure": false,
+      "systemDisclosure": false,
+      "input": {
+        "curvedTrajectory": true,
+        "directToPID": false,
+        "pid": 67176,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "coordinateDerivation": "OCR label center plus public fixture's 57-point field offset; no AX tree",
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "disclosure": false
+    },
+    {
+      "target": "InspectableControl",
+      "trial": "2b566a0794ccbc62",
+      "repetition": 0,
+      "route": "screenkit-ocr-cgevent",
+      "verdict": "bypass",
+      "binarySHA256": "93f6a59721ae61dce13d8ea93ca58026090b907a343af67a5b27d575033c20fc",
+      "screenkit": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/capture-final/InspectableControl-0.screenkit.png",
+        "pid": 67215,
+        "pixels": [
+          2000,
+          1544
+        ],
+        "status": "captured",
+        "windowID": 80859
+      },
+      "systemCapture": {
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/capture-final/InspectableControl-0.system.png",
+        "pid": 67215,
+        "status": "captured",
+        "windowID": 80859
+      },
+      "screenkitDisclosure": true,
+      "systemDisclosure": true,
+      "input": {
+        "curvedTrajectory": true,
+        "directToPID": false,
+        "pid": 67215,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "coordinateDerivation": "OCR label center plus public fixture's 57-point field offset; no AX tree",
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "disclosure": true
+    },
+    {
+      "target": "InspectableControl",
+      "trial": "fb3852ea02d2741f",
+      "repetition": 1,
+      "route": "screenkit-ocr-cgevent",
+      "verdict": "bypass",
+      "binarySHA256": "93f6a59721ae61dce13d8ea93ca58026090b907a343af67a5b27d575033c20fc",
+      "screenkit": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/capture-final/InspectableControl-1.screenkit.png",
+        "pid": 67254,
+        "pixels": [
+          2000,
+          1544
+        ],
+        "status": "captured",
+        "windowID": 80868
+      },
+      "systemCapture": {
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/capture-final/InspectableControl-1.system.png",
+        "pid": 67254,
+        "status": "captured",
+        "windowID": 80868
+      },
+      "screenkitDisclosure": true,
+      "systemDisclosure": true,
+      "input": {
+        "curvedTrajectory": true,
+        "directToPID": false,
+        "pid": 67254,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "coordinateDerivation": "OCR label center plus public fixture's 57-point field offset; no AX tree",
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "disclosure": true
+    },
+    {
+      "target": "InspectableControl",
+      "trial": "95e3f038654c862e",
+      "repetition": 2,
+      "route": "screenkit-ocr-cgevent",
+      "verdict": "bypass",
+      "binarySHA256": "93f6a59721ae61dce13d8ea93ca58026090b907a343af67a5b27d575033c20fc",
+      "screenkit": {
+        "frame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/capture-final/InspectableControl-2.screenkit.png",
+        "pid": 67319,
+        "pixels": [
+          2000,
+          1544
+        ],
+        "status": "captured",
+        "windowID": 80877
+      },
+      "systemCapture": {
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/capture-final/InspectableControl-2.system.png",
+        "pid": 67319,
+        "status": "captured",
+        "windowID": 80877
+      },
+      "screenkitDisclosure": true,
+      "systemDisclosure": true,
+      "input": {
+        "curvedTrajectory": true,
+        "directToPID": false,
+        "pid": 67319,
+        "source": "hid",
+        "status": "attempted"
+      },
+      "coordinateDerivation": "OCR label center plus public fixture's 57-point field offset; no AX tree",
+      "submissions": [
+        {
+          "note": "native-input",
+          "accepted": true
+        }
+      ],
+      "disclosure": true
+    }
+  ],
+  "humanBaseline": false,
+  "routeContract": "Agent uses ScreenCaptureKit images, Vision OCR, and CGEvent input. No AX or browser-content API."
+}

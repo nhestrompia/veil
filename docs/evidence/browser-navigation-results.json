@@ -1,0 +1,153 @@
+{
+  "milestone": 109,
+  "navigation": {
+    "passed": true,
+    "ordinaryUID": 501,
+    "rootRun": false,
+    "binarySHA256": "aae8d348e4db87e6c3f8b1cf4769a6526ad8ee33c5942166abe395e35aad0fc7",
+    "native": {
+      "checks": {
+        "back-address": true,
+        "empty-history-controls": true,
+        "first-page-history": true,
+        "forward-address": true,
+        "loading-feedback": true,
+        "navigation-after-error": true,
+        "network-error-feedback": true,
+        "no-visible-test-window": true,
+        "reload-refreshes-document": true,
+        "stop-feedback": true
+      },
+      "finalLoadingState": false,
+      "passed": true,
+      "pid": 79085,
+      "rolePIDs": {
+        "content": 79089,
+        "gpu": 79086,
+        "network": 79087
+      },
+      "rootRun": false,
+      "scope": "Owner-driven navigation controls. No external-agent protection claim."
+    },
+    "hostExitCode": 0,
+    "receipts": [
+      {
+        "route": "a",
+        "visit": 1
+      },
+      {
+        "route": "b",
+        "visit": 1
+      },
+      {
+        "route": "b",
+        "visit": 2
+      },
+      {
+        "route": "slow",
+        "visit": 1
+      },
+      {
+        "route": "drop",
+        "visit": 1
+      },
+      {
+        "route": "drop",
+        "visit": 2
+      },
+      {
+        "route": "drop",
+        "visit": 3
+      },
+      {
+        "route": "drop",
+        "visit": 4
+      },
+      {
+        "route": "a",
+        "visit": 2
+      }
+    ],
+    "requestCounts": {
+      "a": 2,
+      "b": 2,
+      "slow": 1,
+      "drop": 4
+    },
+    "remainingMeasuredPIDs": []
+  },
+  "initialTimingFailure": {
+    "passed": false,
+    "ordinaryUID": 501,
+    "rootRun": false,
+    "binarySHA256": "1c354467bbbf76c425204e84cd61fc4bb7710a13387e192ff6b99992df58b14a",
+    "native": {
+      "checks": {
+        "back-address": true,
+        "empty-history-controls": true,
+        "first-page-history": true,
+        "forward-address": true,
+        "loading-feedback": true,
+        "reload-refreshes-document": true
+      },
+      "error": "Error Domain=navigation-control-wait Code=2 \"(null)\"",
+      "passed": false,
+      "pid": 78982,
+      "rolePIDs": {
+        "content": 78987,
+        "gpu": 78984,
+        "network": 78985
+      },
+      "rootRun": false,
+      "scope": "Owner-driven navigation controls. No external-agent protection claim."
+    },
+    "hostExitCode": 0,
+    "receipts": [
+      {
+        "route": "a",
+        "visit": 1
+      },
+      {
+        "route": "b",
+        "visit": 1
+      },
+      {
+        "route": "b",
+        "visit": 2
+      }
+    ],
+    "requestCounts": {
+      "a": 1,
+      "b": 2,
+      "slow": 0,
+      "drop": 0
+    },
+    "remainingMeasuredPIDs": []
+  },
+  "frozenBinariesMatch": {
+    "DeviceKeyboardExperiment": true,
+    "NativeProbe": true,
+    "RendererAXProbe": true,
+    "KeyboardObservationProbe": true,
+    "WindowGeometryProbe": true
+  },
+  "activeComparisonInputsMatch": {
+    "command": true,
+    "images": true,
+    "ordinarySources": true,
+    "actor": true
+  },
+  "checks": {
+    "policyPassed": true,
+    "deviceKeyboardSourceTypecheckPassed": true,
+    "navigationBuildWarningsAsErrorsPassed": true
+  },
+  "rootCodeChanged": false,
+  "rootRunByNavigationControl": false,
+  "securityClaim": "No external-agent protection claim. Known same-user renderer pause bypass remains open.",
+  "proseLint": {
+    "findingsPer100Words": 0.0,
+    "implementationPer100Words": 0.0,
+    "handoffPer100Words": 1.45
+  }
+}

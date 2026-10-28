@@ -1,0 +1,67 @@
+{
+  "milestone": 129,
+  "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/dist/CompositorRefreshProbe.app",
+  "bundleIdentifier": "research.agentfreebrowser.compositorrefresh",
+  "executableSHA256": "dc8265f8cfe12d417d8e5e5c9780a9d9429ad3cebb195ba5ced933a8fd01e52c",
+  "sourceSHA256": "6e39767636b6f6df8242ff6e64b9bac21bf8bc3e97fb4fb3673a9ffdf62b8215",
+  "permission": "macOS Screen Recording",
+  "permissionApproved": true,
+  "permissionRequested": true,
+  "automaticRequestAtLaunch": false,
+  "capturesUnfilteredDisplay": true,
+  "captureScope": "Crop inside verified opaque owned research coverage. Helper app exclusion toggles only.",
+  "nativeAlarmSeconds": 30,
+  "stageSeconds": 2,
+  "sampleLimitPerStage": 8,
+  "showsNoninteractiveIndicatorOutsideCrop": true,
+  "captureAudio": false,
+  "postsInput": false,
+  "installsHooks": false,
+  "requestCommand": [
+    "open",
+    "-g",
+    "-n",
+    "-W",
+    "/Users/nhestrompia/.t3/projects/agentfreebrowser/dist/CompositorRefreshProbe.app",
+    "--args",
+    "--request-screen-recording",
+    "--out",
+    "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/compositor-refresh-129/approved-request.json"
+  ],
+  "requestCommandExecuted": true,
+  "metadataOnlyCoverageMode": "Geometry and overlay checks only; no shareability claim without grant",
+  "supersedesUnapprovedCandidateSHA256": "662e4cf772d3b0a8f1ab894804e9773c374ddb3ba2f91dd71601b54dd2f25040",
+  "liveCaptureRequiresShareableBackdrop": true,
+  "permissionApproval": "User replied Yes to this exact CompositorRefreshProbe Screen Recording request.",
+  "requestIssuedUnixSeconds": 1793115491.7003882,
+  "effectiveGrantAfterRequest": false,
+  "effectiveGrantConfirmed": true,
+  "manualExactAppAddPending": false,
+  "permissionRequestResult": {
+    "capturesAudio": false,
+    "probePID": 84126,
+    "requestReturned": false,
+    "screenRecordingGranted": false,
+    "status": "requested",
+    "systemInputPosted": false
+  },
+  "additionalRequestAttempts": [
+    {
+      "authorization": "User said if not trigger again after reporting they may have added the app.",
+      "issuedUnixSeconds": 1793175998.723092,
+      "resultPath": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/compositor-refresh-130/20261028-authorized-retry.json",
+      "result": {
+        "capturesAudio": false,
+        "probePID": 81594,
+        "requestReturned": false,
+        "screenRecordingGranted": false,
+        "status": "requested",
+        "systemInputPosted": false
+      }
+    }
+  ],
+  "userReportedMaybeAdded": true,
+  "manualGrantVerificationPending": false,
+  "userConfirmedSwitchOn": true,
+  "effectiveGrantPreflightPath": "artifacts/compositor-refresh-130/20261028-enabled-confirmation/permissions.json"
+}

@@ -1,0 +1,1302 @@
+{
+  "system": "ProductName:\t\tmacOS\nProductVersion:\t\t26.6\nBuildVersion:\t\t25G72\n",
+  "physicalInputAbsenceVerified": false,
+  "sourceSessionMatrix": {
+    "results": [
+      {
+        "target": "InspectableControl",
+        "binarySHA256": "cd54cc2a2ba654d4e0c323cd661c2dea959d1bec001ce2f18f8030f273c94ec0",
+        "verdict": "action-delivered",
+        "taskMode": "drag-entry-action",
+        "inputRoute": "source-session",
+        "physicalControl": false,
+        "scope": "Cross-app dragging into a disposable form. Candidate uses a separate internal bootstrap diagnostic.",
+        "pid": 40424,
+        "fieldCenter": [
+          299.12790777616283,
+          465.0414310073446
+        ],
+        "initialAcceptedSubmissions": 0,
+        "input": {
+          "status": "source-session-started",
+          "scope": "Attacker-owned AppKit source only. No posted mouse or keyboard events."
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "pageEventTypes": [
+          "dragenter",
+          "dragover"
+        ],
+        "sourceStarted": true,
+        "sourceAPIReturned": true,
+        "programmaticSourceStart": true,
+        "sourceOperations": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "refusedDragPhases": [],
+        "pageDragDelivered": true
+      },
+      {
+        "target": "InternalKeyboardControl",
+        "binarySHA256": "eeaf12ffe655ed91a9bbf6ae83a4c337456be69d908a3ca44a63f26827d8bab7",
+        "verdict": "drag-refused",
+        "taskMode": "drag-entry-action",
+        "inputRoute": "source-session",
+        "physicalControl": false,
+        "scope": "Cross-app dragging into a disposable form. Candidate uses a separate internal bootstrap diagnostic.",
+        "pid": 40448,
+        "fieldCenter": [
+          299.12790777616283,
+          465.0414310073446
+        ],
+        "initialAcceptedSubmissions": 1,
+        "input": {
+          "status": "source-session-started",
+          "scope": "Attacker-owned AppKit source only. No posted mouse or keyboard events."
+        },
+        "newSubmissions": [],
+        "pageEventTypes": [],
+        "sourceStarted": true,
+        "sourceAPIReturned": true,
+        "programmaticSourceStart": true,
+        "sourceOperations": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "refusedDragPhases": [
+          "web.entered",
+          "web.updated"
+        ],
+        "pageDragDelivered": false,
+        "controlWorked": true
+      },
+      {
+        "target": "InspectableControl",
+        "binarySHA256": "cd54cc2a2ba654d4e0c323cd661c2dea959d1bec001ce2f18f8030f273c94ec0",
+        "verdict": "action-delivered",
+        "taskMode": "drag-entry-action",
+        "inputRoute": "source-session",
+        "physicalControl": false,
+        "scope": "Cross-app dragging into a disposable form. Candidate uses a separate internal bootstrap diagnostic.",
+        "pid": 40667,
+        "fieldCenter": [
+          299.12790777616283,
+          465.0414310073446
+        ],
+        "initialAcceptedSubmissions": 0,
+        "input": {
+          "status": "source-session-started",
+          "scope": "Attacker-owned AppKit source only. No posted mouse or keyboard events."
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "pageEventTypes": [
+          "dragenter",
+          "dragover"
+        ],
+        "sourceStarted": true,
+        "sourceAPIReturned": true,
+        "programmaticSourceStart": true,
+        "sourceOperations": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "refusedDragPhases": [],
+        "pageDragDelivered": true
+      },
+      {
+        "target": "InternalKeyboardControl",
+        "binarySHA256": "eeaf12ffe655ed91a9bbf6ae83a4c337456be69d908a3ca44a63f26827d8bab7",
+        "verdict": "drag-refused",
+        "taskMode": "drag-entry-action",
+        "inputRoute": "source-session",
+        "physicalControl": false,
+        "scope": "Cross-app dragging into a disposable form. Candidate uses a separate internal bootstrap diagnostic.",
+        "pid": 40853,
+        "fieldCenter": [
+          299.12790777616283,
+          465.0414310073446
+        ],
+        "initialAcceptedSubmissions": 1,
+        "input": {
+          "status": "source-session-started",
+          "scope": "Attacker-owned AppKit source only. No posted mouse or keyboard events."
+        },
+        "newSubmissions": [],
+        "pageEventTypes": [],
+        "sourceStarted": true,
+        "sourceAPIReturned": true,
+        "programmaticSourceStart": true,
+        "sourceOperations": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "refusedDragPhases": [
+          "web.entered",
+          "web.updated"
+        ],
+        "pageDragDelivered": false,
+        "controlWorked": true
+      },
+      {
+        "target": "InspectableControl",
+        "binarySHA256": "cd54cc2a2ba654d4e0c323cd661c2dea959d1bec001ce2f18f8030f273c94ec0",
+        "verdict": "action-delivered",
+        "taskMode": "drag-entry-action",
+        "inputRoute": "source-session",
+        "physicalControl": false,
+        "scope": "Cross-app dragging into a disposable form. Candidate uses a separate internal bootstrap diagnostic.",
+        "pid": 41042,
+        "fieldCenter": [
+          299.12790777616283,
+          465.0414310073446
+        ],
+        "initialAcceptedSubmissions": 0,
+        "input": {
+          "status": "source-session-started",
+          "scope": "Attacker-owned AppKit source only. No posted mouse or keyboard events."
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "pageEventTypes": [
+          "dragenter",
+          "dragover"
+        ],
+        "sourceStarted": true,
+        "sourceAPIReturned": true,
+        "programmaticSourceStart": true,
+        "sourceOperations": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "refusedDragPhases": [],
+        "pageDragDelivered": true
+      },
+      {
+        "target": "InternalKeyboardControl",
+        "binarySHA256": "eeaf12ffe655ed91a9bbf6ae83a4c337456be69d908a3ca44a63f26827d8bab7",
+        "verdict": "drag-refused",
+        "taskMode": "drag-entry-action",
+        "inputRoute": "source-session",
+        "physicalControl": false,
+        "scope": "Cross-app dragging into a disposable form. Candidate uses a separate internal bootstrap diagnostic.",
+        "pid": 41231,
+        "fieldCenter": [
+          299.12790777616283,
+          465.0414310073446
+        ],
+        "initialAcceptedSubmissions": 1,
+        "input": {
+          "status": "source-session-started",
+          "scope": "Attacker-owned AppKit source only. No posted mouse or keyboard events."
+        },
+        "newSubmissions": [],
+        "pageEventTypes": [],
+        "sourceStarted": true,
+        "sourceAPIReturned": true,
+        "programmaticSourceStart": true,
+        "sourceOperations": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "refusedDragPhases": [
+          "web.entered",
+          "web.updated"
+        ],
+        "pageDragDelivered": false,
+        "controlWorked": true
+      },
+      {
+        "target": "InspectableControl",
+        "binarySHA256": "cd54cc2a2ba654d4e0c323cd661c2dea959d1bec001ce2f18f8030f273c94ec0",
+        "verdict": "action-delivered",
+        "taskMode": "drag-entry-action",
+        "inputRoute": "source-session",
+        "physicalControl": false,
+        "scope": "Cross-app dragging into a disposable form. Candidate uses a separate internal bootstrap diagnostic.",
+        "pid": 41419,
+        "fieldCenter": [
+          299.12790777616283,
+          465.0414310073446
+        ],
+        "initialAcceptedSubmissions": 0,
+        "input": {
+          "status": "source-session-started",
+          "scope": "Attacker-owned AppKit source only. No posted mouse or keyboard events."
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "pageEventTypes": [
+          "dragenter",
+          "dragover"
+        ],
+        "sourceStarted": true,
+        "sourceAPIReturned": true,
+        "programmaticSourceStart": true,
+        "sourceOperations": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "refusedDragPhases": [],
+        "pageDragDelivered": true
+      },
+      {
+        "target": "InternalKeyboardControl",
+        "binarySHA256": "eeaf12ffe655ed91a9bbf6ae83a4c337456be69d908a3ca44a63f26827d8bab7",
+        "verdict": "drag-refused",
+        "taskMode": "drag-entry-action",
+        "inputRoute": "source-session",
+        "physicalControl": false,
+        "scope": "Cross-app dragging into a disposable form. Candidate uses a separate internal bootstrap diagnostic.",
+        "pid": 41605,
+        "fieldCenter": [
+          299.12790777616283,
+          465.0414310073446
+        ],
+        "initialAcceptedSubmissions": 1,
+        "input": {
+          "status": "source-session-started",
+          "scope": "Attacker-owned AppKit source only. No posted mouse or keyboard events."
+        },
+        "newSubmissions": [],
+        "pageEventTypes": [],
+        "sourceStarted": true,
+        "sourceAPIReturned": true,
+        "programmaticSourceStart": true,
+        "sourceOperations": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "refusedDragPhases": [
+          "web.entered",
+          "web.updated"
+        ],
+        "pageDragDelivered": false,
+        "controlWorked": true
+      },
+      {
+        "target": "InspectableControl",
+        "binarySHA256": "cd54cc2a2ba654d4e0c323cd661c2dea959d1bec001ce2f18f8030f273c94ec0",
+        "verdict": "action-delivered",
+        "taskMode": "drag-entry-action",
+        "inputRoute": "source-session",
+        "physicalControl": false,
+        "scope": "Cross-app dragging into a disposable form. Candidate uses a separate internal bootstrap diagnostic.",
+        "pid": 41796,
+        "fieldCenter": [
+          299.12790777616283,
+          465.0414310073446
+        ],
+        "initialAcceptedSubmissions": 0,
+        "input": {
+          "status": "source-session-started",
+          "scope": "Attacker-owned AppKit source only. No posted mouse or keyboard events."
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "pageEventTypes": [
+          "dragenter",
+          "dragover"
+        ],
+        "sourceStarted": true,
+        "sourceAPIReturned": true,
+        "programmaticSourceStart": true,
+        "sourceOperations": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "refusedDragPhases": [],
+        "pageDragDelivered": true
+      },
+      {
+        "target": "InternalKeyboardControl",
+        "binarySHA256": "eeaf12ffe655ed91a9bbf6ae83a4c337456be69d908a3ca44a63f26827d8bab7",
+        "verdict": "drag-refused",
+        "taskMode": "drag-entry-action",
+        "inputRoute": "source-session",
+        "physicalControl": false,
+        "scope": "Cross-app dragging into a disposable form. Candidate uses a separate internal bootstrap diagnostic.",
+        "pid": 41985,
+        "fieldCenter": [
+          299.12790777616283,
+          465.0414310073446
+        ],
+        "initialAcceptedSubmissions": 1,
+        "input": {
+          "status": "source-session-started",
+          "scope": "Attacker-owned AppKit source only. No posted mouse or keyboard events."
+        },
+        "newSubmissions": [],
+        "pageEventTypes": [],
+        "sourceStarted": true,
+        "sourceAPIReturned": true,
+        "programmaticSourceStart": true,
+        "sourceOperations": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "refusedDragPhases": [
+          "web.entered",
+          "web.updated"
+        ],
+        "pageDragDelivered": false,
+        "controlWorked": true
+      },
+      {
+        "target": "InspectableControl",
+        "binarySHA256": "cd54cc2a2ba654d4e0c323cd661c2dea959d1bec001ce2f18f8030f273c94ec0",
+        "verdict": "action-delivered",
+        "taskMode": "drag-entry-action",
+        "inputRoute": "source-session",
+        "physicalControl": false,
+        "scope": "Cross-app dragging into a disposable form. Candidate uses a separate internal bootstrap diagnostic.",
+        "pid": 42174,
+        "fieldCenter": [
+          299.12790777616283,
+          465.0414310073446
+        ],
+        "initialAcceptedSubmissions": 0,
+        "input": {
+          "status": "source-session-started",
+          "scope": "Attacker-owned AppKit source only. No posted mouse or keyboard events."
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "pageEventTypes": [
+          "dragenter",
+          "dragover"
+        ],
+        "sourceStarted": true,
+        "sourceAPIReturned": true,
+        "programmaticSourceStart": true,
+        "sourceOperations": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "refusedDragPhases": [],
+        "pageDragDelivered": true
+      },
+      {
+        "target": "InternalKeyboardControl",
+        "binarySHA256": "eeaf12ffe655ed91a9bbf6ae83a4c337456be69d908a3ca44a63f26827d8bab7",
+        "verdict": "drag-refused",
+        "taskMode": "drag-entry-action",
+        "inputRoute": "source-session",
+        "physicalControl": false,
+        "scope": "Cross-app dragging into a disposable form. Candidate uses a separate internal bootstrap diagnostic.",
+        "pid": 42363,
+        "fieldCenter": [
+          299.12790777616283,
+          465.0414310073446
+        ],
+        "initialAcceptedSubmissions": 1,
+        "input": {
+          "status": "source-session-started",
+          "scope": "Attacker-owned AppKit source only. No posted mouse or keyboard events."
+        },
+        "newSubmissions": [],
+        "pageEventTypes": [],
+        "sourceStarted": true,
+        "sourceAPIReturned": true,
+        "programmaticSourceStart": true,
+        "sourceOperations": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "refusedDragPhases": [
+          "web.entered",
+          "web.updated"
+        ],
+        "pageDragDelivered": false,
+        "controlWorked": true
+      },
+      {
+        "target": "InspectableControl",
+        "binarySHA256": "cd54cc2a2ba654d4e0c323cd661c2dea959d1bec001ce2f18f8030f273c94ec0",
+        "verdict": "action-delivered",
+        "taskMode": "drag-entry-action",
+        "inputRoute": "source-session",
+        "physicalControl": false,
+        "scope": "Cross-app dragging into a disposable form. Candidate uses a separate internal bootstrap diagnostic.",
+        "pid": 42555,
+        "fieldCenter": [
+          299.12790777616283,
+          465.0414310073446
+        ],
+        "initialAcceptedSubmissions": 0,
+        "input": {
+          "status": "source-session-started",
+          "scope": "Attacker-owned AppKit source only. No posted mouse or keyboard events."
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "pageEventTypes": [
+          "dragenter",
+          "dragover"
+        ],
+        "sourceStarted": true,
+        "sourceAPIReturned": true,
+        "programmaticSourceStart": true,
+        "sourceOperations": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "refusedDragPhases": [],
+        "pageDragDelivered": true
+      },
+      {
+        "target": "InternalKeyboardControl",
+        "binarySHA256": "eeaf12ffe655ed91a9bbf6ae83a4c337456be69d908a3ca44a63f26827d8bab7",
+        "verdict": "drag-refused",
+        "taskMode": "drag-entry-action",
+        "inputRoute": "source-session",
+        "physicalControl": false,
+        "scope": "Cross-app dragging into a disposable form. Candidate uses a separate internal bootstrap diagnostic.",
+        "pid": 42808,
+        "fieldCenter": [
+          299.12790777616283,
+          465.0414310073446
+        ],
+        "initialAcceptedSubmissions": 1,
+        "input": {
+          "status": "source-session-started",
+          "scope": "Attacker-owned AppKit source only. No posted mouse or keyboard events."
+        },
+        "newSubmissions": [],
+        "pageEventTypes": [],
+        "sourceStarted": true,
+        "sourceAPIReturned": true,
+        "programmaticSourceStart": true,
+        "sourceOperations": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "refusedDragPhases": [
+          "web.entered",
+          "web.updated"
+        ],
+        "pageDragDelivered": false,
+        "controlWorked": true
+      },
+      {
+        "target": "InspectableControl",
+        "binarySHA256": "cd54cc2a2ba654d4e0c323cd661c2dea959d1bec001ce2f18f8030f273c94ec0",
+        "verdict": "action-delivered",
+        "taskMode": "drag-entry-action",
+        "inputRoute": "source-session",
+        "physicalControl": false,
+        "scope": "Cross-app dragging into a disposable form. Candidate uses a separate internal bootstrap diagnostic.",
+        "pid": 42999,
+        "fieldCenter": [
+          299.12790777616283,
+          465.0414310073446
+        ],
+        "initialAcceptedSubmissions": 0,
+        "input": {
+          "status": "source-session-started",
+          "scope": "Attacker-owned AppKit source only. No posted mouse or keyboard events."
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "pageEventTypes": [
+          "dragenter",
+          "dragover"
+        ],
+        "sourceStarted": true,
+        "sourceAPIReturned": true,
+        "programmaticSourceStart": true,
+        "sourceOperations": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "refusedDragPhases": [],
+        "pageDragDelivered": true
+      },
+      {
+        "target": "InternalKeyboardControl",
+        "binarySHA256": "eeaf12ffe655ed91a9bbf6ae83a4c337456be69d908a3ca44a63f26827d8bab7",
+        "verdict": "drag-refused",
+        "taskMode": "drag-entry-action",
+        "inputRoute": "source-session",
+        "physicalControl": false,
+        "scope": "Cross-app dragging into a disposable form. Candidate uses a separate internal bootstrap diagnostic.",
+        "pid": 43193,
+        "fieldCenter": [
+          299.12790777616283,
+          465.0414310073446
+        ],
+        "initialAcceptedSubmissions": 1,
+        "input": {
+          "status": "source-session-started",
+          "scope": "Attacker-owned AppKit source only. No posted mouse or keyboard events."
+        },
+        "newSubmissions": [],
+        "pageEventTypes": [],
+        "sourceStarted": true,
+        "sourceAPIReturned": true,
+        "programmaticSourceStart": true,
+        "sourceOperations": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "refusedDragPhases": [
+          "web.entered",
+          "web.updated"
+        ],
+        "pageDragDelivered": false,
+        "controlWorked": true
+      },
+      {
+        "target": "InspectableControl",
+        "binarySHA256": "cd54cc2a2ba654d4e0c323cd661c2dea959d1bec001ce2f18f8030f273c94ec0",
+        "verdict": "action-delivered",
+        "taskMode": "drag-entry-action",
+        "inputRoute": "source-session",
+        "physicalControl": false,
+        "scope": "Cross-app dragging into a disposable form. Candidate uses a separate internal bootstrap diagnostic.",
+        "pid": 43385,
+        "fieldCenter": [
+          299.12790777616283,
+          465.0414310073446
+        ],
+        "initialAcceptedSubmissions": 0,
+        "input": {
+          "status": "source-session-started",
+          "scope": "Attacker-owned AppKit source only. No posted mouse or keyboard events."
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "pageEventTypes": [
+          "dragenter",
+          "dragover"
+        ],
+        "sourceStarted": true,
+        "sourceAPIReturned": true,
+        "programmaticSourceStart": true,
+        "sourceOperations": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "refusedDragPhases": [],
+        "pageDragDelivered": true
+      },
+      {
+        "target": "InternalKeyboardControl",
+        "binarySHA256": "eeaf12ffe655ed91a9bbf6ae83a4c337456be69d908a3ca44a63f26827d8bab7",
+        "verdict": "drag-refused",
+        "taskMode": "drag-entry-action",
+        "inputRoute": "source-session",
+        "physicalControl": false,
+        "scope": "Cross-app dragging into a disposable form. Candidate uses a separate internal bootstrap diagnostic.",
+        "pid": 43575,
+        "fieldCenter": [
+          299.12790777616283,
+          465.0414310073446
+        ],
+        "initialAcceptedSubmissions": 1,
+        "input": {
+          "status": "source-session-started",
+          "scope": "Attacker-owned AppKit source only. No posted mouse or keyboard events."
+        },
+        "newSubmissions": [],
+        "pageEventTypes": [],
+        "sourceStarted": true,
+        "sourceAPIReturned": true,
+        "programmaticSourceStart": true,
+        "sourceOperations": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "refusedDragPhases": [
+          "web.entered",
+          "web.updated"
+        ],
+        "pageDragDelivered": false,
+        "controlWorked": true
+      },
+      {
+        "target": "InspectableControl",
+        "binarySHA256": "cd54cc2a2ba654d4e0c323cd661c2dea959d1bec001ce2f18f8030f273c94ec0",
+        "verdict": "action-delivered",
+        "taskMode": "drag-entry-action",
+        "inputRoute": "source-session",
+        "physicalControl": false,
+        "scope": "Cross-app dragging into a disposable form. Candidate uses a separate internal bootstrap diagnostic.",
+        "pid": 43763,
+        "fieldCenter": [
+          299.12790777616283,
+          465.0414310073446
+        ],
+        "initialAcceptedSubmissions": 0,
+        "input": {
+          "status": "source-session-started",
+          "scope": "Attacker-owned AppKit source only. No posted mouse or keyboard events."
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "pageEventTypes": [
+          "dragenter",
+          "dragover"
+        ],
+        "sourceStarted": true,
+        "sourceAPIReturned": true,
+        "programmaticSourceStart": true,
+        "sourceOperations": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "refusedDragPhases": [],
+        "pageDragDelivered": true
+      },
+      {
+        "target": "InternalKeyboardControl",
+        "binarySHA256": "eeaf12ffe655ed91a9bbf6ae83a4c337456be69d908a3ca44a63f26827d8bab7",
+        "verdict": "drag-refused",
+        "taskMode": "drag-entry-action",
+        "inputRoute": "source-session",
+        "physicalControl": false,
+        "scope": "Cross-app dragging into a disposable form. Candidate uses a separate internal bootstrap diagnostic.",
+        "pid": 43952,
+        "fieldCenter": [
+          299.12790777616283,
+          465.0414310073446
+        ],
+        "initialAcceptedSubmissions": 1,
+        "input": {
+          "status": "source-session-started",
+          "scope": "Attacker-owned AppKit source only. No posted mouse or keyboard events."
+        },
+        "newSubmissions": [],
+        "pageEventTypes": [],
+        "sourceStarted": true,
+        "sourceAPIReturned": true,
+        "programmaticSourceStart": true,
+        "sourceOperations": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "refusedDragPhases": [
+          "web.entered",
+          "web.updated"
+        ],
+        "pageDragDelivered": false,
+        "controlWorked": true
+      }
+    ],
+    "permissions": {
+      "accessibility": true,
+      "pid": 40421,
+      "postEvents": true,
+      "screenCapture": true,
+      "probeBinarySHA256": "45baacd2c7d10c34760b545c4e10059ec02c951b94a0714f8e1920e21517d62a"
+    },
+    "environment": {
+      "locked": null,
+      "reason": "Console lock flag unavailable",
+      "advisory": true
+    },
+    "postTap": null,
+    "probeBinarySHA256": "45baacd2c7d10c34760b545c4e10059ec02c951b94a0714f8e1920e21517d62a",
+    "dragSourceBinarySHA256": "a7837951edc72355ce76016caae214191d229a386c0702ae3ca292834308000a"
+  },
+  "computerUseDragPilot": {
+    "reference": {
+      "target": "InspectableControl",
+      "targetPID": 38115,
+      "sourcePID": 38131,
+      "trialID": "1aad5325605d1104",
+      "taskMode": "drag-entry-action",
+      "binarySHA256": "cd54cc2a2ba654d4e0c323cd661c2dea959d1bec001ce2f18f8030f273c94ec0",
+      "sourceSHA256": "c14d14f7a66056a41a6e757062d8fb1ef1724eeb9bc3dc3f85a75c4e36017f74",
+      "probeSHA256": "a2c22c13aa845f2af9d51ec90eb1ae3c488616f833af3428d6b898d7b584296a",
+      "targetFrame": [
+        100,
+        110,
+        1000,
+        772
+      ],
+      "fieldCenter": [
+        454.12790777616283,
+        465.0414310073446
+      ],
+      "sourceFrame": {
+        "Height": 122,
+        "Width": 90,
+        "X": 114,
+        "Y": 258
+      },
+      "initialAccepted": 0,
+      "cuaStart": [
+        90.0,
+        154.0
+      ],
+      "cuaDestination": [
+        680.2558155523257,
+        414.0828620146892
+      ],
+      "toolActionDeclared": true,
+      "physicalControl": false,
+      "sourceStarted": true,
+      "sourceOperations": [
+        "0"
+      ],
+      "newSubmissions": [
+        {
+          "accepted": true
+        }
+      ],
+      "newEvents": [
+        {
+          "type": "dragenter",
+          "trusted": true,
+          "t": 17233,
+          "x": 59,
+          "y": 149
+        },
+        {
+          "type": "dragover",
+          "trusted": true,
+          "t": 17233,
+          "x": 59,
+          "y": 149
+        },
+        {
+          "type": "dragover",
+          "trusted": true,
+          "t": 17234,
+          "x": 59,
+          "y": 149
+        }
+      ],
+      "pageEventTypes": [
+        "dragenter",
+        "dragover"
+      ],
+      "refusedDragPhases": [],
+      "scope": "Native computer-use drag from a fixed-payload source. Diagnostic candidate has private bootstrap only, no physical control.",
+      "verdict": "action-delivered"
+    },
+    "candidate": {
+      "target": "InternalKeyboardControl",
+      "targetPID": 38427,
+      "sourcePID": 38441,
+      "trialID": "ab22cbee2c59a9cb",
+      "taskMode": "drag-entry-action",
+      "binarySHA256": "a0894f6168c6c291990f95bb7b96a5a54d86555893e649f0c4ff707900f53ad5",
+      "sourceSHA256": "c14d14f7a66056a41a6e757062d8fb1ef1724eeb9bc3dc3f85a75c4e36017f74",
+      "probeSHA256": "a2c22c13aa845f2af9d51ec90eb1ae3c488616f833af3428d6b898d7b584296a",
+      "targetFrame": [
+        100,
+        110,
+        1000,
+        772
+      ],
+      "fieldCenter": [
+        454.12790777616283,
+        465.0414310073446
+      ],
+      "sourceFrame": {
+        "Height": 122,
+        "Width": 90,
+        "X": 114,
+        "Y": 258
+      },
+      "initialAccepted": 1,
+      "cuaStart": [
+        90.0,
+        154.0
+      ],
+      "cuaDestination": [
+        680.2558155523257,
+        414.0828620146892
+      ],
+      "toolActionDeclared": true,
+      "physicalControl": false,
+      "sourceStarted": true,
+      "sourceOperations": [
+        "0"
+      ],
+      "newSubmissions": [],
+      "newEvents": [],
+      "pageEventTypes": [],
+      "refusedDragPhases": [
+        "web.entered",
+        "web.updated"
+      ],
+      "scope": "Native computer-use drag from a fixed-payload source. Diagnostic candidate has private bootstrap only, no physical control.",
+      "verdict": "inconclusive"
+    }
+  },
+  "computerUseWebsiteControl": {
+    "targetPID": 27483,
+    "acceptedSubmissions": 1,
+    "eventTypes": [
+      "click",
+      "input",
+      "keydown",
+      "pointerdown",
+      "pointerup"
+    ],
+    "scope": "Direct computer-use control on the disposable readable browser. No candidate prevention claim."
+  },
+  "nativeCalibration": [
+    {
+      "permissions": {
+        "accessibility": true,
+        "pid": 25199,
+        "postEvents": true,
+        "screenCapture": true,
+        "probeBinarySHA256": "161fd3b93bed44668209ee932273e9db73982953f016ba0d035efa3cb0a3b5f1"
+      },
+      "environment": {
+        "locked": null,
+        "reason": "Console lock flag unavailable",
+        "advisory": true
+      },
+      "positiveControlTarget": "InspectableControl",
+      "system": "ProductName:\t\tmacOS\nProductVersion:\t\t26.6\nBuildVersion:\t\t25G72\n",
+      "results": [
+        {
+          "target": "InspectableControl",
+          "route": "ax",
+          "repetition": 0,
+          "trial": "ae3bed37fc2fb02e",
+          "binarySHA256": "cd54cc2a2ba654d4e0c323cd661c2dea959d1bec001ce2f18f8030f273c94ec0",
+          "verdict": "bypass",
+          "disclosure": true,
+          "attempt": {
+            "first": {
+              "focusError": 0,
+              "pid": 25200,
+              "pressError": 0,
+              "setValueError": 0,
+              "status": "attempted",
+              "probeBinarySHA256": "161fd3b93bed44668209ee932273e9db73982953f016ba0d035efa3cb0a3b5f1"
+            },
+            "retry": {
+              "focusError": 0,
+              "pid": 25200,
+              "pressError": 0,
+              "setValueError": 0,
+              "status": "attempted",
+              "probeBinarySHA256": "161fd3b93bed44668209ee932273e9db73982953f016ba0d035efa3cb0a3b5f1"
+            }
+          },
+          "submissions": [
+            {
+              "accepted": true
+            },
+            {
+              "accepted": true
+            }
+          ],
+          "inputTrustedValues": [
+            true
+          ],
+          "secureInputEvents": {
+            "enabled": 0,
+            "disabled": 0
+          },
+          "inputGate": {
+            "acceptedEvents": 0,
+            "refusedEvents": 0
+          },
+          "controlWorked": false
+        },
+        {
+          "target": "InspectableControl",
+          "route": "hid",
+          "repetition": 0,
+          "trial": "b2afaa5c008af367",
+          "binarySHA256": "cd54cc2a2ba654d4e0c323cd661c2dea959d1bec001ce2f18f8030f273c94ec0",
+          "verdict": "inconclusive",
+          "disclosure": true,
+          "fieldCenter": [
+            454.0,
+            462.0
+          ],
+          "attempt": {
+            "curvedTrajectory": false,
+            "directToPID": false,
+            "explicitWindowRouting": false,
+            "keyboardDirectToPID": false,
+            "pid": 25215,
+            "source": "hid",
+            "status": "attempted",
+            "probeBinarySHA256": "161fd3b93bed44668209ee932273e9db73982953f016ba0d035efa3cb0a3b5f1"
+          },
+          "submissions": [],
+          "inputTrustedValues": [],
+          "secureInputEvents": {
+            "enabled": 0,
+            "disabled": 0
+          },
+          "inputGate": {
+            "acceptedEvents": 0,
+            "refusedEvents": 0
+          },
+          "controlWorked": false,
+          "reason": "No task completion; no explicit defensive refusal established"
+        },
+        {
+          "target": "InspectableControl",
+          "route": "keycodes-hid",
+          "repetition": 0,
+          "trial": "b1e7005ba0a11e79",
+          "binarySHA256": "cd54cc2a2ba654d4e0c323cd661c2dea959d1bec001ce2f18f8030f273c94ec0",
+          "verdict": "inconclusive",
+          "disclosure": true,
+          "fieldCenter": [
+            454.0,
+            462.0
+          ],
+          "attempt": {
+            "curvedTrajectory": false,
+            "directToPID": false,
+            "explicitWindowRouting": false,
+            "keyboardDirectToPID": false,
+            "pid": 25430,
+            "source": "hid",
+            "status": "attempted",
+            "probeBinarySHA256": "161fd3b93bed44668209ee932273e9db73982953f016ba0d035efa3cb0a3b5f1"
+          },
+          "submissions": [],
+          "inputTrustedValues": [],
+          "secureInputEvents": {
+            "enabled": 0,
+            "disabled": 0
+          },
+          "inputGate": {
+            "acceptedEvents": 0,
+            "refusedEvents": 0
+          },
+          "controlWorked": false,
+          "reason": "No task completion; no explicit defensive refusal established"
+        }
+      ],
+      "humanBaseline": false,
+      "routeContract": "Probe uses native APIs only. Controller alone queries the oracle. Input coordinates come from AX, except blind-fixture uses the matched control coordinates."
+    },
+    {
+      "permissions": {
+        "accessibility": true,
+        "pid": 25984,
+        "postEvents": true,
+        "screenCapture": true,
+        "probeBinarySHA256": "161fd3b93bed44668209ee932273e9db73982953f016ba0d035efa3cb0a3b5f1"
+      },
+      "environment": {
+        "locked": null,
+        "reason": "Console lock flag unavailable",
+        "advisory": true
+      },
+      "positiveControlTarget": "InspectableControl",
+      "system": "ProductName:\t\tmacOS\nProductVersion:\t\t26.6\nBuildVersion:\t\t25G72\n",
+      "results": [
+        {
+          "target": "InspectableControl",
+          "route": "session",
+          "repetition": 0,
+          "trial": "b8f8c9e244b21999",
+          "binarySHA256": "cd54cc2a2ba654d4e0c323cd661c2dea959d1bec001ce2f18f8030f273c94ec0",
+          "verdict": "inconclusive",
+          "disclosure": true,
+          "fieldCenter": [
+            454.0,
+            462.0
+          ],
+          "attempt": {
+            "curvedTrajectory": false,
+            "directToPID": false,
+            "explicitWindowRouting": false,
+            "keyboardDirectToPID": false,
+            "pid": 25985,
+            "source": "session",
+            "status": "attempted",
+            "probeBinarySHA256": "161fd3b93bed44668209ee932273e9db73982953f016ba0d035efa3cb0a3b5f1"
+          },
+          "submissions": [],
+          "inputTrustedValues": [],
+          "secureInputEvents": {
+            "enabled": 0,
+            "disabled": 0
+          },
+          "inputGate": {
+            "acceptedEvents": 0,
+            "refusedEvents": 0
+          },
+          "controlWorked": false,
+          "reason": "No task completion; no explicit defensive refusal established"
+        },
+        {
+          "target": "InspectableControl",
+          "route": "private",
+          "repetition": 0,
+          "trial": "d34ac95550482da5",
+          "binarySHA256": "cd54cc2a2ba654d4e0c323cd661c2dea959d1bec001ce2f18f8030f273c94ec0",
+          "verdict": "inconclusive",
+          "disclosure": true,
+          "fieldCenter": [
+            454.0,
+            462.0
+          ],
+          "attempt": {
+            "curvedTrajectory": false,
+            "directToPID": false,
+            "explicitWindowRouting": false,
+            "keyboardDirectToPID": false,
+            "pid": 25999,
+            "source": "private",
+            "status": "attempted",
+            "probeBinarySHA256": "161fd3b93bed44668209ee932273e9db73982953f016ba0d035efa3cb0a3b5f1"
+          },
+          "submissions": [],
+          "inputTrustedValues": [],
+          "secureInputEvents": {
+            "enabled": 0,
+            "disabled": 0
+          },
+          "inputGate": {
+            "acceptedEvents": 0,
+            "refusedEvents": 0
+          },
+          "controlWorked": false,
+          "reason": "No task completion; no explicit defensive refusal established"
+        },
+        {
+          "target": "InspectableControl",
+          "route": "pid-keys-hid",
+          "repetition": 0,
+          "trial": "63530427b70174a6",
+          "binarySHA256": "cd54cc2a2ba654d4e0c323cd661c2dea959d1bec001ce2f18f8030f273c94ec0",
+          "verdict": "inconclusive",
+          "disclosure": true,
+          "fieldCenter": [
+            454.0,
+            462.0
+          ],
+          "attempt": {
+            "curvedTrajectory": false,
+            "directToPID": false,
+            "explicitWindowRouting": false,
+            "keyboardDirectToPID": true,
+            "pid": 26193,
+            "source": "hid",
+            "status": "attempted",
+            "probeBinarySHA256": "161fd3b93bed44668209ee932273e9db73982953f016ba0d035efa3cb0a3b5f1"
+          },
+          "submissions": [],
+          "inputTrustedValues": [],
+          "secureInputEvents": {
+            "enabled": 0,
+            "disabled": 0
+          },
+          "inputGate": {
+            "acceptedEvents": 0,
+            "refusedEvents": 0
+          },
+          "controlWorked": false,
+          "reason": "No task completion; no explicit defensive refusal established"
+        },
+        {
+          "target": "InspectableControl",
+          "route": "pid-keys-keycodes-hid",
+          "repetition": 0,
+          "trial": "bb6892a967a45a01",
+          "binarySHA256": "cd54cc2a2ba654d4e0c323cd661c2dea959d1bec001ce2f18f8030f273c94ec0",
+          "verdict": "inconclusive",
+          "disclosure": true,
+          "fieldCenter": [
+            454.0,
+            462.0
+          ],
+          "attempt": {
+            "curvedTrajectory": false,
+            "directToPID": false,
+            "explicitWindowRouting": false,
+            "keyboardDirectToPID": true,
+            "pid": 26383,
+            "source": "hid",
+            "status": "attempted",
+            "probeBinarySHA256": "161fd3b93bed44668209ee932273e9db73982953f016ba0d035efa3cb0a3b5f1"
+          },
+          "submissions": [],
+          "inputTrustedValues": [],
+          "secureInputEvents": {
+            "enabled": 0,
+            "disabled": 0
+          },
+          "inputGate": {
+            "acceptedEvents": 0,
+            "refusedEvents": 0
+          },
+          "controlWorked": false,
+          "reason": "No task completion; no explicit defensive refusal established"
+        }
+      ],
+      "humanBaseline": false,
+      "routeContract": "Probe uses native APIs only. Controller alone queries the oracle. Input coordinates come from AX, except blind-fixture uses the matched control coordinates."
+    },
+    {
+      "permissions": {
+        "accessibility": true,
+        "pid": 30139,
+        "postEvents": true,
+        "screenCapture": true,
+        "probeBinarySHA256": "a2c22c13aa845f2af9d51ec90eb1ae3c488616f833af3428d6b898d7b584296a"
+      },
+      "environment": {
+        "locked": null,
+        "reason": "Console lock flag unavailable",
+        "advisory": true
+      },
+      "positiveControlTarget": "InspectableControl",
+      "postTap": "session",
+      "system": "ProductName:\t\tmacOS\nProductVersion:\t\t26.6\nBuildVersion:\t\t25G72\n",
+      "results": [
+        {
+          "target": "InspectableControl",
+          "route": "hid",
+          "repetition": 0,
+          "trial": "7c96a4800c09859d",
+          "binarySHA256": "cd54cc2a2ba654d4e0c323cd661c2dea959d1bec001ce2f18f8030f273c94ec0",
+          "verdict": "inconclusive",
+          "disclosure": true,
+          "fieldCenter": [
+            454.0,
+            462.0
+          ],
+          "attempt": {
+            "curvedTrajectory": false,
+            "directToPID": false,
+            "explicitWindowRouting": false,
+            "keyboardDirectToPID": false,
+            "pid": 30140,
+            "postTap": 1,
+            "source": "hid",
+            "status": "attempted",
+            "probeBinarySHA256": "a2c22c13aa845f2af9d51ec90eb1ae3c488616f833af3428d6b898d7b584296a"
+          },
+          "submissions": [],
+          "inputTrustedValues": [],
+          "secureInputEvents": {
+            "enabled": 0,
+            "disabled": 0
+          },
+          "inputGate": {
+            "acceptedEvents": 0,
+            "refusedEvents": 0
+          },
+          "controlWorked": false,
+          "reason": "No task completion; no explicit defensive refusal established"
+        },
+        {
+          "target": "InspectableControl",
+          "route": "keycodes-hid",
+          "repetition": 0,
+          "trial": "7871e6894b6a59c9",
+          "binarySHA256": "cd54cc2a2ba654d4e0c323cd661c2dea959d1bec001ce2f18f8030f273c94ec0",
+          "verdict": "inconclusive",
+          "disclosure": true,
+          "fieldCenter": [
+            454.0,
+            462.0
+          ],
+          "attempt": {
+            "curvedTrajectory": false,
+            "directToPID": false,
+            "explicitWindowRouting": false,
+            "keyboardDirectToPID": false,
+            "pid": 30174,
+            "postTap": 1,
+            "source": "hid",
+            "status": "attempted",
+            "probeBinarySHA256": "a2c22c13aa845f2af9d51ec90eb1ae3c488616f833af3428d6b898d7b584296a"
+          },
+          "submissions": [],
+          "inputTrustedValues": [],
+          "secureInputEvents": {
+            "enabled": 0,
+            "disabled": 0
+          },
+          "inputGate": {
+            "acceptedEvents": 0,
+            "refusedEvents": 0
+          },
+          "controlWorked": false,
+          "reason": "No task completion; no explicit defensive refusal established"
+        }
+      ],
+      "humanBaseline": false,
+      "routeContract": "Probe uses native APIs only. Controller alone queries the oracle. Input coordinates come from AX, except blind-fixture uses the matched control coordinates."
+    },
+    {
+      "permissions": {
+        "accessibility": true,
+        "pid": 30802,
+        "postEvents": true,
+        "screenCapture": true,
+        "probeBinarySHA256": "a2c22c13aa845f2af9d51ec90eb1ae3c488616f833af3428d6b898d7b584296a"
+      },
+      "environment": {
+        "locked": null,
+        "reason": "Console lock flag unavailable",
+        "advisory": true
+      },
+      "positiveControlTarget": "InspectableControl",
+      "postTap": "annotated",
+      "system": "ProductName:\t\tmacOS\nProductVersion:\t\t26.6\nBuildVersion:\t\t25G72\n",
+      "results": [
+        {
+          "target": "InspectableControl",
+          "route": "keycodes-hid",
+          "repetition": 0,
+          "trial": "2e28c2d2858da5dd",
+          "binarySHA256": "cd54cc2a2ba654d4e0c323cd661c2dea959d1bec001ce2f18f8030f273c94ec0",
+          "verdict": "inconclusive",
+          "disclosure": true,
+          "fieldCenter": [
+            454.0,
+            462.0
+          ],
+          "attempt": {
+            "curvedTrajectory": false,
+            "directToPID": false,
+            "explicitWindowRouting": false,
+            "keyboardDirectToPID": false,
+            "pid": 30803,
+            "postTap": 2,
+            "source": "hid",
+            "status": "attempted",
+            "probeBinarySHA256": "a2c22c13aa845f2af9d51ec90eb1ae3c488616f833af3428d6b898d7b584296a"
+          },
+          "submissions": [],
+          "inputTrustedValues": [],
+          "secureInputEvents": {
+            "enabled": 0,
+            "disabled": 0
+          },
+          "inputGate": {
+            "acceptedEvents": 0,
+            "refusedEvents": 0
+          },
+          "controlWorked": false,
+          "reason": "No task completion; no explicit defensive refusal established"
+        }
+      ],
+      "humanBaseline": false,
+      "routeContract": "Probe uses native APIs only. Controller alone queries the oracle. Input coordinates come from AX, except blind-fixture uses the matched control coordinates."
+    }
+  ]
+}

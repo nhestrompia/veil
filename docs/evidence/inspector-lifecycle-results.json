@@ -1,0 +1,494 @@
+{
+  "milestone": 147,
+  "status": "inconclusive",
+  "controls": {
+    "appkit-handshake": {
+      "status": "inconclusive",
+      "candidateLaunched": false,
+      "inputPosted": false,
+      "helperSHA256": "eea79b50b571b80dc1a2a48c9fba131db5ec4ecd09b168b8227a6b32ccf6f13a",
+      "referencePID": 90307,
+      "helperStderrCharacters": 0,
+      "helperExitCode": 0,
+      "discovery": {
+        "appKitLifecycleRequested": true,
+        "applicationListingRequested": true,
+        "applicationObjectPresent": true,
+        "channelOpened": false,
+        "connectionConnectedSeen": true,
+        "connectionObjectSeen": true,
+        "connectionTransitions": [
+          {
+            "connection": "connected",
+            "machineReady": true,
+            "milliseconds": 0
+          }
+        ],
+        "currentMachineSeen": true,
+        "discoveryMaximumSeconds": 8,
+        "identifierHandshakeRequested": true,
+        "initialApplicationCount": 0,
+        "inputPosted": false,
+        "localTargetAbsentAfterRemoval": true,
+        "localTargetCreationRequested": true,
+        "localTargetRemovalRequested": true,
+        "machineReadySeen": true,
+        "managerFactory": "sharedManager",
+        "managerInstantiated": true,
+        "matchingFixturePages": 0,
+        "maximumApplicationCount": 0,
+        "ownedApplicationsSeen": 0,
+        "permissionRequested": false,
+        "referenceOnly": true,
+        "scriptSent": false,
+        "status": "inconclusive",
+        "targetPID": 90307,
+        "targetSHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+        "unrelatedPageMetadataSaved": false
+      },
+      "submissions": [],
+      "referenceCleanupVerified": true,
+      "fixtureStopped": true
+    },
+    "callback-control": {
+      "status": "inconclusive",
+      "candidateLaunched": false,
+      "inputPosted": false,
+      "helperSHA256": "414f9d444ace08bf0f8c6381b55dc9180a91633a5fdafb18bb36cb1d128e88a9",
+      "referencePID": 91470,
+      "helperStderrCharacters": 0,
+      "helperExitCode": 0,
+      "discovery": {
+        "appKitLifecycleRequested": true,
+        "applicationListingRequested": true,
+        "applicationObjectPresent": true,
+        "channelOpened": false,
+        "connectionConnectedSeen": true,
+        "connectionObjectSeen": true,
+        "connectionTransitions": [
+          {
+            "connection": "connected",
+            "machineReady": true,
+            "milliseconds": 0
+          }
+        ],
+        "currentMachineSeen": true,
+        "discoveryMaximumSeconds": 8,
+        "identifierHandshakeRequested": true,
+        "initialApplicationCount": 0,
+        "inputPosted": false,
+        "localTargetAbsentAfterRemoval": true,
+        "localTargetCreationRequested": true,
+        "localTargetRemovalRequested": true,
+        "machineReadySeen": true,
+        "mainQueueCallbackProcessed": true,
+        "managerFactory": "sharedManager",
+        "managerInstantiated": true,
+        "matchingFixturePages": 0,
+        "maximumApplicationCount": 0,
+        "ownedApplicationsSeen": 0,
+        "permissionRequested": false,
+        "probePID": 91477,
+        "referenceOnly": true,
+        "scriptSent": false,
+        "status": "inconclusive",
+        "targetPID": 91470,
+        "targetSHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+        "unrelatedPageMetadataSaved": false
+      },
+      "submissions": [],
+      "referenceCleanupVerified": true,
+      "fixtureStopped": true
+    },
+    "automatic-target": {
+      "status": "inconclusive",
+      "candidateLaunched": false,
+      "inputPosted": false,
+      "helperSHA256": "c862528e72a1eb343f0d6bbd0a51d3a2fc49405c40aca41cdd5e55c0669591f5",
+      "referencePID": 92836,
+      "helperStderrCharacters": 0,
+      "helperExitCode": 0,
+      "discovery": {
+        "appKitLifecycleRequested": true,
+        "applicationListingRequested": false,
+        "applicationObjectPresent": true,
+        "channelOpened": false,
+        "connectionConnectedSeen": false,
+        "connectionObjectSeen": false,
+        "connectionTransitions": [],
+        "currentMachineSeen": false,
+        "discoveryMaximumSeconds": 8,
+        "identifierHandshakeRequested": false,
+        "inputPosted": false,
+        "localTargetAbsentAfterRemoval": true,
+        "localTargetCreationRequested": false,
+        "localTargetRemovalRequested": false,
+        "machineReadySeen": false,
+        "mainQueueCallbackProcessed": true,
+        "managerFactory": "sharedManager",
+        "managerInstantiated": true,
+        "matchingFixturePages": 0,
+        "maximumApplicationCount": 0,
+        "ownedApplicationsSeen": 0,
+        "permissionRequested": false,
+        "probePID": 92861,
+        "referenceOnly": true,
+        "scriptSent": false,
+        "status": "inconclusive",
+        "targetPID": 92836,
+        "targetSHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+        "unrelatedPageMetadataSaved": false
+      },
+      "submissions": [],
+      "referenceCleanupVerified": true,
+      "fixtureStopped": true
+    },
+    "final-appkit-control": {
+      "status": "inconclusive",
+      "candidateLaunched": false,
+      "inputPosted": false,
+      "helperSHA256": "4107b2b88cfea534d89a1acdd20d67c27c92ae71bbb7cccf6fa1554b1689b8b9",
+      "referencePID": 95303,
+      "helperStderrCharacters": 0,
+      "helperExitCode": 0,
+      "discovery": {
+        "appKitLifecycleRequested": true,
+        "applicationListingRequested": true,
+        "applicationObjectPresent": true,
+        "channelOpened": false,
+        "connectionConnectedSeen": true,
+        "connectionObjectSeen": true,
+        "connectionTransitions": [
+          {
+            "connection": "connected",
+            "machineReady": true,
+            "milliseconds": 0
+          }
+        ],
+        "currentMachineSeen": true,
+        "discoveryMaximumSeconds": 8,
+        "identifierHandshakeRequested": true,
+        "initialApplicationCount": 0,
+        "inputPosted": false,
+        "localTargetAbsentAfterRemoval": true,
+        "localTargetCreationRequested": true,
+        "localTargetRemovalRequested": false,
+        "machineReadySeen": true,
+        "mainQueueCallbackProcessed": true,
+        "managerFactory": "sharedManager",
+        "managerInstantiated": true,
+        "matchingFixturePages": 0,
+        "maximumApplicationCount": 0,
+        "ownedApplicationsSeen": 0,
+        "permissionRequested": false,
+        "probePID": 95311,
+        "referenceOnly": true,
+        "scriptSent": false,
+        "status": "inconclusive",
+        "targetPID": 95303,
+        "targetSHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+        "unrelatedPageMetadataSaved": false
+      },
+      "submissions": [],
+      "referenceCleanupVerified": true,
+      "fixtureStopped": true
+    },
+    "transition-control": {
+      "status": "inconclusive",
+      "candidateLaunched": false,
+      "inputPosted": false,
+      "helperSHA256": "38491c1a6bdefb38f929a09b13f5b2e2c4d72bc6f91674006bc4bc0113ddcb6c",
+      "referencePID": 96091,
+      "helperStderrCharacters": 0,
+      "helperExitCode": 0,
+      "discovery": {
+        "appKitLifecycleRequested": true,
+        "applicationListingRequested": true,
+        "applicationObjectPresent": true,
+        "channelOpened": false,
+        "connectionConnectedSeen": true,
+        "connectionObjectSeen": true,
+        "connectionTransitions": [
+          {
+            "connection": "connected",
+            "machineReady": true,
+            "milliseconds": 0
+          },
+          {
+            "connection": "no-current-machine",
+            "machineReady": false,
+            "milliseconds": 55
+          }
+        ],
+        "currentMachinePresentAtEnd": false,
+        "currentMachineSeen": true,
+        "discoveryMaximumSeconds": 8,
+        "identifierHandshakeRequested": true,
+        "initialApplicationCount": 0,
+        "inputPosted": false,
+        "localTargetAbsentAfterRemoval": true,
+        "localTargetCreationRequested": true,
+        "localTargetRemovalRequested": false,
+        "machineReadySeen": true,
+        "mainQueueCallbackProcessed": true,
+        "managerFactory": "sharedManager",
+        "managerInstantiated": true,
+        "matchingFixturePages": 0,
+        "maximumApplicationCount": 0,
+        "ownedApplicationsSeen": 0,
+        "permissionRequested": false,
+        "probePID": 96099,
+        "referenceOnly": true,
+        "scriptSent": false,
+        "status": "inconclusive",
+        "targetPID": 96091,
+        "targetSHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+        "unrelatedPageMetadataSaved": false
+      },
+      "submissions": [],
+      "referenceCleanupVerified": true,
+      "fixtureStopped": true
+    }
+  },
+  "ownedClientEvents": {
+    "automatic-target": {
+      "probePID": 92861,
+      "exactImageFilter": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/inspector-discovery-control",
+      "logExitCode": 0,
+      "daemonLogsRead": false,
+      "unrelatedProcessLogsRead": false,
+      "matchingLogRecords": 87,
+      "rawMessagesSaved": false,
+      "events": [
+        {
+          "event": "debugger-connection-activated",
+          "connection": 1
+        },
+        {
+          "event": "current-machine-target-created"
+        },
+        {
+          "event": "debugger-connection-interrupted",
+          "connection": 1
+        },
+        {
+          "event": "webinspectord-validation-failed"
+        },
+        {
+          "event": "debugger-connection-invalidated",
+          "connection": 1
+        }
+      ],
+      "eventLimitReached": false,
+      "status": "observed"
+    },
+    "final-appkit-control": {
+      "probePID": 95311,
+      "exactImageFilter": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/inspector-discovery-control",
+      "logExitCode": 0,
+      "daemonLogsRead": false,
+      "unrelatedProcessLogsRead": false,
+      "matchingLogRecords": 109,
+      "rawMessagesSaved": false,
+      "events": [
+        {
+          "event": "debugger-connection-activated",
+          "connection": 1
+        },
+        {
+          "event": "current-machine-target-created"
+        },
+        {
+          "event": "debugger-connection-activated",
+          "connection": 2
+        },
+        {
+          "event": "current-machine-target-created"
+        },
+        {
+          "event": "debugger-connection-interrupted",
+          "connection": 1
+        },
+        {
+          "event": "webinspectord-validation-failed"
+        },
+        {
+          "event": "debugger-connection-invalidated",
+          "connection": 1
+        },
+        {
+          "event": "debugger-connection-interrupted",
+          "connection": 2
+        },
+        {
+          "event": "webinspectord-validation-failed"
+        },
+        {
+          "event": "debugger-connection-invalidated",
+          "connection": 2
+        }
+      ],
+      "eventLimitReached": false,
+      "status": "observed"
+    },
+    "transition-control": {
+      "probePID": 96099,
+      "exactImageFilter": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/inspector-discovery-control",
+      "logExitCode": 0,
+      "daemonLogsRead": false,
+      "unrelatedProcessLogsRead": false,
+      "matchingLogRecords": 109,
+      "rawMessagesSaved": false,
+      "events": [
+        {
+          "event": "debugger-connection-activated",
+          "connection": 1
+        },
+        {
+          "event": "current-machine-target-created"
+        },
+        {
+          "event": "debugger-connection-activated",
+          "connection": 2
+        },
+        {
+          "event": "current-machine-target-created"
+        },
+        {
+          "event": "debugger-connection-interrupted",
+          "connection": 1
+        },
+        {
+          "event": "webinspectord-validation-failed"
+        },
+        {
+          "event": "debugger-connection-invalidated",
+          "connection": 1
+        },
+        {
+          "event": "debugger-connection-interrupted",
+          "connection": 2
+        },
+        {
+          "event": "webinspectord-validation-failed"
+        },
+        {
+          "event": "debugger-connection-invalidated",
+          "connection": 2
+        }
+      ],
+      "eventLimitReached": false,
+      "status": "observed"
+    }
+  },
+  "coverageControl": {
+    "status": "inconclusive",
+    "inputPosted": false,
+    "candidateLaunched": false,
+    "coverageOnly": true,
+    "waitForSetup": true,
+    "permissions": {
+      "audioCaptured": false,
+      "hooksInstalled": false,
+      "inputPosted": false,
+      "permissionRequested": false,
+      "probePID": 89815,
+      "screenRecordingGranted": true,
+      "status": "preflight",
+      "cleanupVerified": true,
+      "probeSHA256": "2ce201a2876e295fe6695fbda6506b72e1d9ac706f6051226377f5a8fa3f4a2b"
+    },
+    "referencePID": 89819,
+    "reference": {
+      "audioCaptured": false,
+      "backdropClosed": true,
+      "error": "Another window intersects the research region",
+      "hooksInstalled": false,
+      "inputPosted": false,
+      "permissionRequested": false,
+      "probePID": 89903,
+      "status": "refused",
+      "cleanupVerified": true,
+      "probeSHA256": "2ce201a2876e295fe6695fbda6506b72e1d9ac706f6051226377f5a8fa3f4a2b"
+    },
+    "submissions": [],
+    "referenceCleanupVerified": true,
+    "fixtureStopped": true
+  },
+  "nativeBoundaryControls": [
+    {
+      "arguments": [],
+      "passed": true
+    },
+    {
+      "arguments": [
+        "1",
+        "https://example.org/trial/0123456789abcdef"
+      ],
+      "passed": true
+    },
+    {
+      "arguments": [
+        "1",
+        "http://127.0.0.1:8765/trial/0123456789abcdef"
+      ],
+      "passed": true
+    },
+    {
+      "arguments": [
+        "1",
+        "http://127.0.0.1:99999/trial/0123456789abcdef"
+      ],
+      "passed": true
+    },
+    {
+      "arguments": [
+        "1",
+        "http://127.0.0.1:8765/trial/0123456789abcdef",
+        "--unknown"
+      ],
+      "passed": true
+    },
+    {
+      "arguments": [
+        "1",
+        "http://127.0.0.1:8765/trial/0123456789abcdef",
+        "--appkit",
+        "--appkit"
+      ],
+      "passed": true
+    },
+    {
+      "arguments": [
+        "1",
+        "http://127.0.0.1:8765/trial/0123456789abcdef",
+        "--fetch-listing",
+        "--register-and-list"
+      ],
+      "passed": true
+    }
+  ],
+  "pythonTestsPassed": 17,
+  "sourceHashes": {
+    "Sources/Diagnostics/InspectorDiscoveryControl.swift": "da449f697958eea89ef080a3e93b97fbf2c3d2ff337bfd63d464b69159c46ac8",
+    "tools/run_inspector_discovery_control.py": "d4d21db926a0c4a91333fa2479ccbb7ea78e5c56b39577b4c7c30a323e37c83f",
+    "tools/inspector_client_log.py": "a137a3e5c351f20f0e0bac4768de7bfcd16a326b3c4778972793d8c3436560f6",
+    "tools/test_inspector_client_log.py": "6c43c411cd253ab9136dfa3244fad3430643d6db4b29b4403f97582624a0d1a7"
+  },
+  "preservedImages": {
+    "AgentFreeBrowserPreview": "dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70",
+    "PreviewCompositorProbe": "2ce201a2876e295fe6695fbda6506b72e1d9ac706f6051226377f5a8fa3f4a2b"
+  },
+  "remainingTransientPIDs": {
+    "reference": [],
+    "client": [],
+    "recorder": []
+  },
+  "candidateLaunched": false,
+  "scriptSent": false,
+  "streamCaptureRan": false,
+  "administratorAccessUsed": false,
+  "explicitPermissionRequestIssued": false,
+  "agentFreeEstablished": false,
+  "earlierThroughoutConnectionWordingWithdrawn": true
+}

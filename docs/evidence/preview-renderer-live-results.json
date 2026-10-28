@@ -1,0 +1,455 @@
+{
+  "milestone": 138,
+  "recovery": {
+    "approvalRequired": true,
+    "approved": true,
+    "executed": true,
+    "scope": "Reset only this stale Accessibility entry, then request/re-add the same pinned research helper.",
+    "bundleIdentifier": "research.agentfreebrowser.previewrendererread",
+    "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/dist/PreviewRendererReadProbe.app",
+    "executableSHA256": "18c7df1aba7af587ba002f52f38b4e07c6a0fd06be275493ce2d220fe4db8f8f",
+    "maximumAttempts": 1,
+    "commands": [
+      [
+        "tccutil",
+        "reset",
+        "Accessibility",
+        "research.agentfreebrowser.previewrendererread"
+      ],
+      [
+        "open",
+        "-g",
+        "-n",
+        "-W",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/dist/PreviewRendererReadProbe.app",
+        "--args",
+        "request-accessibility",
+        "--out",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-renderer-137/approved-accessibility-request-after-reset.json"
+      ]
+    ],
+    "rootAllowed": false,
+    "otherAppsMayBeReset": false,
+    "otherServicesMayBeReset": false,
+    "mayRebuildOrResign": false,
+    "userAuthentication": "Only directly in macOS if requested.",
+    "approvalResponse": "yes",
+    "approvalRecordedUnixSeconds": 1793184508.835113,
+    "resetExitCode": 0,
+    "resetOutput": "Successfully reset Accessibility approval status for research.agentfreebrowser.previewrendererread",
+    "resetError": "",
+    "requestExitCode": 0,
+    "requestResult": {
+      "accessibility": false,
+      "accessibilityQueried": false,
+      "actionsSent": false,
+      "hooksInstalled": false,
+      "inputPosted": false,
+      "permissionRequested": true,
+      "probePID": 34308,
+      "rawTextSaved": false,
+      "status": "requested"
+    }
+  },
+  "effectiveAccessibility": true,
+  "physicalControl": {
+    "operatorDeclaresPhysicalCompletion": true,
+    "operatorReport": "Task complete",
+    "pid": 35426,
+    "binarySHA256": "dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70",
+    "deviceBound": true,
+    "acceptedSubmissions": 1,
+    "recordedUnixSeconds": 1793184757.1837099,
+    "bootstrapAttested": false,
+    "physicalInputAbsenceVerified": false
+  },
+  "initialTokenReference": {
+    "mode": "read-token",
+    "scope": "Fresh readable reference only; no protected browser",
+    "candidateQueried": false,
+    "inputPosted": false,
+    "actionsSent": false,
+    "referenceWorked": true,
+    "helperSHA256": "18c7df1aba7af587ba002f52f38b4e07c6a0fd06be275493ce2d220fe4db8f8f",
+    "permissions": {
+      "accessibility": true,
+      "accessibilityQueried": false,
+      "actionsSent": false,
+      "hooksInstalled": false,
+      "inputPosted": false,
+      "permissionRequested": false,
+      "probePID": 34934,
+      "rawTextSaved": false,
+      "status": "preflight",
+      "cleanupVerified": true,
+      "probeSHA256": "18c7df1aba7af587ba002f52f38b4e07c6a0fd06be275493ce2d220fe4db8f8f"
+    },
+    "foregroundStatus": "observed",
+    "observation": {
+      "accessibility": true,
+      "accessibilityQueried": true,
+      "actionsSent": false,
+      "hooksInstalled": false,
+      "hostName": "InspectableControl",
+      "hostPID": 34938,
+      "hostSHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+      "inputPosted": false,
+      "permissionRequested": false,
+      "probePID": 35036,
+      "queries": [
+        {
+          "discardedForeignElements": 1,
+          "kind": "renderer",
+          "pid": 34941,
+          "researchMarkers": [
+            "AFB-58687853"
+          ],
+          "resolvableTokenRoots": 21,
+          "roles": {
+            "AXApplication": 2,
+            "AXButton": 1,
+            "AXGroup": 6,
+            "AXHeading": 1,
+            "AXLink": 1,
+            "AXScrollArea": 1,
+            "AXStaticText": 8,
+            "AXTextField": 1
+          },
+          "scannedElementIDs": 1024,
+          "tokenFactoryAvailable": true,
+          "traversalIncomplete": false,
+          "visited": 22
+        },
+        {
+          "discardedForeignElements": 0,
+          "kind": "host",
+          "pid": 34938,
+          "researchMarkers": [
+            "AFB-58687853"
+          ],
+          "resolvableTokenRoots": 12,
+          "roles": {
+            "AXApplication": 2,
+            "AXButton": 6,
+            "AXGroup": 9,
+            "AXHeading": 1,
+            "AXLink": 1,
+            "AXMenuBar": 1,
+            "AXScrollArea": 1,
+            "AXStaticText": 10,
+            "AXTextField": 2,
+            "AXWebArea": 1,
+            "AXWindow": 1
+          },
+          "scannedElementIDs": 1024,
+          "tokenFactoryAvailable": true,
+          "traversalIncomplete": false,
+          "visited": 35
+        }
+      ],
+      "rawTextSaved": false,
+      "rendererPIDs": [
+        34941
+      ],
+      "status": "observed",
+      "cleanupVerified": true,
+      "probeSHA256": "18c7df1aba7af587ba002f52f38b4e07c6a0fd06be275493ce2d220fe4db8f8f"
+    },
+    "submissions": [],
+    "referenceCleanupVerified": true,
+    "fixtureStopped": true
+  },
+  "plainRootReference": {
+    "mode": "read",
+    "scope": "Fresh readable reference only; no protected browser",
+    "candidateQueried": false,
+    "inputPosted": false,
+    "actionsSent": false,
+    "referenceWorked": false,
+    "helperSHA256": "18c7df1aba7af587ba002f52f38b4e07c6a0fd06be275493ce2d220fe4db8f8f",
+    "permissions": {
+      "accessibility": true,
+      "accessibilityQueried": false,
+      "actionsSent": false,
+      "hooksInstalled": false,
+      "inputPosted": false,
+      "permissionRequested": false,
+      "probePID": 35371,
+      "rawTextSaved": false,
+      "status": "preflight",
+      "cleanupVerified": true,
+      "probeSHA256": "18c7df1aba7af587ba002f52f38b4e07c6a0fd06be275493ce2d220fe4db8f8f"
+    },
+    "foregroundStatus": "observed",
+    "observation": {
+      "accessibility": true,
+      "accessibilityQueried": true,
+      "actionsSent": false,
+      "hooksInstalled": false,
+      "hostName": "InspectableControl",
+      "hostPID": 35375,
+      "hostSHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+      "inputPosted": false,
+      "permissionRequested": false,
+      "probePID": 35391,
+      "queries": [
+        {
+          "discardedForeignElements": 0,
+          "kind": "renderer",
+          "pid": 35379,
+          "researchMarkers": [],
+          "resolvableTokenRoots": 0,
+          "roles": {
+            "AXApplication": 1
+          },
+          "scannedElementIDs": 0,
+          "tokenFactoryAvailable": false,
+          "traversalIncomplete": false,
+          "visited": 1
+        },
+        {
+          "discardedForeignElements": 0,
+          "kind": "host",
+          "pid": 35375,
+          "researchMarkers": [
+            "AFB-EF290E4E"
+          ],
+          "resolvableTokenRoots": 0,
+          "roles": {
+            "AXApplication": 1,
+            "AXButton": 6,
+            "AXGroup": 9,
+            "AXHeading": 1,
+            "AXLink": 1,
+            "AXMenuBar": 1,
+            "AXScrollArea": 1,
+            "AXStaticText": 10,
+            "AXTextField": 2,
+            "AXWebArea": 1,
+            "AXWindow": 1
+          },
+          "scannedElementIDs": 0,
+          "tokenFactoryAvailable": false,
+          "traversalIncomplete": false,
+          "visited": 34
+        }
+      ],
+      "rawTextSaved": false,
+      "rendererPIDs": [
+        35379
+      ],
+      "status": "observed",
+      "cleanupVerified": true,
+      "probeSHA256": "18c7df1aba7af587ba002f52f38b4e07c6a0fd06be275493ce2d220fe4db8f8f"
+    },
+    "submissions": [],
+    "referenceCleanupVerified": true,
+    "fixtureStopped": true
+  },
+  "matchedTokenComparison": {
+    "mode": "read-token",
+    "candidatePID": 35426,
+    "candidateSHA256": "dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70",
+    "helperSHA256": "18c7df1aba7af587ba002f52f38b4e07c6a0fd06be275493ce2d220fe4db8f8f",
+    "inputPosted": false,
+    "actionsSent": false,
+    "operatorDeclaresPhysicalCompletion": true,
+    "physicalInputAbsenceVerified": false,
+    "bootstrapAttested": false,
+    "candidateQueried": true,
+    "permissions": {
+      "accessibility": true,
+      "accessibilityQueried": false,
+      "actionsSent": false,
+      "hooksInstalled": false,
+      "inputPosted": false,
+      "permissionRequested": false,
+      "probePID": 36417,
+      "rawTextSaved": false,
+      "status": "preflight",
+      "cleanupVerified": true,
+      "probeSHA256": "18c7df1aba7af587ba002f52f38b4e07c6a0fd06be275493ce2d220fe4db8f8f"
+    },
+    "reference": {
+      "observation": {
+        "accessibility": true,
+        "accessibilityQueried": true,
+        "actionsSent": false,
+        "hooksInstalled": false,
+        "hostName": "InspectableControl",
+        "hostPID": 36422,
+        "hostSHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+        "inputPosted": false,
+        "permissionRequested": false,
+        "probePID": 36442,
+        "queries": [
+          {
+            "discardedForeignElements": 1,
+            "kind": "renderer",
+            "pid": 36427,
+            "researchMarkers": [
+              "AFB-6936D342"
+            ],
+            "resolvableTokenRoots": 21,
+            "roles": {
+              "AXApplication": 2,
+              "AXButton": 1,
+              "AXGroup": 6,
+              "AXHeading": 1,
+              "AXLink": 1,
+              "AXScrollArea": 1,
+              "AXStaticText": 8,
+              "AXTextField": 1
+            },
+            "scannedElementIDs": 1024,
+            "tokenFactoryAvailable": true,
+            "traversalIncomplete": false,
+            "visited": 22
+          },
+          {
+            "discardedForeignElements": 0,
+            "kind": "host",
+            "pid": 36422,
+            "researchMarkers": [
+              "AFB-6936D342"
+            ],
+            "resolvableTokenRoots": 12,
+            "roles": {
+              "AXApplication": 2,
+              "AXButton": 6,
+              "AXGroup": 9,
+              "AXHeading": 1,
+              "AXLink": 1,
+              "AXMenuBar": 1,
+              "AXScrollArea": 1,
+              "AXStaticText": 10,
+              "AXTextField": 2,
+              "AXWebArea": 1,
+              "AXWindow": 1
+            },
+            "scannedElementIDs": 1024,
+            "tokenFactoryAvailable": true,
+            "traversalIncomplete": false,
+            "visited": 35
+          }
+        ],
+        "rawTextSaved": false,
+        "rendererPIDs": [
+          36427
+        ],
+        "status": "observed",
+        "cleanupVerified": true,
+        "probeSHA256": "18c7df1aba7af587ba002f52f38b4e07c6a0fd06be275493ce2d220fe4db8f8f"
+      },
+      "markerRecoveredFromRenderer": true,
+      "submissions": []
+    },
+    "referenceCleanupVerified": true,
+    "newSubmissions": [],
+    "candidate": {
+      "accessibility": true,
+      "accessibilityQueried": true,
+      "actionsSent": false,
+      "hooksInstalled": false,
+      "hostName": "AgentFreeBrowserPreview",
+      "hostPID": 35426,
+      "hostSHA256": "dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70",
+      "inputPosted": false,
+      "permissionRequested": false,
+      "probePID": 36454,
+      "queries": [
+        {
+          "discardedForeignElements": 1,
+          "kind": "renderer",
+          "pid": 35775,
+          "researchMarkers": [],
+          "resolvableTokenRoots": 2,
+          "roles": {
+            "AXApplication": 2,
+            "AXGroup": 1
+          },
+          "scannedElementIDs": 1024,
+          "tokenFactoryAvailable": true,
+          "traversalIncomplete": false,
+          "visited": 4
+        },
+        {
+          "discardedForeignElements": 0,
+          "kind": "host",
+          "pid": 35426,
+          "researchMarkers": [],
+          "resolvableTokenRoots": 5,
+          "roles": {
+            "AXApplication": 2,
+            "AXButton": 1,
+            "AXGroup": 1,
+            "AXMenuBar": 1,
+            "AXWindow": 1
+          },
+          "scannedElementIDs": 1024,
+          "tokenFactoryAvailable": true,
+          "traversalIncomplete": false,
+          "visited": 6
+        }
+      ],
+      "rawTextSaved": false,
+      "rendererPIDs": [
+        35775
+      ],
+      "status": "observed",
+      "cleanupVerified": true,
+      "probeSHA256": "18c7df1aba7af587ba002f52f38b4e07c6a0fd06be275493ce2d220fe4db8f8f"
+    },
+    "readOutcome": "marker-not-recovered-in-bounded-scan"
+  },
+  "cleanup": {
+    "recordedUnixSeconds": 1793184856.696619,
+    "previewPID": 35426,
+    "previewSHA256": "dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70",
+    "acceptedSubmissions": 1,
+    "remainingTransientPIDs": {
+      "PreviewRendererReadProbe": [],
+      "NativeProbe": [],
+      "InspectableControl": []
+    },
+    "modifierApps": {
+      "LinearMouse": [
+        20791
+      ],
+      "DockDoor": [
+        20794
+      ]
+    },
+    "frozenImagesUnchanged": {
+      "DeviceKeyboardExperiment": true,
+      "NativeProbe": true,
+      "RendererAXProbe": true,
+      "KeyboardObservationProbe": true,
+      "WindowGeometryProbe": true,
+      "PixelKeyboardExperiment": true,
+      "PixelKeyboardRoutingControl": true,
+      "CaptureRefreshProbe": true,
+      "CompositorRefreshProbe": true,
+      "CaptureStressProbe": true,
+      "AgentFreeBrowserPreview": true,
+      "PreviewRendererReadProbe": true
+    },
+    "previewSourcesUnchanged": {
+      "Sources/Browser/AXBoundary.swift": true,
+      "Sources/Browser/BrowserApp.swift": true,
+      "Sources/Browser/BrowserPolicy.swift": true,
+      "Sources/Browser/BrowserRuntimePolicy.swift": true,
+      "Sources/Browser/DeviceKeyboard.swift": true,
+      "Sources/Browser/HIDSourcePolicy.swift": true,
+      "Sources/Browser/InputSourceWindow.swift": true,
+      "Sources/Browser/RestrictedWebView.swift": true,
+      "Sources/Browser/SecureInputWindow.swift": true
+    }
+  },
+  "checks": {
+    "pythonTestsPassed": 12,
+    "pythonCompilation": true
+  },
+  "agentFreeEstablished": false,
+  "scope": "One fresh physically completed preview process; one matched token-read comparison. No writes or input events. Plain renderer root fails calibration and supplies no candidate result."
+}

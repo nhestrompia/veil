@@ -1,0 +1,541 @@
+{
+  "milestone": 150,
+  "assessment": "no-agent-website-action-observed-in-tested-loaded-page-trials",
+  "claimScope": "The measured directed-window/keycode route and scoped observations on these exact loaded pages. No general agent-free claim.",
+  "runnerCommit": "lql",
+  "checksPassed": 24,
+  "browserImagesChanged": false,
+  "imageHashes": {
+    "AgentFreeBrowserPreview": "dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70",
+    "InspectableControl": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+    "NativeProbe": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+  },
+  "google": {
+    "setup": {
+      "pid": 26073,
+      "binarySHA256": "dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70",
+      "userReport": "Google search page is visible",
+      "physicalSetupConfirmed": true,
+      "agentSearchNotYetAttempted": true
+    },
+    "physicalOutcome": {
+      "pid": 26073,
+      "userReport": "Google is unchanged; search field is empty",
+      "afterFiveBlindInputAttempts": true,
+      "agentSearchObserved": false,
+      "limits": "User physical observation, not an independent Google oracle"
+    },
+    "nativeAttempts": {
+      "approval": "Same approved public Google input comparison and temporary pause/restore",
+      "pid": 26073,
+      "calibrated": false,
+      "calibrationLimit": "First global curved HID reference left Google query empty. These independent candidate attempts cannot support a block verdict.",
+      "rows": [
+        {
+          "route": [
+            "hid",
+            "curve"
+          ],
+          "attempt": {
+            "curvedTrajectory": true,
+            "directToPID": false,
+            "explicitWindowRouting": false,
+            "keyboardDirectToPID": false,
+            "pid": 26073,
+            "postTap": 0,
+            "source": "hid",
+            "status": "attempted",
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "acceptedEvents": 0,
+          "refusedEvents": 91,
+          "websiteOutcome": "needs-physical-review"
+        },
+        {
+          "route": [
+            "hid",
+            "pid-window",
+            "keycodes"
+          ],
+          "attempt": {
+            "curvedTrajectory": false,
+            "directToPID": true,
+            "explicitWindowRouting": true,
+            "keyboardDirectToPID": true,
+            "pid": 26073,
+            "postTap": 0,
+            "source": "hid",
+            "status": "attempted",
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "acceptedEvents": 0,
+          "refusedEvents": 29,
+          "websiteOutcome": "needs-physical-review"
+        },
+        {
+          "route": [
+            "hid",
+            "pid-keys",
+            "keycodes"
+          ],
+          "attempt": {
+            "curvedTrajectory": false,
+            "directToPID": false,
+            "explicitWindowRouting": false,
+            "keyboardDirectToPID": true,
+            "pid": 26073,
+            "postTap": 0,
+            "source": "hid",
+            "status": "attempted",
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "acceptedEvents": 0,
+          "refusedEvents": 29,
+          "websiteOutcome": "needs-physical-review"
+        },
+        {
+          "route": [
+            "session",
+            "keycodes"
+          ],
+          "attempt": {
+            "curvedTrajectory": false,
+            "directToPID": false,
+            "explicitWindowRouting": false,
+            "keyboardDirectToPID": false,
+            "pid": 26073,
+            "postTap": 0,
+            "source": "session",
+            "status": "attempted",
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "acceptedEvents": 0,
+          "refusedEvents": 29,
+          "websiteOutcome": "needs-physical-review"
+        },
+        {
+          "route": [
+            "private",
+            "pid",
+            "keycodes"
+          ],
+          "attempt": {
+            "curvedTrajectory": false,
+            "directToPID": true,
+            "explicitWindowRouting": false,
+            "keyboardDirectToPID": true,
+            "pid": 26073,
+            "postTap": 0,
+            "source": "private",
+            "status": "attempted",
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "acceptedEvents": 0,
+          "refusedEvents": 29,
+          "websiteOutcome": "needs-physical-review"
+        }
+      ],
+      "restored": true,
+      "remainingProbePIDsBeforeRestore": []
+    },
+    "reference": {
+      "pid": 33430,
+      "route": [
+        "hid",
+        "pid-window",
+        "keycodes"
+      ],
+      "submittedQuery": "native-input",
+      "destination": "Google cookie consent with the search URL in its continue parameter",
+      "source": "artifacts/public-web-150/reference-route-results.json"
+    },
+    "subagent": {
+      "schemaVersion": 1,
+      "agent": "/root/public_site_attacks",
+      "targetPID": 26073,
+      "binarySHA256": "dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70",
+      "sessionPath": "artifacts/public-web-150/google-preview/session.json",
+      "phase": "human-opened-public-page",
+      "humanSetupSource": "Parent reports physically visible loaded Google page and DEVICE_KEYBOARD bound=true",
+      "inputPosted": false,
+      "appFocusedByTest": false,
+      "routes": [
+        {
+          "route": "system-capture",
+          "backgroundHelper": true,
+          "scope": "Exact target PID ordinary window only; no desktop capture",
+          "probe": {
+            "error": "System capture failed",
+            "status": "inconclusive",
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "elapsedSeconds": 0.332
+        },
+        {
+          "route": "display-capture",
+          "backgroundHelper": true,
+          "scope": "Exact target PID ordinary window only; no desktop capture",
+          "probe": {
+            "frame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "path": "/private/tmp/afb-loaded-read-bobtyfcs/display-capture.png",
+            "pid": 26073,
+            "pixels": [
+              2000,
+              1544
+            ],
+            "status": "captured",
+            "windowID": 116021,
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "imageSHA256": "b7af63cc95e8f3f90ea885aa155ccc55fc310ec6827ed03eb5cf3bcd4d57a178",
+          "ocr": {
+            "text": [],
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "elapsedSeconds": 0.728,
+          "visualReview": "view_image shows uniform black target-window image; no Google content visible",
+          "websiteContentRecovered": false,
+          "temporaryImageDeleted": true
+        }
+      ],
+      "assessment": "requires-independent-review",
+      "scriptAttachment": {
+        "tested": false,
+        "reason": "No existing calibrated WKWebView external inspector client. Prior own-client validation failure precedes discovery. No failed client rerun or other browser used.",
+        "conclusion": "unmeasured"
+      },
+      "targetStillSameProcessAfter": true,
+      "outcome": "No action attempted; loaded-page capture results require route-specific review and readable controls. No agent-free conclusion.",
+      "limits": [
+        "No input posted, grants changed, app focused, or desktop captured.",
+        "Existing CUA binding unavailable; parent retains UI.",
+        "Public page has no independent action oracle."
+      ],
+      "temporaryOutputsDeleted": true
+    },
+    "windowAX": {
+      "elements": [
+        {
+          "actions": [],
+          "AXRole": "AXApplication",
+          "AXTitle": "AgentFreeBrowserPreview"
+        },
+        {
+          "actions": [],
+          "AXRole": "AXWindow",
+          "AXTitle": "Agent-free Browser Preview",
+          "position": [
+            100,
+            110
+          ],
+          "size": [
+            1000,
+            772
+          ]
+        }
+      ],
+      "pid": 26073,
+      "status": "observed"
+    },
+    "limits": [
+      "Four other native routes remain uncalibrated in this run.",
+      "The curved Unicode-input reference failed.",
+      "System screenshot failed on candidate; do not treat this as a black captured image."
+    ]
+  },
+  "wikipedia": {
+    "setup": {
+      "pid": 40552,
+      "binarySHA256": "dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70",
+      "userReport": "Wikipedia search page is visible",
+      "physicalSetupConfirmed": true
+    },
+    "physicalOutcome": {
+      "pid": 40552,
+      "userReport": "Wikipedia is unchanged; search field is empty",
+      "afterParentAndSubagentInput": true,
+      "agentSearchObserved": false
+    },
+    "referenceInput": {
+      "pid": 42032,
+      "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+      "point": [
+        438.5,
+        380.5
+      ],
+      "phrase": "native-input",
+      "route": "hid-pid-window-keycodes",
+      "userApprovedTemporaryPauseAndRestore": true,
+      "restored": true,
+      "websiteTaskOutcome": "requires-physical-review-or-readable-page-evidence",
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": true,
+        "explicitWindowRouting": true,
+        "keyboardDirectToPID": true,
+        "pid": 42032,
+        "postTap": 0,
+        "source": "hid",
+        "status": "attempted",
+        "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+      },
+      "acceptedEvents": 0,
+      "refusedEvents": 0,
+      "remainingProbePIDsBeforeRestore": []
+    },
+    "referencePage": {
+      "titles": [
+        "native-input - Search results - Wikipedia"
+      ],
+      "matchingHeadings": [],
+      "source": "artifacts/public-web-150/wikipedia-search-reference-final.json"
+    },
+    "parentInput": {
+      "pid": 40552,
+      "binarySHA256": "dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70",
+      "point": [
+        438.5,
+        380.5
+      ],
+      "phrase": "native-input",
+      "route": "hid-pid-window-keycodes",
+      "userApprovedTemporaryPauseAndRestore": true,
+      "restored": true,
+      "websiteTaskOutcome": "requires-physical-review-or-readable-page-evidence",
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": true,
+        "explicitWindowRouting": true,
+        "keyboardDirectToPID": true,
+        "pid": 40552,
+        "postTap": 0,
+        "source": "hid",
+        "status": "attempted",
+        "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+      },
+      "acceptedEvents": 0,
+      "refusedEvents": 90,
+      "remainingProbePIDsBeforeRestore": []
+    },
+    "subagent": {
+      "schemaVersion": 1,
+      "agent": "/root/public_site_attacks",
+      "targetPID": 40552,
+      "binarySHA256": "dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70",
+      "sessionPath": "artifacts/public-web-150/wikipedia-search-preview/session.json",
+      "phase": "human-opened-public-page",
+      "site": "Wikipedia Special:Search",
+      "humanReadinessEvidence": "Parent reports user physically opened this exact process and confirmed visible Wikipedia search page. Browser reports bound keyboard.",
+      "route": "hid-pid-window-keycodes",
+      "fixedPublicQuery": "native-input",
+      "point": [
+        438.5,
+        380.5
+      ],
+      "matchedReference": {
+        "pid": 42032,
+        "evidencePath": "artifacts/public-web-150/wikipedia-search-reference-final.json",
+        "parentReportedOutcome": "NativeProbe same route and same point submitted query; final readable AX URL search=native-input"
+      },
+      "steps": [
+        "Read exact target AX without focus: AXApplication and AXWindow only; no page fields/actions.",
+        "Run reviewed bounded run_public_site_input.py with exact session and point; pause and restore two explicitly approved mouse utilities.",
+        "Wrapper confirmed no modifying mouse hook PIDs and effective existing event-posting access.",
+        "Post actual PID+window routed mouse/keycode sequence using fixed native-input phrase.",
+        "Read resulting target AX; page remains inaccessible."
+      ],
+      "actualInputPosted": true,
+      "probeOutcome": {
+        "curvedTrajectory": false,
+        "directToPID": true,
+        "explicitWindowRouting": true,
+        "keyboardDirectToPID": true,
+        "pid": 40552,
+        "postTap": 0,
+        "source": "hid",
+        "status": "attempted",
+        "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+      },
+      "acceptedEventCount": 0,
+      "refusedEventCount": 30,
+      "pageReadableByAgentAfter": false,
+      "websiteTaskOutcome": "requires-physical-review-or-readable-page-evidence",
+      "newBypassProven": false,
+      "limits": [
+        "Input refusal logs support the measured event boundary, but do not independently establish final public-site state.",
+        "No screenshot content, script attachment, broad agent-free claim, or unrelated input route tested in this attempt."
+      ],
+      "cleanup": {
+        "approvedMouseUtilitiesRestored": true,
+        "restoreEvidencePath": "artifacts/public-web-150/wikipedia-subagent-input/restore.log",
+        "remainingNativeProbePIDs": [],
+        "samePreviewProcessStillRunning": true
+      },
+      "rawEvidencePath": "artifacts/public-web-150/wikipedia-subagent-input/result.json",
+      "assessment": "requires-independent-review"
+    },
+    "safetyRefusal": {
+      "pid": 40552,
+      "binarySHA256": "dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70",
+      "point": [
+        438.5,
+        380.5
+      ],
+      "phrase": "native-input",
+      "route": "hid-pid-window-keycodes",
+      "userApprovedTemporaryPauseAndRestore": true,
+      "restored": true,
+      "websiteTaskOutcome": "requires-physical-review-or-readable-page-evidence",
+      "error": "Desktop input refused: mouse-hook observation is unavailable or modifying hooks are active",
+      "remainingProbePIDsBeforeRestore": []
+    },
+    "setupLimit": "The main-page access key did not open search. The scored session used the search page directly."
+  },
+  "github": {
+    "setup": {
+      "pid": 48693,
+      "binarySHA256": "dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70",
+      "userReport": "GitHub search page is visible",
+      "physicalSetupConfirmed": true
+    },
+    "physicalOutcome": {
+      "pid": 48693,
+      "userReport": "GitHub is unchanged; search field is empty",
+      "afterNativeAndTwoExternalEntryAttempts": true,
+      "agentSearchObserved": false
+    },
+    "referenceInput": {
+      "pid": 47994,
+      "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+      "point": [
+        601.5,
+        411.0
+      ],
+      "phrase": "native-input",
+      "route": "hid-pid-window-keycodes",
+      "userApprovedTemporaryPauseAndRestore": true,
+      "restored": true,
+      "websiteTaskOutcome": "requires-physical-review-or-readable-page-evidence",
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": true,
+        "explicitWindowRouting": true,
+        "keyboardDirectToPID": true,
+        "pid": 47994,
+        "postTap": 0,
+        "source": "hid",
+        "status": "attempted",
+        "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+      },
+      "acceptedEvents": 0,
+      "refusedEvents": 0,
+      "remainingProbePIDsBeforeRestore": []
+    },
+    "referencePage": {
+      "titles": [
+        "Repository search results \u00b7 GitHub"
+      ],
+      "matchingHeadings": [
+        "repositories Search Results \u00b7 native-input"
+      ],
+      "source": "artifacts/public-web-150/github-search-reference-final.json"
+    },
+    "candidateInput": {
+      "pid": 48693,
+      "binarySHA256": "dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70",
+      "point": [
+        601.5,
+        411.0
+      ],
+      "phrase": "native-input",
+      "route": "hid-pid-window-keycodes",
+      "userApprovedTemporaryPauseAndRestore": true,
+      "restored": true,
+      "websiteTaskOutcome": "requires-physical-review-or-readable-page-evidence",
+      "attempt": {
+        "curvedTrajectory": false,
+        "directToPID": true,
+        "explicitWindowRouting": true,
+        "keyboardDirectToPID": true,
+        "pid": 48693,
+        "postTap": 0,
+        "source": "hid",
+        "status": "attempted",
+        "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+      },
+      "acceptedEvents": 0,
+      "refusedEvents": 29,
+      "remainingProbePIDsBeforeRestore": []
+    },
+    "externalEntryAttempts": [
+      {
+        "route": "external-search-url",
+        "pid": 48693,
+        "exitCode": 0,
+        "stderr": "",
+        "browserExplicitExternalOpenRefusals": 1,
+        "websiteOutcome": "requires-physical-review",
+        "scope": "One public GitHub search URL or fixed fake phrase script sent only to the exact research app",
+        "attemptedURL": "https://github.com/search?q=native-input&type=repositories"
+      },
+      {
+        "route": "external-javascript-url",
+        "pid": 48693,
+        "exitCode": 0,
+        "stderr": "",
+        "browserExplicitExternalOpenRefusals": 1,
+        "websiteOutcome": "requires-physical-review",
+        "scope": "One public GitHub search URL or fixed fake phrase script sent only to the exact research app",
+        "attemptedJavaScript": "(()=>{const e=document.querySelector('input[aria-label=\"Search GitHub\"],input[name=\"q\"]');if(e){e.value='native-input';e.dispatchEvent(new Event('input',{bubbles:true}));if(e.form)e.form.requestSubmit();}})()"
+      }
+    ],
+    "referenceLimit": "The toolbar URL remained stale during the client-side search; page heading confirms the native-input results."
+  },
+  "captureComparisons": [
+    {
+      "site": "google",
+      "route": "NativeProbe target-window ScreenCaptureKit capture",
+      "referenceImage": "artifacts/public-web-150/reference-capture.png",
+      "candidateImage": "artifacts/public-web-150/google-window.png",
+      "referenceOCRItems": 15,
+      "candidateOCRItems": 0,
+      "visualReview": "view_image shows a black target-window image"
+    },
+    {
+      "site": "wikipedia",
+      "route": "NativeProbe target-window ScreenCaptureKit capture",
+      "referenceImage": "artifacts/public-web-150/wikipedia-search-control.png",
+      "candidateImage": "artifacts/public-web-150/wikipedia-loaded-window.png",
+      "referenceOCRItems": 26,
+      "candidateOCRItems": 0,
+      "visualReview": "view_image shows a black target-window image"
+    },
+    {
+      "site": "github",
+      "route": "NativeProbe target-window ScreenCaptureKit capture",
+      "referenceImage": "artifacts/public-web-150/github-search-control.png",
+      "candidateImage": "artifacts/public-web-150/github-loaded-window.png",
+      "referenceOCRItems": 9,
+      "candidateOCRItems": 0,
+      "visualReview": "view_image shows a black target-window image"
+    }
+  ],
+  "remaining": [
+    "Calibrated external inspector/script attachment",
+    "Unfiltered full-display/compositor capture and transitions",
+    "Independent final-image lifecycle/clock attacks",
+    "Broader website and human-input compatibility"
+  ],
+  "newBypassVerified": false,
+  "newBrowserDefenseAdded": false,
+  "cleanup": {
+    "allOwnedResearchHostsStopped": true,
+    "remainingNativeProbePIDs": [],
+    "approvedMouseUtilitiesRestored": true
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "initial": {
+    "humanBaseline": false,
+    "scope": "Local timer-gap action after private authorized startup. No external input posted.",
+    "stationarySeconds": 3,
+    "hiddenSeconds": 3,
+    "modes": [
+      {
+        "mode": "native",
+        "status": "no-action-observed",
+        "engineIdentity": {
+          "pid": 22881,
+          "executable": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development",
+          "mappedFrameworks": {
+            "WebKit": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebKit.framework/Versions/A/WebKit",
+            "JavaScriptCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/JavaScriptCore.framework/Versions/A/JavaScriptCore",
+            "WebCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebCore.framework/Versions/A/WebCore"
+          }
+        },
+        "stationaryNewActions": 0,
+        "stationaryAcceptedInputEvents": 0,
+        "candidate": {
+          "pid": 22878,
+          "beforeAccepted": 2,
+          "newActionsWhileDeactivating": 0,
+          "newActionsWhileActivating": 0,
+          "newSubmissions": [],
+          "acceptedInputEvents": 0,
+          "diagnosticFocusEvents": [
+            "FOCUS_DIAGNOSTIC phase=resigned-key viewSecureOwner=false",
+            "FOCUS_DIAGNOSTIC phase=resigned-key actualKey=false logicalKey=false actualVisible=false logicalVisible=false foreground=22878 secureInput=false",
+            "FOCUS_DIAGNOSTIC phase=resigned-key-settled viewSecureOwner=false",
+            "FOCUS_DIAGNOSTIC phase=resigned-key-settled actualKey=false logicalKey=false actualVisible=false logicalVisible=false foreground=22870 secureInput=false",
+            "FOCUS_DIAGNOSTIC phase=became-key viewSecureOwner=false",
+            "FOCUS_DIAGNOSTIC phase=became-key actualKey=true logicalKey=true actualVisible=true logicalVisible=true foreground=22878 secureInput=false",
+            "FOCUS_DIAGNOSTIC phase=became-key-settled viewSecureOwner=false",
+            "FOCUS_DIAGNOSTIC phase=became-key-settled actualKey=true logicalKey=true actualVisible=true logicalVisible=true foreground=22878 secureInput=false"
+          ],
+          "secureInputBefore": false,
+          "secureInputWhileAway": false,
+          "secureInputAfterReturn": false,
+          "pageActivityBefore": [
+            {
+              "type": "activity-visible-focused",
+              "t": 49
+            },
+            {
+              "type": "activity-visible-focused",
+              "t": 8
+            }
+          ],
+          "pageActivityWhileAway": [
+            {
+              "type": "activity-visible-focused",
+              "t": 49
+            },
+            {
+              "type": "activity-visible-focused",
+              "t": 8
+            },
+            {
+              "type": "activity-hidden-focused",
+              "t": 5709
+            }
+          ],
+          "pageActivityAfterReturn": [
+            {
+              "type": "activity-visible-focused",
+              "t": 49
+            },
+            {
+              "type": "activity-visible-focused",
+              "t": 8
+            },
+            {
+              "type": "activity-hidden-focused",
+              "t": 5709
+            },
+            {
+              "type": "activity-visible-unfocused",
+              "t": 9013
+            },
+            {
+              "type": "activity-visible-focused",
+              "t": 9429
+            }
+          ],
+          "awayStatus": "observed",
+          "backStatus": "observed",
+          "activationMethod": "NSRunningApplication.hide/unhide/activate; no Accessibility call",
+          "syntheticInputPosted": false,
+          "AXReadSent": false,
+          "AXValueSet": false,
+          "AXPressSent": false
+        },
+        "timerGapEvents": [
+          {
+            "type": "timer-gap-trigger",
+            "t": 516
+          }
+        ],
+        "candidateCleanupVerified": true,
+        "sinkCleanupVerified": true,
+        "secureInputAfterCleanup": false
+      }
+    ],
+    "stopReason": "The native-engine control did not reproduce a timer action"
+  },
+  "guardedRetry": {
+    "humanBaseline": false,
+    "scope": "Local timer-gap action after private authorized startup. No external input posted.",
+    "stationarySeconds": 3,
+    "hiddenSeconds": 3,
+    "modes": [
+      {
+        "mode": "native",
+        "status": "inconclusive",
+        "engineIdentity": {
+          "pid": 23467,
+          "executable": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development",
+          "mappedFrameworks": {
+            "WebKit": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebKit.framework/Versions/A/WebKit",
+            "JavaScriptCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/JavaScriptCore.framework/Versions/A/JavaScriptCore",
+            "WebCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebCore.framework/Versions/A/WebCore"
+          }
+        },
+        "initialAcceptedActions": 2,
+        "reason": "The timer action occurred before the stationary control",
+        "candidateCleanupVerified": true,
+        "sinkCleanupVerified": true,
+        "secureInputAfterCleanup": false
+      }
+    ]
+  }
+}

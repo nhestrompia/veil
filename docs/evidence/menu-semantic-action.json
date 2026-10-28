@@ -1,0 +1,85 @@
+{
+  "pid": 55105,
+  "binarySHA256": "6e21d4cda4cf17e1cd87a733d964696ef19b98a3d65534f7bcd21fddd63d08a6",
+  "attempt": {
+    "actionError": 0,
+    "items": [
+      {
+        "enabled": true,
+        "title": "Open Location..."
+      },
+      {
+        "enabled": false,
+        "title": "Cut"
+      },
+      {
+        "enabled": false,
+        "title": "Copy"
+      },
+      {
+        "enabled": true,
+        "title": "Paste"
+      },
+      {
+        "enabled": true,
+        "title": "Select All"
+      },
+      {
+        "enabled": false,
+        "title": ""
+      },
+      {
+        "enabled": true,
+        "title": "Writing Tools"
+      },
+      {
+        "enabled": true,
+        "title": "AutoFill"
+      },
+      {
+        "enabled": true,
+        "title": "Start Dictation\u2026"
+      },
+      {
+        "enabled": true,
+        "title": "Emoji & Symbols"
+      }
+    ],
+    "menuError": 0,
+    "menuFound": true,
+    "status": "attempted",
+    "probeBinarySHA256": "c7df98980a563585c3a28e35bd3b5280429131e7c0c876610f5e3c64231975e9"
+  },
+  "beforeCapture": {
+    "error": "Cannot create PNG output",
+    "status": "inconclusive",
+    "probeBinarySHA256": "c7df98980a563585c3a28e35bd3b5280429131e7c0c876610f5e3c64231975e9"
+  },
+  "afterCapture": {
+    "error": "Cannot create PNG output",
+    "status": "inconclusive",
+    "probeBinarySHA256": "c7df98980a563585c3a28e35bd3b5280429131e7c0c876610f5e3c64231975e9"
+  },
+  "acceptedEvents": 0,
+  "refusedEvents": 0,
+  "newSubmissions": [],
+  "newEvents": [],
+  "clipboardAccessed": false,
+  "verifiedAfterCapture": {
+    "frame": [
+      100,
+      110,
+      1000,
+      772
+    ],
+    "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/menu-attack/after.png",
+    "pid": 55105,
+    "pixels": [
+      2000,
+      1544
+    ],
+    "status": "captured",
+    "windowID": 84475
+  },
+  "visualVerification": "The address is selected in the target-window image after the external Open Location action."
+}

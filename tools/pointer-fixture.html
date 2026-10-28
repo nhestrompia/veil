@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hardware pointer click fixture</title>
+<style>
+body{font:20px system-ui;max-width:760px;margin:48px auto;padding:0 28px;color:#172b35;background:white}
+button{display:block;margin:48px 0;padding:24px;font:inherit;background:#116456;color:white;border:0;border-radius:5px}
+output{display:block;min-height:40px}
+</style>
+<h1>Hardware pointer click</h1>
+<p>This disposable local task has no external effect.</p>
+<p>Disclosure marker: <strong>{{SECRET}}</strong></p>
+<p>Press Command-Option-M, then move the physical mouse. Use the green ring to click the button.</p>
+<button type="button" id="action">Record hardware click</button>
+<output id="result" aria-live="polite">No click recorded.</output>
+<p id="phase">Click once, then leave the Mac untouched. The trial starts after ten quiet seconds.</p>
+<p>The normal system arrow can differ from the green ring. Keep both inside this window.</p>
+<script>
+const base=location.pathname;
+const events=[];
+let clicks=0;
+let lastAction=0;
+fetch(base+'/events',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({events:[{type:'page-ready',trusted:false,t:performance.now()}]})}).catch(()=>{});
+document.querySelector('#action').addEventListener('click',async event=>{
+  clicks++;
+  lastAction=performance.now();
+  const evidence={type:'click',trusted:event.isTrusted,t:lastAction,x:event.clientX,y:event.clientY,sequence:clicks};
+  const response=await fetch(base+'/action',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({note:'native-input',event:evidence})});
+  const result=await response.json();
+  document.querySelector('output').textContent=result.accepted?`Click ${clicks} recorded. Stop clicking now.`:'Action refused.';
+});
+setInterval(()=>{if(lastAction){const left=Math.max(0,10-Math.floor((performance.now()-lastAction)/1000));document.querySelector('#phase').textContent=left?`Hands off. Quiet countdown: ${left} seconds.`:'Leave the Mac untouched. Automated tests can now run.';}},250);
+for(const type of ['pointermove','pointerdown','pointerup','click','keydown','wheel','dragenter','dragover','drop']){
+  document.addEventListener(type,event=>{
+    if(events.length<200)events.push({type,trusted:event.isTrusted,t:performance.now(),x:event.clientX??null,y:event.clientY??null});
+  },{passive:true});
+}
+setInterval(()=>{if(events.length){const batch=events.splice(0);fetch(base+'/events',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({events:batch})}).catch(()=>{});}},250);
+</script>
+</html>

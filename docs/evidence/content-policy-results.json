@@ -1,0 +1,409 @@
+{
+  "milestone": 57,
+  "calibration": {
+    "binarySHA256": "247039c94ee6b3b181e727abdf2be7850b74e4e7bb2c3d9c92a730fcb7f3d4a9",
+    "externalAttack": false,
+    "humanBaseline": false,
+    "scope": "Installed API exposure and private named-pasteboard diagnostic. No general clipboard or user content.",
+    "runs": [
+      {
+        "after": {
+          "ApplePayEnabled": false,
+          "AsyncClipboardAPIEnabled": false,
+          "WebAuthenticationEnabled": false,
+          "WebShareEnabled": false
+        },
+        "before": {
+          "ApplePayEnabled": false,
+          "AsyncClipboardAPIEnabled": true,
+          "WebAuthenticationEnabled": true,
+          "WebShareEnabled": true
+        },
+        "controlPage": {
+          "effectivePreferences": {
+            "ApplePayEnabled": false,
+            "AsyncClipboardAPIEnabled": true,
+            "WebAuthenticationEnabled": true,
+            "WebShareEnabled": true
+          },
+          "generalPasteboardRead": false,
+          "generalPasteboardWritten": false,
+          "interfaces": {
+            "applePay": "undefined",
+            "clipboard": "object",
+            "payment": "undefined",
+            "publicKey": "function",
+            "secure": true,
+            "share": "function"
+          },
+          "namedPasteboardMarkerRecovered": false,
+          "namedPasteboardStringLength": 0,
+          "namedPasteboardTypes": [
+            "public.utf8-plain-text",
+            "NSStringPboardType"
+          ],
+          "namedPasteboardUnchanged": false,
+          "nativeSelectionAccepted": true,
+          "selectionHasMarker": true,
+          "selectionWriteAccepted": true,
+          "selectionWriterAvailable": true,
+          "servicesRequestorAvailable": false
+        },
+        "effectiveConfigurationRestricted": true,
+        "fullscreenDisabled": true,
+        "macOS": "Version 26.6 (Build 25G72)",
+        "missingFeatures": [],
+        "policyAccepted": true,
+        "requiredFeatures": [
+          "WebShareEnabled",
+          "AsyncClipboardAPIEnabled",
+          "WebAuthenticationEnabled",
+          "ApplePayEnabled"
+        ],
+        "restrictedPage": {
+          "effectivePreferences": {
+            "ApplePayEnabled": false,
+            "AsyncClipboardAPIEnabled": false,
+            "WebAuthenticationEnabled": false,
+            "WebShareEnabled": false
+          },
+          "generalPasteboardRead": false,
+          "generalPasteboardWritten": false,
+          "interfaces": {
+            "applePay": "undefined",
+            "clipboard": "undefined",
+            "payment": "undefined",
+            "publicKey": "undefined",
+            "secure": true,
+            "share": "undefined"
+          },
+          "namedPasteboardMarkerRecovered": false,
+          "namedPasteboardStringLength": 17,
+          "namedPasteboardTypes": [
+            "public.utf8-plain-text",
+            "NSStringPboardType"
+          ],
+          "namedPasteboardUnchanged": true,
+          "nativeSelectionAccepted": true,
+          "selectionHasMarker": true,
+          "selectionWriteAccepted": false,
+          "selectionWriterAvailable": true,
+          "servicesRequestorAvailable": false
+        },
+        "scope": "Installed engine preference calibration. No external attack or human control.",
+        "status": "observed",
+        "unknownFeatureRefused": true,
+        "writingToolsDisabled": true,
+        "cleanupVerified": true,
+        "interfaceRestrictionObserved": true,
+        "exportOutcome": "inconclusive"
+      },
+      {
+        "after": {
+          "ApplePayEnabled": false,
+          "AsyncClipboardAPIEnabled": false,
+          "WebAuthenticationEnabled": false,
+          "WebShareEnabled": false
+        },
+        "before": {
+          "ApplePayEnabled": false,
+          "AsyncClipboardAPIEnabled": true,
+          "WebAuthenticationEnabled": true,
+          "WebShareEnabled": true
+        },
+        "controlPage": {
+          "effectivePreferences": {
+            "ApplePayEnabled": false,
+            "AsyncClipboardAPIEnabled": true,
+            "WebAuthenticationEnabled": true,
+            "WebShareEnabled": true
+          },
+          "generalPasteboardRead": false,
+          "generalPasteboardWritten": false,
+          "interfaces": {
+            "applePay": "undefined",
+            "clipboard": "object",
+            "payment": "undefined",
+            "publicKey": "function",
+            "secure": true,
+            "share": "function"
+          },
+          "namedPasteboardMarkerRecovered": false,
+          "namedPasteboardStringLength": 0,
+          "namedPasteboardTypes": [
+            "public.utf8-plain-text",
+            "NSStringPboardType"
+          ],
+          "namedPasteboardUnchanged": false,
+          "nativeSelectionAccepted": true,
+          "selectionHasMarker": true,
+          "selectionWriteAccepted": true,
+          "selectionWriterAvailable": true,
+          "servicesRequestorAvailable": false
+        },
+        "effectiveConfigurationRestricted": true,
+        "fullscreenDisabled": true,
+        "macOS": "Version 26.6 (Build 25G72)",
+        "missingFeatures": [],
+        "policyAccepted": true,
+        "requiredFeatures": [
+          "WebShareEnabled",
+          "AsyncClipboardAPIEnabled",
+          "WebAuthenticationEnabled",
+          "ApplePayEnabled"
+        ],
+        "restrictedPage": {
+          "effectivePreferences": {
+            "ApplePayEnabled": false,
+            "AsyncClipboardAPIEnabled": false,
+            "WebAuthenticationEnabled": false,
+            "WebShareEnabled": false
+          },
+          "generalPasteboardRead": false,
+          "generalPasteboardWritten": false,
+          "interfaces": {
+            "applePay": "undefined",
+            "clipboard": "undefined",
+            "payment": "undefined",
+            "publicKey": "undefined",
+            "secure": true,
+            "share": "undefined"
+          },
+          "namedPasteboardMarkerRecovered": false,
+          "namedPasteboardStringLength": 17,
+          "namedPasteboardTypes": [
+            "public.utf8-plain-text",
+            "NSStringPboardType"
+          ],
+          "namedPasteboardUnchanged": true,
+          "nativeSelectionAccepted": true,
+          "selectionHasMarker": true,
+          "selectionWriteAccepted": false,
+          "selectionWriterAvailable": true,
+          "servicesRequestorAvailable": false
+        },
+        "scope": "Installed engine preference calibration. No external attack or human control.",
+        "status": "observed",
+        "unknownFeatureRefused": true,
+        "writingToolsDisabled": true,
+        "cleanupVerified": true,
+        "interfaceRestrictionObserved": true,
+        "exportOutcome": "inconclusive"
+      },
+      {
+        "after": {
+          "ApplePayEnabled": false,
+          "AsyncClipboardAPIEnabled": false,
+          "WebAuthenticationEnabled": false,
+          "WebShareEnabled": false
+        },
+        "before": {
+          "ApplePayEnabled": false,
+          "AsyncClipboardAPIEnabled": true,
+          "WebAuthenticationEnabled": true,
+          "WebShareEnabled": true
+        },
+        "controlPage": {
+          "effectivePreferences": {
+            "ApplePayEnabled": false,
+            "AsyncClipboardAPIEnabled": true,
+            "WebAuthenticationEnabled": true,
+            "WebShareEnabled": true
+          },
+          "generalPasteboardRead": false,
+          "generalPasteboardWritten": false,
+          "interfaces": {
+            "applePay": "undefined",
+            "clipboard": "object",
+            "payment": "undefined",
+            "publicKey": "function",
+            "secure": true,
+            "share": "function"
+          },
+          "namedPasteboardMarkerRecovered": false,
+          "namedPasteboardStringLength": 0,
+          "namedPasteboardTypes": [
+            "public.utf8-plain-text",
+            "NSStringPboardType"
+          ],
+          "namedPasteboardUnchanged": false,
+          "nativeSelectionAccepted": true,
+          "selectionHasMarker": true,
+          "selectionWriteAccepted": true,
+          "selectionWriterAvailable": true,
+          "servicesRequestorAvailable": false
+        },
+        "effectiveConfigurationRestricted": true,
+        "fullscreenDisabled": true,
+        "macOS": "Version 26.6 (Build 25G72)",
+        "missingFeatures": [],
+        "policyAccepted": true,
+        "requiredFeatures": [
+          "WebShareEnabled",
+          "AsyncClipboardAPIEnabled",
+          "WebAuthenticationEnabled",
+          "ApplePayEnabled"
+        ],
+        "restrictedPage": {
+          "effectivePreferences": {
+            "ApplePayEnabled": false,
+            "AsyncClipboardAPIEnabled": false,
+            "WebAuthenticationEnabled": false,
+            "WebShareEnabled": false
+          },
+          "generalPasteboardRead": false,
+          "generalPasteboardWritten": false,
+          "interfaces": {
+            "applePay": "undefined",
+            "clipboard": "undefined",
+            "payment": "undefined",
+            "publicKey": "undefined",
+            "secure": true,
+            "share": "undefined"
+          },
+          "namedPasteboardMarkerRecovered": false,
+          "namedPasteboardStringLength": 17,
+          "namedPasteboardTypes": [
+            "public.utf8-plain-text",
+            "NSStringPboardType"
+          ],
+          "namedPasteboardUnchanged": true,
+          "nativeSelectionAccepted": true,
+          "selectionHasMarker": true,
+          "selectionWriteAccepted": false,
+          "selectionWriterAvailable": true,
+          "servicesRequestorAvailable": false
+        },
+        "scope": "Installed engine preference calibration. No external attack or human control.",
+        "status": "observed",
+        "unknownFeatureRefused": true,
+        "writingToolsDisabled": true,
+        "cleanupVerified": true,
+        "interfaceRestrictionObserved": true,
+        "exportOutcome": "inconclusive"
+      }
+    ]
+  },
+  "internalKeyboard": {
+    "binarySHA256": "e47833b3566fc0975a76aced220bff79bce2edd6354c348e4a354d9f6c77678b",
+    "pid": 15491,
+    "startupAddressPreserved": true,
+    "locationHasEditor": true,
+    "locationUsesRestrictedEditor": true,
+    "inputTriggeredSubmit": false,
+    "acceptedSubmissions": 1,
+    "noDeviceReader": true,
+    "humanBaseline": false,
+    "windowSharingEnabled": false,
+    "scope": "Diagnostic-only private authorized events through the normal application and WebKit path. Not an external bypass, physical control, or HID attestation."
+  },
+  "initialMissingFeatureControl": {
+    "after": {
+      "ApplePayEnabled": false,
+      "AsyncClipboardAPIEnabled": false,
+      "WebAuthenticationEnabled": false,
+      "WebShareEnabled": false
+    },
+    "before": {
+      "ApplePayEnabled": false,
+      "AsyncClipboardAPIEnabled": true,
+      "WebAuthenticationEnabled": true,
+      "WebShareEnabled": true
+    },
+    "fullscreenDisabled": true,
+    "macOS": "Version 26.6 (Build 25G72)",
+    "missingFeatures": [
+      "PaymentRequestEnabled"
+    ],
+    "policyAccepted": false,
+    "requiredFeatures": [
+      "WebShareEnabled",
+      "AsyncClipboardAPIEnabled",
+      "WebAuthenticationEnabled",
+      "ApplePayEnabled",
+      "PaymentRequestEnabled"
+    ],
+    "scope": "Installed engine preference calibration. No external attack or human control.",
+    "writingToolsDisabled": true
+  },
+  "earlyReadinessFailure": {
+    "after": {
+      "ApplePayEnabled": false,
+      "AsyncClipboardAPIEnabled": false,
+      "WebAuthenticationEnabled": false,
+      "WebShareEnabled": false
+    },
+    "before": {
+      "ApplePayEnabled": false,
+      "AsyncClipboardAPIEnabled": true,
+      "WebAuthenticationEnabled": true,
+      "WebShareEnabled": true
+    },
+    "controlPage": {
+      "effectivePreferences": {
+        "ApplePayEnabled": false,
+        "AsyncClipboardAPIEnabled": true,
+        "WebAuthenticationEnabled": true,
+        "WebShareEnabled": true
+      },
+      "generalPasteboardRead": false,
+      "generalPasteboardWritten": false,
+      "interfaces": {
+        "applePay": "undefined",
+        "clipboard": "undefined",
+        "payment": "undefined",
+        "publicKey": "undefined",
+        "secure": false,
+        "share": "undefined"
+      },
+      "namedPasteboardMarkerRecovered": false,
+      "namedPasteboardUnchanged": false,
+      "selectionWriteAccepted": true,
+      "selectionWriterAvailable": true,
+      "servicesRequestorAvailable": false
+    },
+    "effectiveConfigurationRestricted": true,
+    "fullscreenDisabled": true,
+    "macOS": "Version 26.6 (Build 25G72)",
+    "missingFeatures": [],
+    "policyAccepted": true,
+    "requiredFeatures": [
+      "WebShareEnabled",
+      "AsyncClipboardAPIEnabled",
+      "WebAuthenticationEnabled",
+      "ApplePayEnabled"
+    ],
+    "restrictedPage": {
+      "effectivePreferences": {
+        "ApplePayEnabled": false,
+        "AsyncClipboardAPIEnabled": false,
+        "WebAuthenticationEnabled": false,
+        "WebShareEnabled": false
+      },
+      "generalPasteboardRead": false,
+      "generalPasteboardWritten": false,
+      "interfaces": {
+        "applePay": "undefined",
+        "clipboard": "undefined",
+        "payment": "undefined",
+        "publicKey": "undefined",
+        "secure": true,
+        "share": "undefined"
+      },
+      "namedPasteboardMarkerRecovered": false,
+      "namedPasteboardUnchanged": true,
+      "selectionWriteAccepted": false,
+      "selectionWriterAvailable": true,
+      "servicesRequestorAvailable": false
+    },
+    "scope": "Installed engine preference calibration. No external attack or human control.",
+    "status": "observed",
+    "unknownFeatureRefused": true,
+    "writingToolsDisabled": true
+  },
+  "sourcePolicyAppliedToLivePhysicalBrowser": false,
+  "livePhysicalBrowserPID": 61893,
+  "livePhysicalBrowserSHA256": "43b1a9833d6c55b1e254b848f9bd09c202da46ba0f8d8833084df559e6a8a9d1",
+  "temporaryDiagnosticPIDs": [],
+  "temporaryKeyboardDiagnosticPIDs": []
+}

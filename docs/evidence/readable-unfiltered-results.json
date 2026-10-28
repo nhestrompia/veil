@@ -1,0 +1,142 @@
+{
+  "milestone": 128,
+  "rows": [
+    {
+      "name": "compact",
+      "pid": 77211,
+      "binarySHA256": "e06dbfb5c6015ffe9491ddad3234b99cf14cf167cab628c2a0bac3eebd9a0815",
+      "windowSharingEnabled": true,
+      "acceptedInternalSubmissions": 1,
+      "ownedHostStopped": true,
+      "ownedFixtureStopped": true,
+      "ownedAllCount": 8,
+      "ownedOnScreenCount": 2,
+      "metadataToolScreenRecordingGranted": false
+    },
+    {
+      "name": "compact-clear-after-archive",
+      "pid": 79083,
+      "binarySHA256": "be47fd551b98123a64c581b264d93595270ee8f9f6895f19ce421c7cb5f81e18",
+      "windowSharingEnabled": true,
+      "acceptedInternalSubmissions": 1,
+      "ownedHostStopped": true,
+      "ownedFixtureStopped": true,
+      "ownedAllCount": 8,
+      "ownedOnScreenCount": 2,
+      "metadataToolScreenRecordingGranted": false,
+      "captures": [
+        {
+          "route": "isolated-compositor-capture",
+          "status": "captured",
+          "coverageVerified": true,
+          "markerRecovery": {
+            "exact": true,
+            "visualHexAliases": true
+          },
+          "backdropLabelRecovered": false
+        },
+        {
+          "route": "isolated-stream-capture",
+          "status": "captured",
+          "coverageVerified": true,
+          "markerRecovery": {
+            "exact": true,
+            "visualHexAliases": true
+          },
+          "backdropLabelRecovered": false
+        }
+      ]
+    },
+    {
+      "name": "compact-clear-capture",
+      "pid": 77681,
+      "binarySHA256": "e06dbfb5c6015ffe9491ddad3234b99cf14cf167cab628c2a0bac3eebd9a0815",
+      "windowSharingEnabled": true,
+      "acceptedInternalSubmissions": 1,
+      "ownedHostStopped": true,
+      "ownedFixtureStopped": true,
+      "ownedAllCount": 8,
+      "ownedOnScreenCount": 2,
+      "metadataToolScreenRecordingGranted": false,
+      "captures": [
+        {
+          "route": "isolated-compositor-capture",
+          "status": "captured",
+          "coverageVerified": true,
+          "markerRecovery": {
+            "exact": true,
+            "visualHexAliases": true
+          },
+          "backdropLabelRecovered": false
+        },
+        {
+          "route": "isolated-stream-capture",
+          "status": "captured",
+          "coverageVerified": true,
+          "markerRecovery": {
+            "exact": true,
+            "visualHexAliases": true
+          },
+          "backdropLabelRecovered": false
+        }
+      ]
+    },
+    {
+      "name": "compact-restricted-archive",
+      "pid": 78167,
+      "binarySHA256": "c14248c3ac02acac3bbfe3130479744c2e8780a13a0c50a1534af1b5e7789f4a",
+      "windowSharingEnabled": false,
+      "acceptedInternalSubmissions": 1,
+      "ownedHostStopped": true,
+      "ownedFixtureStopped": true,
+      "ownedAllCount": 8,
+      "ownedOnScreenCount": 2,
+      "metadataToolScreenRecordingGranted": false,
+      "captures": [
+        {
+          "route": "isolated-compositor-capture",
+          "status": "captured",
+          "coverageVerified": true,
+          "markerRecovery": {
+            "exact": false,
+            "visualHexAliases": false
+          },
+          "backdropLabelRecovered": true
+        },
+        {
+          "route": "isolated-stream-capture",
+          "status": "captured",
+          "coverageVerified": true,
+          "markerRecovery": {
+            "exact": false,
+            "visualHexAliases": false
+          },
+          "backdropLabelRecovered": true
+        }
+      ]
+    }
+  ],
+  "restrictedPhysicalArchiveSHA256": "c14248c3ac02acac3bbfe3130479744c2e8780a13a0c50a1534af1b5e7789f4a",
+  "physicalReport": "i see the text and all",
+  "physicalReportFromEarlierLaunch": true,
+  "exactPhysicalMarkerSupplied": false,
+  "candidatePageRecovered": false,
+  "candidateBackdropRecoveredBothRoutes": true,
+  "clearReferencesRecoveredBothRoutes": true,
+  "allCaptureCoverageChecksPassed": true,
+  "earlierMetadataFailureReproduced": false,
+  "earlierFailureCauseKnown": false,
+  "recordedProcessCount": 20,
+  "allRecordedProcessesAbsent": true,
+  "frozenPermissionedImagesUnchanged": true,
+  "newGrantRequested": false,
+  "administratorAccessUsed": false,
+  "systemInputPosted": false,
+  "metadataUnrelatedTargetRefused": true,
+  "limits": [
+    "Unfiltered screenshot and first complete stream frame only.",
+    "No updateContentFilter call on an unfiltered stream.",
+    "Earlier user-declared physical readability on the exact restricted executable.",
+    "No integrated physical input or universal agent-free claim."
+  ]
+}

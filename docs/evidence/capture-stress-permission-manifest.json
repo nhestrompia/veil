@@ -1,0 +1,65 @@
+{
+  "milestone": 131,
+  "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/dist/CaptureStressProbe.app",
+  "bundleIdentifier": "research.agentfreebrowser.capturestress",
+  "executableSHA256": "aac4422314d929fcb3f39ac8a7482ce6f35868d648f22730f03d655da0b168d7",
+  "sourceSHA256": "1dc1de9e1b3c9bc707687cdbcb8aaaf3b70ed0a105da75086b960d63a1a5b989",
+  "permission": "macOS Screen Recording",
+  "permissionApproved": true,
+  "permissionRequested": true,
+  "automaticRequestAtLaunch": false,
+  "captureAudio": false,
+  "postsInput": false,
+  "installsHooks": false,
+  "nativeAlarmSeconds": 60,
+  "scope": "Exact disposable InternalKeyboardControl window, or a cropped display region within verified opaque owned coverage. No unrelated app capture.",
+  "modes": {
+    "sequence": {
+      "stages": [
+        "display 2 seconds",
+        "independent owned window 2 seconds",
+        "display 10 seconds"
+      ],
+      "sampleLimits": [
+        16,
+        16,
+        32
+      ]
+    },
+    "steady": {
+      "stages": [
+        "display 30 seconds"
+      ],
+      "sampleLimits": [
+        64
+      ]
+    }
+  },
+  "configurationUpdateOrder": "Enter owned-window filter before full-window config. Restore narrow display crop before returning to display filter.",
+  "requestCommand": [
+    "open",
+    "-g",
+    "-n",
+    "-W",
+    "/Users/nhestrompia/.t3/projects/agentfreebrowser/dist/CaptureStressProbe.app",
+    "--args",
+    "--request-screen-recording",
+    "--out",
+    "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/capture-stress-131/approved-request.json"
+  ],
+  "requestCommandExecuted": true,
+  "configurationUpdateOrderDiffersFromAppleExample": true,
+  "permissionApproval": "User said yes continue to the exact CaptureStressProbe Screen Recording request.",
+  "requestIssuedUnixSeconds": 1793178792.343992,
+  "permissionRequestResult": {
+    "capturesAudio": false,
+    "probePID": 93556,
+    "requestReturned": false,
+    "screenRecordingGranted": false,
+    "status": "requested",
+    "systemInputPosted": false
+  },
+  "effectiveGrantConfirmed": true,
+  "userConfirmedEnabled": true,
+  "effectiveGrantPreflightPath": "artifacts/capture-stress-131/approved-grant-preflight.json"
+}

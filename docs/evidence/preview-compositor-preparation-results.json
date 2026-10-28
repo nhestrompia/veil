@@ -1,0 +1,120 @@
+{
+  "milestone": 141,
+  "probeSHA256": "78a3fba76544384970a008b1e32b7da9ca13a1178f5acf05861500c09a236642",
+  "screenRecordingRequestApproved": true,
+  "permissionRequestExecuted": true,
+  "permissionEffective": false,
+  "streamCaptureRan": false,
+  "inputPosted": false,
+  "audioCaptured": false,
+  "administratorAccessUsed": false,
+  "computerUseStartedByThisMilestone": false,
+  "coverageReference": {
+    "audioCaptured": false,
+    "backdropClosed": true,
+    "error": "Another window intersects the research region",
+    "hooksInstalled": false,
+    "inputPosted": false,
+    "permissionRequested": false,
+    "probePID": 67817,
+    "status": "refused",
+    "cleanupVerified": true,
+    "probeSHA256": "78a3fba76544384970a008b1e32b7da9ca13a1178f5acf05861500c09a236642"
+  },
+  "unrelatedTargetRefusal": {
+    "audioCaptured": false,
+    "error": "unrelatedHost",
+    "hooksInstalled": false,
+    "inputPosted": false,
+    "permissionRequested": false,
+    "probePID": 67914,
+    "status": "refused",
+    "cleanupVerified": true,
+    "probeSHA256": "78a3fba76544384970a008b1e32b7da9ca13a1178f5acf05861500c09a236642"
+  },
+  "secondCoverageReference": {
+    "audioCaptured": false,
+    "backdropClosed": true,
+    "error": "Another window intersects the research region",
+    "hooksInstalled": false,
+    "inputPosted": false,
+    "permissionRequested": false,
+    "probePID": 68915,
+    "status": "refused",
+    "cleanupVerified": true,
+    "probeSHA256": "78a3fba76544384970a008b1e32b7da9ca13a1178f5acf05861500c09a236642"
+  },
+  "coverageDiagnostic": {
+    "captureAttempted": false,
+    "overlayOwner": "/System/Library/CoreServices/Dock.app/Contents/MacOS/Dock",
+    "overlay": {
+      "alpha": 1,
+      "bounds": {
+        "Height": 982,
+        "Width": 1512,
+        "X": 0,
+        "Y": 0
+      },
+      "layer": 20,
+      "pid": 662,
+      "windowID": 14
+    },
+    "reason": "The full-display Dock window intersects the crop above the target and backdrop. The native guard refuses it."
+  },
+  "settingsAttempt": {
+    "method": "System Events, scoped System Settings window count",
+    "allowed": false,
+    "error": "osascript is not allowed assistive access",
+    "errorCode": -25211,
+    "settingChanged": false
+  },
+  "physicalSession": {
+    "pid": 35426,
+    "ownedHostStopped": true,
+    "ownedFixtureStopped": true,
+    "expiredPhysicalControlNotReused": true
+  },
+  "checks": {
+    "pythonChecksPassed": 22,
+    "swiftTestingTestsPassed": 4,
+    "swiftTestingInvocationsPassed": 12,
+    "swift6WarningsAsErrors": true,
+    "pythonCompilation": true,
+    "pinnedBuilderRefusesOverwrite": true
+  },
+  "frozenImagesUnchanged": {
+    "DeviceKeyboardExperiment": true,
+    "NativeProbe": true,
+    "RendererAXProbe": true,
+    "KeyboardObservationProbe": true,
+    "WindowGeometryProbe": true,
+    "PixelKeyboardExperiment": true,
+    "PixelKeyboardRoutingControl": true,
+    "CaptureRefreshProbe": true,
+    "CompositorRefreshProbe": true,
+    "CaptureStressProbe": true,
+    "AgentFreeBrowserPreview": true,
+    "PreviewRendererReadProbe": true,
+    "PreviewStreamCaptureProbe": true
+  },
+  "browserSourcesUnchanged": {
+    "Sources/Browser/AXBoundary.swift": true,
+    "Sources/Browser/BrowserApp.swift": true,
+    "Sources/Browser/BrowserPolicy.swift": true,
+    "Sources/Browser/BrowserRuntimePolicy.swift": true,
+    "Sources/Browser/DeviceKeyboard.swift": true,
+    "Sources/Browser/HIDSourcePolicy.swift": true,
+    "Sources/Browser/InputSourceWindow.swift": true,
+    "Sources/Browser/RestrictedWebView.swift": true,
+    "Sources/Browser/SecureInputWindow.swift": true
+  },
+  "remainingTransientPIDs": {
+    "InspectableControl": [],
+    "NativeProbe": [],
+    "PreviewCompositorProbe": [],
+    "AgentFreeBrowserPreview": []
+  },
+  "referencesAndFixturesStopped": true,
+  "recordedUnixSeconds": 1793189136.093437,
+  "agentFreeEstablished": false
+}

@@ -1,0 +1,3039 @@
+{
+  "humanBaseline": false,
+  "scope": "External synthetic input after one private startup task. No further private typing in candidate.",
+  "permissions": {
+    "accessibility": true,
+    "desktopInputSafety": {
+      "available": true,
+      "blockingMouseHookPIDs": []
+    },
+    "pid": 72620,
+    "postEvents": true,
+    "screenCapture": true,
+    "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+  },
+  "rows": [
+    {
+      "surface": "form",
+      "route": "hid",
+      "verdict": "blocked",
+      "controlActivation": "observed",
+      "control": {
+        "pid": 72656,
+        "route": "hid",
+        "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "bypass",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          387.0,
+          418.5
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 72656,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "click",
+          "input",
+          "keydown",
+          "pointerdown"
+        ]
+      },
+      "referenceCleanupVerified": true,
+      "baselineWorked": true,
+      "engineIdentity": {
+        "pid": 72766,
+        "executable": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development",
+        "mappedFrameworks": {
+          "WebKit": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebKit.framework/Versions/A/WebKit",
+          "JavaScriptCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/JavaScriptCore.framework/Versions/A/JavaScriptCore",
+          "WebCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebCore.framework/Versions/A/WebCore"
+        }
+      },
+      "candidate": {
+        "pid": 72675,
+        "route": "hid",
+        "binarySHA256": "f2f31dcb60e682ff47154157498ade2691ce68121f590beb6c1161dc1b561a55",
+        "initialAcceptedSubmissions": 1,
+        "controlWorked": true,
+        "verdict": "blocked",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Matched reference point translated by public window geometry",
+        "fieldCenter": [
+          387.0,
+          418.5
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 72675,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 29,
+        "newEventTypes": [],
+        "window": {
+          "startedWall": 1793025405.651418,
+          "attemptStartedWall": 1793025406.83762,
+          "attemptFinishedWall": 1793025408.7188601,
+          "clockStable": true,
+          "secureInputBefore": true,
+          "secureInputAfter": true,
+          "privateInputOverlap": false,
+          "leaseEnded": false,
+          "activeThroughout": true
+        },
+        "unscopedVerdict": "blocked"
+      },
+      "windowFinished": true,
+      "expiryReleaseVerified": true,
+      "secureInputAfterExpiry": false,
+      "finalAcceptedActions": 1,
+      "candidateCleanupVerified": true,
+      "secureInputAfterCleanup": false
+    },
+    {
+      "surface": "form",
+      "route": "curve-hid",
+      "verdict": "blocked",
+      "controlActivation": "observed",
+      "control": {
+        "pid": 72955,
+        "route": "curve-hid",
+        "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "bypass",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          387.0,
+          418.5
+        ],
+        "attempt": {
+          "curvedTrajectory": true,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 72955,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "click",
+          "input",
+          "keydown",
+          "pointerdown"
+        ]
+      },
+      "referenceCleanupVerified": true,
+      "baselineWorked": true,
+      "engineIdentity": {
+        "pid": 73238,
+        "executable": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development",
+        "mappedFrameworks": {
+          "WebKit": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebKit.framework/Versions/A/WebKit",
+          "JavaScriptCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/JavaScriptCore.framework/Versions/A/JavaScriptCore",
+          "WebCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebCore.framework/Versions/A/WebCore"
+        }
+      },
+      "candidate": {
+        "pid": 73155,
+        "route": "curve-hid",
+        "binarySHA256": "f2f31dcb60e682ff47154157498ade2691ce68121f590beb6c1161dc1b561a55",
+        "initialAcceptedSubmissions": 1,
+        "controlWorked": true,
+        "verdict": "blocked",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Matched reference point translated by public window geometry",
+        "fieldCenter": [
+          387.0,
+          418.5
+        ],
+        "attempt": {
+          "curvedTrajectory": true,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 73155,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 90,
+        "newEventTypes": [],
+        "window": {
+          "startedWall": 1793025425.023271,
+          "attemptStartedWall": 1793025426.123623,
+          "attemptFinishedWall": 1793025429.082029,
+          "clockStable": true,
+          "secureInputBefore": true,
+          "secureInputAfter": true,
+          "privateInputOverlap": false,
+          "leaseEnded": false,
+          "activeThroughout": true
+        },
+        "unscopedVerdict": "blocked"
+      },
+      "windowFinished": true,
+      "expiryReleaseVerified": true,
+      "secureInputAfterExpiry": false,
+      "finalAcceptedActions": 1,
+      "candidateCleanupVerified": true,
+      "secureInputAfterCleanup": false
+    },
+    {
+      "surface": "form",
+      "route": "pid-keys-keycodes-hid",
+      "verdict": "blocked",
+      "controlActivation": "observed",
+      "control": {
+        "pid": 73350,
+        "route": "pid-keys-keycodes-hid",
+        "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "bypass",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          387.0,
+          418.5
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": true,
+          "pid": 73350,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "click",
+          "input",
+          "keydown",
+          "pointerdown"
+        ]
+      },
+      "referenceCleanupVerified": true,
+      "baselineWorked": true,
+      "engineIdentity": {
+        "pid": 73628,
+        "executable": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development",
+        "mappedFrameworks": {
+          "WebKit": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebKit.framework/Versions/A/WebKit",
+          "JavaScriptCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/JavaScriptCore.framework/Versions/A/JavaScriptCore",
+          "WebCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebCore.framework/Versions/A/WebCore"
+        }
+      },
+      "candidate": {
+        "pid": 73544,
+        "route": "pid-keys-keycodes-hid",
+        "binarySHA256": "f2f31dcb60e682ff47154157498ade2691ce68121f590beb6c1161dc1b561a55",
+        "initialAcceptedSubmissions": 1,
+        "controlWorked": true,
+        "verdict": "blocked",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Matched reference point translated by public window geometry",
+        "fieldCenter": [
+          387.0,
+          418.5
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": true,
+          "pid": 73544,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 29,
+        "newEventTypes": [],
+        "window": {
+          "startedWall": 1793025443.883431,
+          "attemptStartedWall": 1793025444.8885639,
+          "attemptFinishedWall": 1793025446.995004,
+          "clockStable": true,
+          "secureInputBefore": true,
+          "secureInputAfter": true,
+          "privateInputOverlap": false,
+          "leaseEnded": false,
+          "activeThroughout": true
+        },
+        "unscopedVerdict": "blocked"
+      },
+      "windowFinished": true,
+      "expiryReleaseVerified": true,
+      "secureInputAfterExpiry": false,
+      "finalAcceptedActions": 1,
+      "candidateCleanupVerified": true,
+      "secureInputAfterCleanup": false
+    },
+    {
+      "surface": "textarea",
+      "route": "hid",
+      "verdict": "blocked",
+      "controlActivation": "observed",
+      "control": {
+        "pid": 73805,
+        "route": "hid",
+        "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "bypass",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          387.0,
+          427.5
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 73805,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "click",
+          "input",
+          "keydown",
+          "pointerdown"
+        ]
+      },
+      "referenceCleanupVerified": true,
+      "baselineWorked": true,
+      "engineIdentity": {
+        "pid": 74082,
+        "executable": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development",
+        "mappedFrameworks": {
+          "WebKit": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebKit.framework/Versions/A/WebKit",
+          "JavaScriptCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/JavaScriptCore.framework/Versions/A/JavaScriptCore",
+          "WebCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebCore.framework/Versions/A/WebCore"
+        }
+      },
+      "candidate": {
+        "pid": 73999,
+        "route": "hid",
+        "binarySHA256": "f2f31dcb60e682ff47154157498ade2691ce68121f590beb6c1161dc1b561a55",
+        "initialAcceptedSubmissions": 1,
+        "controlWorked": true,
+        "verdict": "blocked",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Matched reference point translated by public window geometry",
+        "fieldCenter": [
+          387.0,
+          427.5
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 73999,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 29,
+        "newEventTypes": [],
+        "window": {
+          "startedWall": 1793025462.714566,
+          "attemptStartedWall": 1793025463.771255,
+          "attemptFinishedWall": 1793025465.647297,
+          "clockStable": true,
+          "secureInputBefore": true,
+          "secureInputAfter": true,
+          "privateInputOverlap": false,
+          "leaseEnded": false,
+          "activeThroughout": true
+        },
+        "unscopedVerdict": "blocked"
+      },
+      "windowFinished": true,
+      "expiryReleaseVerified": true,
+      "secureInputAfterExpiry": false,
+      "finalAcceptedActions": 1,
+      "candidateCleanupVerified": true,
+      "secureInputAfterCleanup": false
+    },
+    {
+      "surface": "textarea",
+      "route": "curve-hid",
+      "verdict": "blocked",
+      "controlActivation": "observed",
+      "control": {
+        "pid": 74318,
+        "route": "curve-hid",
+        "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "bypass",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          387.0,
+          427.5
+        ],
+        "attempt": {
+          "curvedTrajectory": true,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 74318,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "click",
+          "input",
+          "keydown",
+          "pointerdown"
+        ]
+      },
+      "referenceCleanupVerified": true,
+      "baselineWorked": true,
+      "engineIdentity": {
+        "pid": 74677,
+        "executable": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development",
+        "mappedFrameworks": {
+          "WebKit": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebKit.framework/Versions/A/WebKit",
+          "JavaScriptCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/JavaScriptCore.framework/Versions/A/JavaScriptCore",
+          "WebCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebCore.framework/Versions/A/WebCore"
+        }
+      },
+      "candidate": {
+        "pid": 74588,
+        "route": "curve-hid",
+        "binarySHA256": "f2f31dcb60e682ff47154157498ade2691ce68121f590beb6c1161dc1b561a55",
+        "initialAcceptedSubmissions": 1,
+        "controlWorked": true,
+        "verdict": "blocked",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Matched reference point translated by public window geometry",
+        "fieldCenter": [
+          387.0,
+          427.5
+        ],
+        "attempt": {
+          "curvedTrajectory": true,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 74588,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 90,
+        "newEventTypes": [],
+        "window": {
+          "startedWall": 1793025482.1088948,
+          "attemptStartedWall": 1793025483.120884,
+          "attemptFinishedWall": 1793025485.948176,
+          "clockStable": true,
+          "secureInputBefore": true,
+          "secureInputAfter": true,
+          "privateInputOverlap": false,
+          "leaseEnded": false,
+          "activeThroughout": true
+        },
+        "unscopedVerdict": "blocked"
+      },
+      "windowFinished": true,
+      "expiryReleaseVerified": true,
+      "secureInputAfterExpiry": false,
+      "finalAcceptedActions": 1,
+      "candidateCleanupVerified": true,
+      "secureInputAfterCleanup": false
+    },
+    {
+      "surface": "textarea",
+      "route": "pid-keys-keycodes-hid",
+      "verdict": "blocked",
+      "controlActivation": "observed",
+      "control": {
+        "pid": 74779,
+        "route": "pid-keys-keycodes-hid",
+        "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "bypass",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          387.0,
+          427.5
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": true,
+          "pid": 74779,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "click",
+          "input",
+          "keydown",
+          "pointerdown"
+        ]
+      },
+      "referenceCleanupVerified": true,
+      "baselineWorked": true,
+      "engineIdentity": {
+        "pid": 75057,
+        "executable": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development",
+        "mappedFrameworks": {
+          "WebKit": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebKit.framework/Versions/A/WebKit",
+          "JavaScriptCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/JavaScriptCore.framework/Versions/A/JavaScriptCore",
+          "WebCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebCore.framework/Versions/A/WebCore"
+        }
+      },
+      "candidate": {
+        "pid": 74974,
+        "route": "pid-keys-keycodes-hid",
+        "binarySHA256": "f2f31dcb60e682ff47154157498ade2691ce68121f590beb6c1161dc1b561a55",
+        "initialAcceptedSubmissions": 1,
+        "controlWorked": true,
+        "verdict": "blocked",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Matched reference point translated by public window geometry",
+        "fieldCenter": [
+          387.0,
+          427.5
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": true,
+          "pid": 74974,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 29,
+        "newEventTypes": [],
+        "window": {
+          "startedWall": 1793025500.735503,
+          "attemptStartedWall": 1793025501.861511,
+          "attemptFinishedWall": 1793025503.968944,
+          "clockStable": true,
+          "secureInputBefore": true,
+          "secureInputAfter": true,
+          "privateInputOverlap": false,
+          "leaseEnded": false,
+          "activeThroughout": true
+        },
+        "unscopedVerdict": "blocked"
+      },
+      "windowFinished": true,
+      "expiryReleaseVerified": true,
+      "secureInputAfterExpiry": false,
+      "finalAcceptedActions": 1,
+      "candidateCleanupVerified": true,
+      "secureInputAfterCleanup": false
+    },
+    {
+      "surface": "editable",
+      "route": "hid",
+      "verdict": "blocked",
+      "controlActivation": "observed",
+      "control": {
+        "pid": 75252,
+        "route": "hid",
+        "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "bypass",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          387.0,
+          418.5
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 75252,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "click",
+          "input",
+          "keydown",
+          "pointerdown"
+        ]
+      },
+      "referenceCleanupVerified": true,
+      "baselineWorked": true,
+      "engineIdentity": {
+        "pid": 75530,
+        "executable": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development",
+        "mappedFrameworks": {
+          "WebKit": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebKit.framework/Versions/A/WebKit",
+          "JavaScriptCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/JavaScriptCore.framework/Versions/A/JavaScriptCore",
+          "WebCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebCore.framework/Versions/A/WebCore"
+        }
+      },
+      "candidate": {
+        "pid": 75447,
+        "route": "hid",
+        "binarySHA256": "f2f31dcb60e682ff47154157498ade2691ce68121f590beb6c1161dc1b561a55",
+        "initialAcceptedSubmissions": 1,
+        "controlWorked": true,
+        "verdict": "blocked",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Matched reference point translated by public window geometry",
+        "fieldCenter": [
+          387.0,
+          418.5
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 75447,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 29,
+        "newEventTypes": [],
+        "window": {
+          "startedWall": 1793025519.498639,
+          "attemptStartedWall": 1793025520.610424,
+          "attemptFinishedWall": 1793025522.463734,
+          "clockStable": true,
+          "secureInputBefore": true,
+          "secureInputAfter": true,
+          "privateInputOverlap": false,
+          "leaseEnded": false,
+          "activeThroughout": true
+        },
+        "unscopedVerdict": "blocked"
+      },
+      "windowFinished": true,
+      "expiryReleaseVerified": true,
+      "secureInputAfterExpiry": false,
+      "finalAcceptedActions": 1,
+      "candidateCleanupVerified": true,
+      "secureInputAfterCleanup": false
+    },
+    {
+      "surface": "editable",
+      "route": "curve-hid",
+      "verdict": "blocked",
+      "controlActivation": "observed",
+      "control": {
+        "pid": 75631,
+        "route": "curve-hid",
+        "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "bypass",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          387.0,
+          418.5
+        ],
+        "attempt": {
+          "curvedTrajectory": true,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 75631,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "click",
+          "input",
+          "keydown",
+          "pointerdown"
+        ]
+      },
+      "referenceCleanupVerified": true,
+      "baselineWorked": true,
+      "engineIdentity": {
+        "pid": 75974,
+        "executable": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development",
+        "mappedFrameworks": {
+          "WebKit": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebKit.framework/Versions/A/WebKit",
+          "JavaScriptCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/JavaScriptCore.framework/Versions/A/JavaScriptCore",
+          "WebCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebCore.framework/Versions/A/WebCore"
+        }
+      },
+      "candidate": {
+        "pid": 75890,
+        "route": "curve-hid",
+        "binarySHA256": "f2f31dcb60e682ff47154157498ade2691ce68121f590beb6c1161dc1b561a55",
+        "initialAcceptedSubmissions": 1,
+        "controlWorked": true,
+        "verdict": "blocked",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Matched reference point translated by public window geometry",
+        "fieldCenter": [
+          387.0,
+          418.5
+        ],
+        "attempt": {
+          "curvedTrajectory": true,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 75890,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 90,
+        "newEventTypes": [],
+        "window": {
+          "startedWall": 1793025539.078772,
+          "attemptStartedWall": 1793025540.144607,
+          "attemptFinishedWall": 1793025543.014977,
+          "clockStable": true,
+          "secureInputBefore": true,
+          "secureInputAfter": true,
+          "privateInputOverlap": false,
+          "leaseEnded": false,
+          "activeThroughout": true
+        },
+        "unscopedVerdict": "blocked"
+      },
+      "windowFinished": true,
+      "expiryReleaseVerified": true,
+      "secureInputAfterExpiry": false,
+      "finalAcceptedActions": 1,
+      "candidateCleanupVerified": true,
+      "secureInputAfterCleanup": false
+    },
+    {
+      "surface": "editable",
+      "route": "pid-keys-keycodes-hid",
+      "verdict": "blocked",
+      "controlActivation": "observed",
+      "control": {
+        "pid": 76139,
+        "route": "pid-keys-keycodes-hid",
+        "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "bypass",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          387.0,
+          418.5
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": true,
+          "pid": 76139,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "click",
+          "input",
+          "keydown",
+          "pointerdown"
+        ]
+      },
+      "referenceCleanupVerified": true,
+      "baselineWorked": true,
+      "engineIdentity": {
+        "pid": 76417,
+        "executable": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development",
+        "mappedFrameworks": {
+          "WebKit": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebKit.framework/Versions/A/WebKit",
+          "JavaScriptCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/JavaScriptCore.framework/Versions/A/JavaScriptCore",
+          "WebCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebCore.framework/Versions/A/WebCore"
+        }
+      },
+      "candidate": {
+        "pid": 76331,
+        "route": "pid-keys-keycodes-hid",
+        "binarySHA256": "f2f31dcb60e682ff47154157498ade2691ce68121f590beb6c1161dc1b561a55",
+        "initialAcceptedSubmissions": 1,
+        "controlWorked": true,
+        "verdict": "blocked",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Matched reference point translated by public window geometry",
+        "fieldCenter": [
+          387.0,
+          418.5
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": true,
+          "pid": 76331,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 29,
+        "newEventTypes": [],
+        "window": {
+          "startedWall": 1793025557.791648,
+          "attemptStartedWall": 1793025558.8481221,
+          "attemptFinishedWall": 1793025560.966859,
+          "clockStable": true,
+          "secureInputBefore": true,
+          "secureInputAfter": true,
+          "privateInputOverlap": false,
+          "leaseEnded": false,
+          "activeThroughout": true
+        },
+        "unscopedVerdict": "blocked"
+      },
+      "windowFinished": true,
+      "expiryReleaseVerified": true,
+      "secureInputAfterExpiry": false,
+      "finalAcceptedActions": 1,
+      "candidateCleanupVerified": true,
+      "secureInputAfterCleanup": false
+    },
+    {
+      "surface": "shadow-open",
+      "route": "hid",
+      "verdict": "blocked",
+      "controlActivation": "observed",
+      "control": {
+        "pid": 76603,
+        "route": "hid",
+        "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "bypass",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          387.0,
+          418.5
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 76603,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "click",
+          "input",
+          "keydown",
+          "pointerdown"
+        ]
+      },
+      "referenceCleanupVerified": true,
+      "baselineWorked": true,
+      "engineIdentity": {
+        "pid": 76882,
+        "executable": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development",
+        "mappedFrameworks": {
+          "WebKit": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebKit.framework/Versions/A/WebKit",
+          "JavaScriptCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/JavaScriptCore.framework/Versions/A/JavaScriptCore",
+          "WebCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebCore.framework/Versions/A/WebCore"
+        }
+      },
+      "candidate": {
+        "pid": 76795,
+        "route": "hid",
+        "binarySHA256": "f2f31dcb60e682ff47154157498ade2691ce68121f590beb6c1161dc1b561a55",
+        "initialAcceptedSubmissions": 1,
+        "controlWorked": true,
+        "verdict": "blocked",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Matched reference point translated by public window geometry",
+        "fieldCenter": [
+          387.0,
+          418.5
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 76795,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 29,
+        "newEventTypes": [],
+        "window": {
+          "startedWall": 1793025576.572281,
+          "attemptStartedWall": 1793025577.649507,
+          "attemptFinishedWall": 1793025579.482423,
+          "clockStable": true,
+          "secureInputBefore": true,
+          "secureInputAfter": true,
+          "privateInputOverlap": false,
+          "leaseEnded": false,
+          "activeThroughout": true
+        },
+        "unscopedVerdict": "blocked"
+      },
+      "windowFinished": true,
+      "expiryReleaseVerified": true,
+      "secureInputAfterExpiry": false,
+      "finalAcceptedActions": 1,
+      "candidateCleanupVerified": true,
+      "secureInputAfterCleanup": false
+    },
+    {
+      "surface": "shadow-open",
+      "route": "curve-hid",
+      "verdict": "blocked",
+      "controlActivation": "observed",
+      "control": {
+        "pid": 76992,
+        "route": "curve-hid",
+        "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "bypass",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          387.0,
+          418.5
+        ],
+        "attempt": {
+          "curvedTrajectory": true,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 76992,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "click",
+          "input",
+          "keydown",
+          "pointerdown"
+        ]
+      },
+      "referenceCleanupVerified": true,
+      "baselineWorked": true,
+      "engineIdentity": {
+        "pid": 77288,
+        "executable": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development",
+        "mappedFrameworks": {
+          "WebKit": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebKit.framework/Versions/A/WebKit",
+          "JavaScriptCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/JavaScriptCore.framework/Versions/A/JavaScriptCore",
+          "WebCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebCore.framework/Versions/A/WebCore"
+        }
+      },
+      "candidate": {
+        "pid": 77202,
+        "route": "curve-hid",
+        "binarySHA256": "f2f31dcb60e682ff47154157498ade2691ce68121f590beb6c1161dc1b561a55",
+        "initialAcceptedSubmissions": 1,
+        "controlWorked": true,
+        "verdict": "blocked",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Matched reference point translated by public window geometry",
+        "fieldCenter": [
+          387.0,
+          418.5
+        ],
+        "attempt": {
+          "curvedTrajectory": true,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 77202,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 90,
+        "newEventTypes": [],
+        "window": {
+          "startedWall": 1793025596.1504102,
+          "attemptStartedWall": 1793025597.242522,
+          "attemptFinishedWall": 1793025600.096971,
+          "clockStable": true,
+          "secureInputBefore": true,
+          "secureInputAfter": true,
+          "privateInputOverlap": false,
+          "leaseEnded": false,
+          "activeThroughout": true
+        },
+        "unscopedVerdict": "blocked"
+      },
+      "windowFinished": true,
+      "expiryReleaseVerified": true,
+      "secureInputAfterExpiry": false,
+      "finalAcceptedActions": 1,
+      "candidateCleanupVerified": true,
+      "secureInputAfterCleanup": false
+    },
+    {
+      "surface": "shadow-open",
+      "route": "pid-keys-keycodes-hid",
+      "verdict": "blocked",
+      "controlActivation": "observed",
+      "control": {
+        "pid": 77473,
+        "route": "pid-keys-keycodes-hid",
+        "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "bypass",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          387.0,
+          418.5
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": true,
+          "pid": 77473,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "click",
+          "input",
+          "keydown",
+          "pointerdown"
+        ]
+      },
+      "referenceCleanupVerified": true,
+      "baselineWorked": true,
+      "engineIdentity": {
+        "pid": 77750,
+        "executable": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development",
+        "mappedFrameworks": {
+          "WebKit": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebKit.framework/Versions/A/WebKit",
+          "JavaScriptCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/JavaScriptCore.framework/Versions/A/JavaScriptCore",
+          "WebCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebCore.framework/Versions/A/WebCore"
+        }
+      },
+      "candidate": {
+        "pid": 77667,
+        "route": "pid-keys-keycodes-hid",
+        "binarySHA256": "f2f31dcb60e682ff47154157498ade2691ce68121f590beb6c1161dc1b561a55",
+        "initialAcceptedSubmissions": 1,
+        "controlWorked": true,
+        "verdict": "blocked",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Matched reference point translated by public window geometry",
+        "fieldCenter": [
+          387.0,
+          418.5
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": true,
+          "pid": 77667,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 29,
+        "newEventTypes": [],
+        "window": {
+          "startedWall": 1793025614.738183,
+          "attemptStartedWall": 1793025615.837506,
+          "attemptFinishedWall": 1793025617.903717,
+          "clockStable": true,
+          "secureInputBefore": true,
+          "secureInputAfter": true,
+          "privateInputOverlap": false,
+          "leaseEnded": false,
+          "activeThroughout": true
+        },
+        "unscopedVerdict": "blocked"
+      },
+      "windowFinished": true,
+      "expiryReleaseVerified": true,
+      "secureInputAfterExpiry": false,
+      "finalAcceptedActions": 1,
+      "candidateCleanupVerified": true,
+      "secureInputAfterCleanup": false
+    },
+    {
+      "surface": "shadow-closed",
+      "route": "hid",
+      "verdict": "blocked",
+      "controlActivation": "observed",
+      "control": {
+        "pid": 77855,
+        "route": "hid",
+        "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "bypass",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          387.0,
+          418.5
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 77855,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "click",
+          "input",
+          "keydown",
+          "pointerdown"
+        ]
+      },
+      "referenceCleanupVerified": true,
+      "baselineWorked": true,
+      "engineIdentity": {
+        "pid": 78144,
+        "executable": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development",
+        "mappedFrameworks": {
+          "WebKit": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebKit.framework/Versions/A/WebKit",
+          "JavaScriptCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/JavaScriptCore.framework/Versions/A/JavaScriptCore",
+          "WebCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebCore.framework/Versions/A/WebCore"
+        }
+      },
+      "candidate": {
+        "pid": 78061,
+        "route": "hid",
+        "binarySHA256": "f2f31dcb60e682ff47154157498ade2691ce68121f590beb6c1161dc1b561a55",
+        "initialAcceptedSubmissions": 1,
+        "controlWorked": true,
+        "verdict": "blocked",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Matched reference point translated by public window geometry",
+        "fieldCenter": [
+          387.0,
+          418.5
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 78061,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 29,
+        "newEventTypes": [],
+        "window": {
+          "startedWall": 1793025633.4761481,
+          "attemptStartedWall": 1793025634.522617,
+          "attemptFinishedWall": 1793025636.3693178,
+          "clockStable": true,
+          "secureInputBefore": true,
+          "secureInputAfter": true,
+          "privateInputOverlap": false,
+          "leaseEnded": false,
+          "activeThroughout": true
+        },
+        "unscopedVerdict": "blocked"
+      },
+      "windowFinished": true,
+      "expiryReleaseVerified": true,
+      "secureInputAfterExpiry": false,
+      "finalAcceptedActions": 1,
+      "candidateCleanupVerified": true,
+      "secureInputAfterCleanup": false
+    },
+    {
+      "surface": "shadow-closed",
+      "route": "curve-hid",
+      "verdict": "blocked",
+      "controlActivation": "observed",
+      "control": {
+        "pid": 78305,
+        "route": "curve-hid",
+        "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "bypass",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          387.0,
+          418.5
+        ],
+        "attempt": {
+          "curvedTrajectory": true,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 78305,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "click",
+          "input",
+          "keydown",
+          "pointerdown"
+        ]
+      },
+      "referenceCleanupVerified": true,
+      "baselineWorked": true,
+      "engineIdentity": {
+        "pid": 78588,
+        "executable": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development",
+        "mappedFrameworks": {
+          "WebKit": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebKit.framework/Versions/A/WebKit",
+          "JavaScriptCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/JavaScriptCore.framework/Versions/A/JavaScriptCore",
+          "WebCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebCore.framework/Versions/A/WebCore"
+        }
+      },
+      "candidate": {
+        "pid": 78505,
+        "route": "curve-hid",
+        "binarySHA256": "f2f31dcb60e682ff47154157498ade2691ce68121f590beb6c1161dc1b561a55",
+        "initialAcceptedSubmissions": 1,
+        "controlWorked": true,
+        "verdict": "blocked",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Matched reference point translated by public window geometry",
+        "fieldCenter": [
+          387.0,
+          418.5
+        ],
+        "attempt": {
+          "curvedTrajectory": true,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 78505,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 90,
+        "newEventTypes": [],
+        "window": {
+          "startedWall": 1793025652.471304,
+          "attemptStartedWall": 1793025653.559995,
+          "attemptFinishedWall": 1793025656.46415,
+          "clockStable": true,
+          "secureInputBefore": true,
+          "secureInputAfter": true,
+          "privateInputOverlap": false,
+          "leaseEnded": false,
+          "activeThroughout": true
+        },
+        "unscopedVerdict": "blocked"
+      },
+      "windowFinished": true,
+      "expiryReleaseVerified": true,
+      "secureInputAfterExpiry": false,
+      "finalAcceptedActions": 1,
+      "candidateCleanupVerified": true,
+      "secureInputAfterCleanup": false
+    },
+    {
+      "surface": "shadow-closed",
+      "route": "pid-keys-keycodes-hid",
+      "verdict": "blocked",
+      "controlActivation": "observed",
+      "control": {
+        "pid": 78807,
+        "route": "pid-keys-keycodes-hid",
+        "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "bypass",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          387.0,
+          418.5
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": true,
+          "pid": 78807,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "click",
+          "input",
+          "keydown",
+          "pointerdown"
+        ]
+      },
+      "referenceCleanupVerified": true,
+      "baselineWorked": true,
+      "engineIdentity": {
+        "pid": 79097,
+        "executable": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development",
+        "mappedFrameworks": {
+          "WebKit": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebKit.framework/Versions/A/WebKit",
+          "JavaScriptCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/JavaScriptCore.framework/Versions/A/JavaScriptCore",
+          "WebCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebCore.framework/Versions/A/WebCore"
+        }
+      },
+      "candidate": {
+        "pid": 79014,
+        "route": "pid-keys-keycodes-hid",
+        "binarySHA256": "f2f31dcb60e682ff47154157498ade2691ce68121f590beb6c1161dc1b561a55",
+        "initialAcceptedSubmissions": 1,
+        "controlWorked": true,
+        "verdict": "blocked",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Matched reference point translated by public window geometry",
+        "fieldCenter": [
+          387.0,
+          418.5
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": true,
+          "pid": 79014,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 31,
+        "newEventTypes": [],
+        "window": {
+          "startedWall": 1793025671.64471,
+          "attemptStartedWall": 1793025672.7551281,
+          "attemptFinishedWall": 1793025674.8635771,
+          "clockStable": true,
+          "secureInputBefore": true,
+          "secureInputAfter": true,
+          "privateInputOverlap": false,
+          "leaseEnded": false,
+          "activeThroughout": true
+        },
+        "unscopedVerdict": "blocked"
+      },
+      "windowFinished": true,
+      "expiryReleaseVerified": true,
+      "secureInputAfterExpiry": false,
+      "finalAcceptedActions": 1,
+      "candidateCleanupVerified": true,
+      "secureInputAfterCleanup": false
+    },
+    {
+      "surface": "spa",
+      "route": "hid",
+      "verdict": "blocked",
+      "controlActivation": "observed",
+      "control": {
+        "pid": 79198,
+        "route": "hid",
+        "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "bypass",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          387.0,
+          418.5
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 79198,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "click",
+          "input",
+          "keydown",
+          "pointerdown"
+        ]
+      },
+      "referenceCleanupVerified": true,
+      "baselineWorked": true,
+      "engineIdentity": {
+        "pid": 79491,
+        "executable": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development",
+        "mappedFrameworks": {
+          "WebKit": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebKit.framework/Versions/A/WebKit",
+          "JavaScriptCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/JavaScriptCore.framework/Versions/A/JavaScriptCore",
+          "WebCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebCore.framework/Versions/A/WebCore"
+        }
+      },
+      "candidate": {
+        "pid": 79399,
+        "route": "hid",
+        "binarySHA256": "f2f31dcb60e682ff47154157498ade2691ce68121f590beb6c1161dc1b561a55",
+        "initialAcceptedSubmissions": 1,
+        "controlWorked": true,
+        "verdict": "blocked",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Matched reference point translated by public window geometry",
+        "fieldCenter": [
+          387.0,
+          418.5
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 79399,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 29,
+        "newEventTypes": [],
+        "window": {
+          "startedWall": 1793025689.88309,
+          "attemptStartedWall": 1793025690.9559958,
+          "attemptFinishedWall": 1793025692.820323,
+          "clockStable": true,
+          "secureInputBefore": true,
+          "secureInputAfter": true,
+          "privateInputOverlap": false,
+          "leaseEnded": false,
+          "activeThroughout": true
+        },
+        "unscopedVerdict": "blocked"
+      },
+      "windowFinished": true,
+      "expiryReleaseVerified": true,
+      "secureInputAfterExpiry": false,
+      "finalAcceptedActions": 1,
+      "candidateCleanupVerified": true,
+      "secureInputAfterCleanup": false
+    },
+    {
+      "surface": "spa",
+      "route": "curve-hid",
+      "verdict": "blocked",
+      "controlActivation": "observed",
+      "control": {
+        "pid": 79657,
+        "route": "curve-hid",
+        "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "bypass",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          387.0,
+          418.5
+        ],
+        "attempt": {
+          "curvedTrajectory": true,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 79657,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "click",
+          "input",
+          "keydown",
+          "pointerdown"
+        ]
+      },
+      "referenceCleanupVerified": true,
+      "baselineWorked": true,
+      "engineIdentity": {
+        "pid": 79933,
+        "executable": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development",
+        "mappedFrameworks": {
+          "WebKit": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebKit.framework/Versions/A/WebKit",
+          "JavaScriptCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/JavaScriptCore.framework/Versions/A/JavaScriptCore",
+          "WebCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebCore.framework/Versions/A/WebCore"
+        }
+      },
+      "candidate": {
+        "pid": 79850,
+        "route": "curve-hid",
+        "binarySHA256": "f2f31dcb60e682ff47154157498ade2691ce68121f590beb6c1161dc1b561a55",
+        "initialAcceptedSubmissions": 1,
+        "controlWorked": true,
+        "verdict": "blocked",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Matched reference point translated by public window geometry",
+        "fieldCenter": [
+          387.0,
+          418.5
+        ],
+        "attempt": {
+          "curvedTrajectory": true,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 79850,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 90,
+        "newEventTypes": [],
+        "window": {
+          "startedWall": 1793025709.525794,
+          "attemptStartedWall": 1793025710.6207519,
+          "attemptFinishedWall": 1793025713.448906,
+          "clockStable": true,
+          "secureInputBefore": true,
+          "secureInputAfter": true,
+          "privateInputOverlap": false,
+          "leaseEnded": false,
+          "activeThroughout": true
+        },
+        "unscopedVerdict": "blocked"
+      },
+      "windowFinished": true,
+      "expiryReleaseVerified": true,
+      "secureInputAfterExpiry": false,
+      "finalAcceptedActions": 1,
+      "candidateCleanupVerified": true,
+      "secureInputAfterCleanup": false
+    },
+    {
+      "surface": "spa",
+      "route": "pid-keys-keycodes-hid",
+      "verdict": "blocked",
+      "controlActivation": "observed",
+      "control": {
+        "pid": 80087,
+        "route": "pid-keys-keycodes-hid",
+        "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "bypass",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          387.0,
+          418.5
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": true,
+          "pid": 80087,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "click",
+          "input",
+          "keydown",
+          "pointerdown"
+        ]
+      },
+      "referenceCleanupVerified": true,
+      "baselineWorked": true,
+      "engineIdentity": {
+        "pid": 80435,
+        "executable": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development",
+        "mappedFrameworks": {
+          "WebKit": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebKit.framework/Versions/A/WebKit",
+          "JavaScriptCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/JavaScriptCore.framework/Versions/A/JavaScriptCore",
+          "WebCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebCore.framework/Versions/A/WebCore"
+        }
+      },
+      "candidate": {
+        "pid": 80349,
+        "route": "pid-keys-keycodes-hid",
+        "binarySHA256": "f2f31dcb60e682ff47154157498ade2691ce68121f590beb6c1161dc1b561a55",
+        "initialAcceptedSubmissions": 1,
+        "controlWorked": true,
+        "verdict": "blocked",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Matched reference point translated by public window geometry",
+        "fieldCenter": [
+          387.0,
+          418.5
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": true,
+          "pid": 80349,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 29,
+        "newEventTypes": [],
+        "window": {
+          "startedWall": 1793025728.70259,
+          "attemptStartedWall": 1793025729.752643,
+          "attemptFinishedWall": 1793025731.876162,
+          "clockStable": true,
+          "secureInputBefore": true,
+          "secureInputAfter": true,
+          "privateInputOverlap": false,
+          "leaseEnded": false,
+          "activeThroughout": true
+        },
+        "unscopedVerdict": "blocked"
+      },
+      "windowFinished": true,
+      "expiryReleaseVerified": true,
+      "secureInputAfterExpiry": false,
+      "finalAcceptedActions": 1,
+      "candidateCleanupVerified": true,
+      "secureInputAfterCleanup": false
+    },
+    {
+      "surface": "iframe",
+      "route": "hid",
+      "verdict": "blocked",
+      "controlActivation": "observed",
+      "control": {
+        "pid": 80536,
+        "route": "hid",
+        "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "bypass",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          444.0,
+          568.5
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 80536,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "click",
+          "input",
+          "keydown",
+          "pointerdown"
+        ]
+      },
+      "referenceCleanupVerified": true,
+      "baselineWorked": true,
+      "engineIdentity": {
+        "pid": 80831,
+        "executable": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development",
+        "mappedFrameworks": {
+          "WebKit": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebKit.framework/Versions/A/WebKit",
+          "JavaScriptCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/JavaScriptCore.framework/Versions/A/JavaScriptCore",
+          "WebCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebCore.framework/Versions/A/WebCore"
+        }
+      },
+      "candidate": {
+        "pid": 80748,
+        "route": "hid",
+        "binarySHA256": "f2f31dcb60e682ff47154157498ade2691ce68121f590beb6c1161dc1b561a55",
+        "initialAcceptedSubmissions": 1,
+        "controlWorked": true,
+        "verdict": "blocked",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Matched reference point translated by public window geometry",
+        "fieldCenter": [
+          444.0,
+          568.5
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 80748,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 29,
+        "newEventTypes": [],
+        "window": {
+          "startedWall": 1793025747.4734812,
+          "attemptStartedWall": 1793025748.53154,
+          "attemptFinishedWall": 1793025750.385026,
+          "clockStable": true,
+          "secureInputBefore": true,
+          "secureInputAfter": true,
+          "privateInputOverlap": false,
+          "leaseEnded": false,
+          "activeThroughout": true
+        },
+        "unscopedVerdict": "blocked"
+      },
+      "windowFinished": true,
+      "expiryReleaseVerified": true,
+      "secureInputAfterExpiry": false,
+      "finalAcceptedActions": 1,
+      "candidateCleanupVerified": true,
+      "secureInputAfterCleanup": false
+    },
+    {
+      "surface": "iframe",
+      "route": "curve-hid",
+      "verdict": "blocked",
+      "controlActivation": "observed",
+      "control": {
+        "pid": 80958,
+        "route": "curve-hid",
+        "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "bypass",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          444.0,
+          568.5
+        ],
+        "attempt": {
+          "curvedTrajectory": true,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 80958,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "click",
+          "input",
+          "keydown",
+          "pointerdown"
+        ]
+      },
+      "referenceCleanupVerified": true,
+      "baselineWorked": true,
+      "engineIdentity": {
+        "pid": 81236,
+        "executable": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development",
+        "mappedFrameworks": {
+          "WebKit": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebKit.framework/Versions/A/WebKit",
+          "JavaScriptCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/JavaScriptCore.framework/Versions/A/JavaScriptCore",
+          "WebCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebCore.framework/Versions/A/WebCore"
+        }
+      },
+      "candidate": {
+        "pid": 81152,
+        "route": "curve-hid",
+        "binarySHA256": "f2f31dcb60e682ff47154157498ade2691ce68121f590beb6c1161dc1b561a55",
+        "initialAcceptedSubmissions": 1,
+        "controlWorked": true,
+        "verdict": "blocked",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Matched reference point translated by public window geometry",
+        "fieldCenter": [
+          444.0,
+          568.5
+        ],
+        "attempt": {
+          "curvedTrajectory": true,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 81152,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 90,
+        "newEventTypes": [],
+        "window": {
+          "startedWall": 1793025767.2568789,
+          "attemptStartedWall": 1793025768.336994,
+          "attemptFinishedWall": 1793025771.156786,
+          "clockStable": true,
+          "secureInputBefore": true,
+          "secureInputAfter": true,
+          "privateInputOverlap": false,
+          "leaseEnded": false,
+          "activeThroughout": true
+        },
+        "unscopedVerdict": "blocked"
+      },
+      "windowFinished": true,
+      "expiryReleaseVerified": true,
+      "secureInputAfterExpiry": false,
+      "finalAcceptedActions": 1,
+      "candidateCleanupVerified": true,
+      "secureInputAfterCleanup": false
+    },
+    {
+      "surface": "iframe",
+      "route": "pid-keys-keycodes-hid",
+      "verdict": "blocked",
+      "controlActivation": "observed",
+      "control": {
+        "pid": 81346,
+        "route": "pid-keys-keycodes-hid",
+        "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "bypass",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          444.0,
+          568.5
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": true,
+          "pid": 81346,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "click",
+          "input",
+          "keydown",
+          "pointerdown"
+        ]
+      },
+      "referenceCleanupVerified": true,
+      "baselineWorked": true,
+      "engineIdentity": {
+        "pid": 81791,
+        "executable": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development",
+        "mappedFrameworks": {
+          "WebKit": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebKit.framework/Versions/A/WebKit",
+          "JavaScriptCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/JavaScriptCore.framework/Versions/A/JavaScriptCore",
+          "WebCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebCore.framework/Versions/A/WebCore"
+        }
+      },
+      "candidate": {
+        "pid": 81708,
+        "route": "pid-keys-keycodes-hid",
+        "binarySHA256": "f2f31dcb60e682ff47154157498ade2691ce68121f590beb6c1161dc1b561a55",
+        "initialAcceptedSubmissions": 1,
+        "controlWorked": true,
+        "verdict": "blocked",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Matched reference point translated by public window geometry",
+        "fieldCenter": [
+          444.0,
+          568.5
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": true,
+          "pid": 81708,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 29,
+        "newEventTypes": [],
+        "window": {
+          "startedWall": 1793025785.81733,
+          "attemptStartedWall": 1793025786.900448,
+          "attemptFinishedWall": 1793025788.980685,
+          "clockStable": true,
+          "secureInputBefore": true,
+          "secureInputAfter": true,
+          "privateInputOverlap": false,
+          "leaseEnded": false,
+          "activeThroughout": true
+        },
+        "unscopedVerdict": "blocked"
+      },
+      "windowFinished": true,
+      "expiryReleaseVerified": true,
+      "secureInputAfterExpiry": false,
+      "finalAcceptedActions": 1,
+      "candidateCleanupVerified": true,
+      "secureInputAfterCleanup": false
+    },
+    {
+      "surface": "cross-frame",
+      "route": "hid",
+      "verdict": "blocked",
+      "controlActivation": "observed",
+      "control": {
+        "pid": 81897,
+        "route": "hid",
+        "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "bypass",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          444.0,
+          568.5
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 81897,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "click",
+          "input",
+          "keydown",
+          "pointerdown"
+        ]
+      },
+      "referenceCleanupVerified": true,
+      "baselineWorked": true,
+      "engineIdentity": {
+        "pid": 82195,
+        "executable": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development",
+        "mappedFrameworks": {
+          "WebKit": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebKit.framework/Versions/A/WebKit",
+          "JavaScriptCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/JavaScriptCore.framework/Versions/A/JavaScriptCore",
+          "WebCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebCore.framework/Versions/A/WebCore"
+        }
+      },
+      "candidate": {
+        "pid": 82112,
+        "route": "hid",
+        "binarySHA256": "f2f31dcb60e682ff47154157498ade2691ce68121f590beb6c1161dc1b561a55",
+        "initialAcceptedSubmissions": 1,
+        "controlWorked": true,
+        "verdict": "blocked",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Matched reference point translated by public window geometry",
+        "fieldCenter": [
+          444.0,
+          568.5
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 82112,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 29,
+        "newEventTypes": [],
+        "window": {
+          "startedWall": 1793025804.559922,
+          "attemptStartedWall": 1793025805.631115,
+          "attemptFinishedWall": 1793025807.47339,
+          "clockStable": true,
+          "secureInputBefore": true,
+          "secureInputAfter": true,
+          "privateInputOverlap": false,
+          "leaseEnded": false,
+          "activeThroughout": true
+        },
+        "unscopedVerdict": "blocked"
+      },
+      "windowFinished": true,
+      "expiryReleaseVerified": true,
+      "secureInputAfterExpiry": false,
+      "finalAcceptedActions": 1,
+      "candidateCleanupVerified": true,
+      "secureInputAfterCleanup": false
+    },
+    {
+      "surface": "cross-frame",
+      "route": "curve-hid",
+      "verdict": "blocked",
+      "controlActivation": "observed",
+      "control": {
+        "pid": 82392,
+        "route": "curve-hid",
+        "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "bypass",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          444.0,
+          568.5
+        ],
+        "attempt": {
+          "curvedTrajectory": true,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 82392,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "click",
+          "input",
+          "keydown",
+          "pointerdown"
+        ]
+      },
+      "referenceCleanupVerified": true,
+      "baselineWorked": true,
+      "engineIdentity": {
+        "pid": 82670,
+        "executable": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development",
+        "mappedFrameworks": {
+          "WebKit": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebKit.framework/Versions/A/WebKit",
+          "JavaScriptCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/JavaScriptCore.framework/Versions/A/JavaScriptCore",
+          "WebCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebCore.framework/Versions/A/WebCore"
+        }
+      },
+      "candidate": {
+        "pid": 82587,
+        "route": "curve-hid",
+        "binarySHA256": "f2f31dcb60e682ff47154157498ade2691ce68121f590beb6c1161dc1b561a55",
+        "initialAcceptedSubmissions": 1,
+        "controlWorked": true,
+        "verdict": "blocked",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Matched reference point translated by public window geometry",
+        "fieldCenter": [
+          444.0,
+          568.5
+        ],
+        "attempt": {
+          "curvedTrajectory": true,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 82587,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 90,
+        "newEventTypes": [],
+        "window": {
+          "startedWall": 1793025824.3416672,
+          "attemptStartedWall": 1793025825.3845172,
+          "attemptFinishedWall": 1793025828.259549,
+          "clockStable": true,
+          "secureInputBefore": true,
+          "secureInputAfter": true,
+          "privateInputOverlap": false,
+          "leaseEnded": false,
+          "activeThroughout": true
+        },
+        "unscopedVerdict": "blocked"
+      },
+      "windowFinished": true,
+      "expiryReleaseVerified": true,
+      "secureInputAfterExpiry": false,
+      "finalAcceptedActions": 1,
+      "candidateCleanupVerified": true,
+      "secureInputAfterCleanup": false
+    },
+    {
+      "surface": "cross-frame",
+      "route": "pid-keys-keycodes-hid",
+      "verdict": "blocked",
+      "controlActivation": "observed",
+      "control": {
+        "pid": 82780,
+        "route": "pid-keys-keycodes-hid",
+        "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "bypass",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          444.0,
+          568.5
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": true,
+          "pid": 82780,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": [
+          "click",
+          "input",
+          "keydown",
+          "pointerdown"
+        ]
+      },
+      "referenceCleanupVerified": true,
+      "baselineWorked": true,
+      "engineIdentity": {
+        "pid": 83099,
+        "executable": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development",
+        "mappedFrameworks": {
+          "WebKit": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebKit.framework/Versions/A/WebKit",
+          "JavaScriptCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/JavaScriptCore.framework/Versions/A/JavaScriptCore",
+          "WebCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebCore.framework/Versions/A/WebCore"
+        }
+      },
+      "candidate": {
+        "pid": 82972,
+        "route": "pid-keys-keycodes-hid",
+        "binarySHA256": "f2f31dcb60e682ff47154157498ade2691ce68121f590beb6c1161dc1b561a55",
+        "initialAcceptedSubmissions": 1,
+        "controlWorked": true,
+        "verdict": "blocked",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Matched reference point translated by public window geometry",
+        "fieldCenter": [
+          444.0,
+          568.5
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": true,
+          "pid": 82972,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 29,
+        "newEventTypes": [],
+        "window": {
+          "startedWall": 1793025842.877859,
+          "attemptStartedWall": 1793025843.971242,
+          "attemptFinishedWall": 1793025846.0455732,
+          "clockStable": true,
+          "secureInputBefore": true,
+          "secureInputAfter": true,
+          "privateInputOverlap": false,
+          "leaseEnded": false,
+          "activeThroughout": true
+        },
+        "unscopedVerdict": "blocked"
+      },
+      "windowFinished": true,
+      "expiryReleaseVerified": true,
+      "secureInputAfterExpiry": false,
+      "finalAcceptedActions": 1,
+      "candidateCleanupVerified": true,
+      "secureInputAfterCleanup": false
+    },
+    {
+      "surface": "srcdoc",
+      "route": "hid",
+      "verdict": "blocked",
+      "controlActivation": "observed",
+      "control": {
+        "pid": 83220,
+        "route": "hid",
+        "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "bypass",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          444.0,
+          452.0
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 83220,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": []
+      },
+      "referenceCleanupVerified": true,
+      "baselineWorked": true,
+      "engineIdentity": {
+        "pid": 83496,
+        "executable": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development",
+        "mappedFrameworks": {
+          "WebKit": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebKit.framework/Versions/A/WebKit",
+          "JavaScriptCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/JavaScriptCore.framework/Versions/A/JavaScriptCore",
+          "WebCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebCore.framework/Versions/A/WebCore"
+        }
+      },
+      "candidate": {
+        "pid": 83413,
+        "route": "hid",
+        "binarySHA256": "f2f31dcb60e682ff47154157498ade2691ce68121f590beb6c1161dc1b561a55",
+        "initialAcceptedSubmissions": 1,
+        "controlWorked": true,
+        "verdict": "blocked",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Matched reference point translated by public window geometry",
+        "fieldCenter": [
+          444.0,
+          452.0
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 83413,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 29,
+        "newEventTypes": [],
+        "window": {
+          "startedWall": 1793025861.598353,
+          "attemptStartedWall": 1793025862.708471,
+          "attemptFinishedWall": 1793025864.561939,
+          "clockStable": true,
+          "secureInputBefore": true,
+          "secureInputAfter": true,
+          "privateInputOverlap": false,
+          "leaseEnded": false,
+          "activeThroughout": true
+        },
+        "unscopedVerdict": "blocked"
+      },
+      "windowFinished": true,
+      "expiryReleaseVerified": true,
+      "secureInputAfterExpiry": false,
+      "finalAcceptedActions": 1,
+      "candidateCleanupVerified": true,
+      "secureInputAfterCleanup": false
+    },
+    {
+      "surface": "srcdoc",
+      "route": "curve-hid",
+      "verdict": "blocked",
+      "controlActivation": "observed",
+      "control": {
+        "pid": 83619,
+        "route": "curve-hid",
+        "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "bypass",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          444.0,
+          452.0
+        ],
+        "attempt": {
+          "curvedTrajectory": true,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 83619,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": []
+      },
+      "referenceCleanupVerified": true,
+      "baselineWorked": true,
+      "engineIdentity": {
+        "pid": 83907,
+        "executable": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development",
+        "mappedFrameworks": {
+          "WebKit": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebKit.framework/Versions/A/WebKit",
+          "JavaScriptCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/JavaScriptCore.framework/Versions/A/JavaScriptCore",
+          "WebCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebCore.framework/Versions/A/WebCore"
+        }
+      },
+      "candidate": {
+        "pid": 83818,
+        "route": "curve-hid",
+        "binarySHA256": "f2f31dcb60e682ff47154157498ade2691ce68121f590beb6c1161dc1b561a55",
+        "initialAcceptedSubmissions": 1,
+        "controlWorked": true,
+        "verdict": "blocked",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Matched reference point translated by public window geometry",
+        "fieldCenter": [
+          444.0,
+          452.0
+        ],
+        "attempt": {
+          "curvedTrajectory": true,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": false,
+          "pid": 83818,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 90,
+        "newEventTypes": [],
+        "window": {
+          "startedWall": 1793025881.349389,
+          "attemptStartedWall": 1793025882.3875892,
+          "attemptFinishedWall": 1793025885.201838,
+          "clockStable": true,
+          "secureInputBefore": true,
+          "secureInputAfter": true,
+          "privateInputOverlap": false,
+          "leaseEnded": false,
+          "activeThroughout": true
+        },
+        "unscopedVerdict": "blocked"
+      },
+      "windowFinished": true,
+      "expiryReleaseVerified": true,
+      "secureInputAfterExpiry": false,
+      "finalAcceptedActions": 1,
+      "candidateCleanupVerified": true,
+      "secureInputAfterCleanup": false
+    },
+    {
+      "surface": "srcdoc",
+      "route": "pid-keys-keycodes-hid",
+      "verdict": "blocked",
+      "controlActivation": "observed",
+      "control": {
+        "pid": 84068,
+        "route": "pid-keys-keycodes-hid",
+        "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+        "initialAcceptedSubmissions": 0,
+        "controlWorked": false,
+        "verdict": "bypass",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Readable reference Accessibility field",
+        "fieldCenter": [
+          444.0,
+          452.0
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": true,
+          "pid": 84068,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [
+          {
+            "accepted": true
+          }
+        ],
+        "acceptedEvents": 0,
+        "refusedEvents": 0,
+        "newEventTypes": []
+      },
+      "referenceCleanupVerified": true,
+      "baselineWorked": true,
+      "engineIdentity": {
+        "pid": 84347,
+        "executable": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development",
+        "mappedFrameworks": {
+          "WebKit": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebKit.framework/Versions/A/WebKit",
+          "JavaScriptCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/JavaScriptCore.framework/Versions/A/JavaScriptCore",
+          "WebCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebCore.framework/Versions/A/WebCore"
+        }
+      },
+      "candidate": {
+        "pid": 84262,
+        "route": "pid-keys-keycodes-hid",
+        "binarySHA256": "f2f31dcb60e682ff47154157498ade2691ce68121f590beb6c1161dc1b561a55",
+        "initialAcceptedSubmissions": 1,
+        "controlWorked": true,
+        "verdict": "blocked",
+        "windowFrame": [
+          100,
+          110,
+          1000,
+          772
+        ],
+        "coordinateSource": "Matched reference point translated by public window geometry",
+        "fieldCenter": [
+          444.0,
+          452.0
+        ],
+        "attempt": {
+          "curvedTrajectory": false,
+          "directToPID": false,
+          "explicitWindowRouting": false,
+          "keyboardDirectToPID": true,
+          "pid": 84262,
+          "postTap": 0,
+          "source": "hid",
+          "status": "attempted",
+          "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+        },
+        "newSubmissions": [],
+        "acceptedEvents": 0,
+        "refusedEvents": 29,
+        "newEventTypes": [],
+        "window": {
+          "startedWall": 1793025899.749232,
+          "attemptStartedWall": 1793025900.82455,
+          "attemptFinishedWall": 1793025902.921045,
+          "clockStable": true,
+          "secureInputBefore": true,
+          "secureInputAfter": true,
+          "privateInputOverlap": false,
+          "leaseEnded": false,
+          "activeThroughout": true
+        },
+        "unscopedVerdict": "blocked"
+      },
+      "windowFinished": true,
+      "expiryReleaseVerified": true,
+      "secureInputAfterExpiry": false,
+      "finalAcceptedActions": 1,
+      "candidateCleanupVerified": true,
+      "secureInputAfterCleanup": false
+    }
+  ],
+  "candidateSHA256": "f2f31dcb60e682ff47154157498ade2691ce68121f590beb6c1161dc1b561a55",
+  "milestone": 93,
+  "pythonChecksPassed": 130,
+  "rawEvidence": "artifacts/private-entry-attacks-93/results.json",
+  "analysisSourceSHA256": {
+    "tools/run_private_entry_attacks.py": "e72b59ace6564994ae7e9c27f3ee7bb3f47813f60ef530ee49f3eb6e3447e920",
+    "scripts/diagnose-browser-keyboard.sh": "ab0e5fed468dd4acfac9ecc4e10aa5c4021fc249f275a3f0258974efe3b150e0",
+    "tools/test_private_entry_attacks.py": "58a2594220db8c4fab4ad2312ec9f0e5d57dabcb53c19049e6da9f5cfe67aedc"
+  },
+  "attemptSeconds": {
+    "minimum": 1.832916021347046,
+    "maximum": 2.9584062099456787
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "agentfreebrowser-research",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "probe:playwright": "node tools/playwright_probe.mjs"
+  },
+  "devDependencies": {
+    "playwright-core": "1.64.0"
+  }
+}

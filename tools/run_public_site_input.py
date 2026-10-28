@@ -21,7 +21,7 @@ def run(session_path, output, point, pause_approved):
     if not output.is_relative_to((ROOT / "artifacts").resolve()):
         raise ValueError("Use a fresh project artifact directory")
     session = json.loads(session_path.read_text())
-    target = {"AgentFreeBrowserPreview": "preview", "InspectableControl": "control"}.get(session.get("target"))
+    target = {"AgentFreeBrowserEngine": "engine", "AgentFreeBrowserPreview": "preview", "InspectableControl": "control"}.get(session.get("target"))
     if target is None:
         raise ValueError("Use a pinned research browser session")
     _, _, binary, digest = pinned_image(target)

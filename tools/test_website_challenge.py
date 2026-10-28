@@ -21,7 +21,7 @@ class WebsiteChallengeTests(unittest.TestCase):
             policies.append({"name": name, "sha256": hashlib.sha256(binary.read_bytes()).hexdigest()})
         (evidence / "preview-renderer-read-permission-manifest.json").write_text(json.dumps({"targetPolicies": policies}))
 
-    def exercise(self, target="control", grant=True, launch_failure=False, preflight_timeout=False):
+    def exercise(self, target="control", grant=True, launch_failure=False, preflight_timeout=False, agent_label=''):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             self.scaffold(root)
@@ -41,7 +41,9 @@ class WebsiteChallengeTests(unittest.TestCase):
                 return process, root / "dist" / (name + ".app") / "Contents/MacOS" / name
 
             with patch.object(subject, "ROOT", root), patch.object(subject, "matching_pids", return_value=set()), \
-                    patch.object(subject.subprocess, "run"), patch.object(subject, "launch", side_effect=launch), \
+                    patch.object(subject.subprocess, "run"), patch.object(subject, "launch", side_effect=launch) as legacy_launch, \
+                    patch.object(subject, "launch_engine", side_effect=lambda log, arguments: launch('AgentFreeBrowserEngine', log, arguments)) as engine_launch, \
+                    patch.object(subject, "verified_engine_target", return_value=(root / 'dist/AgentFreeBrowserEngine.app/Contents/MacOS/AgentFreeBrowserEngine', {})), \
                     patch.object(subject, "ready", return_value=123, side_effect=RuntimeError("not ready") if launch_failure else None), \
                     patch.object(subject, "process_matches", side_effect=[True, False]), \
                     patch.object(subject, "stop_launched", return_value=True) as cleanup, \
@@ -53,9 +55,12 @@ class WebsiteChallengeTests(unittest.TestCase):
                     with self.assertRaises(subprocess.TimeoutExpired):
                         subject.run(target, "wikipedia", output, 15)
                 else:
-                    subject.run(target, "wikipedia", output, 15)
+                    subject.run(target, "wikipedia", output, 15, agent_label=agent_label)
                 result = json.loads((output / "session.json").read_text())
                 template = json.loads((output / "attempt-template.json").read_text()) if (output / "attempt-template.json").exists() else None
+                if target == 'engine':
+                    legacy_launch.assert_not_called()
+                    self.assertGreater(engine_launch.call_count, 0)
                 return result, template, launches, cleanup.call_args_list
 
     def test_all_public_tasks_round_trip(self):
@@ -109,6 +114,24 @@ class WebsiteChallengeTests(unittest.TestCase):
         self.assertEqual(launches[0], ["--permissions"])
         self.assertEqual(len(cleanup), 2)
         self.assertNotIn("--request-permissions", str(launches))
+
+    def test_current_engine_uses_native_launcher_and_existing_grant(self):
+        session, _, launches, cleanup = self.exercise(target='engine')
+        self.assertEqual(session['target'], 'AgentFreeBrowserEngine')
+        self.assertEqual(launches[0], ['--permissions'])
+        self.assertEqual(len(cleanup), 2)
+        self.assertNotIn('--request-permissions', str(launches))
+
+    def test_engine_ineffective_grant_prevents_website_launch(self):
+        session, template, launches, _ = self.exercise(target='engine', grant=False)
+        self.assertEqual(session['status'], 'failed')
+        self.assertIsNone(template)
+        self.assertEqual(launches, [['--permissions']])
+
+    def test_model_label_is_recorded_in_session_and_attempt(self):
+        session, template, _, _ = self.exercise(target='engine', agent_label='MODEL_A / CLIENT')
+        self.assertEqual(session['agentLabel'], 'MODEL_A / CLIENT')
+        self.assertEqual(template['agent'], 'MODEL_A / CLIENT')
 
     def test_ineffective_grant_does_not_launch_a_browser(self):
         session, template, launches, _ = self.exercise(target="preview", grant=False)

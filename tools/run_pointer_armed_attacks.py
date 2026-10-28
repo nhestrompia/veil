@@ -42,9 +42,9 @@ def run(plan_path, output, session_path=None, reviewed_retry=False):
     used = {row['route']: 1 for row in routes}
     if reviewed_retry:
         earlier = ROOT / 'artifacts/hardware-pointer-154/armed-native-clicks'
-        review = json.loads((earlier / 'reviewed-assessment.json').read_text())
+        overlap_assessment = json.loads((earlier / 'reviewed-assessment.json').read_text())
         attempted = json.loads((earlier / 'results.json').read_text())
-        if (review.get('reviewedAssessment') != 'inconclusive-physical-input-overlap'
+        if (overlap_assessment.get('reviewedAssessment') != 'inconclusive-physical-input-overlap'
                 or not attempted.get('restored') or attempted['binarySHA256'] != session['binarySHA256']):
             raise RuntimeError('Need the reviewed overlapping trial and unchanged candidate')
         for row in attempted['results']:

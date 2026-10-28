@@ -4,7 +4,9 @@
 
 A macOS-only research project for an agent-resistant browser, with agent-free browsing as the stronger research goal.
 
-The current candidate remains vulnerable to renderer suspension. Sixteen calibrated trials complete website actions across four clock sources in native and stable engine modes. The prevention gate fails. Earlier stable hide/restore results remain bounded to that route. Agent-free operation remains unmet. See [timing results](docs/clock-channel-findings.md) and [feasibility research](docs/research/agent-free-feasibility-boundary.md).
+The current combined preview is [AgentFreeBrowserPreview.app](dist/AgentFreeBrowserPreview.app). It includes direct webpage rendering, ordinary-window capture restriction, keyboard routing, and the existing inspection, accessibility, export, and navigation policies. All 14 owner-driven navigation and policy checks pass. This new app still needs its own Input Monitoring grant, a physical completion control, and external attacks on the same executable. See [integration findings](docs/integrated-browser-findings.md).
+
+Earlier renderer diagnostics remain vulnerable to suspension. Sixteen calibrated trials complete website actions across four clock sources in native and stable engine modes. Those experiments are not integrated into the preview. See [timing results](docs/clock-channel-findings.md) and [feasibility research](docs/research/agent-free-feasibility-boundary.md). Agent-free operation remains unproven.
 
 Start with the [proof-of-concept PRD](PRD.md). It defines the target, proposed architecture, MVP requirements, attack tests, and acceptance gates.
 
@@ -25,7 +27,7 @@ Live prototype results:
 - [Capture and automation](docs/capture-findings.md): screenshot/OCR/native input completed 3/3 protected-browser trials. Playwright transport failures remain separate from protection evidence.
 - [Source-state filter](docs/input-filter-findings.md): a basic client stopped, but generated HID-state input and the vision client still completed tasks.
 
-The default browser remains an automation control and does not meet either MVP resistance gate. The latest candidate is `DeviceKeyboardExperiment.app`. It supports this Mac's measured built-in keyboard and US ASCII. Pointer input is disabled. It checks kernel device ancestry before binding and refuses known software sources or unknown paths. Its Input Monitoring grant is effective after the approved per-app reset.
+The default browser remains an automation control and does not meet either MVP resistance gate. The earlier calibrated keyboard candidate is `DeviceKeyboardExperiment.app`. It supports this Mac's measured built-in keyboard and US ASCII. Pointer input is disabled. It checks kernel device ancestry before binding and refuses known software sources or unknown paths. Its Input Monitoring grant is effective after the approved per-app reset.
 
 The user completed one physical task on the capture-restricted source-policy build. That same unchanged process then refused 27 calibrated native attempts and three adaptive vision attempts using known page geometry. Six native cases were skipped because their controls failed. Window and filtered-display captures returned black images. System screenshot failures and unavailable AX action targets remain inconclusive. Ordinary and direct AX reads recovered no marker, with working matched references.
 

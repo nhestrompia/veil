@@ -52,6 +52,10 @@ final class DeviceKeyboardApplication: AXBoundaryApplication {
     private(set) var refusedEventCount = 0
     private var awaitingInitialNavigation = true
     var onOpenLocation: (() -> Void)?
+    #if INTEGRATED_BROWSER
+    enum NavigationCommand { case back, forward, reloadOrStop }
+    var onNavigation: ((NavigationCommand) -> Void)?
+    #endif
 
     func didBeginNavigation() { awaitingInitialNavigation = false }
 
@@ -81,6 +85,16 @@ final class DeviceKeyboardApplication: AXBoundaryApplication {
                 onOpenLocation()
                 return
             }
+            #if INTEGRATED_BROWSER
+            if event.type == .keyDown, event.modifierFlags.contains(.command), let onNavigation {
+                switch event.keyCode {
+                case 33: onNavigation(.back); return
+                case 30: onNavigation(.forward); return
+                case 15: onNavigation(.reloadOrStop); return
+                default: break
+                }
+            }
+            #endif
             super.sendEvent(event)
         }
     }

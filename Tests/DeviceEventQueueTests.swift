@@ -42,6 +42,24 @@ enum DeviceEventQueueTests {
         precondition(openedLocations == 1, "The authorized shortcut must invoke navigation")
         app.sendEvent(locationKey)
         precondition(openedLocations == 1, "Replayed shortcuts must fail")
+        #if INTEGRATED_BROWSER
+        var navigation: [DeviceKeyboardApplication.NavigationCommand] = []
+        app.onNavigation = { navigation.append($0) }
+        for (code, character): (UInt16, String) in [(33, "["), (30, "]"), (15, "r")] {
+            let shortcut = NSEvent.keyEvent(with: .keyDown, location: .zero, modifierFlags: .command,
+                timestamp: 0, windowNumber: 0, context: nil, characters: character,
+                charactersIgnoringModifiers: character, isARepeat: false, keyCode: code)!
+            let count = navigation.count
+            app.sendEvent(shortcut)
+            precondition(navigation.count == count, "Ambient navigation must fail")
+            app.dispatchDeviceEvent(shortcut)
+            precondition(navigation.count == count + 1, "Authorized navigation must run once")
+            app.sendEvent(shortcut)
+            app.sendEvent(NSEvent(cgEvent: shortcut.cgEvent!)!)
+            precondition(navigation.count == count + 1, "Replayed and copied navigation must fail")
+        }
+        precondition(navigation == [.back, .forward, .reloadOrStop])
+        #endif
         print("Device dispatch: exact identity, one-time delivery, copied-event rejection, and reset passed")
     }
 }

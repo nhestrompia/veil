@@ -1,6 +1,6 @@
 # Agent attack inventory
 
-This inventory separates attempted routes from remaining work. It does not enumerate every possible future attack. The current protected target is PixelKeyboardExperiment. Earlier pixel-only findings remain identified separately.
+This inventory records earlier attacks and remaining work. The current combined preview is AgentFreeBrowserPreview. Its physical control and external attacks are pending. The rows below describe the earlier named builds. Their results do not transfer automatically to the preview. See [integration findings](integrated-browser-findings.md).
 
 | Agent method | What the agent tried | Result and scope |
 | --- | --- | --- |

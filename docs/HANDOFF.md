@@ -1,5 +1,15 @@
 # Current research state
 
+Milestone 133 builds the first combined direct-rendering browser at dist/AgentFreeBrowserPreview.app. It combines ordinary sharing-none capture restriction, the existing device-keyboard gate, accessibility boundaries, inspection restrictions, and export/navigation policies. It omits protected media and high-level backdrops. See [integration findings](integrated-browser-findings.md) and [results](evidence/integrated-browser-results.json).
+
+All 14 owner-driven navigation and policy checks pass. Address/response and exact-event gate checks pass. The real app reports effective restrictions and sends no unattended launch-page request, while its control sends one. Input Monitoring is off, so the startup verdict remains inconclusive. No new grant request occurs. All test hosts and fixture servers stop, and granted helper images remain unchanged.
+
+The next step needs separate Input Monitoring consent for AgentFreeBrowserPreview. Its exact image and unexecuted request are pinned in docs/evidence/integrated-browser-permission-manifest.json. Preserve this image for human completion and external attacks. Do not rebuild it, refresh other grants, use root, or install hooks. No physical completion is yet recorded for this build.
+
+After consent, obtain one physical page-completion control and keep that same browser process for attacks. NativeProbe accepts research browser bundles for scoped window/AX reads. The capture-stress helper accepts only InternalKeyboardControl. Do not spoof its target identity or transfer diagnostic capture results to this preview. Pointer support, general website compatibility, behavior classification, and lifecycle/process-isolation integration remain open. Agent-free browsing remains unproven.
+
+## Capture research before integration
+
 Milestone 132 confirms effective Screen Recording for CaptureStressProbe after the approved request and user enablement. Preserve its pinned source and executable. No permission question remains for this helper. See [live findings](capture-stress-live-findings.md).
 
 Two clear controls fail foreground calibration, so neither comparison launches a restricted candidate. The coordinated trial recovers nine initial-display samples and ten independent-window samples, then fails before returned-display samples. Both streams stop and all research hosts, helpers, and fixtures exit. The 30-second mode remains untested. These trials are inconclusive, not blocking results.

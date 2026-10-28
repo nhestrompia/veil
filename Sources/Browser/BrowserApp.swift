@@ -1,6 +1,9 @@
 import AppKit
 import WebKit
 import Carbon
+#if INTEGRATED_BROWSER && !DEVICE_KEYBOARD_EXPERIMENT
+#error("The integrated preview requires device keyboard routing")
+#endif
 #if DEVICE_KEYBOARD_EXPERIMENT
 import IOKit.hidsystem
 #endif
@@ -57,7 +60,11 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
         #elseif AX_BOUNDARY_EXPERIMENT
         let name = "AX Boundary Experiment"
         #elseif DEVICE_KEYBOARD_EXPERIMENT
+        #if INTEGRATED_BROWSER
+        let name = "Agent-free Browser Preview"
+        #else
         let name = "Device Keyboard Experiment"
+        #endif
         #else
         let name = "AgentFreeBrowser Research"
         #endif
@@ -123,6 +130,15 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
         #endif
         #endif
         window.contentView = content
+        #if INTEGRATED_BROWSER
+        window.isOpaque = true
+        window.backgroundColor = .windowBackgroundColor
+        guard window.sharingType == .none, window.level == .normal else {
+            print("INTEGRATED_BROWSER refused=window-policy")
+            NSApp.terminate(nil)
+            return
+        }
+        #endif
         observeNavigation()
         #if !BROWSER_NAVIGATION_CONTROL
         window.makeKeyAndOrderFront(nil)
@@ -151,6 +167,15 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
         menu.addItem(editItem)
         #else
         (NSApp as? DeviceKeyboardApplication)?.onOpenLocation = { [weak self] in self?.focusAddress() }
+        #if INTEGRATED_BROWSER
+        (NSApp as? DeviceKeyboardApplication)?.onNavigation = { [weak self] command in
+            switch command {
+            case .back: self?.goBack()
+            case .forward: self?.goForward()
+            case .reloadOrStop: self?.reloadPage()
+            }
+        }
+        #endif
         #endif
         NSApp.mainMenu = menu
 
@@ -174,7 +199,16 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
             self.status.stringValue = "Keyboard ready. Press Return to open the address. Mouse input is disabled."
             self.focusAddress()
         }
+        #if !BROWSER_NAVIGATION_CONTROL
         deviceKeyboard?.start()
+        #endif
+        #if INTEGRATED_BROWSER
+        let granted = IOHIDCheckAccess(kIOHIDRequestTypeListenEvent) == kIOHIDAccessTypeGranted
+        if !granted {
+            status.stringValue = "Input Monitoring is required for this keyboard-only preview. Command-Tab switches to another app."
+        }
+        print("INTEGRATED_BROWSER ready=true ordinaryWindow=\(window.level == .normal) sharingRestricted=\(window.sharingType == .none) contentRestricted=\(BrowserRuntimePolicy.contentIsRestricted(webView.configuration)) inspectable=\(webView.isInspectable) inputMonitoringGranted=\(granted) diagnosticInput=false")
+        #endif
         #endif
         fflush(stdout)
     }
@@ -251,7 +285,11 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
         status.stringValue = "Accessibility boundary experiment. Native input prevention is unproven."
         #endif
         #if DEVICE_KEYBOARD_EXPERIMENT
+        #if INTEGRATED_BROWSER
+        status.stringValue = "Keyboard only. Command-L: address. Command-[ and ]: history. Command-R: reload. US ASCII only. Research preview."
+        #else
         status.stringValue = "Built-in keyboard only. Command-L selects the address. Mouse input is disabled. US ASCII only. Research build."
+        #endif
         #endif
     }
 
@@ -325,6 +363,13 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
     }
 
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool { true }
+
+    #if INTEGRATED_BROWSER
+    func application(_ application: NSApplication, open urls: [URL]) {
+        print("INTEGRATED_BROWSER externalOpenRefused=true count=\(urls.count)")
+        fflush(stdout)
+    }
+    #endif
 
     func applicationDidBecomeActive(_ notification: Notification) {
         #if SECURE_INPUT_EXPERIMENT || REDUCED_EXPOSURE_EXPERIMENT

@@ -96,7 +96,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--repetitions", type=int, default=3)
     parser.add_argument("--output", type=Path, default=ROOT / "artifacts/launch-navigation")
-    parser.add_argument("--targets", nargs="+", choices=["InspectableControl", "DeviceKeyboardExperiment", "AddressStartupControl"],
+    parser.add_argument("--targets", nargs="+", choices=["InspectableControl", "DeviceKeyboardExperiment", "AddressStartupControl", "AgentFreeBrowserPreview"],
                         default=["InspectableControl", "DeviceKeyboardExperiment"])
     args = parser.parse_args()
     run(args.repetitions, args.output, args.targets)

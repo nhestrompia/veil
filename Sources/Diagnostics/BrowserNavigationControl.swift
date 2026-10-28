@@ -52,12 +52,17 @@ private final class NavigationDriver: NSObject, NSApplicationDelegate {
 
     private func run() async throws {
         let args = CommandLine.arguments
+        #if INTEGRATED_BROWSER
+        let windowTitle = "Agent-free Browser Preview"
+        #else
+        let windowTitle = "AgentFreeBrowser Research"
+        #endif
         guard args.count == 3, args[1] == "--fixture", let base = URL(string: args[2]),
               base.scheme == "http", base.host == "127.0.0.1", let port = base.port,
               (1024...65535).contains(port), base.user == nil, base.password == nil,
               base.query == nil, base.fragment == nil,
               base.path.range(of: "\\A/navigation/[0-9a-f]{16}\\z", options: .regularExpression) != nil,
-              let window = NSApp.windows.first(where: { $0.title == "AgentFreeBrowser Research" }),
+              let window = NSApp.windows.first(where: { $0.title == windowTitle }),
               let content = window.contentView else {
             throw NSError(domain: "navigation-control-setup", code: 4)
         }
@@ -70,6 +75,13 @@ private final class NavigationDriver: NSObject, NSApplicationDelegate {
             throw NSError(domain: "navigation-controls-missing", code: 5)
         }
         page = view
+        #if INTEGRATED_BROWSER
+        try require(window is AXBoundaryWindow && view is AXBoundaryWebView, "integrated-boundary-types")
+        try require(window.sharingType == .none && window.level == .normal, "ordinary-restricted-window")
+        try require(!view.isInspectable && BrowserRuntimePolicy.contentIsRestricted(view.configuration), "integrated-content-policy")
+        try require((NSApp as? DeviceKeyboardApplication)?.onNavigation != nil && NSApp.mainMenu?.items.count == 1,
+                    "gated-navigation-shortcuts")
+        #endif
         try require(!back.isEnabled && !forward.isEnabled && !reload.isEnabled, "empty-history-controls")
         let a = base.appendingPathComponent("a"), b = base.appendingPathComponent("b")
         try submit(field, a)
@@ -146,7 +158,12 @@ private final class NavigationDriver: NSObject, NSApplicationDelegate {
 private enum BrowserNavigationControl {
     @MainActor static func main() {
         guard getuid() != 0, geteuid() != 0, BrowserRuntimePolicy.disableDeveloperExtras() else { exit(64) }
+        #if INTEGRATED_BROWSER
+        let app = DeviceKeyboardApplication.shared
+        precondition(app is DeviceKeyboardApplication)
+        #else
         let app = NSApplication.shared
+        #endif
         let driver = NavigationDriver()
         app.setActivationPolicy(.prohibited)
         app.delegate = driver

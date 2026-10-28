@@ -78,19 +78,20 @@ def fixture():
         thread.join(timeout=2)
 
 
-def run(directory):
+def run(directory, integrated=False):
     if os.getuid() == 0 or os.geteuid() == 0:
         raise ValueError('Use an ordinary user')
     directory = directory.resolve()
     if not directory.is_relative_to(ROOT / 'artifacts'):
         raise ValueError('Use a workspace artifact directory')
-    directory.mkdir()
-    if matching_pids(BINARY):
+    directory.mkdir(parents=True)
+    binary = ROOT / '.build/IntegratedBrowserNavigation' if integrated else BINARY
+    if matching_pids(binary):
         raise RuntimeError('An existing navigation control must remain untouched')
     result = {'passed': False, 'ordinaryUID': os.getuid(), 'rootRun': False,
-              'binarySHA256': hashlib.sha256(BINARY.read_bytes()).hexdigest()}
+              'binarySHA256': hashlib.sha256(binary.read_bytes()).hexdigest(), 'integrated': integrated}
     with fixture() as (url, receipts), (directory / 'app.stderr').open('wb') as errors:
-        process = subprocess.Popen([str(BINARY), '--fixture', url], stdin=subprocess.DEVNULL,
+        process = subprocess.Popen([str(binary), '--fixture', url], stdin=subprocess.DEVNULL,
                                    stdout=subprocess.PIPE, stderr=errors)
         try:
             stdout = collect_stdout(process, timeout=30, limit=65536)
@@ -115,7 +116,7 @@ def run(directory):
             result.update(native=native, hostExitCode=process.returncode,
                           receipts=list(receipts), requestCounts=counts, remainingMeasuredPIDs=remaining)
             result['passed'] = (process.returncode == 0 and native.get('passed') is True
-                and len(native.get('checks', {})) == 10 and all(native['checks'].values())
+                and len(native.get('checks', {})) == (14 if integrated else 10) and all(native['checks'].values())
                 and len(native.get('rolePIDs', {})) == 3 and not remaining
                 and counts['a'] >= 1 and counts['b'] >= 2 and counts['slow'] >= 1 and counts['drop'] >= 1)
         except Exception as error:
@@ -136,6 +137,8 @@ def run(directory):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--out', required=True, type=Path)
-    result = run(parser.parse_args().out)
+    parser.add_argument('--integrated', action='store_true')
+    args = parser.parse_args()
+    result = run(args.out, integrated=args.integrated)
     print(json.dumps(result, indent=2))
     raise SystemExit(0 if result['passed'] else 1)

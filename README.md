@@ -2,9 +2,9 @@
 
 # agentfreebrowser
 
-A macOS-only research MVP for an agent-free browser. The frozen preview has a reproducible focus-action bypass. A new [engine candidate](dist/AgentFreeBrowserEngine.app) integrates a defense and passes six matched diagnostic comparisons. Physical validation of its new identity remains pending. See the [publication report](docs/publication-report.md), [engine findings](docs/focus-engine-browser-findings.md), and [MVP scope](docs/mvp-scope.md).
+A macOS-only research MVP for an agent-free browser. The current [engine browser](dist/AgentFreeBrowserEngine.app) passes physical text entry and the live focus-attack repeat. A calibrated global key-code route also fails to operate it. See the [live MVP tests](docs/focus-engine-live-findings.md). The frozen preview retains its original bypass. See the [publication report](docs/publication-report.md), [engine findings](docs/focus-engine-browser-findings.md), and [MVP scope](docs/mvp-scope.md).
 
-Milestone 152 records no new actions across 18 stable activation cycles, with successful resumed typing controls. Native-mode controls reproduce the actions. The new app requires this workspace's custom engine and is not a distribution build. Its Input Monitoring grant has not been requested. Earlier capture and input results apply to the frozen preview.
+Milestone 152 records no new actions across 18 stable activation cycles, with successful resumed typing controls. Native-mode controls reproduce the actions. The new app requires this workspace's custom engine and is not a distribution build. Its approved Input Monitoring grant is effective. Milestone 153 adds new-image Accessibility and scoped screenshot comparisons. Unfiltered recording and scripted inspector acceptance remain open.
 
 Milestone 151 remains the vulnerable-build result. Three app activation cycles each cause one accepted action in the actual preview, with zero admitted input. The page has a normal focus handler. This does not show search automation on Google, Wikipedia, or GitHub.
 

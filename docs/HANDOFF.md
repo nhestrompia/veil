@@ -1,5 +1,19 @@
 # Current research state
 
+## Milestone 153
+
+Physical text entry and the live focus defense pass in AgentFreeBrowserEngine PID 2082, image 12de797fbbfea6f5536b13b8ba890354170f3561f681620bb49be42f2fdf7e21. The approved Input Monitoring grant is effective. Native LaunchServices fixes consent attribution after direct CLI launch reports access off. Commit ttq contains the launcher repair. No granted browser image changes.
+
+The user completes one physical task, leaves the window untouched, then confirms a visible page and completes a second task after focus and observation trials. Three actual focus cycles have zero new actions and zero admitted input. Both host AX and two scoped snapshot methods pass readable before/after controls and recover no candidate marker. AX form action exposes no candidate controls. The system screenshot fails and remains inconclusive. Native computer-use binding times out and supplies no defense result.
+
+A directed-window native reference fails, so the candidate is skipped. A fresh global key-code reference works, then the exact engine browser records zero admitted events, 29 refusals, and no action. LinearMouse and DockDoor restore after both input phases, with posting probes stopped first. The oracle retains only the two human actions. All 14 frozen research images retain their hashes.
+
+Commit upm adds observation tooling and the separate EngineCompositorProbe. Its final hash is 3186515e7a0ac3e52681f485b0047f0f8dcec2a4ef7f8b3f6d3a9e16458d6fe4. No Screen Recording request, grant, or capture runs. An earlier ungranted metadata-only image refuses another overlapping window. Its backdrop closes. Preserve that refusal and do not inspect the overlap or weaken coverage guards. The final helper refuses a direct unapproved sequence before capture. Partial-image disclosure survives later OCR failure. Fifty relevant tests pass.
+
+The browser and private fixture remain held under the existing one-hour watchdog. Session: artifacts/focus-engine-153/physical-session/session.json. Physical declaration: artifacts/focus-engine-153/physical-control.json. Stop file: artifacts/focus-engine-153/physical-session/stop. Check liveness before more work. If the watchdog closes it, obtain a fresh physical control in a new session. All transient helpers and references are stopped.
+
+Next: obtain approval to add the final EngineCompositorProbe to Screen Recording, clear the research crop through physical user action, then run tools/run_engine_compositor.py with the same session and declaration. Its normal mode pairs unfiltered/owned/unfiltered recording with readable references. Current capture, inspector, renderer read, password, recovery, and packaging gates remain. See focus-engine-live-findings.md and evidence/focus-engine-live-results.json.
+
 ## Milestone 152
 
 The focus fix is integrated in a separate AgentFreeBrowserEngine target. It uses the existing patched WebKit content-activity projection before view creation and checks copied configuration. Native window state, router foreground checks, and password-input ownership remain real. No JavaScript handler suppression or fake native getters are used. Code milestone mty adds the target, guarded launcher, fixture comparisons, and prepared physical-session path. Follow-up oul adds the app-level request guard and pins the final image.

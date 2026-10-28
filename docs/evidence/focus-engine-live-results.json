@@ -1,0 +1,3493 @@
+{
+  "milestone": 153,
+  "recordedUnixSeconds": 1793210601.064678,
+  "candidatePID": 2082,
+  "candidateSHA256": "12de797fbbfea6f5536b13b8ba890354170f3561f681620bb49be42f2fdf7e21",
+  "physicalControl": {
+    "pid": 2082,
+    "binarySHA256": "12de797fbbfea6f5536b13b8ba890354170f3561f681620bb49be42f2fdf7e21",
+    "deviceBound": true,
+    "acceptedSubmissions": 1,
+    "operatorDeclaresPhysicalCompletion": true,
+    "operatorDeclaresUntouchedAfterCompletion": true,
+    "reportedResult": "Task complete; I will leave it untouched",
+    "recordedUnixSeconds": 1793209737.507482
+  },
+  "resumedControl": {
+    "pid": 2082,
+    "binarySHA256": "12de797fbbfea6f5536b13b8ba890354170f3561f681620bb49be42f2fdf7e21",
+    "acceptedSubmissions": 2,
+    "deviceBound": true,
+    "operatorReport": "Page visible; task completes again",
+    "scope": "Physical repeat after focus and observation trials, before the later native input trials."
+  },
+  "focusAttack": {
+    "status": "no-action-observed-in-physical-session",
+    "pid": 2082,
+    "binarySHA256": "12de797fbbfea6f5536b13b8ba890354170f3561f681620bb49be42f2fdf7e21",
+    "cycles": [
+      {
+        "stationaryNewActions": 0,
+        "systemInputPosted": false,
+        "AXActionSent": false,
+        "physicalInputAbsenceVerified": false,
+        "away": {
+          "active": true,
+          "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+          "executableURLStable": true,
+          "hidden": false,
+          "hooksInstalled": false,
+          "inputPosted": false,
+          "operation": "activate",
+          "operationAttempted": true,
+          "operationSucceeded": true,
+          "pid": 11273,
+          "startIdentityStable": true,
+          "status": "observed",
+          "targetTerminated": false,
+          "measuredEndStateReached": true,
+          "targetActive": true
+        },
+        "back": {
+          "active": true,
+          "binarySHA256": "12de797fbbfea6f5536b13b8ba890354170f3561f681620bb49be42f2fdf7e21",
+          "executableURLStable": true,
+          "hidden": false,
+          "hooksInstalled": false,
+          "inputPosted": false,
+          "operation": "activate",
+          "operationAttempted": true,
+          "operationSucceeded": true,
+          "pid": 2082,
+          "startIdentityStable": true,
+          "status": "observed",
+          "targetTerminated": false,
+          "measuredEndStateReached": true,
+          "targetActive": true
+        },
+        "newSubmissions": [],
+        "acceptedInputEvents": 0,
+        "refusedInputEvents": 1,
+        "verdict": "no-action-observed"
+      },
+      {
+        "stationaryNewActions": 0,
+        "systemInputPosted": false,
+        "AXActionSent": false,
+        "physicalInputAbsenceVerified": false,
+        "away": {
+          "active": true,
+          "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+          "executableURLStable": true,
+          "hidden": false,
+          "hooksInstalled": false,
+          "inputPosted": false,
+          "operation": "activate",
+          "operationAttempted": true,
+          "operationSucceeded": true,
+          "pid": 11273,
+          "startIdentityStable": true,
+          "status": "observed",
+          "targetTerminated": false,
+          "measuredEndStateReached": true,
+          "targetActive": true
+        },
+        "back": {
+          "active": true,
+          "binarySHA256": "12de797fbbfea6f5536b13b8ba890354170f3561f681620bb49be42f2fdf7e21",
+          "executableURLStable": true,
+          "hidden": false,
+          "hooksInstalled": false,
+          "inputPosted": false,
+          "operation": "activate",
+          "operationAttempted": true,
+          "operationSucceeded": true,
+          "pid": 2082,
+          "startIdentityStable": true,
+          "status": "observed",
+          "targetTerminated": false,
+          "measuredEndStateReached": true,
+          "targetActive": true
+        },
+        "newSubmissions": [],
+        "acceptedInputEvents": 0,
+        "refusedInputEvents": 2,
+        "verdict": "no-action-observed"
+      },
+      {
+        "stationaryNewActions": 0,
+        "systemInputPosted": false,
+        "AXActionSent": false,
+        "physicalInputAbsenceVerified": false,
+        "away": {
+          "active": true,
+          "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+          "executableURLStable": true,
+          "hidden": false,
+          "hooksInstalled": false,
+          "inputPosted": false,
+          "operation": "activate",
+          "operationAttempted": true,
+          "operationSucceeded": true,
+          "pid": 11273,
+          "startIdentityStable": true,
+          "status": "observed",
+          "targetTerminated": false,
+          "measuredEndStateReached": true,
+          "targetActive": true
+        },
+        "back": {
+          "active": true,
+          "binarySHA256": "12de797fbbfea6f5536b13b8ba890354170f3561f681620bb49be42f2fdf7e21",
+          "executableURLStable": true,
+          "hidden": false,
+          "hooksInstalled": false,
+          "inputPosted": false,
+          "operation": "activate",
+          "operationAttempted": true,
+          "operationSucceeded": true,
+          "pid": 2082,
+          "startIdentityStable": true,
+          "status": "observed",
+          "targetTerminated": false,
+          "measuredEndStateReached": true,
+          "targetActive": true
+        },
+        "newSubmissions": [],
+        "acceptedInputEvents": 0,
+        "refusedInputEvents": 2,
+        "verdict": "no-action-observed"
+      }
+    ],
+    "externalInputPosted": false,
+    "physicalInputAbsenceVerified": false,
+    "engineIdentity": {
+      "pid": 10963,
+      "executable": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development",
+      "mappedFrameworks": {
+        "WebKit": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebKit.framework/Versions/A/WebKit",
+        "JavaScriptCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/JavaScriptCore.framework/Versions/A/JavaScriptCore",
+        "WebCore": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release/WebCore.framework/Versions/A/WebCore"
+      }
+    },
+    "sinkStopped": true,
+    "oracleFinal": {
+      "id": "678ee8550cb6c6b0",
+      "secret": "AFB-66237F8D",
+      "submissions": [
+        {
+          "accepted": true
+        }
+      ],
+      "events": [
+        {
+          "type": "page-ready"
+        },
+        {
+          "type": "activity-visible-focused",
+          "t": 27
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        }
+      ]
+    }
+  },
+  "observation": {
+    "status": "inconclusive",
+    "candidatePID": 2082,
+    "candidateSHA256": "12de797fbbfea6f5536b13b8ba890354170f3561f681620bb49be42f2fdf7e21",
+    "physicalInputAbsenceVerified": false,
+    "systemInputPosted": false,
+    "AXActionsLimitedToDisposableFixture": true,
+    "rows": [
+      {
+        "route": "ax",
+        "verdict": "marker-not-recovered-in-bounded-observation",
+        "before": {
+          "probe": {
+            "elements": [
+              {
+                "actions": [],
+                "AXRole": "AXApplication",
+                "AXTitle": "InspectableControl"
+              },
+              {
+                "actions": [
+                  "AXShowMenu",
+                  "AXScrollToVisible"
+                ],
+                "AXDescription": "Page feature research fixture",
+                "AXRole": "AXWebArea",
+                "AXTitle": "",
+                "AXValue": "",
+                "position": [
+                  100,
+                  186
+                ],
+                "size": [
+                  1000,
+                  668
+                ]
+              },
+              {
+                "actions": [
+                  "AXShowMenu",
+                  "AXScrollToVisible"
+                ],
+                "AXDescription": "",
+                "AXRole": "AXHeading",
+                "AXTitle": "Page feature research",
+                "position": [
+                  156,
+                  218
+                ],
+                "size": [
+                  888,
+                  47
+                ]
+              },
+              {
+                "actions": [
+                  "AXShowMenu",
+                  "AXScrollToVisible"
+                ],
+                "AXDescription": "",
+                "AXRole": "AXStaticText",
+                "AXTitle": "",
+                "AXValue": "Page feature research",
+                "position": [
+                  156,
+                  218
+                ],
+                "size": [
+                  405,
+                  47
+                ]
+              },
+              {
+                "actions": [
+                  "AXShowMenu",
+                  "AXScrollToVisible"
+                ],
+                "AXDescription": "",
+                "AXRole": "AXGroup",
+                "AXTitle": "",
+                "AXValue": "",
+                "position": [
+                  156,
+                  291
+                ],
+                "size": [
+                  888,
+                  24
+                ]
+              },
+              {
+                "actions": [
+                  "AXShowMenu",
+                  "AXScrollToVisible"
+                ],
+                "AXDescription": "",
+                "AXRole": "AXStaticText",
+                "AXTitle": "",
+                "AXValue": "Disposable local task. Disclosure marker: ",
+                "position": [
+                  156,
+                  291
+                ],
+                "size": [
+                  362,
+                  24
+                ]
+              },
+              {
+                "actions": [
+                  "AXShowMenu",
+                  "AXScrollToVisible"
+                ],
+                "AXDescription": "",
+                "AXRole": "AXStaticText",
+                "AXTitle": "",
+                "AXValue": "AFB-2F632B4B",
+                "position": [
+                  517,
+                  291
+                ],
+                "size": [
+                  149,
+                  24
+                ]
+              },
+              {
+                "actions": [
+                  "AXShowMenu",
+                  "AXScrollToVisible"
+                ],
+                "AXDescription": "",
+                "AXRole": "AXGroup",
+                "AXTitle": "",
+                "AXValue": "",
+                "position": [
+                  156,
+                  334
+                ],
+                "size": [
+                  888,
+                  173
+                ]
+              },
+              {
+                "actions": [
+                  "AXShowMenu",
+                  "AXScrollToVisible"
+                ],
+                "AXDescription": "",
+                "AXRole": "AXGroup",
+                "AXTitle": "",
+                "AXValue": "",
+                "position": [
+                  156,
+                  334
+                ],
+                "size": [
+                  888,
+                  173
+                ]
+              },
+              {
+                "actions": [
+                  "AXShowMenu",
+                  "AXScrollToVisible"
+                ],
+                "AXDescription": "",
+                "AXRole": "AXStaticText",
+                "AXTitle": "",
+                "AXValue": "Enter native-input",
+                "position": [
+                  156,
+                  334
+                ],
+                "size": [
+                  888,
+                  44
+                ]
+              },
+              {
+                "actions": [
+                  "AXShowMenu",
+                  "AXScrollToVisible"
+                ],
+                "AXDescription": "",
+                "AXRole": "AXStaticText",
+                "AXTitle": "",
+                "AXValue": "Enter native-input",
+                "position": [
+                  166,
+                  344
+                ],
+                "size": [
+                  157,
+                  24
+                ]
+              },
+              {
+                "actions": [
+                  "AXPress",
+                  "AXShowMenu",
+                  "AXScrollToVisible"
+                ],
+                "AXDescription": "Enter native-input",
+                "AXRole": "AXTextField",
+                "AXTitle": "Enter native-input",
+                "AXValue": "",
+                "position": [
+                  156,
+                  393
+                ],
+                "size": [
+                  462,
+                  51
+                ]
+              },
+              {
+                "actions": [
+                  "AXPress",
+                  "AXShowMenu",
+                  "AXScrollToVisible"
+                ],
+                "AXDescription": "",
+                "AXRole": "AXButton",
+                "AXTitle": "Record action",
+                "AXValue": "",
+                "position": [
+                  156,
+                  459
+                ],
+                "size": [
+                  145,
+                  48
+                ]
+              },
+              {
+                "actions": [
+                  "AXShowMenu",
+                  "AXScrollToVisible"
+                ],
+                "AXDescription": "",
+                "AXRole": "AXGroup",
+                "AXTitle": "No action recorded.",
+                "AXValue": "",
+                "position": [
+                  156,
+                  522
+                ],
+                "size": [
+                  888,
+                  24
+                ]
+              },
+              {
+                "actions": [
+                  "AXShowMenu",
+                  "AXScrollToVisible"
+                ],
+                "AXDescription": "",
+                "AXRole": "AXStaticText",
+                "AXTitle": "",
+                "AXValue": "No action recorded.",
+                "position": [
+                  156,
+                  522
+                ],
+                "size": [
+                  173,
+                  24
+                ]
+              },
+              {
+                "actions": [
+                  "AXRaise"
+                ],
+                "AXRole": "AXWindow",
+                "AXTitle": "Inspectable Control",
+                "position": [
+                  100,
+                  110
+                ],
+                "size": [
+                  1000,
+                  772
+                ]
+              },
+              {
+                "actions": [
+                  "AXPress"
+                ],
+                "AXRole": "AXButton",
+                "AXTitle": "Back",
+                "position": [
+                  111,
+                  151
+                ],
+                "size": [
+                  56,
+                  26
+                ]
+              },
+              {
+                "actions": [
+                  "AXShowMenu",
+                  "AXConfirm"
+                ],
+                "AXDescription": "Website address",
+                "AXRole": "AXTextField",
+                "AXValue": "http://127.0.0.1:56581/trial/1c46268b78e97e6f",
+                "position": [
+                  173,
+                  151
+                ],
+                "size": [
+                  842.5,
+                  26
+                ]
+              },
+              {
+                "actions": [
+                  "AXPress"
+                ],
+                "AXRole": "AXButton",
+                "AXTitle": "Reload",
+                "position": [
+                  1021.5,
+                  151
+                ],
+                "size": [
+                  67.5,
+                  26
+                ]
+              },
+              {
+                "actions": [],
+                "AXRole": "AXGroup",
+                "position": [
+                  100,
+                  186
+                ],
+                "size": [
+                  1000,
+                  668
+                ]
+              },
+              {
+                "actions": [],
+                "AXRole": "AXGroup",
+                "position": [
+                  100,
+                  186
+                ],
+                "size": [
+                  1000,
+                  668
+                ]
+              },
+              {
+                "actions": [
+                  "AXShowMenu",
+                  "AXScrollToVisible"
+                ],
+                "AXDescription": "",
+                "AXRole": "AXScrollArea",
+                "AXTitle": "",
+                "AXValue": "",
+                "position": [
+                  100,
+                  186
+                ],
+                "size": [
+                  1000,
+                  668
+                ]
+              },
+              {
+                "actions": [],
+                "AXRole": "AXStaticText",
+                "AXValue": "Inspection: control enabled. Desktop capture and input: unprotected.",
+                "position": [
+                  111,
+                  859
+                ],
+                "size": [
+                  978,
+                  16
+                ]
+              },
+              {
+                "actions": [
+                  "AXPress"
+                ],
+                "AXRole": "AXButton",
+                "position": [
+                  108,
+                  118
+                ],
+                "size": [
+                  16,
+                  16
+                ]
+              },
+              {
+                "actions": [
+                  "AXPress",
+                  "AXZoomWindow",
+                  "AXShowMenu"
+                ],
+                "AXRole": "AXButton",
+                "position": [
+                  154,
+                  118
+                ],
+                "size": [
+                  16,
+                  16
+                ]
+              },
+              {
+                "actions": [],
+                "AXRole": "AXGroup",
+                "position": [
+                  155,
+                  119
+                ],
+                "size": [
+                  14,
+                  14
+                ]
+              },
+              {
+                "actions": [
+                  "AXPress"
+                ],
+                "AXRole": "AXButton",
+                "position": [
+                  131,
+                  118
+                ],
+                "size": [
+                  16,
+                  16
+                ]
+              },
+              {
+                "actions": [],
+                "AXRole": "AXStaticText",
+                "AXValue": "Inspectable Control",
+                "position": [
+                  182,
+                  118
+                ],
+                "size": [
+                  132,
+                  16
+                ]
+              }
+            ],
+            "pid": 11485,
+            "status": "observed",
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "completed": true,
+          "markerRecovered": true,
+          "newAcceptedActions": 0,
+          "ocr": {},
+          "worked": true,
+          "pid": 11485,
+          "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+          "cleanupVerified": true
+        },
+        "candidate": {
+          "probe": {
+            "elements": [
+              {
+                "actions": [],
+                "AXRole": "AXApplication",
+                "AXTitle": "AgentFreeBrowserEngine"
+              },
+              {
+                "actions": [],
+                "AXRole": "AXWindow",
+                "AXTitle": "Agent-free Browser Engine Candidate",
+                "position": [
+                  100,
+                  110
+                ],
+                "size": [
+                  1000,
+                  772
+                ]
+              }
+            ],
+            "pid": 2082,
+            "status": "observed",
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "completed": true,
+          "markerRecovered": false,
+          "newAcceptedActions": 0,
+          "ocr": {},
+          "worked": false
+        },
+        "after": {
+          "probe": {
+            "elements": [
+              {
+                "actions": [],
+                "AXRole": "AXApplication",
+                "AXTitle": "InspectableControl"
+              },
+              {
+                "actions": [
+                  "AXShowMenu",
+                  "AXScrollToVisible"
+                ],
+                "AXDescription": "Page feature research fixture",
+                "AXRole": "AXWebArea",
+                "AXTitle": "",
+                "AXValue": "",
+                "position": [
+                  100,
+                  186
+                ],
+                "size": [
+                  1000,
+                  668
+                ]
+              },
+              {
+                "actions": [
+                  "AXShowMenu",
+                  "AXScrollToVisible"
+                ],
+                "AXDescription": "",
+                "AXRole": "AXHeading",
+                "AXTitle": "Page feature research",
+                "position": [
+                  156,
+                  218
+                ],
+                "size": [
+                  888,
+                  47
+                ]
+              },
+              {
+                "actions": [
+                  "AXShowMenu",
+                  "AXScrollToVisible"
+                ],
+                "AXDescription": "",
+                "AXRole": "AXStaticText",
+                "AXTitle": "",
+                "AXValue": "Page feature research",
+                "position": [
+                  156,
+                  218
+                ],
+                "size": [
+                  405,
+                  47
+                ]
+              },
+              {
+                "actions": [
+                  "AXShowMenu",
+                  "AXScrollToVisible"
+                ],
+                "AXDescription": "",
+                "AXRole": "AXGroup",
+                "AXTitle": "",
+                "AXValue": "",
+                "position": [
+                  156,
+                  291
+                ],
+                "size": [
+                  888,
+                  24
+                ]
+              },
+              {
+                "actions": [
+                  "AXShowMenu",
+                  "AXScrollToVisible"
+                ],
+                "AXDescription": "",
+                "AXRole": "AXStaticText",
+                "AXTitle": "",
+                "AXValue": "Disposable local task. Disclosure marker: ",
+                "position": [
+                  156,
+                  291
+                ],
+                "size": [
+                  362,
+                  24
+                ]
+              },
+              {
+                "actions": [
+                  "AXShowMenu",
+                  "AXScrollToVisible"
+                ],
+                "AXDescription": "",
+                "AXRole": "AXStaticText",
+                "AXTitle": "",
+                "AXValue": "AFB-531BA668",
+                "position": [
+                  517,
+                  291
+                ],
+                "size": [
+                  149,
+                  24
+                ]
+              },
+              {
+                "actions": [
+                  "AXShowMenu",
+                  "AXScrollToVisible"
+                ],
+                "AXDescription": "",
+                "AXRole": "AXGroup",
+                "AXTitle": "",
+                "AXValue": "",
+                "position": [
+                  156,
+                  334
+                ],
+                "size": [
+                  888,
+                  173
+                ]
+              },
+              {
+                "actions": [
+                  "AXShowMenu",
+                  "AXScrollToVisible"
+                ],
+                "AXDescription": "",
+                "AXRole": "AXGroup",
+                "AXTitle": "",
+                "AXValue": "",
+                "position": [
+                  156,
+                  334
+                ],
+                "size": [
+                  888,
+                  173
+                ]
+              },
+              {
+                "actions": [
+                  "AXShowMenu",
+                  "AXScrollToVisible"
+                ],
+                "AXDescription": "",
+                "AXRole": "AXStaticText",
+                "AXTitle": "",
+                "AXValue": "Enter native-input",
+                "position": [
+                  156,
+                  334
+                ],
+                "size": [
+                  888,
+                  44
+                ]
+              },
+              {
+                "actions": [
+                  "AXShowMenu",
+                  "AXScrollToVisible"
+                ],
+                "AXDescription": "",
+                "AXRole": "AXStaticText",
+                "AXTitle": "",
+                "AXValue": "Enter native-input",
+                "position": [
+                  166,
+                  344
+                ],
+                "size": [
+                  157,
+                  24
+                ]
+              },
+              {
+                "actions": [
+                  "AXPress",
+                  "AXShowMenu",
+                  "AXScrollToVisible"
+                ],
+                "AXDescription": "Enter native-input",
+                "AXRole": "AXTextField",
+                "AXTitle": "Enter native-input",
+                "AXValue": "",
+                "position": [
+                  156,
+                  393
+                ],
+                "size": [
+                  462,
+                  51
+                ]
+              },
+              {
+                "actions": [
+                  "AXPress",
+                  "AXShowMenu",
+                  "AXScrollToVisible"
+                ],
+                "AXDescription": "",
+                "AXRole": "AXButton",
+                "AXTitle": "Record action",
+                "AXValue": "",
+                "position": [
+                  156,
+                  459
+                ],
+                "size": [
+                  145,
+                  48
+                ]
+              },
+              {
+                "actions": [
+                  "AXShowMenu",
+                  "AXScrollToVisible"
+                ],
+                "AXDescription": "",
+                "AXRole": "AXGroup",
+                "AXTitle": "No action recorded.",
+                "AXValue": "",
+                "position": [
+                  156,
+                  522
+                ],
+                "size": [
+                  888,
+                  24
+                ]
+              },
+              {
+                "actions": [
+                  "AXShowMenu",
+                  "AXScrollToVisible"
+                ],
+                "AXDescription": "",
+                "AXRole": "AXStaticText",
+                "AXTitle": "",
+                "AXValue": "No action recorded.",
+                "position": [
+                  156,
+                  522
+                ],
+                "size": [
+                  173,
+                  24
+                ]
+              },
+              {
+                "actions": [
+                  "AXRaise"
+                ],
+                "AXRole": "AXWindow",
+                "AXTitle": "Inspectable Control",
+                "position": [
+                  100,
+                  110
+                ],
+                "size": [
+                  1000,
+                  772
+                ]
+              },
+              {
+                "actions": [
+                  "AXPress"
+                ],
+                "AXRole": "AXButton",
+                "AXTitle": "Back",
+                "position": [
+                  111,
+                  151
+                ],
+                "size": [
+                  56,
+                  26
+                ]
+              },
+              {
+                "actions": [
+                  "AXShowMenu",
+                  "AXConfirm"
+                ],
+                "AXDescription": "Website address",
+                "AXRole": "AXTextField",
+                "AXValue": "http://127.0.0.1:56581/trial/3e9da8001d308f50",
+                "position": [
+                  173,
+                  151
+                ],
+                "size": [
+                  842.5,
+                  26
+                ]
+              },
+              {
+                "actions": [
+                  "AXPress"
+                ],
+                "AXRole": "AXButton",
+                "AXTitle": "Reload",
+                "position": [
+                  1021.5,
+                  151
+                ],
+                "size": [
+                  67.5,
+                  26
+                ]
+              },
+              {
+                "actions": [],
+                "AXRole": "AXGroup",
+                "position": [
+                  100,
+                  186
+                ],
+                "size": [
+                  1000,
+                  668
+                ]
+              },
+              {
+                "actions": [],
+                "AXRole": "AXGroup",
+                "position": [
+                  100,
+                  186
+                ],
+                "size": [
+                  1000,
+                  668
+                ]
+              },
+              {
+                "actions": [
+                  "AXShowMenu",
+                  "AXScrollToVisible"
+                ],
+                "AXDescription": "",
+                "AXRole": "AXScrollArea",
+                "AXTitle": "",
+                "AXValue": "",
+                "position": [
+                  100,
+                  186
+                ],
+                "size": [
+                  1000,
+                  668
+                ]
+              },
+              {
+                "actions": [],
+                "AXRole": "AXStaticText",
+                "AXValue": "Inspection: control enabled. Desktop capture and input: unprotected.",
+                "position": [
+                  111,
+                  859
+                ],
+                "size": [
+                  978,
+                  16
+                ]
+              },
+              {
+                "actions": [
+                  "AXPress"
+                ],
+                "AXRole": "AXButton",
+                "position": [
+                  108,
+                  118
+                ],
+                "size": [
+                  16,
+                  16
+                ]
+              },
+              {
+                "actions": [
+                  "AXPress",
+                  "AXZoomWindow",
+                  "AXShowMenu"
+                ],
+                "AXRole": "AXButton",
+                "position": [
+                  154,
+                  118
+                ],
+                "size": [
+                  16,
+                  16
+                ]
+              },
+              {
+                "actions": [],
+                "AXRole": "AXGroup",
+                "position": [
+                  155,
+                  119
+                ],
+                "size": [
+                  14,
+                  14
+                ]
+              },
+              {
+                "actions": [
+                  "AXPress"
+                ],
+                "AXRole": "AXButton",
+                "position": [
+                  131,
+                  118
+                ],
+                "size": [
+                  16,
+                  16
+                ]
+              },
+              {
+                "actions": [],
+                "AXRole": "AXStaticText",
+                "AXValue": "Inspectable Control",
+                "position": [
+                  182,
+                  118
+                ],
+                "size": [
+                  132,
+                  16
+                ]
+              }
+            ],
+            "pid": 11520,
+            "status": "observed",
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "completed": true,
+          "markerRecovered": true,
+          "newAcceptedActions": 0,
+          "ocr": {},
+          "worked": true,
+          "pid": 11520,
+          "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+          "cleanupVerified": true
+        }
+      },
+      {
+        "route": "ax-action",
+        "verdict": "no-action-observed",
+        "before": {
+          "probe": {
+            "focusError": 0,
+            "pid": 11547,
+            "pressError": 0,
+            "setValueError": 0,
+            "status": "attempted",
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "completed": true,
+          "markerRecovered": false,
+          "newAcceptedActions": 1,
+          "ocr": {},
+          "worked": true,
+          "pid": 11547,
+          "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+          "cleanupVerified": true
+        },
+        "candidate": {
+          "probe": {
+            "error": "Fixture field or action not found in AX tree",
+            "status": "inconclusive",
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "completed": false,
+          "markerRecovered": false,
+          "newAcceptedActions": 0,
+          "ocr": {},
+          "worked": false
+        },
+        "after": {
+          "probe": {
+            "focusError": 0,
+            "pid": 11587,
+            "pressError": 0,
+            "setValueError": 0,
+            "status": "attempted",
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "completed": true,
+          "markerRecovered": false,
+          "newAcceptedActions": 1,
+          "ocr": {},
+          "worked": true,
+          "pid": 11587,
+          "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+          "cleanupVerified": true
+        }
+      },
+      {
+        "route": "capture",
+        "verdict": "marker-not-recovered-in-bounded-observation",
+        "before": {
+          "probe": {
+            "frame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/focus-engine-153/observation/capture-before.png",
+            "pid": 11614,
+            "pixels": [
+              2000,
+              1544
+            ],
+            "status": "captured",
+            "windowID": 117964,
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "completed": true,
+          "markerRecovered": true,
+          "newAcceptedActions": 0,
+          "ocr": {
+            "text": [
+              {
+                "box": [
+                  0.03052325936591575,
+                  0.967984934421183,
+                  0.18168603515625,
+                  0.0210047033784303
+                ],
+                "confidence": 1,
+                "text": "\u2022 \u2022 Inspectable Control"
+              },
+              {
+                "box": [
+                  0.024681773967643202,
+                  0.9226795192436354,
+                  0.030578311920166013,
+                  0.013398023466989706
+                ],
+                "confidence": 1,
+                "text": "Back"
+              },
+              {
+                "box": [
+                  0.07848837232580845,
+                  0.919020715939669,
+                  0.2834302368164062,
+                  0.016949152081741525
+                ],
+                "confidence": 1,
+                "text": "http://127.0.0.1:56581/trial/51ab81995e1d448c"
+              },
+              {
+                "box": [
+                  0.9330249800829233,
+                  0.9221196340009806,
+                  0.043833759307861264,
+                  0.01451779400128772
+                ],
+                "confidence": 1,
+                "text": "Reload"
+              },
+              {
+                "box": [
+                  0.05668605127780444,
+                  0.798493408854448,
+                  0.4040697631835937,
+                  0.04896421877213708
+                ],
+                "confidence": 1,
+                "text": "Page feature research"
+              },
+              {
+                "box": [
+                  0.05668606853008413,
+                  0.7344559587753994,
+                  0.5130813598632813,
+                  0.024611398963730657
+                ],
+                "confidence": 1,
+                "text": "Disposable local task. Disclosure marker: AFB-CD863EE4"
+              },
+              {
+                "box": [
+                  0.06686046554028889,
+                  0.6645077720574012,
+                  0.15697674560546876,
+                  0.02475776450003986
+                ],
+                "confidence": 1,
+                "text": "Enter native-input"
+              },
+              {
+                "box": [
+                  0.06831395468593862,
+                  0.5025906740296104,
+                  0.12063953399658203,
+                  0.022833054547482856
+                ],
+                "confidence": 1,
+                "text": "Record action"
+              },
+              {
+                "box": [
+                  0.05510710998726941,
+                  0.4349187335398823,
+                  0.17615216064453124,
+                  0.024828760117446835
+                ],
+                "confidence": 1,
+                "text": "No action recorded."
+              },
+              {
+                "box": [
+                  0.010174431229560212,
+                  0.011010362633658732,
+                  0.36482556152343754,
+                  0.015544041450777257
+                ],
+                "confidence": 1,
+                "text": "Inspection: control enabled. Desktop capture and input: unprotected."
+              }
+            ],
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "worked": true,
+          "pid": 11614,
+          "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+          "cleanupVerified": true
+        },
+        "candidate": {
+          "probe": {
+            "frame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/focus-engine-153/observation/capture-candidate.png",
+            "pid": 2082,
+            "pixels": [
+              1000,
+              772
+            ],
+            "status": "captured",
+            "windowID": 117869,
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "completed": true,
+          "markerRecovered": false,
+          "newAcceptedActions": 0,
+          "ocr": {
+            "text": [],
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "worked": false
+        },
+        "after": {
+          "probe": {
+            "frame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/focus-engine-153/observation/capture-after.png",
+            "pid": 11655,
+            "pixels": [
+              2000,
+              1544
+            ],
+            "status": "captured",
+            "windowID": 117975,
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "completed": true,
+          "markerRecovered": true,
+          "newAcceptedActions": 0,
+          "ocr": {
+            "text": [
+              {
+                "box": [
+                  0.03052325936591575,
+                  0.967984934421183,
+                  0.18168603515625,
+                  0.0210047033784303
+                ],
+                "confidence": 1,
+                "text": "\u2022 \u2022 Inspectable Control"
+              },
+              {
+                "box": [
+                  0.024681773967643202,
+                  0.9226795192436354,
+                  0.030578311920166013,
+                  0.013398023466989706
+                ],
+                "confidence": 1,
+                "text": "Back"
+              },
+              {
+                "box": [
+                  0.07848836650958395,
+                  0.9190207157939423,
+                  0.28488372802734374,
+                  0.016949152081741525
+                ],
+                "confidence": 1,
+                "text": "http://127.0.0.1:56581/trial/e3b6ea53400f3d05"
+              },
+              {
+                "box": [
+                  0.9330249800829233,
+                  0.9221196340009806,
+                  0.043833759307861264,
+                  0.01451779400128772
+                ],
+                "confidence": 1,
+                "text": "Reload"
+              },
+              {
+                "box": [
+                  0.05000000343749991,
+                  0.7956989259298178,
+                  0.4125,
+                  0.054042005786006375
+                ],
+                "confidence": 1,
+                "text": "Page feature research"
+              },
+              {
+                "box": [
+                  0.056686054678604936,
+                  0.7344559587753994,
+                  0.5116278991699219,
+                  0.024611398963730657
+                ],
+                "confidence": 1,
+                "text": "Disposable local task. Disclosure marker: AFB-6EA9E36D"
+              },
+              {
+                "box": [
+                  0.06686046554028889,
+                  0.6645077720574012,
+                  0.15697674560546876,
+                  0.02475776450003986
+                ],
+                "confidence": 1,
+                "text": "Enter native-input"
+              },
+              {
+                "box": [
+                  0.06831395468593862,
+                  0.5025906740296104,
+                  0.12063953399658203,
+                  0.022833054547482856
+                ],
+                "confidence": 1,
+                "text": "Record action"
+              },
+              {
+                "box": [
+                  0.05510710998726941,
+                  0.4349187335398823,
+                  0.17615216064453124,
+                  0.024828760117446835
+                ],
+                "confidence": 1,
+                "text": "No action recorded."
+              },
+              {
+                "box": [
+                  0.010174431229560212,
+                  0.011010362633658732,
+                  0.36482556152343754,
+                  0.015544041450777257
+                ],
+                "confidence": 1,
+                "text": "Inspection: control enabled. Desktop capture and input: unprotected."
+              }
+            ],
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "worked": true,
+          "pid": 11655,
+          "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+          "cleanupVerified": true
+        }
+      },
+      {
+        "route": "display-capture",
+        "verdict": "marker-not-recovered-in-bounded-observation",
+        "before": {
+          "probe": {
+            "frame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/focus-engine-153/observation/display-capture-before.png",
+            "pid": 11682,
+            "pixels": [
+              2000,
+              1544
+            ],
+            "status": "captured",
+            "windowID": 117986,
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "completed": true,
+          "markerRecovered": true,
+          "newAcceptedActions": 0,
+          "ocr": {
+            "text": [
+              {
+                "box": [
+                  0.030523252132596795,
+                  0.967984934369394,
+                  0.18168605041503905,
+                  0.0210047033784303
+                ],
+                "confidence": 1,
+                "text": "\u2022 \u2022 Inspectable Control"
+              },
+              {
+                "box": [
+                  0.024681773967643202,
+                  0.9226795192436354,
+                  0.030578311920166013,
+                  0.013398023466989706
+                ],
+                "confidence": 1,
+                "text": "Back"
+              },
+              {
+                "box": [
+                  0.07848836650958395,
+                  0.9190207157939423,
+                  0.28488372802734374,
+                  0.016949152081741525
+                ],
+                "confidence": 1,
+                "text": "http://127.0.0.1:56581/trial/ed133e584e8ead92"
+              },
+              {
+                "box": [
+                  0.9330249800829233,
+                  0.9221196340009806,
+                  0.043833759307861264,
+                  0.01451779400128772
+                ],
+                "confidence": 1,
+                "text": "Reload"
+              },
+              {
+                "box": [
+                  0.05668605127780444,
+                  0.798493408854448,
+                  0.4040697631835937,
+                  0.04896421877213708
+                ],
+                "confidence": 1,
+                "text": "Page feature research"
+              },
+              {
+                "box": [
+                  0.05668605007437776,
+                  0.7344559585831522,
+                  0.5087209167480469,
+                  0.024611398963730546
+                ],
+                "confidence": 1,
+                "text": "Disposable local task. Disclosure marker: AFB-7BB99E63"
+              },
+              {
+                "box": [
+                  0.06686046554028889,
+                  0.6645077720574012,
+                  0.15697674560546876,
+                  0.02475776450003986
+                ],
+                "confidence": 1,
+                "text": "Enter native-input"
+              },
+              {
+                "box": [
+                  0.06831395468593862,
+                  0.5025906740296104,
+                  0.12063953399658203,
+                  0.022833054547482856
+                ],
+                "confidence": 1,
+                "text": "Record action"
+              },
+              {
+                "box": [
+                  0.05510710998726941,
+                  0.4349187335398823,
+                  0.17615216064453124,
+                  0.024828760117446835
+                ],
+                "confidence": 1,
+                "text": "No action recorded."
+              },
+              {
+                "box": [
+                  0.010174431229560212,
+                  0.011010362633658732,
+                  0.36482556152343754,
+                  0.015544041450777257
+                ],
+                "confidence": 1,
+                "text": "Inspection: control enabled. Desktop capture and input: unprotected."
+              }
+            ],
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "worked": true,
+          "pid": 11682,
+          "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+          "cleanupVerified": true
+        },
+        "candidate": {
+          "probe": {
+            "frame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/focus-engine-153/observation/display-capture-candidate.png",
+            "pid": 2082,
+            "pixels": [
+              2000,
+              1544
+            ],
+            "status": "captured",
+            "windowID": 117869,
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "completed": true,
+          "markerRecovered": false,
+          "newAcceptedActions": 0,
+          "ocr": {
+            "text": [],
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "worked": false
+        },
+        "after": {
+          "probe": {
+            "frame": [
+              100,
+              110,
+              1000,
+              772
+            ],
+            "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/focus-engine-153/observation/display-capture-after.png",
+            "pid": 11725,
+            "pixels": [
+              2000,
+              1544
+            ],
+            "status": "captured",
+            "windowID": 117997,
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "completed": true,
+          "markerRecovered": true,
+          "newAcceptedActions": 0,
+          "ocr": {
+            "text": [
+              {
+                "box": [
+                  0.03052325936591575,
+                  0.967984934421183,
+                  0.18168603515625,
+                  0.0210047033784303
+                ],
+                "confidence": 1,
+                "text": "\u2022 \u2022 Inspectable Control"
+              },
+              {
+                "box": [
+                  0.024681773967643202,
+                  0.9226795192436354,
+                  0.030578311920166013,
+                  0.013398023466989706
+                ],
+                "confidence": 1,
+                "text": "Back"
+              },
+              {
+                "box": [
+                  0.07848836793938826,
+                  0.9190207157939423,
+                  0.2834302368164062,
+                  0.016949152081741525
+                ],
+                "confidence": 1,
+                "text": "http://127.0.0.1:56581/trial/48ced3516bda081d"
+              },
+              {
+                "box": [
+                  0.9330249800829233,
+                  0.9221196340009806,
+                  0.043833759307861264,
+                  0.01451779400128772
+                ],
+                "confidence": 1,
+                "text": "Reload"
+              },
+              {
+                "box": [
+                  0.05000000343749991,
+                  0.7956989259298178,
+                  0.4125,
+                  0.054042005786006375
+                ],
+                "confidence": 1,
+                "text": "Page feature research"
+              },
+              {
+                "box": [
+                  0.05668605502305138,
+                  0.7344559587714761,
+                  0.5101744079589844,
+                  0.024611398963730546
+                ],
+                "confidence": 1,
+                "text": "Disposable local task. Disclosure marker: AFB-DA9BF9F9"
+              },
+              {
+                "box": [
+                  0.06686046554028889,
+                  0.6645077720574012,
+                  0.15697674560546876,
+                  0.02475776450003986
+                ],
+                "confidence": 1,
+                "text": "Enter native-input"
+              },
+              {
+                "box": [
+                  0.06831395468593862,
+                  0.5025906740296104,
+                  0.12063953399658203,
+                  0.022833054547482856
+                ],
+                "confidence": 1,
+                "text": "Record action"
+              },
+              {
+                "box": [
+                  0.05510710998726941,
+                  0.4349187335398823,
+                  0.17615216064453124,
+                  0.024828760117446835
+                ],
+                "confidence": 1,
+                "text": "No action recorded."
+              },
+              {
+                "box": [
+                  0.010174431229560212,
+                  0.011010362633658732,
+                  0.36482556152343754,
+                  0.015544041450777257
+                ],
+                "confidence": 1,
+                "text": "Inspection: control enabled. Desktop capture and input: unprotected."
+              }
+            ],
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "worked": true,
+          "pid": 11725,
+          "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+          "cleanupVerified": true
+        }
+      },
+      {
+        "route": "system-capture",
+        "verdict": "inconclusive",
+        "before": {
+          "probe": {
+            "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/focus-engine-153/observation/system-capture-before.png",
+            "pid": 11755,
+            "status": "captured",
+            "windowID": 118008,
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "completed": true,
+          "markerRecovered": true,
+          "newAcceptedActions": 0,
+          "ocr": {
+            "text": [
+              {
+                "box": [
+                  0.05668604523157908,
+                  0.9268738576017057,
+                  0.18459302229846983,
+                  0.021937842822182807
+                ],
+                "confidence": 1,
+                "text": "\u2022 \u2022 \u2022 Inspectable Control"
+              },
+              {
+                "box": [
+                  0.07253600120113642,
+                  0.8879937638542084,
+                  0.027893114433014135,
+                  0.013774812491231359
+                ],
+                "confidence": 1,
+                "text": "Back"
+              },
+              {
+                "box": [
+                  0.1177325535722304,
+                  0.8848263253445393,
+                  0.26162791080612074,
+                  0.01828153532554666
+                ],
+                "confidence": 1,
+                "text": "http://127.0.0.1:56581/trial/3bb33ca4208024a7"
+              },
+              {
+                "box": [
+                  0.887917739752558,
+                  0.886014636777805,
+                  0.03957149793775816,
+                  0.01773306686953713
+                ],
+                "confidence": 1,
+                "text": "Reload"
+              },
+              {
+                "box": [
+                  0.10029069821636795,
+                  0.780542987213364,
+                  0.3633720891938793,
+                  0.04212611617006323
+                ],
+                "confidence": 1,
+                "text": "Page feature research"
+              },
+              {
+                "box": [
+                  0.10029069318444507,
+                  0.7239488116175496,
+                  0.46220930360204027,
+                  0.022091911928686092
+                ],
+                "confidence": 1,
+                "text": "Disposable local task. Disclosure marker: AFB-879CA49B"
+              },
+              {
+                "box": [
+                  0.10868160990885246,
+                  0.6627907038395722,
+                  0.1431019048896625,
+                  0.02725222963013796
+                ],
+                "confidence": 1,
+                "text": "Enter native-input"
+              },
+              {
+                "box": [
+                  0.11046511756777896,
+                  0.5226244342326485,
+                  0.11046511149234908,
+                  0.020361990950226283
+                ],
+                "confidence": 1,
+                "text": "Record action"
+              },
+              {
+                "box": [
+                  0.10029070039644566,
+                  0.46435100573698906,
+                  0.1569767409948994,
+                  0.022074333682858605
+                ],
+                "confidence": 1,
+                "text": "No action recorded."
+              },
+              {
+                "box": [
+                  0.06104651687723392,
+                  0.09323583191126095,
+                  0.32558139279591947,
+                  0.014795842213867982
+                ],
+                "confidence": 1,
+                "text": "Inspection: control enabled. Desktop capture and input: unprotected."
+              }
+            ],
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "worked": true,
+          "pid": 11755,
+          "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+          "cleanupVerified": true
+        },
+        "candidate": {
+          "probe": {
+            "error": "System capture failed",
+            "status": "inconclusive",
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "completed": false,
+          "markerRecovered": false,
+          "newAcceptedActions": 0,
+          "ocr": {},
+          "worked": false
+        },
+        "after": {
+          "probe": {
+            "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/focus-engine-153/observation/system-capture-after.png",
+            "pid": 11795,
+            "status": "captured",
+            "windowID": 118019,
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "completed": true,
+          "markerRecovered": true,
+          "newAcceptedActions": 0,
+          "ocr": {
+            "text": [
+              {
+                "box": [
+                  0.05668604523157908,
+                  0.9268738576017057,
+                  0.18459302229846983,
+                  0.021937842822182807
+                ],
+                "confidence": 1,
+                "text": "\u2022 \u2022 \u2022 Inspectable Control"
+              },
+              {
+                "box": [
+                  0.07253600120113642,
+                  0.8879937638542084,
+                  0.027893114433014135,
+                  0.013774812491231359
+                ],
+                "confidence": 1,
+                "text": "Back"
+              },
+              {
+                "box": [
+                  0.11627907840170766,
+                  0.8848263258015777,
+                  0.26017440137245673,
+                  0.01828153532554655
+                ],
+                "confidence": 1,
+                "text": "http://127.0.0.1:56581/trial/f387d453b7460d6a"
+              },
+              {
+                "box": [
+                  0.887917739752558,
+                  0.886014636777805,
+                  0.03957149793775816,
+                  0.01773306686953713
+                ],
+                "confidence": 1,
+                "text": "Reload"
+              },
+              {
+                "box": [
+                  0.10029069821636795,
+                  0.780542987213364,
+                  0.3633720891938793,
+                  0.04212611617006323
+                ],
+                "confidence": 1,
+                "text": "Page feature research"
+              },
+              {
+                "box": [
+                  0.10029069101120411,
+                  0.7239488116175496,
+                  0.4549418662091811,
+                  0.022091911928686092
+                ],
+                "confidence": 1,
+                "text": "Disposable local task. Disclosure marker: AFB-D1089125"
+              },
+              {
+                "box": [
+                  0.10868160990885246,
+                  0.6627907038395722,
+                  0.1431019048896625,
+                  0.02725222963013796
+                ],
+                "confidence": 1,
+                "text": "Enter native-input"
+              },
+              {
+                "box": [
+                  0.11046511756777896,
+                  0.5226244342326485,
+                  0.11046511149234908,
+                  0.020361990950226283
+                ],
+                "confidence": 1,
+                "text": "Record action"
+              },
+              {
+                "box": [
+                  0.10029070039644566,
+                  0.46435100573698906,
+                  0.1569767409948994,
+                  0.022074333682858605
+                ],
+                "confidence": 1,
+                "text": "No action recorded."
+              },
+              {
+                "box": [
+                  0.06104651687723392,
+                  0.09323583191126095,
+                  0.32558139279591947,
+                  0.014795842213867982
+                ],
+                "confidence": 1,
+                "text": "Inspection: control enabled. Desktop capture and input: unprotected."
+              }
+            ],
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "worked": true,
+          "pid": 11795,
+          "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+          "cleanupVerified": true
+        }
+      }
+    ],
+    "scope": "Single scoped snapshots and bounded host AX. No unfiltered display capture, renderer AX, or synthetic input.",
+    "permissions": {
+      "accessibility": true,
+      "desktopInputSafety": {
+        "available": true,
+        "blockingMouseHookPIDs": [
+          50948,
+          50951
+        ]
+      },
+      "pid": 11482,
+      "postEvents": true,
+      "screenCapture": true,
+      "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+    },
+    "probeSHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1",
+    "oracleFinal": {
+      "id": "678ee8550cb6c6b0",
+      "secret": "AFB-66237F8D",
+      "submissions": [
+        {
+          "accepted": true
+        }
+      ],
+      "events": [
+        {
+          "type": "page-ready"
+        },
+        {
+          "type": "activity-visible-focused",
+          "t": 27
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        }
+      ]
+    },
+    "probeStopped": true,
+    "referencesStopped": true
+  },
+  "nativeDirectedReferenceFailure": {
+    "scope": "Repeat the user-approved temporary pause and restore of LinearMouse and DockDoor; one directed-window key-code comparison on the same research browser.",
+    "rootUsed": false,
+    "restored": true,
+    "helperSHA256": "e62a28a8b65f16fbfaf8d12c23d653054e571ff2db13fa1fba2e36045f0b99ff",
+    "helperSourceSHA256": "c486b466a163f1b1cbf7b543f2597cdc53c72f522e16f3618b49fa48b981108c",
+    "comparison": {
+      "sessionPID": 2082,
+      "binarySHA256": "12de797fbbfea6f5536b13b8ba890354170f3561f681620bb49be42f2fdf7e21",
+      "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1",
+      "trial": "678ee8550cb6c6b0",
+      "permissions": {
+        "accessibility": true,
+        "desktopInputSafety": {
+          "available": true,
+          "blockingMouseHookPIDs": []
+        },
+        "pid": 13610,
+        "postEvents": true,
+        "screenCapture": true,
+        "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+      },
+      "physicalBaselinePreviouslyConfirmed": true,
+      "physicalInputAbsenceVerified": false,
+      "scope": "Fresh matched native references; exact unchanged physical session; translated public fixture geometry.",
+      "controls": [
+        {
+          "route": "pid-window-keycodes-hid",
+          "repetition": 0,
+          "verdict": "inconclusive",
+          "cleanupVerified": true,
+          "foregroundInitializationStatus": "observed",
+          "pid": 13615,
+          "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+          "initialAcceptedSubmissions": 0,
+          "controlWorked": false,
+          "windowFrame": [
+            100,
+            110,
+            1000,
+            772
+          ],
+          "coordinateSource": "Readable reference Accessibility field",
+          "fieldCenter": [
+            387.0,
+            418.5
+          ],
+          "attempt": {
+            "curvedTrajectory": false,
+            "directToPID": true,
+            "explicitWindowRouting": true,
+            "keyboardDirectToPID": true,
+            "pid": 13615,
+            "postTap": 0,
+            "source": "hid",
+            "status": "attempted",
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "newSubmissions": [],
+          "acceptedEvents": 0,
+          "refusedEvents": 0,
+          "newEventTypes": [
+            "keydown"
+          ]
+        }
+      ],
+      "results": [
+        {
+          "route": "pid-window-keycodes-hid",
+          "repetition": 0,
+          "skipped": true,
+          "verdict": "inconclusive",
+          "reason": "Fresh matched reference did not complete"
+        }
+      ],
+      "newSubmissions": []
+    },
+    "remainingProbePIDsBeforeRestore": []
+  },
+  "nativeGlobalComparison": {
+    "scope": "Repeat the approved temporary pause and restore for one ordinary global key-code route after the directed-window reference failed. Same physically calibrated research browser only.",
+    "rootUsed": false,
+    "restored": true,
+    "helperSHA256": "e62a28a8b65f16fbfaf8d12c23d653054e571ff2db13fa1fba2e36045f0b99ff",
+    "comparison": {
+      "sessionPID": 2082,
+      "binarySHA256": "12de797fbbfea6f5536b13b8ba890354170f3561f681620bb49be42f2fdf7e21",
+      "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1",
+      "trial": "678ee8550cb6c6b0",
+      "permissions": {
+        "accessibility": true,
+        "desktopInputSafety": {
+          "available": true,
+          "blockingMouseHookPIDs": []
+        },
+        "pid": 14038,
+        "postEvents": true,
+        "screenCapture": true,
+        "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+      },
+      "physicalBaselinePreviouslyConfirmed": true,
+      "physicalInputAbsenceVerified": false,
+      "scope": "Fresh matched native references; exact unchanged physical session; translated public fixture geometry.",
+      "controls": [
+        {
+          "route": "keycodes-hid",
+          "repetition": 0,
+          "verdict": "bypass",
+          "cleanupVerified": true,
+          "foregroundInitializationStatus": "observed",
+          "pid": 14043,
+          "binarySHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+          "initialAcceptedSubmissions": 0,
+          "controlWorked": false,
+          "windowFrame": [
+            100,
+            110,
+            1000,
+            772
+          ],
+          "coordinateSource": "Readable reference Accessibility field",
+          "fieldCenter": [
+            387.0,
+            418.5
+          ],
+          "attempt": {
+            "curvedTrajectory": false,
+            "directToPID": false,
+            "explicitWindowRouting": false,
+            "keyboardDirectToPID": false,
+            "pid": 14043,
+            "postTap": 0,
+            "source": "hid",
+            "status": "attempted",
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "newSubmissions": [
+            {
+              "accepted": true
+            }
+          ],
+          "acceptedEvents": 0,
+          "refusedEvents": 0,
+          "newEventTypes": [
+            "click",
+            "input",
+            "keydown",
+            "pointerdown"
+          ]
+        }
+      ],
+      "results": [
+        {
+          "pid": 2082,
+          "route": "keycodes-hid",
+          "binarySHA256": "12de797fbbfea6f5536b13b8ba890354170f3561f681620bb49be42f2fdf7e21",
+          "initialAcceptedSubmissions": 2,
+          "controlWorked": true,
+          "verdict": "blocked",
+          "windowFrame": [
+            100,
+            110,
+            1000,
+            772
+          ],
+          "coordinateSource": "Matched reference point translated by public window geometry",
+          "fieldCenter": [
+            387.0,
+            418.5
+          ],
+          "attempt": {
+            "curvedTrajectory": false,
+            "directToPID": false,
+            "explicitWindowRouting": false,
+            "keyboardDirectToPID": false,
+            "pid": 2082,
+            "postTap": 0,
+            "source": "hid",
+            "status": "attempted",
+            "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+          },
+          "newSubmissions": [],
+          "acceptedEvents": 0,
+          "refusedEvents": 29,
+          "newEventTypes": [],
+          "foregroundInitializationStatus": "observed",
+          "repetition": 0
+        }
+      ],
+      "newSubmissions": []
+    },
+    "remainingProbePIDsBeforeRestore": []
+  },
+  "compositorCoverageOnEarlierUngrantImage": {
+    "status": "refused",
+    "candidatePID": 2082,
+    "candidateSHA256": "12de797fbbfea6f5536b13b8ba890354170f3561f681620bb49be42f2fdf7e21",
+    "coverageOnly": true,
+    "physicalInputAbsenceVerified": false,
+    "permissions": {
+      "audioCaptured": false,
+      "hooksInstalled": false,
+      "inputPosted": false,
+      "permissionRequested": false,
+      "probePID": 15336,
+      "screenRecordingGranted": false,
+      "status": "preflight",
+      "cleanupVerified": true,
+      "probeSHA256": "82ff9c28a40c36b840111b10a89001801cdd2c5fd9e4d64be663a581e7f2a52f"
+    },
+    "candidate": {
+      "audioCaptured": false,
+      "backdropClosed": true,
+      "error": "Another window intersects the research region",
+      "hooksInstalled": false,
+      "inputPosted": false,
+      "permissionRequested": false,
+      "probePID": 15353,
+      "status": "refused",
+      "cleanupVerified": true,
+      "probeSHA256": "82ff9c28a40c36b840111b10a89001801cdd2c5fd9e4d64be663a581e7f2a52f"
+    },
+    "oracleFinal": {
+      "id": "678ee8550cb6c6b0",
+      "secret": "AFB-66237F8D",
+      "submissions": [
+        {
+          "accepted": true
+        },
+        {
+          "accepted": true
+        }
+      ],
+      "events": [
+        {
+          "type": "page-ready"
+        },
+        {
+          "type": "activity-visible-focused",
+          "t": 27
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        },
+        {
+          "type": "input",
+          "trusted": true
+        },
+        {
+          "type": "keydown",
+          "trusted": true
+        }
+      ]
+    }
+  },
+  "finalRecorderDirectRefusal": {
+    "audioCaptured": false,
+    "error": "This exact recorder needs capture approval",
+    "hooksInstalled": false,
+    "inputPosted": false,
+    "permissionRequested": false,
+    "probePID": 16680,
+    "status": "refused"
+  },
+  "inputGrantManifest": {
+    "engineRoot": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release",
+    "engineSHA256": {
+      "JavaScriptCore.framework/Versions/A/JavaScriptCore": "0eb64291e863b9f1b1561da2eebe0f373f35a34333722c4fa23e0e4a7eb49bb1",
+      "WebCore.framework/Versions/A/WebCore": "8991e52e0b60924f57e650b8b4645ba7d7987c5dc45af8024e03e02fe8a586b3",
+      "WebGPU.framework/Versions/A/WebGPU": "693ce3b2caec3e62d9df83a5eaf20bdf50ef35ae5e625677d3adf735925705bb",
+      "WebInspectorUI.framework/Versions/A/WebInspectorUI": "1fad597ea7e0601ba426ee6d5095dec8e5010e9041491a987ca2bb83bc5d6960",
+      "WebKit.framework/Versions/A/WebKit": "e6d6d7e654ad69f2cadfbe4210c388f9942553b8c76e265e9d8ea083ed075adb",
+      "WebKitLegacy.framework/Versions/A/WebKitLegacy": "e9f33da8296a9afa72f2b3ef990a4f0be1fac8e4b327de5f801a59f8ba2fc2f4",
+      "_WebKit_SwiftUI.framework/Versions/A/_WebKit_SwiftUI": "cc51c4bd580b2d6cf3174d68ce50ba96df01b2324457867561ddabcf16c2ecf9",
+      "com.apple.WebKit.GPU.xpc/Contents/MacOS/com.apple.WebKit.GPU.Development": "c212ef5e24a63b2b72834b0fca7f6071c602508bbfb7d186df39758d47f6a14b",
+      "com.apple.WebKit.Model.xpc/Contents/MacOS/com.apple.WebKit.Model.Development": "c3ccf560017438063020a9bf6ac144bfcb8871c6e7ffdb4c539319f49c999b02",
+      "com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking.Development": "6a4fc331d04b0e7ebb8c9a74f1d55e93da354d1d00c56edc9c3b7b6803842a34",
+      "com.apple.WebKit.WebContent.CaptivePortal.xpc/Contents/MacOS/com.apple.WebKit.WebContent.CaptivePortal.Development": "dc30415ddaedf1c19e392cd3e342371b3bde74127d5288d46b03e9754de8de7f",
+      "com.apple.WebKit.WebContent.Development.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development.Development": "dd4aec5e5c1d9ab3d630bf08be2387a83f45ec026a4024a61896cba53367a99c",
+      "com.apple.WebKit.WebContent.EnhancedSecurity.xpc/Contents/MacOS/com.apple.WebKit.WebContent.EnhancedSecurity.Development": "7eb143953a9b2e7cb8fcf832b5dc7dbdc387330efdd0808d6a54a22f0017ed56",
+      "com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development": "0574b171e68c322dfe37d12b89ce7608bfb789741061f268896833bdacbfd459",
+      "libANGLE-shared.dylib": "11131781788b37187ebcf359b85aae16eb80cca4d7798315152bbbea1d2aff27",
+      "libWebCoreTestSupport.dylib": "c7ba828471a621bc57df0f09bfdfddfd712c806ec29d4186840998ccadcf0397",
+      "libWebKitSwift.dylib": "af3d369a3412e71ffa2d39c15a350d053fa78dd512b1b5e95a0763f9e3228843",
+      "libwebrtc.dylib": "63163d4a5c77d9c7c767bce9fbecfa1e7f72be2ae6602fb332ec4fce4352346f"
+    },
+    "targets": {
+      "AgentFreeBrowserEngine": {
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/dist/AgentFreeBrowserEngine.app",
+        "bundleIdentifier": "research.agentfreebrowser.focusengine",
+        "binarySHA256": "12de797fbbfea6f5536b13b8ba890354170f3561f681620bb49be42f2fdf7e21",
+        "defines": [
+          "DEVICE_KEYBOARD_EXPERIMENT",
+          "INTEGRATED_BROWSER",
+          "STABLE_ENGINE_BROWSER"
+        ],
+        "diagnosticInput": false
+      },
+      "FocusEngineNativeControl": {
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/FocusEngineNativeControl.app",
+        "bundleIdentifier": "research.agentfreebrowser.focusengine.nativecontrol",
+        "binarySHA256": "ee5403757c2f5ea4745ac0144300a59561044c96a20192de9d5f7c299cec851b",
+        "defines": [
+          "DEVICE_KEYBOARD_EXPERIMENT",
+          "INTEGRATED_BROWSER",
+          "STABLE_ENGINE_BROWSER",
+          "BROWSER_NAVIGATION_CONTROL",
+          "FOCUS_ENGINE_NATIVE_CONTROL"
+        ],
+        "diagnosticInput": true
+      },
+      "FocusEngineStableControl": {
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/FocusEngineStableControl.app",
+        "bundleIdentifier": "research.agentfreebrowser.focusengine.stablecontrol",
+        "binarySHA256": "9c39f36dd0426d01601b559ce1dbbcf87405523ad8fa80670fe69ea25e0efcd2",
+        "defines": [
+          "DEVICE_KEYBOARD_EXPERIMENT",
+          "INTEGRATED_BROWSER",
+          "STABLE_ENGINE_BROWSER",
+          "BROWSER_NAVIGATION_CONTROL"
+        ],
+        "diagnosticInput": true
+      }
+    },
+    "permission": "macOS Input Monitoring / ListenEvent",
+    "permissionApproved": true,
+    "permissionRequested": true,
+    "effectiveGrantConfirmed": true,
+    "engineBundled": false,
+    "hardenedRuntime": false,
+    "launchRequirement": "Native app bootstrap or tools/launch_focus_browser.py; workspace research engine required",
+    "sourceHashes": {
+      "Sources/Browser/AXBoundary.swift": "033f95e7ae7d4bd907d8abf4a7a980aa9603162e275d9da7e51dbc319f92400b",
+      "Sources/Browser/BrowserApp.swift": "6439a6a0ff154cc3e858823faa713fb29ac21c100a7f131e857982cf9db893f0",
+      "Sources/Browser/BrowserPolicy.swift": "f7311bc7f6bf89d5bef0c8628991306bc782f06f139a7b733f6b84c290283fce",
+      "Sources/Browser/BrowserRuntimePolicy.swift": "11b22ce324ab20a041623a165999ec20cec8ae4933027d22334312b33b562adb",
+      "Sources/Browser/DeviceKeyboard.swift": "caa85cd6d89e05c334a4d6667c5d399d70a8c83931cef702879046f75029fa15",
+      "Sources/Browser/HIDSourcePolicy.swift": "ea1b9b29117b190f218f47db438a74f5f00988ee3448417a95c13bd1d5155116",
+      "Sources/Browser/InputSourceWindow.swift": "968a4ed8bd8f347da8d73caa74dbd77e21e734b7cc7a4c4f4fab50a1d3f38c32",
+      "Sources/Browser/RestrictedWebView.swift": "424eb6c2d41831dddeed1a2db5a79c1cdd4c4d205162becd691f5fa0c76a50f5",
+      "Sources/Browser/SecureInputWindow.swift": "63d690a7797f984f28d6b6a89933dc1238168a72e2b76d0e2cd8f00c1ca4c1be",
+      "Sources/Diagnostics/EngineRuntime.swift": "e8d2e0fbf1397d6e4a3aa9d9e3cb3a7f9dfc0a34c244fb2b2ef4c98473da817c",
+      "Sources/EngineBrowser/FocusEngineRuntime.swift": "b55f9520ce6c776b4df7743b24d268efe194ac46b4128fe32f405f1793192db3",
+      "tools/build_focus_browser.py": "adc8fe33d799377480a7e51d9b8f18df456a7be62dfe7b05aaea828e1b4f458c",
+      "Sources/Diagnostics/FocusEngineControl.swift": "822defa6b1dd51c35f9f4d18fdcd9bff10600eaf95ba4c4be0c105263097e28a",
+      "Sources/Diagnostics/DiagnosticSecureInput.swift": "3cc86114f69d8f945f5279b8164b62671fa2235652eac3c657c64fe215cce879",
+      "Sources/Diagnostics/FocusEngineActivation.swift": "ea3b8b66a274e7689705c9bec8dbb567d356586610f88c47c753fe4fb8a0614a"
+    },
+    "activationHelperSHA256": "8c5e8f1e9b5756fab620e2ed86941e725406c343dea44e6c29ffcf9406396c3c",
+    "permissionApprovalScope": "User approved the separate Input Monitoring request for the pinned AgentFreeBrowserEngine app after milestone 152.",
+    "permissionEvidence": "artifacts/focus-engine-153/native-input-preflight.log"
+  },
+  "nextRecorderManifest": {
+    "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/dist/EngineCompositorProbe.app",
+    "bundleIdentifier": "research.agentfreebrowser.enginecompositor",
+    "executableSHA256": "3186515e7a0ac3e52681f485b0047f0f8dcec2a4ef7f8b3f6d3a9e16458d6fe4",
+    "sourceHashes": {
+      "Sources/Diagnostics/RendererProcessScope.swift": "4e7f0bd22ced093ec33c598a9d255162bb03b2989d62b0792338f5ccc2046e95",
+      ".build/engine-compositor/EngineCaptureScope.swift": "f7efa1ce10ddc61aa9880082f815d1ba4451a7f25dfc2b4c70c4b8937df0d470",
+      "Sources/Diagnostics/PreviewCompositorPixels.swift": "f3bf7fbb071de62f9d18565b252585eadcf52d814c7092886a0c02005275510a",
+      "Sources/Diagnostics/PreviewCompositorBackdrop.swift": "e6824527560e42a458d616c144b084ac43aaa6a03d8c570e8917829724ff9c91",
+      ".build/engine-compositor/EngineCompositorProbe.swift": "ea816652c0720221eb62ebc6a9ece00a0f6210dee36de5687778a3524979d863",
+      ".build/engine-compositor/EngineCaptureApproval.swift": "552b7803d466b00e2fe830966165de3eea80f69755fa928aaa29348151135f08",
+      "tools/build_engine_compositor.py": "f7d72504534a005ffd728018e79748426912fcb2b8eb3e76230be2e771d6cb48"
+    },
+    "permission": "macOS Screen Recording",
+    "permissionApproved": false,
+    "permissionRequested": false,
+    "effectiveGrantConfirmed": false,
+    "automaticRequestAtLaunch": false,
+    "directRequestCommandAvailable": false,
+    "maximumSeconds": 25,
+    "audioCaptured": false,
+    "inputPosted": false,
+    "hooksInstalled": false,
+    "targetPolicies": [
+      {
+        "name": "AgentFreeBrowserEngine",
+        "bundle": "research.agentfreebrowser.focusengine",
+        "sha256": "12de797fbbfea6f5536b13b8ba890354170f3561f681620bb49be42f2fdf7e21"
+      },
+      {
+        "name": "InspectableControl",
+        "bundle": "research.agentfreebrowser.control",
+        "sha256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36"
+      }
+    ],
+    "scope": "Only the two exact target images. Unfiltered display / owned-apps / unfiltered display, cropped inside verified opaque owned coverage. Preserve overlap, foreground, geometry, and process identity guards.",
+    "originalGrantedRecorderUnchanged": true
+  },
+  "oracleAtReport": {
+    "id": "678ee8550cb6c6b0",
+    "secret": "AFB-66237F8D",
+    "submissions": [
+      {
+        "accepted": true
+      },
+      {
+        "accepted": true
+      }
+    ],
+    "events": [
+      {
+        "type": "page-ready"
+      },
+      {
+        "type": "activity-visible-focused",
+        "t": 27
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      },
+      {
+        "type": "input",
+        "trusted": true
+      },
+      {
+        "type": "keydown",
+        "trusted": true
+      }
+    ]
+  },
+  "rawArtifactSHA256": {
+    "artifacts/focus-engine-153/physical-control.json": "9fca1f321301bc7d662e4dd973343b5fc0e521a2de98e874295f2376c786ec15",
+    "artifacts/focus-engine-153/resumed-control.json": "29cca91c5e33fe1a7fec4ea1431295bcb828012264e0b55e778be75dcc74b0d4",
+    "artifacts/focus-engine-153/session-at-report.json": "f2a624a414be9762b0f5be42b93fb7f2c74d104862e0ae2f8680bf9e0bc2dd85",
+    "artifacts/focus-engine-153/physical-focus-attack/results.json": "3c64a1a3d3e448b5ce8010cbca1b670ed5915a788cc5264d06bc2b73f910edac",
+    "artifacts/focus-engine-153/observation/results.json": "ea791781056d486854e02c112166be7c288c34cc95ff8f5e977bca853fc42420",
+    "artifacts/focus-engine-153/native-comparison/results.json": "ead1d96a76dc7d389021fe44e9ff1c4c133816ece1702e21fd63162c3fe961f9",
+    "artifacts/focus-engine-153/native-global-comparison/results.json": "a1170c37dd6b757bf226cba123cfe1fb9a005641531a5b130d3e769d88147940",
+    "artifacts/focus-engine-153/compositor-coverage/results.json": "1961e6a99574fbcafd550b363cd77a60e5cd55d98e51febd39cd1598d2e59cc3",
+    "artifacts/focus-engine-153/direct-recorder-refusal.json": "405b2c9e7a0c83faa5481ba5da90c9f5a18b316849e7555c1e856eaec2414687",
+    "artifacts/focus-engine-153/fixed-launcher-preflight.log": "872d1cd4cc8eab1a9874920026cac267e8d6d5e0d26238597839d9daccfbefc1"
+  },
+  "nativeComputerUse": {
+    "binding": "Computer Use server error -10005: timeoutReached",
+    "pageActionConfirmed": false,
+    "protectionEstablished": false
+  },
+  "verification": {
+    "pythonTestsPassed": 50,
+    "frozenImagesUnchanged": {
+      "DeviceKeyboardExperiment": true,
+      "NativeProbe": true,
+      "RendererAXProbe": true,
+      "KeyboardObservationProbe": true,
+      "WindowGeometryProbe": true,
+      "PixelKeyboardExperiment": true,
+      "PixelKeyboardRoutingControl": true,
+      "CaptureRefreshProbe": true,
+      "CompositorRefreshProbe": true,
+      "CaptureStressProbe": true,
+      "AgentFreeBrowserPreview": true,
+      "PreviewRendererReadProbe": true,
+      "PreviewStreamCaptureProbe": true,
+      "PreviewCompositorProbe": true
+    },
+    "allFrozenImagesUnchanged": true,
+    "probeStopped": true,
+    "referenceStopped": true,
+    "newRecorderStopped": true,
+    "browserHeldForNextTest": true,
+    "maximumSessionSeconds": 3600,
+    "stopFile": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/focus-engine-153/physical-session/stop",
+    "rootUsed": false,
+    "newInputHooksInstalled": false,
+    "mouseUtilitiesRestored": true
+  },
+  "acceptance": {
+    "physicalTextPassed": true,
+    "physicalPasswordPassed": false,
+    "focusAttackAfterHumanControlPassed": true,
+    "globalKeycodeRoutePassed": true,
+    "unfilteredCapturePassed": false,
+    "externalInspectorCalibrated": false,
+    "agentFreeEstablished": false
+  },
+  "scope": "Measured ordinary-user attacks on one pinned keyboard-only research app. No all-agent or all-website guarantee."
+}

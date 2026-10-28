@@ -1,6 +1,6 @@
 # Validate the new focus browser
 
-This runbook repeats the focus attack after a physical task in the new browser identity. The current image and engine are pinned in the [manifest](evidence/focus-engine-browser-manifest.json). The manifest records no approved or issued Input Monitoring request yet.
+This runbook repeats the focus attack after a physical task in the new browser identity. The current image and engine are pinned in the [manifest](evidence/focus-engine-browser-manifest.json). Milestone 153 records approved and effective Input Monitoring. Do not request or reset it again. Use the permission query to confirm access.
 
 ## Run diagnostic comparisons
 
@@ -17,7 +17,9 @@ The builder refuses replacement after any recorded permission approval or reques
 
 ## Establish the physical control
 
-1. Obtain explicit approval for this exact app's Input Monitoring request.
+The following grant procedure is historical. The current image already has approval and effective access.
+
+1. Obtain explicit approval for a new identity before its Input Monitoring request.
 2. Record that approval in the manifest.
 3. Run the guarded request with a fresh log path:
 

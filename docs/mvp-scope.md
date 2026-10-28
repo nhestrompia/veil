@@ -1,6 +1,6 @@
 # Agent-free MVP scope
 
-The user confirms a minimal research browser, not a Safari or Chrome competitor. The existing AgentFreeBrowserPreview is the combined MVP candidate. Do not expand the browser interface to avoid unresolved protection work.
+The user confirms a minimal research browser, not a Safari or Chrome competitor. AgentFreeBrowserEngine is the current combined MVP candidate. The frozen AgentFreeBrowserPreview remains the historical vulnerable build. Do not expand the browser interface to avoid unresolved protection work.
 
 The functional scope is one window, an HTTPS address field, webpage rendering, back and forward navigation, reload, and a working human input route. The existing native toolbar remains. Tabs, bookmarks, browsing history, sync, extensions, a password manager, and general browser feature parity are outside this milestone.
 
@@ -13,3 +13,5 @@ Milestone 140 tests steady window capture on the actual preview. Unfiltered capt
 Milestone 141 prepares unfiltered compositor recording and filter changes. The approved grant remains ineffective, and readable placement controls fail before capture. The previous physical session expires. See [current gaps](agent-free-gap-audit.md) and [compositor preparation](preview-compositor-findings.md).
 
 Milestone 142 confirms effective compositor access and repairs fullscreen content-window selection in the ordinary controller. Readable coverage still fails on the Dock overlay or fullscreen backdrop ordering. No protected candidate or stream runs. See [calibration findings](preview-compositor-grant-findings.md).
+
+Milestone 153 adds effective Input Monitoring, two physical text tasks, a live focus-defense repeat, and one calibrated global key-code refusal on the engine image. Matched host AX and scoped snapshots recover no marker or action. The separate unfiltered recorder still needs approval and a clear research crop. See [live MVP tests](focus-engine-live-findings.md).

@@ -1,6 +1,6 @@
 # Integrated engine policy for focus actions
 
-Milestone 152 implements a focus defense in a separate browser candidate. Six matched diagnostic comparisons pass. Stable mode records no new website action across 18 activation cycles, while native mode reproduces actions in every case. Each resumed typing control completes. The new public app still needs its own physical-keyboard validation.
+Milestone 152 implements a focus defense in a separate browser candidate. Six matched diagnostic comparisons pass. Stable mode records no new website action across 18 activation cycles, while native mode reproduces actions in every case. Each resumed typing control completes. Milestone 153 adds a physical text control and live focus repeat on the public app. See the [live findings](focus-engine-live-findings.md).
 
 The frozen preview remains vulnerable as measured in [milestone 151](preview-focus-action-findings.md). Its executable stays unchanged. The new app is `dist/AgentFreeBrowserEngine.app`, with bundle identifier `research.agentfreebrowser.focusengine`. The [manifest](evidence/focus-engine-browser-manifest.json) pins its executable, engine dependencies, and source files.
 
@@ -43,8 +43,8 @@ The first visibility control reports a false API return despite reaching hidden 
 
 The new app can start through its native bootstrap, which restarts the same executable with the fixed research engine. A wrong engine root is refused. The engine still lives in this workspace. It is not bundled for distribution, and this candidate is ad hoc signed without Hardened Runtime. Those are material limits. Earlier capture, script, and input resistance results cannot transfer automatically to this new build.
 
-The new identity currently has no effective Input Monitoring grant. No request has been issued. Both the launcher and the app require the approved manifest record before a request. These approval checks control the research workflow. They do not create an OS permission boundary. The exact shipping executable has no diagnostic typing driver or fixture command channel.
+Milestone 153 obtains the approved Input Monitoring grant and confirms effective access through native app launch. Both the launcher and the app require the approved manifest record before a request. These approval checks control the research workflow. They do not create an OS permission boundary. The exact shipping executable has no diagnostic typing driver or fixture command channel.
 
-Physical text and password use, then the external focus attack on that same process, remain required. The prepared session runner supports `--engine`, and the separate [attack runner](../tools/run_focus_browser_attack.py) requires that exact physical declaration and a successful native-engine reference.
+Physical text use and the external focus repeat pass in milestone 153. Physical password use remains required. The prepared session runner supports `--engine`, and the separate [attack runner](../tools/run_focus_browser_attack.py) requires that exact physical declaration and a successful native-engine reference.
 
 This milestone implements the engine fix and validates diagnostic behavior. It does not certify the public app as agent-free. Unfiltered capture, external inspector scripting, physical compatibility, renderer recovery, and other OS-driven actions remain unresolved.

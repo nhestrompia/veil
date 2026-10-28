@@ -1,63 +1,56 @@
-# macOS browser resistance to agent tools
+# AgentFreeBrowser MVP test report
 
-Draft for publication, 2026-10-28. The frozen preview is not agent-free. A new engine candidate implements a focus defense and passes six matched diagnostic comparisons. Physical validation of the new identity remains pending.
+Draft for publication, 2026-10-28. The current engine browser passes physical text entry, the live repeat of the focus attack, and one calibrated global input route. Matched Accessibility and scoped screenshot comparisons recover no page marker or action. Unfiltered display recording and external inspector scripting remain open acceptance tests.
 
-## Scope and claim
+## Browser and scope
 
-The project tests a minimal macOS WKWebView browser that limits external observation and admits a measured physical keyboard route. The target is an ordinary-user agent with available macOS grants. Root, modified browser images, kernel exploits, malicious hardware, external cameras, and an agent's separate browser are outside this PoC.
+The minimal macOS app includes a website address, webpage rendering, back, forward, reload, and a measured built-in keyboard route. Tabs, bookmarks, sync, extensions, and browser feature parity are outside this MVP. The current build supports US ASCII and disables mouse input. These limits are explicit usability limits.
 
-The primary agent is gpt-6.1-sol through Codex in T3 Code. A subagent independently attempts the Wikipedia task. Tools include native computer use, the permissioned NativeProbe, Playwright controls, renderer Accessibility probes, and ScreenCaptureKit recorders. This is a capability-based test of those recorded implementations. It is not a benchmark of every current agent model.
+The current executable is AgentFreeBrowserEngine, SHA-256 `12de797fbbfea6f5536b13b8ba890354170f3561f681620bb49be42f2fdf7e21`. Milestone 153 uses PID 2082 for both physical text controls and all candidate attacks. Earlier public-site and continuous-recording trials use the separate frozen preview. Their results do not transfer automatically to the new image.
 
-The central candidate image has SHA-256 `dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70`. Results from older diagnostic apps are explicitly separate. Human controls establish visible pages and physical operation on the relevant candidate processes. Failed permissions, failed controls, and missing frames never count as protection.
+The threat model covers an ordinary-user agent with available macOS grants. Root, modified browser images, kernel exploits, malicious hardware, external cameras, and the agent's separate browser are outside this PoC. The primary agent uses native computer use and the granted NativeProbe. Earlier trials also include a subagent, Playwright controls, renderer Accessibility, and ScreenCaptureKit recorders. This is a test of recorded capabilities, not every agent model.
 
-## Focus defense follow-up
+## Current-image results
 
-Milestone 152 integrates the existing WebKit activity projection into a separate browser target. Page-visible focus and visibility remain stable while native window focus still controls keyboard and password-input eligibility. Six matched diagnostic cases pass, with no new action across 18 stable activation cycles. Each resumed typing control completes. One additional cycle after reload also records no action.
-
-These controls use owner-generated input in the combined browser code. They are not physical-human tests of the public executable. The new app has a separate identity and no effective Input Monitoring grant. Its executable SHA-256 is `12de797fbbfea6f5536b13b8ba890354170f3561f681620bb49be42f2fdf7e21`. The workspace engine is not bundled, and Hardened Runtime is off. The old image's capture and input observations cannot transfer automatically to this build. See the [engine findings](focus-engine-browser-findings.md) and [full evidence](evidence/focus-engine-browser-results.json).
-
-## Results by method
-
-| Method | Observed result | Limit |
+| Test | Outcome | Evidence limit |
 | --- | --- | --- |
-| Focus-only app activation | Frozen preview: three accepted actions. New engine controls: no actions across 18 cycles | New public executable still needs a physical control |
-| Blind native input on public pages | A calibrated directed key-code route leaves Google, Wikipedia, and GitHub search fields unchanged | User confirms final state. Four additional Google routes lack successful controls |
-| Independent agent repeat | Subagent's Wikipedia attempt also leaves the field empty | Same native route, not a separate automation technology |
-| Native computer-use client | Searches succeed in readable public-page references. Preview binding times out | Client binding failure supplies no confirmed candidate action |
-| Native Accessibility | Host and window metadata remain visible. Tested page controls and marker are absent | Bounded methods, not every possible semantic read |
-| Renderer Accessibility | One token-read comparison recovers the reference marker and no preview marker | Other read methods fail their controls |
-| Scoped screenshots | Completed window captures are black with readable controls | Does not cover unfiltered full-display capture |
-| Independent-window streaming | 948 delivered complete preview frames are black, with readable controls before and after | Applies to that stream, not undelivered frames or all transitions |
-| Unfiltered display streaming | Fullscreen readable control passes all three filter stages | Actual preview capture refuses overlap before pixels. Candidate remains inconclusive |
-| External HTTPS and JavaScript URLs | GitHub session explicitly refuses both external-open attempts | Does not test debugger attachment |
-| Playwright | Isolated Chromium controls read pages and complete tasks | CDP and Playwright WebKit are not supported attachment methods for an arbitrary WKWebView |
-| External scripted Web Inspector | Current client cannot pass its readable reference | No current candidate prevention claim |
-| Behavior classifier | Offline mouse replay research only | No trained live classifier or adaptive evasion result in this MVP |
+| Physical text task | User completes twice in the same process | Built-in keyboard and local fixture |
+| Focus-only attack | Three cycles produce zero new actions and zero admitted input | Native-engine positive control, user-attested inactivity |
+| Global key-code input | Reference completes, candidate admits no events or actions | One route and one trial |
+| Host Accessibility read | Both references reveal markers, candidate does not | Bounded host tree, not renderer access |
+| Accessibility action | References complete, candidate exposes no fixture controls | Fixed disposable form task |
+| Window snapshot | References reveal markers, candidate returns black output | Single scoped snapshot |
+| Window-inclusion display snapshot | References reveal markers, candidate has no marker | Window filter, not unfiltered capture |
+| System screenshot | Candidate command fails | Inconclusive |
+| Directed-window input | Reference fails, candidate skipped | Inconclusive |
+| Native computer-use binding | Client times out | No browser protection inference |
 
-Sources for these local measurements are the [loaded public-page findings](loaded-public-website-findings.md), [physical preview controls](preview-session-findings.md), [native input findings](preview-native-input-findings.md), [renderer reads](preview-renderer-live-findings.md), [stream results](preview-stream-live-findings.md), and [focus bypass](preview-focus-action-findings.md).
+The user confirms visible content and physical operation before attacks. The user repeats the physical task after the focus and observation trials. Those two human actions are the fixture's only accepted submissions. The later calibrated global input attempt records zero admitted events, 29 refusals, and no new action. Ambient events can contribute to refusal counts.
 
-## The successful attack
+The [live findings](focus-engine-live-findings.md) and [saved evidence](evidence/focus-engine-live-results.json) preserve individual outcomes and controls. Missing frames, failed clients, and failed references do not count as protection.
 
-After a human arms the local fixture, an ordinary-user helper switches app focus away and back. Each of three cycles causes one additional server-accepted action in the unchanged preview. Each stationary control records zero new actions. The browser logs zero admitted input events during the cycles.
+## Demonstrated bypass and fix
 
-The helper sends no keyboard, mouse, or Accessibility action. It does not inject page code or post an action request. The page's pre-existing JavaScript focus handler sends the request. This is an agent-controlled page action through the browser, despite the input gate.
+The older frozen preview, SHA-256 `dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70`, has a reproducible focus-action bypass. After a human arms the fixture, external app activation causes one accepted website action in each of three cycles. No input passes the gate. The page's existing focus handler sends each request. This defeats the old image's broad action-prevention requirement.
 
-The result defeats the broad requirement that agents cannot cause actions on any website. It does not show that an agent can complete a normal Google search or read an arbitrary protected page. The [raw evidence](evidence/preview-focus-action-results.json) records process identity, controls, oracle snapshots, hashes, and cleanup. Its limits include user-attested physical inactivity and an oracle without authenticated browser-process attribution.
+The new browser integrates a WebKit policy that stabilizes page-visible focus and visibility while preserving native keyboard eligibility and password-input ownership. Six matched diagnostic cases cover focus, password focus, blur, visibility, and two frame types. All 18 stable cycles record no action. Every resumed typing control passes. One extra cycle after reload also records none.
 
-## What screenshot protection establishes
+Milestone 153 adds the actual human control and external focus repeat on the public executable. Its three cycles record no new action. This establishes the measured focus defense beyond diagnostic input. Physical password typing and forced renderer recovery still need tests. See [engine findings](focus-engine-browser-findings.md) and the [original bypass](preview-focus-action-findings.md).
 
-Black output is evidence for a specific working capture method when the human can see the same page. Earlier protected-video experiments sometimes also appear black on the physical display. Those trials fail usability and do not establish capture protection.
+## Earlier public-site and agent-tool trials
 
-Apple now describes `NSWindow.SharingType.none` as a legacy constant and says not to use it to hide captured content. Its linked FairPlay documentation concerns streaming media. It does not promise protected rendering of arbitrary interactive HTML. [Apple window policy](https://developer.apple.com/documentation/appkit/nswindow/sharingtype-swift.enum/none), [FairPlay Streaming](https://developer.apple.com/streaming/fps/)
+On the frozen preview, the user opens Google, Wikipedia search, and GitHub search. The agent and a subagent attempt native search actions. A directed key-code route works in matching readable references and leaves all three preview pages unchanged. The user confirms empty search fields afterward. GitHub also refuses externally opened HTTPS and JavaScript URLs. Other uncalibrated routes remain inconclusive. See [public-page findings](loaded-public-website-findings.md).
 
-A screenshot-file watcher cannot cover clients that return screenshot bytes from memory. The client implementations must be tested directly. Agent tools can also use semantic trees, browser scripts, or blind input. [OpenAI computer use](https://developers.openai.com/api/docs/guides/tools-computer-use), [integration examples](https://developers.openai.com/api/docs/guides/tools-computer-use-integration)
+Earlier independent-window streaming delivers 948 complete black preview frames, with readable controls before and after. App-filtered display streaming delivers no complete candidate frame. The unfiltered recorder passes a readable reference, but the candidate coverage check refuses an overlap before pixels. See [stream findings](preview-stream-live-findings.md).
 
-## What is missing before release acceptance
+Playwright's isolated Chromium controls read pages and complete tasks. CDP and Playwright WebKit are not attachment methods for an arbitrary WKWebView. The scripted inspector client still fails its readable reference. This leaves that test uncalibrated. Appium Mac2 is untested. [Mac2 documentation](https://appium.github.io/appium-mac2-driver/latest/getting-started/)
 
-The engine candidate integrates the focus defense in the shared browser controller. Physical text and password use, followed by the external attack on that exact process, remain required. Distribution packaging and hardening also remain open. Other lifecycle and timing routes need final-image tests.
+## Capture and remaining MVP gates
 
-Unfiltered display capture still needs a complete candidate comparison with readable references and valid privacy coverage. External inspector scripting still needs a working reference. Keyboard observation needs a preview-specific result. Appium Mac2 has not been tested. Its Xcode and Accessibility requirements remain separate prerequisites. [Mac2 documentation](https://appium.github.io/appium-mac2-driver/latest/getting-started/)
+The next recorder is separately pinned to the current engine image and the readable control. It retains an opaque owned backdrop, crop checks, overlap refusal, no audio or input, and a 25-second limit. Its new Screen Recording grant awaits approval. Metadata-only coverage on the earlier ungranted helper image, `82ff9c28…`, refuses an overlapping window. The final `3186515e…` image only runs its direct-refusal check. No unfiltered pixels are captured in either trial.
 
-The frozen preview supports a measured built-in keyboard and US ASCII. The new engine app still needs physical validation. Mouse input is disabled. Unicode, input methods, broad website compatibility, and the PRD's human-use targets remain unmet. These usability limits cannot count as defenses.
+Apple describes `NSWindow.SharingType.none` as legacy and does not recommend it for hiding captured content. FairPlay documentation concerns streaming media, not arbitrary interactive HTML. A screenshot-file watcher also misses tools that return image bytes from memory. These facts make direct capture trials necessary. [Apple window policy](https://developer.apple.com/documentation/appkit/nswindow/sharingtype-swift.enum/none), [FairPlay Streaming](https://developer.apple.com/streaming/fps/), [computer-use integration](https://developers.openai.com/api/docs/guides/tools-computer-use-integration)
 
-The present evidence supports a report on measured resistance, a reproducible bypass, and a diagnostic engine fix. It does not support publishing either build as an agent-free MVP. The [gap audit](agent-free-gap-audit.md) tracks the remaining acceptance work, and the [method research](research/publication-agent-methods.md) explains the supported agent interfaces.
+Remaining gates include unfiltered and transition capture, calibrated external inspector scripting, current-image renderer reads and keyboard observation, physical password use, recovery, and compatibility. The engine remains a workspace dependency. Hardened Runtime is off, and distribution packaging remains incomplete. The behavior classifier is offline research, not a live adaptive defense.
+
+The report can publish the implemented browser, successful controls, measured resistance, original bypass, and validated focus fix. It cannot yet certify an agent-free MVP. The [gap audit](agent-free-gap-audit.md) tracks the remaining tests.

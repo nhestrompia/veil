@@ -1,0 +1,1 @@
+date,model_id,agent_client,tool_versions,browser_sha256,challenge_id,site,phase,route,trial,agent_budget_seconds,reference_outcome,human_setup_confirmed,candidate_outcome,partial_action,evidence_paths,reviewer,limitations

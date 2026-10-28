@@ -1,6 +1,6 @@
 # Public website challenges
 
-Run these tasks against the existing browser. They test real public search pages without an account.
+Run these tasks against the current engine browser. They test real public search pages without an account. For model comparisons, use [Test with your agent](testing-with-agents.md).
 
 | Site | Agent task |
 | --- | --- |
@@ -13,12 +13,12 @@ Run these tasks against the existing browser. They test real public search pages
 From the project directory, run one command:
 
 ```sh
-python3 tools/website_challenge.py --site google --output artifacts/google-trial-1
+python3 tools/website_challenge.py --target engine --site google --output artifacts/google-trial-1
 ```
 
 Use `--site wikipedia` or `--site github` for another site. Use a fresh output directory for each session.
 
-The runner opens one pinned AgentFreeBrowserPreview window for ten minutes. It requests no new permission and changes no browser image.
+The runner opens one pinned AgentFreeBrowserEngine window for ten minutes. It requests no new permission and changes no browser image.
 It writes the task, exact process ID, executable hash, and attempt template into the output directory.
 Give `AGENT-TASK.md` to the agent. Copy `attempt-template.json` for each route and record its tool trace.
 
@@ -33,7 +33,7 @@ Do not treat an unopened or black page as a protection result. A new process nee
 
 ## Run the matched reference
 
-Stop the preview before a reference run. Create its stop file from another terminal:
+Stop the engine browser before a reference run. Create its stop file from another terminal:
 
 ```sh
 touch artifacts/google-trial-1/stop
@@ -49,7 +49,7 @@ The reference loads the site automatically. Try the same agent route and record 
 A public search in another browser or through an API does not complete this test.
 
 The runner stops only its owned research app. `--seconds 300` changes the timeout to five minutes.
-It refuses changed binaries, existing target processes, reused output directories, and ineffective preview keyboard access.
+It refuses changed binaries, existing target processes, reused output directories, and ineffective browser keyboard access.
 
 ## Score the evidence
 
@@ -65,20 +65,20 @@ Successful cold-start protection does not prove takeover protection. A failed ro
 Use the separate local fixture when a trusted server-side action counter is necessary:
 
 ```sh
-python3 tools/run_preview_session.py --output artifacts/local-control-1
+python3 tools/run_preview_session.py --engine --output artifacts/local-control-1
 ```
 
 The browser remains keyboard-only and supports this Mac's measured keyboard with US ASCII.
 The [remaining gaps](agent-free-gap-audit.md) still apply. These public tasks do not certify all websites.
 
-The [first agent trials](public-website-findings.md) record control successes and the incomplete preview tests.
+Use `--target preview` only for the historical browser. The [first agent trials](public-website-findings.md) record that older target.
 
 ## Loaded-page native input
 
 Use `--search-page` to start directly at a site's public search form:
 
 ```sh
-python3 tools/website_challenge.py --site wikipedia --search-page --output artifacts/wikipedia-trial-1
+python3 tools/website_challenge.py --target engine --site wikipedia --search-page --output artifacts/wikipedia-trial-1
 ```
 
 The same option supports Google and GitHub. Physical startup still requires Space, then Return.

@@ -1,0 +1,22 @@
+{
+  "recordedUnixSeconds": 1793184341.451871,
+  "userApprovedRequest": true,
+  "requestExecuted": true,
+  "userConfirmedEnabled": true,
+  "effectiveAccessibility": false,
+  "currentCDHash": "934b8785990d0f3f6144a18f46f1860a4135f29a",
+  "mismatchLogCDHashes": [
+    "4f3690afe0e76b12f72b52dc74b4ec63ee03ff0e",
+    "934b8785990d0f3f6144a18f46f1860a4135f29a"
+  ],
+  "signatureMismatchObserved": true,
+  "appOnlyResetExecuted": false,
+  "rootUsed": false,
+  "inputPosted": false,
+  "accessibilityQueried": false,
+  "rendererReadsRan": false,
+  "helperSHA256": "18c7df1aba7af587ba002f52f38b4e07c6a0fd06be275493ce2d220fe4db8f8f",
+  "remainingHelperPIDs": [],
+  "livePreviewBinary": "/Users/nhestrompia/.t3/projects/agentfreebrowser/dist/AgentFreeBrowserPreview.app/Contents/MacOS/AgentFreeBrowserPreview",
+  "livePreviewPID": 2892
+}

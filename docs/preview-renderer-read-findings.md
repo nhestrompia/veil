@@ -36,9 +36,19 @@ A separate command-line tool reads installed Objective-C class metadata without 
 
 Current WebKit source uses XPC for Cocoa remote inspection. The earlier absence of TCP listeners therefore cannot establish inspection prevention. The official Safari route and the standalone-client limits are documented in the [primary-source review](research/preview-inspection-next-step.md). No Safari setting changes.
 
+## Approved request and stale signature
+
+Checkpoint 137 issues the approved request for the pinned final helper. The user then reports Enabled in System Settings. Two fresh LaunchServices preflights still report no effective Accessibility access. The helper sends no input and performs no AX reads.
+
+TCC logs explicitly report a failed code-requirement match for this bundle. They contain both an older stored code hash and the current helper's code hash. This is a stale grant identity, not a renderer blocking result. The final executable hash remains unchanged. No permission reset runs.
+
+An app-only reset and another request for the same pinned app need separate approval. The exact proposed command is `tccutil reset Accessibility research.agentfreebrowser.previewrendererread`. It affects only this helper's Accessibility entry. No other permission or app reset is proposed. See [grant evidence](evidence/preview-renderer-read-grant-results.json).
+
+The earlier unapproved helper launches explain a possible source of the stale identity. They queried trust before the final image existed. Future helper preparation must complete and pin the final signature before any trust query or permission request. This checkpoint does not change the frozen helper to address that preparation mistake.
+
 ## Next live comparison
 
-The new helper needs separate user approval for macOS Accessibility. This is a broad system permission. The helper's reviewed code limits reads to the two pinned research apps and their owned renderers. Do not rebuild or re-sign it after approval. Do not refresh any existing grant.
+The new helper has user approval for macOS Accessibility, but its grant remains ineffective. This is a broad system permission. The helper's reviewed code limits reads to the two pinned research apps and their owned renderers. Do not rebuild or re-sign it after approval. Do not refresh any existing grant.
 
 After approval and effective access, run `tools/run_preview_renderer_reads.py` with the live session and its separate physical-control record. Each mode requires a fresh readable reference to recover its own renderer marker before the candidate runs. Host-only disclosure does not calibrate a renderer read. Failed references skip the candidate. Incomplete candidate queries and recovered markers stop later modes. No input posting or modifier-app pause is needed.
 

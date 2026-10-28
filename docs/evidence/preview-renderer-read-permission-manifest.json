@@ -11,9 +11,9 @@
     "tools/run_preview_renderer_reads.py": "1aa5c7bf51bb85b4fb6d308c475432b2e22b1bd99788e1d479e742db0a270a82"
   },
   "permission": "macOS Accessibility",
-  "permissionApproved": false,
-  "permissionRequested": false,
-  "requestCommandExecuted": false,
+  "permissionApproved": true,
+  "permissionRequested": true,
+  "requestCommandExecuted": true,
   "automaticRequestAtLaunch": false,
   "scope": "Read only the two hash-pinned research hosts and their OS-owned WebKit renderers. Save fixed research markers and counts only.",
   "inputPosted": false,
@@ -46,5 +46,28 @@
     "--out",
     "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-renderer-136/approved-accessibility-request.json"
   ],
-  "supersedesUnapprovedSHA256": "906a4b00e6c24fd1fa3f0edde8352aae68970771f78d3490da8ead2487a79eec"
+  "supersedesUnapprovedSHA256": "906a4b00e6c24fd1fa3f0edde8352aae68970771f78d3490da8ead2487a79eec",
+  "permissionApproval": "User replied yes to the exact PreviewRendererReadProbe Accessibility request.",
+  "approvalRecordedUnixSeconds": 1793184124.0429819,
+  "requestIssuedUnixSeconds": 1793184124.043339,
+  "requestExitCode": 0,
+  "requestResult": {
+    "accessibility": false,
+    "accessibilityQueried": false,
+    "actionsSent": false,
+    "hooksInstalled": false,
+    "inputPosted": false,
+    "permissionRequested": true,
+    "probePID": 31033,
+    "rawTextSaved": false,
+    "status": "requested"
+  },
+  "userConfirmedEnabled": true,
+  "effectiveGrantConfirmed": false,
+  "effectivePreflight": "artifacts/preview-renderer-137/enabled-preflight.json",
+  "identityMismatchObserved": true,
+  "currentCDHash": "934b8785990d0f3f6144a18f46f1860a4135f29a",
+  "grantDiagnosis": "artifacts/preview-renderer-137/grant-results.json",
+  "appOnlyResetApproved": false,
+  "appOnlyResetExecuted": false
 }

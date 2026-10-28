@@ -1,5 +1,13 @@
 # Current research state
 
+Checkpoint 137 issues the user-approved Accessibility request for the unchanged PreviewRendererReadProbe. The user reports Enabled. Two fresh LaunchServices processes still report access false. TCC logs explicitly reject the helper against an older code requirement. The running image retains its pinned SHA-256. No renderer AX read, input event, or permission reset runs. See [grant evidence](evidence/preview-renderer-read-grant-results.json).
+
+The next step needs approval for an app-only Accessibility reset and another request for the same pinned app. The exact reset is tccutil reset Accessibility research.agentfreebrowser.previewrendererread. It is not yet approved or executed. Do not reset other apps, rebuild this helper, or change its identity. The requested grant itself is already approved.
+
+The original physical preview is near its one-hour watchdog limit. Check PID, image, and the private fixture before any candidate query. If it expires, do not transfer the earlier physical result to a replacement process. Both modifier apps remain running. Renderer reads need no input posting or modifier-app pause. Agent-free status remains unproven.
+
+## Milestone 136 preparation
+
 Milestone 136 prepares and pins PreviewRendererReadProbe. It identifies the unchanged preview PID 2892 and its owned WebKit renderer PID 3422. A fresh readable reference also passes ownership checks. An unrelated target is refused. The final runner stops before all AX reads because its new Accessibility grant is absent. No permission request or website action runs. See [preparation findings](preview-renderer-read-findings.md).
 
 The next step needs separate Accessibility approval for this exact new helper. Its manifest is docs/evidence/preview-renderer-read-permission-manifest.json. The final image hash is 18c7df1aba7af587ba002f52f38b4e07c6a0fd06be275493ce2d220fe4db8f8f. Its explicit request command remains unexecuted. Existing RendererAXProbe cannot target the preview. Do not rebuild or expand any granted helper.

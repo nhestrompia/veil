@@ -61,9 +61,15 @@ class Handler(BaseHTTPRequestHandler):
         if method == "GET" and len(parts) == 3 and parts[-1] == "clock":
             return self.respond(200, {"monotonicMS": time.monotonic_ns() / 1_000_000})
         if method == "POST" and parts[-1] == "action":
-            note = self.body().get("note", "")
+            payload = self.body()
+            note = payload.get("note", "")
             accepted = note == "native-input"
-            trial["submissions"].append({"accepted": accepted})
+            submission = {"accepted": accepted}
+            if isinstance(payload.get('event'), dict):
+                submission['event'] = {key: payload['event'][key] for key in
+                                       ['type', 'trusted', 't', 'x', 'y', 'sequence'] if key in payload['event']}
+                submission['receivedMonotonicMS'] = time.monotonic_ns() / 1_000_000
+            trial["submissions"].append(submission)
             return self.respond(200, {"accepted": accepted})
         if method == "POST" and parts[-1] == "events":
             events = self.body().get("events", [])

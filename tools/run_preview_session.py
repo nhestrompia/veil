@@ -16,7 +16,7 @@ from run_drag_delivery import launch, ready
 from run_native import ROOT, Oracle
 
 
-SURFACES = ['form', 'focus-action', 'blur-action', 'visibility-action', 'timer-gap-action']
+SURFACES = ['form', 'focus-action', 'blur-action', 'visibility-action', 'timer-gap-action', 'pointer-click']
 
 
 def fixture_configuration(surface):
@@ -24,19 +24,24 @@ def fixture_configuration(surface):
         raise ValueError('Unsupported preview fixture surface')
     if surface == 'form':
         return None, ''
+    if surface == 'pointer-click':
+        return ROOT / 'tools/pointer-fixture.html', ''
     return ROOT / 'tools/feature-fixture.html', '?surface=' + surface + '&observe-activity=1'
 
 
-def run(output, surface='form', engine=False):
+def run(output, surface='form', engine=False, pointer=False):
+    if engine and pointer:
+        raise ValueError('Select one browser target')
     page_template, suffix = fixture_configuration(surface)
     output = output.resolve()
     if not output.is_relative_to((ROOT / 'artifacts').resolve()):
         raise ValueError('Use a fresh project artifact directory')
-    manifest_path = ROOT / ('docs/evidence/focus-engine-browser-manifest.json' if engine
+    manifest_path = ROOT / ('docs/evidence/hardware-pointer-browser-manifest.json' if pointer else
+                            'docs/evidence/focus-engine-browser-manifest.json' if engine
                             else 'docs/evidence/integrated-browser-permission-manifest.json')
     manifest = json.loads(manifest_path.read_text())
-    name = 'AgentFreeBrowserEngine' if engine else 'AgentFreeBrowserPreview'
-    expected_hash = manifest['targets'][name]['binarySHA256'] if engine else manifest['executableSHA256']
+    name = 'AgentFreeBrowserPointer' if pointer else 'AgentFreeBrowserEngine' if engine else 'AgentFreeBrowserPreview'
+    expected_hash = manifest['targets'][name]['binarySHA256'] if engine or pointer else manifest['executableSHA256']
     app = ROOT / 'dist' / (name + '.app')
     binary = app / 'Contents/MacOS' / name
     if not manifest.get('permissionApproved') or not manifest.get('effectiveGrantConfirmed'):
@@ -46,8 +51,11 @@ def run(output, surface='form', engine=False):
     subprocess.run(['codesign', '--verify', '--strict', str(app)], check=True, timeout=10)
     output.mkdir(parents=True, mode=0o700)
     preflight = output / 'permission.log'
-    if engine:
-        from launch_focus_browser import launch as launch_engine
+    if engine or pointer:
+        if pointer:
+            from launch_pointer_browser import launch as launch_engine
+        else:
+            from launch_focus_browser import launch as launch_engine
         permission_process, _ = launch_engine(preflight, ['--permissions'])
         try:
             permission_process.wait(timeout=15)
@@ -72,7 +80,7 @@ def run(output, surface='form', engine=False):
     pid = None
     session = {'target': name, 'binarySHA256': expected_hash, 'controller': str(controller),
                'trial': trial, 'log': str(output / 'browser.log'), 'operatorDeclaresPhysicalCompletion': False,
-               'systemInputPosted': False, 'maximumSessionSeconds': 3600,
+               'systemInputPosted': False, 'maximumSessionSeconds': 900 if pointer else 3600,
                'fixtureSurface': surface, 'loadedURL': trial['url'] + suffix}
 
     def persist():
@@ -85,9 +93,9 @@ def run(output, surface='form', engine=False):
 
     for number in [signal.SIGTERM, signal.SIGINT, signal.SIGALRM]:
         signal.signal(number, interrupted)
-    signal.alarm(3600)
+    signal.alarm(session['maximumSessionSeconds'])
     try:
-        if engine:
+        if engine or pointer:
             launcher, _ = launch_engine(Path(session['log']), ['--url', session['loadedURL']])
         else:
             launcher, _ = launch(name, Path(session['log']), ['--url', session['loadedURL']])
@@ -96,10 +104,12 @@ def run(output, surface='form', engine=False):
         active(session)
         if 'DEVICE_KEYBOARD permission=true openStatus=0' not in Path(session['log']).read_text():
             raise RuntimeError('The preview did not open its keyboard reader')
+        if pointer and 'HARDWARE_POINTER opened=true' not in Path(session['log']).read_text():
+            raise RuntimeError('The candidate did not open its pointer reader')
         persist()
         print(json.dumps({'ready': True, 'pid': pid, 'sessionFile': str(output / 'session.json'),
                           'binarySHA256': session['binarySHA256']}), flush=True)
-        deadline = time.monotonic() + 3590
+        deadline = time.monotonic() + session['maximumSessionSeconds'] - 10
         while time.monotonic() < deadline and not (output / 'stop').exists():
             active(session)
             state = oracle.state(trial)
@@ -132,5 +142,6 @@ if __name__ == '__main__':
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--surface', choices=SURFACES, default='form')
     parser.add_argument('--engine', action='store_true')
+    parser.add_argument('--pointer', action='store_true')
     args = parser.parse_args()
-    run(args.output, args.surface, args.engine)
+    run(args.output, args.surface, args.engine, args.pointer)

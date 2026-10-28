@@ -44,6 +44,8 @@ class WebsiteChallengeTests(unittest.TestCase):
                     patch.object(subject.subprocess, "run"), patch.object(subject, "launch", side_effect=launch) as legacy_launch, \
                     patch.object(subject, "launch_engine", side_effect=lambda log, arguments: launch('AgentFreeBrowserEngine', log, arguments)) as engine_launch, \
                     patch.object(subject, "verified_engine_target", return_value=(root / 'dist/AgentFreeBrowserEngine.app/Contents/MacOS/AgentFreeBrowserEngine', {})), \
+                    patch.object(subject, "launch_pointer", side_effect=lambda log, arguments: launch('AgentFreeBrowserPointer', log, arguments)) as pointer_launch, \
+                    patch.object(subject, "verified_pointer_target", return_value=(root / 'dist/AgentFreeBrowserPointer.app/Contents/MacOS/AgentFreeBrowserPointer', {})), \
                     patch.object(subject, "ready", return_value=123, side_effect=RuntimeError("not ready") if launch_failure else None), \
                     patch.object(subject, "process_matches", side_effect=[True, False]), \
                     patch.object(subject, "stop_launched", return_value=True) as cleanup, \
@@ -61,7 +63,24 @@ class WebsiteChallengeTests(unittest.TestCase):
                 if target == 'engine':
                     legacy_launch.assert_not_called()
                     self.assertGreater(engine_launch.call_count, 0)
+                if target == 'pointer':
+                    legacy_launch.assert_not_called()
+                    engine_launch.assert_not_called()
+                    self.assertGreater(pointer_launch.call_count, 0)
                 return result, template, launches, cleanup.call_args_list
+
+    def test_pointer_candidate_uses_own_native_launcher_and_existing_grant(self):
+        session, template, launches, _ = self.exercise(target='pointer')
+        self.assertEqual(session['target'], 'AgentFreeBrowserPointer')
+        self.assertEqual(session['bundleIdentifier'], 'research.agentfreebrowser.pointer')
+        self.assertEqual(launches[0], ['--permissions'])
+        self.assertEqual(template['stages']['navigation'], 'not-tested')
+
+    def test_pointer_missing_grant_stops_before_website_launch(self):
+        session, template, launches, _ = self.exercise(target='pointer', grant=False)
+        self.assertEqual(launches, [['--permissions']])
+        self.assertIsNone(template)
+        self.assertTrue(session['ownedHostStopped'])
 
     def test_all_public_tasks_round_trip(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -92,6 +111,7 @@ class WebsiteChallengeTests(unittest.TestCase):
         text = subject.instructions(item, session)
         self.assertIn('Do not ask the human to open a page', text)
         self.assertIn('Use your own computer-use', text)
+        self.assertIn('Record page clicks even outside the task target', text)
         self.assertNotIn('The human uses the built-in keyboard', text)
         self.assertNotIn('## Two separate phases', text)
 

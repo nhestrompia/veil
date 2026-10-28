@@ -67,6 +67,13 @@ class FixtureTests(unittest.TestCase):
         state = request(f"/admin/trials/{first}")
         self.assertEqual([False, True], [x["accepted"] for x in state["submissions"]])
         self.assertTrue(all("note" not in item for item in state["submissions"]))
+        click = {'type': 'click', 'trusted': True, 't': 100, 'x': 120, 'y': 240, 'sequence': 1}
+        request(f'/trial/{first}/action', {'note': 'native-input', 'event': {**click, 'key': 'private'}})
+        paired = request(f'/admin/trials/{first}')['submissions'][-1]
+        self.assertTrue(paired['accepted'])
+        self.assertEqual(paired['event'], click)
+        self.assertGreaterEqual(paired['receivedMonotonicMS'], first_clock['monotonicMS'])
+        self.assertNotIn('note', paired)
         self.assertEqual([], request(f"/admin/trials/{second}")["submissions"])
         request(f"/trial/{first}/events", {"events": [{"type": "input", "key": "private", "value": "private"}]})
         self.assertEqual([{"type": "input"}], request(f"/admin/trials/{first}")["events"])

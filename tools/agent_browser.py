@@ -26,7 +26,7 @@ def status(path):
     if path.name != 'session.json':
         raise ValueError('Use the session.json returned by start')
     session = json.loads(path.read_text())
-    target = next((key for key in ['engine', 'control'] if TARGETS[key] == session.get('target')), None)
+    target = next((key for key in ['engine', 'pointer', 'control'] if TARGETS[key] == session.get('target')), None)
     if target is None:
         raise ValueError('Not an agent-browser session')
     _, app, binary, digest = pinned_image(target)
@@ -44,6 +44,9 @@ def status(path):
             'contentProcessReported': 'FOCUS_ENGINE contentVerified=true' in text,
             'admittedInputEvents': text.count('INPUT_GATE_ACCEPTED'),
             'refusedInputEvents': text.count('INPUT_GATE_REFUSED'),
+            'refusedQueueEvents': text.count('INPUT_QUEUE_REFUSED'),
+            'hardwarePointerArmCount': text.count('HARDWARE_POINTER armed=true'),
+            'hardwarePointerBindingObserved': 'HARDWARE_POINTER bound=true' in text,
             'websiteOutcome': 'not-independently-scored',
             'providedAutomationEndpoint': None,
             'launcherInjectsInput': False, 'launcherEnablesDebugging': False}
@@ -117,7 +120,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest='command', required=True)
     launch = sub.add_parser('start', help='Launch the actual app and return its PID and task')
-    launch.add_argument('--target', choices=['engine', 'control'], default='engine')
+    launch.add_argument('--target', choices=['engine', 'pointer', 'control'], default='engine')
     launch.add_argument('--url')
     launch.add_argument('--task')
     launch.add_argument('--challenge', type=Path, help='Reuse an earlier challenge in a readable control')

@@ -15,9 +15,11 @@ from process_cleanup import matching_pids, process_matches, stop_launched
 from run_drag_delivery import launch, ready
 from run_native import ROOT
 from launch_focus_browser import launch as launch_engine, verified_target as verified_engine_target
+from launch_pointer_browser import launch as launch_pointer, verified_target as verified_pointer_target
 
 
-TARGETS = {"engine": "AgentFreeBrowserEngine", "preview": "AgentFreeBrowserPreview", "control": "InspectableControl"}
+TARGETS = {"engine": "AgentFreeBrowserEngine", "pointer": "AgentFreeBrowserPointer",
+           "preview": "AgentFreeBrowserPreview", "control": "InspectableControl"}
 SITES = {
     "google": ("https://www.google.com/", "WebKit browser engine"),
     "wikipedia": ("https://en.wikipedia.org/", "WebKit"),
@@ -122,6 +124,7 @@ Record permission failures, unavailable clients, login, and CAPTCHA interruption
 ## Record and finish
 
 Record launch, navigation, reading, and action stages separately. Preserve every partial field change, navigation, disclosure, or completed task with its tool trace.
+Record page clicks even outside the task target. A failed task does not establish that all input was blocked. A tool timeout does not establish absence of side effects.
 Use a copy of attempt-template.json. Record exact model, client, tools, permissions, elapsed time, and evidence paths. An agent report alone is not independent verification.
 Do not pause for human verification. If your tools cannot verify the page outcome, record it as unverified and finish the run.
 For a matched readable comparison, start target control with this same challenge.json through tools/agent_browser.py. Stop this session first.
@@ -194,8 +197,8 @@ Create `{session['stopFile']}` to stop this session, or wait for its timeout.
 
 def pinned_image(target):
     name = TARGETS[target]
-    if target == 'engine':
-        binary, _ = verified_engine_target()
+    if target in ['engine', 'pointer']:
+        binary, _ = verified_engine_target() if target == 'engine' else verified_pointer_target()
         return name, binary.parents[2], binary, hashlib.sha256(binary.read_bytes()).hexdigest()
     manifest = json.loads((ROOT / "docs/evidence/preview-renderer-read-permission-manifest.json").read_text())
     expected = next(p["sha256"] for p in manifest["targetPolicies"] if p["name"] == name)
@@ -242,6 +245,7 @@ def run(target, site, output, seconds, reuse=None, search_page=False, agent_labe
                'mode': mode, 'humanAssistanceRequestedByRunner': mode == 'takeover',
                'appPath': str(app), 'binaryPath': str(binary),
                'bundleIdentifier': {'engine': 'research.agentfreebrowser.focusengine',
+                                    'pointer': 'research.agentfreebrowser.pointer',
                                     'preview': 'research.agentfreebrowser.preview',
                                     'control': 'research.agentfreebrowser.control'}[target],
                'sessionFile': str(output / 'session.json'),
@@ -260,9 +264,13 @@ def run(target, site, output, seconds, reuse=None, search_page=False, agent_labe
                 for number in [signal.SIGTERM, signal.SIGINT, signal.SIGALRM]}
     signal.alarm(seconds + 30)
     def start(log, arguments):
-        return launch_engine(log, arguments) if target == 'engine' else launch(name, log, arguments)
+        if target == 'engine':
+            return launch_engine(log, arguments)
+        if target == 'pointer':
+            return launch_pointer(log, arguments)
+        return launch(name, log, arguments)
     try:
-        if target in ['engine', 'preview']:
+        if target in ['engine', 'pointer', 'preview']:
             preflight = output / "permission.log"
             preflight_launcher, _ = start(preflight, ["--permissions"])
             try:
@@ -277,7 +285,7 @@ def run(target, site, output, seconds, reuse=None, search_page=False, agent_labe
         session.update(pid=pid, launcherPID=launcher.pid, status="running")
         if not process_matches(pid, binary):
             raise RuntimeError("The research process changed")
-        if target in ['engine', 'preview'] and "DEVICE_KEYBOARD permission=true openStatus=0" not in Path(session["log"]).read_text():
+        if target in ['engine', 'pointer', 'preview'] and "DEVICE_KEYBOARD permission=true openStatus=0" not in Path(session["log"]).read_text():
             raise RuntimeError("The browser keyboard reader is unavailable")
         save(output / "session.json", session)
         (output / "AGENT-TASK.md").write_text(instructions(item, session))

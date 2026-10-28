@@ -1,0 +1,57 @@
+{
+  "devices": [
+    {
+      "observationValid": true,
+      "primaryUsage": 2,
+      "primaryUsagePage": 1,
+      "reportDescriptor": "05010902a1010901a1000509190129031500250185029503750181029501750581010501093009311581257f7508950281069504750881017600409502b101c0c0050d0905a1010600ff090c150026ff0075089510853f8122c00600ff090ca1010600ff090c150026ff008544750896d7068100c0",
+      "serviceClasses": [
+        "AppleHIDTransportHIDDevice",
+        "AppleHIDTransportInterface",
+        "AppleHIDTransportProtocolSCMFIFO",
+        "AppleHIDTransportDeviceFIFO",
+        "AppleDockChannelDevice",
+        "AppleDockChannel",
+        "AppleARMIODevice",
+        "AppleSoCIO",
+        "IOPlatformDevice",
+        "AppleARMPE",
+        "IOPlatformExpertDevice",
+        "IORegistryEntry"
+      ],
+      "softwareAncestor": false,
+      "transport": "FIFO",
+      "virtualDevice": null,
+      "reportDescriptorSHA256": "736a3fca9f16530aa4301ed3ec8494c19deccb013bffcd1efefc86c1c02a938a"
+    },
+    {
+      "observationValid": true,
+      "primaryUsage": 2,
+      "primaryUsagePage": 1,
+      "reportDescriptor": "05010902a10185010901a1000509190129051500250195057501810295017503810105010930093116018026ff7f75109502810609381581257f750895018106c0c005010900a10185050600ff09011581257f75089507b102c0",
+      "serviceClasses": [
+        "AppleUserHIDDevice",
+        "IOUSBHostInterface",
+        "IOUSBHostDevice",
+        "AppleUSB20HubPort",
+        "AppleUSB20Hub",
+        "IOUSBHostDevice",
+        "AppleUSB20XHCIARMPort",
+        "AppleT8142USBXHCI",
+        "AppleARMIODevice",
+        "AppleSoCIO",
+        "IOPlatformDevice",
+        "AppleARMPE",
+        "IOPlatformExpertDevice",
+        "IORegistryEntry"
+      ],
+      "softwareAncestor": false,
+      "transport": "USB",
+      "virtualDevice": null,
+      "reportDescriptorSHA256": "c3b164b26e4b806cc17c6d8fd6d5a9daebf40e301a4ad6183d733b130675b386"
+    }
+  ],
+  "scope": "Registry and element metadata only; no device open, value read, input collection, or identifiers",
+  "physicalInputVerified": false,
+  "elementEnumerationAvailable": false
+}

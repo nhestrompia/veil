@@ -6,7 +6,7 @@ The agent-owned launcher is `python3 tools/agent_browser.py start --url URL --ta
 
 ## What runs now
 
-The prepared test Mac has the normal-cursor `dist/Veil.app` as the launcher default. The new Veil image needs its own Input Monitoring grant and physical validation. It also retains the earlier independent-pointer `dist/AgentFreeBrowserPointer.app`, the frozen keyboard-only `dist/AgentFreeBrowserEngine.app` and readable `dist/InspectableControl.app`. Use `--target engine` for the keyboard-only comparison. The protected builds use custom WebKit frameworks under `.build/webkit-engine/output/Release`. Their native bootstrap checks fixed paths and image hashes. The committed manifests record this Mac's paths.
+The prepared test Mac has the normal-cursor `dist/Veil.app` as the launcher default. Its separate Input Monitoring grant is effective, and a physical USB click and vertical wheel control passed. External agent input trials on this image remain pending. It also retains the earlier independent-pointer `dist/AgentFreeBrowserPointer.app`, the frozen keyboard-only `dist/AgentFreeBrowserEngine.app` and readable `dist/InspectableControl.app`. Use `--target engine` for the keyboard-only comparison. The protected builds use custom WebKit frameworks under `.build/webkit-engine/output/Release`. Their native bootstrap checks fixed paths and image hashes. The committed manifests record this Mac's paths.
 
 Copying an app alone to another Mac does not supply that engine or satisfy those checks. A fresh clone also lacks compiled helpers. The current input policy covers the measured keyboard and tested USB mouse on the test Mac. Another Mac needs its own physical input controls and permission checks.
 

@@ -107,7 +107,7 @@ open dist/Veil.app --args --url 'https://www.google.com/'
 4. Move the physical mouse and use the normal cursor for clicks and USB wheel scrolling. No pointer shortcut is needed.
 5. Use Command-L to enter another HTTPS address, then press Return.
 
-Use Tab or Shift-Tab to reach controls by keyboard. Type a query, then press Return to submit it. Command-[ goes back. Command-] goes forward. Command-R reloads or stops loading. Command-Q quits. The current build supports the measured built-in keyboard, US ASCII, and the tested USB mouse. External keyboards and input methods are unsupported. Dragging, secondary/double clicks, modifier clicks, horizontal scrolling, and multitouch trackpad gestures remain unsupported. The new image still needs live physical and agent validation.
+Use Tab or Shift-Tab to reach controls by keyboard. Type a query, then press Return to submit it. Command-[ goes back. Command-] goes forward. Command-R reloads or stops loading. Command-Q quits. The current build supports the measured built-in keyboard, US ASCII, and the tested USB mouse. External keyboards and input methods are unsupported. Dragging, secondary/double clicks, modifier clicks, horizontal scrolling, and multitouch trackpad gestures remain unsupported. The new image passed one physical USB click and wheel control. Physical toolbar use and external agent input trials remain pending.
 
 To test an agent taking over a loaded page, complete steps 1–4 yourself. Then stop interacting and give the agent the exact app name and website task. Tell it to use that existing session without relaunching or modifying the browser. Record this as a human-assisted takeover test. Do not count it as autonomous startup. The input gate stays active after page load.
 

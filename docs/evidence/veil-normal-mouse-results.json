@@ -9,8 +9,8 @@
   "coordinateLimitAcceptedByUser": true,
   "permissionPreflight": "DEVICE_KEYBOARD permission=true",
   "permissionRequested": true,
-  "physicalMouseVerified": false,
-  "physicalWheelVerified": false,
+  "physicalMouseVerified": true,
+  "physicalWheelVerified": true,
   "externalAgentTrialsOnThisImage": false,
   "agentFreeProven": false,
   "frozenEarlierImagesUnchanged": {
@@ -106,7 +106,7 @@
     }
   ],
   "remaining": [
-    "Verify physical click, native toolbar, and wheel in this exact image",
+    "Verify physical native toolbar use and run external software-input / loaded-page takeover comparisons",
     "Run external software-input and loaded-page takeover comparisons on this exact image"
   ],
   "pythonChecksPassed": 73,
@@ -130,5 +130,36 @@
   },
   "effectiveGrantConfirmed": true,
   "effectiveGrantLog": "artifacts/veil-mouse-156/enabled-preflight.log",
-  "effectiveGrantLogSHA256": "872d1cd4cc8eab1a9874920026cac267e8d6d5e0d26238597839d9daccfbefc1"
+  "effectiveGrantLogSHA256": "872d1cd4cc8eab1a9874920026cac267e8d6d5e0d26238597839d9daccfbefc1",
+  "physicalControlEvidence": "artifacts/veil-mouse-156/physical-session/physical-control.json",
+  "physicalAcceptedClicks": 1,
+  "physicalWheelEvents": 40,
+  "physicalScrollEvents": 34,
+  "physicalMaximumScrollY": 1653,
+  "nativeToolbarPhysicalControlVerified": false,
+  "readOnlyComparison": {
+    "path": "artifacts/veil-mouse-156/observations-2/results.json",
+    "sha256": "a57dd193cd5e5e00f3b0d496f8e4f0ac4043c882810c671e15f5352569e4cf30",
+    "axReadableControlElements": 30,
+    "axCandidateElements": 2,
+    "candidatePageControlsExposed": false,
+    "candidateCaptureRoutesInconclusive": [
+      "capture",
+      "display-capture",
+      "system-capture"
+    ],
+    "captureReason": "NativeProbe could not locate a visible Veil window; all three readable references succeeded",
+    "newAdmittedInput": 0,
+    "newPageInputEvents": 0,
+    "newActions": 0,
+    "firstRunnerFailure": "Marker lookup used trial response instead of oracle state; fixed and rerun; reference cleanup verified"
+  },
+  "computerUse": {
+    "status": "unavailable",
+    "error": "Sky Computer Use native pipe startup failed",
+    "defenseResult": false
+  },
+  "nativeInputStatus": "Pending new bounded modifier-pause approval; current mouse-hook guard refuses posting",
+  "nativePlan": "docs/evidence/veil-native-input-plan.json",
+  "nativeRunnerGuardTestsPassed": 2
 }

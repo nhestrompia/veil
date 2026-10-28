@@ -39,7 +39,7 @@
   "permissionApproved": true,
   "permissionRequested": true,
   "effectiveGrantConfirmed": true,
-  "physicalMouseControlVerified": false,
+  "physicalMouseControlVerified": true,
   "liveAttacksVerified": false,
   "engineBundled": false,
   "hardenedRuntime": false,
@@ -62,7 +62,7 @@
   },
   "pointerScope": "Measured relative devices authorize primary clicks, hover, and vertical wheel input at the standard cursor. Automatic device activation. No drag, secondary/double clicks, or trackpad gestures.",
   "coordinateRedirectionLimitAccepted": true,
-  "physicalWheelControlVerified": false,
+  "physicalWheelControlVerified": true,
   "permissionApproval": {
     "userResponse": "Allow Veil\u2019s Input Monitoring request",
     "appPath": "/Users/nhestrompia/.t3/projects/agentfreebrowser/dist/Veil.app",
@@ -71,5 +71,7 @@
   },
   "permissionRequestLog": "artifacts/veil-mouse-156/input-request.log",
   "effectiveGrantLog": "artifacts/veil-mouse-156/enabled-preflight.log",
-  "effectiveGrantLogSHA256": "872d1cd4cc8eab1a9874920026cac267e8d6d5e0d26238597839d9daccfbefc1"
+  "effectiveGrantLogSHA256": "872d1cd4cc8eab1a9874920026cac267e8d6d5e0d26238597839d9daccfbefc1",
+  "physicalControlEvidence": "artifacts/veil-mouse-156/physical-session/physical-control.json",
+  "physicalControlSHA256": "0cc76550ed1c1ca694411bce58c0a4104fa165189c8cd926b9d274643f4be4d9"
 }

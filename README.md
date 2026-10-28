@@ -4,6 +4,8 @@
 
 A macOS-only research MVP for an agent-free browser. The existing combined app is the candidate; its agent-free claim remains unproven. The [MVP scope](docs/mvp-scope.md) keeps browser features minimal and prioritizes the remaining protection gaps.
 
+Try the [public website challenges](docs/public-website-challenges.md) on Google, Wikipedia, and GitHub. Each session writes a task for agents and pins the research browser process. Public-site results require independent review.
+
 The current combined preview is [AgentFreeBrowserPreview.app](dist/AgentFreeBrowserPreview.app). It includes direct webpage rendering, ordinary-window capture restriction, keyboard routing, and inspection, accessibility, export, and navigation policies. All 14 owner-driven navigation checks pass. The user completes a physical form task on the unchanged preview. Both scoped screenshot routes return black images while readable references expose their markers before and after. See [live session findings](docs/preview-session-findings.md) and [integration findings](docs/integrated-browser-findings.md).
 
 Five calibrated native-input routes now fail on the same physically tested preview. It refuses 206 events and records no new action. A sixth route fails its readable reference, so testing stops. LinearMouse and DockDoor reopen after the approved temporary pause. See [native findings](docs/preview-native-input-findings.md). The combined preview remains keyboard-only, and agent-free operation remains unproven.

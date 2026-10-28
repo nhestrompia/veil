@@ -13,7 +13,7 @@ from run_loaded_page_attacks import close, prepare
 from run_native import ROOT, Oracle
 
 
-def run(output, fetch_listing=False, register_and_list=False):
+def run(output, fetch_listing=False, register_and_list=False, appkit=False):
     output = output.resolve()
     if not output.is_relative_to((ROOT / "artifacts").resolve()):
         raise ValueError("Use a fresh project artifact directory")
@@ -41,6 +41,8 @@ def run(output, fetch_listing=False, register_and_list=False):
             command.append("--register-and-list")
         elif fetch_listing:
             command.append("--fetch-listing")
+        if appkit:
+            command.append("--appkit")
         completed = subprocess.run(command,
                                    capture_output=True, text=True, timeout=18)
         report["helperStderrCharacters"] = len(completed.stderr)
@@ -80,7 +82,8 @@ if __name__ == "__main__":
     mode = parser.add_mutually_exclusive_group()
     mode.add_argument("--fetch-listing", action="store_true")
     mode.add_argument("--register-and-list", action="store_true")
+    parser.add_argument("--appkit", action="store_true")
     args = parser.parse_args()
-    report = run(args.output, args.fetch_listing, args.register_and_list)
+    report = run(args.output, args.fetch_listing, args.register_and_list, args.appkit)
     print(json.dumps(report))
     raise SystemExit(0 if report["status"] == "reference-discovered" else 1)

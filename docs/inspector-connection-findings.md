@@ -4,7 +4,7 @@ Milestone 146 observes a local target that reports connected and ready. Explicit
 
 ## Four readable controls
 
-The first control adds connection-state observations to the existing discovery loop. Its local target reports a connection object, connected true, and ready true throughout the eight-second trial. NSApp is absent. These observations reject a missing connection object as the immediate explanation. They do not establish client admission or a complete protocol handshake.
+The first control adds connection-state observations to the existing discovery loop. Its local target initially reports a connection object, connected true, and ready true. Milestone 147 corrects the earlier claim of continuous connectivity. It records target disappearance during the trial. NSApp is absent. These observations reject a missing connection object as the immediate explanation. They do not establish client admission or a complete protocol handshake.
 
 The next control attempts an explicit application-listing request. The method check refuses before invocation. Runtime metadata shows that RWIManager does not implement the requested RWIBaseManager method. The corrected control obtains the manager's message receiver and checks that object's method encoding. Its listing call runs, but the application count remains zero.
 

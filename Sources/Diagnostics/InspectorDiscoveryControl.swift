@@ -8,6 +8,11 @@ private enum DiscoveryError: Error {
 }
 
 @MainActor
+private final class InspectorCallbackProgress {
+    var mainQueueProcessed = false
+}
+
+@MainActor
 private enum InspectorObjects {
     private static func method(_ object: AnyObject, _ name: String, encoding: String) throws -> (Selector, IMP) {
         let selector = NSSelectorFromString(name)
@@ -84,12 +89,17 @@ private enum InspectorDiscoveryControl {
         signal(SIGALRM, SIG_DFL)
         alarm(15)
         var report: [String: Any] = ["status": "inconclusive", "referenceOnly": true,
+                                     "probePID": getpid(),
                                      "managerInstantiated": false,
                                      "channelOpened": false, "scriptSent": false, "inputPosted": false,
                                      "permissionRequested": false, "unrelatedPageMetadataSaved": false]
         do {
             let args = CommandLine.arguments
-            guard (args.count == 3 || (args.count == 4 && ["--fetch-listing", "--register-and-list"].contains(args[3]))),
+            let options = Array(args.dropFirst(3))
+            let allowed: Set<String> = ["--fetch-listing", "--register-and-list", "--appkit"]
+            guard (3...5).contains(args.count), Set(options).count == options.count,
+                  options.allSatisfy({ allowed.contains($0) }),
+                  !(options.contains("--fetch-listing") && options.contains("--register-and-list")),
                   let pid = Int32(args[1]), let fixture = URL(string: args[2]),
                   args[2].count <= 512, fixture.scheme == "http", fixture.host == "127.0.0.1",
                   let port = fixture.port, (1...65535).contains(port), fixture.user == nil, fixture.password == nil,
@@ -101,6 +111,14 @@ private enum InspectorDiscoveryControl {
             let scope = try PreviewAXScope(pid: pid, root: root)
             guard scope.policy.name == "InspectableControl" else { throw RendererScopeError.unrelatedHost }
             let identities = [scope.host] + (try scope.renderers())
+            let register = options.contains("--register-and-list")
+            let fetchListing = register || options.contains("--fetch-listing")
+            if options.contains("--appkit") {
+                let application = NSApplication.shared
+                application.setActivationPolicy(.prohibited)
+                application.finishLaunching()
+            }
+            report["appKitLifecycleRequested"] = options.contains("--appkit")
             let image = "/System/Library/PrivateFrameworks/WebInspector.framework/Versions/A/WebInspector"
             guard let library = dlopen(image, RTLD_LAZY | RTLD_LOCAL) else { throw DiscoveryError.unavailableInterface }
             defer { dlclose(library) }
@@ -111,8 +129,9 @@ private enum InspectorDiscoveryControl {
             report["localTargetCreationRequested"] = true
             defer {
                 do {
-                    try InspectorObjects.localTarget(manager, create: false)
-                    report["localTargetRemovalRequested"] = true
+                    let exists = try InspectorObjects.get(manager, "currentMachine") != nil
+                    if exists { try InspectorObjects.localTarget(manager, create: false) }
+                    report["localTargetRemovalRequested"] = exists
                     report["localTargetAbsentAfterRemoval"] = try InspectorObjects.get(manager, "currentMachine") == nil
                 } catch {
                     report["localTargetRemovalRequested"] = false
@@ -124,18 +143,23 @@ private enum InspectorDiscoveryControl {
             var sawConnection = false
             var sawConnected = false
             var sawReady = false
+            var machinePresentAtEnd = false
             var transitions: [[String: Any]] = []
             var previousState = ""
             var listingRequested = false
             var maximumApplicationCount = 0
             var initialApplicationCount: Int?
             report["applicationObjectPresent"] = NSApp != nil
+            let callback = InspectorCallbackProgress()
+            DispatchQueue.main.async { callback.mainQueueProcessed = true }
+            defer { report["mainQueueCallbackProcessed"] = callback.mainQueueProcessed }
             var seenApplications: Set<pid_t> = []
             var matchedPages: Set<String> = []
             repeat {
                 try scope.verifyImage()
                 for identity in identities { try scope.validate(identity) }
                 if let machine = try InspectorObjects.get(manager, "currentMachine") {
+                    machinePresentAtEnd = true
                     sawMachine = true
                     let ready = try InspectorObjects.flag(machine, "isReady")
                     let connection = try InspectorObjects.get(machine, "connection")
@@ -143,8 +167,8 @@ private enum InspectorDiscoveryControl {
                     let applicationCount = try InspectorObjects.applicationCount(machine)
                     if initialApplicationCount == nil { initialApplicationCount = applicationCount }
                     maximumApplicationCount = max(maximumApplicationCount, applicationCount)
-                    if args.count == 4 && !listingRequested {
-                        try InspectorObjects.fetchApplications(manager, machine: machine, register: args[3] == "--register-and-list")
+                    if fetchListing && !listingRequested {
+                        try InspectorObjects.fetchApplications(manager, machine: machine, register: register)
                         listingRequested = true
                     }
                     sawConnection = sawConnection || connection != nil
@@ -175,6 +199,13 @@ private enum InspectorDiscoveryControl {
                             matchedPages.insert("\(identity.pid):\(pageID.uint64Value)")
                         }
                     }
+                } else {
+                    machinePresentAtEnd = false
+                    if previousState != "no-current-machine" && transitions.count < 20 {
+                        transitions.append(["milliseconds": Int((ProcessInfo.processInfo.systemUptime - started) * 1000),
+                                            "connection": "no-current-machine", "machineReady": false])
+                        previousState = "no-current-machine"
+                    }
                 }
                 if matchedPages.count == 1 { break }
                 RunLoop.current.run(until: Date().addingTimeInterval(0.05))
@@ -182,12 +213,13 @@ private enum InspectorDiscoveryControl {
             try scope.verifyImage()
             report["status"] = matchedPages.count == 1 ? "reference-discovered" : "inconclusive"
             report["currentMachineSeen"] = sawMachine
+            report["currentMachinePresentAtEnd"] = machinePresentAtEnd
             report["connectionObjectSeen"] = sawConnection
             report["connectionConnectedSeen"] = sawConnected
             report["machineReadySeen"] = sawReady
             report["connectionTransitions"] = transitions
             report["applicationListingRequested"] = listingRequested
-            report["identifierHandshakeRequested"] = listingRequested && args[3] == "--register-and-list"
+            report["identifierHandshakeRequested"] = listingRequested && register
             report["initialApplicationCount"] = initialApplicationCount
             report["maximumApplicationCount"] = maximumApplicationCount
             report["ownedApplicationsSeen"] = seenApplications.count

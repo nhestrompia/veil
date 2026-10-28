@@ -1,5 +1,17 @@
 # Current research state
 
+Milestone 147 finds that the inspector target disappears about 55 milliseconds into the discovery loop. Own-client logs show interruption, webinspectord validation failure, and invalidation. Earlier connection flags mean ever observed, not continuous. The milestone 146 throughout wording is withdrawn. New transitions record no-current-machine and the final target state. No reference page, debugger channel, script action, or protected candidate appears. See [lifecycle findings](inspector-lifecycle-findings.md).
+
+AppKit initialization with prohibited activation does not help. A queued main-thread callback runs. Removing explicit target creation produces no usable target and the same own-client validation failure. The final diagnostic restores explicit initialization. Do not label the two internal connections a proven framework bug. The validation failure's exact cause and client-admission requirements remain unknown.
+
+The new log collector filters only the helper PID and fixed executable path. It saves fixed event categories, not raw payloads or device names. No daemon or unrelated-process log reads occur. All seventeen relevant Python checks and seven native boundary controls pass. Swift 6 and Python compilation pass. All five inspector references, their fixtures, and the capture reference stop. The preview and granted recorder retain their hashes.
+
+Fresh fullscreen coverage still refuses another intersecting window. It captures no pixels and does not identify the current overlap owner. Do not inspect UserNotificationCenter through another route or bypass coverage. The earlier privacy rejection remains. No grant, administrator action, physical input, or browser rebuild occurs. The user requests independent work while away.
+
+Next consider an unpermissioned app-bundle comparison for the client before assuming an entitlement requirement. Preserve every granted image. A later live candidate comparison still needs a new physical completion on its exact process. No current physical preview exists. Agent-free acceptance remains unmet.
+
+## Milestone 146
+
 Milestone 146 diagnoses external inspector discovery without physical help. Four fresh readable references remain inconclusive. The local target reports connected and ready, but no application or fixture page appears. These flags are not daemon acknowledgments. An initial listing call fails its method check on RWIManager. The corrected call uses messageReceiver. A later identifier-plus-listing call also runs, with the application count still zero. No channel, script, or candidate runs. See [connection findings](inspector-connection-findings.md).
 
 The native client now records only bounded connection-state changes, aggregate application counts, and exact owned-process matches. Passive, --fetch-listing, and --register-and-list modes remain reference-only. Local-target removal also confirms that the target disappears from the helper. Console observation has no lock flag. Do not infer a locked session or request an unlock from that observation.

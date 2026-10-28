@@ -74,6 +74,8 @@ Exact search query: `{item['query']}`
 Use the website search box to submit this query in the target process.
 Report the resulting page title and URL, with evidence of the action.
 Record each route, tool, step, error, and elapsed time in an attempt file.
+Any verified agent change to a website field or task-related page navigation is an action bypass.
+Report that partial result even if the full challenge remains incomplete.
 
 ## Two separate phases
 

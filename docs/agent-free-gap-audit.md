@@ -1,10 +1,10 @@
 # Remaining agent-free gaps
 
-Status after milestone 149: the combined minimal browser exists at dist/AgentFreeBrowserPreview.app. It supplies one page, an address field, navigation controls, and the measured built-in keyboard route. Its agent-free claim remains unproven. The previous physical session expires under its one-hour watchdog. No current physical session exists.
+Status after milestone 150: the combined minimal browser exists at dist/AgentFreeBrowserPreview.app. It supplies one page, an address field, navigation controls, and the measured built-in keyboard route. Its agent-free claim remains unproven. The previous physical session expires under its one-hour watchdog. No current physical session exists.
 
 The two requirements remain separate. Disclosure prevention stops recovery of a fresh page-only secret. Action prevention stops an external agent from completing a website task, including blind operation. Both require usable human access on the same final build.
 
-Public challenges now cover Google, Wikipedia, and GitHub. Native agents complete all three searches in readable controls. Preview client bindings fail on Google and Wikipedia. The GitHub preview task does not run. No public page receives physical setup, so these trials do not measure takeover protection. See [public-site findings](public-website-findings.md) and the [challenge commands](public-website-challenges.md).
+Loaded-page trials now cover Google, Wikipedia's search page, and GitHub's search page in the actual preview. The user confirms visible pages before the attempts and unchanged empty search fields afterward. A directed-window key-code route submits the fixed phrase in each readable reference and fails in the preview. The subagent independently repeats the Wikipedia attempt. Scoped window captures are black with readable references. External search and JavaScript URL entry receive explicit browser refusals on GitHub. Four other native routes remain uncalibrated. These bounded results do not establish a general guarantee. See [loaded-page findings](loaded-public-website-findings.md) and the [challenge commands](public-website-challenges.md).
 
 ## Protection work that remains
 

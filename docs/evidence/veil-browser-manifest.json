@@ -38,7 +38,7 @@
   "permission": "macOS Input Monitoring / ListenEvent",
   "permissionApproved": true,
   "permissionRequested": true,
-  "effectiveGrantConfirmed": false,
+  "effectiveGrantConfirmed": true,
   "physicalMouseControlVerified": false,
   "liveAttacksVerified": false,
   "engineBundled": false,
@@ -69,5 +69,7 @@
     "binarySHA256": "dc0725ded122316f7a51427295e75f4c1d8ed2cb5447d017583ad69652f8c1ef",
     "scope": "Input Monitoring request for this new Veil app; active own-window processing only; no hooks or raw keys/text saved"
   },
-  "permissionRequestLog": "artifacts/veil-mouse-156/input-request.log"
+  "permissionRequestLog": "artifacts/veil-mouse-156/input-request.log",
+  "effectiveGrantLog": "artifacts/veil-mouse-156/enabled-preflight.log",
+  "effectiveGrantLogSHA256": "872d1cd4cc8eab1a9874920026cac267e8d6d5e0d26238597839d9daccfbefc1"
 }

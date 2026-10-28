@@ -7,7 +7,7 @@
   "manualPointerArmingRequired": false,
   "softwareCanRedirectConcurrentPhysicalInput": true,
   "coordinateLimitAcceptedByUser": true,
-  "permissionPreflight": "DEVICE_KEYBOARD permission=false",
+  "permissionPreflight": "DEVICE_KEYBOARD permission=true",
   "permissionRequested": true,
   "physicalMouseVerified": false,
   "physicalWheelVerified": false,
@@ -106,7 +106,6 @@
     }
   ],
   "remaining": [
-    "Enable this app's approved Input Monitoring grant and confirm effective access",
     "Verify physical click, native toolbar, and wheel in this exact image",
     "Run external software-input and loaded-page takeover comparisons on this exact image"
   ],
@@ -127,6 +126,9 @@
     "exactAppRevealed": true,
     "nativeToolError": "Sky Computer Use native pipe startup failed",
     "initializationAttempts": 2,
-    "effectiveGrantConfirmed": false
-  }
+    "effectiveGrantConfirmed": true
+  },
+  "effectiveGrantConfirmed": true,
+  "effectiveGrantLog": "artifacts/veil-mouse-156/enabled-preflight.log",
+  "effectiveGrantLogSHA256": "872d1cd4cc8eab1a9874920026cac267e8d6d5e0d26238597839d9daccfbefc1"
 }

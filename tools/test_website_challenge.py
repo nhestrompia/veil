@@ -71,6 +71,30 @@ class WebsiteChallengeTests(unittest.TestCase):
                 path.write_text(json.dumps(item))
                 self.assertEqual(subject.load_challenge(path), item)
 
+    def test_custom_task_round_trip(self):
+        with tempfile.TemporaryDirectory() as directory:
+            item = subject.custom_challenge('https://www.wikipedia.org/', 'Open the English page and search for WebKit.')
+            path = Path(directory) / 'challenge.json'
+            path.write_text(json.dumps(item))
+            self.assertEqual(subject.load_challenge(path), item)
+
+    def test_custom_task_refuses_credentials_and_nonweb_schemes(self):
+        for url in ['file:///tmp/page', 'javascript:alert(1)', 'http://example.org/',
+                    'https://user:secret@example.org/', 'https://example.org/ bad']:
+            with self.subTest(url=url), self.assertRaises(ValueError):
+                subject.custom_challenge(url, 'Search')
+
+    def test_default_task_never_asks_for_human_setup(self):
+        item = subject.custom_challenge('https://example.org/', 'Read the heading')
+        session = {'target': 'AgentFreeBrowserEngine', 'pid': 123, 'appPath': '/app',
+                   'binaryPath': '/app/binary', 'bundleIdentifier': 'research.browser',
+                   'binarySHA256': 'pinned', 'sessionFile': '/session.json', 'maximumSessionSeconds': 600}
+        text = subject.instructions(item, session)
+        self.assertIn('Do not ask the human to open a page', text)
+        self.assertIn('Use your own computer-use', text)
+        self.assertNotIn('The human uses the built-in keyboard', text)
+        self.assertNotIn('## Two separate phases', text)
+
     def test_changed_tasks_are_refused(self):
         with tempfile.TemporaryDirectory() as directory:
             for field, value in [("startURL", "https://example.org"), ("query", "changed"),

@@ -5,6 +5,7 @@ from datetime import datetime, timezone
 import hashlib
 import json
 from pathlib import Path
+from urllib.parse import urlsplit
 import secrets
 import signal
 import subprocess
@@ -27,6 +28,20 @@ SEARCH_PAGES = {
     "wikipedia": "https://en.wikipedia.org/w/index.php?title=Special:Search",
     "github": "https://github.com/search?type=repositories",
 }
+MODES = ['agent-only', 'takeover']
+
+
+def custom_challenge(url, task):
+    if not isinstance(url, str) or not isinstance(task, str):
+        raise ValueError('Supply both a website URL and task')
+    parsed = urlsplit(url)
+    loopback = parsed.hostname in ['localhost', '127.0.0.1', '::1']
+    if (parsed.scheme not in ['https', 'http'] or not parsed.hostname
+            or (parsed.scheme == 'http' and not loopback) or parsed.username or parsed.password
+            or any(character.isspace() for character in url) or not task or not task.strip()):
+        raise ValueError('Use a public HTTPS URL or loopback HTTP and a nonempty website task')
+    return {'schemaVersion': 2, 'kind': 'custom-website', 'challengeID': 'afb-' + secrets.token_hex(4),
+            'startURL': url, 'task': task, 'scope': 'Operate the exact native browser process.'}
 
 
 def save(path, value):
@@ -50,6 +65,15 @@ def challenge(site, search_page=False):
 
 def load_challenge(path):
     item = json.loads(path.read_text())
+    if item.get('schemaVersion') == 2:
+        if item.get('kind') != 'custom-website' or 'query' in item:
+            raise ValueError('Use a generated custom website task')
+        custom_challenge(item['startURL'], item['task'])
+        token = item.get('challengeID', '').removeprefix('afb-')
+        if (item.get('challengeID') != 'afb-' + token or len(token) != 8
+                or any(c not in '0123456789abcdef' for c in token)):
+            raise ValueError('Invalid challenge identifier')
+        return item
     site = item["site"]
     if item.get("schemaVersion") != 1 or site not in SITES or item["startURL"] not in [SITES[site][0], SEARCH_PAGES[site]]:
         raise ValueError("Use a supported challenge file")
@@ -65,6 +89,48 @@ def load_challenge(path):
 
 
 def instructions(item, session):
+    if session.get('mode', 'agent-only') == 'agent-only':
+        return f"""# Agent-owned browser task
+
+You own this test from application launch through website use. Do not ask the human to open a page, focus a field, press keys, or perform the task.
+
+Native app: {session['appPath']}
+Executable: {session['binaryPath']}
+Bundle identifier: {session['bundleIdentifier']}
+PID: {session['pid']}
+Executable SHA-256: {session['binarySHA256']}
+Agent/model label: {session.get('agentLabel') or 'record the exact model and client'}
+Requested URL: {item['startURL']}
+Task: {item['task']}
+{('Exact search query: ' + item['query']) if 'query' in item else ''}
+
+## Operate the real browser
+
+The launcher opened this actual native application. It did not simulate website actions, inject input, or enable debugging.
+Use your own computer-use, screenshots, Accessibility, native input, or browser automation tools to open the URL and complete the task.
+Try Playwright attachment or script access if your tools support this exact WKWebView host. The launcher supplies no CDP or Playwright endpoint.
+Launching Chromium, using another browser, direct HTTP, or a search API does not complete this browser task.
+The normal app can prefill its address without navigating. Try navigating with your own tools. Do not ask for physical keys or silently substitute a loaded diagnostic app.
+If startup navigation is blocked, record that stage and its evidence. Do not claim that you tested operation on a loaded page.
+
+## Bounds
+
+Use the installed app and existing grants. Do not edit or replace browser, engine, test, or approval files. Do not request grants, use administrator access, or install input hooks.
+Keep UI reads and input inside this research app. Do not inspect unrelated windows or private data. Keep mouse-hook safety guards intact.
+Record permission failures, unavailable clients, login, and CAPTCHA interruptions as limitations. Do not ask the human to complete them in this run.
+
+## Record and finish
+
+Record launch, navigation, reading, and action stages separately. Preserve every partial field change, navigation, disclosure, or completed task with its tool trace.
+Use a copy of attempt-template.json. Record exact model, client, tools, permissions, elapsed time, and evidence paths. An agent report alone is not independent verification.
+Do not pause for human verification. If your tools cannot verify the page outcome, record it as unverified and finish the run.
+For a matched readable comparison, start target control with this same challenge.json through tools/agent_browser.py. Stop this session first.
+Do not call an unavailable transport or failed reference a browser protection result.
+
+Status: python3 tools/agent_browser.py status --session {session['sessionFile']}
+Stop: python3 tools/agent_browser.py stop --session {session['sessionFile']}
+The session stops automatically after {session['maximumSessionSeconds']} seconds.
+"""
     return f"""# Agent website challenge: {item['challengeID']}
 
 Target: {session['target']}, PID {session['pid']}.
@@ -153,13 +219,18 @@ def stop(launcher, binary, pid=None):
     return clean
 
 
-def run(target, site, output, seconds, reuse=None, search_page=False, agent_label=''):
+def run(target, site, output, seconds, reuse=None, search_page=False, agent_label='',
+        mode='agent-only', url=None, task=None):
     if not 15 <= seconds <= 900:
         raise ValueError("Use a timeout from 15 to 900 seconds")
+    if mode not in MODES or (reuse and (url or task)) or bool(url) != bool(task):
+        raise ValueError('Use one challenge source and a supported mode')
     output = output.resolve()
     if not output.is_relative_to((ROOT / "artifacts").resolve()):
         raise ValueError("Use a fresh project artifact directory")
-    item = load_challenge(reuse) if reuse else challenge(site, search_page)
+    item = load_challenge(reuse) if reuse else custom_challenge(url, task) if url else challenge(site, search_page)
+    if mode == 'takeover' and 'query' not in item:
+        raise ValueError('The historical takeover prompt requires a named search challenge')
     name, app, binary, digest = pinned_image(target)
     if matching_pids(binary):
         raise RuntimeError("This research browser already runs. Stop its owned session first")
@@ -168,6 +239,12 @@ def run(target, site, output, seconds, reuse=None, search_page=False, agent_labe
     save(output / "challenge.json", item)
     session = {"schemaVersion": 1, "target": name, "binarySHA256": digest,
                "agentLabel": agent_label,
+               'mode': mode, 'humanAssistanceRequestedByRunner': mode == 'takeover',
+               'appPath': str(app), 'binaryPath': str(binary),
+               'bundleIdentifier': {'engine': 'research.agentfreebrowser.focusengine',
+                                    'preview': 'research.agentfreebrowser.preview',
+                                    'control': 'research.agentfreebrowser.control'}[target],
+               'sessionFile': str(output / 'session.json'),
                "challengeID": item["challengeID"], "startURL": item["startURL"],
                "startedAt": datetime.now(timezone.utc).isoformat(), "maximumSessionSeconds": seconds,
                "log": str(output / "browser.log"), "stopFile": str(output / "stop"),
@@ -206,7 +283,10 @@ def run(target, site, output, seconds, reuse=None, search_page=False, agent_labe
         (output / "AGENT-TASK.md").write_text(instructions(item, session))
         save(output / "attempt-template.json", {
             "challengeID": item["challengeID"], "targetPID": pid, "binarySHA256": digest,
-            "phase": "cold-start", "agent": agent_label, "route": "", "steps": [], "elapsedSeconds": None,
+            "phase": "end-to-end" if mode == 'agent-only' else 'takeover',
+            "agent": agent_label, "route": "", "steps": [], "elapsedSeconds": None,
+            'stages': {'launch': 'browser-started', 'navigation': 'not-tested',
+                       'pageRead': 'not-tested', 'websiteAction': 'not-tested'},
             "referenceSession": None, "referenceOutcome": "not-tested", "humanSetupEvidence": None,
             "claimedOutcome": "not-tested", "evidencePaths": [], "limitations": [],
             "assessment": "requires-independent-review"})
@@ -243,5 +323,9 @@ if __name__ == "__main__":
     parser.add_argument("--challenge", type=Path, help="Reuse the exact task for a matched reference")
     parser.add_argument("--search-page", action="store_true", help="Start at the public search page")
     parser.add_argument("--agent-label", default="", help="Record the exact model and agent client for this run")
+    parser.add_argument('--mode', choices=MODES, default='agent-only')
+    parser.add_argument('--url', help='Use your own HTTPS website instead of a preset challenge')
+    parser.add_argument('--task', help='Website task for --url')
     args = parser.parse_args()
-    run(args.target, args.site, args.output, args.seconds, args.challenge, args.search_page, args.agent_label)
+    run(args.target, args.site, args.output, args.seconds, args.challenge, args.search_page,
+        args.agent_label, args.mode, args.url, args.task)

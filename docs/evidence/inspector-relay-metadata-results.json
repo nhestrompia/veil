@@ -1,0 +1,210 @@
+{
+  "browserQueried": false,
+  "classCount": 136,
+  "clientInstantiated": false,
+  "clientMethodInvoked": false,
+  "explicitRelayConnectionRequested": false,
+  "image": "/System/Library/PrivateFrameworks/WebInspector.framework/Versions/A/WebInspector",
+  "inputPosted": false,
+  "libraryInitializersAudited": false,
+  "libraryLoaded": true,
+  "permissionRequested": false,
+  "relayTrafficMonitored": false,
+  "selectedClassCount": 10,
+  "status": "metadata-only",
+  "system": "Version 26.6 (Build 25G72)",
+  "probeSHA256": "e07059fa0c59453e322a4897b3b8bed66bf27c1412f2370ca00721a2fb3b3bee",
+  "sourceSHA256": "7c55e05efb114fc875f7a5c5c2a04239978a494c671128da02895685ce57af5d",
+  "unexpectedArgumentsRefused": true,
+  "milestone": 144,
+  "metadataOnly": true,
+  "attachmentAttempted": false,
+  "agentFreeEstablished": false,
+  "classes": [
+    {
+      "class": "RWIApplication",
+      "instanceMethodCount": 34,
+      "methodLimitReached": false,
+      "selectedMethods": [
+        {
+          "encoding": "@24@0:8@16",
+          "name": "debuggableWithPageId:"
+        },
+        {
+          "encoding": "v24@0:8@16",
+          "name": "setDelegate:"
+        }
+      ]
+    },
+    {
+      "class": "RWIBaseManager",
+      "instanceMethodCount": 57,
+      "methodLimitReached": false,
+      "selectedMethods": [
+        {
+          "encoding": "@16@0:8",
+          "name": "currentApplication"
+        },
+        {
+          "encoding": "@16@0:8",
+          "name": "currentMachine"
+        },
+        {
+          "encoding": "@16@0:8",
+          "name": "init"
+        },
+        {
+          "encoding": "@32@0:8@16@24",
+          "name": "manageTarget:withKey:"
+        },
+        {
+          "encoding": "v24@0:8@16",
+          "name": "setDelegate:"
+        },
+        {
+          "encoding": "v24@0:8@16",
+          "name": "unmanageTargetWithKey:"
+        }
+      ]
+    },
+    {
+      "class": "RWIChannel",
+      "instanceMethodCount": 11,
+      "methodLimitReached": false,
+      "selectedMethods": [
+        {
+          "encoding": "v16@0:8",
+          "name": "close"
+        },
+        {
+          "encoding": "@32@0:8@16@24",
+          "name": "initWithManager:debuggable:"
+        },
+        {
+          "encoding": "v24@0:8@16",
+          "name": "sendMessageToBackend:"
+        },
+        {
+          "encoding": "v24@0:8@16",
+          "name": "setDelegate:"
+        },
+        {
+          "encoding": "v16@0:8",
+          "name": "start"
+        }
+      ]
+    },
+    {
+      "class": "RWIDebuggable",
+      "instanceMethodCount": 22,
+      "methodLimitReached": false,
+      "selectedMethods": [
+        {
+          "encoding": "v24@0:8@16",
+          "name": "setDelegate:"
+        }
+      ]
+    },
+    {
+      "class": "RWIInspector",
+      "instanceMethodCount": 24,
+      "methodLimitReached": false,
+      "selectedMethods": [
+        {
+          "encoding": "v16@0:8",
+          "name": "close"
+        },
+        {
+          "encoding": "v24@0:8@16",
+          "name": "sendMessageToBackend:"
+        }
+      ]
+    },
+    {
+      "class": "RWIMachine",
+      "instanceMethodCount": 10,
+      "methodLimitReached": false,
+      "selectedMethods": [
+        {
+          "encoding": "@44@0:8@16@24B32@36",
+          "name": "initWithName:udid:currentMachine:manager:"
+        }
+      ]
+    },
+    {
+      "class": "RWIManager",
+      "instanceMethodCount": 70,
+      "methodLimitReached": false,
+      "selectedMethods": [
+        {
+          "encoding": "@16@0:8",
+          "name": "currentApplication"
+        },
+        {
+          "encoding": "@16@0:8",
+          "name": "currentMachine"
+        },
+        {
+          "encoding": "@16@0:8",
+          "name": "currentTarget"
+        },
+        {
+          "encoding": "@16@0:8",
+          "name": "init"
+        },
+        {
+          "encoding": "@32@0:8@16^@24",
+          "name": "openChannelForDebuggable:error:"
+        },
+        {
+          "encoding": "v24@0:8@16",
+          "name": "setDelegate:"
+        }
+      ]
+    },
+    {
+      "class": "RWIRelayDelegateMac",
+      "instanceMethodCount": 14,
+      "methodLimitReached": false,
+      "selectedMethods": []
+    },
+    {
+      "class": "RWIServiceXPCConnection",
+      "instanceMethodCount": 6,
+      "methodLimitReached": false,
+      "selectedMethods": [
+        {
+          "encoding": "v16@0:8",
+          "name": "closeInternal"
+        },
+        {
+          "encoding": "@40@0:8@16r*24@32",
+          "name": "initWithMachine:xpcServiceName:delegate:"
+        },
+        {
+          "encoding": "v24@0:8@16",
+          "name": "sendMessage:"
+        }
+      ]
+    },
+    {
+      "class": "RWITarget",
+      "instanceMethodCount": 52,
+      "methodLimitReached": false,
+      "selectedMethods": [
+        {
+          "encoding": "@24@0:8@16",
+          "name": "applicationWithIdentifier:"
+        },
+        {
+          "encoding": "v24@0:8@16",
+          "name": "setDelegate:"
+        }
+      ]
+    }
+  ],
+  "preservedImages": {
+    "AgentFreeBrowserPreview": "dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70",
+    "PreviewCompositorProbe": "2ce201a2876e295fe6695fbda6506b72e1d9ac706f6051226377f5a8fa3f4a2b"
+  }
+}

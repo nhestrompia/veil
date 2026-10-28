@@ -1,5 +1,15 @@
 # Current research state
 
+Milestone 144 completes independent external-inspector preparation while the user is away. It adds InspectorRelayMetadata, a five-second metadata-only diagnostic. On macOS 26.6 it finds ten named private WebInspector classes and their method encodings. It creates no client, invokes no client method, and requests no relay connection. It requests no grant or input. The library's initializers and relay traffic are not audited. Swift 6 compilation and the extra-argument refusal control pass. No browser or granted-helper image changes.
+
+Primary-source research distinguishes the frontend SPI from the missing transport. The webinspectord entitlement check authenticates the relay peer. It does not establish external debugger admission rules. Installed RWIManager and RWIChannel selectors are concrete client entry points, not successful attachment. The next independent step is a scoped external client with an inspectable reference. Preserve unrelated-app boundaries and require a successful reference before a candidate verdict. See [client research](research/cocoa-inspector-client.md).
+
+The user asks for work without physical help while away. The UserNotificationCenter alert still blocks valid compositor calibration. Automatic approval review rejects its inspection because of unrelated private notification content. Do not retry through another route or capture around the guard. The approved recorder update and app-only refresh are complete. Its effective grant is true. No new question or permission request is pending.
+
+The browser remains the minimal MVP candidate. Agent-free acceptance remains unmet. No current physical preview exists. Live candidate tests still need a fresh physical completion on the exact process. The capture, inspector, autonomous-action, keyboard-observation, and human-compatibility gaps remain open.
+
+## Milestone 143
+
 Milestone 143 installs the explicitly approved recorder layout update and completes its app-only Screen Recording refresh. The effective grant is true for image 2ce201a2876e295fe6695fbda6506b72e1d9ac706f6051226377f5a8fa3f4a2b. Preserve the signed app and pinned generated source .build/diagnostics/PreviewCompositorPanelProbe.swift. The original signed app remains backed up. No further grant refresh is pending. See [layout findings](preview-compositor-layout-update-findings.md).
 
 A metadata-only fullscreen control passes with a nonactivating panel at level minus one. The updated recorder changes only its panel factory, panel level, and expected owned level. Other coverage checks remain. Two later readable controls fail before useful capture: foreground loss, then overlap. A timing trace identifies UserNotificationCenter window 114719 at layer eight throughout the crop. Its first sample also precedes backdrop placement. Neither failed control proves protection.

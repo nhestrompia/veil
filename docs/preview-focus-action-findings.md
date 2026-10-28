@@ -2,6 +2,8 @@
 
 Milestone 151 finds a website action bypass in the actual AgentFreeBrowserPreview. After human setup, three app activation cycles each cause one new server-accepted action. The browser admits zero input events during those cycles. This build fails the requirement that agents cannot operate any webpage.
 
+Milestone 152 adds a separate browser that uses a custom engine. Six matched diagnostic comparisons pass. The new app still needs a physical keyboard check. The milestone 151 evidence describes the unchanged vulnerable preview. See the [engine follow-up](focus-engine-browser-findings.md).
+
 This is a crafted local page with an ordinary JavaScript focus handler. The result does not show search automation on Google, Wikipedia, or GitHub. Their earlier measured input results remain separate. The [evidence file](evidence/preview-focus-action-results.json) preserves both controls, the candidate results, the oracle, and cleanup.
 
 ## The same image passes human setup and fails the attack

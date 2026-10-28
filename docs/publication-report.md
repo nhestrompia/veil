@@ -1,6 +1,6 @@
 # macOS browser resistance to agent tools
 
-Draft for publication, 2026-10-28. The tested MVP is not agent-free. It resists several measured input and observation methods, but app activation causes website actions in a crafted page on the unchanged preview.
+Draft for publication, 2026-10-28. The frozen preview is not agent-free. A new engine candidate implements a focus defense and passes six matched diagnostic comparisons. Physical validation of the new identity remains pending.
 
 ## Scope and claim
 
@@ -10,11 +10,17 @@ The primary agent is gpt-6.1-sol through Codex in T3 Code. A subagent independen
 
 The central candidate image has SHA-256 `dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70`. Results from older diagnostic apps are explicitly separate. Human controls establish visible pages and physical operation on the relevant candidate processes. Failed permissions, failed controls, and missing frames never count as protection.
 
+## Focus defense follow-up
+
+Milestone 152 integrates the existing WebKit activity projection into a separate browser target. Page-visible focus and visibility remain stable while native window focus still controls keyboard and password-input eligibility. Six matched diagnostic cases pass, with no new action across 18 stable activation cycles. Each resumed typing control completes. One additional cycle after reload also records no action.
+
+These controls use owner-generated input in the combined browser code. They are not physical-human tests of the public executable. The new app has a separate identity and no effective Input Monitoring grant. Its executable SHA-256 is `12de797fbbfea6f5536b13b8ba890354170f3561f681620bb49be42f2fdf7e21`. The workspace engine is not bundled, and Hardened Runtime is off. The old image's capture and input observations cannot transfer automatically to this build. See the [engine findings](focus-engine-browser-findings.md) and [full evidence](evidence/focus-engine-browser-results.json).
+
 ## Results by method
 
 | Method | Observed result | Limit |
 | --- | --- | --- |
-| Focus-only app activation | Three new accepted actions in three cycles on the actual preview | Crafted focus-sensitive page, armed by a human first |
+| Focus-only app activation | Frozen preview: three accepted actions. New engine controls: no actions across 18 cycles | New public executable still needs a physical control |
 | Blind native input on public pages | A calibrated directed key-code route leaves Google, Wikipedia, and GitHub search fields unchanged | User confirms final state. Four additional Google routes lack successful controls |
 | Independent agent repeat | Subagent's Wikipedia attempt also leaves the field empty | Same native route, not a separate automation technology |
 | Native computer-use client | Searches succeed in readable public-page references. Preview binding times out | Client binding failure supplies no confirmed candidate action |
@@ -48,10 +54,10 @@ A screenshot-file watcher cannot cover clients that return screenshot bytes from
 
 ## What is missing before release acceptance
 
-The demonstrated focus route needs an integrated defense that preserves physical browsing. Other lifecycle and timing routes need tests on the same final build. Successful separate experiments do not count as integrated protection.
+The engine candidate integrates the focus defense in the shared browser controller. Physical text and password use, followed by the external attack on that exact process, remain required. Distribution packaging and hardening also remain open. Other lifecycle and timing routes need final-image tests.
 
 Unfiltered display capture still needs a complete candidate comparison with readable references and valid privacy coverage. External inspector scripting still needs a working reference. Keyboard observation needs a preview-specific result. Appium Mac2 has not been tested. Its Xcode and Accessibility requirements remain separate prerequisites. [Mac2 documentation](https://appium.github.io/appium-mac2-driver/latest/getting-started/)
 
-The candidate supports a measured built-in keyboard and US ASCII. Mouse input is disabled. Unicode, input methods, broad website compatibility, and the PRD's human-use targets remain unmet. These usability limits cannot count as defenses.
+The frozen preview supports a measured built-in keyboard and US ASCII. The new engine app still needs physical validation. Mouse input is disabled. Unicode, input methods, broad website compatibility, and the PRD's human-use targets remain unmet. These usability limits cannot count as defenses.
 
-The present evidence supports a report on measured resistance and a reproducible bypass. It does not support publishing this build as an agent-free MVP. The [gap audit](agent-free-gap-audit.md) tracks the remaining acceptance work, and the [method research](research/publication-agent-methods.md) explains the supported agent interfaces.
+The present evidence supports a report on measured resistance, a reproducible bypass, and a diagnostic engine fix. It does not support publishing either build as an agent-free MVP. The [gap audit](agent-free-gap-audit.md) tracks the remaining acceptance work, and the [method research](research/publication-agent-methods.md) explains the supported agent interfaces.

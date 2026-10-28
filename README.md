@@ -2,9 +2,11 @@
 
 # agentfreebrowser
 
-A macOS-only research MVP for an agent-free browser. The existing combined app is the candidate. Its current build fails the broad agent-free requirement: an external agent triggers website actions through app focus changes. See the [publication draft](docs/publication-report.md), [focus bypass](docs/preview-focus-action-findings.md), and [MVP scope](docs/mvp-scope.md).
+A macOS-only research MVP for an agent-free browser. The frozen preview has a reproducible focus-action bypass. A new [engine candidate](dist/AgentFreeBrowserEngine.app) integrates a defense and passes six matched diagnostic comparisons. Physical validation of its new identity remains pending. See the [publication report](docs/publication-report.md), [engine findings](docs/focus-engine-browser-findings.md), and [MVP scope](docs/mvp-scope.md).
 
-Milestone 151 reproduces that bypass in the actual preview after human setup. Three app activation cycles each cause one new server-accepted action, with zero admitted input. The page contains a normal focus handler. This does not show search automation on Google, Wikipedia, or GitHub. Their earlier input results remain valid for the tested methods.
+Milestone 152 records no new actions across 18 stable activation cycles, with successful resumed typing controls. Native-mode controls reproduce the actions. The new app requires this workspace's custom engine and is not a distribution build. Its Input Monitoring grant has not been requested. Earlier capture and input results apply to the frozen preview.
+
+Milestone 151 remains the vulnerable-build result. Three app activation cycles each cause one accepted action in the actual preview, with zero admitted input. The page has a normal focus handler. This does not show search automation on Google, Wikipedia, or GitHub.
 
 Try the [public website challenges](docs/public-website-challenges.md) on Google, Wikipedia, and GitHub. Each session writes a task for agents and pins the research browser process. Public-site results require independent review.
 

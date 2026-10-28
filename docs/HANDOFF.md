@@ -1,5 +1,21 @@
 # Current research state
 
+## Milestone 152
+
+The focus fix is integrated in a separate AgentFreeBrowserEngine target. It uses the existing patched WebKit content-activity projection before view creation and checks copied configuration. Native window state, router foreground checks, and password-input ownership remain real. No JavaScript handler suppression or fake native getters are used. Code milestone mty adds the target, guarded launcher, fixture comparisons, and prepared physical-session path. Follow-up oul adds the app-level request guard and pins the final image.
+
+One complete serial suite passes six native/stable comparisons: focus, password focus, blur, visibility, same-origin frame focus, and cross-origin frame focus. All 18 stable activation cycles record no new action and zero admitted input. Each native comparison reproduces actions. Every resumed task completes. One additional stable cycle after reload also records no action, and its second resume completes. This does not test forced renderer recovery.
+
+The password comparison releases per-view and aggregate Secure Event Input while another app is foreground and restores both on return. Its private resumed task completes. All input controls are owner-generated, with no HID reader. They do not establish physical-human usability. Each measured content process passes the three-framework mapping check.
+
+The current app requires its own Input Monitoring grant. Access is false, no request has run, and approval is not recorded. Both the launcher and the public app gate a request on the approved manifest. Keep the final image pinned after consent. The final app has no diagnostic input driver. The prepared tools/run_preview_session.py --engine and tools/run_focus_browser_attack.py still require a new physical control on that exact process.
+
+The app's native bootstrap uses the fixed workspace engine and rejects a wrong root. Frameworks are not bundled, and Hardened Runtime is off. This is a research integration, not a distribution build. Do not carry the old image's capture or input results into it. See [engine findings](focus-engine-browser-findings.md), [validation runbook](focus-engine-validation.md), and the updated [publication report](publication-report.md).
+
+All 43 relevant Python checks pass. Default event checks and all 14 navigation checks pass. The 14 frozen research executable hashes remain unchanged. Every measured test host, content process, sink, and fixture stops. No hook, system input posting, administrator action, grant change, or unrelated app operation occurs. The historical vulnerable preview remains unchanged. No current physical session exists.
+
+The next user-dependent step is approval for AgentFreeBrowserEngine's separate Input Monitoring request. Then obtain visible physical text/password controls and repeat the focus attack on that same session. Capture, external script attachment, keyboard observation, forced recovery, and broader action routes remain open. Agent-free acceptance is still unmet.
+
 ## Milestone 151
 
 The actual frozen preview now fails the broad agent-free requirement. After the user physically arms a focus-sensitive local page, three external app activation cycles each cause one new server-accepted action. Every stationary control has zero new actions, and every attack interval has zero admitted input events. The helper sends no input, AX action, or HTTP request. This is a page-assisted focus action, not public-site search automation. See [focus findings](preview-focus-action-findings.md) and the [publication draft](publication-report.md).

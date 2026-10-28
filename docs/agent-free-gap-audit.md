@@ -1,8 +1,8 @@
 # Remaining agent-free gaps
 
-Status after milestone 151: the combined minimal browser exists at dist/AgentFreeBrowserPreview.app, but this image fails the broad agent-free requirement. Three external app activation cycles cause three new accepted actions in a physically armed page. No input event is admitted during the cycles. The focus-sensitive page is a valid local website counterexample. This does not establish public-site search automation. See the [focus findings](preview-focus-action-findings.md) and [publication draft](publication-report.md).
+Status after milestone 152: the frozen preview remains vulnerable to the measured focus action. A separate AgentFreeBrowserEngine target now integrates a WebKit activity policy into the combined browser controller. Six matched diagnostic cases pass, with zero new actions across 18 stable activation cycles and successful resumed typing. Physical validation of the new public app remains pending. See the [engine findings](focus-engine-browser-findings.md) and [publication draft](publication-report.md).
 
-The preview and fixture stop with verified cleanup. No current physical session exists.
+No current physical session exists. The new identity has no effective Input Monitoring grant, and no request has run. The engine depends on this workspace and is not bundled. Hardened Runtime is off. Earlier results on the frozen image cannot establish protection for this new candidate.
 
 The two requirements remain separate. Disclosure prevention stops recovery of a fresh page-only secret. Action prevention stops an external agent from completing a website task, including blind operation. Both require usable human access on the same final build.
 
@@ -10,7 +10,7 @@ Loaded-page trials now cover Google, Wikipedia's search page, and GitHub's searc
 
 ## Protection work that remains
 
-1. Close the demonstrated focus action route in the integrated browser. Human setup arms the page. An ordinary-user helper then activates another owned app and returns to the preview. Each of three cycles causes a new accepted action, with zero stationary actions and zero admitted input. The helper posts no input or action request. Other lifecycle and timing routes still need final-image comparisons. Earlier mitigations and identity-isolated rendering are separate experiments. A JavaScript event-listener patch does not establish enforcement across arbitrary pages and frames.
+1. Validate the integrated focus defense with physical use on the new image. Obtain this identity's Input Monitoring approval, complete physical text and password tasks, then repeat the external activation attack on that same process. The diagnostic suite covers focus, password focus, blur, visibility, and two frame types. Its generated input does not establish human usability. Forced renderer recovery and other lifecycle or timing routes remain open. The frozen preview's original bypass remains valid.
 2. Close the capture gap on the actual preview. Window-scoped streaming returns 948 black complete frames with readable controls before and after. App-filtered display capture delivers no complete candidate frames and remains inconclusive. The unfiltered recorder now passes a fullscreen readable reference across all three filter stages. Actual preview coverage refuses an overlapping window before pixels. No unfiltered candidate sequence runs. Keep the privacy guard intact. First-display, resize, fullscreen, and other transitions remain open.
 3. Complete semantic and script access tests. One renderer token comparison recovers the reference marker and no preview marker. Other reads fail their controls. The current scripted inspector client still cannot discover its readable reference. No calibrated external inspector attachment tests this preview. A missing TCP listener cannot establish protection against Cocoa's XPC transport. Playwright requires a compatible automation endpoint. Its Chromium control is separate. Keyboard observation needs a preview-specific result, and Appium Mac2 remains untested.
 
@@ -18,7 +18,7 @@ The evidence is in [stream results](preview-stream-live-findings.md), [composito
 
 ## Human use and release acceptance
 
-The current candidate supports this Mac's measured built-in keyboard and US ASCII. Mouse input is disabled. Unicode, input methods, broad website compatibility, and the PRD's human-use targets remain unmet. These are explicit usability limits, not additional agent defenses. A physically black page cannot pass.
+The frozen preview supports this Mac's measured built-in keyboard and US ASCII. The new engine candidate has no physical-human result yet. Mouse input is disabled. Unicode, input methods, broad website compatibility, and the PRD's human-use targets remain unmet. These are explicit usability limits, not additional agent defenses. A physically black page cannot pass.
 
 Final validation needs one report for the same final image and declared attack suite. It must cover browser transports, accessibility, synthetic and blind input, captures, lifecycle changes, and enabled exports or session residue. Each claimed block needs a working reference. Fresh secrets and task outcomes come from an independent oracle. Required inconclusive results prevent acceptance.
 

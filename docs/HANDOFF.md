@@ -1,5 +1,17 @@
 # Current research state
 
+Milestone 146 diagnoses external inspector discovery without physical help. Four fresh readable references remain inconclusive. The local target reports connected and ready, but no application or fixture page appears. These flags are not daemon acknowledgments. An initial listing call fails its method check on RWIManager. The corrected call uses messageReceiver. A later identifier-plus-listing call also runs, with the application count still zero. No channel, script, or candidate runs. See [connection findings](inspector-connection-findings.md).
+
+The native client now records only bounded connection-state changes, aggregate application counts, and exact owned-process matches. Passive, --fetch-listing, and --register-and-list modes remain reference-only. Local-target removal also confirms that the target disappears from the helper. Console observation has no lock flag. Do not infer a locked session or request an unlock from that observation.
+
+Two new tests reproduce a false success label after an unexpected task action or failed reference cleanup. The runner now promotes discovery only after the oracle and cleanup pass. All three new tests pass, with thirteen relevant Python checks total. Five native boundary controls refuse before client initialization. Swift 6 and Python compilation pass. All four references, fixtures, and clients stop. The preview and granted recorder preserve their hashes and sources.
+
+The next inspector step still needs successful reference discovery and protocol communication. Client admission and application-lifecycle requirements remain unknown. No grant or administrator action occurs. Do not treat these control failures as browser protection.
+
+Continue independent capture work if possible. The earlier UserNotificationCenter overlap may still block calibration. Do not inspect its private notification content or bypass the coverage guard. The recorder update and app-only refresh are complete. Agent-free acceptance remains unmet. No current physical preview exists.
+
+## Milestone 145
+
 Milestone 145 implements and runs an external Cocoa discovery control while the user is away. All three fresh readable controls remain inconclusive. Ordinary manager construction and sharedManager expose no current-machine target. Explicit local-target creation exposes that target, but zero owned applications or fixture pages appear. No channel opens, no debugger message runs, and no candidate launches. Do not call this an attachment refusal or protection result. See [discovery findings](inspector-discovery-control-findings.md).
 
 The new native client accepts only hash-pinned InspectableControl and a strict loopback fixture URL. It queries application identifiers only for that verified host and its verified renderers. It reads page URLs only within those applications. Method encodings precede dynamic calls. The final version uses sharedManager, explicit local-target creation, and deferred removal. Discovery lasts at most eight seconds under a 15-second alarm. The Python runner bounds the child and closes the reference and fixture.

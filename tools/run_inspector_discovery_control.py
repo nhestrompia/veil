@@ -13,7 +13,7 @@ from run_loaded_page_attacks import close, prepare
 from run_native import ROOT, Oracle
 
 
-def run(output):
+def run(output, fetch_listing=False, register_and_list=False):
     output = output.resolve()
     if not output.is_relative_to((ROOT / "artifacts").resolve()):
         raise ValueError("Use a fresh project artifact directory")
@@ -36,14 +36,17 @@ def run(output):
         oracle = Oracle(controller)
         reference = prepare("InspectableControl", output / "reference", oracle)
         report["referencePID"] = reference["pid"]
-        completed = subprocess.run([str(binary), str(reference["pid"]), reference["trial"]["url"]],
+        command = [str(binary), str(reference["pid"]), reference["trial"]["url"]]
+        if register_and_list:
+            command.append("--register-and-list")
+        elif fetch_listing:
+            command.append("--fetch-listing")
+        completed = subprocess.run(command,
                                    capture_output=True, text=True, timeout=18)
         report["helperStderrCharacters"] = len(completed.stderr)
         report["helperExitCode"] = completed.returncode
         if completed.returncode == 0:
             report["discovery"] = json.loads(completed.stdout)
-            if report["discovery"].get("status") == "reference-discovered":
-                report["status"] = "reference-discovered"
         report["submissions"] = oracle.state(reference["trial"])["submissions"]
         if report["submissions"]:
             raise RuntimeError("Discovery unexpectedly submitted a task")
@@ -61,6 +64,10 @@ def run(output):
             if worker.ident is not None:
                 worker.join(timeout=3)
             report["fixtureStopped"] = not worker.is_alive()
+            if (report.get("discovery", {}).get("status") == "reference-discovered"
+                    and "error" not in report and report.get("referenceCleanupVerified") is True
+                    and report["fixtureStopped"] and report.get("submissions") == []):
+                report["status"] = "reference-discovered"
             (output / "results.json").write_text(json.dumps(report, indent=2) + "\n")
     if not report["fixtureStopped"]:
         raise RuntimeError("The local fixture did not stop")
@@ -70,6 +77,10 @@ def run(output):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path, required=True)
-    report = run(parser.parse_args().output)
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument("--fetch-listing", action="store_true")
+    mode.add_argument("--register-and-list", action="store_true")
+    args = parser.parse_args()
+    report = run(args.output, args.fetch_listing, args.register_and_list)
     print(json.dumps(report))
     raise SystemExit(0 if report["status"] == "reference-discovered" else 1)

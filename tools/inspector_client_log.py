@@ -48,10 +48,11 @@ def classify(rows):
             "events": events[:64], "eventLimitReached": len(events) > 64}
 
 
-def observe(pid):
+def observe(pid, bundled=False):
     if type(pid) is not int or pid <= 1:
         raise ValueError("Use the research helper PID from its saved report")
-    image = ROOT / ".build/inspector-discovery-control"
+    image = ROOT / ("dist/InspectorDiscoveryControl.app/Contents/MacOS/InspectorDiscoveryControl"
+                    if bundled else ".build/inspector-discovery-control")
     predicate = (f"processIdentifier == {pid} AND processImagePath == {json.dumps(str(image))} "
                  'AND (subsystem == "com.apple.xpc" OR senderImagePath CONTAINS "/WebInspector.framework/")')
     completed = subprocess.run(["/usr/bin/log", "show", "--style", "json", "--last", "20m",

@@ -1,5 +1,15 @@
 # Current research state
 
+Milestone 148 compares the inspector client as an ad-hoc signed app bundle. It loses its local target about 51 milliseconds into discovery and finds no application or fixture page. The standalone control loses its target after about 55 milliseconds. Bundling does not resolve discovery in this comparison. No channel, script, candidate, capture, grant request, or administrator action runs. See [bundle findings](inspector-bundle-findings.md).
+
+The comparison app is dist/InspectorDiscoveryControl.app, identifier research.agentfreebrowser.inspectordiscovery. Its hash is 68ca39c83c6fff85153bdbeabc527116e9ac1719dba7e08aeacc348a5d0bb7b0. Preserve it. Its prelaunch image and source manifest is docs/evidence/inspector-discovery-app-manifest.json. The builder refuses overwrites. The runner supports --bundled and checks the pinned image, source hashes, identifier, and strict signature. Timeout cleanup stops only this verified helper and its launcher. Its code requests no macOS permission.
+
+Nineteen relevant Python checks pass, including timeout cleanup and changed-image or identifier refusal. Swift 6, strict signature, overwrite refusal, and Python compilation pass. The reference, helper, and fixture stop, with zero task submissions. The preview and granted recorder retain their images. The exact bundled-client log query finds no matching records. Do not transfer the CLI's validation-failure log to this bundle.
+
+External inspector discovery remains an uncalibrated control. The CLI logs service validation failure, and the latest traces record target disappearance. The exact cause and client-admission requirements remain unknown. No entitlement requirement follows from these trials. The capture guard still refuses an intersecting window. Do not inspect private notifications or bypass coverage. The user asks for independent work while away. No current physical preview exists. Agent-free acceptance remains unmet.
+
+## Milestone 147
+
 Milestone 147 finds that the inspector target disappears about 55 milliseconds into the discovery loop. Own-client logs show interruption, webinspectord validation failure, and invalidation. Earlier connection flags mean ever observed, not continuous. The milestone 146 throughout wording is withdrawn. New transitions record no-current-machine and the final target state. No reference page, debugger channel, script action, or protected candidate appears. See [lifecycle findings](inspector-lifecycle-findings.md).
 
 AppKit initialization with prohibited activation does not help. A queued main-thread callback runs. Removing explicit target creation produces no usable target and the same own-client validation failure. The final diagnostic restores explicit initialization. Do not label the two internal connections a proven framework bug. The validation failure's exact cause and client-admission requirements remain unknown.

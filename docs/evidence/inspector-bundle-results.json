@@ -1,0 +1,155 @@
+{
+  "milestone": 148,
+  "status": "inconclusive",
+  "bundleControl": {
+    "status": "inconclusive",
+    "candidateLaunched": false,
+    "inputPosted": false,
+    "launchMode": "app-bundle",
+    "helperPath": "/Users/nhestrompia/.t3/projects/agentfreebrowser/dist/InspectorDiscoveryControl.app/Contents/MacOS/InspectorDiscoveryControl",
+    "helperSHA256": "68ca39c83c6fff85153bdbeabc527116e9ac1719dba7e08aeacc348a5d0bb7b0",
+    "referencePID": 99820,
+    "discovery": {
+      "appKitLifecycleRequested": true,
+      "applicationListingRequested": true,
+      "applicationObjectPresent": true,
+      "channelOpened": false,
+      "connectionConnectedSeen": true,
+      "connectionObjectSeen": true,
+      "connectionTransitions": [
+        {
+          "connection": "connected",
+          "machineReady": true,
+          "milliseconds": 0
+        },
+        {
+          "connection": "no-current-machine",
+          "machineReady": false,
+          "milliseconds": 51
+        }
+      ],
+      "currentMachinePresentAtEnd": false,
+      "currentMachineSeen": true,
+      "discoveryMaximumSeconds": 8,
+      "identifierHandshakeRequested": true,
+      "initialApplicationCount": 0,
+      "inputPosted": false,
+      "localTargetAbsentAfterRemoval": true,
+      "localTargetCreationRequested": true,
+      "localTargetRemovalRequested": false,
+      "machineReadySeen": true,
+      "mainQueueCallbackProcessed": true,
+      "managerFactory": "sharedManager",
+      "managerInstantiated": true,
+      "matchingFixturePages": 0,
+      "maximumApplicationCount": 0,
+      "ownedApplicationsSeen": 0,
+      "permissionRequested": false,
+      "probePID": 99830,
+      "referenceOnly": true,
+      "scriptSent": false,
+      "status": "inconclusive",
+      "targetPID": 99820,
+      "targetSHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+      "unrelatedPageMetadataSaved": false
+    },
+    "launcherExitCode": 0,
+    "helperCleanupVerified": true,
+    "submissions": [],
+    "referenceCleanupVerified": true,
+    "fixtureStopped": true
+  },
+  "bundledOwnClientEvents": {
+    "probePID": 99830,
+    "exactImageFilter": "/Users/nhestrompia/.t3/projects/agentfreebrowser/dist/InspectorDiscoveryControl.app/Contents/MacOS/InspectorDiscoveryControl",
+    "logExitCode": 0,
+    "daemonLogsRead": false,
+    "unrelatedProcessLogsRead": false,
+    "matchingLogRecords": 0,
+    "rawMessagesSaved": false,
+    "events": [],
+    "eventLimitReached": false,
+    "status": "observed"
+  },
+  "standaloneComparison": {
+    "status": "inconclusive",
+    "candidateLaunched": false,
+    "inputPosted": false,
+    "helperSHA256": "38491c1a6bdefb38f929a09b13f5b2e2c4d72bc6f91674006bc4bc0113ddcb6c",
+    "referencePID": 96091,
+    "helperStderrCharacters": 0,
+    "helperExitCode": 0,
+    "discovery": {
+      "appKitLifecycleRequested": true,
+      "applicationListingRequested": true,
+      "applicationObjectPresent": true,
+      "channelOpened": false,
+      "connectionConnectedSeen": true,
+      "connectionObjectSeen": true,
+      "connectionTransitions": [
+        {
+          "connection": "connected",
+          "machineReady": true,
+          "milliseconds": 0
+        },
+        {
+          "connection": "no-current-machine",
+          "machineReady": false,
+          "milliseconds": 55
+        }
+      ],
+      "currentMachinePresentAtEnd": false,
+      "currentMachineSeen": true,
+      "discoveryMaximumSeconds": 8,
+      "identifierHandshakeRequested": true,
+      "initialApplicationCount": 0,
+      "inputPosted": false,
+      "localTargetAbsentAfterRemoval": true,
+      "localTargetCreationRequested": true,
+      "localTargetRemovalRequested": false,
+      "machineReadySeen": true,
+      "mainQueueCallbackProcessed": true,
+      "managerFactory": "sharedManager",
+      "managerInstantiated": true,
+      "matchingFixturePages": 0,
+      "maximumApplicationCount": 0,
+      "ownedApplicationsSeen": 0,
+      "permissionRequested": false,
+      "probePID": 96099,
+      "referenceOnly": true,
+      "scriptSent": false,
+      "status": "inconclusive",
+      "targetPID": 96091,
+      "targetSHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+      "unrelatedPageMetadataSaved": false
+    },
+    "submissions": [],
+    "referenceCleanupVerified": true,
+    "fixtureStopped": true
+  },
+  "comparisonManifest": "docs/evidence/inspector-discovery-app-manifest.json",
+  "buildOverwriteRefused": true,
+  "strictSignatureVerified": true,
+  "sourceHashes": {
+    "scripts/build-inspector-discovery-app.sh": "4247ab963c81097bedfc1bda69dfc7506ed0273a136c8244076d21180e3cac07",
+    "tools/run_inspector_discovery_control.py": "05dfb2b4c75c8047ff0194dce385b64665178984782c893027db99be26e868f6",
+    "tools/inspector_client_log.py": "5bd2539f7ab6f537242b38f76e36493e857dca045a41d85133d04af2a06c46c1",
+    "tools/test_inspector_discovery_control.py": "d735052cc552b4440018eedae2c7df00681d86f304710937581f38a2084e54c2",
+    "tools/test_inspector_client_log.py": "61ef826484fb10694c2f10769693a5efce42708edc0d71cd56b713d7e81ec749"
+  },
+  "pythonTestsPassed": 19,
+  "preservedImages": {
+    "AgentFreeBrowserPreview": "dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70",
+    "PreviewCompositorProbe": "2ce201a2876e295fe6695fbda6506b72e1d9ac706f6051226377f5a8fa3f4a2b"
+  },
+  "remainingTransientPIDs": {
+    "reference": [],
+    "bundledClient": [],
+    "standaloneClient": []
+  },
+  "candidateLaunched": false,
+  "scriptSent": false,
+  "administratorAccessUsed": false,
+  "explicitPermissionRequestIssued": false,
+  "agentFreeEstablished": false
+}

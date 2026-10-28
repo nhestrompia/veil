@@ -36,6 +36,9 @@ class ClientLogTests(unittest.TestCase):
         self.assertIn("processIdentifier == 123 AND processImagePath ==", command[-1])
         self.assertIn("/.build/inspector-discovery-control", command[-1])
         self.assertFalse(result["daemonLogsRead"])
+        with patch("inspector_client_log.subprocess.run", return_value=subprocess.CompletedProcess([], 0, "[]", "")) as run:
+            observe(123, bundled=True)
+        self.assertIn("/dist/InspectorDiscoveryControl.app/Contents/MacOS/InspectorDiscoveryControl", run.call_args.args[0][-1])
         for pid in [True, 1, "123"]:
             with self.assertRaises(ValueError):
                 observe(pid)

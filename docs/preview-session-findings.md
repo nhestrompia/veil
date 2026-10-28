@@ -28,7 +28,7 @@ NativeProbe reports effective Accessibility, event-posting, and Screen Recording
 
 No CGEvent or HID input is posted. The existing safety guard refuses this environment because of the earlier click failure. The AX action test sets attributes and presses exact disposable fixture controls through Accessibility APIs. It sends no mouse or keyboard events.
 
-The next native-input step needs the two modifier apps inactive. The [resume plan](evidence/preview-input-resume-plan.json) proposes temporary normal quits, fresh hook checks, bounded matched tests, and restoration after all input probes stop. This plan is not approved or executed. No unrelated application or setting changes in this milestone.
+The next native-input step needs the two modifier apps inactive. The [resume plan](evidence/preview-input-resume-plan.json) proposes temporary normal quits, fresh hook checks, bounded matched tests, and restoration after all input probes stop. Milestone 135 later completes the approved plan. See [native findings](preview-native-input-findings.md). No unrelated application or setting changes in this milestone.
 
 ## Session and code
 

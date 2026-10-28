@@ -1,7 +1,7 @@
 {
   "approvalRequired": true,
-  "approved": false,
-  "executed": false,
+  "approved": true,
+  "executed": true,
   "targets": [
     {
       "app": "LinearMouse",
@@ -28,5 +28,9 @@
   "rootAllowed": false,
   "computerUseServiceMayBeStarted": false,
   "additionalAppsMayBeChanged": false,
-  "agentMayChangePreferences": false
+  "agentMayChangePreferences": false,
+  "approvalResponse": "Yes",
+  "approvalRecordedUnixSeconds": 1793182770.423103,
+  "executionArtifactDirectory": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/integrated-browser-135/native-comparison",
+  "restorationVerified": true
 }

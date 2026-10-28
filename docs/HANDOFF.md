@@ -1,5 +1,11 @@
 # Current research state
 
+Milestone 135 completes the approved temporary pause of LinearMouse and DockDoor. Five fresh readable references complete their tasks. The same physically calibrated preview PID 2892 refuses all 206 candidate events, admits zero, and records no new action. The sixth, direct-to-process reference fails its task. The candidate is skipped and all later routes stop. See [native findings](preview-native-input-findings.md).
+
+Both approved apps terminate normally and reopen only after all native input probes stop. All six references stop. The restored apps again own modifying mouse hooks. Do not post more input while those hooks are active. No root, computer-use service, preference change, or other app pause occurs. All 11 granted images and the preview sources remain unchanged. The consumed approval cannot run again.
+
+The physical preview and its fixture remain live under their original one-hour watchdog. Their session file is artifacts/integrated-browser-134/physical-session/session.json. Check its exact process and image before reuse. Stop-file cleanup remains available. Independent renderer accessibility, other inspector transports, continuous capture on this preview, and autonomous page actions remain open. Five native blocks and two scoped black captures do not establish agent-free browsing.
+
 Milestone 134 confirms effective Input Monitoring for the unchanged AgentFreeBrowserPreview. The user reports Task complete, the fixture records one accepted action, and device binding is present. Preserve PID 2892 and image dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70 while the session remains live. See [live findings](preview-session-findings.md).
 
 The session controller runs tools/run_preview_session.py. Its state is artifacts/integrated-browser-134/physical-session/session.json. It owns a private fixture and one preview, with a one-hour alarm. Create its stop file to end both. Physical-control evidence is artifacts/integrated-browser-134/physical-control.json. The controller's initial declaration field remains false, so use that separate user-declaration record. Do not infer physical origin from server receipts alone.

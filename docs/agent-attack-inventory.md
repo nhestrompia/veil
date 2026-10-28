@@ -1,6 +1,6 @@
 # Agent attack inventory
 
-This inventory records earlier attacks and remaining work. The current combined preview is AgentFreeBrowserPreview. Its physical control passes. Scoped capture and accessibility trials are recorded. Native-input attacks remain pending because modifying mouse hooks are active. The rows below describe the earlier named builds. Their results do not transfer automatically to the preview. See [live findings](preview-session-findings.md) and [integration findings](integrated-browser-findings.md).
+This inventory records earlier attacks and remaining work. The current combined preview is AgentFreeBrowserPreview. Its physical control passes. Scoped capture and accessibility trials are recorded. Five calibrated native-input routes produce 206 explicit refusals and no new action. A direct-to-process route fails its reference and remains inconclusive. Both approved modifier apps reopen after the comparison. See [native findings](preview-native-input-findings.md). The rows below describe the earlier named builds. Their results do not transfer automatically to the preview. See [live findings](preview-session-findings.md) and [integration findings](integrated-browser-findings.md).
 
 | Agent method | What the agent tried | Result and scope |
 | --- | --- | --- |

@@ -39,7 +39,8 @@ def verdict(row, reference_worked):
     return 'no-action-observed'
 
 
-def cycle(target, sink, oracle, reference_worked):
+def cycle(target, sink, oracle, reference_worked, actor=None):
+    actor = actor or focus
     before = oracle.state(target['trial'])
     offset = len(target['log'].read_text())
     time.sleep(1)
@@ -49,9 +50,9 @@ def cycle(target, sink, oracle, reference_worked):
     if row['stationaryNewActions']:
         row['verdict'] = 'inconclusive'
         return row
-    row['away'] = focus(sink['pid'])
+    row['away'] = actor(sink['pid'])
     time.sleep(.2)
-    row['back'] = focus(target['pid'])
+    row['back'] = actor(target['pid'])
     time.sleep(.7)
     after = oracle.state(target['trial'])
     tail = target['log'].read_text()[offset:]

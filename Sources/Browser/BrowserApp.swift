@@ -4,6 +4,9 @@ import Carbon
 #if INTEGRATED_BROWSER && !DEVICE_KEYBOARD_EXPERIMENT
 #error("The integrated preview requires device keyboard routing")
 #endif
+#if STABLE_ENGINE_BROWSER && !INTEGRATED_BROWSER
+#error("The engine browser requires the integrated browser policies")
+#endif
 #if DEVICE_KEYBOARD_EXPERIMENT
 import IOKit.hidsystem
 #endif
@@ -39,6 +42,13 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
             return
         }
         #endif
+        #if STABLE_ENGINE_BROWSER
+        guard FocusEngineRuntime.configure(configuration) else {
+            print("FOCUS_ENGINE refused=configuration")
+            NSApp.terminate(nil)
+            return
+        }
+        #endif
         #if AX_BOUNDARY_EXPERIMENT || DEVICE_KEYBOARD_EXPERIMENT
         webView = AXBoundaryWebView(frame: .zero, configuration: configuration)
         #elseif !INSPECTION_CONTROL
@@ -61,7 +71,11 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
         let name = "AX Boundary Experiment"
         #elseif DEVICE_KEYBOARD_EXPERIMENT
         #if INTEGRATED_BROWSER
+        #if STABLE_ENGINE_BROWSER
+        let name = "Agent-free Browser Engine Candidate"
+        #else
         let name = "Agent-free Browser Preview"
+        #endif
         #else
         let name = "Device Keyboard Experiment"
         #endif
@@ -72,6 +86,13 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
         #if !INSPECTION_CONTROL
         guard BrowserRuntimePolicy.contentIsRestricted(webView.configuration) else {
             print("Browser startup refused: effective content restrictions failed readback.")
+            NSApp.terminate(nil)
+            return
+        }
+        #endif
+        #if STABLE_ENGINE_BROWSER
+        guard FocusEngineRuntime.configurationMatches(webView.configuration) else {
+            print("FOCUS_ENGINE refused=effective-configuration")
             NSApp.terminate(nil)
             return
         }
@@ -271,6 +292,13 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
     }
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        #if STABLE_ENGINE_BROWSER
+        guard FocusEngineRuntime.reportContent(webView) else {
+            webView.stopLoading()
+            NSApp.terminate(nil)
+            return
+        }
+        #endif
         navigationNote = ""
         updateNavigation()
         address.stringValue = webView.url?.absoluteString ?? ""
@@ -299,6 +327,13 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
     }
 
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+        #if STABLE_ENGINE_BROWSER
+        guard FocusEngineRuntime.reportContent(webView) else {
+            webView.stopLoading()
+            NSApp.terminate(nil)
+            return
+        }
+        #endif
         if let url = webView.url { address.stringValue = url.absoluteString }
     }
 
@@ -338,6 +373,10 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
     }
 
     func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
+        #if STABLE_ENGINE_BROWSER
+        print("FOCUS_ENGINE contentTerminated=true replacementRequiresVerification=true")
+        fflush(stdout)
+        #endif
         navigationNote = "Page process stopped. Reload to recover."
         updateNavigation()
     }
@@ -409,6 +448,9 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
 @main
 enum BrowserApp {
     @MainActor static func main() {
+        #if STABLE_ENGINE_BROWSER
+        guard FocusEngineRuntime.bootstrap() else { exit(64) }
+        #endif
         #if !INSPECTION_CONTROL
         guard BrowserRuntimePolicy.disableDeveloperExtras() else {
             print("Browser startup refused: local developer tools remain enabled.")

@@ -24,6 +24,11 @@ def active(session):
         manifest = json.loads((ROOT / "docs/evidence/integrated-browser-permission-manifest.json").read_text())
         if session["binarySHA256"] != manifest["executableSHA256"]:
             raise RuntimeError("The preview differs from its pinned consent image")
+    elif session.get("target") == "AgentFreeBrowserEngine":
+        binary = ROOT / "dist/AgentFreeBrowserEngine.app/Contents/MacOS/AgentFreeBrowserEngine"
+        manifest = json.loads((ROOT / "docs/evidence/focus-engine-browser-manifest.json").read_text())
+        if session["binarySHA256"] != manifest["targets"]["AgentFreeBrowserEngine"]["binarySHA256"]:
+            raise RuntimeError("The engine browser differs from its pinned consent image")
     elif session.get("target", NAME) != NAME:
         raise RuntimeError("Unsupported physical-session browser")
     if not process_matches(session["pid"], binary):

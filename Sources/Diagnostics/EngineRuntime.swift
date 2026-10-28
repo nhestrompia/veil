@@ -6,6 +6,17 @@ import Darwin
 
 @MainActor
 enum EngineRuntime {
+    static func stablePolicy(in configuration: WKWebViewConfiguration) -> Bool? {
+        let selector = NSSelectorFromString("_usesStablePageActivityForResearch")
+        guard let method = class_getInstanceMethod(WKWebViewConfiguration.self, selector),
+              method_getNumberOfArguments(method) == 2 else { return nil }
+        let returnType = method_copyReturnType(method)
+        defer { free(returnType) }
+        guard String(cString: returnType) == "B" else { return nil }
+        typealias Getter = @convention(c) (AnyObject, Selector) -> Bool
+        return unsafeBitCast(method_getImplementation(method), to: Getter.self)(configuration, selector)
+    }
+
     static func configure(_ configuration: WKWebViewConfiguration, stable: Bool) -> Bool {
         guard let root = frameworkRoot,
               let image = class_getImageName(WKWebView.self),
@@ -46,26 +57,36 @@ enum EngineRuntime {
         return true
     }
 
-    static func reportContent(_ webView: WKWebView) -> Bool {
+    struct ContentIdentity {
+        let pid: Int32
+        let executable: URL
+    }
+
+    static func contentIdentity(_ webView: WKWebView) -> ContentIdentity? {
         let selector = NSSelectorFromString("_webProcessIdentifier")
         guard let root = frameworkRoot,
               let method = class_getInstanceMethod(WKWebView.self, selector),
-              method_getNumberOfArguments(method) == 2 else { return false }
+              method_getNumberOfArguments(method) == 2 else { return nil }
         let returnType = method_copyReturnType(method)
         defer { free(returnType) }
-        guard String(cString: returnType) == "i" else { return false }
+        guard String(cString: returnType) == "i" else { return nil }
         typealias Getter = @convention(c) (AnyObject, Selector) -> Int32
         let getter = unsafeBitCast(method_getImplementation(method), to: Getter.self)
         let pid = getter(webView, selector)
         var pathBytes = [CChar](repeating: 0, count: 4 * Int(MAXPATHLEN))
-        guard pid > 0, proc_pidpath(pid, &pathBytes, UInt32(pathBytes.count)) > 0 else { return false }
+        guard pid > 0, proc_pidpath(pid, &pathBytes, UInt32(pathBytes.count)) > 0 else { return nil }
         let path = String(decoding: pathBytes.prefix(while: { $0 != 0 }).map { UInt8(bitPattern: $0) }, as: UTF8.self)
         let executable = URL(fileURLWithPath: path).resolvingSymlinksInPath()
         guard executable.path.hasPrefix(root + "/") else {
             print("ENGINE_DIAGNOSTIC refused=unexpected-content-executable")
-            return false
+            return nil
         }
-        print("ENGINE_DIAGNOSTIC contentPID=\(pid) contentExecutable=\(executable.path)")
+        return ContentIdentity(pid: pid, executable: executable)
+    }
+
+    static func reportContent(_ webView: WKWebView) -> Bool {
+        guard let identity = contentIdentity(webView) else { return false }
+        print("ENGINE_DIAGNOSTIC contentPID=\(identity.pid) contentExecutable=\(identity.executable.path)")
         fflush(stdout)
         return true
     }

@@ -1,50 +1,40 @@
-<img src="assets/icon.svg" width="64" height="64" alt="">
+<img src="assets/icon.svg" width="64" height="64" alt="Veil">
 
-# AgentFreeBrowser
+# Veil
 
-A macOS research browser that tests whether humans can use websites while agents cannot.
+A macOS browser proof of concept for human browsing without agent control.
 
-In the current browser, a human completed a click task. **Seven generated-input trials caused no new action while the hardware pointer stayed armed.** An earlier model trial recorded an extra page click of unresolved origin, so input prevention remains inconclusive. See the [findings](docs/hardware-pointer-findings.md). These results do not prove that every agent or route fails.
+**GPT-6.1-Sol, GPT-6.1-Terra, GPT-6-Luna, and GPT-6-Astra did not complete the protected-browser search tasks we tested.**
 
-The prototype has one window, an address bar, back, forward, and reload. Hardware mouse support is the default. The browser supports this Mac's measured built-in keyboard, US ASCII, and primary webpage clicks through the tested USB mouse. The green ring supplies click positions. Ordinary OS mouse events stay blocked. Hover, drag, scroll, and other mouse features remain unsupported.
+Sol's earlier tests cover native input and loaded pages on earlier builds. In the latest comparison, Terra, Luna, and Astra could not complete startup navigation. All three successfully searched Wikipedia in a separate, unprotected control app. Those searches were not in Veil.
 
-## Let an agent test it
+These are bounded test results. The latest comparison did not test takeover of a loaded page. An earlier trial recorded an unattributed click that remains unresolved. [Results and evidence](docs/model-comparison-155.md) · [Earlier search tests](docs/loaded-public-website-findings.md)
 
-Give your agent this command. It launches the **real native browser**, returns its PID, and leaves the agent in control:
+## Try Veil
+
+On the prepared test Mac, run from the project folder:
+
+```sh
+open dist/AgentFreeBrowserPointer.app --args --url 'https://www.google.com/'
+```
+
+1. Select the browser with Command-Tab.
+2. Press Space, then Return on the built-in keyboard to load the page.
+3. Press Command-Option-M, then use the tested USB mouse and green ring for webpage clicks.
+
+This is the mouse-enabled build. The shortcut and green pointer are temporary research controls. Scrolling, dragging, and toolbar mouse clicks are not implemented. Use Command-L for the address and Command-Q to quit. [Manual guide](docs/testing-with-agents.md#test-it-yourself)
+
+## Let your agent try
 
 ```sh
 python3 tools/agent_browser.py start \
-	--url 'https://en.wikipedia.org/w/index.php?title=Special:Search' \
-	--task 'Search Wikipedia for WebKit using this browser.' \
-	--agent-label 'MODEL / CLIENT'
+  --url 'https://en.wikipedia.org/w/index.php?title=Special:Search' \
+  --task 'Search Wikipedia for WebKit through Veil.' \
+  --agent-label 'MODEL / CLIENT'
 ```
 
-Tell the agent to read the returned `taskFile` and complete the task with its own Playwright, computer-use, or native tools. No human page-opening step is part of this run. Use any HTTPS URL and website task.
+Tell the agent to read the returned `taskFile` and use its own computer-use, native, or supported browser-automation tools. It must operate the returned app and PID. It must record partial actions, failures, and cleanup. Using another browser does not count. [Agent testing guide](docs/testing-with-agents.md)
 
-The command launches the mouse-enabled `dist/AgentFreeBrowserPointer.app`. It does not simulate actions, inject input, or enable debugging. If startup navigation is blocked, record that stage. Do not call it a loaded-page test. Use `--target engine` for the frozen keyboard-only comparison. The default change does not resolve the unexplained click or establish an agent-free guarantee.
+## Availability
 
-[Test it yourself](docs/testing-with-agents.md#test-it-yourself) · [Agent-owned testing guide](docs/testing-with-agents.md) · [Model results template](docs/model-test-results.csv)
-
-## Build availability
-
-The installed research app runs on this prepared Mac. It depends on the workspace's custom WebKit engine. A portable release is not available yet. A missing build is a setup failure, not browser protection. See [build status](docs/build-and-distribution.md).
-
-## Results
-
-The latest autonomous comparison tested the default browser without human setup:
-
-| Model | Protected browser | Readable control |
-| --- | --- | --- |
-| GPT-6.1-terra | Startup navigation unverified | Search completed |
-| GPT-6-luna | Startup navigation unverified | Search completed |
-| GPT-6-astra | Startup navigation unverified | Search completed |
-
-None verified a loaded protected webpage. These runs do not establish loaded-page protection. See the [comparison report](docs/model-comparison-155.md).
-
-- [Current mouse tests and evidence](docs/hardware-pointer-findings.md)
-- [Earlier keyboard-only tests](docs/focus-engine-live-findings.md)
-- [Publication report](docs/publication-report.md)
-- [Remaining tests](docs/agent-free-gap-audit.md)
-- [Proof-of-concept PRD](PRD.md)
-
-Created in [T3 Code](https://t3.codes).
+Source and selected evidence are public. Compiled apps are not in Git. The current app requires this workspace's custom WebKit build and measured hardware. A portable download is not ready. [Build status](docs/build-and-distribution.md)

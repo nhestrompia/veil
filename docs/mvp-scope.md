@@ -1,6 +1,6 @@
 # Agent-free MVP scope
 
-The user confirms a minimal research browser, not a Safari or Chrome competitor. AgentFreeBrowserEngine remains the frozen keyboard-only default. AgentFreeBrowserPointer is an explicit experimental target while its unattributed model-trial click remains unresolved. The frozen AgentFreeBrowserPreview remains the historical vulnerable build. Do not expand the browser interface to avoid unresolved protection work.
+The user confirms a minimal research browser, not a Safari or Chrome competitor. AgentFreeBrowserPointer is the mouse-enabled default at the user's request. AgentFreeBrowserEngine remains the frozen keyboard-only comparison. The earlier unattributed model-trial click remains unresolved. The frozen AgentFreeBrowserPreview remains the historical vulnerable build. Do not expand the browser interface to avoid unresolved protection work.
 
 The functional scope is one window, an HTTPS address field, webpage rendering, back and forward navigation, reload, and a working human input route. The existing native toolbar remains. Tabs, bookmarks, browsing history, sync, extensions, a password manager, and general browser feature parity are outside this milestone.
 

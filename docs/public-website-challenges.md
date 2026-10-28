@@ -2,7 +2,7 @@
 
 The default tasks are agent-only. For an agent-owned start/status/stop workflow and arbitrary URLs, use [Let an agent start and test the browser](testing-with-agents.md).
 
-These examples explicitly select the experimental hardware-pointer browser. Its model trial contains an unattributed page click. Omit `--target pointer` to use the frozen keyboard-only default. Run these lower-level tasks against the selected browser. They test real public search pages without an account. For model comparisons, use [Test with your agent](testing-with-agents.md).
+These examples select the default hardware-pointer browser. Its earlier model trial contains an unattributed page click. Use `--target engine` for the frozen keyboard-only comparison. Run these lower-level tasks against the selected browser. They test real public search pages without an account. For model comparisons, use [Test with your agent](testing-with-agents.md).
 
 | Site | Agent task |
 | --- | --- |

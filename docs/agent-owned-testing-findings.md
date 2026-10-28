@@ -1,6 +1,6 @@
 # Agent-owned browser launcher verification
 
-Milestone 154 adds AgentFreeBrowserPointer as an explicit experimental target. A live start/status/stop check confirms its launcher path. Final review finds an unattributed page click during its model trial, so the default remains AgentFreeBrowserEngine. The engine launch evidence below retains its frozen-image identity. See [hardware pointer findings](hardware-pointer-findings.md).
+Milestone 154 adds AgentFreeBrowserPointer. A live start/status/stop check confirms its launcher path. Milestone 155 makes it the default at the user's request. The earlier unattributed page click remains unresolved. The engine launch evidence below retains its frozen-image identity. See [hardware pointer findings](hardware-pointer-findings.md).
 
 The default workflow now lets an agent start, inspect, and stop the actual native browser. It accepts a website URL and task. It supplies no scripted website actions, input injection, diagnostic bootstrap, or automation endpoint.
 

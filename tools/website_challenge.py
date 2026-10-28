@@ -324,7 +324,7 @@ def run(target, site, output, seconds, reuse=None, search_page=False, agent_labe
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--target", choices=TARGETS, default="engine")
+    parser.add_argument("--target", choices=TARGETS, default="pointer")
     parser.add_argument("--site", choices=SITES, default="google")
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--seconds", type=int, default=600)

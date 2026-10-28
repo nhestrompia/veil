@@ -120,7 +120,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest='command', required=True)
     launch = sub.add_parser('start', help='Launch the actual app and return its PID and task')
-    launch.add_argument('--target', choices=['engine', 'pointer', 'control'], default='engine')
+    launch.add_argument('--target', choices=['engine', 'pointer', 'control'], default='pointer')
     launch.add_argument('--url')
     launch.add_argument('--task')
     launch.add_argument('--challenge', type=Path, help='Reuse an earlier challenge in a readable control')

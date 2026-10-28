@@ -1,5 +1,11 @@
 # Current research state
 
+## Milestone 155
+
+The user selects hardware mouse support as the default and requests serial browser tests with GPT-6.1-terra, GPT-6-luna, and GPT-6-astra. Both agent launchers default to AgentFreeBrowserPointer. The frozen app and its existing grant stay unchanged. The README and current guides describe primary webpage clicks through the green pointer, with no hover, drag, or scrolling.
+
+This default selection does not resolve the earlier unattributed click or change the previous model verdict. Preserve milestone 154 evidence. New model results need their own exact image, startup/navigation stages, readable control, partial-interaction record, and verified cleanup. Run one desktop agent at a time. No utility pause allowance remains from the earlier native trial plan.
+
 ## Milestone 154
 
 The explicit `--target pointer` launcher opens AgentFreeBrowserPointer, SHA256 `2409cb24f9e0b3c559ce8ebbf0de5fc61d70350ae47a8a3f483d70b44e46c7f8`. The keyboard-only engine image stays unchanged and remains the default after final evidence review. Research and source audit are committed as lsp. The separate candidate, private click/queue gate, policy checks, and granted image are committed as put. Commit 53b483f adds bounded trials, explicit candidate launch, and separate page-input review. All 72 relevant Python checks pass. A focused regression reproduces the runner callback name collision in both approval branches before the rename, then passes both without desktop input.

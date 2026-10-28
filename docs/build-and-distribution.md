@@ -6,7 +6,7 @@ The agent-owned launcher is `python3 tools/agent_browser.py start --url URL --ta
 
 ## What runs now
 
-The prepared test Mac has the frozen keyboard-only `dist/AgentFreeBrowserEngine.app` as the launcher default. It also has the experimental `dist/AgentFreeBrowserPointer.app` and readable `dist/InspectableControl.app`. Use `--target pointer` to select the mouse candidate explicitly. Both research browsers use custom WebKit frameworks under `.build/webkit-engine/output/Release`. Their native bootstrap checks fixed paths and image hashes. The committed manifests record this Mac's paths.
+The prepared test Mac has the mouse-enabled `dist/AgentFreeBrowserPointer.app` as the launcher default. It also has the frozen keyboard-only `dist/AgentFreeBrowserEngine.app` and readable `dist/InspectableControl.app`. Use `--target engine` for the keyboard-only comparison. Both research browsers use custom WebKit frameworks under `.build/webkit-engine/output/Release`. Their native bootstrap checks fixed paths and image hashes. The committed manifests record this Mac's paths.
 
 Copying an app alone to another Mac does not supply that engine or satisfy those checks. A fresh clone also lacks compiled helpers. The current input policy covers the measured keyboard and tested USB mouse on the test Mac. Another Mac needs its own physical input controls and permission checks.
 

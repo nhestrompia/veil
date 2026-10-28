@@ -15,14 +15,14 @@ python3 tools/agent_browser.py start \
 
 Use any public HTTPS URL and task. Loopback HTTP is available for local sites. URLs with embedded credentials are refused. The command returns after launch and leaves a bounded worker running. Its default lifetime is ten minutes. Use `--seconds 900` for fifteen minutes.
 
-This starts `dist/AgentFreeBrowserEngine.app` through its normal native launcher. It verifies the app and custom engine, checks existing Input Monitoring permission, and returns the real process identity. It does not launch a diagnostic browser or perform the task for the agent. Use `--target pointer` for the experimental mouse candidate. Its model trial contains an unattributed page click, so it remains separate from the default.
+This starts `dist/AgentFreeBrowserPointer.app` through its normal native launcher. It verifies the app and custom engine, checks existing Input Monitoring permission, and returns the real process identity. It does not launch a diagnostic browser or perform the task for the agent. Hardware mouse support is the default. Use `--target engine` for the frozen keyboard-only comparison. The earlier unattributed click remains unresolved.
 
 The JSON response includes the app path, executable, bundle ID, PID, image hash, task file, challenge file, and session file. Read `taskFile`. The supplied task explicitly prohibits requests for human page opening, physical keys, and runtime verification.
 
 To launch without the session manager, an agent can also use the actual app directly:
 
 ```sh
-open dist/AgentFreeBrowserEngine.app --args --url 'https://www.google.com/'
+open dist/AgentFreeBrowserPointer.app --args --url 'https://www.google.com/'
 ```
 
 That direct launch does not produce a managed session or automatic cleanup. Use the session manager for recorded comparisons.
@@ -95,7 +95,7 @@ The earlier loaded-page research uses physical human input as a positive control
 
 ## Test it yourself
 
-On the prepared Mac, quit any existing research browser before this direct launch of the experimental mouse candidate. Run this command from the project root:
+On the prepared Mac, quit any existing research browser before this direct launch of the mouse-enabled browser. Run this command from the project root:
 
 ```sh
 open dist/AgentFreeBrowserPointer.app --args --url 'https://www.google.com/'
@@ -115,9 +115,9 @@ The direct launch has no session watchdog. Quit the browser yourself afterward. 
 
 ## Mouse policy
 
-The separate experimental [hardware-pointer candidate](hardware-pointer-findings.md) supports the measured relative mouse path. Command-Option-M arms it. Focus loss, window changes, and navigation disarm it, so press that shortcut again when needed. The green ring determines click position. Keep the ordinary system arrow inside the window too. The reader does not intercept mouse input in other apps.
+The default [hardware-pointer browser](hardware-pointer-findings.md) supports the measured relative mouse path. Command-Option-M arms it. Focus loss, window changes, and navigation disarm it, so press that shortcut again when needed. The green ring determines click position. Keep the ordinary system arrow inside the window too. The reader does not intercept mouse input in other apps.
 
-The input gate accepts keyboard events and completed mouse clicks created by its device readers. It rejects the ordinary OS event stream, including the OS copy of a physical click. See [the input gate](../Sources/Browser/DeviceKeyboard.swift). The default `--target engine` build has no hardware pointer reader and remains keyboard-only.
+The input gate accepts keyboard events and completed mouse clicks created by its device readers. It rejects the ordinary OS event stream, including the OS copy of a physical click. See [the input gate](../Sources/Browser/DeviceKeyboard.swift). The optional `--target engine` build has no hardware pointer reader and remains keyboard-only.
 
 Allowing ordinary mouse events would also admit synthetic clicks through that path. An agent could try known coordinates without a readable screenshot. Clickable links, buttons, and page actions need no text entry. Screenshot restrictions and keyboard filtering would remain, but existing input-denial results would not cover the changed build.
 

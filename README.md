@@ -10,7 +10,7 @@ Five calibrated native-input routes now fail on the same physically tested previ
 
 The renderer probe now has effective Accessibility after the approved app-only reset. A new physically completed preview exposes no marker in one matched token-read comparison, while its fresh readable reference exposes the exact marker. Plain-root reads fail their separate reference and remain untested on the preview. See [renderer findings](docs/preview-renderer-live-findings.md).
 
-A scoped continuous-capture helper is prepared for the actual preview. Its Screen Recording request still needs approval. No continuous stream result exists yet. See [capture preparation](docs/preview-stream-findings.md).
+The actual preview completes a matched 30-second independent-window capture test. All 948 delivered complete frames are black, while readable controls before and after expose their markers. App-filtered display capture produces no complete candidate frames and remains inconclusive. See [continuous-capture findings](docs/preview-stream-live-findings.md).
 
 Earlier renderer diagnostics remain vulnerable to suspension. Sixteen calibrated trials complete website actions across four clock sources in native and stable engine modes. Those experiments are not integrated into the preview. See [timing results](docs/clock-channel-findings.md) and [feasibility research](docs/research/agent-free-feasibility-boundary.md). Agent-free operation remains unproven.
 

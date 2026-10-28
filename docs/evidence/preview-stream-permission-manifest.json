@@ -9,12 +9,12 @@
     "Sources/Diagnostics/PreviewCapturePixels.swift": "6b59ac6cbe137c121605b2e5d3dc6e3d089dab04762cbbd75abffd6ecde47d2a",
     "Sources/Diagnostics/PreviewStreamCaptureProbe.swift": "605c15624bb57353802740e16fc13fc431ada2a2f90bff075d1220d181891edf",
     "scripts/build-preview-stream-capture-probe.sh": "95470f333b921afd630d4d80a3dab58cddf8193744785fba24790832b8739abf",
-    "tools/run_preview_stream_comparison.py": "b136c15b2d86249ae0449577392bf4a20e8370cc26b6b6cb13b789d3be0d8b43"
+    "tools/run_preview_stream_comparison.py": "ce606e6bb6196bd9dd270624b9349dd2f5d6be8a31caa41bd62800c244a2573e"
   },
   "permission": "macOS Screen Recording",
-  "permissionApproved": false,
-  "permissionRequested": false,
-  "requestCommandExecuted": false,
+  "permissionApproved": true,
+  "permissionRequested": true,
+  "requestCommandExecuted": true,
   "automaticRequestAtLaunch": false,
   "firstLaunchRequiresFinalPin": true,
   "scope": "Exact hash-pinned AgentFreeBrowserPreview or InspectableControl, independent window or app-inclusion display filter cropped to its window. No unrelated app pixels.",
@@ -42,5 +42,32 @@
     "request-screen-recording",
     "--out",
     "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-139/approved-screen-recording-request.json"
+  ],
+  "permissionApproval": "User replied yes to the exact PreviewStreamCaptureProbe Screen Recording request.",
+  "approvalRecordedUnixSeconds": 1793186725.1894631,
+  "requestIssuedUnixSeconds": 1793186725.189464,
+  "requestExitCode": 0,
+  "requestResult": {
+    "audioCaptured": false,
+    "hooksInstalled": false,
+    "inputPosted": false,
+    "permissionRequested": true,
+    "probePID": 53481,
+    "requestReturned": false,
+    "screenRecordingGranted": false,
+    "status": "requested"
+  },
+  "effectiveGrantConfirmed": true,
+  "effectivePreflight": "artifacts/preview-stream-140/enabled-preflight.json",
+  "userConfirmedEnabled": true,
+  "effectiveGrantCheckedUnixSeconds": 1793186787.317129,
+  "controllerUpdates": [
+    {
+      "path": "tools/run_preview_stream_comparison.py",
+      "oldSHA256": "b136c15b2d86249ae0449577392bf4a20e8370cc26b6b6cb13b789d3be0d8b43",
+      "newSHA256": "ce606e6bb6196bd9dd270624b9349dd2f5d6be8a31caa41bd62800c244a2573e",
+      "reason": "Launch metadata and activation probes in the background to avoid focus disturbance. Native helper unchanged.",
+      "recordedUnixSeconds": 1793186967.750387
+    }
   ]
 }

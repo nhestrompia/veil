@@ -1,0 +1,564 @@
+{
+  "milestone": 140,
+  "permissionEffective": true,
+  "probeSHA256": "c5dcf53813d87b6fecd6d2e042f96803ea947f4d13d402b02b0273c02cbcc79a",
+  "scope": "Steady independent-window and app-inclusion display capture on the exact physically completed preview. No input or AX actions.",
+  "physicalControl": "artifacts/preview-renderer-138/physical-control.json",
+  "windowComparison": {
+    "mode": "window",
+    "previewPID": 35426,
+    "previewSHA256": "dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70",
+    "inputPosted": false,
+    "physicalInputAbsenceVerified": false,
+    "verdict": "all-delivered-complete-frames-black",
+    "permissions": {
+      "audioCaptured": false,
+      "hooksInstalled": false,
+      "inputPosted": false,
+      "permissionRequested": false,
+      "probePID": 59116,
+      "screenRecordingGranted": true,
+      "status": "preflight",
+      "cleanupVerified": true,
+      "probeSHA256": "c5dcf53813d87b6fecd6d2e042f96803ea947f4d13d402b02b0273c02cbcc79a"
+    },
+    "before": {
+      "audioCaptured": false,
+      "auditedFrames": 956,
+      "completeFrames": 956,
+      "configuredFPS": 30,
+      "durationSeconds": 30,
+      "elapsedSeconds": 32.920333416666836,
+      "filter": "Exact owned independent window",
+      "firstColoredImage": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-matched/before.first-colored.png",
+      "frameStatuses": {
+        "0": 956
+      },
+      "hooksInstalled": false,
+      "images": [
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-matched/before.sample-0.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-matched/before.sample-1.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-matched/before.sample-2.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-matched/before.sample-3.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-matched/before.sample-4.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-matched/before.sample-5.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-matched/before.sample-6.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-matched/before.sample-7.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-matched/before.sample-8.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-matched/before.sample-9.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-matched/before.sample-10.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-matched/before.sample-11.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-matched/before.sample-12.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-matched/before.sample-13.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-matched/before.sample-14.png"
+      ],
+      "inputPosted": false,
+      "maximumSamples": 16,
+      "mode": "window",
+      "nonBlackFrames": 956,
+      "permissionRequested": false,
+      "pixelPolicy": "Zero RGB and uniform alpha within each complete frame",
+      "probePID": 59143,
+      "status": "audited",
+      "streamStopped": true,
+      "targetPID": 59121,
+      "targetSHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+      "windowID": 113873,
+      "cleanupVerified": true,
+      "probeSHA256": "c5dcf53813d87b6fecd6d2e042f96803ea947f4d13d402b02b0273c02cbcc79a",
+      "markerRecovered": true,
+      "markerChecks": [
+        {
+          "image": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-matched/before.sample-0.png",
+          "markerRecovery": {
+            "exact": true,
+            "visualHexAliases": true
+          }
+        }
+      ],
+      "referenceCleanupVerified": true
+    },
+    "newSubmissions": [],
+    "candidate": {
+      "audioCaptured": false,
+      "auditedFrames": 948,
+      "completeFrames": 948,
+      "configuredFPS": 30,
+      "durationSeconds": 30,
+      "elapsedSeconds": 32.605977333383635,
+      "filter": "Exact owned independent window",
+      "frameStatuses": {
+        "0": 948
+      },
+      "hooksInstalled": false,
+      "images": [
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-matched/candidate.sample-0.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-matched/candidate.sample-1.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-matched/candidate.sample-2.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-matched/candidate.sample-3.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-matched/candidate.sample-4.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-matched/candidate.sample-5.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-matched/candidate.sample-6.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-matched/candidate.sample-7.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-matched/candidate.sample-8.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-matched/candidate.sample-9.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-matched/candidate.sample-10.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-matched/candidate.sample-11.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-matched/candidate.sample-12.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-matched/candidate.sample-13.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-matched/candidate.sample-14.png"
+      ],
+      "inputPosted": false,
+      "maximumSamples": 16,
+      "mode": "window",
+      "nonBlackFrames": 0,
+      "permissionRequested": false,
+      "pixelPolicy": "Zero RGB and uniform alpha within each complete frame",
+      "probePID": 59343,
+      "status": "audited",
+      "streamStopped": true,
+      "targetPID": 35426,
+      "targetSHA256": "dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70",
+      "windowID": 113687,
+      "cleanupVerified": true,
+      "probeSHA256": "c5dcf53813d87b6fecd6d2e042f96803ea947f4d13d402b02b0273c02cbcc79a",
+      "markerRecovered": false,
+      "markerChecks": []
+    },
+    "after": {
+      "audioCaptured": false,
+      "auditedFrames": 954,
+      "completeFrames": 954,
+      "configuredFPS": 30,
+      "durationSeconds": 30,
+      "elapsedSeconds": 32.84625995834358,
+      "filter": "Exact owned independent window",
+      "firstColoredImage": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-matched/after.first-colored.png",
+      "frameStatuses": {
+        "0": 954
+      },
+      "hooksInstalled": false,
+      "images": [
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-matched/after.sample-0.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-matched/after.sample-1.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-matched/after.sample-2.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-matched/after.sample-3.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-matched/after.sample-4.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-matched/after.sample-5.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-matched/after.sample-6.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-matched/after.sample-7.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-matched/after.sample-8.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-matched/after.sample-9.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-matched/after.sample-10.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-matched/after.sample-11.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-matched/after.sample-12.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-matched/after.sample-13.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-matched/after.sample-14.png"
+      ],
+      "inputPosted": false,
+      "maximumSamples": 16,
+      "mode": "window",
+      "nonBlackFrames": 954,
+      "permissionRequested": false,
+      "pixelPolicy": "Zero RGB and uniform alpha within each complete frame",
+      "probePID": 59809,
+      "status": "audited",
+      "streamStopped": true,
+      "targetPID": 59780,
+      "targetSHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+      "windowID": 113896,
+      "cleanupVerified": true,
+      "probeSHA256": "c5dcf53813d87b6fecd6d2e042f96803ea947f4d13d402b02b0273c02cbcc79a",
+      "markerRecovered": true,
+      "markerChecks": [
+        {
+          "image": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-matched/after.sample-0.png",
+          "markerRecovery": {
+            "exact": false,
+            "visualHexAliases": true
+          }
+        }
+      ],
+      "referenceCleanupVerified": true
+    }
+  },
+  "displayComparison": {
+    "mode": "display",
+    "previewPID": 35426,
+    "previewSHA256": "dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70",
+    "inputPosted": false,
+    "physicalInputAbsenceVerified": false,
+    "verdict": "inconclusive",
+    "permissions": {
+      "audioCaptured": false,
+      "hooksInstalled": false,
+      "inputPosted": false,
+      "permissionRequested": false,
+      "probePID": 60124,
+      "screenRecordingGranted": true,
+      "status": "preflight",
+      "cleanupVerified": true,
+      "probeSHA256": "c5dcf53813d87b6fecd6d2e042f96803ea947f4d13d402b02b0273c02cbcc79a"
+    },
+    "before": {
+      "audioCaptured": false,
+      "auditedFrames": 935,
+      "completeFrames": 935,
+      "configuredFPS": 30,
+      "durationSeconds": 30,
+      "elapsedSeconds": 33.32422516657971,
+      "filter": "Only the exact owned research app, cropped to its window",
+      "firstColoredImage": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/display-matched/before.first-colored.png",
+      "frameStatuses": {
+        "0": 935
+      },
+      "hooksInstalled": false,
+      "images": [
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/display-matched/before.sample-0.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/display-matched/before.sample-1.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/display-matched/before.sample-2.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/display-matched/before.sample-3.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/display-matched/before.sample-4.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/display-matched/before.sample-5.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/display-matched/before.sample-6.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/display-matched/before.sample-7.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/display-matched/before.sample-8.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/display-matched/before.sample-9.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/display-matched/before.sample-10.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/display-matched/before.sample-11.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/display-matched/before.sample-12.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/display-matched/before.sample-13.png"
+      ],
+      "inputPosted": false,
+      "maximumSamples": 16,
+      "mode": "display",
+      "nonBlackFrames": 935,
+      "permissionRequested": false,
+      "pixelPolicy": "Zero RGB and uniform alpha within each complete frame",
+      "probePID": 60153,
+      "status": "audited",
+      "streamStopped": true,
+      "targetPID": 60129,
+      "targetSHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+      "windowID": 113914,
+      "cleanupVerified": true,
+      "probeSHA256": "c5dcf53813d87b6fecd6d2e042f96803ea947f4d13d402b02b0273c02cbcc79a",
+      "markerRecovered": true,
+      "markerChecks": [
+        {
+          "image": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/display-matched/before.sample-0.png",
+          "markerRecovery": {
+            "exact": true,
+            "visualHexAliases": true
+          }
+        }
+      ],
+      "referenceCleanupVerified": true
+    },
+    "newSubmissions": [],
+    "candidate": {
+      "audioCaptured": false,
+      "auditedFrames": 0,
+      "completeFrames": 0,
+      "configuredFPS": 30,
+      "durationSeconds": 30,
+      "elapsedSeconds": 32.54576745838858,
+      "filter": "Only the exact owned research app, cropped to its window",
+      "frameStatuses": {},
+      "hooksInstalled": false,
+      "images": [],
+      "inputPosted": false,
+      "maximumSamples": 16,
+      "mode": "display",
+      "nonBlackFrames": 0,
+      "permissionRequested": false,
+      "pixelPolicy": "Zero RGB and uniform alpha within each complete frame",
+      "probePID": 60373,
+      "status": "inconclusive",
+      "streamStopped": true,
+      "targetPID": 35426,
+      "targetSHA256": "dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70",
+      "windowID": 113687,
+      "cleanupVerified": true,
+      "probeSHA256": "c5dcf53813d87b6fecd6d2e042f96803ea947f4d13d402b02b0273c02cbcc79a",
+      "markerRecovered": false,
+      "markerChecks": []
+    },
+    "stopReason": "Candidate stream incomplete; no blocking result"
+  },
+  "failedControls": {
+    "window": {
+      "mode": "window",
+      "previewPID": 35426,
+      "previewSHA256": "dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70",
+      "inputPosted": false,
+      "physicalInputAbsenceVerified": false,
+      "verdict": "inconclusive",
+      "permissions": {
+        "audioCaptured": false,
+        "hooksInstalled": false,
+        "inputPosted": false,
+        "permissionRequested": false,
+        "probePID": 54063,
+        "screenRecordingGranted": true,
+        "status": "preflight",
+        "cleanupVerified": true,
+        "probeSHA256": "c5dcf53813d87b6fecd6d2e042f96803ea947f4d13d402b02b0273c02cbcc79a"
+      },
+      "before": {
+        "audioCaptured": false,
+        "configuredFPS": 30,
+        "durationSeconds": 30,
+        "error": "Research target lost foreground focus",
+        "filter": "Exact owned independent window",
+        "hooksInstalled": false,
+        "images": [],
+        "inputPosted": false,
+        "maximumSamples": 16,
+        "mode": "window",
+        "permissionRequested": false,
+        "pixelPolicy": "Zero RGB and uniform alpha within each complete frame",
+        "probePID": 54090,
+        "status": "inconclusive",
+        "streamStopped": true,
+        "targetPID": 54067,
+        "targetSHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+        "windowID": 113776,
+        "cleanupVerified": true,
+        "probeSHA256": "c5dcf53813d87b6fecd6d2e042f96803ea947f4d13d402b02b0273c02cbcc79a",
+        "markerRecovered": false,
+        "markerChecks": [],
+        "referenceCleanupVerified": true
+      },
+      "newSubmissions": [],
+      "stopReason": "Readable reference failed; no candidate stream ran"
+    },
+    "window-background": {
+      "mode": "window",
+      "previewPID": 35426,
+      "previewSHA256": "dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70",
+      "inputPosted": false,
+      "physicalInputAbsenceVerified": false,
+      "verdict": "inconclusive",
+      "permissions": {
+        "audioCaptured": false,
+        "hooksInstalled": false,
+        "inputPosted": false,
+        "permissionRequested": false,
+        "probePID": 55563,
+        "screenRecordingGranted": true,
+        "status": "preflight",
+        "cleanupVerified": true,
+        "probeSHA256": "c5dcf53813d87b6fecd6d2e042f96803ea947f4d13d402b02b0273c02cbcc79a"
+      },
+      "before": {
+        "audioCaptured": false,
+        "configuredFPS": 30,
+        "durationSeconds": 30,
+        "error": "Research target lost foreground focus",
+        "filter": "Exact owned independent window",
+        "hooksInstalled": false,
+        "images": [
+          "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-background/before.sample-0.png",
+          "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-background/before.sample-1.png",
+          "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-background/before.sample-2.png",
+          "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-background/before.sample-3.png",
+          "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-background/before.sample-4.png",
+          "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-background/before.sample-5.png",
+          "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-background/before.sample-6.png",
+          "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-background/before.sample-7.png",
+          "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-background/before.sample-8.png",
+          "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/window-background/before.sample-9.png"
+        ],
+        "inputPosted": false,
+        "maximumSamples": 16,
+        "mode": "window",
+        "permissionRequested": false,
+        "pixelPolicy": "Zero RGB and uniform alpha within each complete frame",
+        "probePID": 55592,
+        "status": "inconclusive",
+        "streamStopped": true,
+        "targetPID": 55569,
+        "targetSHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+        "windowID": 113800,
+        "cleanupVerified": true,
+        "probeSHA256": "c5dcf53813d87b6fecd6d2e042f96803ea947f4d13d402b02b0273c02cbcc79a",
+        "markerRecovered": false,
+        "markerChecks": [],
+        "referenceCleanupVerified": true
+      },
+      "newSubmissions": [],
+      "stopReason": "Readable reference failed; no candidate stream ran"
+    },
+    "focus-diagnosis": {
+      "referenceCapture": {
+        "audioCaptured": false,
+        "configuredFPS": 30,
+        "durationSeconds": 30,
+        "error": "Research target lost foreground focus",
+        "filter": "Exact owned independent window",
+        "hooksInstalled": false,
+        "images": [
+          "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/focus-diagnosis/reference-capture.sample-0.png"
+        ],
+        "inputPosted": false,
+        "maximumSamples": 16,
+        "mode": "window",
+        "permissionRequested": false,
+        "pixelPolicy": "Zero RGB and uniform alpha within each complete frame",
+        "probePID": 56797,
+        "status": "inconclusive",
+        "streamStopped": true,
+        "targetPID": 56769,
+        "targetSHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+        "windowID": 113836,
+        "cleanupVerified": true,
+        "probeSHA256": "c5dcf53813d87b6fecd6d2e042f96803ea947f4d13d402b02b0273c02cbcc79a",
+        "markerRecovered": false,
+        "markerChecks": []
+      },
+      "focusTrace": {
+        "activationRequested": false,
+        "error": "unavailableProcess",
+        "inputPosted": false,
+        "permissionRequested": false,
+        "status": "refused",
+        "uiContentRead": false
+      },
+      "referenceStopped": true
+    }
+  },
+  "successfulDiagnosticReference": {
+    "referenceCapture": {
+      "audioCaptured": false,
+      "auditedFrames": 957,
+      "completeFrames": 957,
+      "configuredFPS": 30,
+      "durationSeconds": 30,
+      "elapsedSeconds": 32.974090333562344,
+      "filter": "Exact owned independent window",
+      "firstColoredImage": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/focus-trace-retry/reference-capture.first-colored.png",
+      "frameStatuses": {
+        "0": 957
+      },
+      "hooksInstalled": false,
+      "images": [
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/focus-trace-retry/reference-capture.sample-0.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/focus-trace-retry/reference-capture.sample-1.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/focus-trace-retry/reference-capture.sample-2.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/focus-trace-retry/reference-capture.sample-3.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/focus-trace-retry/reference-capture.sample-4.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/focus-trace-retry/reference-capture.sample-5.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/focus-trace-retry/reference-capture.sample-6.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/focus-trace-retry/reference-capture.sample-7.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/focus-trace-retry/reference-capture.sample-8.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/focus-trace-retry/reference-capture.sample-9.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/focus-trace-retry/reference-capture.sample-10.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/focus-trace-retry/reference-capture.sample-11.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/focus-trace-retry/reference-capture.sample-12.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/focus-trace-retry/reference-capture.sample-13.png",
+        "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/focus-trace-retry/reference-capture.sample-14.png"
+      ],
+      "inputPosted": false,
+      "maximumSamples": 16,
+      "mode": "window",
+      "nonBlackFrames": 957,
+      "permissionRequested": false,
+      "pixelPolicy": "Zero RGB and uniform alpha within each complete frame",
+      "probePID": 58152,
+      "status": "audited",
+      "streamStopped": true,
+      "targetPID": 58115,
+      "targetSHA256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36",
+      "windowID": 113855,
+      "cleanupVerified": true,
+      "probeSHA256": "c5dcf53813d87b6fecd6d2e042f96803ea947f4d13d402b02b0273c02cbcc79a",
+      "markerRecovered": true,
+      "markerChecks": [
+        {
+          "image": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-140/focus-trace-retry/reference-capture.sample-0.png",
+          "markerRecovery": {
+            "exact": true,
+            "visualHexAliases": true
+          }
+        }
+      ]
+    },
+    "focusTrace": {
+      "activationRequested": false,
+      "captureHelperSeen": true,
+      "events": [
+        {
+          "captureHelperSeen": false,
+          "foregroundRole": "research-target",
+          "seconds": 0.0003834583330899477
+        }
+      ],
+      "inputPosted": false,
+      "permissionRequested": false,
+      "status": "observed",
+      "targetPID": 58115,
+      "uiContentRead": false
+    },
+    "referenceStopped": true
+  },
+  "cleanup": {
+    "recordedUnixSeconds": 1793187667.2064629,
+    "remainingTransientPIDs": {
+      "PreviewStreamCaptureProbe": [],
+      "NativeProbe": [],
+      "InspectableControl": []
+    },
+    "focusTracePIDs": [],
+    "modifierApps": {
+      "LinearMouse": [
+        20791
+      ],
+      "DockDoor": [
+        20794
+      ]
+    },
+    "frozenImagesUnchanged": {
+      "DeviceKeyboardExperiment": true,
+      "NativeProbe": true,
+      "RendererAXProbe": true,
+      "KeyboardObservationProbe": true,
+      "WindowGeometryProbe": true,
+      "PixelKeyboardExperiment": true,
+      "PixelKeyboardRoutingControl": true,
+      "CaptureRefreshProbe": true,
+      "CompositorRefreshProbe": true,
+      "CaptureStressProbe": true,
+      "AgentFreeBrowserPreview": true,
+      "PreviewRendererReadProbe": true,
+      "PreviewStreamCaptureProbe": true
+    },
+    "browserSourcesUnchanged": {
+      "Sources/Browser/AXBoundary.swift": true,
+      "Sources/Browser/BrowserApp.swift": true,
+      "Sources/Browser/BrowserPolicy.swift": true,
+      "Sources/Browser/BrowserRuntimePolicy.swift": true,
+      "Sources/Browser/DeviceKeyboard.swift": true,
+      "Sources/Browser/HIDSourcePolicy.swift": true,
+      "Sources/Browser/InputSourceWindow.swift": true,
+      "Sources/Browser/RestrictedWebView.swift": true,
+      "Sources/Browser/SecureInputWindow.swift": true
+    },
+    "previewPID": 35426,
+    "acceptedSubmissions": 1
+  },
+  "checks": {
+    "pythonTestsPassed": 17,
+    "pythonCompilation": true,
+    "focusTraceSwift6WarningsAsErrors": true
+  },
+  "agentFreeEstablished": false,
+  "unmeasured": [
+    "Unfiltered display on this exact preview",
+    "Capture-filter transitions",
+    "Resize and fullscreen",
+    "Other inspector transports",
+    "Autonomous page actions",
+    "General website compatibility"
+  ]
+}

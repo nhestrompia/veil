@@ -1,5 +1,7 @@
 # Continuous-capture preparation for the MVP
 
+Milestone 140 later enables the approved grant and runs the live comparisons. See [live findings](preview-stream-live-findings.md). The sections below preserve milestone 139 preparation.
+
 Milestone 139 keeps the user-confirmed [minimal MVP scope](mvp-scope.md). No tabs, bookmarks, browsing-history UI, or replacement browser app is built. The existing combined preview remains unchanged and physically completed as PID 35426.
 
 The new PreviewStreamCaptureProbe prepares 30-second capture tests of that actual app. It has no Screen Recording access. No permission request or continuous stream runs in this milestone. Its final image is pinned before its first non-prompting trust query, which reports access false.

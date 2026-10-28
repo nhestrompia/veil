@@ -1,5 +1,19 @@
 # Current research state
 
+Milestone 140 confirms effective Screen Recording for the unchanged PreviewStreamCaptureProbe and completes a matched 30-second independent-window comparison on the actual preview. All 948 delivered complete candidate frames have zero RGB and uniform alpha. Before and after references audit 956 and 954 readable frames and recover their markers. No new preview submission occurs. See [live findings](preview-stream-live-findings.md).
+
+The app-filtered display reference recovers its marker across 935 frames. Its candidate produces no complete frames, so the route stops as inconclusive. No after-reference or display-blocking claim follows. Both stream modes stop. No input, AX action, audio, root, or unrelated app capture occurs.
+
+Three earlier references lose foreground focus and never run a candidate. The ordinary Python controller now launches metadata probes in the background, but its first retry still fails. Do not claim a causal focus fix. A later standalone reference completes with 957 frames. Its metadata-only trace observes no role change during its bounded observation period. No activation loop or input hook runs.
+
+All 17 Python checks and compilation pass. The new metadata trace compiles with Swift 6 warnings as errors and refuses unrelated targets. All 13 permissioned images and browser sources remain unchanged. The capture manifest records the ordinary controller hash update. Preserve the granted recorder image c5dcf53813d87b6fecd6d2e042f96803ea947f4d13d402b02b0273c02cbcc79a.
+
+All transient helpers and references stop. The current preview remains PID 35426 with exactly one accepted physical submission. Its state is artifacts/preview-renderer-138/physical-session/session.json, with the separate declaration in artifacts/preview-renderer-138/physical-control.json. The controller is exec session 52976 under its original one-hour watchdog. Check identity and lifetime before reuse. Both modifier apps remain running. Do not post global input or start computer use.
+
+No permission question is pending. Keep the user-confirmed minimal MVP scope. Remaining priorities are unfiltered/transition capture on this exact preview, external inspector attachment, keyboard observation, and autonomous page-action validation. Agent-free status remains unproven.
+
+## Milestone 139 preparation
+
 Milestone 139 follows the user's clarification: build an agent-free MVP, not a Safari or Chrome competitor. No broader browser UI is built. The existing combined app remains the MVP candidate. See [MVP scope](mvp-scope.md).
 
 PreviewStreamCaptureProbe is prepared and pinned for 30-second independent-window and app-filtered display streams. It accepts only the exact preview and readable control. It audits RGB and alpha in each valid complete buffer. Missing or unaudited frames remain inconclusive. Twelve Swift pixel checks and 16 Python checks pass. No stream runs because Screen Recording is off.

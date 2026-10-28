@@ -87,10 +87,10 @@ def score(before, candidate, after):
 
 
 def capture(session, mode, prefix, oracle):
-    activation = probe(["ax-direct", session["pid"]], prefix.with_suffix(".activation.json"))
+    activation = probe(["ax-direct", session["pid"]], prefix.with_suffix(".activation.json"), background=True)
     if activation.get("status") != "observed":
         return {"status": "inconclusive", "reason": "Target foreground state unavailable; no stream ran"}
-    windows = probe(["windows", session["pid"]], prefix.with_suffix(".windows.json"))
+    windows = probe(["windows", session["pid"]], prefix.with_suffix(".windows.json"), background=True)
     owned = [row for row in windows.get("windows", [])
              if row.get("kCGWindowOwnerPID") == session["pid"] and row.get("kCGWindowLayer") == 0]
     if len(owned) != 1:
@@ -171,7 +171,7 @@ def run(session_path, physical_path, output, mode):
     active(session)
     report["verdict"] = score(report["before"], report["candidate"], report["after"])
     save()
-    probe(["ax-direct", session["pid"]], output / "restore-preview.json")
+    probe(["ax-direct", session["pid"]], output / "restore-preview.json", background=True)
     return report
 
 

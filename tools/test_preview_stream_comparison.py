@@ -13,6 +13,13 @@ def audited(marker=False, colored=0):
 
 
 class StreamComparisonTests(unittest.TestCase):
+    def test_readonly_metadata_probes_launch_in_background(self):
+        replies = [{"status": "observed"}, {"windows": [{"kCGWindowOwnerPID": 123, "kCGWindowLayer": 0, "kCGWindowNumber": 456}]}]
+        with patch.object(comparison, "probe", side_effect=replies) as probe, patch.object(comparison, "invoke", return_value={"status": "inconclusive"}):
+            comparison.capture({"pid": 123}, "window", Path("/unused"), None)
+        self.assertEqual(probe.call_count, 2)
+        self.assertTrue(all(call.kwargs.get("background") is True for call in probe.call_args_list))
+
     def test_unapproved_capture_never_launches(self):
         with patch.object(comparison, "verified_manifest", return_value=({"permissionApproved": False}, Path("/unused"))), patch.object(comparison.subprocess, "Popen") as launch:
             with self.assertRaisesRegex(RuntimeError, "needs approval"):

@@ -5,8 +5,8 @@
   "executableSHA256": "aac4422314d929fcb3f39ac8a7482ce6f35868d648f22730f03d655da0b168d7",
   "sourceSHA256": "1dc1de9e1b3c9bc707687cdbcb8aaaf3b70ed0a105da75086b960d63a1a5b989",
   "permission": "macOS Screen Recording",
-  "permissionApproved": false,
-  "permissionRequested": false,
+  "permissionApproved": true,
+  "permissionRequested": true,
   "automaticRequestAtLaunch": false,
   "captureAudio": false,
   "postsInput": false,
@@ -47,6 +47,19 @@
     "--out",
     "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/capture-stress-131/approved-request.json"
   ],
-  "requestCommandExecuted": false,
-  "configurationUpdateOrderDiffersFromAppleExample": true
+  "requestCommandExecuted": true,
+  "configurationUpdateOrderDiffersFromAppleExample": true,
+  "permissionApproval": "User said yes continue to the exact CaptureStressProbe Screen Recording request.",
+  "requestIssuedUnixSeconds": 1793178792.343992,
+  "permissionRequestResult": {
+    "capturesAudio": false,
+    "probePID": 93556,
+    "requestReturned": false,
+    "screenRecordingGranted": false,
+    "status": "requested",
+    "systemInputPosted": false
+  },
+  "effectiveGrantConfirmed": true,
+  "userConfirmedEnabled": true,
+  "effectiveGrantPreflightPath": "artifacts/capture-stress-131/approved-grant-preflight.json"
 }

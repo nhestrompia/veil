@@ -1,10 +1,16 @@
 # Current research state
 
-Milestone 131 prepares and pins CaptureStressProbe for display/window/display changes and a separate 30-second display stream. Thirteen preparation checks pass. No capture or permission request occurs. Its LaunchServices preflight reports Screen Recording off. See [preparation findings](capture-stress-findings.md), [checks](evidence/capture-stress-preflight-results.json), and the [exact manifest](evidence/capture-stress-permission-manifest.json).
+Milestone 132 confirms effective Screen Recording for CaptureStressProbe after the approved request and user enablement. Preserve its pinned source and executable. No permission question remains for this helper. See [live findings](capture-stress-live-findings.md).
 
-The next step needs separate consent for this helper's Screen Recording request. Its manifest records permissionApproved=false and requestCommandExecuted=false. Do not request access before approval, rebuild the pinned image, reset grants, use root, or install input hooks. After consent, run tools/run_capture_stress.py with mode sequence, then steady. Each comparison uses clear/restricted/clear archived images and a fresh artifact directory. Stop on failed calibration.
+Two clear controls fail foreground calibration, so neither comparison launches a restricted candidate. The coordinated trial recovers nine initial-display samples and ten independent-window samples, then fails before returned-display samples. Both streams stop and all research hosts, helpers, and fixtures exit. The 30-second mode remains untested. These trials are inconclusive, not blocking results.
 
-The helper has a 60-second alarm and captures no audio. Its update order preserves owned coverage but differs from Apple's sample. The new live type-switch and steady modes remain untested. All earlier granted images remain unchanged. Both preparation hosts and fixture servers stop. No physical question is pending.
+The coordinator supports two fixed capture-helper identities. Its capture-stress mode permits three target activations over at most 40 seconds, with a 50-second alarm. It reaches that activation limit in the failed clear trial. Do not increase the limit or suppress native foreground checks. No unrelated app changes, root access, or input hooks are authorized.
+
+Proceed with the single-browser integration now. Use direct WKWebView rendering, ordinary window sharing restriction, the existing physical-keyboard gate, and inspection/export policies. Keep the protected-video renderer excluded. Build a separate preview identity, preserve all granted images, and test the actual preview before making any combined protection claim. Pointer support and general website compatibility remain open.
+
+## Previous preparation
+
+Milestone 131 prepares the pinned helper and runner. See [preparation findings](capture-stress-findings.md). The later grant and failed live controls above supersede its earlier pending-consent state.
 
 ## Last completed capture comparison
 

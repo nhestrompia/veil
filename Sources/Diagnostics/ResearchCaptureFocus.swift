@@ -20,9 +20,16 @@ private enum ResearchCaptureFocus {
                                      "maximumActivations": 3, "maximumActiveSeconds": 8]
         do {
             let args = Array(CommandLine.arguments.dropFirst())
-            guard args.count == 4, let targetPID = Int32(args[0]), targetPID > 1 else {
-                throw FocusFailure("Use TARGET_PID TARGET_SHA256 PROBE_SHA256 NEW_ARTIFACT.json")
+            guard [4, 5].contains(args.count), let targetPID = Int32(args[0]), targetPID > 1,
+                  args.count == 4 || args[4] == "capture-stress" else {
+                throw FocusFailure("Use TARGET_PID TARGET_SHA256 PROBE_SHA256 NEW_ARTIFACT.json [capture-stress]")
             }
+            let stress = args.count == 5
+            if stress { alarm(50) }
+            let probeName = stress ? "CaptureStressProbe" : "CompositorRefreshProbe"
+            let probeBundle = stress ? "research.agentfreebrowser.capturestress" : "research.agentfreebrowser.compositorrefresh"
+            let activeSeconds: Double = stress ? 40 : 8
+            report["maximumActiveSeconds"] = activeSeconds
             let root = URL(fileURLWithPath: #filePath).deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
             let output = URL(fileURLWithPath: args[3]).standardizedFileURL
             guard output.resolvingSymlinksInPath().path.hasPrefix(root.appendingPathComponent("artifacts").resolvingSymlinksInPath().path + "/"),
@@ -31,7 +38,7 @@ private enum ResearchCaptureFocus {
             }
             destination = output
             let targetPath = root.appendingPathComponent("dist/InternalKeyboardControl.app/Contents/MacOS/InternalKeyboardControl")
-            let probePath = root.appendingPathComponent("dist/CompositorRefreshProbe.app/Contents/MacOS/CompositorRefreshProbe")
+            let probePath = root.appendingPathComponent("dist/\(probeName).app/Contents/MacOS/\(probeName)")
             func matches(_ app: NSRunningApplication, path: URL, bundle: String, digest: String) throws -> Bool {
                 guard !app.isTerminated, app.bundleIdentifier == bundle,
                       app.executableURL?.resolvingSymlinksInPath() == path.resolvingSymlinksInPath() else { return false }
@@ -43,11 +50,11 @@ private enum ResearchCaptureFocus {
             let waitStart = ProcessInfo.processInfo.systemUptime
             var probe: NSRunningApplication?
             while ProcessInfo.processInfo.systemUptime - waitStart < 5 {
-                let candidates = NSWorkspace.shared.runningApplications.filter { $0.bundleIdentifier == "research.agentfreebrowser.compositorrefresh" }
+                let candidates = NSWorkspace.shared.runningApplications.filter { $0.bundleIdentifier == probeBundle }
                 if candidates.count == 1 { probe = candidates[0]; break }
                 try await Task.sleep(for: .milliseconds(10))
             }
-            guard let probe, try matches(probe, path: probePath, bundle: "research.agentfreebrowser.compositorrefresh", digest: args[2]),
+            guard let probe, try matches(probe, path: probePath, bundle: probeBundle, digest: args[2]),
                   let probeLaunch = probe.launchDate else { throw FocusFailure("A unique verified capture helper did not appear") }
             let start = ProcessInfo.processInfo.systemUptime
             var activations = 0
@@ -56,7 +63,7 @@ private enum ResearchCaptureFocus {
             report["targetPID"] = targetPID
             report["probePID"] = probe.processIdentifier
             report["status"] = "observed"
-            while ProcessInfo.processInfo.systemUptime - start < 8 && !probe.isTerminated {
+            while ProcessInfo.processInfo.systemUptime - start < activeSeconds && !probe.isTerminated {
                 guard !target.isTerminated, target.launchDate == targetLaunch, probe.launchDate == probeLaunch else {
                     throw FocusFailure("A measured process identity changed")
                 }
@@ -75,7 +82,7 @@ private enum ResearchCaptureFocus {
                     }
                     guard activations < 3 else { report["status"] = "activation-limit"; break }
                     guard try matches(target, path: targetPath, bundle: "research.agentfreebrowser.internalkeyboardcontrol", digest: args[1]),
-                          try matches(probe, path: probePath, bundle: "research.agentfreebrowser.compositorrefresh", digest: args[2]) else {
+                          try matches(probe, path: probePath, bundle: probeBundle, digest: args[2]) else {
                         throw FocusFailure("A measured executable changed")
                     }
                     let accepted = target.activate(options: [])

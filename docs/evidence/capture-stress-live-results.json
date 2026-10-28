@@ -1,0 +1,289 @@
+{
+  "milestone": 132,
+  "permissionRequestResult": {
+    "capturesAudio": false,
+    "probePID": 93556,
+    "requestReturned": false,
+    "screenRecordingGranted": false,
+    "status": "requested",
+    "systemInputPosted": false
+  },
+  "effectivePreflight": {
+    "capturesAudio": false,
+    "probePID": 94350,
+    "screenRecordingGranted": true,
+    "status": "preflight",
+    "systemInputPosted": false
+  },
+  "userConfirmedEnabled": true,
+  "trials": [
+    {
+      "artifacts": "artifacts/capture-stress-132/type-sequence",
+      "comparison": {
+        "status": "inconclusive",
+        "mode": "sequence",
+        "rows": [
+          {
+            "name": "clear-before",
+            "launchFocus": {},
+            "status": "inconclusive",
+            "streamStopped": true,
+            "targetPID": 94660,
+            "targetBinarySHA256": "be47fd551b98123a64c581b264d93595270ee8f9f6895f19ce421c7cb5f81e18",
+            "windowSharingEnabled": true,
+            "stages": [
+              {
+                "stage": "initial-display",
+                "imagesSaved": 0,
+                "completeFramesObserved": 0,
+                "ocrSamples": 0,
+                "pageSamples": 0,
+                "backdropSamples": 0
+              },
+              {
+                "stage": "independent-window",
+                "imagesSaved": 0,
+                "completeFramesObserved": 0,
+                "ocrSamples": 0,
+                "pageSamples": 0,
+                "backdropSamples": 0
+              },
+              {
+                "stage": "returned-display",
+                "imagesSaved": 0,
+                "completeFramesObserved": 0,
+                "ocrSamples": 0,
+                "pageSamples": 0,
+                "backdropSamples": 0
+              }
+            ],
+            "error": "Target identity or foreground state changed",
+            "allStagesReadable": false,
+            "allStagesSampled": false
+          }
+        ],
+        "systemInputPosted": false,
+        "error": "A clear reference failed calibration"
+      },
+      "restrictedCandidateLaunched": false,
+      "hostStopped": true,
+      "fixtureStopped": true,
+      "fixturePortClosed": true
+    },
+    {
+      "artifacts": "artifacts/capture-stress-132/type-coordinated",
+      "comparison": {
+        "status": "inconclusive",
+        "mode": "sequence",
+        "rows": [
+          {
+            "name": "clear-before",
+            "launchFocus": {
+              "activations": 3,
+              "events": [
+                {
+                  "foregroundRole": "research-target",
+                  "seconds": 1.2458302080631256e-05
+                },
+                {
+                  "foregroundRole": "other",
+                  "seconds": 2.093193749897182
+                },
+                {
+                  "seconds": 2.093193749897182,
+                  "targetActivationAccepted": true
+                },
+                {
+                  "foregroundRole": "research-target",
+                  "seconds": 2.1184934582561255
+                },
+                {
+                  "foregroundRole": "other",
+                  "seconds": 2.876723666675389
+                },
+                {
+                  "seconds": 2.876723666675389,
+                  "targetActivationAccepted": true
+                },
+                {
+                  "foregroundRole": "research-target",
+                  "seconds": 2.9023322500288486
+                },
+                {
+                  "foregroundRole": "other",
+                  "seconds": 3.5697936667129397
+                },
+                {
+                  "seconds": 3.5697936667129397,
+                  "targetActivationAccepted": true
+                },
+                {
+                  "foregroundRole": "research-target",
+                  "seconds": 3.60379624995403
+                },
+                {
+                  "foregroundRole": "other",
+                  "seconds": 6.245647458359599
+                }
+              ],
+              "hooksInstalled": false,
+              "inputPosted": false,
+              "maximumActivations": 3,
+              "maximumActiveSeconds": 40,
+              "probePID": 95049,
+              "status": "activation-limit",
+              "targetPID": 95034
+            },
+            "status": "inconclusive",
+            "streamStopped": true,
+            "targetPID": 95034,
+            "targetBinarySHA256": "be47fd551b98123a64c581b264d93595270ee8f9f6895f19ce421c7cb5f81e18",
+            "windowSharingEnabled": true,
+            "stages": [
+              {
+                "stage": "initial-display",
+                "imagesSaved": 9,
+                "completeFramesObserved": 66,
+                "ocrSamples": 9,
+                "pageSamples": 9,
+                "backdropSamples": 0
+              },
+              {
+                "stage": "independent-window",
+                "imagesSaved": 10,
+                "completeFramesObserved": 75,
+                "ocrSamples": 10,
+                "pageSamples": 10,
+                "backdropSamples": 0
+              },
+              {
+                "stage": "returned-display",
+                "imagesSaved": 0,
+                "completeFramesObserved": 0,
+                "ocrSamples": 0,
+                "pageSamples": 0,
+                "backdropSamples": 0
+              }
+            ],
+            "error": "Target identity or foreground state changed",
+            "allStagesReadable": false,
+            "allStagesSampled": false
+          }
+        ],
+        "systemInputPosted": false,
+        "error": "A clear reference failed calibration"
+      },
+      "restrictedCandidateLaunched": false,
+      "hostStopped": true,
+      "fixtureStopped": true,
+      "fixturePortClosed": true
+    }
+  ],
+  "steadyModeAttempted": false,
+  "focusRefusalChecks": [
+    {
+      "error": "Use TARGET_PID TARGET_SHA256 PROBE_SHA256 NEW_ARTIFACT.json [capture-stress]",
+      "events": [],
+      "hooksInstalled": false,
+      "inputPosted": false,
+      "maximumActivations": 3,
+      "maximumActiveSeconds": 8,
+      "status": "refused"
+    },
+    {
+      "error": "Use TARGET_PID TARGET_SHA256 PROBE_SHA256 NEW_ARTIFACT.json [capture-stress]",
+      "events": [],
+      "hooksInstalled": false,
+      "inputPosted": false,
+      "maximumActivations": 3,
+      "maximumActiveSeconds": 8,
+      "status": "refused"
+    },
+    {
+      "error": "Use TARGET_PID TARGET_SHA256 PROBE_SHA256 NEW_ARTIFACT.json [capture-stress]",
+      "events": [],
+      "hooksInstalled": false,
+      "inputPosted": false,
+      "maximumActivations": 3,
+      "maximumActiveSeconds": 8,
+      "status": "refused"
+    }
+  ],
+  "recordedProcesses": {
+    "94620": "absent",
+    "94625": "absent",
+    "94660": "absent",
+    "94669": "absent",
+    "94675": "absent",
+    "94963": "absent",
+    "94974": "absent",
+    "95034": "absent",
+    "95043": "absent",
+    "95049": "absent",
+    "95074": "absent",
+    "95077": "absent",
+    "95079": "absent",
+    "95081": "absent",
+    "95087": "absent",
+    "95089": "absent",
+    "95091": "absent",
+    "95094": "absent",
+    "95096": "absent",
+    "95098": "absent",
+    "95101": "absent",
+    "95103": "absent",
+    "95106": "absent",
+    "95108": "absent",
+    "95110": "absent",
+    "95113": "absent",
+    "95115": "absent",
+    "95117": "absent",
+    "95120": "absent"
+  },
+  "allRecordedProcessesAbsent": true,
+  "grantedImages": {
+    "DeviceKeyboardExperiment": {
+      "sha256": "43b1a9833d6c55b1e254b848f9bd09c202da46ba0f8d8833084df559e6a8a9d1",
+      "unchanged": true
+    },
+    "NativeProbe": {
+      "sha256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1",
+      "unchanged": true
+    },
+    "RendererAXProbe": {
+      "sha256": "82d0c15dadfa49d1669a576270c08cb9b749d6fe102b1724fa61f6dd2d9b08a7",
+      "unchanged": true
+    },
+    "KeyboardObservationProbe": {
+      "sha256": "cdd1829e60dd838f5a2b1ef91f9d5635e7f61760360f9c18c494f8eb90086aac",
+      "unchanged": true
+    },
+    "WindowGeometryProbe": {
+      "sha256": "c99b7cb897180170e2ee5977d6518a0e2cb94db9549c75cd5867bc260606d960",
+      "unchanged": true
+    },
+    "PixelKeyboardExperiment": {
+      "sha256": "4b39843faec345d8484cbfdf829644e27fb306d160c1c77272e7961cc381acc8",
+      "unchanged": true
+    },
+    "PixelKeyboardRoutingControl": {
+      "sha256": "aac4fd5424ceebd7d792fda99a0ade9fefc3acaef546b30a2849faabcd24f1fe",
+      "unchanged": true
+    },
+    "CaptureRefreshProbe": {
+      "sha256": "cbd7a3ff6772e0c80ef83bea8cfb9eaacfdf9370204517e12b66c07b1a72d4f1",
+      "unchanged": true
+    },
+    "CompositorRefreshProbe": {
+      "sha256": "dc8265f8cfe12d417d8e5e5c9780a9d9429ad3cebb195ba5ced933a8fd01e52c",
+      "unchanged": true
+    },
+    "CaptureStressProbe": {
+      "sha256": "aac4422314d929fcb3f39ac8a7482ce6f35868d648f22730f03d655da0b168d7",
+      "unchanged": true
+    }
+  },
+  "pinnedCaptureStressSourceUnchanged": true,
+  "systemInputPosted": false,
+  "administratorAccessUsed": false
+}

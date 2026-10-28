@@ -74,5 +74,10 @@
   "permissionRequestLog": "artifacts/hardware-pointer-154/input-request.log",
   "permissionEffectiveLog": "artifacts/hardware-pointer-154/permission-effective.log",
   "grantUIEvidence": "artifacts/hardware-pointer-154/grant-ui-status.json",
-  "physicalControlEvidence": "artifacts/hardware-pointer-154/physical-pointer-session/physical-control.json"
+  "physicalControlEvidence": "artifacts/hardware-pointer-154/physical-pointer-session/physical-control.json",
+  "liveAttackScope": "Four calibrated native routes on a loaded disarmed page and seven clean armed trials. Final model attempt has an unattributed admitted page click and remains inconclusive.",
+  "agentFreeProven": false,
+  "calibratedNativeAttacksVerified": true,
+  "modelInputPreventionVerified": false,
+  "modelReview": "docs/evidence/hardware-pointer-terra-review.json"
 }

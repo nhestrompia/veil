@@ -1,0 +1,78 @@
+{
+  "outcome": "input-observed-without-task-action",
+  "historyMatches": true,
+  "eventHistorySaturated": false,
+  "newPageInputEvents": [
+    {
+      "type": "pointerdown",
+      "trusted": true,
+      "t": 201654,
+      "x": 457,
+      "y": 298
+    },
+    {
+      "type": "pointerup",
+      "trusted": true,
+      "t": 201676,
+      "x": 457,
+      "y": 298
+    },
+    {
+      "type": "click",
+      "trusted": true,
+      "t": 201676,
+      "x": 457,
+      "y": 298
+    }
+  ],
+  "acceptedNativeEvents": 2,
+  "newAcceptedTaskActions": 0,
+  "inputOrigin": "unresolved",
+  "attributionEstablished": false,
+  "milestone": 154,
+  "model": "gpt-6.1-terra",
+  "reviewedVerdict": "inconclusive-input-origin",
+  "operatorClarification": "I\u2019m not sure",
+  "baselineCaveat": "The oracle baseline is the end of the earlier native trials. The model baseline records only a browser-log offset. The admitted pair occurs after that offset.",
+  "modelLogOffsetBytes": 22286,
+  "logTail": [
+    "INPUT_GATE_ACCEPTED type=1",
+    "INPUT_GATE_ACCEPTED type=2",
+    "HARDWARE_POINTER armed=false"
+  ],
+  "nativePostingGuardRefused": true,
+  "toolTimeoutProvesNoInput": false,
+  "defaultPromotionHeld": true,
+  "evidence": {
+    "nativeBaseline": {
+      "path": "artifacts/hardware-pointer-154/clean-armed-native-clicks/results.json",
+      "sha256": "1295af1d20ac52d44c3595cbf70baea2df7964ffac08754f21e800a2c14d62c7"
+    },
+    "modelBaseline": {
+      "path": "artifacts/hardware-pointer-154/terra-clean-armed/before.json",
+      "sha256": "f8381a7fff8ef182b59532b815d3770f43c5fcfe7d4cae0fbd7a12f733b522e7"
+    },
+    "modelOracleAfter": {
+      "path": "artifacts/hardware-pointer-154/terra-clean-armed/oracle-after.json",
+      "sha256": "23aeca82d6fde40269b2f420ca33035e7ae46fca5a8e2c77c5a4a71fa0a0091f"
+    },
+    "browserLog": {
+      "path": "artifacts/hardware-pointer-154/clean-physical-session/browser.log",
+      "sha256": "ecfbbabbf34116cfd577d5530479cd14a97637ca1f310f17da1fb981baeef9b3"
+    },
+    "rawModelSummary": {
+      "path": "artifacts/hardware-pointer-154/terra-clean-armed/summary.json",
+      "sha256": "475795a4877f078052693d4771ab24a6fd29082abb65ffa7dce006bbbfc20ff4"
+    }
+  },
+  "modelClarification": {
+    "candidateCUACalls": [
+      "cua.getApp('research.agentfreebrowser.pointer')"
+    ],
+    "reportedCallDurationSeconds": 41.192,
+    "explicitCUAClickOrKeyCommand": false,
+    "sideEffectsRuledOut": false,
+    "exactCUAWallClockAvailable": false,
+    "earlierNoInputClaimRetracted": true
+  }
+}

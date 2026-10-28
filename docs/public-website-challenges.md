@@ -2,7 +2,7 @@
 
 The default tasks are agent-only. For an agent-owned start/status/stop workflow and arbitrary URLs, use [Let an agent start and test the browser](testing-with-agents.md).
 
-Run these lower-level tasks against the current engine browser. They test real public search pages without an account. For model comparisons, use [Test with your agent](testing-with-agents.md).
+These examples explicitly select the experimental hardware-pointer browser. Its model trial contains an unattributed page click. Omit `--target pointer` to use the frozen keyboard-only default. Run these lower-level tasks against the selected browser. They test real public search pages without an account. For model comparisons, use [Test with your agent](testing-with-agents.md).
 
 | Site | Agent task |
 | --- | --- |
@@ -15,12 +15,12 @@ Run these lower-level tasks against the current engine browser. They test real p
 From the project directory, run one command:
 
 ```sh
-python3 tools/website_challenge.py --target engine --site google --output artifacts/google-trial-1
+python3 tools/website_challenge.py --target pointer --site google --output artifacts/google-trial-1
 ```
 
 Use `--site wikipedia` or `--site github` for another site. Use a fresh output directory for each session.
 
-The runner opens one pinned AgentFreeBrowserEngine window for ten minutes. It requests no new permission and changes no browser image.
+The runner opens one pinned AgentFreeBrowserPointer window for ten minutes. It requests no new permission and changes no browser image.
 It writes the task, exact process ID, executable hash, and attempt template into the output directory.
 Give `AGENT-TASK.md` to the agent. Copy `attempt-template.json` for each route and record its tool trace.
 
@@ -35,7 +35,7 @@ Do not treat an unopened or black page as a protection result. A new process nee
 
 ## Run the matched reference
 
-Stop the engine browser before a reference run. Create its stop file from another terminal:
+Stop the research browser before a reference run. Create its stop file from another terminal:
 
 ```sh
 touch artifacts/google-trial-1/stop
@@ -67,10 +67,10 @@ Successful cold-start protection does not prove takeover protection. A failed ro
 Use the separate local fixture when a trusted server-side action counter is necessary:
 
 ```sh
-python3 tools/run_preview_session.py --engine --output artifacts/local-control-1
+python3 tools/run_preview_session.py --pointer --surface pointer-click --output artifacts/local-control-1
 ```
 
-The browser remains keyboard-only and supports this Mac's measured keyboard with US ASCII.
+The current build supports this Mac's measured built-in keyboard with US ASCII and primary clicks from the tested USB mouse. Use Command-Option-M and the green ring for mouse input. See [hardware pointer findings](hardware-pointer-findings.md) for scope and tests.
 The [remaining gaps](agent-free-gap-audit.md) still apply. These public tasks do not certify all websites.
 
 Use `--target preview` only for the historical browser. The [first agent trials](public-website-findings.md) record that older target.
@@ -80,7 +80,7 @@ Use `--target preview` only for the historical browser. The [first agent trials]
 Use `--search-page` to start directly at a site's public search form:
 
 ```sh
-python3 tools/website_challenge.py --target engine --site wikipedia --search-page --output artifacts/wikipedia-trial-1
+python3 tools/website_challenge.py --target pointer --site wikipedia --search-page --output artifacts/wikipedia-trial-1
 ```
 
 The same option supports Google and GitHub. In the default agent-only mode, the agent attempts startup and navigation itself.

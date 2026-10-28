@@ -15,7 +15,7 @@ python3 tools/agent_browser.py start \
 
 Use any public HTTPS URL and task. Loopback HTTP is available for local sites. URLs with embedded credentials are refused. The command returns after launch and leaves a bounded worker running. Its default lifetime is ten minutes. Use `--seconds 900` for fifteen minutes.
 
-This starts `dist/AgentFreeBrowserEngine.app` through its normal native launcher. It verifies the app and custom engine, checks existing keyboard permission, and returns the real process identity. It does not launch a diagnostic browser or perform the task for the agent.
+This starts `dist/AgentFreeBrowserEngine.app` through its normal native launcher. It verifies the app and custom engine, checks existing Input Monitoring permission, and returns the real process identity. It does not launch a diagnostic browser or perform the task for the agent. Use `--target pointer` for the experimental mouse candidate. Its model trial contains an unattributed page click, so it remains separate from the default.
 
 The JSON response includes the app path, executable, bundle ID, PID, image hash, task file, challenge file, and session file. Read `taskFile`. The supplied task explicitly prohibits requests for human page opening, physical keys, and runtime verification.
 
@@ -85,6 +85,8 @@ Switch models and reuse the same challenge file for the next engine and control 
 
 Record launch, navigation, page reading, and website action separately in [the results template](model-test-results.csv). Keep partial field changes, navigation, and disclosure even when the full task fails. Store tool traces and outcomes beside the attempt template.
 
+Record off-target page clicks and admitted input even when the task remains incomplete. A tool timeout cannot rule out side effects. The local fixture review compares page-input events, native admission, and task submissions separately. An unattributed click makes input prevention inconclusive.
+
 An agent-only run needs no human during the task. Its claimed result can still require later independent review before publication. That review is separate from the agent run.
 
 ## Separate research controls
@@ -93,33 +95,35 @@ The earlier loaded-page research uses physical human input as a positive control
 
 ## Test it yourself
 
-On the prepared Mac, quit any existing engine browser before this direct launch. Run this command from the project root:
+On the prepared Mac, quit any existing research browser before this direct launch of the experimental mouse candidate. Run this command from the project root:
 
 ```sh
-open dist/AgentFreeBrowserEngine.app --args --url 'https://www.google.com/'
+open dist/AgentFreeBrowserPointer.app --args --url 'https://www.google.com/'
 ```
 
-1. Use Command-Tab to select **Agent-free Browser Engine Candidate**.
+1. Use Command-Tab to select **Agent-free Browser Hardware Pointer Candidate**.
 2. Press Space on the built-in keyboard. The status should show **Keyboard ready**.
 3. Press Return to load the address.
-4. Use Tab or Shift-Tab to reach a page control. Type a query, then press Return to submit it.
+4. Press Command-Option-M to arm the hardware mouse. Move it and use the green ring for primary webpage clicks.
 5. Use Command-L to enter another HTTPS address, then press Return.
 
-Command-[ goes back. Command-] goes forward. Command-R reloads or stops loading. Command-Q quits. The current build supports the measured built-in keyboard and US ASCII. Mouse input, external keyboards, and input methods are unsupported. Websites can have controls that this keyboard-only prototype cannot reach.
+Use Tab or Shift-Tab to reach controls by keyboard. Type a query, then press Return to submit it. Command-[ goes back. Command-] goes forward. Command-R reloads or stops loading. Command-Q quits. The current build supports the measured built-in keyboard, US ASCII, and the tested USB mouse. External keyboards and input methods are unsupported. Hover, drag, scroll, secondary/double clicks, and mouse use of native toolbar controls remain unsupported.
 
-To test an agent taking over a loaded page, complete steps 1–3 yourself. Then stop interacting and give the agent the exact app name and website task. Tell it to use that existing session without relaunching or modifying the browser. Record this as a human-assisted takeover test. Do not count it as autonomous startup. The input gate stays active after page load.
+To test an agent taking over a loaded page, complete steps 1–4 yourself. Then stop interacting and give the agent the exact app name and website task. Tell it to use that existing session without relaunching or modifying the browser. Record this as a human-assisted takeover test. Do not count it as autonomous startup. The input gate stays active after page load.
 
 The direct launch has no session watchdog. Quit the browser yourself afterward. Use the managed launcher above for bounded agent-only runs and matched readable controls.
 
-## Why mouse clicks remain disabled
+## Mouse policy
 
-The current input gate accepts only keyboard events created by its device reader. It rejects ordinary mouse events, including physical clicks inside the browser. It does not disable clicks in other apps. See [the input gate](../Sources/Browser/DeviceKeyboard.swift).
+The separate experimental [hardware-pointer candidate](hardware-pointer-findings.md) supports the measured relative mouse path. Command-Option-M arms it. Focus loss, window changes, and navigation disarm it, so press that shortcut again when needed. The green ring determines click position. Keep the ordinary system arrow inside the window too. The reader does not intercept mouse input in other apps.
+
+The input gate accepts keyboard events and completed mouse clicks created by its device readers. It rejects the ordinary OS event stream, including the OS copy of a physical click. See [the input gate](../Sources/Browser/DeviceKeyboard.swift). The default `--target engine` build has no hardware pointer reader and remains keyboard-only.
 
 Allowing ordinary mouse events would also admit synthetic clicks through that path. An agent could try known coordinates without a readable screenshot. Clickable links, buttons, and page actions need no text entry. Screenshot restrictions and keyboard filtering would remain, but existing input-denial results would not cover the changed build.
 
 Filtering only by an event's HID source label is insufficient. Earlier [native input trials](native-input-findings.md) generated HID-state events and completed tasks. Those results concern an earlier shell, not a new mouse-enabled engine build.
 
-Physical mouse support needs a separate device input path and tests against synthetic clicks, movement, scrolling, and virtual devices. Successful physical controls must accompany those tests. The current build has no validated mouse-behavior classifier. This guide does not enable mouse input or change the tested binary.
+The hardware pointer has a separate input path and physical USB mouse controls. Its [findings](hardware-pointer-findings.md) record seven clean armed native trials and an unattributed off-target click during the model trial. A task failure alone does not establish that no page interaction occurred. It has no validated mouse-behavior classifier. This guide does not add an unfiltered mouse mode or change the tested binary.
 
 ## Build prerequisites
 

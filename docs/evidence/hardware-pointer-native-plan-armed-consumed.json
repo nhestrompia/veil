@@ -1,0 +1,12 @@
+{
+  "originalPlan": "docs/evidence/hardware-pointer-native-plan.json",
+  "pid": 57185,
+  "trialsPerRoute": 2,
+  "routes": [
+    "hid",
+    "session",
+    "private",
+    "curve-hid"
+  ],
+  "executed": true
+}

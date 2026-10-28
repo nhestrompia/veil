@@ -1,0 +1,22 @@
+{
+  "approved": true,
+  "executed": true,
+  "sessionFile": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/hardware-pointer-154/physical-pointer-session/session.json",
+  "routes": [
+    "hid",
+    "session",
+    "private",
+    "curve-hid",
+    "pid-window-keycodes-hid"
+  ],
+  "repetitions": 3,
+  "maximumSeconds": 240,
+  "pauseHelperSHA256": "e62a28a8b65f16fbfaf8d12c23d653054e571ff2db13fa1fba2e36045f0b99ff",
+  "modifierApps": [
+    "com.lujjjh.LinearMouse",
+    "com.ethanbills.DockDoor"
+  ],
+  "output": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/hardware-pointer-154/native-click-matrix",
+  "scope": "Only the owned pointer-click fixture and matched readable controls; no hooks, root, permission changes, or browser modifications; restore original modifier apps after all probes stop.",
+  "userResponse": "Allow this bounded pause, native comparison, and restore"
+}

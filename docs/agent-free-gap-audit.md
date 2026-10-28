@@ -1,8 +1,14 @@
 # Remaining agent-free gaps
 
+Status after milestone 154: AgentFreeBrowserEngine remains the launcher default. AgentFreeBrowserPointer is an explicit experimental target. The measured USB mouse completes a physical click task. Seven clean native-input trials cause no new action while pointer authority stays armed. GPT-6.1-terra completes the matched readable click task. Its candidate attempt records no new task submission, but admits an off-target page click of unresolved origin. Treat model input prevention as inconclusive. Resolve that click before promoting the mouse build. All test sessions are stopped and both mouse utilities are restored. See [mouse findings](hardware-pointer-findings.md) and [current results](evidence/hardware-pointer-results.json).
+
+The original engine stays frozen. Other devices, built-in pointer physical use, hover/drag/wheel and other mouse features remain unverified or unsupported. Entitled virtual-mouse reports, legacy pointing reports, unfiltered capture, and calibrated script attachment on this exact new image remain open. No universal agent-free claim follows from the bounded native and model trials.
+
+## Earlier engine audit
+
 Status after milestone 153: the engine browser passes physical text entry and a three-cycle live focus repeat on the same process. One calibrated global key-code route admits no events and causes no action. Matched host Accessibility and scoped screenshot comparisons recover no marker or action. See the [live findings](focus-engine-live-findings.md) and [publication report](publication-report.md).
 
-The approved Input Monitoring grant is effective. The browser and private fixture remain open under their one-hour watchdog. The new unfiltered recorder is built but has no approved Screen Recording grant. Metadata-only coverage refuses an overlap before pixels. The engine remains a workspace dependency, and Hardened Runtime is off.
+At milestone 153, the approved Input Monitoring grant is effective and the browser and private fixture remain open under their one-hour watchdog. Those sessions are now stopped. The new unfiltered recorder is built but has no approved Screen Recording grant. Metadata-only coverage refuses an overlap before pixels. The engine remains a workspace dependency, and Hardened Runtime is off.
 
 The two requirements remain separate. Disclosure prevention stops recovery of a fresh page-only secret. Action prevention stops an external agent from completing a website task, including blind operation. Both require usable human access on the same final build.
 

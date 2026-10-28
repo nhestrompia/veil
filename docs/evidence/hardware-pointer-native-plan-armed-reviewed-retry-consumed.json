@@ -1,0 +1,17 @@
+{
+  "originalPlan": "docs/evidence/hardware-pointer-native-plan.json",
+  "pid": 65606,
+  "remainingTrialsByRoute": {
+    "hid": 1,
+    "session": 2,
+    "private": 2,
+    "curve-hid": 2
+  },
+  "routes": [
+    "hid",
+    "session",
+    "private",
+    "curve-hid"
+  ],
+  "executed": true
+}

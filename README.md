@@ -22,7 +22,7 @@ open dist/Veil.app --args --url 'https://www.google.com/'
 2. Press Space, then Return on the built-in keyboard to load the page.
 3. Use the tested USB mouse normally for clicks and wheel scrolling. No shortcut or green ring is needed.
 
-This new app needs its own Input Monitoring grant. Physical USB clicks and vertical wheel scrolling passed a live human control on this build. Hover and toolbar clicks are implemented; their physical validation and external input trials remain pending. Trackpad gestures, dragging, and other click types remain unsupported. Use Command-L for the address and Command-Q to quit. [Manual guide](docs/testing-with-agents.md#test-it-yourself)
+This new app needs its own Input Monitoring grant. Physical USB clicks and vertical wheel scrolling passed a live human control on this build. Hover and toolbar clicks are implemented. The first native input trial stopped on 35 admitted hover events with unresolved origin; it caused no new page action. Further input testing remains pending. Trackpad gestures, dragging, and other click types remain unsupported. Use Command-L for the address and Command-Q to quit. [Manual guide](docs/testing-with-agents.md#test-it-yourself)
 
 ## Let your agent try
 

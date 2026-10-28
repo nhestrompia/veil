@@ -11,7 +11,7 @@
   "permissionRequested": true,
   "physicalMouseVerified": true,
   "physicalWheelVerified": true,
-  "externalAgentTrialsOnThisImage": false,
+  "externalAgentTrialsOnThisImage": true,
   "agentFreeProven": false,
   "frozenEarlierImagesUnchanged": {
     "AgentFreeBrowserPointer": "2409cb24f9e0b3c559ce8ebbf0de5fc61d70350ae47a8a3f483d70b44e46c7f8",
@@ -106,8 +106,9 @@
     }
   ],
   "remaining": [
-    "Verify physical native toolbar use and run external software-input / loaded-page takeover comparisons",
-    "Run external software-input and loaded-page takeover comparisons on this exact image"
+    "Resolve the admitted hover events with an isolated no-physical-input comparison",
+    "Verify physical native toolbar use",
+    "Complete native input, loaded-page agent, capture and script-attachment tests on this image"
   ],
   "pythonChecksPassed": 73,
   "coordinateRegression": {
@@ -159,7 +160,26 @@
     "error": "Sky Computer Use native pipe startup failed",
     "defenseResult": false
   },
-  "nativeInputStatus": "Pending new bounded modifier-pause approval; current mouse-hook guard refuses posting",
+  "nativeInputStatus": "Stopped after the first calibrated HID-source attempt: 35 admitted hover events, origin unresolved; 65 refusals; no new page input or action",
   "nativePlan": "docs/evidence/veil-native-input-plan.json",
-  "nativeRunnerGuardTestsPassed": 2
+  "nativeRunnerGuardTestsPassed": 2,
+  "nativeInputComparison": {
+    "path": "artifacts/veil-mouse-156/native-input/results.json",
+    "sha256": "0afc622a1c5f444659329d67557bc52d647bbecd8a440d170a2472a5dfbb6eda",
+    "plannedMaximumCandidateTrials": 10,
+    "candidateTrialsRun": 1,
+    "controlWorked": true,
+    "candidateRefusedEvents": 65,
+    "candidateAdmittedEvents": 35,
+    "admittedEventType": "mouseMoved (5)",
+    "newPageInputEvents": 0,
+    "newAcceptedActions": 0,
+    "verdict": "interaction-observed-origin-unresolved",
+    "attributionEstablished": false,
+    "restored": true,
+    "remainingPostingProbePIDs": [],
+    "taskCompletionComparison": false,
+    "operatorPhysicalInputAbsence": "unconfirmed",
+    "operatorResponse": "I'm not sure"
+  }
 }

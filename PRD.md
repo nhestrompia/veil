@@ -1,10 +1,12 @@
 # Agent-resistant browser: proof-of-concept PRD
 
-Status: research specification. The initial shell and independent fixture are implemented. Protection experiments determine the outcome.
+Status: minimal research MVP. The combined native browser and independent fixture work. Agent-free acceptance remains unproven.
+
+Scope clarification, October 28, 2026: keep the single-window browser and focus on protection. Tabs, bookmarks, browsing-history UI, and browser feature parity are outside this milestone. See [MVP scope](docs/mvp-scope.md).
 
 Date: October 23, 2026. Platform: macOS only.
 
-Current feasibility result, October 27, 2026: no integrated agent-free build meets the declared threat model. Earlier same-user candidates completed sixteen calibrated timing attacks. The physical keyboard browser does not incorporate the later isolated renderer. Human input, private visible output, and final browser-wide acceptance remain incomplete. See [remaining gaps](docs/agent-free-gap-audit.md).
+Historical feasibility result, October 27, 2026: no integrated agent-free build meets the declared threat model. Earlier same-user candidates completed sixteen calibrated timing attacks. The physical keyboard browser does not incorporate the later isolated renderer. Human input, private visible output, and final browser-wide acceptance remain incomplete. See [remaining gaps](docs/agent-free-gap-audit.md).
 
 Milestone 116 runs one cross-user channel comparison. macOS denies four renderer pauses and resumes, while an ordinary-user display pause allows eleven new page-and-image samples. The helper exits successfully and measured cleanup passes. This hidden, fixed-fixture pair has no physical input route. It validates process isolation and transport, not agent-free website use. See [live findings](docs/renderer-channel-live-findings.md).
 

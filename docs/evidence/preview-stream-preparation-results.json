@@ -1,0 +1,92 @@
+{
+  "milestone": 139,
+  "scopeDecision": "User requests minimal agent-free research MVP, not a general-browser competitor. No browser feature expansion runs.",
+  "probeSHA256": "c5dcf53813d87b6fecd6d2e042f96803ea947f4d13d402b02b0273c02cbcc79a",
+  "preflight": {
+    "audioCaptured": false,
+    "hooksInstalled": false,
+    "inputPosted": false,
+    "permissionRequested": false,
+    "probePID": 47222,
+    "screenRecordingGranted": false,
+    "status": "preflight",
+    "cleanupVerified": true,
+    "probeSHA256": "c5dcf53813d87b6fecd6d2e042f96803ea947f4d13d402b02b0273c02cbcc79a"
+  },
+  "permissionApproved": false,
+  "permissionRequested": false,
+  "firstLaunchAfterFinalPin": true,
+  "streamCaptureRan": false,
+  "pixelAuditChecksPassed": 12,
+  "pythonChecksPassed": 16,
+  "swift6WarningsAsErrors": true,
+  "pythonCompilation": true,
+  "strictSignatureVerified": true,
+  "systemWindowComparison": {
+    "previewPID": 35426,
+    "previewSHA256": "dc3ca62c174d635b9994d9bae27ff6d4dc4a7983bc36d332f720fbbfaf24df70",
+    "inputPosted": false,
+    "verdict": "inconclusive",
+    "before": {
+      "foregroundStatus": "observed",
+      "markerRecovered": true,
+      "capture": {
+        "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/artifacts/preview-stream-139/system-window/before.png",
+        "pid": 48087,
+        "status": "captured",
+        "windowID": 113758,
+        "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+      },
+      "markerRecovery": {
+        "exact": true,
+        "visualHexAliases": true
+      }
+    },
+    "beforeReferenceStopped": true,
+    "candidate": {
+      "foregroundStatus": "observed",
+      "markerRecovered": false,
+      "capture": {
+        "error": "System capture failed",
+        "status": "inconclusive",
+        "probeBinarySHA256": "7c256598528dcaf2dcdc6437af30dab92d9c4ca929a55a3a2402f09754f67de1"
+      }
+    },
+    "previewRestored": "observed",
+    "newSubmissions": []
+  },
+  "frozenImagesUnchanged": {
+    "DeviceKeyboardExperiment": true,
+    "NativeProbe": true,
+    "RendererAXProbe": true,
+    "KeyboardObservationProbe": true,
+    "WindowGeometryProbe": true,
+    "PixelKeyboardExperiment": true,
+    "PixelKeyboardRoutingControl": true,
+    "CaptureRefreshProbe": true,
+    "CompositorRefreshProbe": true,
+    "CaptureStressProbe": true,
+    "AgentFreeBrowserPreview": true,
+    "PreviewRendererReadProbe": true
+  },
+  "previewSourcesUnchanged": {
+    "Sources/Browser/AXBoundary.swift": true,
+    "Sources/Browser/BrowserApp.swift": true,
+    "Sources/Browser/BrowserPolicy.swift": true,
+    "Sources/Browser/BrowserRuntimePolicy.swift": true,
+    "Sources/Browser/DeviceKeyboard.swift": true,
+    "Sources/Browser/HIDSourcePolicy.swift": true,
+    "Sources/Browser/InputSourceWindow.swift": true,
+    "Sources/Browser/RestrictedWebView.swift": true,
+    "Sources/Browser/SecureInputWindow.swift": true
+  },
+  "remainingTransientPIDs": {
+    "PreviewStreamCaptureProbe": [],
+    "NativeProbe": [],
+    "InspectableControl": []
+  },
+  "previewPID": 35426,
+  "acceptedPreviewSubmissions": 1,
+  "recordedUnixSeconds": 1793186094.085116,
+  "agentFreeEstablished": false
+}

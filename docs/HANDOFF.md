@@ -1,5 +1,17 @@
 # Current research state
 
+Milestone 139 follows the user's clarification: build an agent-free MVP, not a Safari or Chrome competitor. No broader browser UI is built. The existing combined app remains the MVP candidate. See [MVP scope](mvp-scope.md).
+
+PreviewStreamCaptureProbe is prepared and pinned for 30-second independent-window and app-filtered display streams. It accepts only the exact preview and readable control. It audits RGB and alpha in each valid complete buffer. Missing or unaudited frames remain inconclusive. Twelve Swift pixel checks and 16 Python checks pass. No stream runs because Screen Recording is off.
+
+The final helper hash is c5dcf53813d87b6fecd6d2e042f96803ea947f4d13d402b02b0273c02cbcc79a. Its manifest is docs/evidence/preview-stream-permission-manifest.json. The first trust query runs only after the final image is pinned. No request is approved or executed. The next step needs consent for this new helper's Screen Recording request. Do not rebuild or re-sign it. See [capture preparation](preview-stream-findings.md).
+
+An available system-window screenshot comparison succeeds on its fresh reference but fails on the preview. Keep that result inconclusive. No new action occurs. All transient helpers and references stop. All 12 existing permissioned images and browser sources remain unchanged.
+
+The current physical preview remains PID 35426. Its session is artifacts/preview-renderer-138/physical-session/session.json, and its separate user declaration is artifacts/preview-renderer-138/physical-control.json. Check both before reuse. Its controller is exec session 52976 with the original one-hour watchdog. Both modifier apps remain running. Do not post global input. Do not restart computer use. The new stream tests require neither. Agent-free status remains unproven.
+
+## Milestone 138
+
 Milestone 138 completes the approved app-only Accessibility reset and re-request for PreviewRendererReadProbe. The user enables it again. Effective access is now true, and the frozen helper recovers a fresh readable reference's marker directly from its renderer. The helper and all earlier granted images remain unchanged. See [live findings](preview-renderer-live-findings.md).
 
 The old physical preview PID 2892 expires under its original watchdog. A new unchanged preview runs as PID 35426. The user reports Task complete, device binding is present, and its independent fixture accepts exactly one action. A fresh matched token scan recovers the reference marker and no candidate marker. Both candidate host and renderer scans cover IDs zero through 1,023, without budget exhaustion. No new preview submission occurs.

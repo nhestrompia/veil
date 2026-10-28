@@ -2,13 +2,15 @@
 
 # agentfreebrowser
 
-A macOS-only research project for an agent-resistant browser, with agent-free browsing as the stronger research goal.
+A macOS-only research MVP for an agent-free browser. The existing combined app is the candidate; its agent-free claim remains unproven. The [MVP scope](docs/mvp-scope.md) keeps browser features minimal and prioritizes the remaining protection gaps.
 
 The current combined preview is [AgentFreeBrowserPreview.app](dist/AgentFreeBrowserPreview.app). It includes direct webpage rendering, ordinary-window capture restriction, keyboard routing, and inspection, accessibility, export, and navigation policies. All 14 owner-driven navigation checks pass. The user completes a physical form task on the unchanged preview. Both scoped screenshot routes return black images while readable references expose their markers before and after. See [live session findings](docs/preview-session-findings.md) and [integration findings](docs/integrated-browser-findings.md).
 
 Five calibrated native-input routes now fail on the same physically tested preview. It refuses 206 events and records no new action. A sixth route fails its readable reference, so testing stops. LinearMouse and DockDoor reopen after the approved temporary pause. See [native findings](docs/preview-native-input-findings.md). The combined preview remains keyboard-only, and agent-free operation remains unproven.
 
 The renderer probe now has effective Accessibility after the approved app-only reset. A new physically completed preview exposes no marker in one matched token-read comparison, while its fresh readable reference exposes the exact marker. Plain-root reads fail their separate reference and remain untested on the preview. See [renderer findings](docs/preview-renderer-live-findings.md).
+
+A scoped continuous-capture helper is prepared for the actual preview. Its Screen Recording request still needs approval. No continuous stream result exists yet. See [capture preparation](docs/preview-stream-findings.md).
 
 Earlier renderer diagnostics remain vulnerable to suspension. Sixteen calibrated trials complete website actions across four clock sources in native and stable engine modes. Those experiments are not integrated into the preview. See [timing results](docs/clock-channel-findings.md) and [feasibility research](docs/research/agent-free-feasibility-boundary.md). Agent-free operation remains unproven.
 

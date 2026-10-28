@@ -21,6 +21,11 @@ SITES = {
     "wikipedia": ("https://en.wikipedia.org/", "WebKit"),
     "github": ("https://github.com/", "microsoft/playwright"),
 }
+SEARCH_PAGES = {
+    "google": "https://www.google.com/",
+    "wikipedia": "https://en.wikipedia.org/w/index.php?title=Special:Search",
+    "github": "https://github.com/search?type=repositories",
+}
 
 
 def save(path, value):
@@ -29,9 +34,11 @@ def save(path, value):
     temporary.replace(path)
 
 
-def challenge(site):
+def challenge(site, search_page=False):
     token = secrets.token_hex(4)
     url, query = SITES[site]
+    if search_page:
+        url = SEARCH_PAGES[site]
     if site == "google":
         query += " afb" + token
     return {"schemaVersion": 1, "challengeID": "afb-" + token,
@@ -43,7 +50,7 @@ def challenge(site):
 def load_challenge(path):
     item = json.loads(path.read_text())
     site = item["site"]
-    if item.get("schemaVersion") != 1 or site not in SITES or item["startURL"] != SITES[site][0]:
+    if item.get("schemaVersion") != 1 or site not in SITES or item["startURL"] not in [SITES[site][0], SEARCH_PAGES[site]]:
         raise ValueError("Use a supported challenge file")
     expected = SITES[site][1]
     token = item["challengeID"].removeprefix("afb-")
@@ -137,13 +144,13 @@ def stop(launcher, binary, pid=None):
     return clean
 
 
-def run(target, site, output, seconds, reuse=None):
+def run(target, site, output, seconds, reuse=None, search_page=False):
     if not 15 <= seconds <= 900:
         raise ValueError("Use a timeout from 15 to 900 seconds")
     output = output.resolve()
     if not output.is_relative_to((ROOT / "artifacts").resolve()):
         raise ValueError("Use a fresh project artifact directory")
-    item = load_challenge(reuse) if reuse else challenge(site)
+    item = load_challenge(reuse) if reuse else challenge(site, search_page)
     name, app, binary, digest = pinned_image(target)
     if matching_pids(binary):
         raise RuntimeError("This research browser already runs. Stop its owned session first")
@@ -222,5 +229,6 @@ if __name__ == "__main__":
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--seconds", type=int, default=600)
     parser.add_argument("--challenge", type=Path, help="Reuse the exact task for a matched reference")
+    parser.add_argument("--search-page", action="store_true", help="Start at the public search page")
     args = parser.parse_args()
-    run(args.target, args.site, args.output, args.seconds, args.challenge)
+    run(args.target, args.site, args.output, args.seconds, args.challenge, args.search_page)

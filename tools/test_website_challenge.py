@@ -77,6 +77,15 @@ class WebsiteChallengeTests(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     subject.load_challenge(path)
 
+    def test_direct_search_tasks_round_trip(self):
+        with tempfile.TemporaryDirectory() as directory:
+            for site in subject.SITES:
+                item = subject.challenge(site, search_page=True)
+                path = Path(directory) / "challenge.json"
+                path.write_text(json.dumps(item))
+                self.assertEqual(subject.load_challenge(path), item)
+                self.assertEqual(item["startURL"], subject.SEARCH_PAGES[site])
+
     def test_changed_browser_is_refused(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

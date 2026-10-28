@@ -36,8 +36,8 @@
     }
   },
   "permission": "macOS Input Monitoring / ListenEvent",
-  "permissionApproved": false,
-  "permissionRequested": false,
+  "permissionApproved": true,
+  "permissionRequested": true,
   "effectiveGrantConfirmed": false,
   "physicalMouseControlVerified": false,
   "liveAttacksVerified": false,
@@ -62,5 +62,12 @@
   },
   "pointerScope": "Measured relative devices authorize primary clicks, hover, and vertical wheel input at the standard cursor. Automatic device activation. No drag, secondary/double clicks, or trackpad gestures.",
   "coordinateRedirectionLimitAccepted": true,
-  "physicalWheelControlVerified": false
+  "physicalWheelControlVerified": false,
+  "permissionApproval": {
+    "userResponse": "Allow Veil\u2019s Input Monitoring request",
+    "appPath": "/Users/nhestrompia/.t3/projects/agentfreebrowser/dist/Veil.app",
+    "binarySHA256": "dc0725ded122316f7a51427295e75f4c1d8ed2cb5447d017583ad69652f8c1ef",
+    "scope": "Input Monitoring request for this new Veil app; active own-window processing only; no hooks or raw keys/text saved"
+  },
+  "permissionRequestLog": "artifacts/veil-mouse-156/input-request.log"
 }

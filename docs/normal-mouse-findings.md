@@ -25,7 +25,7 @@ The new packet/state tests pass signed wheel values, malformed packets, neutral 
 
 The first real WebKit control failed to deliver hover and wheel despite admitting the internal events. Private routing now delivers them directly to the owned target view. A nonzero-window-origin check then exposed incorrect wheel coordinates. The final control verifies client coordinates 320,170 and records one webpage click, one native button click, one pointer move, and one wheel event that scrolls 120 points. It also refuses five forged direct or queued events. This control opens no HID reader and posts no OS input. It does not establish physical usability or defeat an external agent.
 
-All 73 relevant Python checks pass. The new app builds and its sources match its manifest. Both earlier permissioned browser images retain their hashes. The new app's no-request preflight reports Input Monitoring off.
+All 73 relevant Python checks pass. The new app builds and its sources match its manifest. Both earlier permissioned browser images retain their hashes. The new app's no-request preflight reports Input Monitoring off. The user then approves this exact image's permission request. The request runs, but effective access remains off. Input Monitoring is open for the user to enable Veil; the native UI tool cannot start.
 
 Physical click/wheel verification and external-agent tests on this exact image remain pending. Earlier model and capture results do not transfer automatically. The old unattributed click remains unresolved. [Manifest](evidence/veil-browser-manifest.json) · [Control results](evidence/veil-normal-mouse-results.json)
 

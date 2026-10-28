@@ -16,7 +16,19 @@ from run_drag_delivery import launch, ready
 from run_native import ROOT, Oracle
 
 
-def run(output):
+SURFACES = ['form', 'focus-action', 'blur-action', 'visibility-action', 'timer-gap-action']
+
+
+def fixture_configuration(surface):
+    if surface not in SURFACES:
+        raise ValueError('Unsupported preview fixture surface')
+    if surface == 'form':
+        return None, ''
+    return ROOT / 'tools/feature-fixture.html', '?surface=' + surface + '&observe-activity=1'
+
+
+def run(output, surface='form'):
+    page_template, suffix = fixture_configuration(surface)
     output = output.resolve()
     if not output.is_relative_to((ROOT / 'artifacts').resolve()):
         raise ValueError('Use a fresh project artifact directory')
@@ -35,7 +47,7 @@ def run(output):
                     str(output / 'permission.stderr'), str(app), '--args', '--permissions'], check=True, timeout=15)
     if 'DEVICE_KEYBOARD permission=true' not in preflight.read_text():
         raise RuntimeError('The preview grant is no longer effective')
-    server = FixtureServer(('127.0.0.1', 0))
+    server = FixtureServer(('127.0.0.1', 0), page_template)
     worker = threading.Thread(target=server.serve_forever, daemon=True)
     worker.start()
     controller = output / 'fixture-controller.json'
@@ -47,7 +59,8 @@ def run(output):
     pid = None
     session = {'target': name, 'binarySHA256': manifest['executableSHA256'], 'controller': str(controller),
                'trial': trial, 'log': str(output / 'browser.log'), 'operatorDeclaresPhysicalCompletion': False,
-               'systemInputPosted': False, 'maximumSessionSeconds': 3600}
+               'systemInputPosted': False, 'maximumSessionSeconds': 3600,
+               'fixtureSurface': surface, 'loadedURL': trial['url'] + suffix}
 
     def persist():
         temporary = output / 'session.tmp'
@@ -61,7 +74,7 @@ def run(output):
         signal.signal(number, interrupted)
     signal.alarm(3600)
     try:
-        launcher, _ = launch(name, Path(session['log']), ['--url', trial['url']])
+        launcher, _ = launch(name, Path(session['log']), ['--url', session['loadedURL']])
         pid = ready(Path(session['log']), r'Browser ready: pid=(\d+)')
         session.update(pid=pid, launcherPID=launcher.pid)
         active(session)
@@ -101,4 +114,6 @@ def run(output):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--output', type=Path, required=True)
-    run(parser.parse_args().output)
+    parser.add_argument('--surface', choices=SURFACES, default='form')
+    args = parser.parse_args()
+    run(args.output, args.surface)

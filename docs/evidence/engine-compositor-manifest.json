@@ -1,0 +1,38 @@
+{
+  "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/dist/EngineCompositorProbe.app",
+  "bundleIdentifier": "research.agentfreebrowser.enginecompositor",
+  "executableSHA256": "3186515e7a0ac3e52681f485b0047f0f8dcec2a4ef7f8b3f6d3a9e16458d6fe4",
+  "sourceHashes": {
+    "Sources/Diagnostics/RendererProcessScope.swift": "4e7f0bd22ced093ec33c598a9d255162bb03b2989d62b0792338f5ccc2046e95",
+    ".build/engine-compositor/EngineCaptureScope.swift": "f7efa1ce10ddc61aa9880082f815d1ba4451a7f25dfc2b4c70c4b8937df0d470",
+    "Sources/Diagnostics/PreviewCompositorPixels.swift": "f3bf7fbb071de62f9d18565b252585eadcf52d814c7092886a0c02005275510a",
+    "Sources/Diagnostics/PreviewCompositorBackdrop.swift": "e6824527560e42a458d616c144b084ac43aaa6a03d8c570e8917829724ff9c91",
+    ".build/engine-compositor/EngineCompositorProbe.swift": "ea816652c0720221eb62ebc6a9ece00a0f6210dee36de5687778a3524979d863",
+    ".build/engine-compositor/EngineCaptureApproval.swift": "552b7803d466b00e2fe830966165de3eea80f69755fa928aaa29348151135f08",
+    "tools/build_engine_compositor.py": "f7d72504534a005ffd728018e79748426912fcb2b8eb3e76230be2e771d6cb48"
+  },
+  "permission": "macOS Screen Recording",
+  "permissionApproved": false,
+  "permissionRequested": false,
+  "effectiveGrantConfirmed": false,
+  "automaticRequestAtLaunch": false,
+  "directRequestCommandAvailable": false,
+  "maximumSeconds": 25,
+  "audioCaptured": false,
+  "inputPosted": false,
+  "hooksInstalled": false,
+  "targetPolicies": [
+    {
+      "name": "AgentFreeBrowserEngine",
+      "bundle": "research.agentfreebrowser.focusengine",
+      "sha256": "12de797fbbfea6f5536b13b8ba890354170f3561f681620bb49be42f2fdf7e21"
+    },
+    {
+      "name": "InspectableControl",
+      "bundle": "research.agentfreebrowser.control",
+      "sha256": "ac6b5b199ebfeafbeb53b85ad759c966bbd4f9b852cfc39ecd89af6b725bab36"
+    }
+  ],
+  "scope": "Only the two exact target images. Unfiltered display / owned-apps / unfiltered display, cropped inside verified opaque owned coverage. Preserve overlap, foreground, geometry, and process identity guards.",
+  "originalGrantedRecorderUnchanged": true
+}

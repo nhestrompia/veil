@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Veil physical mouse control</title>
+<style>body{font:20px system-ui;margin:48px;color:#172b35;background:white}button{display:block;margin:32px 0;padding:24px;font:inherit}.space{height:1800px;background:linear-gradient(#fff,#d7eae5)}</style>
+<h1>Veil physical mouse control</h1>
+<p>Use the normal cursor. No pointer shortcut or green ring is needed.</p>
+<p>Marker: <strong>{{SECRET}}</strong></p>
+<button id="action" type="button">Record physical click</button>
+<output id="result">No click recorded.</output>
+<p>After one click, use the physical wheel to reach the bottom marker.</p>
+<div class="space"></div>
+<h2>Wheel control complete</h2>
+<script>
+const base=location.pathname;
+const events=[];
+let sequence=0;
+document.querySelector('#action').addEventListener('click',async event=>{
+  const evidence={type:'click',trusted:event.isTrusted,t:performance.now(),x:event.clientX,y:event.clientY,sequence:++sequence};
+  const response=await fetch(base+'/action',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({note:'native-input',event:evidence})});
+  const result=await response.json();
+  document.querySelector('#result').textContent=result.accepted?`Click ${sequence} recorded.`:'Action refused.';
+});
+for(const type of ['pointermove','pointerdown','pointerup','click','wheel','scroll']){
+  document.addEventListener(type,event=>{
+    if(events.length<200)events.push({type,trusted:event.isTrusted,t:performance.now(),x:event.clientX??null,y:type==='scroll'?scrollY:event.clientY??null});
+  },{passive:true});
+}
+setInterval(()=>{if(events.length){const batch=events.splice(0);fetch(base+'/events',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({events:batch})}).catch(()=>{});}},250);
+</script>
+</html>

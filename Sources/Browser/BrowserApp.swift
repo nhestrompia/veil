@@ -30,7 +30,11 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
     #if DEVICE_KEYBOARD_EXPERIMENT
     private var deviceKeyboard: DeviceKeyboardRouter?
     #if DEVICE_POINTER_EXPERIMENT
+    #if VEIL_BROWSER
+    private var devicePointer: PhysicalMouseRouter?
+    #else
     private var devicePointer: DevicePointerRouter?
+    #endif
     #endif
     #endif
 
@@ -76,7 +80,11 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
         #if INTEGRATED_BROWSER
         #if STABLE_ENGINE_BROWSER
         #if DEVICE_POINTER_EXPERIMENT
+        #if VEIL_BROWSER
+        let name = "Veil"
+        #else
         let name = "Agent-free Browser Hardware Pointer Candidate"
+        #endif
         #else
         let name = "Agent-free Browser Engine Candidate"
         #endif
@@ -159,6 +167,10 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
         #endif
         window.contentView = content
         #if DEVICE_POINTER_EXPERIMENT
+        #if VEIL_BROWSER
+        window.acceptsMouseMovedEvents = true
+        devicePointer = PhysicalMouseRouter(window: window)
+        #else
         let pointerOverlay = HardwarePointerOverlay(frame: .zero)
         pointerOverlay.isHidden = true
         pointerOverlay.translatesAutoresizingMaskIntoConstraints = false
@@ -174,6 +186,7 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
             self?.devicePointer?.arm()
             self?.status.stringValue = "Move the hardware mouse, then use the green ring to click. Command-Option-M re-arms. Webpage primary clicks only."
         }
+        #endif
         #endif
         #if INTEGRATED_BROWSER
         window.isOpaque = true
@@ -228,7 +241,11 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
         if let index = arguments.firstIndex(of: "--url"), arguments.indices.contains(index + 1) {
             address.stringValue = arguments[index + 1]
             #if DEVICE_KEYBOARD_EXPERIMENT
+            #if VEIL_BROWSER
+            status.stringValue = "Veil. Press Space, then Return on the built-in keyboard. Physical mouse clicks and wheel use the normal cursor."
+            #else
             status.stringValue = "Built-in keyboard only. Press Space, then Return to open this address. Mouse input is disabled."
+            #endif
             window.makeFirstResponder(address)
             print("STARTUP_ADDRESS pendingPhysicalSubmit=true")
             #else
@@ -241,7 +258,11 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
         #if DEVICE_KEYBOARD_EXPERIMENT
         deviceKeyboard = DeviceKeyboardRouter(window: window) { [weak self] in
             guard let self else { return }
+            #if VEIL_BROWSER
+            self.status.stringValue = "Keyboard ready. Press Return to open the address. Physical mouse input starts automatically."
+            #else
             self.status.stringValue = "Keyboard ready. Press Return to open the address. Mouse input is disabled."
+            #endif
             self.focusAddress()
         }
         #if !BROWSER_NAVIGATION_CONTROL
@@ -350,7 +371,11 @@ final class BrowserController: NSObject, NSApplicationDelegate, WKNavigationDele
         #endif
         #endif
         #if DEVICE_POINTER_EXPERIMENT
+        #if VEIL_BROWSER
+        status.stringValue = "Veil. Normal cursor, physical clicks and wheel. Command-L: address. Command-Q: quit."
+        #else
         status.stringValue = "Command-Option-M: arm hardware mouse. Click with the green ring. Command-L: address. Primary webpage clicks only."
+        #endif
         #endif
     }
 

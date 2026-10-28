@@ -46,6 +46,8 @@ class WebsiteChallengeTests(unittest.TestCase):
                     patch.object(subject, "verified_engine_target", return_value=(root / 'dist/AgentFreeBrowserEngine.app/Contents/MacOS/AgentFreeBrowserEngine', {})), \
                     patch.object(subject, "launch_pointer", side_effect=lambda log, arguments: launch('AgentFreeBrowserPointer', log, arguments)) as pointer_launch, \
                     patch.object(subject, "verified_pointer_target", return_value=(root / 'dist/AgentFreeBrowserPointer.app/Contents/MacOS/AgentFreeBrowserPointer', {})), \
+                    patch.object(subject, "launch_veil", side_effect=lambda log, arguments: launch('Veil', log, arguments)) as veil_launch, \
+                    patch.object(subject, "verified_veil_target", return_value=(root / 'dist/Veil.app/Contents/MacOS/Veil', {})), \
                     patch.object(subject, "ready", return_value=123, side_effect=RuntimeError("not ready") if launch_failure else None), \
                     patch.object(subject, "process_matches", side_effect=[True, False]), \
                     patch.object(subject, "stop_launched", return_value=True) as cleanup, \
@@ -79,6 +81,13 @@ class WebsiteChallengeTests(unittest.TestCase):
     def test_pointer_missing_grant_stops_before_website_launch(self):
         session, template, launches, _ = self.exercise(target='pointer', grant=False)
         self.assertEqual(launches, [['--permissions']])
+        self.assertIsNone(template)
+        self.assertTrue(session['ownedHostStopped'])
+
+    def test_veil_missing_grant_is_a_setup_failure(self):
+        session, template, launches, _ = self.exercise(target='veil', grant=False)
+        self.assertEqual(launches, [['--permissions']])
+        self.assertEqual(session['bundleIdentifier'], 'research.agentfreebrowser.veil')
         self.assertIsNone(template)
         self.assertTrue(session['ownedHostStopped'])
 

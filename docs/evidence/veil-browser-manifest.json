@@ -1,0 +1,66 @@
+{
+  "engineRoot": "/Users/nhestrompia/.t3/projects/agentfreebrowser/.build/webkit-engine/output/Release",
+  "engineSHA256": {
+    "JavaScriptCore.framework/Versions/A/JavaScriptCore": "0eb64291e863b9f1b1561da2eebe0f373f35a34333722c4fa23e0e4a7eb49bb1",
+    "WebCore.framework/Versions/A/WebCore": "8991e52e0b60924f57e650b8b4645ba7d7987c5dc45af8024e03e02fe8a586b3",
+    "WebGPU.framework/Versions/A/WebGPU": "693ce3b2caec3e62d9df83a5eaf20bdf50ef35ae5e625677d3adf735925705bb",
+    "WebInspectorUI.framework/Versions/A/WebInspectorUI": "1fad597ea7e0601ba426ee6d5095dec8e5010e9041491a987ca2bb83bc5d6960",
+    "WebKit.framework/Versions/A/WebKit": "e6d6d7e654ad69f2cadfbe4210c388f9942553b8c76e265e9d8ea083ed075adb",
+    "WebKitLegacy.framework/Versions/A/WebKitLegacy": "e9f33da8296a9afa72f2b3ef990a4f0be1fac8e4b327de5f801a59f8ba2fc2f4",
+    "_WebKit_SwiftUI.framework/Versions/A/_WebKit_SwiftUI": "cc51c4bd580b2d6cf3174d68ce50ba96df01b2324457867561ddabcf16c2ecf9",
+    "com.apple.WebKit.GPU.xpc/Contents/MacOS/com.apple.WebKit.GPU.Development": "c212ef5e24a63b2b72834b0fca7f6071c602508bbfb7d186df39758d47f6a14b",
+    "com.apple.WebKit.Model.xpc/Contents/MacOS/com.apple.WebKit.Model.Development": "c3ccf560017438063020a9bf6ac144bfcb8871c6e7ffdb4c539319f49c999b02",
+    "com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking.Development": "6a4fc331d04b0e7ebb8c9a74f1d55e93da354d1d00c56edc9c3b7b6803842a34",
+    "com.apple.WebKit.WebContent.CaptivePortal.xpc/Contents/MacOS/com.apple.WebKit.WebContent.CaptivePortal.Development": "dc30415ddaedf1c19e392cd3e342371b3bde74127d5288d46b03e9754de8de7f",
+    "com.apple.WebKit.WebContent.Development.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development.Development": "dd4aec5e5c1d9ab3d630bf08be2387a83f45ec026a4024a61896cba53367a99c",
+    "com.apple.WebKit.WebContent.EnhancedSecurity.xpc/Contents/MacOS/com.apple.WebKit.WebContent.EnhancedSecurity.Development": "7eb143953a9b2e7cb8fcf832b5dc7dbdc387330efdd0808d6a54a22f0017ed56",
+    "com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent.Development": "0574b171e68c322dfe37d12b89ce7608bfb789741061f268896833bdacbfd459",
+    "libANGLE-shared.dylib": "11131781788b37187ebcf359b85aae16eb80cca4d7798315152bbbea1d2aff27",
+    "libWebCoreTestSupport.dylib": "c7ba828471a621bc57df0f09bfdfddfd712c806ec29d4186840998ccadcf0397",
+    "libWebKitSwift.dylib": "af3d369a3412e71ffa2d39c15a350d053fa78dd512b1b5e95a0763f9e3228843",
+    "libwebrtc.dylib": "63163d4a5c77d9c7c767bce9fbecfa1e7f72be2ae6602fb332ec4fce4352346f"
+  },
+  "targets": {
+    "Veil": {
+      "path": "/Users/nhestrompia/.t3/projects/agentfreebrowser/dist/Veil.app",
+      "bundleIdentifier": "research.agentfreebrowser.veil",
+      "binarySHA256": "da45deb6c384b660b84ee340f3facf1015ed077120f3ae59e24bff1b4c4a7984",
+      "defines": [
+        "DEVICE_KEYBOARD_EXPERIMENT",
+        "INTEGRATED_BROWSER",
+        "STABLE_ENGINE_BROWSER",
+        "DEVICE_POINTER_EXPERIMENT",
+        "VEIL_BROWSER"
+      ],
+      "diagnosticInput": false
+    }
+  },
+  "permission": "macOS Input Monitoring / ListenEvent",
+  "permissionApproved": false,
+  "permissionRequested": false,
+  "effectiveGrantConfirmed": false,
+  "physicalMouseControlVerified": false,
+  "liveAttacksVerified": false,
+  "engineBundled": false,
+  "hardenedRuntime": false,
+  "sourceHashes": {
+    "Sources/Browser/AXBoundary.swift": "033f95e7ae7d4bd907d8abf4a7a980aa9603162e275d9da7e51dbc319f92400b",
+    "Sources/Browser/BrowserApp.swift": "0ff42e4cfe111cf523f5bc7347589c20481f289f05c25c317d1d01f7d8c86212",
+    "Sources/Browser/BrowserPolicy.swift": "f7311bc7f6bf89d5bef0c8628991306bc782f06f139a7b733f6b84c290283fce",
+    "Sources/Browser/BrowserRuntimePolicy.swift": "11b22ce324ab20a041623a165999ec20cec8ae4933027d22334312b33b562adb",
+    "Sources/Browser/DeviceKeyboard.swift": "9306abd7ab4d6ef60b4d248b53c1a34147a8bef3805dcf4e67ea5bc900131a2c",
+    "Sources/Browser/DevicePointer.swift": "f9362d4aed8f14c30234946b5b4a81f12225a2fbf973e8e74c55b5e23582e7ec",
+    "Sources/Browser/HIDPointerPolicy.swift": "746beb02e89bbad19c821c7fb3e3a495534683b31ca719ca785c1461746bf645",
+    "Sources/Browser/HIDSourcePolicy.swift": "ea1b9b29117b190f218f47db438a74f5f00988ee3448417a95c13bd1d5155116",
+    "Sources/Browser/InputSourceWindow.swift": "968a4ed8bd8f347da8d73caa74dbd77e21e734b7cc7a4c4f4fab50a1d3f38c32",
+    "Sources/Browser/PhysicalMouse.swift": "b778317b80246a610c104208f517aeec552a756e4c25307fef32ab5241abc90c",
+    "Sources/Browser/PhysicalMousePolicy.swift": "c925a4ce67e55cf7e30361ab432a31bbdf9090e41a38fa98dcec2f82d67f8a0a",
+    "Sources/Browser/RestrictedWebView.swift": "424eb6c2d41831dddeed1a2db5a79c1cdd4c4d205162becd691f5fa0c76a50f5",
+    "Sources/Browser/SecureInputWindow.swift": "63d690a7797f984f28d6b6a89933dc1238168a72e2b76d0e2cd8f00c1ca4c1be",
+    "Sources/Diagnostics/EngineRuntime.swift": "e8d2e0fbf1397d6e4a3aa9d9e3cb3a7f9dfc0a34c244fb2b2ef4c98473da817c",
+    "Sources/EngineBrowser/FocusEngineRuntime.swift": "cc99ff51aa802c2cd2a0a51f24fd729e4c8b5e6391956432b6ae308e5eb11bf1"
+  },
+  "pointerScope": "Measured relative devices authorize primary clicks, hover, and vertical wheel input at the standard cursor. Automatic device activation. No drag, secondary/double clicks, or trackpad gestures.",
+  "coordinateRedirectionLimitAccepted": true,
+  "physicalWheelControlVerified": false
+}

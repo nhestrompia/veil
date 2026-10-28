@@ -19,7 +19,10 @@ ROUTES = ["session", "hid", "private", "pid-hid", "curve-hid", "keycodes-hid", "
 
 def active(session):
     binary = BINARY
-    if session.get("target") == "AgentFreeBrowserPreview":
+    if session.get('target') == 'Veil':
+        from launch_veil_browser import verified_target
+        binary, _ = verified_target()
+    elif session.get("target") == "AgentFreeBrowserPreview":
         binary = ROOT / "dist/AgentFreeBrowserPreview.app/Contents/MacOS/AgentFreeBrowserPreview"
         manifest = json.loads((ROOT / "docs/evidence/integrated-browser-permission-manifest.json").read_text())
         if session["binarySHA256"] != manifest["executableSHA256"]:
